@@ -1,0 +1,13 @@
+yii
+yii*/
+yiic
+.DS_Store
+*.swo
+*.swp
+assets/
+protected/runtime/*
+protected/data/*.db
+protected/tests/report/*
+.buildpath
+.project
+.settings
