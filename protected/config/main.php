@@ -22,9 +22,9 @@ return array(
 		// uncomment the following to enable the Gii tool
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'openpubyesroti!',
+			'password'=>'1234',
 		 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('10.0.1.*','::1'),
+			'ipFilters'=>array('192.168.1.*','::1'),
 		),
 	),
 
