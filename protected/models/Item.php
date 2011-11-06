@@ -7,6 +7,11 @@
  * @property string $id
  * @property string $name
  * @property string $category_item_id
+ *
+ * The followings are the available model relations:
+ * @property DonatedItem[] $donatedItems
+ * @property CategoryItem $categoryItem
+ * @property StockItem[] $stockItems
  */
 class Item extends CActiveRecord
 {
@@ -35,7 +40,7 @@ class Item extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('category_item_id', 'required'),
+			array('name', 'required'),
 			array('name', 'length', 'max'=>255),
 			array('category_item_id', 'length', 'max'=>20),
 			// The following rule is used by search().
@@ -52,6 +57,9 @@ class Item extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'donatedItems' => array(self::HAS_MANY, 'DonatedItem', 'item_id'),
+			'categoryItem' => array(self::BELONGS_TO, 'CategoryItem', 'category_item_id'),
+			'stockItems' => array(self::HAS_MANY, 'StockItem', 'item_id'),
 		);
 	}
 

@@ -5,9 +5,11 @@
  *
  * The followings are the available columns in table 'shipment':
  * @property string $id
- * @property integer $amount
  * @property string $name
- * @property string $need_id
+ *
+ * The followings are the available model relations:
+ * @property StockShipment[] $stockShipments
+ * @property TransportedShipment[] $transportedShipments
  */
 class Shipment extends CActiveRecord
 {
@@ -36,13 +38,11 @@ class Shipment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, need_id', 'required'),
-			array('amount', 'numerical', 'integerOnly'=>true),
+			array('name', 'required'),
 			array('name', 'length', 'max'=>255),
-			array('need_id', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, amount, name, need_id', 'safe', 'on'=>'search'),
+			array('id, name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,6 +54,8 @@ class Shipment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'stockShipments' => array(self::HAS_MANY, 'StockShipment', 'shipment_id'),
+			'transportedShipments' => array(self::HAS_MANY, 'TransportedShipment', 'shipment_id'),
 		);
 	}
 
@@ -64,9 +66,7 @@ class Shipment extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'amount' => 'Amount',
 			'name' => 'Name',
-			'need_id' => 'Need',
 		);
 	}
 
@@ -82,9 +82,7 @@ class Shipment extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('amount',$this->amount);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('need_id',$this->need_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

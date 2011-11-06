@@ -9,6 +9,11 @@
  * @property string $last_updated
  * @property string $location_id
  * @property string $detail
+ *
+ * The followings are the available model relations:
+ * @property Need[] $needs
+ * @property Location $location
+ * @property Coordinator[] $coordinators
  */
 class Request extends CActiveRecord
 {
@@ -54,6 +59,9 @@ class Request extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'needs' => array(self::HAS_MANY, 'Need', 'request_id'),
+			'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
+			'coordinators' => array(self::MANY_MANY, 'Coordinator', 'request_coordinator(request_id, coordinator_id)'),
 		);
 	}
 

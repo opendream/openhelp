@@ -13,6 +13,11 @@
  * @property string $level5
  * @property string $lat
  * @property string $lng
+ *
+ * The followings are the available model relations:
+ * @property Donator[] $donators
+ * @property Request[] $requests
+ * @property Transporter[] $transporters
  */
 class Location extends CActiveRecord
 {
@@ -56,6 +61,9 @@ class Location extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'donators' => array(self::HAS_MANY, 'Donator', 'location_id'),
+			'requests' => array(self::HAS_MANY, 'Request', 'location_id'),
+			'transporters' => array(self::HAS_MANY, 'Transporter', 'location_id'),
 		);
 	}
 

@@ -9,6 +9,11 @@
  * @property string $item_id
  * @property integer $amount
  * @property string $need_id
+ *
+ * The followings are the available model relations:
+ * @property Donator $donator
+ * @property Item $item
+ * @property Need $need
  */
 class DonatedItem extends CActiveRecord
 {
@@ -54,6 +59,9 @@ class DonatedItem extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'donator' => array(self::BELONGS_TO, 'Donator', 'donator_id'),
+			'item' => array(self::BELONGS_TO, 'Item', 'item_id'),
+			'need' => array(self::BELONGS_TO, 'Need', 'need_id'),
 		);
 	}
 

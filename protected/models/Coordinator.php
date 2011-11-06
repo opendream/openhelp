@@ -9,6 +9,9 @@
  * @property string $position
  * @property string $tel
  * @property string $detail
+ *
+ * The followings are the available model relations:
+ * @property Request[] $requests
  */
 class Coordinator extends CActiveRecord
 {
@@ -54,6 +57,7 @@ class Coordinator extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'requests' => array(self::MANY_MANY, 'Request', 'request_coordinator(coordinator_id, request_id)'),
 		);
 	}
 

@@ -9,6 +9,11 @@
  * @property string $tel
  * @property string $location_id
  * @property string $detail
+ *
+ * The followings are the available model relations:
+ * @property StockShipment[] $stockShipments
+ * @property TransportedShipment[] $transportedShipments
+ * @property Location $location
  */
 class Transporter extends CActiveRecord
 {
@@ -55,6 +60,9 @@ class Transporter extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'stockShipments' => array(self::HAS_MANY, 'StockShipment', 'transporter_id'),
+			'transportedShipments' => array(self::HAS_MANY, 'TransportedShipment', 'transporter_id'),
+			'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
 		);
 	}
 

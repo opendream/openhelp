@@ -9,6 +9,11 @@
  * @property string $tel
  * @property string $location_id
  * @property string $detail
+ *
+ * The followings are the available model relations:
+ * @property DonatedItem[] $donatedItems
+ * @property Location $location
+ * @property StockItem[] $stockItems
  */
 class Donator extends CActiveRecord
 {
@@ -55,6 +60,9 @@ class Donator extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'donatedItems' => array(self::HAS_MANY, 'DonatedItem', 'donator_id'),
+			'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
+			'stockItems' => array(self::HAS_MANY, 'StockItem', 'donator_id'),
 		);
 	}
 
