@@ -8,7 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Web Application',
-
+  // Internationalization
+  'language' => 'th',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -79,8 +80,5 @@ return array(
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
-	'params'=>array(
-		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
-	),
+	'params'=>require(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.'/config/params.php'),
 );
