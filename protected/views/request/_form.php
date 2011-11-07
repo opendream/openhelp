@@ -8,13 +8,18 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
+	<div class="coordinator-list">
+		<div class="coordinator-lable">
+			ผู้ประสานงาน 				
+		</div><!-- / -->
+		
+	</div><!-- / -->
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_created'); ?>
 		<?php echo $form->textField($model,'date_created'); ?>
 		<?php echo $form->error($model,'date_created'); ?>
 	</div>
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'last_updated'); ?>
 		<?php echo $form->textField($model,'last_updated'); ?>
