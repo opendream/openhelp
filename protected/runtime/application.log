@@ -1,0 +1,434 @@
+2011/10/28 10:37:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "g".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('g')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=g
+2011/10/28 10:37:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:37:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:37:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:38:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:38:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:38:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:38:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:39:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:39:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:39:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(14): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:39:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(14): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/10/28 10:40:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: could not find driver' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(372): CDbConnection->init()
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/crud/CrudCode.php(44): CModule->__get('db')
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CFormModel.php(40): CrudCode->init()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(149): CFormModel->__construct()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#13 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/crud')
+#14 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=gii/crud
+2011/10/28 10:40:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: could not find driver' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(372): CDbConnection->init()
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/crud/CrudCode.php(44): CModule->__get('db')
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CFormModel.php(40): CrudCode->init()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(149): CFormModel->__construct()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#13 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/crud')
+#14 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=gii/crud
+2011/10/28 10:40:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: could not find driver' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(372): CDbConnection->init()
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/crud/CrudCode.php(44): CModule->__get('db')
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CFormModel.php(40): CrudCode->init()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(149): CFormModel->__construct()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#13 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/crud')
+#14 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=gii/crud
+2011/10/28 10:40:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: could not find driver' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(372): CDbConnection->init()
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/model/ModelCode.php(54): CModule->__get('db')
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(149): CFormModel->__construct()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#13 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/model')
+#14 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=gii/model
+2011/10/28 10:41:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: could not find driver' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(372): CDbConnection->init()
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/model/ModelCode.php(54): CModule->__get('db')
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(149): CFormModel->__construct()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#13 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/model')
+#14 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=gii/model
+2011/10/28 10:41:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: could not find driver' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(372): CDbConnection->init()
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/model/ModelCode.php(54): CModule->__get('db')
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(149): CFormModel->__construct()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#13 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/model')
+#14 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=gii/model
+2011/10/28 10:41:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: could not find driver' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(372): CDbConnection->init()
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/model/ModelCode.php(54): CModule->__get('db')
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(149): CFormModel->__construct()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#13 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/model')
+#14 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=gii/model
+2011/10/28 10:47:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: could not find driver' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(372): CDbConnection->init()
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/crud/CrudCode.php(44): CModule->__get('db')
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CFormModel.php(40): CrudCode->init()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(149): CFormModel->__construct()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#13 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/crud')
+#14 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=gii/crud
+2011/10/28 10:48:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(372): CDbConnection->init()
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/crud/CrudCode.php(44): CModule->__get('db')
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CFormModel.php(40): CrudCode->init()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(149): CFormModel->__construct()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#13 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/crud')
+#14 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=gii/crud
+2011/10/28 10:49:34 [error] [exception.CException] exception 'CException' with message 'Alias "applications.models.Post" is invalid. Make sure it points to an existing directory or file.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/YiiBase.php:346
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/generators/crud/CrudCode.php(59): YiiBase::import('applications.mo...', true)
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/validators/CInlineValidator.php(39): CrudCode->validateModel('model', Array)
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/validators/CValidator.php(192): CInlineValidator->validateAttribute(Object(CrudCode), 'model')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CModel.php(152): CValidator->validate(Object(CrudCode), NULL)
+#4 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(155): CModel->validate()
+#5 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/CCodeGenerator.php(61): CCodeGenerator->prepare()
+#6 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#7 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#8 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#9 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#11 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/crud')
+#12 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#13 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=gii/crud
+2011/10/28 11:08:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openhelp.tbl_user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_user`.
+in /var/www/openhelp/htdocs/index.php (13)
+2011/11/06 13:01:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/11/06 13:01:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(CrudGenerator), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/crud')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii/crud
+2011/11/06 13:01:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(CrudGenerator), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/crud')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii/crud
+2011/11/06 13:01:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/11/06 13:01:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('login')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii/default/log...')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii/default/login
+2011/11/06 13:01:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/11/06 13:01:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/gii/GiiModule.php:163
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(255): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('gii')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=gii
+2011/11/06 16:51:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openhelp.yii_openhelp_test' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `yii_openhelp_test`.
+in /var/www/openhelp/htdocs/index.php (13)
+2011/11/06 20:31:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "donated_item/create".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('donated_item/cr...')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=donated_item/create
+2011/11/06 20:31:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "donated_item/create".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('donated_item/cr...')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=donated_item/create
+2011/11/06 20:33:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "domainItem/create".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('domainItem/crea...')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=domainItem/create
+2011/11/06 20:34:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "domainItem/create".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('domainItem/crea...')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=domainItem/create
+2011/11/06 20:38:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "re".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('re')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=re
+2011/11/06 20:38:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "requ".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('requ')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=requ
+2011/11/06 20:39:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "l/create".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('l/create')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=l/create
+2011/11/06 20:39:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "local/create".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('local/create')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=local/create
+2011/11/06 20:39:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "l/create".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('l/create')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=l/create
+2011/11/06 20:39:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "loca/create".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('loca/create')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=loca/create
+2011/11/06 21:41:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "l".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('l')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php/?r=l
+2011/11/06 21:41:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "loc".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('loc')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php/?r=loc
+2011/11/06 21:41:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "re".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('re')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php/?r=re
+2011/11/06 21:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "local".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('local')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/index.php/?r=local
+2011/11/06 21:41:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "c".' in /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php:477
+Stack trace:
+#0 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CController.php(262): CController->missingAction('c')
+#1 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(277): CController->run('c')
+#2 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/web/CWebApplication.php(136): CWebApplication->runController('location/c')
+#3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php/?r=location/c

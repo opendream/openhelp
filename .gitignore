@@ -1,13 +1,7 @@
-yii
-yii*/
-yiic
 .DS_Store
+protected/runtime/
 *.swo
 *.swp
-assets/
-protected/runtime/*
-protected/data/*.db
-protected/tests/report/*
 .buildpath
 .project
 .settings
