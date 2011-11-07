@@ -44,6 +44,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'detail',
 		'location_id',
 		'date_created',
+		'status',
 		array(
 		  'name' => 'status',
 		  'value' => 'LookupManager::getRequestStatus($data->status)',
