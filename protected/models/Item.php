@@ -94,9 +94,4 @@ class Item extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-
-	public function getCategoryOptions()
-	{
-		return CategoryItem::model()->categoryOptions;
-	}
 }

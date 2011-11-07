@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Shipments',
+	'Vehicles',
 );
 
 $this->menu=array(
-	array('label'=>'Create Shipment', 'url'=>array('create')),
-	array('label'=>'Manage Shipment', 'url'=>array('admin')),
+	array('label'=>'Create Vehicle', 'url'=>array('create')),
+	array('label'=>'Manage Vehicle', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Shipments</h1>
+<h1>Vehicles</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

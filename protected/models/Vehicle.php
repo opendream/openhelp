@@ -1,25 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "request".
+ * This is the model class for table "vehicle".
  *
- * The followings are the available columns in table 'request':
+ * The followings are the available columns in table 'vehicle':
  * @property string $id
- * @property string $date_created
- * @property string $last_updated
- * @property string $location_id
- * @property string $detail
+ * @property string $name
  *
  * The followings are the available model relations:
- * @property Need[] $needs
- * @property Location $location
- * @property Coordinator[] $coordinators
+ * @property Shipment[] $shipments
+ * @property StockVehicle[] $stockVehicles
  */
-class Request extends CActiveRecord
+class Vehicle extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return Request the static model class
+	 * @return Vehicle the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -31,7 +27,7 @@ class Request extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'request';
+		return 'vehicle';
 	}
 
 	/**
@@ -42,12 +38,11 @@ class Request extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('date_created, last_updated', 'required'),
-			array('location_id', 'length', 'max'=>20),
-			array('detail', 'safe'),
+			array('name', 'required'),
+			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, date_created, last_updated, location_id, detail', 'safe', 'on'=>'search'),
+			array('id, name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,9 +54,8 @@ class Request extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'needs' => array(self::HAS_MANY, 'Need', 'request_id'),
-			'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
-			'coordinators' => array(self::MANY_MANY, 'Coordinator', 'request_coordinator(request_id, coordinator_id)'),
+			'shipments' => array(self::HAS_MANY, 'Shipment', 'vehicle_id'),
+			'stockVehicles' => array(self::HAS_MANY, 'StockVehicle', 'vehicle_id'),
 		);
 	}
 
@@ -72,10 +66,7 @@ class Request extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'date_created' => 'Date Created',
-			'last_updated' => 'Last Updated',
-			'location_id' => 'Location',
-			'detail' => 'Detail',
+			'name' => 'Name',
 		);
 	}
 
@@ -91,10 +82,7 @@ class Request extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('date_created',$this->date_created,true);
-		$criteria->compare('last_updated',$this->last_updated,true);
-		$criteria->compare('location_id',$this->location_id,true);
-		$criteria->compare('detail',$this->detail,true);
+		$criteria->compare('name',$this->name,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

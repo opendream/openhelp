@@ -432,3 +432,5 @@ Stack trace:
 #3 /var/www/openhelp/htdocs/yii-1.1.8.r3324/framework/base/CApplication.php(158): CWebApplication->processRequest()
 #4 /var/www/openhelp/htdocs/index.php(13): CApplication->run()
 #5 {main} REQUEST_URI=/index.php/?r=location/c
+2011/11/07 15:00:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openhelp.transported_shipment' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `transported_shipment`.
+in /Library/WebServer/Documents/openhelp/index.php (13)

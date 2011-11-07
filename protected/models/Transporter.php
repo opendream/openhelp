@@ -11,8 +11,8 @@
  * @property string $detail
  *
  * The followings are the available model relations:
- * @property StockShipment[] $stockShipments
- * @property TransportedShipment[] $transportedShipments
+ * @property Shipment[] $shipments
+ * @property StockVehicle[] $stockVehicles
  * @property Location $location
  */
 class Transporter extends CActiveRecord
@@ -60,8 +60,8 @@ class Transporter extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'stockShipments' => array(self::HAS_MANY, 'StockShipment', 'transporter_id'),
-			'transportedShipments' => array(self::HAS_MANY, 'TransportedShipment', 'transporter_id'),
+			'shipments' => array(self::HAS_MANY, 'Shipment', 'transporter_id'),
+			'stockVehicles' => array(self::HAS_MANY, 'StockVehicle', 'transporter_id'),
 			'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
 		);
 	}

@@ -16,9 +16,5 @@
 	<?php echo CHtml::encode($data->amount); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('need_id')); ?>:</b>
-	<?php echo CHtml::encode($data->need_id); ?>
-	<br />
-
 
 </div>

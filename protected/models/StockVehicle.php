@@ -1,25 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "request".
+ * This is the model class for table "stock_vehicle".
  *
- * The followings are the available columns in table 'request':
+ * The followings are the available columns in table 'stock_vehicle':
  * @property string $id
- * @property string $date_created
- * @property string $last_updated
- * @property string $location_id
- * @property string $detail
+ * @property string $transporter_id
+ * @property string $vehicle_id
+ * @property integer $amount
  *
  * The followings are the available model relations:
- * @property Need[] $needs
- * @property Location $location
- * @property Coordinator[] $coordinators
+ * @property Transporter $transporter
+ * @property Vehicle $vehicle
  */
-class Request extends CActiveRecord
+class StockVehicle extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return Request the static model class
+	 * @return StockVehicle the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -31,7 +29,7 @@ class Request extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'request';
+		return 'stock_vehicle';
 	}
 
 	/**
@@ -42,12 +40,12 @@ class Request extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('date_created, last_updated', 'required'),
-			array('location_id', 'length', 'max'=>20),
-			array('detail', 'safe'),
+			array('transporter_id, vehicle_id', 'required'),
+			array('amount', 'numerical', 'integerOnly'=>true),
+			array('transporter_id, vehicle_id', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, date_created, last_updated, location_id, detail', 'safe', 'on'=>'search'),
+			array('id, transporter_id, vehicle_id, amount', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,9 +57,8 @@ class Request extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'needs' => array(self::HAS_MANY, 'Need', 'request_id'),
-			'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
-			'coordinators' => array(self::MANY_MANY, 'Coordinator', 'request_coordinator(request_id, coordinator_id)'),
+			'transporter' => array(self::BELONGS_TO, 'Transporter', 'transporter_id'),
+			'vehicle' => array(self::BELONGS_TO, 'Vehicle', 'vehicle_id'),
 		);
 	}
 
@@ -72,10 +69,9 @@ class Request extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'date_created' => 'Date Created',
-			'last_updated' => 'Last Updated',
-			'location_id' => 'Location',
-			'detail' => 'Detail',
+			'transporter_id' => 'Transporter',
+			'vehicle_id' => 'Vehicle',
+			'amount' => 'Amount',
 		);
 	}
 
@@ -91,10 +87,9 @@ class Request extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('date_created',$this->date_created,true);
-		$criteria->compare('last_updated',$this->last_updated,true);
-		$criteria->compare('location_id',$this->location_id,true);
-		$criteria->compare('detail',$this->detail,true);
+		$criteria->compare('transporter_id',$this->transporter_id,true);
+		$criteria->compare('vehicle_id',$this->vehicle_id,true);
+		$criteria->compare('amount',$this->amount);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -25,11 +25,6 @@
 		<?php echo $form->textField($model,'amount'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'need_id'); ?>
-		<?php echo $form->textField($model,'need_id',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

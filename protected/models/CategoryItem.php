@@ -90,12 +90,4 @@ class CategoryItem extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-	
-	public function getCategoryOptions()
-	{
-	    $items = CategoryItem::model()->findAll();
-	    // format models resulting using listData     
-	    $categories = CHtml::listData($items, 'id', 'name');
-		return $categories;
-	}	
 }

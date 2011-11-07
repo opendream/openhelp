@@ -13,7 +13,7 @@
  * The followings are the available model relations:
  * @property DonatedItem[] $donatedItems
  * @property Request $request
- * @property TransportedShipment[] $transportedShipments
+ * @property Shipment[] $shipments
  */
 class Need extends CActiveRecord
 {
@@ -63,7 +63,7 @@ class Need extends CActiveRecord
 		return array(
 			'donatedItems' => array(self::HAS_MANY, 'DonatedItem', 'need_id'),
 			'request' => array(self::BELONGS_TO, 'Request', 'request_id'),
-			'transportedShipments' => array(self::HAS_MANY, 'TransportedShipment', 'need_id'),
+			'shipments' => array(self::HAS_MANY, 'Shipment', 'need_id'),
 		);
 	}
 
