@@ -10,6 +10,7 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		
 		<?php echo $form->labelEx($model,'name'); ?>
 		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'name'); ?>
@@ -17,7 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'category_item_id'); ?>
-		<?php echo $form->textField($model,'category_item_id',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->dropDownList($model,'category_item_id', $model->getCategoryOptions()); ?>		
 		<?php echo $form->error($model,'category_item_id'); ?>
 	</div>
 
