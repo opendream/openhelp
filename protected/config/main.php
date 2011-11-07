@@ -50,7 +50,6 @@ return array(
 		/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-<<<<<<< HEAD
 		),
 		*/
 		// uncomment the following to use a MySQL database
