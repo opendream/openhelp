@@ -38,18 +38,15 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'request-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'date_created',
-		'last_updated',
-		'location_id',
 		'detail',
+		'location_id',
+		'date_created',
 		array(
 		  'name' => 'status',
-		  'value' => LookupManager::requestDefaultStatus(),
+		  'value' => 'LookupManager::getRequestStatus($data->status)',
 		  'filter' => LookupManager::requestStatus(),
 		),
 		array(
