@@ -5,10 +5,12 @@
 class LookupManager 
 {
   private static $_items=array(
-      '0' => 'REQUEST_STATUS_OPEN',
-      '1' => 'REQUEST_STATUS_PROCESS',
-      '2' => 'REQUEST_STATUS_CLOSED',
-    );
+    '0' => 'REQUEST_STATUS_OPEN',
+    '1' => 'REQUEST_STATUS_PROCESS',
+    '2' => 'REQUEST_STATUS_CLOSED',
+    '3' => 'REQUEST_STATUS_CANCELLED',
+  );
+  
 
   public static function requestStatus()
   {
@@ -16,7 +18,6 @@ class LookupManager
   }
   
   public static function getRequestStatus($status)
-  {
     return self::$_items[$status];
   }
   

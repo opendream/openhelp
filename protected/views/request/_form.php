@@ -32,7 +32,13 @@
 		<?php echo $form->textArea($model,'detail',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'detail'); ?>
 	</div>
-
+  
+  <div class="row">
+		<?php echo $form->labelEx($model,'status'); ?>
+		<?php echo $form->listBox($model,'status',LookupManager::requestStatus()); ?>
+		<?php echo $form->error($model,'status'); ?>
+	</div>
+	
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
