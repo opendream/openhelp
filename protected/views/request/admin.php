@@ -48,6 +48,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'location_id',
 		'detail',
 		array(
+		  'name' => 'status',
+		  'value' => LookupManager::requestDefaultStatus(),
+		  'filter' => LookupManager::requestStatus(),
+		),
+		array(
 			'class'=>'CButtonColumn',
 		),
 	),

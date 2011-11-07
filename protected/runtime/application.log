@@ -434,3 +434,104 @@ Stack trace:
 #5 {main} REQUEST_URI=/index.php/?r=location/c
 2011/11/07 15:00:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openhelp.transported_shipment' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `transported_shipment`.
 in /Library/WebServer/Documents/openhelp/index.php (13)
+2011/11/07 15:09:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "l/crud".' in /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('l/crud')
+#1 /Library/WebServer/Documents/openhelp/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /Library/WebServer/Documents/openhelp/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/openhelp/index.php?r=l/crud
+2011/11/07 15:09:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'ระบบไม่สามารถดำเนินการ "crud" ตามคำสั่งได้' in /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php:477
+Stack trace:
+#0 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(262): CController->missingAction('crud')
+#1 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(277): CController->run('crud')
+#2 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('request/crud')
+#3 /Library/WebServer/Documents/openhelp/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /Library/WebServer/Documents/openhelp/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/openhelp/index.php?r=request/crud
+2011/11/07 15:09:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'ระบบไม่สามารถดำเนินการ "in" ตามคำสั่งได้' in /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php:477
+Stack trace:
+#0 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(262): CController->missingAction('in')
+#1 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(277): CController->run('in')
+#2 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('request/in')
+#3 /Library/WebServer/Documents/openhelp/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /Library/WebServer/Documents/openhelp/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/openhelp/index.php?r=request/in
+2011/11/07 15:09:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "l/index".' in /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('l/index')
+#1 /Library/WebServer/Documents/openhelp/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /Library/WebServer/Documents/openhelp/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/openhelp/index.php?r=l/index
+2011/11/07 15:09:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "r/index".' in /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('r/index')
+#1 /Library/WebServer/Documents/openhelp/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /Library/WebServer/Documents/openhelp/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/openhelp/index.php?r=r/index
+2011/11/07 15:22:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "l/admin".' in /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('l/admin')
+#1 /Library/WebServer/Documents/openhelp/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /Library/WebServer/Documents/openhelp/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/openhelp/index.php?r=l/admin
+2011/11/07 19:00:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'ระบบไม่สามารถดำเนินการ "a" ตามคำสั่งได้' in /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php:477
+Stack trace:
+#0 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(262): CController->missingAction('a')
+#1 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(277): CController->run('a')
+#2 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('request/a')
+#3 /Library/WebServer/Documents/openhelp/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#4 /Library/WebServer/Documents/openhelp/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/openhelp/index.php?r=request/a
+2011/11/07 19:05:27 [error] [php] include(Lookup.php): failed to open stream: No such file or directory (/Library/WebServer/Documents/openhelp/yii/framework/YiiBase.php:421)
+Stack trace:
+#0 /Library/WebServer/Documents/openhelp/protected/views/request/admin.php(52): spl_autoload_call()
+#1 /Library/WebServer/Documents/openhelp/yii/framework/web/CBaseController.php(119): require()
+#2 /Library/WebServer/Documents/openhelp/yii/framework/web/CBaseController.php(88): RequestController->renderInternal()
+#3 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(866): RequestController->renderFile()
+#4 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(779): RequestController->renderPartial()
+#5 /Library/WebServer/Documents/openhelp/protected/controllers/RequestController.php(148): RequestController->render()
+#6 /Library/WebServer/Documents/openhelp/yii/framework/web/actions/CInlineAction.php(50): RequestController->actionAdmin()
+#7 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(300): CInlineAction->runWithParams()
+#8 /Library/WebServer/Documents/openhelp/yii/framework/web/filters/CFilterChain.php(134): RequestController->runAction()
+#9 /Library/WebServer/Documents/openhelp/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(1144): CAccessControlFilter->filter()
+#11 /Library/WebServer/Documents/openhelp/yii/framework/web/filters/CInlineFilter.php(59): RequestController->filterAccessControl()
+#12 /Library/WebServer/Documents/openhelp/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#13 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(283): CFilterChain->run()
+#14 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(257): RequestController->runActionWithFilters()
+#15 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(277): RequestController->run()
+#16 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(136): CWebApplication->runController()
+#17 /Library/WebServer/Documents/openhelp/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#18 /Library/WebServer/Documents/openhelp/index.php(13): CWebApplication->run()
+REQUEST_URI=/openhelp/index.php?r=request/admin
+in /Library/WebServer/Documents/openhelp/protected/views/request/admin.php (52)
+in /Library/WebServer/Documents/openhelp/protected/controllers/RequestController.php (148)
+in /Library/WebServer/Documents/openhelp/index.php (13)
+2011/11/07 19:05:54 [error] [php] include(LookupManager.php): failed to open stream: No such file or directory (/Library/WebServer/Documents/openhelp/yii/framework/YiiBase.php:421)
+Stack trace:
+#0 /Library/WebServer/Documents/openhelp/protected/views/request/admin.php(52): spl_autoload_call()
+#1 /Library/WebServer/Documents/openhelp/yii/framework/web/CBaseController.php(119): require()
+#2 /Library/WebServer/Documents/openhelp/yii/framework/web/CBaseController.php(88): RequestController->renderInternal()
+#3 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(866): RequestController->renderFile()
+#4 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(779): RequestController->renderPartial()
+#5 /Library/WebServer/Documents/openhelp/protected/controllers/RequestController.php(148): RequestController->render()
+#6 /Library/WebServer/Documents/openhelp/yii/framework/web/actions/CInlineAction.php(50): RequestController->actionAdmin()
+#7 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(300): CInlineAction->runWithParams()
+#8 /Library/WebServer/Documents/openhelp/yii/framework/web/filters/CFilterChain.php(134): RequestController->runAction()
+#9 /Library/WebServer/Documents/openhelp/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(1144): CAccessControlFilter->filter()
+#11 /Library/WebServer/Documents/openhelp/yii/framework/web/filters/CInlineFilter.php(59): RequestController->filterAccessControl()
+#12 /Library/WebServer/Documents/openhelp/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#13 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(283): CFilterChain->run()
+#14 /Library/WebServer/Documents/openhelp/yii/framework/web/CController.php(257): RequestController->runActionWithFilters()
+#15 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(277): RequestController->run()
+#16 /Library/WebServer/Documents/openhelp/yii/framework/web/CWebApplication.php(136): CWebApplication->runController()
+#17 /Library/WebServer/Documents/openhelp/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#18 /Library/WebServer/Documents/openhelp/index.php(13): CWebApplication->run()
+REQUEST_URI=/openhelp/index.php?r=request/admin
+in /Library/WebServer/Documents/openhelp/protected/views/request/admin.php (52)
+in /Library/WebServer/Documents/openhelp/protected/controllers/RequestController.php (148)
+in /Library/WebServer/Documents/openhelp/index.php (13)
+2011/11/07 19:07:09 [warning] [application] Failed to set unsafe attribute "status" of "Request".
+in /Library/WebServer/Documents/openhelp/protected/controllers/RequestController.php (144)
+in /Library/WebServer/Documents/openhelp/index.php (13)

@@ -26,6 +26,7 @@ CREATE TABLE `request` (
   `last_updated` datetime NOT NULL,
   `location_id` bigint(20),
   `detail` text,
+  `status` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_request_location_id` (`location_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -55,6 +56,7 @@ CREATE TABLE `need` (
   `amount` int(11) NOT NULL DEFAULT 0,
   `detail` text,
   `request_id` bigint(20) NOT NULL,
+  `status` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_need_request_id` (`request_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
