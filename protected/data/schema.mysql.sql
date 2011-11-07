@@ -112,34 +112,34 @@ CREATE TABLE `donator` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 # Transport ==============================================================================================================
-CREATE TABLE `stock_shipment` (
+CREATE TABLE `stock_vehicle` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   
   `transporter_id` bigint(20) NOT NULL,
-  `shipment_id` bigint(20) NOT NULL,
+  `vehicle_id` bigint(20) NOT NULL,
   `amount` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  KEY `fk_stock_shipment_transporter_id` (`transporter_id`),
-  KEY `fk_stock_shipment_shipment_id` (`shipment_id`)
+  KEY `fk_stock_vehicle_transporter_id` (`transporter_id`),
+  KEY `fk_stock_vehicle_vehicle_id` (`vehicle_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
     
-CREATE TABLE `shipment` (
+CREATE TABLE `vehicle` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-CREATE TABLE `transported_shipment` (
+CREATE TABLE `shipment` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   
   `transporter_id` bigint(20) NOT NULL,
-  `shipment_id` bigint(20) NOT NULL,
+  `vehicle_id` bigint(20) NOT NULL,
   `amount` int(11) NOT NULL DEFAULT 0,
   `need_id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_transporter_shipment_shipment_id` (`shipment_id`),
-  KEY `fk_transporter_shipment_need_id` (`need_id`)
+  KEY `fk_transporter_vehicle_vehicle_id` (`vehicle_id`),
+  KEY `fk_transporter_vehicle_need_id` (`need_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE `transporter` (
@@ -182,14 +182,14 @@ ALTER TABLE `donator`
   ADD CONSTRAINT `fk_donator_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
 
 # Transport ==============================================================================================================
-ALTER TABLE `stock_shipment`
-  ADD CONSTRAINT `fk_stock_shipment_transporter_id` FOREIGN KEY (`transporter_id`) REFERENCES `transporter` (`id`),
-  ADD CONSTRAINT `fk_stock_shipment_shipment_id` FOREIGN KEY (`shipment_id`) REFERENCES `shipment` (`id`);
+ALTER TABLE `stock_vehicle`
+  ADD CONSTRAINT `fk_stock_vehicle_transporter_id` FOREIGN KEY (`transporter_id`) REFERENCES `transporter` (`id`),
+  ADD CONSTRAINT `fk_stock_vehicle_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`);
   
-ALTER TABLE `transported_shipment`
-  ADD CONSTRAINT `fk_donated_shipment_transporter_id` FOREIGN KEY (`transporter_id`) REFERENCES `transporter` (`id`),
-  ADD CONSTRAINT `fk_donated_shipment_shipment_id` FOREIGN KEY (`shipment_id`) REFERENCES `shipment` (`id`),
-  ADD CONSTRAINT `fk_donated_shipment_need_id` FOREIGN KEY (`need_id`) REFERENCES `need` (`id`);
+ALTER TABLE `shipment` 
+  ADD CONSTRAINT `fk_donated_vehicle_transporter_id` FOREIGN KEY (`transporter_id`) REFERENCES `transporter` (`id`),
+  ADD CONSTRAINT `fk_donated_vehicle_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`),
+  ADD CONSTRAINT `fk_donated_vehicle_need_id` FOREIGN KEY (`need_id`) REFERENCES `need` (`id`);
   
 ALTER TABLE `transporter`
   ADD CONSTRAINT `fk_transporter_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
