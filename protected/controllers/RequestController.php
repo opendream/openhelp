@@ -72,9 +72,19 @@ class RequestController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+		
+		$firstLevelCol = Yii::app()->params['location'][0];
+	  $qtxt = "SELECT DISTINCT $firstLevelCol FROM location";
+		$command = Yii::app()->db->createCommand($qtxt);
+		$firstLevelRows = $command->queryAll();
+		foreach ($firstLevelRows as $row) {
+		  $firstLevel[$row[$firstLevelCol]] = $row[$firstLevelCol];
+		}
 
 		$this->render('create',array(
 			'model'=>$model,
+			'locationModel'=>new Location,
+			'firstLevel'=>$firstLevel,
 		));
 	}
 
@@ -96,9 +106,19 @@ class RequestController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+		
+		$firstLevelCol = Yii::app()->params['location'][0];
+	  $qtxt = "SELECT DISTINCT $firstLevelCol FROM location";
+		$command = Yii::app()->db->createCommand($qtxt);
+		$firstLevelRows = $command->queryAll();
+		foreach ($firstLevelRows as $row) {
+		  $firstLevel[$row[$firstLevelCol]] = $row[$firstLevelCol];
+		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'locationModel'=>new Location,
+			'firstLevel'=>$firstLevel,
 		));
 	}
 

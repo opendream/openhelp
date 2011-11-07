@@ -20,13 +20,13 @@
     <?php endforeach ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'lat'); ?>
+		<?php echo $form->labelEx($model,Yii::t('locale', 'lat')); ?>
 		<?php echo $form->textField($model,'lat',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'lat'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'lng'); ?>
+		<?php echo $form->labelEx($model,Yii::t('locale', 'lng')); ?>
 		<?php echo $form->textField($model,'lng',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'lng'); ?>
 	</div>

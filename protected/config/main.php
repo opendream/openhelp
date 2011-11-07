@@ -26,7 +26,7 @@ return array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'1234',
 		 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('192.168.1.*','::1'),
+			//'ipFilters'=>array('192.168.1.*','::1'),
 		),
 	),
 
@@ -50,6 +50,7 @@ return array(
 		/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+<<<<<<< HEAD
 		),
 		*/
 		// uncomment the following to use a MySQL database
@@ -62,8 +63,8 @@ return array(
 		),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
-            'errorAction'=>'site/error',
-        ),
+			 'errorAction'=>'site/error',
+			 ),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -71,16 +72,15 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				// uncomment the following to show log messages on web pages
-				/*
 				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
+         'class' => 'CWebLogRoute',
+         'categories' => 'example',
+         'levels' => 'trace',
+         'showInFireBug' => true,
+        ),
 			),
 		),
 	),
-
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>require(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.'/config/params.php'),
