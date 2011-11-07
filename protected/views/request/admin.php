@@ -49,7 +49,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'detail',
 		array(
 		  'name' => 'status',
-		  'value' => LookupManager::requestDefaultStatus(),
+		  'value' => 'LookupManager::getRequestStatus($data->status)',
 		  'filter' => LookupManager::requestStatus(),
 		),
 		array(

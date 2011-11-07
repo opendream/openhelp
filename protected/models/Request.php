@@ -9,6 +9,7 @@
  * @property string $last_updated
  * @property string $location_id
  * @property string $detail
+ * @property integer $status
  *
  * The followings are the available model relations:
  * @property Need[] $needs
@@ -42,12 +43,13 @@ class Request extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('date_created, last_updated', 'required'),
+			array('date_created, last_updated, status', 'required'),
+			array('status', 'numerical', 'integerOnly'=>true),
 			array('location_id', 'length', 'max'=>20),
 			array('detail', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, date_created, last_updated, location_id, detail', 'safe', 'on'=>'search'),
+			array('id, date_created, last_updated, location_id, detail, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,6 +78,7 @@ class Request extends CActiveRecord
 			'last_updated' => 'Last Updated',
 			'location_id' => 'Location',
 			'detail' => 'Detail',
+			'status' => 'Status',
 		);
 	}
 
@@ -95,6 +98,7 @@ class Request extends CActiveRecord
 		$criteria->compare('last_updated',$this->last_updated,true);
 		$criteria->compare('location_id',$this->location_id,true);
 		$criteria->compare('detail',$this->detail,true);
+		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

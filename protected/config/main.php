@@ -49,7 +49,7 @@ return array(
 		*/
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
+			),
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=openhelp',
@@ -60,8 +60,8 @@ return array(
 		),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
-            'errorAction'=>'site/error',
-        ),
+			 'errorAction'=>'site/error',
+			 ),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -69,16 +69,15 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				// uncomment the following to show log messages on web pages
-				/*
 				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
+         'class' => 'CWebLogRoute',
+         'categories' => 'example',
+         'levels' => 'trace',
+         'showInFireBug' => true,
+        ),
 			),
 		),
 	),
-
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>require(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.'/config/params.php'),
