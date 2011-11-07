@@ -1,4 +1,5 @@
 .DS_Store
+protected/runtime/
 *.swo
 *.swp
 .buildpath
