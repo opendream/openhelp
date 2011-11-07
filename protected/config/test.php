@@ -12,6 +12,17 @@ return CMap::mergeArray(
 				'connectionString'=>'DSN for test database',
 			),
 			*/
+			'db'=>array(
+    			'connectionString' => 'mysql:host=localhost;dbname=openhelp',
+    			'emulatePrepare' => true,
+    			'username' => 'openhelp',
+    			'password' => 'openhelp',
+    			'charset' => 'utf8',
+    		),
 		),
+		'import'=>array(
+		    'application.models.*',
+		    'application.components.*',
+    	),
 	)
 );
