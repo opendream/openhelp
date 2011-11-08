@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Needs'=>array('index'),
-	$model->name,
+	$model->id,
 );
 
 $this->menu=array(
@@ -19,11 +19,10 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'name',
+		'item_id',
 		'amount',
 		'detail',
 		'request_id',
-		'item_id',
 		'status',
 	),
 )); ?>
