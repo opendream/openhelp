@@ -15,4 +15,17 @@ return array(
   'REQUEST_STATUS_PROCESS' => 'Process',
   'REQUEST_STATUS_CLOSED' => 'Closded',
   'REQUEST_STATUS_CANCELLED' => 'Canclled',
+
+  /*
+  * Menu
+  */
+  'home' => 'Home',
+  'about' => 'About',
+  'requests' => 'Requests',
+  
+  /*
+  * User Management
+  */
+  'login' => 'Login',
+  'logout' => 'Logout',
 );
