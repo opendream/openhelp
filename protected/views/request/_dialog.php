@@ -6,7 +6,6 @@
             'title'=>'Add New Item',
             'autoOpen'=>false,
             'modal'=>true,
-            'class' => 'add-obj',
             'buttons'=>array(
                 'Add Item'=>'js:addItem',
                 'Cancel'=>'js:function(){ $(this).dialog("close");}',
