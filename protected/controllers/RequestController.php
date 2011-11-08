@@ -69,12 +69,18 @@ class RequestController extends Controller
 		if(isset($_POST['Request']))
 		{
 			$model->attributes=$_POST['Request'];
-			if($model->save())
+
+			// Request Manager
+			$reqManager = new RequestManager;
+			$model = $reqManager->actionCreate($_POST['Request']);
+
+			if($model!=false)
 				$this->redirect(array('view','id'=>$model->id));
 		}
 		
+		// Generate Location Form
 		$firstLevelCol = Yii::app()->params['location'][0];
-	  $qtxt = "SELECT DISTINCT $firstLevelCol FROM location";
+	    $qtxt = "SELECT DISTINCT $firstLevelCol FROM location";
 		$command = Yii::app()->db->createCommand($qtxt);
 		$firstLevelRows = $command->queryAll();
 		foreach ($firstLevelRows as $row) {

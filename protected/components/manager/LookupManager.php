@@ -10,7 +10,6 @@ class LookupManager
     '2' => 'REQUEST_STATUS_CLOSED',
     '3' => 'REQUEST_STATUS_CANCELLED',
   );
-  
 
   public static function requestStatus()
   {
