@@ -7,7 +7,7 @@ class FormsController extends Controller
   {
     $model = new $model;
 
-    $field = isset($_GET['field'])? $_GET['field']:'locaion_id';
+    $attribute = isset($_GET['attribute'])? $_GET['attribute']:'locaion_id';
     
     $query = $_GET['query'];
 	  $current = key($query);
@@ -39,7 +39,7 @@ class FormsController extends Controller
   	$locationModel = new Location;
   	$this->render('locationlistbox', array(
   	  'model' => $model,
-  	  'field' => $field,
+  	  'attribute' => $attribute,
   	  'locationModel' => $locationModel,
   	  'current' => $children,
   	  'rows' => $easyRows,

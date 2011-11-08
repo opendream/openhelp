@@ -15,9 +15,15 @@
 	<div class="coordinator-list">
 		<div class="coordinator-lable">
 			<b>ผู้ประสานงาน</b>
+	    <?php
+			$coordinators = CHtml::listData($model->coordinators, 'id', 'fullname');
+			foreach ($coordinators as $id => $fullname) {
+				echo Chtml::textField('Request[coordinators][]', $fullname, array('size'=>60,'maxlength'=>255));
+			}
+		?>			
 		</div><!-- / -->
-	    <?php echo CHtml::link('เพิ่มผู้ประสานงาน', '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
-		
+	    <?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
+
 	</div><!-- / -->
 	<div class="row">
 		<?php echo LocationHtml::locationList($model, 'location_id'); ?>

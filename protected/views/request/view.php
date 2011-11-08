@@ -21,7 +21,9 @@ $this->menu=array(
 		'id',
 		'date_created',
 		'last_updated',
-		'location_id',
+		'location.level0',
+		'location.level1',
+		'location.level2',
 		'detail',
 	),
 )); ?>

@@ -1,8 +1,42 @@
 <?php 
 
-Class LocationHtml {
+Class LocationHtml extends CHtml {
+  public static function locationView ($id=0, $options=array()) {
+    $output = '';
+    if ($id) {
+      $locationModel = new Location;
+      
+      $output .= '<ul>';
+      
+      $levels = Yii::app()->params['location'];
+      if (isset($options['showLatLng']) && $options['showLatLng']) {
+        $levels[] = 'lat';
+        $levels[] = 'lng';
+      }
+      $levels = implode(', ', $levels);
+
+      $qtxt = "SELECT $levels FROM location WHERE id = '$id'";
+      $command = Yii::app()->db->createCommand($qtxt);
+      $row = $command->queryRow();
+
+      foreach ($row as $level => $value) {
+        $output .= '<li>';
+        $output .= CHtml::activeLabelEx($locationModel, Yii::t('locale', $level));
+        $output .= ': <span class="'.$level.'">'.$value.'</span>';
+        $output .= '</li>';
+        
+      }
+      
+      $output .= '</ul>';
+      
+      if (isset($options['showMap'])) {
+        # TODO: show google map
+      }
+    }
+    return $output;
+  }
   
-  static public function locationList ($model, $field='location_id') {
+  public static function locationList ($model, $attribute='location_id') {
     
     $addresses = Yii::app()->params['location'];
     $firstLevelCol = array_shift($addresses);
@@ -26,7 +60,7 @@ Class LocationHtml {
         'update' => '#Location_'.$children.'_wrapper',
         'data' => array(
           'model' => get_class($model),
-          'field' => $field,
+          'attribute' => $attribute,
           'query' => array(
             $firstLevelCol => array(
               'value' => "js:$(this).val()",
@@ -42,7 +76,7 @@ Class LocationHtml {
     }
     $output = '';
     $output .= '<span id="Location_id_wrapper">';
-    $output .=   CHtml::activeHiddenField($model, $field);
+    $output .=   CHtml::activeHiddenField($model, $attribute);
     $output .= '</span>';
     $output .= '<span id="Location_'.$firstLevelCol.'_wrapper" class="'.implode(' ', $addresses).'">';
     $output .=   CHtml::activeLabelEx($locationModel,Yii::t('locale',"$firstLevelCol"));
@@ -52,8 +86,8 @@ Class LocationHtml {
     while (!empty($addresses)) {
       $address = array_shift($addresses);
       $output .= '<span id="Location_'.$address.'_wrapper" class="'.implode(' ', $addresses).'">';
-    	$output .=   CHtml::activeLabelEx($locationModel,Yii::t('locale',"$address"));
-    	$output .=   Chtml::activedropDownList($locationModel,"$address", array(), $defaultOptions);
+    	$output .=   CHtml::activeLabelEx($locationModel, Yii::t('locale', $address));
+    	$output .=   Chtml::activedropDownList($locationModel, $address, array(), $defaultOptions);
     	$output .= '</span>';
     }
     

@@ -3,7 +3,7 @@
 
 if ($current == 'id') {
   $id = array_shift($rows);
-  echo CHtml::activeHiddenField($model, $field, array('value'=>$id));
+  echo CHtml::activeHiddenField($model, $attribute, array('value'=>$id));
 }
 else {
   $query = array();
@@ -19,7 +19,7 @@ else {
       'update' => '#Location_'.$children.'_wrapper',
       'data' => array(
         'model' => get_class($model),
-        'field' => $field,
+        'attribute' => $attribute,
         'query' => $query,
       ),
     ),
