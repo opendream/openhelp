@@ -1,7 +1,7 @@
 <?php
     /* Input dialog with Javascript callback */
     $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-        'id'=>'addCoordinators',
+        'id'=>'addRItems',
         'options'=>array(
             'title'=>'Add New Item',
             'autoOpen'=>false,
@@ -13,29 +13,16 @@
         ),
     ));
     echo '<div class="dialog_input">'.
-            '<div class= "item-wrapper">'.
             '<span>fullname: </span>'.
-                $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
-            '</div>'.
-            '<div class= "item-wrapper">'.
-            '<span>position: </span>'.
-                $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
-            '</div>'.
-            '<div class= "item-wrapper">'.
-            '<span>tel: </span>'.
-                $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
-            '</div>'.
-            '<div class= "item-wrapper">'.
-            '<span>detail: </span>'.
-                $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
-            '</div>'.
+            CHtml::activedropDownList($model,'id',Item::model()->ItemList, array('prompt' => Yii::t('locale', '- Select -'))) .
          '</div>';
+
     $this->endWidget('zii.widgets.jui.CJuiDialog');
 
 ?>
 
-<script type="text/javascript">
-    function addItem() {
+<script type="text/javascript" >
+    function addRItem() {
         $(this).dialog("close");
         var inserted_val = $("#item-name-input").val();
         $("item-name-input").html("");

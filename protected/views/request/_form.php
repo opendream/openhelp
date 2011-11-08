@@ -16,10 +16,12 @@
 		<div class="coordinator-lable">
 			<b>ผู้ประสานงาน</b>
 	    <?php
-			$coordinators = CHtml::listData($model->coordinators, 'id', 'fullname');
-			foreach ($coordinators as $id => $fullname) {
+	    	foreach ($model->coordinators as $key => $value) {
+	    		$fullname = $value->attributes['fullname'];
+	    		echo "Fullname: ";
 				echo Chtml::textField('Request[coordinators][]', $fullname, array('size'=>60,'maxlength'=>255));
-			}
+
+	    	}
 		?>			
 		</div><!-- / -->
 	    <?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
@@ -40,7 +42,9 @@
 		<?php echo $form->listBox($model,'status',LookupManager::requestStatus()); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
-	
+    <?php echo CHtml::link(Yii::t('locale', 'Add Items'), '#', array('onclick'=>'$("#addRItems").dialog("open"); return false;', 'class' => 'add-items')); ?>
+
+ 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
