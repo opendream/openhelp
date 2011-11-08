@@ -23,5 +23,7 @@ $this->menu=array(
 		'amount',
 		'detail',
 		'request_id',
+		'item_id',
+		'status',
 	),
 )); ?>

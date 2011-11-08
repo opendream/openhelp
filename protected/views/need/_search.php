@@ -30,6 +30,16 @@
 		<?php echo $form->textField($model,'request_id',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'item_id'); ?>
+		<?php echo $form->textField($model,'item_id',array('size'=>20,'maxlength'=>20)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'status'); ?>
+		<?php echo $form->textField($model,'status'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
