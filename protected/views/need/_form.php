@@ -10,9 +10,9 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'name'); ?>
+		<?php echo $form->labelEx($model,'item_id'); ?>
+		<?php echo $form->dropDownList($model,'item_id',Item::model()->ItemList, array('prompt' => Yii::t('locale', '- Select -'))); ?>
+		<?php echo $form->error($model,'item_id'); ?>
 	</div>
 
 	<div class="row">
@@ -31,12 +31,6 @@
 		<?php echo $form->labelEx($model,'request_id'); ?>
 		<?php echo $form->textField($model,'request_id',array('size'=>20,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'request_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'item_id'); ?>
-		<?php echo $form->textField($model,'item_id',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'item_id'); ?>
 	</div>
 
 	<div class="row">

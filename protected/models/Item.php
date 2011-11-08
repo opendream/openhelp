@@ -95,6 +95,17 @@ class Item extends CActiveRecord
 		));
 	}
 
+
+	/**
+	 * Return list of all item
+	 */
+
+	 public function getItemList()
+	 {
+		$item_list = CHtml::listData(Item::model()->findAll(),'id','name');
+		return $item_list;
+	 }
+
 	/**
 	 * Retrieves a list of categoryItem options.
 	 *

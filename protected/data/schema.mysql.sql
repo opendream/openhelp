@@ -1,154 +1,204 @@
--- phpMyAdmin SQL Dump
--- version 3.3.10deb1
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Nov 08, 2011 at 10:41 PM
--- Server version: 5.1.54
--- PHP Version: 5.3.5-1ubuntu7.3
+CREATE TABLE `user` (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(128) NOT NULL,
+    password VARCHAR(128) NOT NULL,
+    email VARCHAR(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;;
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `openhelp`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `category_item`
---
-
-CREATE TABLE IF NOT EXISTS `category_item` (
+CREATE TABLE `location` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `level0` varchar(255),
+  `level1` varchar(255),
+  `level2` varchar(255),
+  `level3` varchar(255),
+  `level4` varchar(255),
+  `level5` varchar(255),
+  `lat` varchar(255),
+  `lng` varchar(255),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `request` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `date_created` datetime NOT NULL,
+  `last_updated` datetime NOT NULL,
+  `location_id` bigint(20),
+  `detail` text,
+  `status` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_request_location_id` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `coordinator` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `fullname` varchar(255) NOT NULL,
+  `position` varchar(255),
+  `tel` varchar(255),
+  `detail` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `request_coordinator` (    
+  `request_id` bigint(20) DEFAULT NULL,
+  `coordinator_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`request_id`, `coordinator_id`),
+  KEY `fk_request_coordinator_request_id` (`request_id`),
+  KEY `fk_request_coordinator_coordinator_id` (`coordinator_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `need` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  #`name` varchar(255) NOT NULL,
+  `item_id` bigint(20) NOT NULL,
+  `amount` int(11) NOT NULL DEFAULT 0,
+  `detail` text,
+  `request_id` bigint(20) NOT NULL,
+  `status` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_need_item_id` (`item_id`),
+  KEY `fk_need_request_id` (`request_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+# Donate ================================================================================================================
+CREATE TABLE `stock_item` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `donator_id` bigint(20) NOT NULL,
+  `item_id` bigint(20) NOT NULL,
+  `amount` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  KEY `fk_stock_item_donator_id` (`donator_id`),
+  KEY `fk_stock_item_item_id` (`item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+    
+CREATE TABLE `item` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `name` varchar(255) NOT NULL,
+  `category_item_id` bigint(20),
+  PRIMARY KEY (`id`),
+  KEY `fk_item_category_item_id` (`category_item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `category_item` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
   `name` varchar(255) NOT NULL,
   `detail` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `category_item`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coordinator`
---
-
-CREATE TABLE IF NOT EXISTS `coordinator` (
+CREATE TABLE `donated_item` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `fullname` varchar(255) NOT NULL,
-  `position` varchar(255) DEFAULT NULL,
-  `tel` varchar(255) DEFAULT NULL,
-  `detail` text,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `coordinator`
---
-
-INSERT INTO `coordinator` (`id`, `fullname`, `position`, `tel`, `detail`) VALUES
-(1, 'นายมา', NULL, NULL, NULL),
-(2, 'นายมี', NULL, NULL, NULL),
-(3, 'a', NULL, NULL, NULL),
-(4, 'aaa', NULL, NULL, NULL),
-(5, 'asdf', NULL, NULL, NULL),
-(6, 'mr x', NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `donated_item`
---
-
-CREATE TABLE IF NOT EXISTS `donated_item` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
   `donator_id` bigint(20) NOT NULL,
   `item_id` bigint(20) NOT NULL,
-  `amount` int(11) NOT NULL DEFAULT '0',
+  `amount` int(11) NOT NULL DEFAULT 0,
   `need_id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_donated_item_item_id` (`item_id`),
-  KEY `fk_donated_item_need_id` (`need_id`),
-  KEY `fk_donated_item_donator_id` (`donator_id`)
+  KEY `fk_donated_item_need_id` (`need_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `donated_item`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `donator`
---
-
-CREATE TABLE IF NOT EXISTS `donator` (
+CREATE TABLE `donator` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+
   `fullname` varchar(255) NOT NULL,
-  `tel` varchar(255) DEFAULT NULL,
-  `location_id` bigint(20) DEFAULT NULL,
+  `tel` varchar(255),
+  `location_id` bigint(20),
   `detail` text,
   PRIMARY KEY (`id`),
   KEY `fk_donator_location_id` (`location_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `donator`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `item`
---
-
-CREATE TABLE IF NOT EXISTS `item` (
+# Transport ==============================================================================================================
+CREATE TABLE `stock_vehicle` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `category_item_id` bigint(20) DEFAULT NULL,
+  
+  `transporter_id` bigint(20) NOT NULL,
+  `vehicle_id` bigint(20) NOT NULL,
+  `amount` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  KEY `fk_item_category_item_id` (`category_item_id`)
+  KEY `fk_stock_vehicle_transporter_id` (`transporter_id`),
+  KEY `fk_stock_vehicle_vehicle_id` (`vehicle_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+    
+CREATE TABLE `vehicle` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `item`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `location`
---
-
-CREATE TABLE IF NOT EXISTS `location` (
+CREATE TABLE `shipment` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `level0` varchar(255) DEFAULT NULL,
-  `level1` varchar(255) DEFAULT NULL,
-  `level2` varchar(255) DEFAULT NULL,
-  `level3` varchar(255) DEFAULT NULL,
-  `level4` varchar(255) DEFAULT NULL,
-  `level5` varchar(255) DEFAULT NULL,
-  `lat` varchar(255) DEFAULT NULL,
-  `lng` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7417 ;
+  
+  `transporter_id` bigint(20) NOT NULL,
+  `vehicle_id` bigint(20) NOT NULL,
+  `amount` int(11) NOT NULL DEFAULT 0,
+  `need_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_transporter_vehicle_vehicle_id` (`vehicle_id`),
+  KEY `fk_transporter_vehicle_need_id` (`need_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `location`
---
+CREATE TABLE `transporter` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `fullname` varchar(255) NOT NULL,
+  `tel` varchar(255),
+  `location_id` bigint(20),
+  `detail` text,
+  PRIMARY KEY (`id`),
+  KEY `fk_transporter_location_id` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+
+ALTER TABLE `request`
+  ADD CONSTRAINT `fk_request_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+
+ALTER TABLE `request_coordinator`
+  ADD CONSTRAINT `fk_request_coordinator_request_id` FOREIGN KEY (`request_id`) REFERENCES `request` (`id`),
+  ADD CONSTRAINT `fk_request_coordinator_coordinator_id` FOREIGN KEY (`coordinator_id`) REFERENCES `coordinator` (`id`);
+  
+  
+ALTER TABLE `need`
+  ADD CONSTRAINT `fk_need_item_id` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
+  ADD CONSTRAINT `fk_need_request_id` FOREIGN KEY (`request_id`) REFERENCES `request` (`id`);
+  
+# Donate ================================================================================================================
+ALTER TABLE `stock_item`
+  ADD CONSTRAINT `fk_stock_item_donator_id` FOREIGN KEY (`donator_id`) REFERENCES `donator` (`id`),
+  ADD CONSTRAINT `fk_stock_item_item_id` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`);
+  
+ALTER TABLE `item`
+  ADD CONSTRAINT `fk_item_category_item_id` FOREIGN KEY (`category_item_id`) REFERENCES `category_item` (`id`);
+
+ALTER TABLE `donated_item`
+  ADD CONSTRAINT `fk_donated_item_donator_id` FOREIGN KEY (`donator_id`) REFERENCES `donator` (`id`),
+  ADD CONSTRAINT `fk_donated_item_item_id` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
+  ADD CONSTRAINT `fk_donated_item_need_id` FOREIGN KEY (`need_id`) REFERENCES `need` (`id`);
+  
+ALTER TABLE `donator`
+  ADD CONSTRAINT `fk_donator_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+
+# Transport ==============================================================================================================
+ALTER TABLE `stock_vehicle`
+  ADD CONSTRAINT `fk_stock_vehicle_transporter_id` FOREIGN KEY (`transporter_id`) REFERENCES `transporter` (`id`),
+  ADD CONSTRAINT `fk_stock_vehicle_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`);
+  
+ALTER TABLE `shipment` 
+  ADD CONSTRAINT `fk_donated_vehicle_transporter_id` FOREIGN KEY (`transporter_id`) REFERENCES `transporter` (`id`),
+  ADD CONSTRAINT `fk_donated_vehicle_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`),
+  ADD CONSTRAINT `fk_donated_vehicle_need_id` FOREIGN KEY (`need_id`) REFERENCES `need` (`id`);
+  
+ALTER TABLE `transporter`
+  ADD CONSTRAINT `fk_transporter_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+
 
 INSERT INTO `location` (`id`, `level0`, `level1`, `level2`, `level3`, `level4`, `level5`, `lat`, `lng`) VALUES
 (1, 'กรุงเทพมหานคร', 'พระนคร', 'พระบรมมหาราชวัง', NULL, NULL, NULL, '13.7516899108887', '100.491882324219'),
@@ -7588,261 +7638,3 @@ INSERT INTO `location` (`id`, `level0`, `level1`, `level2`, `level3`, `level4`, 
 (7414, 'นราธิวาส', 'เจาะไอร้อง', 'จวบ', NULL, NULL, NULL, '6.26171016693115', '101.818466186523'),
 (7415, 'นราธิวาส', 'เจาะไอร้อง', 'บูกิต', NULL, NULL, NULL, '6.18526983261108', '101.827537536621'),
 (7416, 'นราธิวาส', 'เจาะไอร้อง', 'มะรือโบออก', NULL, NULL, NULL, '6.25747013092041', '101.882308959961');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `need`
---
-
-CREATE TABLE IF NOT EXISTS `need` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `amount` int(11) NOT NULL DEFAULT '0',
-  `detail` text,
-  `request_id` bigint(20) NOT NULL,
-  `item_id` bigint(20) NOT NULL,
-  `status` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_need_request_id` (`request_id`),
-  KEY `fk_need_item_id` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `need`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `request`
---
-
-CREATE TABLE IF NOT EXISTS `request` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `date_created` datetime NOT NULL,
-  `last_updated` datetime NOT NULL,
-  `location_id` bigint(20) DEFAULT NULL,
-  `detail` text,
-  `status` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_request_location_id` (`location_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `request`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `request_coordinator`
---
-
-CREATE TABLE IF NOT EXISTS `request_coordinator` (
-  `request_id` bigint(20) NOT NULL DEFAULT '0',
-  `coordinator_id` bigint(20) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`request_id`,`coordinator_id`),
-  KEY `fk_request_coordinator_request_id` (`request_id`),
-  KEY `fk_request_coordinator_coordinator_id` (`coordinator_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `request_coordinator`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `shipment`
---
-
-CREATE TABLE IF NOT EXISTS `shipment` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `transporter_id` bigint(20) NOT NULL,
-  `vehicle_id` bigint(20) NOT NULL,
-  `amount` int(11) NOT NULL DEFAULT '0',
-  `need_id` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_transporter_vehicle_vehicle_id` (`vehicle_id`),
-  KEY `fk_transporter_vehicle_need_id` (`need_id`),
-  KEY `fk_donated_vehicle_transporter_id` (`transporter_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `shipment`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `stock_item`
---
-
-CREATE TABLE IF NOT EXISTS `stock_item` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `donator_id` bigint(20) NOT NULL,
-  `item_id` bigint(20) NOT NULL,
-  `amount` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `fk_stock_item_donator_id` (`donator_id`),
-  KEY `fk_stock_item_item_id` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `stock_item`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `stock_vehicle`
---
-
-CREATE TABLE IF NOT EXISTS `stock_vehicle` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `transporter_id` bigint(20) NOT NULL,
-  `vehicle_id` bigint(20) NOT NULL,
-  `amount` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `fk_stock_vehicle_transporter_id` (`transporter_id`),
-  KEY `fk_stock_vehicle_vehicle_id` (`vehicle_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `stock_vehicle`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `transporter`
---
-
-CREATE TABLE IF NOT EXISTS `transporter` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `fullname` varchar(255) NOT NULL,
-  `tel` varchar(255) DEFAULT NULL,
-  `location_id` bigint(20) DEFAULT NULL,
-  `detail` text,
-  PRIMARY KEY (`id`),
-  KEY `fk_transporter_location_id` (`location_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `transporter`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(128) NOT NULL,
-  `password` varchar(128) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `user`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `vehicle`
---
-
-CREATE TABLE IF NOT EXISTS `vehicle` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `vehicle`
---
-
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `donated_item`
---
-ALTER TABLE `donated_item`
-  ADD CONSTRAINT `fk_donated_item_donator_id` FOREIGN KEY (`donator_id`) REFERENCES `donator` (`id`),
-  ADD CONSTRAINT `fk_donated_item_item_id` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
-  ADD CONSTRAINT `fk_donated_item_need_id` FOREIGN KEY (`need_id`) REFERENCES `need` (`id`);
-
---
--- Constraints for table `donator`
---
-ALTER TABLE `donator`
-  ADD CONSTRAINT `fk_donator_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
-
---
--- Constraints for table `item`
---
-ALTER TABLE `item`
-  ADD CONSTRAINT `fk_item_category_item_id` FOREIGN KEY (`category_item_id`) REFERENCES `category_item` (`id`);
-
---
--- Constraints for table `need`
---
-ALTER TABLE `need`
-  ADD CONSTRAINT `fk_need_request_id` FOREIGN KEY (`request_id`) REFERENCES `request` (`id`);
-
---
--- Constraints for table `request`
---
-ALTER TABLE `request`
-  ADD CONSTRAINT `fk_request_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
-
---
--- Constraints for table `request_coordinator`
---
-ALTER TABLE `request_coordinator`
-  ADD CONSTRAINT `fk_request_coordinator_request_id` FOREIGN KEY (`request_id`) REFERENCES `request` (`id`),
-  ADD CONSTRAINT `fk_request_coordinator_coordinator_id` FOREIGN KEY (`coordinator_id`) REFERENCES `coordinator` (`id`);
-
---
--- Constraints for table `shipment`
---
-ALTER TABLE `shipment`
-  ADD CONSTRAINT `fk_donated_vehicle_transporter_id` FOREIGN KEY (`transporter_id`) REFERENCES `transporter` (`id`),
-  ADD CONSTRAINT `fk_donated_vehicle_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`),
-  ADD CONSTRAINT `fk_donated_vehicle_need_id` FOREIGN KEY (`need_id`) REFERENCES `need` (`id`);
-
---
--- Constraints for table `stock_item`
---
-ALTER TABLE `stock_item`
-  ADD CONSTRAINT `fk_stock_item_donator_id` FOREIGN KEY (`donator_id`) REFERENCES `donator` (`id`),
-  ADD CONSTRAINT `fk_stock_item_item_id` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`);
-
---
--- Constraints for table `stock_vehicle`
---
-ALTER TABLE `stock_vehicle`
-  ADD CONSTRAINT `fk_stock_vehicle_transporter_id` FOREIGN KEY (`transporter_id`) REFERENCES `transporter` (`id`),
-  ADD CONSTRAINT `fk_stock_vehicle_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`);
-
---
--- Constraints for table `transporter`
---
-ALTER TABLE `transporter`
-  ADD CONSTRAINT `fk_transporter_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
