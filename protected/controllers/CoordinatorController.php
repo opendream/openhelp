@@ -38,9 +38,9 @@ class CoordinatorController extends Controller
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
+			// array('deny',  // deny all users
+			// 	'users'=>array('*'),
+			// ),
 		);
 	}
 
@@ -146,6 +146,16 @@ class CoordinatorController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+	public function actionAutocomplete() {
+			$res =array();
+		
+			$qname = $_GET['name'];
+			$qtxt ="SELECT fullname FROM coordinator WHERE fullname LIKE '%{$qname}%'";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryColumn();
+			echo CJSON::encode($res);
+			Yii::app()->end();
 	}
 
 	/**
