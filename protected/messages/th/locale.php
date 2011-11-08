@@ -15,4 +15,17 @@ return array(
   'REQUEST_STATUS_PROCESS' => 'ดำเนินการ',
   'REQUEST_STATUS_CLOSED' => 'เสร็จสิ้น',
   'REQUEST_STATUS_CANCELLED' => 'ยกเลิก',
+
+  /*
+  * Menu
+  */
+  'home' => 'หน้าหลัก',
+  'about' => 'เกี่ยวกับ',
+  'request' => 'ความต้องการ',
+
+  /*
+  * User Management
+  */
+  'login' => 'เข้าสู่ระบบ',
+  'logout' => 'ออกจากระบบ',
 );
