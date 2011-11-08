@@ -147,9 +147,11 @@ class CoordinatorController extends Controller
 			'model'=>$model,
 		));
 	}
+	/**
+	 * Coordination autocomplete
+	 */
 	public function actionAutocomplete() {
 			$res =array();
-		
 			$qname = $_GET['name'];
 			$qtxt ="SELECT fullname FROM coordinator WHERE fullname LIKE '%{$qname}%'";
 			$command =Yii::app()->db->createCommand($qtxt);
