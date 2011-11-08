@@ -14,16 +14,44 @@ $this->menu=array(
 ?>
 
 <h1>View Request #<?php echo $model->id; ?></h1>
+<?php
+$coordinator = $this->renderPartial('_coordinators', array('model'=>$model), true);
+$needs = $this->renderPartial('_needs', array('model'=>$model), true);
+
+$attributes = array(
+  array(
+    'label' => Yii::t('locale', 'Location'),
+    'type' => 'raw',
+    'value' => LocationHtml::locationView($model->location_id)
+  ),
+  array(
+    'label' => Yii::t('locale', 'Last updated'),
+    'value' => $model->last_updated
+  ),
+  array(
+    'label' => Yii::t('locale', 'Date created'),
+    'value' => $model->date_created
+  ),
+  array(
+    'label' => Yii::t('locale', 'Detail'),
+    'type' => 'raw',
+    'value' => $model->detail
+  ),
+  array(
+    'label' => Yii::t('locale', 'Coordinators'),
+    'type' => 'raw',
+    'value' => $coordinator
+  ),
+  array(
+    'label' => Yii::t('locale', 'Needs/Helps'),
+    'type' => 'raw',
+    'value' => $needs
+  ),
+);
+
+?>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'date_created',
-		'last_updated',
-		'location.level0',
-		'location.level1',
-		'location.level2',
-		'detail',
-	),
+	'attributes'=>$attributes
 )); ?>
