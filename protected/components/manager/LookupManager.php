@@ -18,6 +18,7 @@ class LookupManager
   }
   
   public static function getRequestStatus($status)
+  {
     return self::$_items[$status];
   }
   

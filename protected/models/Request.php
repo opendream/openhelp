@@ -43,7 +43,7 @@ class Request extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('date_created, last_updated', 'required'),
+			//array('date_created, last_updated', 'required'),
 			array('status', 'numerical', 'integerOnly'=>true),
 			array('location_id', 'length', 'max'=>20),
 			array('detail', 'safe'),
