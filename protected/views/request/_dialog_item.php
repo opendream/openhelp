@@ -7,7 +7,7 @@
             'autoOpen'=>false,
             'modal'=>true,
             'buttons'=>array(
-                'Add Item'=>'js:addItem',
+                'Add Item'=>'js:addRItem',
                 'Cancel'=>'js:function(){ $(this).dialog("close");}',
             ),
         ),
@@ -24,9 +24,8 @@
 <script type="text/javascript" >
     function addRItem() {
         $(this).dialog("close");
-        var inserted_val = $("#item-name-input").val();
-        $("item-name-input").html("");
-        $('.add-coordinator').before("<div class='coordinator-item'> <input name='Request[coordinators][]' type='text' value = '"+ inserted_val +"'/> <span class='detete'><a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a></span></div>");
+        var inserted_val = $("#Request_id").val();
+        $('.items').append("<div>"+inserted_val.toString()+"</div>");
     }
     $('.coordinator-item-delete').live('click', function(e) {
         e.preventDefault();
