@@ -4,6 +4,11 @@ return array(
   * Global
   */
   '- Select -' => '- เลือก -',
+  'Last Updated' => 'สรุปข้อมูลวันที่',
+  'Date Created' => 'ข้อมูล ณ วันที่',
+  'Detail' => 'รายละเอียด', 
+  'Coordinators' => 'ผู้ประสานงานในพื้นที่',
+  'Needs' => 'ความต้องการ/ความช่วยเหลือ',
    
   /*
   * Location
