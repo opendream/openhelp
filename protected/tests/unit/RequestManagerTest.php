@@ -53,4 +53,23 @@ class RequestManagerTest extends CDbTestCase
     $this->assertNotNull($request->findCoordinator($attrs));
   }
     
+  function testUpdate()
+  {
+    $request = new RequestManager;
+    $attr1 = array();
+
+    $attr1['detail']         = 'update';   // Request
+    $attr1['location_id']    = 1;       // Location
+    $attr1['coordinators'][] = 'นายมา';   // Request_coordinator
+    $attr1['coordinators'][] = 'นายมี';    
+    $attr1['status']    = 0;       // Status
+
+    $this->assertNotNull($request->update(Request::model()->findByPk(2), $attr1));    
+  }
+
+  function testDelete()
+  {
+    $request = new RequestManager;
+    $this->assertTrue($request->delete(Request::model()->findByPk(2)));    
+  }
 }

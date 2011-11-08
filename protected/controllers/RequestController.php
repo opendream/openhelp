@@ -97,8 +97,11 @@ class RequestController extends Controller
 
 		if(isset($_POST['Request']))
 		{
-			$model->attributes=$_POST['Request'];
-			if($model->save())
+
+			$reqManager = new RequestManager;
+			$model = $reqManager->update($model, $_POST['Request']);
+
+			if($model->id!=null)
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
