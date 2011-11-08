@@ -14,4 +14,4 @@ $this->menu=array(
 
 <?php echo $this->renderPartial('_dialog', array('model'=>$model)); ?>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model, 'locationModel'=>$locationModel, 'firstLevel' => $firstLevel)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

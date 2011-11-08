@@ -3,45 +3,52 @@ class FormsController extends Controller
 {
   public $layout='//layouts/empty';
   
-  public function actionLocationlistbox($level, $value)
+  public function actionLocationlistbox($model)
   {
-	  $level = str_replace('level', '', $level);
-	  $current = 'level'. ($level);
-	  $children = 'level'. ($level+1);
+    $model = new $model;
+
+    $field = isset($_GET['field'])? $_GET['field']:'locaion_id';
+    
+    $query = $_GET['query'];
+	  $current = key($query);
 	  
-	  $address = Yii::app()->params['location'];
-	  $firstLevelCol = $address[0];
-	  $endLevelCol = end($address);
+	  $childrenTree = explode(' ', $query[$current]['childrenLevels']);
 	  
-	  if ($current == $endLevelCol) {
-	   $qtxt = "SELECT id FROM location WHERE ";
+	  $children = array_shift($childrenTree);
+	  // For end of level select id
+	  $children = $children? $children: 'id';
+	  
+	  $queryTree = array_reverse(array_diff(Yii::app()->params['location'], $childrenTree));
+	  
+
+	  $where = array();
+	  foreach ($query as $key => $value) {
+	    $where[] = $key." = '".$value['value']."'";
 	  }
-	  else {
-  	  $qtxt = "SELECT DISTINCT $firstLevelCol FROM location";
-  		$command = Yii::app()->db->createCommand($qtxt);
-  		$firstLevelRows = $command->queryAll();
-  		foreach ($firstLevelRows as $row) {
-  		  $firstLevel[$row[$firstLevelCol]] = $row[$firstLevelCol];
-  		}
-  			  
-  	  $qtxt = "SELECT $children FROM location WHERE $current = '$value'";
-  		$command = Yii::app()->db->createCommand($qtxt);
-  		$rows = $command->queryAll();
-  		$easyRows = array();
-  		foreach ($rows as $row) {
-  		  $easyRows[$row[$children]] = $row[$children];
-  		}
-		
-  		$model = new Request;
-    	$locationModel = new Location;
-    	$this->render('locationlistbox', array(
-    	  'model' => $model,
-    	  'locationModel' => $locationModel,
-    	  'firstLevel' => $firstLevel,
-    	  'address' => $children,
-    	  'rows' => $easyRows,
-    	));
-	  }
+	  $where = implode(' AND ', $where);
+	  
+	  $qtxt = "SELECT $children FROM location WHERE $where";
+
+		$command = Yii::app()->db->createCommand($qtxt);
+		$rows = $command->queryAll();
+		$easyRows = array();
+		foreach ($rows as $row) {
+		  $easyRows[$row[$children]] = $row[$children];
+		}
+  	
+  	$locationModel = new Location;
+  	$this->render('locationlistbox', array(
+  	  'model' => $model,
+  	  'field' => $field,
+  	  'locationModel' => $locationModel,
+  	  'current' => $children,
+  	  'rows' => $easyRows,
+  	  'childrenTree' => $childrenTree,
+  	  'queryTree' => $queryTree,
+  	  'children' => empty($childrenTree)? 'id': $childrenTree[0],
+  	));
+	
   
   }
+  
 }
