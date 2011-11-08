@@ -104,4 +104,25 @@ class Request extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	protected function beforeValidate()
+	{
+		if($this->getIsNewRecord())
+			$this->date_created = time();
+		$this->last_updated = time();
+		return true;
+	}
+
+	public function behaviors()
+	{
+		return array(
+			'timestamps' => array(
+			'class' => 'zii.behaviors.CTimestampBehavior',
+			'createAttribute' => 'date_created',
+			'updateAttribute' => 'last_updated',
+			'setUpdateOnCreate' => true,
+			),
+		);
+	}
+
 }
