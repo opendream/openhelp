@@ -151,13 +151,12 @@ class CoordinatorController extends Controller
 	 * Coordination autocomplete
 	 */
 	public function actionAutocomplete() {
-			$res =array();
-			$qname = $_GET['name'];
-			$qtxt ="SELECT fullname FROM coordinator WHERE fullname LIKE '%{$qname}%'";
-			$command =Yii::app()->db->createCommand($qtxt);
-			$res =$command->queryColumn();
+			$res = array();
+			$term = $_GET['term'];
+			$qtxt = "SELECT fullname FROM coordinator WHERE fullname LIKE '%{$term}%'";
+			$command = Yii::app()->db->createCommand($qtxt);
+			$res = $command->queryColumn();
 			echo CJSON::encode($res);
-			Yii::app()->end();
 	}
 
 	/**
