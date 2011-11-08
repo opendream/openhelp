@@ -13,7 +13,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('location_id')); ?>:</b>
-	<?php echo CHtml::encode($data->location_id); ?>
+	<?php echo LocationHtml::locationView($data->location_id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('detail')); ?>:</b>

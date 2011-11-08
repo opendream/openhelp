@@ -1,6 +1,11 @@
 <?php
 return array(
   /*
+  * Global
+  */
+  '- Select -' => '- เลือก -',
+   
+  /*
   * Location
   */
   'level0' => 'จังหวัด',
