@@ -6,6 +6,7 @@
             'title'=>'Add New Item',
             'autoOpen'=>false,
             'modal'=>true,
+            'class' => 'add-obj',
             'buttons'=>array(
                 'Add Item'=>'js:addItem',
                 'Cancel'=>'js:function(){ $(this).dialog("close");}',
@@ -25,7 +26,7 @@
         console.log($('#request-form'));
         var inserted_val = $("#item-name-input").val();
         $("item-name-input").html("");
-        $('.coordinator-list').append("<div class='coordinator-item'> <input name='Request[coordinators][]' type='text' value = '"+ inserted_val +"'/> <span class='detete'><a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a></span></div>");
+        $('.add-coordinator').before("<div class='coordinator-item'> <input name='Request[coordinators][]' type='text' value = '"+ inserted_val +"'/> <span class='detete'><a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a></span></div>");
     }
     $('.coordinator-item-delete').live('click', function(e) {
         e.preventDefault();
