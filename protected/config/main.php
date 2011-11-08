@@ -18,6 +18,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 		'application.components.manager.*',
+		'application.components.odhtml.*',
 	),
 
 	'modules'=>array(
