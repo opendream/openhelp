@@ -3,4 +3,5 @@
 		'name'=>'item-name',
 		'id' => 'item-name-input',
 		'source'=>array('ac1', 'ac2', 'ac3'),
+		'source'=>$this->createUrl('coordinator/autocomplete'),
 	));
