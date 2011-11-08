@@ -12,8 +12,9 @@ class RequestManager
     if (isset($model)) {
       $request = new Request;
       $request->detail = $model['detail'];
-      $request->date_created = time();
-      $request->last_updated = time();
+      //$request->date_created = time();
+      //$request->last_updated = time();
+      $request->status = Request::REQUEST_STATUS_OPEN;
       $request->location_id = $model['location_id'];
 
       if ($request->save()) {      
@@ -90,5 +91,15 @@ class RequestManager
     // $coordinator->tel = $model['tel'];
     // $coordinator->detail = $model['detail'];
     return $coordinator->save() ? $coordinator : false;
+  }
+
+  function insertNeed($reqId, $param)
+  {
+    $need = new Coordinator;
+    $need->name = $param['name'];
+    $need->amount = $param['amount'];
+    $need->detail = $param['detail'];
+    $need->request_id = $reqId;
+    return $need->save() ? $need : false;
   }
 }
