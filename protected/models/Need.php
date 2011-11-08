@@ -9,6 +9,8 @@
  * @property integer $amount
  * @property string $detail
  * @property string $request_id
+ * @property string $item_id
+ * @property integer $status
  *
  * The followings are the available model relations:
  * @property DonatedItem[] $donatedItems
@@ -42,14 +44,14 @@ class Need extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, request_id', 'required'),
-			array('amount', 'numerical', 'integerOnly'=>true),
+			array('name, request_id, item_id, status', 'required'),
+			array('amount, status', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
-			array('request_id', 'length', 'max'=>20),
+			array('request_id, item_id', 'length', 'max'=>20),
 			array('detail', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, amount, detail, request_id', 'safe', 'on'=>'search'),
+			array('id, name, amount, detail, request_id, item_id, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +80,8 @@ class Need extends CActiveRecord
 			'amount' => 'Amount',
 			'detail' => 'Detail',
 			'request_id' => 'Request',
+			'item_id' => 'Item',
+			'status' => 'Status',
 		);
 	}
 
@@ -97,6 +101,8 @@ class Need extends CActiveRecord
 		$criteria->compare('amount',$this->amount);
 		$criteria->compare('detail',$this->detail,true);
 		$criteria->compare('request_id',$this->request_id,true);
+		$criteria->compare('item_id',$this->item_id,true);
+		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -33,6 +33,18 @@
 		<?php echo $form->error($model,'request_id'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'item_id'); ?>
+		<?php echo $form->textField($model,'item_id',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'item_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'status'); ?>
+		<?php echo $form->textField($model,'status'); ?>
+		<?php echo $form->error($model,'status'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
