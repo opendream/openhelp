@@ -21,7 +21,7 @@ class RequestManager
       
       if(isset($model['coordinators'])){
         if ($request->save()) {      
-        // Find coordinator
+          // Find coordinator
         
           $coordinators = $model['coordinators'];
           $coordinatorsIds = $this->getCoordinators($coordinators);
@@ -49,9 +49,14 @@ class RequestManager
       $model->status = $params['status'];
       $model->location_id = $params['location_id'];
 
-
       if ($model->save()) {      
         if(isset($params['coordinators'])){
+
+          $req_coors = $this->findRequestCoordinators($model->id);
+          foreach ($req_coors as $req_coor) {
+            $req_coor->delete();
+          }
+
           // Find coordinator
           $coordinators = $params['coordinators'];
           $coordinatorsIds = $this->getCoordinators($coordinators);
