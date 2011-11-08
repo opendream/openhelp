@@ -52,12 +52,14 @@ CREATE TABLE `request_coordinator` (
 CREATE TABLE `need` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   
-  `name` varchar(255) NOT NULL,
+  #`name` varchar(255) NOT NULL,
+  `item_id` bigint(20) NOT NULL,
   `amount` int(11) NOT NULL DEFAULT 0,
   `detail` text,
   `request_id` bigint(20) NOT NULL,
   `status` int NOT NULL,
   PRIMARY KEY (`id`),
+  KEY `fk_need_item_id` (`item_id`),
   KEY `fk_need_request_id` (`request_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -165,6 +167,7 @@ ALTER TABLE `request_coordinator`
   
   
 ALTER TABLE `need`
+  ADD CONSTRAINT `fk_need_item_id` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
   ADD CONSTRAINT `fk_need_request_id` FOREIGN KEY (`request_id`) REFERENCES `request` (`id`);
   
 # Donate ================================================================================================================
