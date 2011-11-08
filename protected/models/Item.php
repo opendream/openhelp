@@ -94,4 +94,14 @@ class Item extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	/**
+	 * Retrieves a list of categoryItem options.
+	 *
+	 * @return array of 'value' => 'text'
+	 */
+	public function getCategoryOptions() {
+		return CHtml::listData(CategoryItem::model()->findAll(),'id','name');
+	}
+
 }

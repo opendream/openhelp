@@ -12,7 +12,13 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
+	<div class="coordinator-list">
+		<div class="coordinator-lable">
+			<b>ผู้ประสานงาน</b>
+		</div><!-- / -->
+	    <?php echo CHtml::link('เพิ่มผู้ประสานงาน', '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;',)); ?>
+		
+	</div><!-- / -->
 	<div class="row">
 		<?php echo $form->textField($model,'location_id',array('size'=>20,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'location_id'); ?>
