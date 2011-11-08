@@ -73,7 +73,7 @@ class RequestController extends Controller
 			$reqManager = new RequestManager;
 			$model = $reqManager->create($_POST['Request']);
 
-			if($model!=false){
+			if($model->id!=null){
 				Yii::trace('request id: '.$model->id, 'example');
 				$this->redirect(array('view','id'=>$model->id));
 			}

@@ -9,32 +9,38 @@ class RequestManager
   */
   function create($model)
   {
+    $request = new Request;
     if (isset($model)) {
-      $request = new Request;
+      
       $request->detail = $model['detail'];
       //$request->date_created = time();
       //$request->last_updated = time();
       $request->status = Request::REQUEST_STATUS_OPEN;
+
       $request->location_id = $model['location_id'];
-
-      if ($request->save()) {      
+      if($model['location_id']=='')
+        $request->location_id = null;
+      
+      if(isset($model['coordinators'])){
+        if ($request->save()) {      
         // Find coordinator
-        $coordinators = $model['coordinators'];
-        $coordinatorsIds = $this->getCoordinatorId($coordinators);
+        
+          $coordinators = $model['coordinators'];
+          $coordinatorsIds = $this->getCoordinatorId($coordinators);
 
-        foreach ($coordinatorsIds as $cId) {
-          // Bridge table
-          $rc = new RequestCoordinator;
-          $rc->request_id = $request->id;
-          $rc->coordinator_id = $cId->id;
-          $rc->save();
+          foreach ($coordinatorsIds as $cId) {
+            // Bridge table
+            $rc = new RequestCoordinator;
+            $rc->request_id = $request->id;
+            $rc->coordinator_id = $cId->id;
+            $rc->save();
+          }
         }
-
         // Return Request Model
-        return $request;
+        //return $request;
       }
     }
-    return false;
+    return $request;
   }
 
   function getCoordinatorId($coordinators)
