@@ -16,7 +16,7 @@
 		<div class="coordinator-lable">
 			<b>ผู้ประสานงาน</b>
 		</div><!-- / -->
-	    <?php echo CHtml::link('เพิ่มผู้ประสานงาน', '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;',)); ?>
+	    <?php echo CHtml::link('เพิ่มผู้ประสานงาน', '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
 		
 	</div><!-- / -->
 	<div class="row">
