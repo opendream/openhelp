@@ -7,17 +7,16 @@ class RequestManager
   /**
   * Create a request
   */
-  function actionCreate($model)
+  function create($model)
   {
-    $request = new Request;
     if (isset($model)) {
+      $request = new Request;
       $request->detail = $model['detail'];
       $request->date_created = time();
       $request->last_updated = time();
       $request->location_id = $model['location_id'];
 
-      if ($request->save())
-      {      
+      if ($request->save()) {      
         // Find coordinator
         $coordinators = $model['coordinators'];
         $coordinatorsIds = $this->getCoordinatorId($coordinators);
@@ -62,12 +61,15 @@ class RequestManager
     return $coordinatorIds;
   }
   
-  function getLocation($model)
+  /*
+  * find a location $param = location detail
+  */
+  function findLocation($param)
   { 
-    if (isset($model)) {
+    if (isset($param)) {
       $criteria = new CDbCriteria;
-      $locations = Location::model()->find($criteria);
-      return $locations;
+      $location = Location::model()->find($criteria);
+      return $location;
     }
   }
   

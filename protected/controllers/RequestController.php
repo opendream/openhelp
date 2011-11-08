@@ -62,20 +62,21 @@ class RequestController extends Controller
 	public function actionCreate()
 	{
 		$model=new Request;
-
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Request']))
 		{
-			$model->attributes=$_POST['Request'];
+			//$model->attributes=$_POST['Request'];
 
 			// Request Manager
 			$reqManager = new RequestManager;
-			$model = $reqManager->actionCreate($_POST['Request']);
+			$model = $reqManager->create($_POST['Request']);
 
-			if($model!=false)
+			if($model!=false){
+				Yii::trace('request id: '.$model->id, 'example');
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 		
 		// Generate Location Form
@@ -102,7 +103,6 @@ class RequestController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
