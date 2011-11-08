@@ -42,9 +42,20 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'detail',
-		'location_id',
+		array(
+		 	'header' => Yii::t('locale', 'level0'),
+		 	'value' => '$data->location->level0',
+		 	'filter' => true,
+		),
+		array(
+		 	'header' => Yii::t('locale', 'level1'),
+		 	'value' => '$data->location->level1',
+		),
+		array(
+		 	'header' => Yii::t('locale', 'level2'),
+		 	'value' => '$data->location->level2',
+		),
 		'date_created',
-		'status',
 		array(
 		  'name' => 'status',
 		  'value' => 'Yii::t("locale",LookupManager::getRequestStatus($data->status))',

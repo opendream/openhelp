@@ -18,6 +18,10 @@
  */
 class Request extends CActiveRecord
 {
+	const REQUEST_STATUS_OPEN = 0;
+	const REQUEST_STATUS_PROCESS = 1;
+    const REQUEST_STATUS_CLOSED = 2;
+    const REQUEST_STATUS_CANCELLED = 3;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Request the static model class
