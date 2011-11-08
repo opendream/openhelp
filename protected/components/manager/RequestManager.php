@@ -13,8 +13,6 @@ class RequestManager
     if (isset($model)) {
       
       $request->detail = $model['detail'];
-      //$request->date_created = time();
-      //$request->last_updated = time();
       $request->status = Request::REQUEST_STATUS_OPEN;
 
       $request->location_id = $model['location_id'];
@@ -23,17 +21,14 @@ class RequestManager
       
       if(isset($model['coordinators'])){
         if ($request->save()) {      
-        // Find coordinator
+          // Find coordinator
         
           $coordinators = $model['coordinators'];
-          $coordinatorsIds = $this->getCoordinatorId($coordinators);
+          $coordinatorsIds = $this->getCoordinators($coordinators);
 
           foreach ($coordinatorsIds as $cId) {
             // Bridge table
-            $rc = new RequestCoordinator;
-            $rc->request_id = $request->id;
-            $rc->coordinator_id = $cId->id;
-            $rc->save();
+            $this->insertRequestCoordinator($request->id, $cId->id);
           }
         }
         // Return Request Model
@@ -43,7 +38,80 @@ class RequestManager
     return $request;
   }
 
-  function getCoordinatorId($coordinators)
+  /*
+  * Update a request 
+  * an argument $model (CActiveRecord) 
+  */
+  function update($model, $params)
+  {
+    if (isset($model)) {
+      $model->detail = $params['detail'];
+      $model->status = $params['status'];
+      $model->location_id = $params['location_id'];
+
+      if ($model->save()) {      
+        if(isset($params['coordinators'])){
+
+          $req_coors = $this->findRequestCoordinators($model->id);
+          foreach ($req_coors as $req_coor) {
+            $req_coor->delete();
+          }
+
+          // Find coordinator
+          $coordinators = $params['coordinators'];
+          $coordinatorsIds = $this->getCoordinators($coordinators);
+
+          foreach ($coordinatorsIds as $cId) {
+            // Bridge table
+            $tmp = $this->findRequestCoordinator($model->id, $cId->id);
+
+            if ($tmp==NULL) {
+              $this->insertRequestCoordinator($model->id, $cId->id);
+            }
+          }
+        }
+      }
+    }
+    // Return Request Model
+    return $model;
+  }
+
+  function delete($model)
+  {
+    if(isset($model->coordinators)){  
+      $req_coors = $this->findRequestCoordinators($model->id);
+
+      foreach ($req_coors as $req_coor) {
+        $req_coor->delete();
+      }
+    }
+    return $model->delete();
+  }
+
+  function insertRequestCoordinator($requestId,$coordinatorId)
+  {
+    $rc = new RequestCoordinator;
+    $rc->request_id = $requestId;
+    $rc->coordinator_id = $coordinatorId;
+    return $rc->save();
+  }
+
+  function findRequestCoordinators($requestId)
+  {
+    $criteria = new CDbCriteria;
+    $criteria->compare('request_id',$requestId);
+    return RequestCoordinator::model()->findAll($criteria);
+  } 
+
+  function findRequestCoordinator($requestId,$coordinatorId)
+  {
+    $criteria = new CDbCriteria;
+    $criteria->compare('request_id',$requestId);
+    $criteria->compare('coordinator_id',$coordinatorId);
+    return RequestCoordinator::model()->find($criteria);
+  }
+
+  function getCoordinators($coordinators)
   {
     // Get Coordinator Id 
     // Coordinator Wrapper
@@ -64,7 +132,6 @@ class RequestManager
         }
       }
     }
-
     return $coordinatorIds;
   }
   
