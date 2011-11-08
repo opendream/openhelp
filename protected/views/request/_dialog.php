@@ -3,31 +3,32 @@
     $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
         'id'=>'addCoordinators',
         'options'=>array(
-            'title'=>'Add New Item',
+            'name' => 'Coordinator[fullname]',
+            'title'=> Yii::t('locale', 'Add Coordinator'),
             'autoOpen'=>false,
             'modal'=>true,
             'buttons'=>array(
-                'Add Item'=>'js:addItem',
+                'Add Item'=>'js:addCoordinator',
                 'Cancel'=>'js:function(){ $(this).dialog("close");}',
             ),
         ),
     ));
-    echo '<div class="dialog_input">'.
+    echo '<div class="add_coordinator_dialog">'.
             '<div class= "item-wrapper">'.
             '<span>fullname: </span>'.
                 $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
             '</div>'.
             '<div class= "item-wrapper">'.
             '<span>position: </span>'.
-                $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
+                CHtml::activeTextField(Coordinator::model(), 'position', array()).
             '</div>'.
             '<div class= "item-wrapper">'.
             '<span>tel: </span>'.
-                $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
+                CHtml::activeTextField(Coordinator::model(), 'tel', array()).
             '</div>'.
             '<div class= "item-wrapper">'.
             '<span>detail: </span>'.
-                $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
+                CHtml::activeTextArea(Coordinator::model(), 'detail', array('row' => 6)).
             '</div>'.
          '</div>';
     $this->endWidget('zii.widgets.jui.CJuiDialog');
@@ -35,7 +36,7 @@
 ?>
 
 <script type="text/javascript">
-    function addItem() {
+    function addCoordinator() {
         $(this).dialog("close");
         var inserted_val = $("#item-name-input").val();
         $("item-name-input").html("");
