@@ -47,7 +47,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'status',
 		array(
 		  'name' => 'status',
-		  'value' => 'LookupManager::getRequestStatus($data->status)',
+		  'value' => 'Yii::t("locale",LookupManager::getRequestStatus($data->status))',
 		  'filter' => LookupManager::requestStatus(),
 		),
 		array(

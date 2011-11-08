@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'category_item_id'); ?>
-		<?php echo $form->dropDownList($model,'category_item_id', $model->getCategoryOptions()); ?>		
+		<?php echo $form->dropDownList($model,'category_item_id',$model->getCategoryOptions(), array('prompt' => Yii::t('locale', '- Select -'))); ?>
 		<?php echo $form->error($model,'category_item_id'); ?>
 	</div>
 

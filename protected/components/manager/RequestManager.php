@@ -7,63 +7,88 @@ class RequestManager
   /**
   * Create a request
   */
-  function actionCreate($model,$coordinatorArg)
+  function create($model)
   {
-    $request = new Request;
     if (isset($model)) {
-      $request->attributes = $model->attributes;
-      if ($request->save())
-      {      
+      $request = new Request;
+      $request->detail = $model['detail'];
+      $request->date_created = time();
+      $request->last_updated = time();
+      $request->location_id = $model['location_id'];
+
+      if ($request->save()) {      
         // Find coordinator
-        $coordinator = $this->findCoordinator($coordinatorArg);
-      
-        if (!isset($coordinator)) {
-          // Create if does not exist
-          $coordinator = new Coordinator;
-          $coordinator->fullname = $coordinatorArg['fullname'];
-          $coordinator->position = $coordinatorArg['position'];
-          $coordinator->tel      = $coordinatorArg['tel'];
-          $coordinator->detail   = $coordinatorArg['detail'];
-          $coordinator->save();
+        $coordinators = $model['coordinators'];
+        $coordinatorsIds = $this->getCoordinatorId($coordinators);
+
+        foreach ($coordinatorsIds as $cId) {
+          // Bridge table
+          $rc = new RequestCoordinator;
+          $rc->request_id = $request->id;
+          $rc->coordinator_id = $cId->id;
+          $rc->save();
         }
-      
-        // Bridge table
-        $rc = new RequestCoordinator;
-        $rc->request_id = $request->id;
-        $rc->coordinator_id = $coordinator->id;
-        $rc->save();
-      
-        return $request->id;
+
+        // Return Request Model
+        return $request;
       }
     }
+    return false;
+  }
+
+  function getCoordinatorId($coordinators)
+  {
+    // Get Coordinator Id 
+    // Coordinator Wrapper
+    // array($id, $coordinator_name)
+    $coordinatorIds = array();
+
+    foreach ($coordinators as $coordinator) 
+    {
+      // append a coordinator Id 
+      if ($tmp = $this->findCoordinator($coordinator)) {
+        $coordinatorIds[]=$tmp;
+      } else {
+        // Create one if does not exist
+        $insCoordinator = $this->insertCoordinator($coordinator);
+
+        if ($insCoordinator) {
+          $coordinatorIds[]=$insCoordinator;
+        }
+      }
+    }
+
+    return $coordinatorIds;
   }
   
-  function getLocation($model)
+  /*
+  * find a location $param = location detail
+  */
+  function findLocation($param)
   { 
-    if (isset($model)) {
+    if (isset($param)) {
       $criteria = new CDbCriteria;
-      $locations = Location::model()->find($criteria);
-      return $locations;
+      $location = Location::model()->find($criteria);
+      return $location;
     }
   }
   
-  function findCoordinator($model)
+  function findCoordinator($param)
   {
     $criteria = new CDbCriteria;
-    $criteria->compare('fullname',$model['fullname']);
-    $criteria->compare('position',$model['position']);
-    $criteria->compare('tel',$model['tel']);
+    $criteria->compare('fullname',$param);
+
     $coordinator = Coordinator::model()->find($criteria);
     return $coordinator;
   }
   
-  function insertCoordinator($model)
+  function insertCoordinator($param)
   {
     $coordinator = new Coordinator;
-    $coordinator->fullname = $model['fullname'];
-    $coordinator->position = $model['position'];
-    $coordinator->tel = $model['tel'];
-    $coordinator->detail = $model['detail'];
-    return $coordinator->save();
+    $coordinator->fullname = $param;
+    // $coordinator->position = $model['position'];
+    // $coordinator->tel = $model['tel'];
+    // $coordinator->detail = $model['detail'];
+    return $coordinator->save() ? $coordinator : false;
   }
 }

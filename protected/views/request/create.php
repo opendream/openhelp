@@ -12,4 +12,6 @@ $this->menu=array(
 
 <h1>Create Request</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_dialog', array('model'=>$model)); ?>
+
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'locationModel'=>$locationModel, 'firstLevel' => $firstLevel)); ?>

@@ -43,7 +43,7 @@ class Request extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('date_created, last_updated', 'required'),
+			// array('date_created, last_updated', 'required'),
 			array('status', 'numerical', 'integerOnly'=>true),
 			array('location_id', 'length', 'max'=>20),
 			array('detail', 'safe'),
@@ -104,4 +104,25 @@ class Request extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	protected function beforeValidate()
+	{
+		if($this->getIsNewRecord())
+			$this->date_created = time();
+		$this->last_updated = time();
+		return true;
+	}
+
+	public function behaviors()
+	{
+		return array(
+			'timestamps' => array(
+			'class' => 'zii.behaviors.CTimestampBehavior',
+			'createAttribute' => 'date_created',
+			'updateAttribute' => 'last_updated',
+			'setUpdateOnCreate' => true,
+			),
+		);
+	}
+
 }
