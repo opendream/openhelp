@@ -5,15 +5,15 @@
  *
  * The followings are the available columns in table 'need':
  * @property string $id
- * @property string $name
+ * @property string $item_id
  * @property integer $amount
  * @property string $detail
  * @property string $request_id
- * @property string $item_id
  * @property integer $status
  *
  * The followings are the available model relations:
  * @property DonatedItem[] $donatedItems
+ * @property Item $item
  * @property Request $request
  * @property Shipment[] $shipments
  */
@@ -44,14 +44,13 @@ class Need extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, request_id, item_id, status', 'required'),
+			array('item_id, request_id, status', 'required'),
 			array('amount, status', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>255),
-			array('request_id, item_id', 'length', 'max'=>20),
+			array('item_id, request_id', 'length', 'max'=>20),
 			array('detail', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, amount, detail, request_id, item_id, status', 'safe', 'on'=>'search'),
+			array('id, item_id, amount, detail, request_id, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,6 +63,7 @@ class Need extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'donatedItems' => array(self::HAS_MANY, 'DonatedItem', 'need_id'),
+			'item' => array(self::BELONGS_TO, 'Item', 'item_id'),
 			'request' => array(self::BELONGS_TO, 'Request', 'request_id'),
 			'shipments' => array(self::HAS_MANY, 'Shipment', 'need_id'),
 		);
@@ -76,11 +76,10 @@ class Need extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
+			'item_id' => 'Item',
 			'amount' => 'Amount',
 			'detail' => 'Detail',
 			'request_id' => 'Request',
-			'item_id' => 'Item',
 			'status' => 'Status',
 		);
 	}
@@ -97,11 +96,10 @@ class Need extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('name',$this->name,true);
+		$criteria->compare('item_id',$this->item_id,true);
 		$criteria->compare('amount',$this->amount);
 		$criteria->compare('detail',$this->detail,true);
 		$criteria->compare('request_id',$this->request_id,true);
-		$criteria->compare('item_id',$this->item_id,true);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(

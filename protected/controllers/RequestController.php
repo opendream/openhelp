@@ -97,8 +97,10 @@ class RequestController extends Controller
 
 		if(isset($_POST['Request']))
 		{
-			$model->attributes=$_POST['Request'];
-			if($model->save())
+			$reqManager = new RequestManager;
+			$model = $reqManager->update($model, $_POST['Request']);
+
+			if($model->id!=null)
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -117,7 +119,11 @@ class RequestController extends Controller
 		if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+			$model = $this->loadModel($id);
+
+			// RequestManager Serivce
+			$reqManager = new RequestManager;
+			$reqManager->delete($model);
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
