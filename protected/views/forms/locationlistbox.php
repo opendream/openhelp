@@ -1,6 +1,5 @@
 <?php
 
-
 if ($current == 'id') {
   $id = array_shift($rows);
   echo CHtml::activeHiddenField($model, $attribute, array('value'=>$id));

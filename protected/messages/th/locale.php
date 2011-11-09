@@ -43,4 +43,15 @@ return array(
   * Coordinators
   */
   'Add Coordinators' => 'เพิ่มผู้ประสานงาน',
+  'Full name' => 'ชื่อ - นามสกุล',
+  'Position' => 'ตำแหน่ง',
+  'Tel.' => 'เบอร์โทรศัพท์',
+  
+  /*
+  * Need
+  */
+  'Name' => 'รายการ',
+  'Amount' => 'จำนวน',
+
+  
 );

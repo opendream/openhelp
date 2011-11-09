@@ -45,7 +45,12 @@ $this->menu=array(
   <div class="Request_coordinators">
     <?php $this->widget('zii.widgets.grid.CGridView', array(
         'dataProvider'=>new CArrayDataProvider($model->coordinators),
-        'columns'=>array('fullname','position', 'tel', 'detail'),
+        'columns'=>array(
+          array('name' => 'fullname', 'header' => Yii::t('locale', 'Full name'), 'value' => '$data->fullname'),
+          array('name' => 'position', 'header' => Yii::t('locale', 'Position'), 'value' => '$data->position'),
+          array('name' => 'tel', 'header' => Yii::t('locale', 'Tel.'), 'value' => '$data->tel'),
+          array('name' => 'detail', 'header' => Yii::t('locale', 'Detail'), 'value' => '$data->detail'),
+        ),
     )); ?>
   </div>
   
@@ -55,7 +60,11 @@ $this->menu=array(
   <div class="Request_needs">
     <?php $this->widget('zii.widgets.grid.CGridView', array(
         'dataProvider'=>new CArrayDataProvider($model->needs),
-        'columns'=>array('item.name','amount', 'detail'),
+        'columns'=>array(
+          array('name' => 'item.name', 'header' => Yii::t('locale', 'Name'), 'value' => '$data->item->name'),
+          array('name' => 'amount', 'header' => Yii::t('locale', 'Amount'), 'value' => '$data->amount'),
+          array('name' => 'detail', 'header' => Yii::t('locale', 'Detail'), 'value' => '$data->detail'),
+        ),
     )); ?>
   </div>
 </div>

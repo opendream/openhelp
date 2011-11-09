@@ -33,11 +33,22 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'detail'); ?>
-		<?php echo $form->textArea($model,'detail',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'detail'); ?>
+  	<?php
+    $this->widget('ext.ckeditor.CKEditorWidget',array(
+      "model"=>$model,
+      "attribute"=>'detail',
+      "defaultValue"=>"Test Text",
+      "config" => array(
+          "height"=>"200px",
+          "width"=>"100%",
+          "toolbar"=>"Basic",
+          ),
+      ) );
+    ?>
+    <?php echo $form->error($model,'detail'); ?>
 	</div>
   
-  	<?php if ($model->isNewRecord == false): ?>
+  <?php if ($model->isNewRecord == false): ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
 		<?php echo $form->listBox($model,'status',LookupManager::requestStatus()); ?>
