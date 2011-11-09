@@ -42,7 +42,7 @@
 		    		$_detail = $value->attributes['detail']; ?>
 					<tr>
 					    <td class="row-item name">
-					        <input name="Request[coordinators][name][]" type="text" value="<?php print $_name; ?>"> 
+					        <input name="Request[coordinators][name][]" type="text" value="<?php print $_fullname; ?>"> 
 					    </td>
 					    <td class="row-item position">
 					        <input name="Request[coordinators][position][]" type="text" value="<?php print $_position; ?>"> 
