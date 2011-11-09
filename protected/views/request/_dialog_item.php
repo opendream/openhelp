@@ -3,17 +3,17 @@
 	$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 		'id'=>'addRItems',
 		'options'=>array(
-			'title'=>'Add New Item',
+			'title'=> Yii::t('locale', 'Add New Item', array()),
 			'autoOpen'=>false,
 			'modal'=>true,
 			'buttons'=>array(
-				'Add Item'=>'js:addRItem',
-				'Cancel'=>'js:function(){ $(this).dialog("close");}',
+				Yii::t('locale', 'Add Item')=>'js:addRItem',
+				Yii::t('locale', 'Cancel')=>'js:function(){ $(this).dialog("close");}',
 			),
 		),
 	));
 	echo '<div class="dialog_input">'.
-			'<span>เลือกสิ่งของ: </span>'.
+			'<span>'. Yii::t('locale', 'Select Item', array()) .'</span>'.
 			CHtml::activedropDownList($model,'id',Item::model()->ItemList, array('prompt' => Yii::t('locale', '- Select -'))) .
 		 '</div>';
 
