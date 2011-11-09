@@ -646,6 +646,7 @@ table th, table td {
   text-align: left;
 }
 table th {
+  color: #298DCD;
   padding-top: 4px;
   font-weight: bold;
   vertical-align: middle;
@@ -755,9 +756,8 @@ div.form .row {margin: 0 0 15px;}
 }
 .location-list span {float: left; margin: 0 15px 0 0;}
 
-.detail-list {
-  clear: both;
-}
+
+.detail-list label {display: none}
 .detail-list .cke_skin_kama {width: 90% !important}
 
   .location-list .detail-list textarea {width: 98%}
@@ -768,20 +768,31 @@ div.form .row {margin: 0 0 15px;}
   margin: 0;
   padding: 0 0 0 20px
 }
-a.needs-item-delete {
+a.needs-item-delete, .coordinator-item-delete {
   background: url(/images/ic-delete.png) no-repeat 0 0;
 } 
 
+td.operations {vertical-align: middle}
+.coordinator-item-delete {
+  text-indent: -999em;
+  display: block;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+  margin: 0 auto
+}
+
 /* Request */
-.Request_location {float: left; margin: 0 0 15px;}
+.Request_location {float: left; margin: 0 0 15px 20px}
 .Request_location ul {list-style: none; padding: 0; margin: 0;}
 .Request_location ul li {float: left; width: 200px;}
 .Request_location ul li span.label {padding: 0; float: none; width: 65px}
 .Request_location ul li span {padding: 0 0 0 10px}
 
 .Label_Request_last_updated {clear: both;}
-
-.request-view .label, .request-list .label {float: left; width: 160px; margin: 0 0 5px; clear: both}
+.request-view {overflow: hidden; width: auto}
+.request-list .label {float: left; width: 160px; margin: 0 0 5px; clear: both}
+.request-view h3 {margin: 0 0 10px}
 .request-view .detail, .request-list .detail {margin: 0 0 5px; float: left}
 .request-view .Request_coordinators .summary {
   float: right; 

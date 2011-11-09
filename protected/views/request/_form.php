@@ -21,7 +21,7 @@
 			<table class="coordinators">
 				<thead>
 					<th>Name</th>
-					<th>Position</th>
+					<th>Position</th
 					<th>Tel</th>
 					<th>Detail</th>
 					<th>Operation</th>
@@ -46,7 +46,7 @@
 							<input name="Request[coordinators][detail][]" type="text" value="<?php print $_detail; ?>"> 
 						</td>
 						<td class='row-item operations'
-							<span class='detete'>
+							<span class='delete'>
 								<a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
 							</span>                
 						</td>
@@ -62,31 +62,43 @@
 		<h3><?php echo Yii::t('locale', 'Needs'); ?></h3>
 		<div class="items"> </div>
 		<?php echo $form->error($model,'items'); ?>
+		<table class="needs">
+			<thead>
+				<th>Name</th>
+				<th>Amount</th>
+				<th>Detail</th>
+				<th>Operation</th>
+			</thead>
+			<tbody>
+			 <?php 
+				foreach ($model->needs as $key => $value):
+					$_id = $value->attributes['id'];
+					$_amount = $value->attributes['amount'];
+					$_item_name = LookupManager::getItemName($value->attributes['item_id']);
+			 ?>
+					<tr>
+						<td class="row-item item-name">
+							<span class='item-name'><?php print $_item_name; ?></span>
+						</td>
+						<td class="row-item detail">
+							<input type="text" name="Request[items][amount][]" value="<?php print $_amount ?>">
+						</td>
+						<td>
+							<input type="text" name="Request[items][detail][]" value="<?php print $_detail; ?>">
+						</td>
+						<td>
+							<span class="item-delete delete">
+								<a href="#" alt="delete" class="needs-item-delete delete">delete</a>
+							</span>
+						</td>
+					</tr>
+			<?php endforeach; ?>
+		</tbody>
+		</table>		
 		<?php echo CHtml::link(Yii::t('locale', 'Add need'), '#', array('onclick'=>'$("#addRItems").dialog("open"); return false;', 'class' => 'add-items')); ?>
 
 	</div> <!-- row need-list /-->
-	<div class="need items"> 
-		 <?php 
-			foreach ($model->needs as $key => $value):
-				$_id = $value->attributes['id'];
-				$_amount = $value->attributes['amount'];
-				$_item_name = LookupManager::getItemName($value->attributes['item_id']);
-		 ?>
-			 <div class="item-wrapper"> 
-				<div class="selected_text">
-					<span class="item-name"> <?php print $_item_name ?> </span>
-					<input type="hidden" name="Request[items][id][]" value="<?php print $_id; ?>">
-					amount: <input type="text" name="Request[items][amount][]" value="<?php print $_amount ?>">
-				</div> <!-- selected text /-->
-				<span class="item-delete delete">
-					<a href="#" alt="delete" class="needs-item-delete delete">delete</a>
-				</span>
-			</div>
-			<!-- item-wrapper /-->
-		<?php endforeach; ?>
-	</div> <!-- need items /-->
-	
-	
+
 	<div class="detail-list">
 		<h3><?php echo Yii::t('locale', 'Detail'); ?></h3>
 		<?php
