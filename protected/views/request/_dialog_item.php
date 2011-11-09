@@ -27,8 +27,17 @@
       $(this).dialog("close");
       selected_text = $("#Request_id option:selected").text();
       selected_id = $("#Request_id option:selected").val();
-      return $('.items').append("       <div class='item-wrapper'> \n           <div class=\"selected_text\">\n<span class='item-name'> " + selected_text + " </span>\n<input type='text' name='Request[items][id][]' value='" + selected_id + "' >\n<input type='text' name='Request[items][name][]' value='" + selected_text + "' >\n<input type='text' name='Request[items][amount][]' value='0' >\n         </div> \n           <span class='item-delete delete'>\n             <a href='#' alt='delete' class='items-item-delete delete'>delete</a>\n          </span>\n       </div>");
-    };
+      if (selected_id !== "") {
+        return $('.items').append("<div class='item-wrapper'> \n    <div class=\"selected_text\">\n        <span class='item-name'> " + selected_text + " </span>\n        <input type='hidden' name='Request[items][id][]' value='" + selected_id + "' >\n        amount: <input type='text' name='Request[items][amount][]' value='0' >\n    </div> \n    <span class='item-delete delete'>\n        <a href='#' alt='delete' class='needs-item-delete delete'>delete</a>\n    </span>\n</div>");
+      }
+    };    
+    $('.needs-item-delete').live('click', function(e) {
+        e.preventDefault();
+        var self = $(this);
+        var needs_item = self.parent().parent('div');
+        needs_item.remove();
+        
+    });        
 </script>
 <!-- 
 <script type="text/coffeescript">
@@ -40,14 +49,13 @@
             <div class='item-wrapper'> 
                 <div class="selected_text">
                     <span class='item-name'> #{selected_text} </span>
-                    <input type='text' name='Request[items][id][]' value='#{selected_id}' >
-                    <input type='text' name='Request[items][name][]' value='#{selected_text}' >
-                    <input type='text' name='Request[items][amount][]' value='0' >
+                    <input type='hidden' name='Request[items][id][]' value='#{selected_id}' >
+                    amount: <input type='text' name='Request[items][amount][]' value='0' >
                 </div> 
                 <span class='item-delete delete'>
-                    <a href='#' alt='delete' class='items-item-delete delete'>delete</a>
+                    <a href='#' alt='delete' class='needs-item-delete delete'>delete</a>
                 </span>
             </div>
-        """
+        """ if selected_id != ""
 </script>
  -->
