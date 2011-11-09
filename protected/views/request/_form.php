@@ -9,8 +9,6 @@
   ),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
 	
 	<div class="row location-list">
@@ -90,7 +88,7 @@
 	
 	
 	<div class="detail-list">
-		<?php echo $form->labelEx($model,'detail'); ?>
+		<h3><?php echo Yii::t('locale', 'Detail'); ?></h3>
 		<?php
 			$this->widget('ext.ckeditor.CKEditorWidget',array(
 				"model"=>$model,
@@ -109,7 +107,7 @@
 	
 	<?php if ($model->isNewRecord == false): ?>
 
-		<div class="row">
+		<div class="status row">
 			<h3><?php echo Yii::t('locale', 'Status'); ?></h3>
 			<?php echo $form->dropDownList($model,'status',LookupManager::requestStatus()); ?>
 			<?php echo $form->error($model,'status'); ?>
