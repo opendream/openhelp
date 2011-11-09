@@ -654,6 +654,7 @@ table th {
 }
 table td {
   vertical-align: top;
+  line-height: 34px
 }
 table th + th, table td + td {
   border-left: 1px solid #ddd;
@@ -735,12 +736,11 @@ table td input, table td select  {width: 95% !important;}
 /* style block */
 .grid-view .filters input, .grid-view .filters select {width: 95%}
 
-
 /* style block popup */
 .add_coordinator_dialog .item-wrapper {margin: 0 0 10px;}
-  .add_coordinator_dialog span {width: 90px; float: left;}
-  .add_coordinator_dialog .item-wrapper textarea {width: 165px;}
-  
+  .add_coordinator_dialog span, .dialog_input span {width: 90px; float: left; font-size: 0.9em}
+
+.dialog_input select, .dialog_input .item-wrapper {margin: 0 0 10px}  
 /* Create Request */
 div.form .row {margin: 0 0 15px;}
 #request-form .row {}
@@ -771,15 +771,17 @@ div.form .row {margin: 0 0 15px;}
 a.needs-item-delete, .coordinator-item-delete {
   background: url(/images/ic-delete.png) no-repeat 0 0;
 } 
+a.needs-item-delete {margin: 0;padding: 0;}
 
 td.operations {vertical-align: middle}
-.coordinator-item-delete {
+.coordinator-item-delete,
+.needs-item-delete {
   text-indent: -999em;
   display: block;
   overflow: hidden;
   width: 16px;
   height: 16px;
-  margin: 0 auto
+  margin: 0 auto !important
 }
 
 /* Request */
@@ -792,15 +794,16 @@ td.operations {vertical-align: middle}
 .Label_Request_last_updated {clear: both;}
 .request-view {overflow: hidden; width: auto}
 .request-list .label {float: left; width: 160px; margin: 0 0 5px; clear: both}
-.request-view h3 {margin: 0 0 10px}
-.request-view .detail, .request-list .detail {margin: 0 0 5px; float: left}
-.request-view .Request_coordinators .summary {
+.request-view h3 {margin: 0 0 10px; clear: both; font-size: 1.2em}
+.request-view .detail, .request-list .detail {margin: 0 0 10px 20px; float: left}
+.request-view .summary {
   float: right; 
   text-align: right; 
   font-size: 0.9em;
   margin: 0;
   color: #999
 }
+  .Request_coordinators .grid-view {padding: 5px 0 15px}
 
 /* request list */
 .request-list {overflow: hidden; width: auto;}

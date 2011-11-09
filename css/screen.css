@@ -27,10 +27,10 @@ a img {border:none;}
 /* typography.css */
 html {font-size:100.01%;}
 body {font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
-h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#333;}
 h1 {font-size:2em;line-height:1;margin-bottom:0.5em;}
 h2 {font-size:1.6em;margin-bottom:0.75em;}
-h3 {font-size:1.4em;line-height:1;margin-bottom:1em;}
+h3 {font-size:1.4em;line-height:1;margin-bottom:15px}
 h4 {font-size:1.2em;line-height:1.25;margin-bottom:1.25em;}
 h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
 h6 {font-size:1em;font-weight:bold;}
@@ -41,7 +41,7 @@ p .left {margin:1.5em 1.5em 1.5em 0;padding:0;}
 .right {float:right !important;}
 p .right {margin:1.5em 0 1.5em 1.5em;padding:0;}
 a:focus, a:hover {color:#09f;}
-a {color:#06c; text-decoration: none;}
+a {color:#0066A4; text-decoration: none;}
 a:hover {text-decoration: underline}
 blockquote {margin:1.5em;color:#666;font-style:italic;}
 strong, dfn {font-weight:bold;}
@@ -61,7 +61,7 @@ dl dt {font-weight:bold;}
 dd {margin-left:1.5em;}
 table {margin-bottom:1.4em;width:100%;}
 th {font-weight:bold;}
-thead th {background:#c3d9ff;}
+thead th {background:#B7D6E7;}
 th, td, caption {padding:4px 10px 4px 5px;}
 tfoot {font-style:italic;}
 caption {background:#eee;}
