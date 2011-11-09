@@ -100,7 +100,7 @@
 	<?php if ($model->isNewRecord == false): ?>
 	<div class="row">
 		<h3><?php echo Yii::t('locale', 'Status'); ?></h3>
-		<?php echo $form->radioButtonList($model,'status',LookupManager::requestStatus()); ?>
+		<?php echo $form->dropDownList($model,'status',LookupManager::requestStatus()); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 	<?php endif; ?>
