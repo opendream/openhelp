@@ -16,16 +16,36 @@
 		<div class="coordinator-lable">
 			<b>ผู้ประสานงาน</b>
 	    <?php
-	    	foreach ($model->coordinators as $key => $value) {
-	    		$fullname = $value->attributes['fullname'];
-	    		echo "Fullname: ";
-				echo Chtml::textField('Request[coordinators][]', $fullname, array('size'=>60,'maxlength'=>255));
-
-	    	}
-		?>			
-		</div><!-- / -->
+	    	foreach ($model->coordinators as $key => $value): 
+	    		$_fullname = $value->attributes['fullname'];
+	    		$_position = $value->attributes['position'];
+	    		$_tel	 = $value->attributes['tel'];
+	    		$_detail = $value->attributes['detail'];
+	    	?> 
+	    		<div class="coordinator-item">
+				    <div class="row-item">
+				        <span class="coordinator-item name">name: </span>
+				        <input name="Request[coordinators][name][]" type="text" value="<?php print $_fullname; ?>"> 
+				    </div>
+				    <div class="row-item">
+				        <span class="coordinator-item position">position: </span>
+				        <input name="Request[coordinators][position][]" type="text" value="<?php print $_position	; ?>"> 
+				    </div>
+				    <div class="row-item">
+				        <span class="coordinator-item tel">tel: </span>
+				        <input name="Request[coordinators][tel][]" type="text" value="<?php print $_tel; ?>"> 
+				    </div>
+				    <div class="row-item">
+				        <span class="coordinator-item detail">Detail: </span>
+				        <input name="Request[coordinators][detail][]" type="text" value="<?php print $_detail; ?>"> 
+				    </div>
+				    <span class="detete">
+				        <a href="#" alt="delete" class="coordinator-item-delete delete">delete</a>
+				    </span>
+				</div> 	    		
+			<?php endforeach; ?>	    		
+	</div><!-- Coordination List/ -->
 	    <?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
-
 	</div><!-- / -->
 	<div class="row">
 		<?php echo LocationHtml::locationList($model, 'location_id'); ?>
@@ -36,7 +56,7 @@
 		<?php echo $form->textArea($model,'detail',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'detail'); ?>
 	</div>
-  
+
   	<?php if ($model->isNewRecord == false): ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
