@@ -46,16 +46,16 @@
 	<?php endif; ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'items'); ?>
+		<?php echo $form->labelEx($model,'Needs'); ?>
 		<div class="items"> </div>
 		<?php echo $form->error($model,'items'); ?>
 	</div>
 
-    <?php echo CHtml::link(Yii::t('locale', 'Add Items'), '#', array('onclick'=>'$("#addRItems").dialog("open"); return false;', 'class' => 'add-items')); ?>
+    <?php echo CHtml::link(Yii::t('locale', 'Add need'), '#', array('onclick'=>'$("#addRItems").dialog("open"); return false;', 'class' => 'add-items')); ?>
 
  
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('locale', 'Create') : Yii::t('locale', 'Save')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
