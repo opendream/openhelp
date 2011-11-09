@@ -11,6 +11,7 @@ else {
     $query[$level]['value'] = "js:$('#Location_$level').val()";
     $query[$level]['childrenLevels'] = "js:$(this).parent().attr('class')";
   }
+  Yii::app()->clientScript->scriptMap['*.js'] = false;
   $locationOptions = array(
   	'prompt' => Yii::t('locale', '- Select -'),
     'ajax' => array(
