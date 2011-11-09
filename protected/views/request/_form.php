@@ -70,11 +70,14 @@
 	<div class="need items"> 
 		 <?php 
 		   foreach ($model->needs as $key => $value):
-		     $_amount = $value->attributes['amount']; ?>
+		   	 $_id = $value->attributes['id'];
+		     $_amount = $value->attributes['amount'];
+		     $_item_name = LookupManager::getItemName($value->attributes['item_id']);
+		 ?>
 			 <div class="item-wrapper"> 
 			    <div class="selected_text">
-			        <span class="item-name"> ปลากระป๋อง </span>
-			        <input type="hidden" name="Request[items][id][]" value="<?php print $_amount ?>">
+			        <span class="item-name"> <?php print $_item_name ?> </span>
+			        <input type="hidden" name="Request[items][id][]" value="<?php print $_id; ?>">
 			        amount: <input type="text" name="Request[items][amount][]" value="<?php print $_amount ?>">
 			    </div> <!-- selected text /-->
 			    <span class="item-delete delete">
