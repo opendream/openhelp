@@ -17,25 +17,6 @@
 	  <h3><?php echo Yii::t('locale', 'Location'); ?></h3>
 		<?php echo LocationHtml::locationList($model, 'location_id'); ?>
 	</div> <!-- end location-list -->
-		
-	<div class="detail-list">
-		<?php echo $form->labelEx($model,'detail'); ?>
-	  	<?php
-	    	$this->widget('ext.ckeditor.CKEditorWidget',array(
-				"model"=>$model,
-				"attribute"=>'detail',
-				"defaultValue"=>"",
-				"config" => array(
-				    "height"=>"200px",
-				    "width"=>"100%",
-				    "toolbar"=>"Basic",
-					), // config
-	     		) // widget options
-	     	); // widget
-	    ?>
-	    <?php echo $form->error($model,'detail'); ?>
-	</div> 	<!-- detail-list / -->
-
 
 	<div class="row coordinator-list">
 			<h3><?php echo Yii::t('locale', 'Coordinators'); ?></h3>
@@ -103,6 +84,25 @@
 			<!-- item-wrapper /-->
 		<?php endforeach; ?>
 	</div> <!-- need items /-->
+	
+	
+	<div class="detail-list">
+		<?php echo $form->labelEx($model,'detail'); ?>
+	  	<?php
+	    	$this->widget('ext.ckeditor.CKEditorWidget',array(
+				"model"=>$model,
+				"attribute"=>'detail',
+				"defaultValue"=>"",
+				"config" => array(
+				    "height"=>"200px",
+				    "width"=>"100%",
+				    "toolbar"=>"Basic",
+					), // config
+	     		) // widget options
+	     	); // widget
+	    ?>
+	    <?php echo $form->error($model,'detail'); ?>
+	</div> 	<!-- detail-list / -->
 	
 	<?php if ($model->isNewRecord == false): ?>
 
