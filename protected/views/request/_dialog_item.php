@@ -3,7 +3,7 @@
     $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
         'id'=>'addRItems',
         'options'=>array(
-            'title'=> Yii::t('locale', 'Add New Item'),
+            'title'=>'Add New Item',
             'autoOpen'=>false,
             'modal'=>true,
             'buttons'=>array(
@@ -49,14 +49,13 @@
             <div class='item-wrapper'> 
                 <div class="selected_text">
                     <span class='item-name'> #{selected_text} </span>
-                    <input type='text' name='Request[items][id][]' value='#{selected_id}' >
-                    <input type='text' name='Request[items][name][]' value='#{selected_text}' >
-                    <input type='text' name='Request[items][amount][]' value='0' >
+                    <input type='hidden' name='Request[items][id][]' value='#{selected_id}' >
+                    amount: <input type='text' name='Request[items][amount][]' value='0' >
                 </div> 
                 <span class='item-delete delete'>
-                    <a href='#' alt='delete' class='items-item-delete delete'>delete</a>
+                    <a href='#' alt='delete' class='needs-item-delete delete'>delete</a>
                 </span>
             </div>
-        """
+        """ if selected_id != ""
 </script>
  -->
