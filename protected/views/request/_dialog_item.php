@@ -16,20 +16,29 @@
 	echo '<div class="dialog_input">'.
 			'<span>'. Yii::t('locale', 'Select Item', array()) .'</span>'.
 			CHtml::activedropDownList($model,'id',Item::model()->ItemList, array('prompt' => Yii::t('locale', '- Select -'))) .
-		 '</div>';
-
+            '<div class= "item-wrapper">'.
+	            '<span>'. Yii::t('locale', 'Amount', array()) .'</span>'.
+	                CHtml::activeTextField(Need::model(), 'amount', array()).
+            '</div>'.
+            '<div class= "item-wrapper">'.
+	            '<span>'. Yii::t('locale', 'Detail', array()) .'</span>'.
+	                CHtml::activeTextArea(Need::model(), 'detail', array('row' => 6)).
+            '</div>'.
+		'</div>';
 	$this->endWidget('zii.widgets.jui.CJuiDialog');
 
 ?>
 
 <script type="text/javascript" >
 	window.addRItem = function() {
-	  var selected_id, selected_text;
+	  var selected_amount, selected_detail, selected_id, selected_text;
 	  $(this).dialog("close");
 	  selected_text = $("#Request_id option:selected").text();
 	  selected_id = $("#Request_id option:selected").val();
+	  selected_amount = $('input#Need_amount').val();
+	  selected_detail = $('textarea#Need_detail').val();
 	  if (selected_id !== "") {
-	    return $('table.needs').append("<tr>\n	<td class=\"row-item item-name\">\n		<span class='item-name'>" + selected_text + "</span>\n	</td>\n	<td class=\"row-item detail\">\n		<input type=\"text\" name=\"Request[items][amount][]\" value=\"" + selected_id + "\">\n	</td>\n	<td>\n		<input type=\"text\" name=\"Request[items][detail][]\" value=\"DETAIL HARD CORDE\">\n	</td>\n	<td>\n		<span class=\"item-delete delete\">\n			<a href=\"#\" alt=\"delete\" class=\"needs-item-delete delete\">delete</a>\n		</span>\n	</td>\n</tr>			");
+	    return $('table.needs').append("<tr>\n	<td class=\"row-item item-name\">\n		<span class='item-name'>" + selected_text + "</span>\n		<input type=\"hidden\" name=\"Request[items][id][]\" value=\"" + selected_id + "\">\n	</td>\n	<td class=\"row-item detail\">\n		<input type=\"text\" name=\"Request[items][amount][]\" value=\"" + selected_amount + "\">\n	</td>\n	<td>\n		<input type=\"text\" name=\"Request[items][detail][]\" value=\"" + selected_detail + "\">\n	</td>\n	<td>\n		<span class=\"item-delete delete\">\n			<a href=\"#\" alt=\"delete\" class=\"needs-item-delete delete\">delete</a>\n		</span>\n	</td>\n</tr>			");
 	  }
 	};
 	$('.needs-item-delete').live('click', function(e) {
