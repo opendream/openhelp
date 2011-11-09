@@ -39,27 +39,40 @@ Class LocationHtml extends CHtml {
   public static function locationList ($model, $attribute='location_id') {
     
     $addresses = Yii::app()->params['location'];
+    $orgAddresses = $addresses;
+    
     $firstLevelCol = array_shift($addresses);
     $children = $addresses[0];
-
     $locationModel = new Location;
-    if ($model->$attribute) {
-      //print_r($model->$attribute);
+    if ($id = $model->$attribute) {
+      $locationModel = $model->location;
+      $selectList = implode(', ', $orgAddresses);
+      $qtxt = "SELECT $selectList FROM location WHERE id = $id";
+      $command = Yii::app()->db->createCommand($qtxt);
+      $row = $command->queryRow();
       
-      //$locationModel = $this->loadModel($id);
-      #$whereList = array_reverse($addresses);
-      #$whereList[] = 1;
-      #$levelData = array();
-      #while (!empty($whereList)) {
-      #  $level = array_shift($whereList);
-      #  $where = implode(' AND ', $whereList);
-      #  
-      #  $qtxt = "SELECT $level FROM location WHERE $where";
-      #  $command = Yii::app()->db->createCommand($qtxt);
-      #  
-      #  $levelData[$level] = $command->queryColumn(array($level => $level));
-      #  
-      #}
+      $levelList = array_keys($row);
+      array_pop($row);
+      $whereList = array(array_shift($levelList) => 1);
+      foreach ($row as $level => $value) {
+        $selectLevel = array_shift($levelList);
+        $whereList[$selectLevel] = $level.'="'.$value.'"';
+      }
+      
+      $whereList = array_reverse($whereList);
+      $levelData = array();
+      $whereListLoop = $whereList;
+      foreach ($whereListLoop as $level => $value) {
+        $where = implode(' AND ', $whereList);
+        $qtxt = "SELECT DISTINCT $level FROM location WHERE $where";
+        $command = Yii::app()->db->createCommand($qtxt);
+        $data = $command->queryColumn(array($level));
+        $levelData[$level] = array_combine($data, $data);
+        array_shift($whereList);
+        
+        
+      }
+      
       
     }
 
@@ -104,20 +117,15 @@ Class LocationHtml extends CHtml {
 
     while (!empty($addresses)) {
       $address = array_shift($addresses);
+      $data = isset($id)? $levelData[$address]: array();
+      
       $output .= '<span id="Location_'.$address.'_wrapper" class="'.implode(' ', $addresses).'">';
     	$output .=   CHtml::activeLabelEx($locationModel, Yii::t('locale', $address));
-    	$output .=   Chtml::activedropDownList($locationModel, $address, array(), $defaultOptions);
+    	$output .=   Chtml::activedropDownList($locationModel, $address, $data, $defaultOptions);
     	$output .= '</span>';
     }
     
     return $output;
   }
-  
-  public function loadModel($id)
-	{
-		$model=Location::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
+
 }
