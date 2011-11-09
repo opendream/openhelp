@@ -60,9 +60,6 @@
 	</div><!-- Coordination List/ -->
 	    <?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
 	</div><!-- / -->
-	<div class="row">
-		<?php echo LocationHtml::locationList($model, 'location_id'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'detail'); ?>
