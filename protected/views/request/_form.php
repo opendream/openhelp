@@ -71,10 +71,11 @@
 			</thead>
 			<tbody>
 			 <?php 
-				foreach ($model->needs as $key => $value):
-					$_id = $value->attributes['id'];
-					$_amount = $value->attributes['amount'];
-					$_item_name = LookupManager::getItemName($value->attributes['item_id']);
+				foreach ($model->needs as $item):
+					$_id = $item->id;
+					$_amount = $item->amount;
+					$_item_name = LookupManager::getItemName($item->item_id);
+					$_detail = $item->detail;
 			 ?>
 					<tr>
 						<td class="row-item item-name">
