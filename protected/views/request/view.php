@@ -14,16 +14,48 @@ $this->menu=array(
 ?>
 
 <h1>View Request #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'date_created',
-		'last_updated',
-		'location.level0',
-		'location.level1',
-		'location.level2',
-		'detail',
-	),
-)); ?>
+<div class="view">
+  <div class="Request_location">
+    <?php echo LocationHtml::locationView($model->location_id); ?>
+  </div>
+  <div class="Label_Request_last_updated">
+    <b><?php echo Yii::t('locale', $model->getAttributeLabel('last_updated')); ?></b>
+  </div>
+  <div class="Request_last_updated">
+    <?php echo $model->last_updated; ?>
+  </div>
+  
+  <div class="Label_Request_date_created">
+    <b><?php echo Yii::t('locale', $model->getAttributeLabel('date_created')); ?></b>
+  </div>
+  <div class="Request_date_created">
+    <?php echo $model->date_created; ?>
+  </div>
+  
+  <div class="Label_Request_detail">
+    <b><?php echo Yii::t('locale', $model->getAttributeLabel('detail')); ?></b>
+  </div>
+  <div class="Request_detail">
+    <?php echo $model->detail; ?>
+  </div>
+  
+  <div class="Label_Request_coordinators">
+    <b><?php echo Yii::t('locale', 'Coordinators')?></b>
+  </div>
+  <div class="Request_coordinators">
+    <?php $this->widget('zii.widgets.grid.CGridView', array(
+        'dataProvider'=>new CArrayDataProvider($model->coordinators),
+        'columns'=>array('fullname','position', 'tel', 'detail'),
+    )); ?>
+  </div>
+  
+  <div class="Label_Request_needs">
+    <b><?php echo Yii::t('locale', 'Needs')?></b>
+  </div>
+  <div class="Request_needs">
+    <?php $this->widget('zii.widgets.grid.CGridView', array(
+        'dataProvider'=>new CArrayDataProvider($model->needs),
+        'columns'=>array('item.name','amount', 'detail'),
+    )); ?>
+  </div>
+</div>
