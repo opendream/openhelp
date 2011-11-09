@@ -121,7 +121,23 @@ class RequestManager
     // Coordinator Wrapper
     // array($id, $coordinator_name)
     $coordinatorIds = array();
+    
+    for ($i=0; $i < count($coordinators['name']) ; $i++) { 
 
+      Yii::trace('###############################'.$coordinators['name'][$i].'###############################','example');
+
+      if ($tmp = $this->findCoordinator($coordinators['name'][$i])) {
+        $coordinatorIds[]=$tmp;
+      } else {
+        // Create one if does not exist
+        $insCoordinator = $this->insertCoordinator($coordinators['name'][$i]);
+
+        if ($insCoordinator) {
+          $coordinatorIds[]=$insCoordinator;
+        }
+      }
+    }
+    /*
     foreach ($coordinators as $coordinator) 
     {
       // append a coordinator Id 
@@ -136,6 +152,7 @@ class RequestManager
         }
       }
     }
+    */
     return $coordinatorIds;
   }
   
