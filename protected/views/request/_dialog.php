@@ -36,12 +36,17 @@
 ?>
 
 <script type="text/javascript">
-    function addCoordinator() {
-        $(this).dialog("close");
-        var inserted_val = $("#item-name-input").val();
-        $("item-name-input").html("");
-        $('.add-coordinator').before("<div class='coordinator-item'> <input name='Request[coordinators][]' type='text' value = '"+ inserted_val +"'/> <span class='detete'><a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a></span></div>");
-    }
+    window.addCoordinator = function() {
+      var inserted_val, _detail, _position, _tel;
+      $(this).dialog("close");
+      inserted_val = $("#item-name-input").val();
+      _position = $(':input[name="Coordinator[position]"]').val();
+      _tel = $(':input[name="Coordinator[tel]"]').val();
+      _detail = $(':input[name="Coordinator[detail]"]').val();
+      $("item-name-input").html("");
+      return $('.add-coordinator').before("<div class='coordinator-item'> \n    <div class='row-item'>\n        <input name='Request[coordinators][name][]' type='text' value = '" + inserted_val + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n    <div class='row-item'>\n        <input name='Request[coordinators][position][]' type='text' value = '" + _position + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n    <div class='row-item'>\n        <input name='Request[coordinators][tel][]' type='text' value = '" + _tel + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n    <div class='row-item'>\n        <input name='Request[coordinators][detail][]' type='text' value = '" + _detail + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n</div>");
+    };
+    
     $('.coordinator-item-delete').live('click', function(e) {
         e.preventDefault();
         var self = $(this);
@@ -52,10 +57,41 @@
 </script>
 <!-- 
 <script type="text/coffeescript">
-    window.addItem2 = () -> 
+    window.addCoordinator = () ->
         $(this).dialog "close"
         inserted_val = $("#item-name-input").val()
+        _position = $(':input[name="Coordinator[position]"]').val()
+        _tel = $(':input[name="Coordinator[tel]"]').val()
+        _detail = $(':input[name="Coordinator[detail]"]').val()
         $("item-name-input").html ""
-        $('.coordinator-list').append "<div class='coordinator-item'> <input name='Request[coordinators][]' type='text' value ='#{inserted_val}'/></div>"
+        $('.add-coordinator').before """
+            <div class='coordinator-item'> 
+                <div class='row-item'>
+                    <input name='Request[coordinators][name][]' type='text' value = '#{inserted_val}'/> 
+                    <span class='detete'>
+                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                    </span>
+                </div>
+                <div class='row-item'>
+                    <input name='Request[coordinators][position][]' type='text' value = '#{_position}'/> 
+                    <span class='detete'>
+                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                    </span>
+                </div>
+                <div class='row-item'>
+                    <input name='Request[coordinators][tel][]' type='text' value = '#{_tel}'/> 
+                    <span class='detete'>
+                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                    </span>
+                </div>
+                <div class='row-item'>
+                    <input name='Request[coordinators][detail][]' type='text' value = '#{_detail}'/> 
+                    <span class='detete'>
+                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                    </span>
+                </div>
+            </div>
+        """
+
 </script>
  -->
