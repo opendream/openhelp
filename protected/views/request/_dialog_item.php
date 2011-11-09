@@ -3,7 +3,7 @@
     $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
         'id'=>'addRItems',
         'options'=>array(
-            'title'=>'Add New Item',
+            'title'=> Yii::t('locale', 'Add New Item'),
             'autoOpen'=>false,
             'modal'=>true,
             'buttons'=>array(
