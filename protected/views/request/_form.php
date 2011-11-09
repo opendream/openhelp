@@ -12,9 +12,22 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-	<div class="coordinator-list">
+	
+	<div class="row location-list">
+	  <h3>Select Location</h3>
+		<?php echo LocationHtml::locationList($model, 'location_id'); ?>
+		
+		<div class="detail-list">
+			<?php echo $form->labelEx($model,'detail'); ?>
+			<?php echo $form->textArea($model,'detail',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->error($model,'detail'); ?>
+	  </div>
+		
+	</div> <!-- end location-list -->
+
+	<div class="row coordinator-list">
 		<div class="coordinator-lable">
-			<b>ผู้ประสานงาน</b>
+			<h3>Coordinators</h3>
 	    <?php
 	    	foreach ($model->coordinators as $key => $value) {
 	    		$fullname = $value->attributes['fullname'];
@@ -23,19 +36,10 @@
 
 	    	}
 		?>			
-		</div><!-- / -->
+		</div><!-- /coordinator-lable -->
+		<table class="coordinators"><thead><th>Column1</th><th>Column2</th></thead><tbody></tbody></table>
 	    <?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
-
-	</div><!-- / -->
-	<div class="row">
-		<?php echo LocationHtml::locationList($model, 'location_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'detail'); ?>
-		<?php echo $form->textArea($model,'detail',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'detail'); ?>
-	</div>
+	</div><!-- /coordinator-list -->
   
   	<?php if ($model->isNewRecord == false): ?>
 	<div class="row">
@@ -45,14 +49,14 @@
 	</div>
 	<?php endif; ?>
 
-	<div class="row">
+	<div class="row need-list">
 		<?php echo $form->labelEx($model,'Needs'); ?>
+		<h3>Need</h3>
 		<div class="items"> </div>
 		<?php echo $form->error($model,'items'); ?>
-	</div>
-
     <?php echo CHtml::link(Yii::t('locale', 'Add need'), '#', array('onclick'=>'$("#addRItems").dialog("open"); return false;', 'class' => 'add-items')); ?>
-
+	</div> <!-- end need-list -->
+	
  
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('locale', 'Create') : Yii::t('locale', 'Save')); ?>
