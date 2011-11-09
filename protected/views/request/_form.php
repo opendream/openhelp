@@ -5,7 +5,7 @@
 	'enableAjaxValidation'=>false,
 	'enableAjaxValidation' => true,
   'clientOptions'=>array(
-    'validateOnSubmit'=>false,
+	'validateOnSubmit'=>false,
   ),
 )); ?>
 
@@ -29,35 +29,35 @@
 					<th>Operation</th>
 				</thead>
 				<tbody>
-	    <?php foreach ($model->coordinators as $key => $value):
-		    		$_fullname = $value->attributes['fullname'];
-		    		$_position = $value->attributes['position'];
-		    		$_tel	 = $value->attributes['tel'];
-		    		$_detail = $value->attributes['detail']; ?>
+		<?php foreach ($model->coordinators as $key => $value):
+					$_fullname = $value->attributes['fullname'];
+					$_position = $value->attributes['position'];
+					$_tel	 = $value->attributes['tel'];
+					$_detail = $value->attributes['detail']; ?>
 					<tr>
-					    <td class="row-item name">
-					        <input name="Request[coordinators][name][]" type="text" value="<?php print $_fullname; ?>"> 
-					    </td>
-					    <td class="row-item position">
-					        <input name="Request[coordinators][position][]" type="text" value="<?php print $_position; ?>"> 
-					    </td>
-					    <td class="row-item tel">
-					        <input name="Request[coordinators][tel][]" type="text" value="<?php print $_tel; ?>"> 
-					    </td>
-					    <td class="row-item detail">
-					        <input name="Request[coordinators][detail][]" type="text" value="<?php print $_detail; ?>"> 
-					    </td>
-		                <td class='row-item operations'
-		                    <span class='detete'>
-		                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
-		                    </span>                
-		                </td>
+						<td class="row-item name">
+							<input name="Request[coordinators][name][]" type="text" value="<?php print $_fullname; ?>"> 
+						</td>
+						<td class="row-item position">
+							<input name="Request[coordinators][position][]" type="text" value="<?php print $_position; ?>"> 
+						</td>
+						<td class="row-item tel">
+							<input name="Request[coordinators][tel][]" type="text" value="<?php print $_tel; ?>"> 
+						</td>
+						<td class="row-item detail">
+							<input name="Request[coordinators][detail][]" type="text" value="<?php print $_detail; ?>"> 
+						</td>
+						<td class='row-item operations'
+							<span class='detete'>
+								<a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+							</span>                
+						</td>
 					</tr>  		
 		<?php endforeach; ?>	    		
 				</tbody>
 			</table>	
 			<?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
-	    
+		
 	</div><!-- Coordination List/ -->
 
 	<div class="row need-list">
@@ -69,20 +69,20 @@
 	</div> <!-- row need-list /-->
 	<div class="need items"> 
 		 <?php 
-		   foreach ($model->needs as $key => $value):
-		   	 $_id = $value->attributes['id'];
-		     $_amount = $value->attributes['amount'];
-		     $_item_name = LookupManager::getItemName($value->attributes['item_id']);
+			foreach ($model->needs as $key => $value):
+				$_id = $value->attributes['id'];
+				$_amount = $value->attributes['amount'];
+				$_item_name = LookupManager::getItemName($value->attributes['item_id']);
 		 ?>
 			 <div class="item-wrapper"> 
-			    <div class="selected_text">
-			        <span class="item-name"> <?php print $_item_name ?> </span>
-			        <input type="hidden" name="Request[items][id][]" value="<?php print $_id; ?>">
-			        amount: <input type="text" name="Request[items][amount][]" value="<?php print $_amount ?>">
-			    </div> <!-- selected text /-->
-			    <span class="item-delete delete">
-			        <a href="#" alt="delete" class="needs-item-delete delete">delete</a>
-			    </span>
+				<div class="selected_text">
+					<span class="item-name"> <?php print $_item_name ?> </span>
+					<input type="hidden" name="Request[items][id][]" value="<?php print $_id; ?>">
+					amount: <input type="text" name="Request[items][amount][]" value="<?php print $_amount ?>">
+				</div> <!-- selected text /-->
+				<span class="item-delete delete">
+					<a href="#" alt="delete" class="needs-item-delete delete">delete</a>
+				</span>
 			</div>
 			<!-- item-wrapper /-->
 		<?php endforeach; ?>
@@ -91,20 +91,20 @@
 	
 	<div class="detail-list">
 		<?php echo $form->labelEx($model,'detail'); ?>
-	  	<?php
-	    	$this->widget('ext.ckeditor.CKEditorWidget',array(
+		<?php
+			$this->widget('ext.ckeditor.CKEditorWidget',array(
 				"model"=>$model,
 				"attribute"=>'detail',
 				"defaultValue"=>"",
 				"config" => array(
-				    "height"=>"200px",
-				    "width"=>"100%",
-				    "toolbar"=>"Basic",
+					"height"=>"200px",
+					"width"=>"100%",
+					"toolbar"=>"Basic",
 					), // config
-	     		) // widget options
-	     	); // widget
-	    ?>
-	    <?php echo $form->error($model,'detail'); ?>
+				) // widget options
+			); // widget
+		?>
+		<?php echo $form->error($model,'detail'); ?>
 	</div> 	<!-- detail-list / -->
 	
 	<?php if ($model->isNewRecord == false): ?>
