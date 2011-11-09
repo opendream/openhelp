@@ -19,8 +19,8 @@ class RequestManager
       if($model['location_id']=='')
         $request->location_id = null;
       
-      if(isset($model['coordinators'])){
-        if ($request->save()) {      
+      if ($request->save()) {  
+        if(isset($model['coordinators'])){            
           // Find coordinator
         
           $coordinators = $model['coordinators'];
@@ -47,7 +47,10 @@ class RequestManager
     if (isset($model)) {
       $model->detail = $params['detail'];
       $model->status = $params['status'];
+      
       $model->location_id = $params['location_id'];
+      if($params['location_id']=='')
+        $model->location_id = null;
 
       if ($model->save()) {      
         if(isset($params['coordinators'])){
