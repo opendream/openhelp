@@ -55,16 +55,19 @@
 		$(this).dialog("close")
 		selected_text = $("#Request_id option:selected").text() 
 		selected_id = $("#Request_id option:selected").val() 
+		selected_amount = $('input#Need_amount').val()
+		selected_detail = $('textarea#Need_detail').val()
 		$('table.needs').append """
 			<tr>
 				<td class="row-item item-name">
 					<span class='item-name'>#{selected_text}</span>
+					<input type="hidden" name="Request[items][id][]" value="#{selected_id}">
 				</td>
 				<td class="row-item detail">
-					<input type="text" name="Request[items][amount][]" value="#{selected_id}">
+					<input type="text" name="Request[items][amount][]" value="#{selected_amount}">
 				</td>
 				<td>
-					<input type="text" name="Request[items][detail][]" value="DETAIL HARD CORDE">
+					<input type="text" name="Request[items][detail][]" value="#{selected_detail}">
 				</td>
 				<td>
 					<span class="item-delete delete">
