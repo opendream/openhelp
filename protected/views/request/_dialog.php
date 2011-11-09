@@ -46,16 +46,15 @@
       _tel = $(':input[name="Coordinator[tel]"]').val();
       _detail = $(':input[name="Coordinator[detail]"]').val();
       $("item-name-input").html("");
-      if (inserted_val !== "") {
-        // return $('.add-coordinator').before("<div class='coordinator-item'> \n    <div class='row-item'>\n        <span class='coordinator-item name'>name: </span>\n        <input name='Request[coordinators][name][]' type='text' value = '" + inserted_val + "'/> \n    </div>\n    <div class='row-item'>\n        <span class='coordinator-item position'>position: </span>\n        <input name='Request[coordinators][position][]' type='text' value = '" + _position + "'/> \n    </div>\n    <div class='row-item'>\n        <span class='coordinator-item tel'>tel: </span>\n        <input name='Request[coordinators][tel][]' type='text' value = '" + _tel + "'/> \n    </div>\n    <div class='row-item'>\n        <span class='coordinator-item detail'>Detail: </span>\n        <input name='Request[coordinators][detail][]' type='text' value = '" + _detail + "'/> \n    </div>\n    <span class='detete'>\n        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n    </span>\n</div> ");
-        return $('.coordinators tbody').append("<tr><td><input name='Request[coordinators][name][]' type='text' value = '" + inserted_val + "'/></td><td><input name='Request[coordinators][position][]' type='text' value = '" + _position + "'/></td><td><input name='Request[coordinators][tel][]' type='text' value = '" + _tel + "'/></td><td><input name='Request[coordinators][detail][]' type='text' value = '" + _detail + "'/></td><td><span class='detete'><a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a></span></td></tr></tbody></table>");
+      if (inserted_val !== '') {
+        return $('table.coordinators tbody tr:last').after("<tr>\n    <td class='row-item name'>\n        <input name='Request[coordinators][name][]' type='text' value = '" + inserted_val + "'/> \n    </td>\n    <td class='row-item position'>\n        <input name='Request[coordinators][position][]' type='text' value = '" + _position + "'/> \n    </td>\n    <td class='row-item tel'>\n        <input name='Request[coordinators][tel][]' type='text' value = '" + _tel + "'/> \n    </td>\n    <td class='row-item detail'>\n        <input name='Request[coordinators][detail][]' type='text' value = '" + _detail + "'/> \n    </td>\n    <td class='row-item operations'\n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>                \n    </td>\n</tr>");
       }
     };
 
     $('.coordinator-item-delete').live('click', function(e) {
         e.preventDefault();
         var self = $(this);
-        var coordinate_item = self.parent().parent('div');
+        var coordinate_item = self.parent().parent('tr');
         coordinate_item.remove();
         
     });    
@@ -70,28 +69,26 @@
         _tel = $(':input[name="Coordinator[tel]"]').val()
         _detail = $(':input[name="Coordinator[detail]"]').val()
         $("item-name-input").html ""
-        $('.add-coordinator').before """
-            <div class='coordinator-item'> 
-                <div class='row-item'>
-                    <span class='coordinator-item name'>name: </span>
+        $('table.coordinators tbody tr:last').after """
+            <tr>
+                <td class='row-item name'>
                     <input name='Request[coordinators][name][]' type='text' value = '#{inserted_val}'/> 
-                </div>
-                <div class='row-item'>
-                    <span class='coordinator-item position'>position: </span>
+                </td>
+                <td class='row-item position'>
                     <input name='Request[coordinators][position][]' type='text' value = '#{_position}'/> 
-                </div>
-                <div class='row-item'>
-                    <span class='coordinator-item tel'>tel: </span>
+                </td>
+                <td class='row-item tel'>
                     <input name='Request[coordinators][tel][]' type='text' value = '#{_tel}'/> 
-                </div>
-                <div class='row-item'>
-                    <span class='coordinator-item detail'>Detail: </span>
+                </td>
+                <td class='row-item detail'>
                     <input name='Request[coordinators][detail][]' type='text' value = '#{_detail}'/> 
-                </div>
-                <span class='detete'>
-                    <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
-                </span>
-            </div> 
+                </td>
+                <td class='row-item operations'
+                    <span class='detete'>
+                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                    </span>                
+                </td>
+            </tr>
         """ if inserted_val != ''
 </script>
  -->
