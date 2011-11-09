@@ -73,7 +73,7 @@
 		                </td>
 					</tr>  		
 		<?php endforeach; ?>	    		
-				<tbody>
+				</tbody>
 			</table>	
 			<?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
 	    
