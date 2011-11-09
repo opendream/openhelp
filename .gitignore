@@ -1,4 +1,5 @@
 .DS_Store
+assets/*
 protected/runtime/application.log
 protected/runtime/state.bin
 *.swo
