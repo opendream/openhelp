@@ -19,10 +19,9 @@ class RequestManager
       if($model['location_id']=='')
         $request->location_id = null;
       
-      if(isset($model['coordinators'])){
-        if ($request->save()) {      
-          // Find coordinator
-        
+      if ($request->save()) {  
+        // Find coordinator
+        if(isset($model['coordinators'])) {            
           $coordinators = $model['coordinators'];
           $coordinatorsIds = $this->getCoordinators($coordinators);
 
@@ -31,8 +30,11 @@ class RequestManager
             $this->insertRequestCoordinator($request->id, $cId->id);
           }
         }
-        // Return Request Model
-        //return $request;
+
+        // Save Needs
+        if (isset($model['needs'])) {
+
+        }
       }
     }
     return $request;
@@ -47,16 +49,18 @@ class RequestManager
     if (isset($model)) {
       $model->detail = $params['detail'];
       $model->status = $params['status'];
+      
+      // Location Validation
       $model->location_id = $params['location_id'];
+      if($params['location_id']=='')
+        $model->location_id = null;
+      
+      // Remove all related coordinator request
+      $req_coors = $this->findRequestCoordinators($model->id);
+      foreach ($req_coors as $req_coor) $req_coor->delete();
 
       if ($model->save()) {      
-        if(isset($params['coordinators'])){
-
-          $req_coors = $this->findRequestCoordinators($model->id);
-          foreach ($req_coors as $req_coor) {
-            $req_coor->delete();
-          }
-
+        if (isset($params['coordinators']) && count($params['coordinators']) > 0) {
           // Find coordinator
           $coordinators = $params['coordinators'];
           $coordinatorsIds = $this->getCoordinators($coordinators);
@@ -149,11 +153,14 @@ class RequestManager
   
   function findCoordinator($param)
   {
-    $criteria = new CDbCriteria;
-    $criteria->compare('fullname',$param);
+    if ($param != '' && $param != NULL) {
+      $criteria = new CDbCriteria;
+      $criteria->compare('fullname',$param);
 
-    $coordinator = Coordinator::model()->find($criteria);
-    return $coordinator;
+      $coordinator = Coordinator::model()->find($criteria);
+      return $coordinator;
+    }
+    return NULL;
   }
   
   function insertCoordinator($param)
