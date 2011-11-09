@@ -21,8 +21,8 @@ Class LocationHtml extends CHtml {
 
       foreach ($row as $level => $value) {
         $output .= '<li>';
-        $output .= CHtml::activeLabelEx($locationModel, Yii::t('locale', $level));
-        $output .= ': <span class="'.$level.'">'.$value.'</span>';
+        $output .= '<span class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</span>';
+        $output .= '<span class="'.$level.'">'.$value.'</span>';
         $output .= '</li>';
         
       }
@@ -36,13 +36,19 @@ Class LocationHtml extends CHtml {
     return $output;
   }
   
-  public static function locationList ($model, $attribute='location_id') {
+  public static function locationList ($model, $attribute='location_id', $id=NULL) {
     
     $addresses = Yii::app()->params['location'];
     $firstLevelCol = array_shift($addresses);
     $children = $addresses[0];
 
     $locationModel = new Location;
+    if ($id) {
+      $locationModel = $this->loadModel($id);
+      foreach ($addresses as $level) {
+        # code...
+      }
+    }
 
     $qtxt = "SELECT DISTINCT $firstLevelCol FROM location";
     $command = Yii::app()->db->createCommand($qtxt);
@@ -93,4 +99,12 @@ Class LocationHtml extends CHtml {
     
     return $output;
   }
+  
+  public function loadModel($id)
+	{
+		$model=Location::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
 }
