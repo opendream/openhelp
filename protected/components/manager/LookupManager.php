@@ -50,4 +50,8 @@ class LookupManager
     return Yii::t('locale',$param);
   }
   
+  public static function getItemName($param)
+  {
+    return Item::model()->findByPk($param)->name;
+  }
 }

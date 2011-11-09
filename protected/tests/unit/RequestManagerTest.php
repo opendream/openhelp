@@ -8,8 +8,9 @@ class RequestManagerTest extends CDbTestCase
   function testCreate()
   {
     $request = new RequestManager;
-    $attr1 = array();
-    
+
+    // insert without null properties
+    $attr1 = array();    
     $attr1['detail']         = 'aaa';   // Request
     $attr1['location_id']    = 1;       // Location
     $attr1['coordinators']['name'][] = 'นายแดง';   // Request_coordinator
@@ -26,7 +27,35 @@ class RequestManagerTest extends CDbTestCase
     
     $instance = $request->create($attr1);
     $this->assertNotNull($instance->id);
-    //$this->assertNull($request->create($attr1)->id);
+    $this->assertEquals(1, count($instance->needs));
+
+    //update request
+    $attrUdate = array();
+    $attrUdate['detail']         = 'update';   // Request
+    $attrUdate['location_id']    = 1;       // Location
+    $attrUdate['coordinators']['name'][] = 'นายมา';   // Request_coordinator
+    $attrUdate['coordinators']['name'][] = 'นายมี';
+    $attrUdate['coordinators']['position'][] = '';
+    $attrUdate['coordinators']['position'][] = '';
+    $attrUdate['coordinators']['tel'][] = '';
+    $attrUdate['coordinators']['tel'][] = '';   
+    $attrUdate['coordinators']['detail'][] = '';
+    $attrUdate['coordinators']['detail'][] = ''; 
+    $attrUdate['status']    = 0;       // Status
+    $attrUdate['items']['id'][] = '1';
+    $attrUdate['items']['id'][] = '2';
+    $attrUdate['items']['amount'][] = '20'; 
+    $attrUdate['items']['amount'][] = '10'; 
+    $attrUdate['items']['detail'][] = 'test'; 
+    $attrUdate['items']['detail'][] = 'test2';
+    //$attrUdate['items']['id'][] = array();
+    
+    $this->assertNotNull($request->update($instance, $attrUdate));
+    $instance = Request::model()->findByPk($instance->id);
+    $this->assertEquals(2, count($instance->needs));
+
+    //delete request
+    $this->assertTrue($request->delete($instance));    
   }
   
   function testGetCoordinators()
@@ -54,8 +83,8 @@ class RequestManagerTest extends CDbTestCase
   function testCreateNullLocation()
   {
     $request = new RequestManager;
-    $attr1 = array();
-    
+    //insert with null location
+    $attr1 = array();    
     $attr1['detail']         = 'aaxxa';   // Request
     $attr1['location_id']    = '';       // Location
     $attr1['coordinators']['name'][] = 'mr x';   // Request_coordinator
@@ -68,13 +97,24 @@ class RequestManagerTest extends CDbTestCase
     $attr1['coordinators']['detail'][] = ''; 
     $attr1['items']['id'][] = '';   
     $attr1['items']['amount'][] = '';
+    //$attr1['items']['detail'][] = '';
     
     $instance = $request->create($attr1);
     $this->assertNotNull($instance->id);
     $this->assertNull($instance->location_id);
+
+    //update location
+    $attrUdate = array();
+    $attrUdate['detail']         = 'update';   // Request
+    $attrUdate['status']         = 0;   // Request status
+    $attrUdate['location_id']    = 2;       // Location
+    $this->assertNotNull($request->update($instance, $attrUdate));
+    $this->assertEquals(2, $instance->location_id);
+    //delete request
+    $this->assertTrue($request->delete($instance)); 
   }
 
-  function testCreateNullCoordinators()
+  /*function testCreateNullCoordinators()
   {
     $request = new RequestManager;
     $attr1 = array();
@@ -102,8 +142,8 @@ class RequestManagerTest extends CDbTestCase
   function testUpdate()
   {
     $request = new RequestManager;
+    
     $attr1 = array();
-
     $attr1['detail']         = 'update';   // Request
     $attr1['location_id']    = 1;       // Location
     $attr1['coordinators']['name'][] = 'นายมา';   // Request_coordinator
@@ -117,7 +157,7 @@ class RequestManagerTest extends CDbTestCase
     $attr1['status']    = 0;       // Status
     $attr1['items']['id'][] = array();
     $criteria = new CDbCriteria;
-    $criteria->compare('detail', 'aaa');
+    $criteria->compare('detail', 'aaxxa');
     $this->assertNotNull($request->update(Request::model()->find($criteria), $attr1));    
   }
 
@@ -145,7 +185,7 @@ class RequestManagerTest extends CDbTestCase
     $request = new RequestManager;
 
     $criteria = new CDbCriteria;
-    $criteria->compare('detail', 'aaxxa');
+    $criteria->compare('detail', 'update');
     $this->assertTrue($request->delete(Request::model()->find($criteria)));    
-  }  
+  }  */
 }

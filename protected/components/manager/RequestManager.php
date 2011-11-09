@@ -75,7 +75,12 @@ class RequestManager
             }
           }
         }  
-              
+        
+        // Remove all need request
+        foreach ($model->needs as $need) $need->delete(); 
+        if (isset($params['items']) && count($params['items']) > 0) {
+          $this->insertNeeds($model->id, $params['items']);
+        }      
       }
     }
     // Return Request Model
@@ -89,6 +94,11 @@ class RequestManager
 
       foreach ($req_coors as $req_coor) {
         $req_coor->delete();
+      }
+    }
+    if($model->needs!=null){
+      foreach ($model->needs as $need) {
+        $need->delete();
       }
     }
     return $model->delete();
@@ -125,33 +135,22 @@ class RequestManager
     $coordinatorIds = array();
     
     for ($i=0; $i < count($coordinators['name']) ; $i++) { 
-      if ($tmp = $this->findCoordinator($coordinators['name'][$i], $coordinators['position'][$i], $coordinators['tel'][$i])) {
+      $name = isset($coordinators['name'][$i]) ? $coordinators['name'][$i] : '';
+      $position = isset($coordinators['position'][$i]) ? $coordinators['position'][$i] : '';
+      $tel = isset($coordinators['tel'][$i]) ? $coordinators['tel'][$i] : '';
+      $detail = isset($coordinators['detail'][$i]) ? $coordinators['detail'][$i] : '';
+      
+      if ($tmp = $this->findCoordinator($name, $position, $tel)) {
         $coordinatorIds[]=$tmp;
       } else {
         // Create one if does not exist
-        $insCoordinator = $this->insertCoordinator($coordinators['name'][$i], $coordinators['position'][$i], $coordinators['tel'][$i], $coordinators['detail'][$i]);
+        $insCoordinator = $this->insertCoordinator($name, $position, $tel, $detail);
 
         if ($insCoordinator) {
           $coordinatorIds[]=$insCoordinator;
         }
       }
-    }
-    /*
-    foreach ($coordinators as $coordinator) 
-    {
-      // append a coordinator Id 
-      if ($tmp = $this->findCoordinator($coordinator)) {
-        $coordinatorIds[]=$tmp;
-      } else {
-        // Create one if does not exist
-        $insCoordinator = $this->insertCoordinator($coordinator);
-
-        if ($insCoordinator) {
-          $coordinatorIds[]=$insCoordinator;
-        }
-      }
-    }
-    */
+    }    
     return $coordinatorIds;
   }
   
@@ -197,15 +196,19 @@ class RequestManager
   function insertNeeds($reqId, $items){
     $needs = array();
     for ($i=0; $i < count($items['id']); $i++) { 
-      $needs[] = $this->insertNeed($reqId, $items['id'][$i], $items['amount'][$i]);
+      $itemId = isset($items['id'][$i])? $items['id'][$i] : null;
+      $amount = isset($items['amount'][$i])? $items['amount'][$i] : 0;
+      $detail = isset($items['detail'][$i])? $items['detail'][$i] : '';
+      $needs[] = $this->insertNeed($reqId, $itemId, $amount, $detail);
     }
     return $needs;
   }
 
-  function insertNeed($reqId, $itemId, $amount)
+  function insertNeed($reqId, $itemId, $amount, $detail)
   {
     $need = new Need;
     $need->amount = $amount;
+    $need->detail = $detail;
     $need->request_id = $reqId;
     $need->item_id = $itemId;
     $need->status = Need::NEED_STATUS_WAIT;
