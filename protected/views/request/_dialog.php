@@ -39,7 +39,7 @@
     window.addCoordinator = function() {
       var inserted_val, _detail, _position, _tel;
       $(this).dialog("close");
-      inserted_val = $("#item-name-input").val();
+      inserted_val = $.trim($("#item-name-input").val());
       _position = $(':input[name="Coordinator[position]"]').val();
       _tel = $(':input[name="Coordinator[tel]"]').val();
       _detail = $(':input[name="Coordinator[detail]"]').val();
@@ -48,20 +48,20 @@
         return $('.add-coordinator').before("<div class='coordinator-item'> \n    <div class='row-item'>\n        <span class='coordinator-item name'>name: </span>\n        <input name='Request[coordinators][name][]' type='text' value = '" + inserted_val + "'/> \n    </div>\n    <div class='row-item'>\n        <span class='coordinator-item position'>position: </span>\n        <input name='Request[coordinators][position][]' type='text' value = '" + _position + "'/> \n    </div>\n    <div class='row-item'>\n        <span class='coordinator-item tel'>tel: </span>\n        <input name='Request[coordinators][tel][]' type='text' value = '" + _tel + "'/> \n    </div>\n    <div class='row-item'>\n        <span class='coordinator-item detail'>Detail: </span>\n        <input name='Request[coordinators][detail][]' type='text' value = '" + _detail + "'/> \n    </div>\n    <span class='detete'>\n        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n    </span>\n</div> ");
       }
     };
-    
+
     $('.coordinator-item-delete').live('click', function(e) {
         e.preventDefault();
         var self = $(this);
         var coordinate_item = self.parent().parent('div');
         coordinate_item.remove();
         
-    });
+    });    
 </script>
 <!-- 
 <script type="text/coffeescript">
     window.addCoordinator = () ->
         $(this).dialog "close"
-        inserted_val = $("#item-name-input").val()
+        inserted_val = $.trim $("#item-name-input").val()
         _position = $(':input[name="Coordinator[position]"]').val()
         _tel = $(':input[name="Coordinator[tel]"]').val()
         _detail = $(':input[name="Coordinator[detail]"]').val()
@@ -88,6 +88,6 @@
                     <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
                 </span>
             </div> 
-        """
+        """ if inserted_val != ''
 </script>
  -->
