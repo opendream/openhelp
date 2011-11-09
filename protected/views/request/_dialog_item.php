@@ -3,9 +3,10 @@
 	$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 		'id'=>'addRItems',
 		'options'=>array(
-			'title'=> Yii::t('locale', 'Add New Item', array()),
+			'title'=> Yii::t('locale', 'Add New Need', array()),
 			'autoOpen'=>false,
 			'modal'=>true,
+            'width' => '400px',			
 			'buttons'=>array(
 				Yii::t('locale', 'Add Item')=>'js:addRItem',
 				Yii::t('locale', 'Cancel')=>'js:function(){ $(this).dialog("close");}',

@@ -8,28 +8,29 @@
             'title'=> Yii::t('locale', 'Add Coordinator'),
             'autoOpen'=>false,
             'modal'=>true,
+            'width' => '400px',
             'buttons'=>array(
-                'Add Item'=>'js:addCoordinator',
-                'Cancel'=>'js:function(){ $(this).dialog("close");}',
+                Yii::t('locale', 'Add Coordinator', array()) =>'js:addCoordinator',
+                Yii::t('locale', 'Cancel', array()) =>'js:function(){ $(this).dialog("close");}',
             ),
         ),
     ));
     
     echo '<div class="add_coordinator_dialog">'.
             '<div class= "item-wrapper">'.
-            '<span>fullname: </span>'.
+            '<span>'. Yii::t('locale', 'Full name', array()) .'</span>'.
                 $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
             '</div>'.
             '<div class= "item-wrapper">'.
-            '<span>position: </span>'.
+            '<span>'. Yii::t('locale', 'Position', array()) .'</span>'.
                 CHtml::activeTextField(Coordinator::model(), 'position', array()).
             '</div>'.
             '<div class= "item-wrapper">'.
-            '<span>tel: </span>'.
+            '<span>'. Yii::t('locale', 'Tel.', array()) .'</span>'.
                 CHtml::activeTextField(Coordinator::model(), 'tel', array()).
             '</div>'.
             '<div class= "item-wrapper">'.
-            '<span>detail: </span>'.
+            '<span>'. Yii::t('locale', 'Detail', array()) .'</span>'.
                 CHtml::activeTextArea(Coordinator::model(), 'detail', array('row' => 6)).
             '</div>'.
          '</div>';
