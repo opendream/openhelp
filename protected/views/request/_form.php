@@ -65,9 +65,10 @@
 				        <a href="#" alt="delete" class="coordinator-item-delete delete">delete</a>
 				    </span>
 				</div> 	    		
-			<?php endforeach; ?>	    		
+			<?php endforeach; ?>
+			<?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
+	    
 	</div><!-- Coordination List/ -->
-	    <?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
 
 	<div class="row need-list">
 		<h3><?php echo Yii::t('locale', 'Needs'); ?></h3>
