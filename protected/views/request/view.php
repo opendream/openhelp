@@ -14,32 +14,32 @@ $this->menu=array(
 ?>
 
 <h1>View Request #<?php echo $model->id; ?></h1>
-<div class="view">
+<div class="view request-view">
   <div class="Request_location">
     <?php echo LocationHtml::locationView($model->location_id); ?>
   </div>
-  <div class="Label_Request_last_updated">
+  <div class="label Label_Request_last_updated">
     <b><?php echo Yii::t('locale', $model->getAttributeLabel('last_updated')); ?></b>
   </div>
-  <div class="Request_last_updated">
+  <div class="detail Request_last_updated">
     <?php echo $model->last_updated; ?>
   </div>
   
-  <div class="Label_Request_date_created">
+  <div class="label Label_Request_date_created">
     <b><?php echo Yii::t('locale', $model->getAttributeLabel('date_created')); ?></b>
   </div>
-  <div class="Request_date_created">
+  <div class="detail Request_date_created">
     <?php echo $model->date_created; ?>
   </div>
   
-  <div class="Label_Request_detail">
+  <div class="label Label_Request_detail">
     <b><?php echo Yii::t('locale', $model->getAttributeLabel('detail')); ?></b>
   </div>
-  <div class="Request_detail">
+  <div class="detail Request_detail">
     <?php echo $model->detail; ?>
   </div>
   
-  <div class="Label_Request_coordinators">
+  <div class="label Label_Request_coordinators">
     <b><?php echo Yii::t('locale', 'Coordinators')?></b>
   </div>
   <div class="Request_coordinators">
@@ -54,7 +54,7 @@ $this->menu=array(
     )); ?>
   </div>
   
-  <div class="Label_Request_needs">
+  <div class="label Label_Request_needs">
     <b><?php echo Yii::t('locale', 'Needs')?></b>
   </div>
   <div class="Request_needs">
