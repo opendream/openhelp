@@ -15,32 +15,28 @@ $this->menu=array(
 
 <h1>View Request #<?php echo $model->id; ?></h1>
 <div class="view request-view">
+  <div class="label Label_Request_location">
+    <h3><?php echo Yii::t('locale', $model->getAttributeLabel('location')); ?></h3>
+  </div>
   <div class="Request_location">
     <?php echo LocationHtml::locationView($model->location_id); ?>
   </div>
   <div class="label Label_Request_last_updated">
-    <b><?php echo Yii::t('locale', $model->getAttributeLabel('last_updated')); ?></b>
+    <h3><?php echo Yii::t('locale', $model->getAttributeLabel('last_updated')); ?></h3>
   </div>
   <div class="detail Request_last_updated">
     <?php echo $model->last_updated; ?>
   </div>
   
   <div class="label Label_Request_date_created">
-    <b><?php echo Yii::t('locale', $model->getAttributeLabel('date_created')); ?></b>
+    <h3><?php echo Yii::t('locale', $model->getAttributeLabel('date_created')); ?></h3>
   </div>
   <div class="detail Request_date_created">
     <?php echo $model->date_created; ?>
   </div>
-  
-  <div class="label Label_Request_detail">
-    <b><?php echo Yii::t('locale', $model->getAttributeLabel('detail')); ?></b>
-  </div>
-  <div class="detail Request_detail">
-    <?php echo $model->detail; ?>
-  </div>
-  
+
   <div class="label Label_Request_coordinators">
-    <b><?php echo Yii::t('locale', 'Coordinators')?></b>
+    <h3><?php echo Yii::t('locale', 'Coordinators')?></h3>
   </div>
   <div class="Request_coordinators">
     <?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -55,7 +51,7 @@ $this->menu=array(
   </div>
   
   <div class="label Label_Request_needs">
-    <b><?php echo Yii::t('locale', 'Needs')?></b>
+    <h3><?php echo Yii::t('locale', 'Needs')?></h3>
   </div>
   <div class="Request_needs">
     <?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -67,4 +63,12 @@ $this->menu=array(
         ),
     )); ?>
   </div>
+  
+  <div class="label Label_Request_detail">
+    <h3><?php echo Yii::t('locale', $model->getAttributeLabel('detail')); ?></h3>
+  </div>
+  <div class="detail Request_detail">
+    <?php echo $model->detail; ?>
+  </div>
+  
 </div>

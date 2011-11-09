@@ -52,6 +52,7 @@ return array(
   /*
   * Need
   */
+  'Add need' => 'เพิ่มความต้องการ',
   'Name' => 'รายการ',
   'Amount' => 'จำนวน',
 

@@ -297,6 +297,8 @@ label {
   width: 150px;
   text-align: right;
 */
+  margin: 0 0 5px;
+  font-weight: bold;
   color: #404040;
 }
 form .input {
@@ -626,11 +628,11 @@ textarea[readonly] {
  * ---------------------------------------- */
 table {
 /*   width: 100%; */
-  margin-bottom: 15px;
-  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   padding: 0;
-  border-collapse: separate;
-  *border-collapse: collapse;
+  border-collapse: separate !important;
+  *border-collapse: collapse !important;
   /* IE7, collapse table to remove spacing */
 
   border: 1px solid #ddd;
@@ -725,6 +727,10 @@ table .headerSortUp:after {
   opacity: 0.6;
 }
 
+/* default */
+.list-view .summary {font-size: 0.9em; color: #666}
+table td input, table td select  {width: 95% !important;}
+
 /* style block */
 .grid-view .filters input, .grid-view .filters select {width: 95%}
 
@@ -737,31 +743,46 @@ table .headerSortUp:after {
 /* Create Request */
 div.form .row {margin: 0 0 15px;}
 #request-form .row {}
-.location-list, .coordinator-list, .need-list {
+.location-list, .coordinator-list, .need-list, .detail-list {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #C9E0ED;
   padding: 10px;
   overflow: hidden;
   width: auto;
-  margin: 0 0 10px
+  margin: 0 0 10px !important
 }
 .location-list span {float: left; margin: 0 15px 0 0;}
-.location-list .detail-list {
+
+.detail-list {
   clear: both;
 }
+.detail-list .cke_skin_kama {width: 90% !important}
+
   .location-list .detail-list textarea {width: 98%}
+
+.coordinator-list a.add-coordinator,
+.need-list a.add-items,  a.needs-item-delete {
+  background: url(/images/ic-add.png) no-repeat -7px -7px;
+  margin: 0;
+  padding: 0 0 0 20px
+}
+a.needs-item-delete {
+  background: url(/images/ic-delete.png) no-repeat 0 0;
+} 
 
 /* Request */
 .Request_location {float: left; margin: 0 0 15px;}
 .Request_location ul {list-style: none; padding: 0; margin: 0;}
 .Request_location ul li {float: left; width: 200px;}
+.Request_location ul li span.label {padding: 0; float: none; width: 65px}
 .Request_location ul li span {padding: 0 0 0 10px}
 
 .Label_Request_last_updated {clear: both;}
-.request-view .label {float: left; width: 160px; margin: 0 0 5px; clear: both}
-.request-view .detail {margin: 0 0 5px; float: left}
+
+.request-view .label, .request-list .label {float: left; width: 160px; margin: 0 0 5px; clear: both}
+.request-view .detail, .request-list .detail {margin: 0 0 5px; float: left}
 .request-view .Request_coordinators .summary {
   float: right; 
   text-align: right; 
@@ -769,3 +790,10 @@ div.form .row {margin: 0 0 15px;}
   margin: 0;
   color: #999
 }
+
+/* request list */
+.request-list {overflow: hidden; width: auto;}
+.request-list ul {padding: 0; margin: 0; list-style: none;}
+.request-list ul li {display: inline; margin: 0 30px 0 0;}
+.request-list ul li label {font-weight: bold}
+.request-list ul li .label {width: 65px;float: none; margin: 0 10px 0 0; width: 65px; font-weight: bold;}

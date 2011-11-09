@@ -1,24 +1,18 @@
-<div class="view">
+<div class="view request-list">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+	<strong class="label"><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</strong>
+	<div class="detail"><?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?></div>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('date_created')); ?>:</b>
-	<?php echo CHtml::encode($data->date_created); ?>
-	<br />
+	<strong class="label"><?php echo CHtml::encode($data->getAttributeLabel('date_created')); ?>:</strong>
+	<div class="detail"><?php echo CHtml::encode($data->date_created); ?></div>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('last_updated')); ?>:</b>
-	<?php echo CHtml::encode($data->last_updated); ?>
-	<br />
+	<strong class="label"><?php echo CHtml::encode($data->getAttributeLabel('last_updated')); ?>:</strong>
+	<div class="detail"><?php echo CHtml::encode($data->last_updated); ?></div>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('location_id')); ?>:</b>
-	<?php echo LocationHtml::locationView($data->location_id); ?>
-	<br />
+	<strong class="label"><?php echo CHtml::encode($data->getAttributeLabel('location_id')); ?>:</strong>
+	<div class="detail"><?php echo LocationHtml::locationView($data->location_id); ?></div>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('detail')); ?>:</b>
-	<?php echo CHtml::encode($data->detail); ?>
-	<br />
-
+	<strong class="label"><?php echo CHtml::encode($data->getAttributeLabel('detail')); ?>:</strong>
+	<div class="detail"><?php echo CHtml::encode($data->detail); ?></div>
 
 </div>
