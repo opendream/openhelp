@@ -45,6 +45,7 @@ return array(
   * Coordinators
   */
   'Add Coordinators' => 'เพิ่มผู้ประสานงาน',
+  'Add Coordinator' => 'เพิ่มผู้ประสานงาน',
   'Full name' => 'ชื่อ - นามสกุล',
   'Position' => 'ตำแหน่ง',
   'Tel.' => 'เบอร์โทรศัพท์',
@@ -55,6 +56,15 @@ return array(
   'Add need' => 'เพิ่มความต้องการ',
   'Name' => 'รายการ',
   'Amount' => 'จำนวน',
+
+  /**
+   * Dialog
+   */
+  'Cancel' => 'ยกเลิก',
+  'Add Item' => 'เพิ่ม',
+  'Add New Need' => 'เพิ่มความต้องการ',
+  'Select Item' => 'เลือกสิ่งของ'
+
 
   
 );
