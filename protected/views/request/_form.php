@@ -66,12 +66,6 @@
 	    <?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
 	</div><!-- / -->
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'detail'); ?>
-		<?php echo $form->textArea($model,'detail',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'detail'); ?>
-	</div>
-
   	<?php if ($model->isNewRecord == false): ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
