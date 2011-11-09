@@ -44,7 +44,7 @@
       _tel = $(':input[name="Coordinator[tel]"]').val();
       _detail = $(':input[name="Coordinator[detail]"]').val();
       $("item-name-input").html("");
-      return $('.add-coordinator').before("<div class='coordinator-item'> \n    <div class='row-item'>\n        <input name='Request[coordinators][name][]' type='text' value = '" + inserted_val + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n    <div class='row-item'>\n        <input name='Request[coordinators][position][]' type='text' value = '" + _position + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n    <div class='row-item'>\n        <input name='Request[coordinators][tel][]' type='text' value = '" + _tel + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n    <div class='row-item'>\n        <input name='Request[coordinators][detail][]' type='text' value = '" + _detail + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n</div>");
+      return $('.add-coordinator').before("<div class='coordinator-item'> \n    <div class='row-item'>\n        <span class='coordinator-item name'>name: </span>\n        <input name='Request[coordinators][name][]' type='text' value = '" + inserted_val + "'/> \n    </div>\n    <div class='row-item'>\n        <span class='coordinator-item position'>position: </span>\n        <input name='Request[coordinators][position][]' type='text' value = '" + _position + "'/> \n    </div>\n    <div class='row-item'>\n        <span class='coordinator-item tel'>tel: </span>\n        <input name='Request[coordinators][tel][]' type='text' value = '" + _tel + "'/> \n    </div>\n    <div class='row-item'>\n        <span class='coordinator-item detail'>Detail: </span>\n        <input name='Request[coordinators][detail][]' type='text' value = '" + _detail + "'/> \n    </div>\n    <span class='detete'>\n        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n    </span>\n</div>");
     };
     
     $('.coordinator-item-delete').live('click', function(e) {
@@ -67,31 +67,25 @@
         $('.add-coordinator').before """
             <div class='coordinator-item'> 
                 <div class='row-item'>
+                    <span class='coordinator-item name'>name: </span>
                     <input name='Request[coordinators][name][]' type='text' value = '#{inserted_val}'/> 
-                    <span class='detete'>
-                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
-                    </span>
                 </div>
                 <div class='row-item'>
+                    <span class='coordinator-item position'>position: </span>
                     <input name='Request[coordinators][position][]' type='text' value = '#{_position}'/> 
-                    <span class='detete'>
-                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
-                    </span>
                 </div>
                 <div class='row-item'>
+                    <span class='coordinator-item tel'>tel: </span>
                     <input name='Request[coordinators][tel][]' type='text' value = '#{_tel}'/> 
-                    <span class='detete'>
-                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
-                    </span>
                 </div>
                 <div class='row-item'>
+                    <span class='coordinator-item detail'>Detail: </span>
                     <input name='Request[coordinators][detail][]' type='text' value = '#{_detail}'/> 
-                    <span class='detete'>
-                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
-                    </span>
                 </div>
+                <span class='detete'>
+                    <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                </span>
             </div>
         """
-
 </script>
  -->
