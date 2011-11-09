@@ -12,13 +12,30 @@ class RequestManagerTest extends CDbTestCase
     
     $attr1['detail']         = 'aaa';   // Request
     $attr1['location_id']    = 1;       // Location
-    $attr1['coordinators'][] = 'นายมา';   // Request_coordinator
-    $attr1['coordinators'][] = 'นายมี';    
+    $attr1['coordinators']['name'][] = 'นายแดง';   // Request_coordinator
+    $attr1['coordinators']['name'][] = 'นายเขียว';    
     
-    $this->assertNotNull($request->create($attr1)->id);
+    $instance = $request->create($attr1);
+    $this->assertNotNull($instance->id);
     //$this->assertNull($request->create($attr1)->id);
   }
+  
+  function testGetCoordinators()
+  {
+    $request = new RequestManager;
+    $attr1 = array();
+    
+    // $attr1['detail']         = 'aaa';   // Request
+    // $attr1['location_id']    = 1;       // Location
+    $attr1['coordinators']['name'][] = 'นายยยย';   // Request_coordinator
+    $attr1['coordinators']['name'][] = 'ฟหกด';    
+    
+    $instance = $request->getCoordinators($attr1['coordinators']);
 
+    $this->assertNotNull($instance);
+    $this->assertEquals(2, count($instance));
+  }
+  
   function testCreateNullLocation()
   {
     $request = new RequestManager;
@@ -26,11 +43,12 @@ class RequestManagerTest extends CDbTestCase
     
     $attr1['detail']         = 'aaxxa';   // Request
     $attr1['location_id']    = '';       // Location
-    $attr1['coordinators'][] = 'mr x';   // Request_coordinator
-    $attr1['coordinators'][] = 'นายมี';    
+    $attr1['coordinators']['name'][] = 'mr x';   // Request_coordinator
+    $attr1['coordinators']['name'][] = 'นายมี';    
     
-    $this->assertNotNull($request->create($attr1)->id);
-    $this->assertNull($request->create($attr1)->location_id);
+    $instance = $request->create($attr1);
+    $this->assertNotNull($instance->id);
+    $this->assertNull($instance->location_id);
   }
 
   function testCreateNullCoordinators()
@@ -38,12 +56,16 @@ class RequestManagerTest extends CDbTestCase
     $request = new RequestManager;
     $attr1 = array();
     
-    $attr1['detail']         = 'aaxxa';   // Request
+    $attr1['detail']         = 'aaxxy';   // Request
     $attr1['location_id']    = '';       // Location
-    //$attr1['coordinators'][] = 'นายมา';   // Request_coordinator
-    //$attr1['coordinators'][] = 'นายมี';    
-    
-    $this->assertNull($request->create($attr1)->id);    
+    $attr1['coordinators']['name'][]   = array();
+        
+    $instance = $request->create($attr1);    
+    $this->assertNotNull($instance->id); 
+
+    $coordinators = $request->findRequestCoordinators($instance->id);
+
+    $this->assertEquals(0, count($coordinators));   
   }
    
   function testFindCoordinator()
@@ -60,16 +82,22 @@ class RequestManagerTest extends CDbTestCase
 
     $attr1['detail']         = 'update';   // Request
     $attr1['location_id']    = 1;       // Location
-    $attr1['coordinators'][] = 'นายมา';   // Request_coordinator
-    $attr1['coordinators'][] = 'นายมี';    
+    $attr1['coordinators']['name'][] = 'นายมา';   // Request_coordinator
+    $attr1['coordinators']['name'][] = 'นายมี';    
     $attr1['status']    = 0;       // Status
-
-    $this->assertNotNull($request->update(Request::model()->findByPk(2), $attr1));    
+    
+    $criteria = new CDbCriteria;
+    $criteria->compare('detail', 'aaa');
+    $this->assertNotNull($request->update(Request::model()->find($criteria), $attr1));    
   }
 
   function testDelete()
   {
     $request = new RequestManager;
-    $this->assertTrue($request->delete(Request::model()->findByPk(2)));    
+
+    $criteria = new CDbCriteria;
+    $criteria->compare('detail', 'aaxxa');
+    $this->assertTrue($request->delete(Request::model()->find($criteria)));    
   }
+  
 }

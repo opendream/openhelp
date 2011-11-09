@@ -43,6 +43,12 @@
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'item_id'); ?>
+		<?php echo $form->dropDownList($model,'item_id',Item::model()->ItemList, array('prompt' => Yii::t('locale', '- Select -'))); ?>
+		<?php echo $form->error($model,'item_id'); ?>
+	</div>
+
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

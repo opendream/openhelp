@@ -19,6 +19,21 @@ return CMap::mergeArray(
     			'password' => 'openhelp',
     			'charset' => 'utf8',
     		),
+    		'log'=>array(
+				'class'=>'CLogRouter',
+				'routes'=>array(
+					array(
+						'class'=>'CFileLogRoute',
+						'levels'=>'error, warning',
+					),
+					array(
+			         'class' => 'CWebLogRoute',
+			         'categories' => 'example',
+			         'levels' => 'trace',
+			         'showInFireBug' => true,
+			        ),
+				),
+			),
 		),
 		'import'=>array(
 		    'application.models.*',

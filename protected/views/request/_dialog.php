@@ -3,29 +3,50 @@
     $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
         'id'=>'addCoordinators',
         'options'=>array(
-            'title'=>'Add New Item',
+            'name' => 'Coordinator[fullname]',
+            'title'=> Yii::t('locale', 'Add Coordinator'),
             'autoOpen'=>false,
             'modal'=>true,
             'buttons'=>array(
-                'Add Item'=>'js:addItem',
+                'Add Item'=>'js:addCoordinator',
                 'Cancel'=>'js:function(){ $(this).dialog("close");}',
             ),
         ),
     ));
-    echo '<div class="dialog_input">'.
-            $this->renderPartial('_autocomplete', array('model'=>$model)) . 
+    echo '<div class="add_coordinator_dialog">'.
+            '<div class= "item-wrapper">'.
+            '<span>fullname: </span>'.
+                $this->renderPartial('_autocomplete', array('model'=>$model), true) . 
+            '</div>'.
+            '<div class= "item-wrapper">'.
+            '<span>position: </span>'.
+                CHtml::activeTextField(Coordinator::model(), 'position', array()).
+            '</div>'.
+            '<div class= "item-wrapper">'.
+            '<span>tel: </span>'.
+                CHtml::activeTextField(Coordinator::model(), 'tel', array()).
+            '</div>'.
+            '<div class= "item-wrapper">'.
+            '<span>detail: </span>'.
+                CHtml::activeTextArea(Coordinator::model(), 'detail', array('row' => 6)).
+            '</div>'.
          '</div>';
     $this->endWidget('zii.widgets.jui.CJuiDialog');
 
 ?>
-<?php /* include your relevant javascript somewhere */ ?>
-<script type="text/javascript" >
-    function addItem() {
-        $(this).dialog("close");
-        var inserted_val = $("#item-name-input").val();
-        $("item-name-input").html("");
-        $('.add-coordinator').before("<div class='coordinator-item'> <input name='Request[coordinators][]' type='text' value = '"+ inserted_val +"'/> <span class='detete'><a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a></span></div>");
-    }
+
+<script type="text/javascript">
+    window.addCoordinator = function() {
+      var inserted_val, _detail, _position, _tel;
+      $(this).dialog("close");
+      inserted_val = $("#item-name-input").val();
+      _position = $(':input[name="Coordinator[position]"]').val();
+      _tel = $(':input[name="Coordinator[tel]"]').val();
+      _detail = $(':input[name="Coordinator[detail]"]').val();
+      $("item-name-input").html("");
+      return $('.add-coordinator').before("<div class='coordinator-item'> \n    <div class='row-item'>\n        <input name='Request[coordinators][name][]' type='text' value = '" + inserted_val + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n    <div class='row-item'>\n        <input name='Request[coordinators][position][]' type='text' value = '" + _position + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n    <div class='row-item'>\n        <input name='Request[coordinators][tel][]' type='text' value = '" + _tel + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n    <div class='row-item'>\n        <input name='Request[coordinators][detail][]' type='text' value = '" + _detail + "'/> \n        <span class='detete'>\n            <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>\n        </span>\n    </div>\n</div>");
+    };
+    
     $('.coordinator-item-delete').live('click', function(e) {
         e.preventDefault();
         var self = $(this);
@@ -36,10 +57,41 @@
 </script>
 <!-- 
 <script type="text/coffeescript">
-    window.addItem2 = () -> 
+    window.addCoordinator = () ->
         $(this).dialog "close"
         inserted_val = $("#item-name-input").val()
+        _position = $(':input[name="Coordinator[position]"]').val()
+        _tel = $(':input[name="Coordinator[tel]"]').val()
+        _detail = $(':input[name="Coordinator[detail]"]').val()
         $("item-name-input").html ""
-        $('.coordinator-list').append "<div class='coordinator-item'> <input name='Request[coordinators][]' type='text' value ='#{inserted_val}'/></div>"
+        $('.add-coordinator').before """
+            <div class='coordinator-item'> 
+                <div class='row-item'>
+                    <input name='Request[coordinators][name][]' type='text' value = '#{inserted_val}'/> 
+                    <span class='detete'>
+                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                    </span>
+                </div>
+                <div class='row-item'>
+                    <input name='Request[coordinators][position][]' type='text' value = '#{_position}'/> 
+                    <span class='detete'>
+                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                    </span>
+                </div>
+                <div class='row-item'>
+                    <input name='Request[coordinators][tel][]' type='text' value = '#{_tel}'/> 
+                    <span class='detete'>
+                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                    </span>
+                </div>
+                <div class='row-item'>
+                    <input name='Request[coordinators][detail][]' type='text' value = '#{_detail}'/> 
+                    <span class='detete'>
+                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+                    </span>
+                </div>
+            </div>
+        """
+
 </script>
  -->
