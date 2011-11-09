@@ -212,6 +212,9 @@ class RequestManager
     $need->request_id = $reqId;
     $need->item_id = $itemId;
     $need->status = Need::NEED_STATUS_WAIT;
-    return $need->save() ? $need : false;
+    if ($need->validate()) {
+      return $need->save() ? $need : false;
+    }
+    return false;
   }
 }

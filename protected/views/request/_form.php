@@ -20,11 +20,11 @@
 			<h3><?php echo Yii::t('locale', 'Coordinators'); ?></h3>
 			<table class="coordinators">
 				<thead>
-					<th>Name</th>
-					<th>Position</th
-					<th>Tel</th>
-					<th>Detail</th>
-					<th>Operation</th>
+					<th><?php echo Yii::t('locale', 'Full name', array()); ?></th>
+					<th><?php echo Yii::t('locale', 'Position', array()); ?></th>
+					<th><?php echo Yii::t('locale', 'Tel.', array()); ?></th>
+					<th><?php echo Yii::t('locale', 'Detail', array()); ?></th>
+					<th></th>
 				</thead>
 				<tbody>
 		<?php foreach ($model->coordinators as $key => $value):
@@ -64,17 +64,18 @@
 		<?php echo $form->error($model,'items'); ?>
 		<table class="needs">
 			<thead>
-				<th>Name</th>
-				<th>Amount</th>
-				<th>Detail</th>
-				<th>Operation</th>
+				<th><?php echo Yii::t('locale', 'Name', array()); ?></th>
+				<th><?php echo Yii::t('locale', 'Amount', array()); ?></th>
+				<th><?php echo Yii::t('locale', 'Detail', array()); ?></th>
+				<th></th>
 			</thead>
 			<tbody>
 			 <?php 
-				foreach ($model->needs as $key => $value):
-					$_id = $value->attributes['id'];
-					$_amount = $value->attributes['amount'];
-					$_item_name = LookupManager::getItemName($value->attributes['item_id']);
+				foreach ($model->needs as $item):
+					$_id = $item->id;
+					$_amount = $item->amount;
+					$_item_name = LookupManager::getItemName($item->item_id);
+					$_detail = $item->detail;
 			 ?>
 					<tr>
 						<td class="row-item item-name">
