@@ -654,7 +654,7 @@ table th {
 }
 table td {
   vertical-align: top;
-  line-height: 30px
+  line-height: 34px
 }
 table th + th, table td + td {
   border-left: 1px solid #ddd;
@@ -771,7 +771,7 @@ div.form .row {margin: 0 0 15px;}
 a.needs-item-delete, .coordinator-item-delete {
   background: url(/images/ic-delete.png) no-repeat 0 0;
 } 
- .coordinator-item-delete {margin: 0;padding: 0;}
+a.needs-item-delete {margin: 0;padding: 0;}
 
 td.operations {vertical-align: middle}
 .coordinator-item-delete,
