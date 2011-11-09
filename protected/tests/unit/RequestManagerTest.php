@@ -42,6 +42,7 @@ class RequestManagerTest extends CDbTestCase
     
     $attr1['detail']         = 'aaxxy';   // Request
     $attr1['location_id']    = '';       // Location
+    $attr1['coordinators']   = array();
         
     $instance = $request->create($attr1);    
     $this->assertNotNull($instance->id); 
