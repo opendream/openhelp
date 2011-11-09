@@ -13,7 +13,7 @@
         ),
     ));
     echo '<div class="dialog_input">'.
-            '<span>fullname: </span>'.
+            '<span>เลือกสิ่งของ: </span>'.
             CHtml::activedropDownList($model,'id',Item::model()->ItemList, array('prompt' => Yii::t('locale', '- Select -'))) .
          '</div>';
 
@@ -22,25 +22,32 @@
 ?>
 
 <script type="text/javascript" >
-    function addRItem() {
-        $(this).dialog("close");
-        var inserted_val = $("#Request_id").val();
-        $('.items').append("<div>"+inserted_val.toString()+"</div>");
-    }
-    $('.coordinator-item-delete').live('click', function(e) {
-        e.preventDefault();
-        var self = $(this);
-        var coordinate_item = self.parent().parent('div');
-        coordinate_item.remove();
-        
-    });
+    window.addRItem = function() {
+      var selected_id, selected_text;
+      $(this).dialog("close");
+      selected_text = $("#Request_id option:selected").text();
+      selected_id = $("#Request_id option:selected").val();
+      return $('.items').append("       <div class='item-wrapper'> \n           <div class=\"selected_text\">\n<span class='item-name'> " + selected_text + " </span>\n<input type='text' name='Request[items][id][]' value='" + selected_id + "' >\n<input type='text' name='Request[items][name][]' value='" + selected_text + "' >\n<input type='text' name='Request[items][amount][]' value='0' >\n         </div> \n           <span class='item-delete delete'>\n             <a href='#' alt='delete' class='items-item-delete delete'>delete</a>\n          </span>\n       </div>");
+    };
 </script>
 <!-- 
 <script type="text/coffeescript">
-    window.addItem2 = () -> 
-        $(this).dialog "close"
-        inserted_val = $("#item-name-input").val()
-        $("item-name-input").html ""
-        $('.coordinator-list').append "<div class='coordinator-item'> <input name='Request[coordinators][]' type='text' value ='#{inserted_val}'/></div>"
+    window.addRItem = ()  ->
+        $(this).dialog("close")
+        selected_text = $("#Request_id option:selected").text() 
+        selected_id = $("#Request_id option:selected").val() 
+        $('.items').append """
+            <div class='item-wrapper'> 
+                <div class="selected_text">
+                    <span class='item-name'> #{selected_text} </span>
+                    <input type='text' name='Request[items][id][]' value='#{selected_id}' >
+                    <input type='text' name='Request[items][name][]' value='#{selected_text}' >
+                    <input type='text' name='Request[items][amount][]' value='0' >
+                </div> 
+                <span class='item-delete delete'>
+                    <a href='#' alt='delete' class='items-item-delete delete'>delete</a>
+                </span>
+            </div>
+        """
 </script>
  -->
