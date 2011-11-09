@@ -55,11 +55,12 @@ class RequestManager
       if($params['location_id']=='')
         $model->location_id = null;
       
-      // Remove all related coordinator request
-      $req_coors = $this->findRequestCoordinators($model->id);
-      foreach ($req_coors as $req_coor) $req_coor->delete();
 
-      if ($model->save()) {      
+      if ($model->save()) {    
+        // Remove all related coordinator request
+        $req_coors = $this->findRequestCoordinators($model->id);
+        foreach ($req_coors as $req_coor) $req_coor->delete();
+        
         if (isset($params['coordinators']) && count($params['coordinators']) > 0) {
           // Find coordinator
           $coordinators = $params['coordinators'];
@@ -73,7 +74,8 @@ class RequestManager
               $this->insertRequestCoordinator($model->id, $cId->id);
             }
           }
-        }        
+        }  
+              
       }
     }
     // Return Request Model
@@ -206,6 +208,7 @@ class RequestManager
     $need->amount = $amount;
     $need->request_id = $reqId;
     $need->item_id = $itemId;
+    $need->status = Need::NEED_STATUS_WAIT;
     return $need->save() ? $need : false;
   }
 }

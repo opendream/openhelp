@@ -18,9 +18,11 @@ class RequestManagerTest extends CDbTestCase
     $attr1['coordinators']['position'][] = '';
     $attr1['coordinators']['tel'][] = '';
     $attr1['coordinators']['tel'][] = ''; 
-    $attr1['items']['id'][] = '';
-    $attr1['items']['amount'][] = ''; 
-    $attr1['items']['detail'][] = ''; 
+    $attr1['coordinators']['detail'][] = '';
+    $attr1['coordinators']['detail'][] = ''; 
+    $attr1['items']['id'][] = '1';
+    $attr1['items']['amount'][] = '10'; 
+    $attr1['items']['detail'][] = 'test'; 
     
     $instance = $request->create($attr1);
     $this->assertNotNull($instance->id);
@@ -39,7 +41,9 @@ class RequestManagerTest extends CDbTestCase
     $attr1['coordinators']['position'][] = '';
     $attr1['coordinators']['position'][] = '';
     $attr1['coordinators']['tel'][] = '';
-    $attr1['coordinators']['tel'][] = '';   
+    $attr1['coordinators']['tel'][] = ''; 
+    $attr1['coordinators']['detail'][] = '';
+    $attr1['coordinators']['detail'][] = '';   
     
     $instance = $request->getCoordinators($attr1['coordinators']);
 
@@ -60,6 +64,8 @@ class RequestManagerTest extends CDbTestCase
     $attr1['coordinators']['position'][] = '';
     $attr1['coordinators']['tel'][] = '';
     $attr1['coordinators']['tel'][] = ''; 
+    $attr1['coordinators']['detail'][] = '';
+    $attr1['coordinators']['detail'][] = ''; 
     $attr1['items']['id'][] = '';   
     $attr1['items']['amount'][] = '';
     
@@ -105,7 +111,9 @@ class RequestManagerTest extends CDbTestCase
     $attr1['coordinators']['position'][] = '';
     $attr1['coordinators']['position'][] = '';
     $attr1['coordinators']['tel'][] = '';
-    $attr1['coordinators']['tel'][] = '';    
+    $attr1['coordinators']['tel'][] = '';   
+    $attr1['coordinators']['detail'][] = '';
+    $attr1['coordinators']['detail'][] = ''; 
     $attr1['status']    = 0;       // Status
     $attr1['items']['id'][] = array();
     $criteria = new CDbCriteria;
@@ -117,7 +125,7 @@ class RequestManagerTest extends CDbTestCase
     $request = new RequestManager;
 
     $criteria = new CDbCriteria;
-    $criteria->compare('detail', 'aaxxa');
+    $criteria->compare('detail', 'update');
     $reqInstance = Request::model()->find($criteria); 
 
     $attr1 = array();

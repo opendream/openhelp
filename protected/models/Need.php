@@ -19,6 +19,10 @@
  */
 class Need extends CActiveRecord
 {
+	const NEED_STATUS_WAIT = 0;
+    const NEED_STATUS_DONATED = 1;
+    const NEED_STATUS_SHIPMENT = 2;
+    const NEED_STATUS_COMPLETED = 3;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Need the static model class
