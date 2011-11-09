@@ -36,18 +36,31 @@ Class LocationHtml extends CHtml {
     return $output;
   }
   
-  public static function locationList ($model, $attribute='location_id', $id=NULL) {
+  public static function locationList ($model, $attribute='location_id') {
     
     $addresses = Yii::app()->params['location'];
     $firstLevelCol = array_shift($addresses);
     $children = $addresses[0];
 
     $locationModel = new Location;
-    if ($id) {
-      $locationModel = $this->loadModel($id);
-      foreach ($addresses as $level) {
-        # code...
-      }
+    if ($model->$attribute) {
+      //print_r($model->$attribute);
+      
+      //$locationModel = $this->loadModel($id);
+      #$whereList = array_reverse($addresses);
+      #$whereList[] = 1;
+      #$levelData = array();
+      #while (!empty($whereList)) {
+      #  $level = array_shift($whereList);
+      #  $where = implode(' AND ', $whereList);
+      #  
+      #  $qtxt = "SELECT $level FROM location WHERE $where";
+      #  $command = Yii::app()->db->createCommand($qtxt);
+      #  
+      #  $levelData[$level] = $command->queryColumn(array($level => $level));
+      #  
+      #}
+      
     }
 
     $qtxt = "SELECT DISTINCT $firstLevelCol FROM location";

@@ -22,7 +22,7 @@ class RequestManagerTest extends CDbTestCase
     $attr1['coordinators']['detail'][] = '';
     $attr1['coordinators']['detail'][] = ''; 
     $attr1['items']['id'][] = '1';
-    $attr1['items']['amount'][] = '10'; 
+    $attr1['items']['amount'][] = '1'; 
     $attr1['items']['detail'][] = 'test'; 
     
     $instance = $request->create($attr1);
