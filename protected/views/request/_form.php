@@ -37,11 +37,13 @@
 		<?php echo $form->error($model,'detail'); ?>
 	</div>
   
+  	<?php if ($model->isNewRecord == false): ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
 		<?php echo $form->listBox($model,'status',LookupManager::requestStatus()); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
+	<?php endif; ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'items'); ?>
