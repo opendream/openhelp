@@ -16,47 +16,52 @@
 	<div class="row location-list">
 	  <h3>Select Location</h3>
 		<?php echo LocationHtml::locationList($model, 'location_id'); ?>
-		
 		<div class="detail-list">
 			<?php echo $form->labelEx($model,'detail'); ?>
 			<?php echo $form->textArea($model,'detail',array('rows'=>6, 'cols'=>50)); ?>
 			<?php echo $form->error($model,'detail'); ?>
 	  </div>
-		
 	</div> <!-- end location-list -->
 
 	<div class="row coordinator-list">
 		<div class="coordinator-lable">
 			<h3>Coordinators</h3>
-	    <?php
-	    	foreach ($model->coordinators as $key => $value): 
-	    		$_fullname = $value->attributes['fullname'];
-	    		$_position = $value->attributes['position'];
-	    		$_tel	 = $value->attributes['tel'];
-	    		$_detail = $value->attributes['detail'];
-	    	?> 
-	    		<div class="coordinator-item">
-				    <div class="row-item">
-				        <span class="coordinator-item name">name: </span>
-				        <input name="Request[coordinators][name][]" type="text" value="<?php print $_fullname; ?>"> 
-				    </div>
-				    <div class="row-item">
-				        <span class="coordinator-item position">position: </span>
-				        <input name="Request[coordinators][position][]" type="text" value="<?php print $_position	; ?>"> 
-				    </div>
-				    <div class="row-item">
-				        <span class="coordinator-item tel">tel: </span>
-				        <input name="Request[coordinators][tel][]" type="text" value="<?php print $_tel; ?>"> 
-				    </div>
-				    <div class="row-item">
-				        <span class="coordinator-item detail">Detail: </span>
-				        <input name="Request[coordinators][detail][]" type="text" value="<?php print $_detail; ?>"> 
-				    </div>
-				    <span class="detete">
-				        <a href="#" alt="delete" class="coordinator-item-delete delete">delete</a>
-				    </span>
-				</div> 	    		
-			<?php endforeach; ?>	    		
+			<table class="coordinators">
+				<thead>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Tel</th>
+					<th>Detail</th>
+					<th>Operation</th>
+				</thead>
+				<tbody>
+	    <?php foreach ($model->coordinators as $key => $value):
+		    		$_fullname = $value->attributes['fullname'];
+		    		$_position = $value->attributes['position'];
+		    		$_tel	 = $value->attributes['tel'];
+		    		$_detail = $value->attributes['detail']; ?>
+					<tr>
+					    <td class="row-item name">
+					        <input name="Request[coordinators][name][]" type="text" value="<?php print $_fullname; ?>"> 
+					    </td>
+					    <td class="row-item position">
+					        <input name="Request[coordinators][position][]" type="text" value="<?php print $_position; ?>"> 
+					    </td>
+					    <td class="row-item tel">
+					        <input name="Request[coordinators][tel][]" type="text" value="<?php print $_tel; ?>"> 
+					    </td>
+					    <td class="row-item detail">
+					        <input name="Request[coordinators][detail][]" type="text" value="<?php print $_detail; ?>"> 
+					    </td>
+		                <td class='row-item operations'
+		                    <span class='detete'>
+		                        <a href='#' alt='delete' class='coordinator-item-delete delete'>delete</a>
+		                    </span>                
+		                </td>
+					</tr>  		
+		<?php endforeach; ?>	    		
+				<tbody>
+			</table>			
 	</div><!-- Coordination List/ -->
 	    <?php echo CHtml::link(Yii::t('locale', 'Add Coordinators'), '#', array('onclick'=>'$("#addCoordinators").dialog("open"); return false;', 'class' => 'add-coordinator')); ?>
 	</div><!-- / -->
