@@ -32,8 +32,8 @@ class RequestManager
         }
 
         // Save Needs
-        if (isset($model['needs'])) {
-
+        if (isset($model['items'])) {
+          $this->insertNeeds($request->id, $model['items']);
         }
       }
     }
@@ -55,11 +55,12 @@ class RequestManager
       if($params['location_id']=='')
         $model->location_id = null;
       
-      // Remove all related coordinator request
-      $req_coors = $this->findRequestCoordinators($model->id);
-      foreach ($req_coors as $req_coor) $req_coor->delete();
 
-      if ($model->save()) {      
+      if ($model->save()) {    
+        // Remove all related coordinator request
+        $req_coors = $this->findRequestCoordinators($model->id);
+        foreach ($req_coors as $req_coor) $req_coor->delete();
+        
         if (isset($params['coordinators']) && count($params['coordinators']) > 0) {
           // Find coordinator
           $coordinators = $params['coordinators'];
@@ -73,7 +74,8 @@ class RequestManager
               $this->insertRequestCoordinator($model->id, $cId->id);
             }
           }
-        }
+        }  
+              
       }
     }
     // Return Request Model
@@ -123,14 +125,11 @@ class RequestManager
     $coordinatorIds = array();
     
     for ($i=0; $i < count($coordinators['name']) ; $i++) { 
-
-      Yii::trace('###############################'.$coordinators['name'][$i].'###############################','example');
-
-      if ($tmp = $this->findCoordinator($coordinators['name'][$i])) {
+      if ($tmp = $this->findCoordinator($coordinators['name'][$i], $coordinators['position'][$i], $coordinators['tel'][$i])) {
         $coordinatorIds[]=$tmp;
       } else {
         // Create one if does not exist
-        $insCoordinator = $this->insertCoordinator($coordinators['name'][$i]);
+        $insCoordinator = $this->insertCoordinator($coordinators['name'][$i], $coordinators['position'][$i], $coordinators['tel'][$i], $coordinators['detail'][$i]);
 
         if ($insCoordinator) {
           $coordinatorIds[]=$insCoordinator;
@@ -168,35 +167,48 @@ class RequestManager
     }
   }
   
-  function findCoordinator($param)
+  function findCoordinator($fullname, $position='', $tel='')
   {
-    if ($param != '' && $param != NULL) {
-      $criteria = new CDbCriteria;
-      $criteria->compare('fullname',$param);
+    $criteria = new CDbCriteria;
+    if ($fullname != '' && $fullname != NULL) {      
+      $criteria->compare('fullname',$fullname);
+    } 
+    if ($position != '' && $position != NULL) {      
+      $criteria->compare('position',$position);
+    } 
+    if ($tel != '' && $tel != NULL) {      
+      $criteria->compare('tel',$tel);
+    } 
 
       $coordinator = Coordinator::model()->find($criteria);
-      return $coordinator;
-    }
-    return NULL;
+    
+    return $coordinator;    
   }
   
-  function insertCoordinator($param)
+  function insertCoordinator($fullname, $position, $tel, $detail)
   {
     $coordinator = new Coordinator;
-    $coordinator->fullname = $param;
-    // $coordinator->position = $model['position'];
-    // $coordinator->tel = $model['tel'];
-    // $coordinator->detail = $model['detail'];
+    $coordinator->fullname = $fullname;
+    $coordinator->position = $position;
+    $coordinator->tel = $tel;
     return $coordinator->save() ? $coordinator : false;
   }
 
-  function insertNeed($reqId, $param)
+  function insertNeeds($reqId, $items){
+    $needs = array();
+    for ($i=0; $i < count($items['id']); $i++) { 
+      $needs[] = $this->insertNeed($reqId, $items['id'][$i], $items['amount'][$i]);
+    }
+    return $needs;
+  }
+
+  function insertNeed($reqId, $itemId, $amount)
   {
-    $need = new Coordinator;
-    $need->name = $param['name'];
-    $need->amount = $param['amount'];
-    $need->detail = $param['detail'];
+    $need = new Need;
+    $need->amount = $amount;
     $need->request_id = $reqId;
+    $need->item_id = $itemId;
+    $need->status = Need::NEED_STATUS_WAIT;
     return $need->save() ? $need : false;
   }
 }
