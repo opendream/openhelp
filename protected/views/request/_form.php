@@ -72,8 +72,23 @@
 	</div>
 
     <?php echo CHtml::link(Yii::t('locale', 'Add need'), '#', array('onclick'=>'$("#addRItems").dialog("open"); return false;', 'class' => 'add-items')); ?>
-
- 
+	<div class="need items"> 
+		 <?php 
+		   foreach ($model->needs as $key => $value):
+		     $_amount = $value->attributes['amount'];
+		  ?>
+			 <div class="item-wrapper"> 
+			    <div class="selected_text">
+			        <span class="item-name"> ปลากระป๋อง </span>
+			        <input type="hidden" name="Request[items][id][]" value="<?php print $_amount ?>">
+			        amount: <input type="text" name="Request[items][amount][]" value="<?php print $_amount ?>">
+			    </div> 
+			    <span class="item-delete delete">
+			        <a href="#" alt="delete" class="needs-item-delete delete">delete</a>
+			    </span>
+			</div>
+		<?php endforeach; ?>
+	</div>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('locale', 'Create') : Yii::t('locale', 'Save')); ?>
 	</div>
