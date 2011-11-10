@@ -181,8 +181,14 @@ class RequestManager
 
   function insertRequest($request, $model){
     
-    $request->detail = $model['detail'];
-    $request->status = Request::REQUEST_STATUS_OPEN;
+    if(isset($model['detail'])){
+      $request->detail = $model['detail'];
+    }
+    if(isset($model['status'])){
+      $request->status = $model['status'];
+    }else{
+      $request->status = Request::REQUEST_STATUS_OPEN;
+    }
     if(isset($model['extra_text0'])){
       $request->extra_text0 = $model['extra_text0'];
     }
@@ -201,7 +207,6 @@ class RequestManager
     if(isset($model['extra_double0'])){
       $request->extra_double0 = $model['extra_double0'];
     }
-
     if(isset($model['extra_double1'])){
       $request->extra_double1 = $model['extra_double1'];
     }
