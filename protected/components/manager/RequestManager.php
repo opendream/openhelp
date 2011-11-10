@@ -10,16 +10,9 @@ class RequestManager
   function create($model)
   {
     $request = new Request;
-    if (isset($model)) {
-      
-      $request->detail = $model['detail'];
-      $request->status = Request::REQUEST_STATUS_OPEN;
-
-      $request->location_id = $model['location_id'];
-      if($model['location_id']=='')
-        $request->location_id = null;
-      
-      if ($request->save()) {  
+    if (isset($model)) { 
+      // impl transaction    
+      if ($this->insertRequest($request, $model)) {  
         // Find coordinator
         if(isset($model['coordinators'])) {            
           $coordinators = $model['coordinators'];
@@ -36,6 +29,7 @@ class RequestManager
           $this->insertNeeds($request->id, $model['items']);
         }
       }
+      //end of transaction
     }
     return $request;
   }
@@ -47,16 +41,16 @@ class RequestManager
   function update($model, $params)
   {
     if (isset($model)) {
-      $model->detail = $params['detail'];
+      /*$model->detail = $params['detail'];
       $model->status = $params['status'];
       
       // Location Validation
       $model->location_id = $params['location_id'];
       if($params['location_id']=='')
-        $model->location_id = null;
+        $model->location_id = null;*/
       
 
-      if ($model->save()) {    
+      if ($this->insertRequest($model, $params)) {    
         // Remove all related coordinator request
         $req_coors = $this->findRequestCoordinators($model->id);
         foreach ($req_coors as $req_coor) $req_coor->delete();
@@ -183,6 +177,49 @@ class RequestManager
       $coordinator = Coordinator::model()->find($criteria);
     
     return $coordinator;    
+  }
+
+  function insertRequest($request, $model){
+    
+    $request->detail = $model['detail'];
+    $request->status = Request::REQUEST_STATUS_OPEN;
+    if(isset($model['extra_text0'])){
+      $request->extra_text0 = $model['extra_text0'];
+    }
+    if(isset($model['extra_text1'])){
+      $request->extra_text1 = $model['extra_text1'];
+    }
+    if(isset($model['extra_text2'])){
+      $request->extra_text2 = $model['extra_text2'];
+    }
+    if(isset($model['extra_text3'])){
+      $request->extra_text3 = $model['extra_text3'];
+    }
+    if(isset($model['extra_text4'])){
+      $request->extra_text4 = $model['extra_text4'];
+    }
+    if(isset($model['extra_double0'])){
+      $request->extra_double0 = $model['extra_double0'];
+    }
+
+    if(isset($model['extra_double1'])){
+      $request->extra_double1 = $model['extra_double1'];
+    }
+    if(isset($model['extra_double2'])){
+      $request->extra_double2 = $model['extra_double2'];
+    }
+    if(isset($model['extra_double3'])){
+      $request->extra_double3 = $model['extra_double3'];
+    }
+    if(isset($model['extra_double4'])){
+      $request->extra_double4 = $model['extra_double4'];
+    }
+
+    $request->location_id = $model['location_id'];
+    if($model['location_id']=='')
+      $request->location_id = null;
+    
+    return $request->save();    
   }
   
   function insertCoordinator($fullname, $position, $tel)//, $detail)

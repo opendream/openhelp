@@ -12,6 +12,8 @@ class RequestManagerTest extends CDbTestCase
     // insert without null properties
     $attr1 = array();    
     $attr1['detail']         = 'aaa';   // Request
+    $attr1['extra_text0'] = 'sexy';
+    $attr1['extra_double0'] = 9.99;
     $attr1['location_id']    = 1;       // Location
     $attr1['coordinators']['name'][] = 'นายแดง';   // Request_coordinator
     $attr1['coordinators']['name'][] = 'นายเขียว';  
@@ -28,10 +30,14 @@ class RequestManagerTest extends CDbTestCase
     $instance = $request->create($attr1);
     $this->assertNotNull($instance->id);
     $this->assertEquals(1, count($instance->needs));
+    $this->assertEquals('sexy', $instance->extra_text0);
+    $this->assertEquals(9.99, $instance->extra_double0);
 
     //update request
     $attrUdate = array();
     $attrUdate['detail']         = 'update';   // Request
+    $attrUdate['extra_text1'] = 'hot';
+    $attrUdate['extra_double0'] = 0.99;
     $attrUdate['location_id']    = 1;       // Location
     $attrUdate['coordinators']['name'][] = 'นายมา';   // Request_coordinator
     $attrUdate['coordinators']['name'][] = 'หนุ่มน้อ หึหึ';
@@ -53,6 +59,9 @@ class RequestManagerTest extends CDbTestCase
     $this->assertNotNull($request->update($instance, $attrUdate));
     $instance = Request::model()->findByPk($instance->id);
     $this->assertEquals(2, count($instance->needs));
+    $this->assertEquals('sexy', $instance->extra_text0);
+    $this->assertEquals('hot', $instance->extra_text1);
+    $this->assertEquals(0.99, $instance->extra_double0);
 
     //delete request
     $this->assertTrue($request->delete($instance));    
