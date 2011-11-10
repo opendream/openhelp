@@ -138,13 +138,14 @@ class RequestManager
       $name = isset($coordinators['name'][$i]) ? $coordinators['name'][$i] : '';
       $position = isset($coordinators['position'][$i]) ? $coordinators['position'][$i] : '';
       $tel = isset($coordinators['tel'][$i]) ? $coordinators['tel'][$i] : '';
-      $detail = isset($coordinators['detail'][$i]) ? $coordinators['detail'][$i] : '';
+      //$detail = isset($coordinators['detail'][$i]) ? $coordinators['detail'][$i] : '';
 
       if ($tmp = $this->findCoordinator($name, $position, $tel)) {
+
         $coordinatorIds[]=$tmp;
       } else {
         // Create one if does not exist
-        $insCoordinator = $this->insertCoordinator($name, $position, $tel, $detail);
+        $insCoordinator = $this->insertCoordinator($name, $position, $tel);//, $detail);
 
         if ($insCoordinator) {
           $coordinatorIds[]=$insCoordinator;
@@ -184,13 +185,13 @@ class RequestManager
     return $coordinator;    
   }
   
-  function insertCoordinator($fullname, $position, $tel, $detail)
+  function insertCoordinator($fullname, $position, $tel)//, $detail)
   {
     $coordinator = new Coordinator;
     $coordinator->fullname = $fullname;
     $coordinator->position = $position;
     $coordinator->tel = $tel;
-    $coordinator->detail = $detail;
+    //$coordinator->detail = $detail;
     return $coordinator->save() ? $coordinator : false;
   }
 

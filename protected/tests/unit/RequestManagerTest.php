@@ -19,8 +19,8 @@ class RequestManagerTest extends CDbTestCase
     $attr1['coordinators']['position'][] = '';
     $attr1['coordinators']['tel'][] = '';
     $attr1['coordinators']['tel'][] = ''; 
-    $attr1['coordinators']['detail'][] = '';
-    $attr1['coordinators']['detail'][] = ''; 
+    //$attr1['coordinators']['detail'][] = '';
+    //$attr1['coordinators']['detail'][] = ''; 
     $attr1['items']['id'][] = '1';
     $attr1['items']['amount'][] = '1'; 
     $attr1['items']['detail'][] = 'test'; 
@@ -67,12 +67,12 @@ class RequestManagerTest extends CDbTestCase
     // $attr1['location_id']    = 1;       // Location
     $attr1['coordinators']['name'][] = 'นายยยย';   // Request_coordinator
     $attr1['coordinators']['name'][] = 'ฟหกด'; 
-    $attr1['coordinators']['position'][] = '';
-    $attr1['coordinators']['position'][] = '';
-    $attr1['coordinators']['tel'][] = '';
-    $attr1['coordinators']['tel'][] = ''; 
-    $attr1['coordinators']['detail'][] = '';
-    $attr1['coordinators']['detail'][] = '';   
+    $attr1['coordinators']['position'][] = 'อบต';
+    $attr1['coordinators']['position'][] = 'ตำรวจ';
+    $attr1['coordinators']['tel'][] = '1231';
+    $attr1['coordinators']['tel'][] = '321'; 
+    $attr1['coordinators']['detail'][] = 'ก๊าก1';
+    //$attr1['coordinators']['detail'][] = '';   
     
     $instance = $request->getCoordinators($attr1['coordinators']);
 
@@ -93,8 +93,8 @@ class RequestManagerTest extends CDbTestCase
     $attr1['coordinators']['position'][] = '';
     $attr1['coordinators']['tel'][] = '';
     $attr1['coordinators']['tel'][] = ''; 
-    $attr1['coordinators']['detail'][] = '';
-    $attr1['coordinators']['detail'][] = ''; 
+    //$attr1['coordinators']['detail'][] = '';
+    //$attr1['coordinators']['detail'][] = ''; 
     $attr1['items']['id'][] = '';   
     $attr1['items']['amount'][] = '';
     //$attr1['items']['detail'][] = '';
