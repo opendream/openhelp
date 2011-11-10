@@ -47,7 +47,7 @@ class RequestManagerTest extends CDbTestCase
     $attrUdate['coordinators']['tel'][] = '';   
     $attrUdate['coordinators']['detail'][] = '';
     $attrUdate['coordinators']['detail'][] = 'detail test'; 
-    $attrUdate['status']    = 0;       // Status
+    $attrUdate['status']    = 2;       // Status
     $attrUdate['items']['id'][] = '1';
     $attrUdate['items']['id'][] = '2';
     $attrUdate['items']['amount'][] = '20'; 
@@ -59,6 +59,7 @@ class RequestManagerTest extends CDbTestCase
     $this->assertNotNull($request->update($instance, $attrUdate));
     $instance = Request::model()->findByPk($instance->id);
     $this->assertEquals(2, count($instance->needs));
+    $this->assertEquals(2, $instance->status);
     $this->assertEquals('sexy', $instance->extra_text0);
     $this->assertEquals('hot', $instance->extra_text1);
     $this->assertEquals(0.99, $instance->extra_double0);
