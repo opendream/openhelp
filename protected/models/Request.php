@@ -22,6 +22,21 @@ class Request extends CActiveRecord
 	const REQUEST_STATUS_PROCESS = 1;
     const REQUEST_STATUS_CLOSED = 2;
     const REQUEST_STATUS_CANCELLED = 3;
+
+    private $_locationLabel;
+
+    public function getLocationLabel()
+	{
+	    if ($this->_locationLabel === null && $this->location !== null)
+	    {
+	        $this->_locationLabel = $this->location->label;
+	    }
+	    return $this->_locationLabel;
+	}
+	public function setLocationLabel($value)
+	{
+	    $this->_locationLabel = $value;
+	}
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Request the static model class
@@ -53,7 +68,7 @@ class Request extends CActiveRecord
 			array('detail', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, date_created, last_updated, location_id, detail, status', 'safe', 'on'=>'search'),
+			array('id, date_created, last_updated, location_id, locationLabel, detail, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,9 +113,11 @@ class Request extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
+		$criteria->with = "location";
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('last_updated',$this->last_updated,true);
 		$criteria->compare('location_id',$this->location_id,true);
+		$criteria->compare('location.label',$this->locationLabel,true);
 		$criteria->compare('detail',$this->detail,true);
 		$criteria->compare('status',$this->status);
 

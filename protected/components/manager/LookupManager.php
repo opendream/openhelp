@@ -53,7 +53,8 @@ class LookupManager
   public static function getItemName($param)
   {
     if($param){
-      return Item::model()->findByPk($param)->name;
+      $item = Item::model()->findByPk($param);
+      return $item!=null ? $item->name : '';
     }
     return '';
   }
@@ -61,11 +62,12 @@ class LookupManager
   public static function getLocationString($location)
   {
     if($location){
-      $locationString = '';
+      /*$locationString = '';
       foreach (Yii::app()->params['location'] as $level) {
         $locationString .= $location->attributes[$level].' ';
       };
-      return $locationString;
+      return $locationString;*/
+      return Location::model()->findByPk($location)->label;
     }
     return ''; 
   }
