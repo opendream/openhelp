@@ -12,7 +12,4 @@
 	<strong class="label"><?php echo CHtml::encode($data->getAttributeLabel('location_id')); ?>:</strong>
 	<div class="detail"><?php echo LocationHtml::locationView($data->location_id); ?></div>
 
-	<strong class="label"><?php echo CHtml::encode($data->getAttributeLabel('detail')); ?>:</strong>
-	<div class="detail"><?php echo CHtml::encode($data->detail); ?></div>
-
 </div>

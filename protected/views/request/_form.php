@@ -138,6 +138,7 @@
   	      $options += array(
   	        "model"=>$model, 
   	        "attribute"=>'extra_text'.$key,
+  	        "defaultValue"=>$model->getAttribute('extra_text'.$key),
     				"config" => array(
     					"height"=>"200px",
     					"width"=>"100%",
@@ -153,6 +154,8 @@
     </div>
 	  <?php endforeach ?>
 	<?php endif ?>
+	
+	<?php echo $form->hiddenField($model,'detail'); ?>
 	
 	<?php if ($model->isNewRecord == false): ?>
 

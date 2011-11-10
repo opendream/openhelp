@@ -19,7 +19,33 @@ $this->menu=array(
     <h3><?php echo Yii::t('locale', $model->getAttributeLabel('location')); ?></h3>
   </div>
   <div class="Request_location">
-    <?php echo LocationHtml::locationView($model->location_id); ?>
+    <div class="main-location">
+      <?php echo LocationHtml::locationView($model->location_id); ?>
+    </div>
+    <div class="extra-double">
+      <?php $extraDouble = Yii::app()->params['request']['extra']['double']; ?>
+
+    	<?php if ($extraDouble): ?>
+    	<div class="extra-double">
+    	    <table>
+    	      <tbody>
+        	  <?php foreach ($extraDouble as $key => $row): ?>
+            <tr>
+              <td id="extra-double-label-<?php echo $key; ?>" class="extra-double-label"><?php echo $row['label']; ?></td>
+              <td class="extra-double-input">
+                <span id="extra-double-prefic-<?php echo $key; ?>" class="extra-double-prefix"><?php echo $row['prefix']; ?></span>
+                <span id="extra-double-value-<?php echo $key; ?>" class="extra-double-value">
+                  <?php echo $model->getAttribute('extra_double'.$key); ?>
+                </span>
+                <span id="extra-double-suffix-<?php echo $key; ?>" class="extra-double-suffix"><?php echo $row['suffix']; ?></span>
+              </td>
+            </tr>
+        	  <?php endforeach ?>
+        	  </tbody>
+      	  </table>
+    	</div>
+    	<?php endif ?>
+    </div>
   </div>
   <div class="label Label_Request_last_updated">
     <h3><?php echo Yii::t('locale', $model->getAttributeLabel('last_updated')); ?></h3>
@@ -63,11 +89,21 @@ $this->menu=array(
     )); ?>
   </div>
   
-  <div class="label Label_Request_detail">
-    <h3><?php echo Yii::t('locale', $model->getAttributeLabel('detail')); ?></h3>
-  </div>
-  <div class="detail Request_detail">
-    <?php echo $model->detail; ?>
-  </div>
+  <?php $extraText = Yii::app()->params['request']['extra']['text']; ?>
+  
+  <?php if ($extraText): ?>
+	  <?php foreach ($extraText as $key => $row): ?>
+	    <?php if ($model->getAttribute('extra_text'.$key)): ?>
+	      <div class="label Label_Request_extra_text<?php echo $key; ?>">
+      	  <h3><?php echo Yii::t('locale', $row['label']); ?></h3>
+        </div>
+        <div class="detail Request_extra_text<?php echo $key; ?>">
+          <?php echo $model->getAttribute('extra_text'.$key); ?>
+        </div>
+	    <?php endif ?>
+	  <?php endforeach ?>
+	<?php endif ?>
+
+  
   
 </div>
