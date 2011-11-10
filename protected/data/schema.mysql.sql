@@ -51,7 +51,6 @@ CREATE TABLE `coordinator` (
   `fullname` varchar(255) NOT NULL,
   `position` varchar(255),
   `tel` varchar(255),
-  `detail` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

@@ -14,6 +14,33 @@
 	<div class="row location-list">
 	  <h3><?php echo Yii::t('locale', 'Location'); ?></h3>
 		<?php echo LocationHtml::locationList($model, 'location_id'); ?>
+		
+		
+  	<?php $extraDouble = Yii::app()->params['request']['extra']['double']; ?>
+
+  	<?php if ($extraDouble): ?>
+  	<div class="extra-double">
+  	  <h3><?php echo Yii::t('locale', 'Number detail'); ?></h3>
+  	    <table>
+  	      <tbody>
+      	  <?php foreach ($extraDouble as $key => $row): ?>
+          <tr>
+            <td id="extra-double-label-<?php echo $key; ?>" class="extra-double-label"><?php echo $row['label']; ?></td>
+            <td class="extra-double-input">
+              <span id="extra-double-prefic-<?php echo $key; ?>" class="extra-double-prefix"><?php echo $row['prefix']; ?></span>
+              <span id="extra-double-value-<?php echo $key; ?>" class="extra-double-value">
+                <?php echo $form->textField($model,'extra_double'.$key); ?>
+              </span>
+              <span id="extra-double-suffix-<?php echo $key; ?>" class="extra-double-suffix"><?php echo $row['suffix']; ?></span>
+              <?php echo $form->error($model,'extra_double'.$key); ?>
+            </td>
+          </tr>
+      	  <?php endforeach ?>
+      	  </tbody>
+    	  </table>
+  	</div>
+  	<?php endif ?>
+		
 	</div> <!-- end location-list -->
 
 	<div class="row coordinator-list">
@@ -23,15 +50,13 @@
 					<th><?php echo Yii::t('locale', 'Full name', array()); ?></th>
 					<th><?php echo Yii::t('locale', 'Position', array()); ?></th>
 					<th><?php echo Yii::t('locale', 'Tel.', array()); ?></th>
-					<th><?php echo Yii::t('locale', 'Detail', array()); ?></th>
 					<th></th>
 				</thead>
 				<tbody>
 		<?php foreach ($model->coordinators as $key => $value):
 					$_fullname = $value->attributes['fullname'];
 					$_position = $value->attributes['position'];
-					$_tel	 = $value->attributes['tel'];
-					$_detail = $value->attributes['detail']; ?>
+					$_tel	 = $value->attributes['tel'];?>
 					<tr>
 						<td class="row-item name">
 							<input name="Request[coordinators][name][]" type="text" value="<?php print $_fullname; ?>"> 
@@ -41,9 +66,6 @@
 						</td>
 						<td class="row-item tel">
 							<input name="Request[coordinators][tel][]" type="text" value="<?php print $_tel; ?>"> 
-						</td>
-						<td class="row-item detail">
-							<input name="Request[coordinators][detail][]" type="text" value="<?php print $_detail; ?>"> 
 						</td>
 						<td class='row-item operations'
 							<span class='delete'>
@@ -101,23 +123,37 @@
 
 	</div> <!-- row need-list /-->
 
-	<div class="detail-list">
-		<h3><?php echo Yii::t('locale', 'Detail'); ?></h3>
-		<?php
-			$this->widget('ext.ckeditor.CKEditorWidget',array(
-				"model"=>$model,
-				"attribute"=>'detail',
-				"defaultValue"=>"",
-				"config" => array(
-					"height"=>"200px",
-					"width"=>"100%",
-					"toolbar"=>"Basic",
-					), // config
-				) // widget options
-			); // widget
-		?>
-		<?php echo $form->error($model,'detail'); ?>
-	</div> 	<!-- detail-list / -->
+	
+	<?php $extraText = Yii::app()->params['request']['extra']['text']; ?>
+	
+	<?php if ($extraText): ?>
+	  <?php foreach ($extraText as $key => $row): ?>
+	  <div class="extra-text-<?php echo $key; ?>-list">
+  	  <h3><?php echo Yii::t('locale', $row['label']); ?></h3>
+  	  <?php
+  	    $options =  (!isset($row['options']) || !$row['options'])? array(): $row['options'];
+  	    $editor = (!isset($row['editor']) || !$row['editor'])? 'textField': $row['editor'];
+  	  ?>
+  	  <?php if ($editor == 'CKEditorWidget' || $editor == 'ext.ckeditor.CKEditorWidget'): ?>	    
+  	    <?php
+  	      $options += array(
+  	        "model"=>$model, 
+  	        "attribute"=>'extra_text'.$key,
+    				"config" => array(
+    					"height"=>"200px",
+    					"width"=>"100%",
+    					"toolbar"=>"Basic",
+    				),
+    			)
+    		?>
+    		<?php $this->widget('ext.ckeditor.CKEditorWidget', $options); ?>
+    	<?php else: ?>
+    	  <?php echo $form->{$editor}($model,'extra_text'.$key, $options); ?>
+    	  <?php echo $form->error($model,'extra_text'.$key); ?>
+  	  <?php endif ?>
+    </div>
+	  <?php endforeach ?>
+	<?php endif ?>
 	
 	<?php if ($model->isNewRecord == false): ?>
 

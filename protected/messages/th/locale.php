@@ -11,6 +11,7 @@ return array(
   'Needs' => 'ความต้องการ/ความช่วยเหลือ',
   'Location' => 'รายละเอียดสถานที่',
   'Status' => 'สถานะ',
+  'Number detail' => 'ข้อมูลตัวเลข',
    
   /*
   * Location

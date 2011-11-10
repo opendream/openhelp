@@ -45,7 +45,6 @@ $this->menu=array(
           array('name' => 'fullname', 'header' => Yii::t('locale', 'Full name'), 'value' => '$data->fullname'),
           array('name' => 'position', 'header' => Yii::t('locale', 'Position'), 'value' => '$data->position'),
           array('name' => 'tel', 'header' => Yii::t('locale', 'Tel.'), 'value' => '$data->tel'),
-          array('name' => 'detail', 'header' => Yii::t('locale', 'Detail'), 'value' => '$data->detail'),
         ),
     )); ?>
   </div>
