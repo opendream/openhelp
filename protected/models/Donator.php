@@ -8,6 +8,7 @@
  * @property string $fullname
  * @property string $tel
  * @property string $location_id
+ * @property string $image_url
  * @property string $detail
  *
  * The followings are the available model relations:
@@ -43,12 +44,12 @@ class Donator extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('fullname', 'required'),
-			array('fullname, tel', 'length', 'max'=>255),
+			array('fullname, tel, image_url', 'length', 'max'=>255),
 			array('location_id', 'length', 'max'=>20),
 			array('detail', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, fullname, tel, location_id, detail', 'safe', 'on'=>'search'),
+			array('id, fullname, tel, location_id, image_url, detail', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,6 +77,7 @@ class Donator extends CActiveRecord
 			'fullname' => 'Fullname',
 			'tel' => 'Tel',
 			'location_id' => 'Location',
+			'image_url' => 'Image Url',
 			'detail' => 'Detail',
 		);
 	}
@@ -95,6 +97,7 @@ class Donator extends CActiveRecord
 		$criteria->compare('fullname',$this->fullname,true);
 		$criteria->compare('tel',$this->tel,true);
 		$criteria->compare('location_id',$this->location_id,true);
+		$criteria->compare('image_url',$this->image_url,true);
 		$criteria->compare('detail',$this->detail,true);
 
 		return new CActiveDataProvider($this, array(

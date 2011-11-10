@@ -9,6 +9,16 @@
  * @property string $last_updated
  * @property string $location_id
  * @property string $detail
+ * @property string $extra_text0
+ * @property string $extra_text1
+ * @property string $extra_text2
+ * @property string $extra_text3
+ * @property string $extra_text4
+ * @property double $extra_double0
+ * @property double $extra_double1
+ * @property double $extra_double2
+ * @property double $extra_double3
+ * @property double $extra_double4
  * @property integer $status
  *
  * The followings are the available model relations:
@@ -64,11 +74,12 @@ class Request extends CActiveRecord
 		return array(
 			// array('date_created, last_updated', 'required'),
 			array('status', 'numerical', 'integerOnly'=>true),
+			array('extra_double0, extra_double1, extra_double2, extra_double3, extra_double4', 'numerical'),
 			array('location_id', 'length', 'max'=>20),
-			array('detail', 'safe'),
+			array('detail, extra_text0, extra_text1, extra_text2, extra_text3, extra_text4', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, date_created, last_updated, location_id, locationLabel, detail, status', 'safe', 'on'=>'search'),
+			array('id, date_created, last_updated, location_id, locationLabel, detail, extra_text0, extra_text1, extra_text2, extra_text3, extra_text4, extra_double0, extra_double1, extra_double2, extra_double3, extra_double4, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -97,6 +108,16 @@ class Request extends CActiveRecord
 			'last_updated' => 'Last Updated',
 			'location_id' => 'Location',
 			'detail' => 'Detail',
+			'extra_text0' => 'Extra Text0',
+			'extra_text1' => 'Extra Text1',
+			'extra_text2' => 'Extra Text2',
+			'extra_text3' => 'Extra Text3',
+			'extra_text4' => 'Extra Text4',
+			'extra_double0' => 'Extra Double0',
+			'extra_double1' => 'Extra Double1',
+			'extra_double2' => 'Extra Double2',
+			'extra_double3' => 'Extra Double3',
+			'extra_double4' => 'Extra Double4',
 			'status' => 'Status',
 		);
 	}
@@ -119,6 +140,16 @@ class Request extends CActiveRecord
 		$criteria->compare('location_id',$this->location_id,true);
 		$criteria->compare('location.label',$this->locationLabel,true);
 		$criteria->compare('detail',$this->detail,true);
+		$criteria->compare('extra_text0',$this->extra_text0,true);
+		$criteria->compare('extra_text1',$this->extra_text1,true);
+		$criteria->compare('extra_text2',$this->extra_text2,true);
+		$criteria->compare('extra_text3',$this->extra_text3,true);
+		$criteria->compare('extra_text4',$this->extra_text4,true);
+		$criteria->compare('extra_double0',$this->extra_double0);
+		$criteria->compare('extra_double1',$this->extra_double1);
+		$criteria->compare('extra_double2',$this->extra_double2);
+		$criteria->compare('extra_double3',$this->extra_double3);
+		$criteria->compare('extra_double4',$this->extra_double4);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
