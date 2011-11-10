@@ -146,7 +146,9 @@
     				),
     			)
     		?>
-    		<?php $this->widget('ext.ckeditor.CKEditorWidget', $options); ?>
+        <div class="ckeditor-wrapper">
+          <?php $this->widget('ext.ckeditor.CKEditorWidget', $options); ?>
+        </div>
     	<?php else: ?>
     	  <?php echo $form->{$editor}($model,'extra_text'.$key, $options); ?>
     	  <?php echo $form->error($model,'extra_text'.$key); ?>

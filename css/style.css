@@ -124,7 +124,11 @@ button {width: auto; overflow: visible;}
 -------------------------------------------------------------------------------*/
 
 /* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
-body {font: 13px Helmet, Freesans, sans-serif;}
+body {
+  background: #e1dfd6;  
+  font: 13px Thonburi,Helvetica,Tahoma,sans-serif;
+  line-height: 1.5em;
+}
 
 /* using local fonts? make sure to read up on Paul Irish's 
 	Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ */
@@ -132,8 +136,8 @@ body {font: 13px Helmet, Freesans, sans-serif;}
 /* we like off-black for text */
 body, select, input, textarea {color: #333;}
 
-a {color: #03f;}
-a:hover {color: #69f;}
+a {color: #f15350; text-decoration: none}
+a:hover {color: #bc3a38; text-decoration: underline;}
 
 /* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
 ::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
@@ -148,6 +152,59 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 
 
 
+
+
+
+
+
+
+
+/*
+* layout
+*/
+
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#header {
+  background: #a4d7e2;
+}
+
+#header {margin: 0 auto}
+#header header {padding: 20px 0}
+#header nav {}
+  #header nav ul {list-style: none;}
+  #header nav ul li {display: inline;}
+
+#header-top {
+  background: #a5d0dd;
+  border-bottom: 7px solid #58b1cc;
+  margin: 0 0 20px;
+}
+
+#header-top section {
+
+}
+
+#content, #header header {width: 860px; margin: 0 auto;}
+
+#content {}
+	#content article {
+	  background: #fff;
+	  -moz-border-radius: 10px;
+	  -webkit-border-radius: 10px;
+	  border-radius: 10px;
+	  padding: 20px;
+	  margin: 0 0 20px
+	}
+
+#footer {
+  background: #afdfe6;
+  text-align: center;
+  padding: 20px 0
+}
 
 /* Print styles!
 -------------------------------------------------------------------------------*/

@@ -732,6 +732,7 @@ table .headerSortUp:after {
 /* default */
 .list-view .summary {font-size: 0.9em; color: #666}
 table td input, table td select  {width: 95% !important;}
+.form h3 {color: #0066A4}
 
 /* style block */
 .grid-view .filters input, .grid-view .filters select {width: 95%}
@@ -744,7 +745,8 @@ table td input, table td select  {width: 95% !important;}
 /* Create Request */
 div.form .row {margin: 0 0 15px;}
 #request-form .row {}
-.location-list, .coordinator-list, .need-list, .detail-list {
+.location-list, .coordinator-list, .need-list, .detail-list,
+.extra-text-0-list, .extra-text-1-list {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -755,8 +757,17 @@ div.form .row {margin: 0 0 15px;}
   margin: 0 0 10px !important
 }
 .location-list span {float: left; margin: 0 15px 0 0;}
+.extra-double  {padding: 5px 0 0; clear: both;}
+.extra-double table {border: none; margin-bottom: 0; margin-top: 0;}
+.extra-double table tr td {padding: 0;}
+.extra-double table tr + tr td {border-top: 0;}
+.extra-double table th + th, .extra-double table td + td {border-left: 0;}
+.extra-double-value, .extra-double-suffix {width: 50px}
+
+.extra-double-label {font-weight: bold; width: 120px;}
 
 
+.ckeditor-wrapper, table.cke_editor {width: 98%;}
 .detail-list label {display: none}
 .detail-list .cke_skin_kama {width: 90% !important}
 
@@ -794,7 +805,7 @@ td.operations {vertical-align: middle}
 .Label_Request_last_updated {clear: both;}
 .request-view {overflow: hidden; width: auto}
 .request-list .label {float: left; width: 160px; margin: 0 0 5px; clear: both}
-.request-view h3 {margin: 0 0 10px; clear: both; font-size: 1.2em}
+.request-view h3 {margin: 0 0 10px; clear: both; font-size: 1.2em; color: #0066A4}
 .request-view .detail, .request-list .detail {margin: 0 0 10px 20px; float: left}
 .request-view .summary {
   float: right; 
