@@ -71,15 +71,16 @@
 			</thead>
 			<tbody>
 			 <?php 
-				foreach ($model->needs as $item):
-					$_id = $item->id;
-					$_amount = $item->amount;
-					$_item_name = LookupManager::getItemName($item->item_id);
-					$_detail = $item->detail;
+				foreach ($model->needs as $need):
+					$_id = $need->item_id;
+					$_amount = $need->amount;
+					$_item_name = LookupManager::getItemName($need->item_id);
+					$_detail = $need->detail;
 			 ?>
 					<tr>
 						<td class="row-item item-name">
 							<span class='item-name'><?php print $_item_name; ?></span>
+							<input type="hidden" name="Request[items][id][]" value="<?php print $_id ?>">
 						</td>
 						<td class="row-item detail">
 							<input type="text" name="Request[items][amount][]" value="<?php print $_amount ?>">
