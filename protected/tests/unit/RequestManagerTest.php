@@ -34,13 +34,13 @@ class RequestManagerTest extends CDbTestCase
     $attrUdate['detail']         = 'update';   // Request
     $attrUdate['location_id']    = 1;       // Location
     $attrUdate['coordinators']['name'][] = 'นายมา';   // Request_coordinator
-    $attrUdate['coordinators']['name'][] = 'นายมี';
+    $attrUdate['coordinators']['name'][] = 'หนุ่มน้อ หึหึ';
     $attrUdate['coordinators']['position'][] = '';
     $attrUdate['coordinators']['position'][] = '';
     $attrUdate['coordinators']['tel'][] = '';
     $attrUdate['coordinators']['tel'][] = '';   
     $attrUdate['coordinators']['detail'][] = '';
-    $attrUdate['coordinators']['detail'][] = ''; 
+    $attrUdate['coordinators']['detail'][] = 'detail test'; 
     $attrUdate['status']    = 0;       // Status
     $attrUdate['items']['id'][] = '1';
     $attrUdate['items']['id'][] = '2';

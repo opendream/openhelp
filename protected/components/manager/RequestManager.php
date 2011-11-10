@@ -139,7 +139,7 @@ class RequestManager
       $position = isset($coordinators['position'][$i]) ? $coordinators['position'][$i] : '';
       $tel = isset($coordinators['tel'][$i]) ? $coordinators['tel'][$i] : '';
       $detail = isset($coordinators['detail'][$i]) ? $coordinators['detail'][$i] : '';
-      
+
       if ($tmp = $this->findCoordinator($name, $position, $tel)) {
         $coordinatorIds[]=$tmp;
       } else {
@@ -190,6 +190,7 @@ class RequestManager
     $coordinator->fullname = $fullname;
     $coordinator->position = $position;
     $coordinator->tel = $tel;
+    $coordinator->detail = $detail;
     return $coordinator->save() ? $coordinator : false;
   }
 
@@ -212,9 +213,7 @@ class RequestManager
     $need->request_id = $reqId;
     $need->item_id = $itemId;
     $need->status = Need::NEED_STATUS_WAIT;
-    if ($need->validate()) {
-      return $need->save() ? $need : false;
-    }
-    return false;
+
+    return $need->save() ? $need : false;
   }
 }
