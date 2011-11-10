@@ -7,10 +7,12 @@
  * @property string $id
  * @property string $name
  * @property string $category_item_id
+ * @property string $image_url
  *
  * The followings are the available model relations:
  * @property DonatedItem[] $donatedItems
  * @property CategoryItem $categoryItem
+ * @property Need[] $needs
  * @property StockItem[] $stockItems
  */
 class Item extends CActiveRecord
@@ -41,11 +43,11 @@ class Item extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('name', 'length', 'max'=>255),
+			array('name, image_url', 'length', 'max'=>255),
 			array('category_item_id', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, category_item_id', 'safe', 'on'=>'search'),
+			array('id, name, category_item_id, image_url', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,6 +61,7 @@ class Item extends CActiveRecord
 		return array(
 			'donatedItems' => array(self::HAS_MANY, 'DonatedItem', 'item_id'),
 			'categoryItem' => array(self::BELONGS_TO, 'CategoryItem', 'category_item_id'),
+			'needs' => array(self::HAS_MANY, 'Need', 'item_id'),
 			'stockItems' => array(self::HAS_MANY, 'StockItem', 'item_id'),
 		);
 	}
@@ -72,6 +75,7 @@ class Item extends CActiveRecord
 			'id' => 'ID',
 			'name' => 'Name',
 			'category_item_id' => 'Category Item',
+			'image_url' => 'Image Url',
 		);
 	}
 
@@ -89,6 +93,7 @@ class Item extends CActiveRecord
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('category_item_id',$this->category_item_id,true);
+		$criteria->compare('image_url',$this->image_url,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

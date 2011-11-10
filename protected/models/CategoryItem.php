@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'category_item':
  * @property string $id
  * @property string $name
+ * @property string $image_url
  * @property string $detail
  *
  * The followings are the available model relations:
@@ -39,11 +40,11 @@ class CategoryItem extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('name', 'length', 'max'=>255),
+			array('name, image_url', 'length', 'max'=>255),
 			array('detail', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, detail', 'safe', 'on'=>'search'),
+			array('id, name, image_url, detail', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +68,7 @@ class CategoryItem extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
+			'image_url' => 'Image Url',
 			'detail' => 'Detail',
 		);
 	}
@@ -84,6 +86,7 @@ class CategoryItem extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('image_url',$this->image_url,true);
 		$criteria->compare('detail',$this->detail,true);
 
 		return new CActiveDataProvider($this, array(

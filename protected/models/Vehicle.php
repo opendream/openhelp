@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'vehicle':
  * @property string $id
  * @property string $name
+ * @property string $image_url
  *
  * The followings are the available model relations:
  * @property Shipment[] $shipments
@@ -39,10 +40,10 @@ class Vehicle extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('name', 'length', 'max'=>255),
+			array('name, image_url', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name', 'safe', 'on'=>'search'),
+			array('id, name, image_url', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +68,7 @@ class Vehicle extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
+			'image_url' => 'Image Url',
 		);
 	}
 
@@ -83,6 +85,7 @@ class Vehicle extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('image_url',$this->image_url,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

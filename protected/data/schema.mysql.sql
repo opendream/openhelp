@@ -14,7 +14,7 @@ CREATE TABLE `location` (
   `level3` varchar(255),
   `level4` varchar(255),
   `level5` varchar(255),
-  `label` varchar(255) DEFAULT NULL,
+  `label` varchar(255),
   `lat` varchar(255),
   `lng` varchar(255),
   PRIMARY KEY (`id`)
@@ -27,6 +27,19 @@ CREATE TABLE `request` (
   `last_updated` datetime NOT NULL,
   `location_id` bigint(20),
   `detail` text,
+  
+  `extra_text0` text,
+  `extra_text1` text,
+  `extra_text2` text,
+  `extra_text3` text,
+  `extra_text4` text,
+  
+  `extra_double0` double,
+  `extra_double1` double,
+  `extra_double2` double,
+  `extra_double3` double,
+  `extra_double4` double,
+  
   `status` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_request_location_id` (`location_id`)
@@ -81,6 +94,7 @@ CREATE TABLE `item` (
   
   `name` varchar(255) NOT NULL,
   `category_item_id` bigint(20),
+  `image_url` varchar(255),
   PRIMARY KEY (`id`),
   KEY `fk_item_category_item_id` (`category_item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -89,6 +103,7 @@ CREATE TABLE `category_item` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   
   `name` varchar(255) NOT NULL,
+  `image_url` varchar(255),
   `detail` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -111,6 +126,7 @@ CREATE TABLE `donator` (
   `fullname` varchar(255) NOT NULL,
   `tel` varchar(255),
   `location_id` bigint(20),
+  `image_url` varchar(255),
   `detail` text,
   PRIMARY KEY (`id`),
   KEY `fk_donator_location_id` (`location_id`)
@@ -132,6 +148,7 @@ CREATE TABLE `vehicle` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   
   `name` varchar(255) NOT NULL,
+  `image_url` varchar(255),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -153,6 +170,7 @@ CREATE TABLE `transporter` (
   `fullname` varchar(255) NOT NULL,
   `tel` varchar(255),
   `location_id` bigint(20),
+  `image_url` varchar(255),
   `detail` text,
   PRIMARY KEY (`id`),
   KEY `fk_transporter_location_id` (`location_id`)

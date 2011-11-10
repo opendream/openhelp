@@ -11,6 +11,7 @@
  * @property string $level3
  * @property string $level4
  * @property string $level5
+ * @property string $label
  * @property string $lat
  * @property string $lng
  *
@@ -46,10 +47,10 @@ class Location extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('level0, level1, level2, level3, level4, level5, lat, lng', 'length', 'max'=>255),
+			array('level0, level1, level2, level3, level4, level5, label, lat, lng', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, level0, level1, level2, level3, level4, level5, lat, lng', 'safe', 'on'=>'search'),
+			array('id, level0, level1, level2, level3, level4, level5, label, lat, lng', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,6 +81,7 @@ class Location extends CActiveRecord
 			'level3' => 'Level3',
 			'level4' => 'Level4',
 			'level5' => 'Level5',
+			'label' => 'Label',
 			'lat' => 'Lat',
 			'lng' => 'Lng',
 		);
@@ -103,6 +105,7 @@ class Location extends CActiveRecord
 		$criteria->compare('level3',$this->level3,true);
 		$criteria->compare('level4',$this->level4,true);
 		$criteria->compare('level5',$this->level5,true);
+		$criteria->compare('label',$this->label,true);
 		$criteria->compare('lat',$this->lat,true);
 		$criteria->compare('lng',$this->lng,true);
 
