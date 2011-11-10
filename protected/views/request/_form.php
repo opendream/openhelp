@@ -20,7 +20,6 @@
 
   	<?php if ($extraDouble): ?>
   	<div class="extra-double">
-  	  <h3><?php echo Yii::t('locale', 'Number detail'); ?></h3>
   	    <table>
   	      <tbody>
       	  <?php foreach ($extraDouble as $key => $row): ?>
