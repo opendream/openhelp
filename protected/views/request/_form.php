@@ -127,7 +127,7 @@
 	
 	<?php if ($extraText): ?>
 	  <?php foreach ($extraText as $key => $row): ?>
-	  <div class="extra-text-<?php echo $key; ?>-list">
+	  <div id="extra-text-<?php echo $key; ?>" class="extra-text-<?php echo $key; ?>-list">
   	  <h3><?php echo Yii::t('locale', $row['label']); ?></h3>
   	  <?php
   	    $options =  (!isset($row['options']) || !$row['options'])? array(): $row['options'];
@@ -135,16 +135,25 @@
   	  ?>
   	  <?php if ($editor == 'CKEditorWidget' || $editor == 'ext.ckeditor.CKEditorWidget'): ?>	    
   	    <?php
-  	      $options += array(
+  	      $dummy = $options;
+  	      $options = array(
   	        "model"=>$model, 
   	        "attribute"=>'extra_text'.$key,
   	        "defaultValue"=>$model->getAttribute('extra_text'.$key),
-    				"config" => array(
-    					"height"=>"200px",
-    					"width"=>"100%",
-    					"toolbar"=>"Basic",
-    				),
-    			)
+
+    			);
+    			$config = array(
+  					"height"=>"200px",
+  					"width"=>"100%",
+  					"toolbar"=>array(
+  					  array('Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink', 'Image'),
+  					),
+            
+            "filebrowserBrowseUrl" => '/filemanager/browser/default/browser.html?Connector=/filemanager/connectors/php/connector.php',
+            "filebrowserImageBrowseUrl" =>  '/filemanager/browser/default/browser.html?Type=Image&     Connector=/filemanager/connectors/php/connector.php',
+  				);
+    			$options['config'] = $dummy;
+    			$options['config'] += $config;
     		?>
         <div class="ckeditor-wrapper">
           <?php $this->widget('ext.ckeditor.CKEditorWidget', $options); ?>
@@ -175,3 +184,6 @@
 	<?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script type="text/javascript">
+</script>

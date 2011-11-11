@@ -5,18 +5,19 @@ return array(
 	'request'=>array(
 	  'extra' => array(
 	    'double' => array(
-	      /* Limit for 5 fields
+	      /* Limit for 10 fields
     	  array('label' => '', 'prefix' => '', 'suffix' => ''),
     	  array('label' => '', 'prefix' => '', 'suffix' => ''),
     	  array('label' => '', 'prefix' => '', 'suffix' => ''),
     	  array('label' => '', 'prefix' => '', 'suffix' => ''),
     	  array('label' => '', 'prefix' => '', 'suffix' => ''),
     	  */
+    	  // Remove this when make this project to opensource ==================================================
 	      array('label' => 'สถานการณ์น้ำ', 'prefix' => 'ระดับน้ำ', 'suffix' => 'เซนติเมตร'),
     	  array('label' => 'จำนวนครัวเรือน', 'prefix' => '', 'suffix' => 'ครัวเรือน'),
 	    ),
 	    'text' => array(
-	      /* Limit for 5 fields
+	      /* Limit for 10 fields
     	  array('label' => '',  'editor' => 'textField', 'options' => array()),
     	  array('label' => '',  'editor' => 'dropDownList', 'options' => array('key', 'value')),
     	  array('label' => '',  'editor' => 'textArea', 'options' => array()),
@@ -26,16 +27,26 @@ return array(
 					"toolbar"=>"Basic",
 				))),
     	  */
-    	  array('label' => 'วิธีการเดินทางเข้าพื้นที่', 'editor' => 'CKEditorWidget', 'options' => array("config" => array(
+    	  // Remove this when make this project to opensource ==================================================
+    	  array('label' => 'ความเร่งด่วน', 'editor' => 'dropDownList', 'options' => array(
+    	   'มากที่สุด' => 'มากที่สุด',
+    	   'มาก' => 'มาก',
+    	   'ปานกลาง' => 'ปานกลาง',
+    	   'น้อย' => 'น้อย',
+    	  )),
+    	  array('label' => 'หมู่บ้าน', 'editor' => 'textField'),
+    	  array('label' => 'ปัญหาอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
-					"width"=>"100%",
-					"toolbar"=>"Basic",
-				))),
-    	  array('label' => 'ข้อสังเกตอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array("config" => array(
+				)),
+    	  array('label' => 'ลักษณะของชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
-					"width"=>"100%",
-					"toolbar"=>"Basic",
-				))),
+				)),
+				array('label' => 'ประวัติความช่วยเหลือ', 'editor' => 'CKEditorWidget', 'options' => array(
+					"height"=>"50px",
+				)),
+				array('label' => 'ทรัพยากรที่มีในชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
+					"height"=>"50px",
+				)),
 	    ),
 	  ),
 	), 

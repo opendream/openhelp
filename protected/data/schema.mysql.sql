@@ -33,12 +33,22 @@ CREATE TABLE `request` (
   `extra_text2` text,
   `extra_text3` text,
   `extra_text4` text,
+  `extra_text5` text,
+  `extra_text6` text,
+  `extra_text7` text,
+  `extra_text8` text,
+  `extra_text9` text,
   
   `extra_double0` double,
   `extra_double1` double,
   `extra_double2` double,
   `extra_double3` double,
   `extra_double4` double,
+  `extra_double5` double,
+  `extra_double6` double,
+  `extra_double7` double,
+  `extra_double8` double,
+  `extra_double9` double,
   
   `status` int NOT NULL,
   PRIMARY KEY (`id`),
@@ -7668,3 +7678,20 @@ INSERT INTO `location` (`id`, `level0`, `level1`, `level2`, `level3`, `level4`, 
 (7414, 'นราธิวาส', 'เจาะไอร้อง', 'จวบ', NULL, NULL, NULL, 'นราธิวาส เจาะไอร้อง จวบ', '6.26171016693115', '101.818466186523'),
 (7415, 'นราธิวาส', 'เจาะไอร้อง', 'บูกิต', NULL, NULL, NULL, 'นราธิวาส เจาะไอร้อง บูกิต', '6.18526983261108', '101.827537536621'),
 (7416, 'นราธิวาส', 'เจาะไอร้อง', 'มะรือโบออก', NULL, NULL, NULL, 'นราธิวาส เจาะไอร้อง มะรือโบออก', '6.25747013092041', '101.882308959961');
+
+# Remove this when make this project to opensource ===================
+INSERT INTO `category_item` VALUES(1, 'ทั่วไป', '', '');
+
+INSERT INTO `item` VALUES(1, 'เสื้อผ้า', 1, '');
+INSERT INTO `item` VALUES(2, 'เครื่องสูบน้ำ', 1, '');
+INSERT INTO `item` VALUES(3, 'เครื่องกันหนาว', 1, '');
+INSERT INTO `item` VALUES(4, 'เครื่องกำเนิดกระแสไฟฟ้า', 1, '');
+INSERT INTO `item` VALUES(6, 'น้ำมันเชื้อเพลิง', 1, '');
+INSERT INTO `item` VALUES(7, 'ก๊าซหุงต้ม', 1, '');
+INSERT INTO `item` VALUES(8, 'ถุงยังชีพ', 1, '');
+INSERT INTO `item` VALUES(9, 'น้ำ', 1, '');
+INSERT INTO `item` VALUES(10, 'สุขาลอยน้ำ', 1, '');
+INSERT INTO `item` VALUES(11, 'เรือ', 1, '');
+INSERT INTO `item` VALUES(12, 'ยารักษาโรค', 1, '');
+INSERT INTO `item` VALUES(13, 'เต้นท์ที่พัก', 1, '');
+INSERT INTO `item` VALUES(14, 'อื่นๆ', 1, '');
