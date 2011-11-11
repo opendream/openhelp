@@ -39,6 +39,24 @@
     	  </table>
   	</div>
   	<?php endif ?>
+  	
+  	<div class="date-created row">
+			<h3><?php echo Yii::t('locale', 'Date Created'); ?></h3>
+			<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+          //'name'=>'publishDate',
+          'model' => $model,
+          'attribute' => 'date_created',
+          'value'=>$model->date_created,
+            // additional javascript options for the date picker plugin
+            'options'=>array(
+              'showAnim'=>'fold',
+              'showButtonPanel'=>true,
+              //'autoSize'=>true,
+              'dateFormat'=>'yy-mm-dd',
+              'defaultDate'=>$model->date_created,
+             ),
+      )); ?>
+		</div> <!-- row /-->
 		
 	</div> <!-- end location-list -->
 
