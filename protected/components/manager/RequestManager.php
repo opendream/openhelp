@@ -180,15 +180,23 @@ class RequestManager
   }
 
   function insertRequest($request, $model){
-    
+    // map detail
     if(isset($model['detail'])){
       $request->detail = $model['detail'];
     }
+    // map detail
+    if(isset($mode['date_created']) && $mode['date_created'] != '') {
+      $request->date_created = $mode['date_created'];
+    } else if($request->date_created == null) {
+      $request->date_created = time();
+    }
+    // map status
     if(isset($model['status'])){
       $request->status = $model['status'];
     }else{
       $request->status = Request::REQUEST_STATUS_OPEN;
     }
+    // map extra_text
     if(isset($model['extra_text0'])){
       $request->extra_text0 = $model['extra_text0'];
     }
@@ -204,6 +212,22 @@ class RequestManager
     if(isset($model['extra_text4'])){
       $request->extra_text4 = $model['extra_text4'];
     }
+    if(isset($model['extra_text5'])){
+      $request->extra_text5 = $model['extra_text5'];
+    }
+    if(isset($model['extra_text6'])){
+      $request->extra_text6 = $model['extra_text6'];
+    }
+    if(isset($model['extra_text7'])){
+      $request->extra_text7 = $model['extra_text7'];
+    }
+    if(isset($model['extra_text8'])){
+      $request->extra_text8 = $model['extra_text8'];
+    }
+    if(isset($model['extra_text9'])){
+      $request->extra_text9 = $model['extra_text9'];
+    }
+    // map extra_double
     if(isset($model['extra_double0'])){
       $request->extra_double0 = $model['extra_double0'];
     }
@@ -219,7 +243,22 @@ class RequestManager
     if(isset($model['extra_double4'])){
       $request->extra_double4 = $model['extra_double4'];
     }
-
+    if(isset($model['extra_double5'])){
+      $request->extra_double5 = $model['extra_double5'];
+    }
+    if(isset($model['extra_double6'])){
+      $request->extra_double6 = $model['extra_double6'];
+    }
+    if(isset($model['extra_double7'])){
+      $request->extra_double7 = $model['extra_double7'];
+    }
+    if(isset($model['extra_double8'])){
+      $request->extra_double8 = $model['extra_double8'];
+    }
+    if(isset($model['extra_double9'])){
+      $request->extra_double9 = $model['extra_double9'];
+    }
+    // map location
     $request->location_id = $model['location_id'];
     if($model['location_id']=='')
       $request->location_id = null;
