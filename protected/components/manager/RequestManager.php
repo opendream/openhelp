@@ -180,15 +180,23 @@ class RequestManager
   }
 
   function insertRequest($request, $model){
-    
+    // map detail
     if(isset($model['detail'])){
       $request->detail = $model['detail'];
     }
+    // map detail
+    if(isset($mode['date_created']) && $mode['date_created'] != '') {
+      $request->date_created = $mode['date_created'];
+    } else if($request->date_created == null) {
+      $request->date_created = time();
+    }
+    // map status
     if(isset($model['status'])){
       $request->status = $model['status'];
     }else{
       $request->status = Request::REQUEST_STATUS_OPEN;
     }
+    // map extra_text
     if(isset($model['extra_text0'])){
       $request->extra_text0 = $model['extra_text0'];
     }
@@ -219,7 +227,7 @@ class RequestManager
     if(isset($model['extra_text9'])){
       $request->extra_text9 = $model['extra_text9'];
     }
-
+    // map extra_double
     if(isset($model['extra_double0'])){
       $request->extra_double0 = $model['extra_double0'];
     }
@@ -250,7 +258,7 @@ class RequestManager
     if(isset($model['extra_double9'])){
       $request->extra_double9 = $model['extra_double9'];
     }
-
+    // map location
     $request->location_id = $model['location_id'];
     if($model['location_id']=='')
       $request->location_id = null;
