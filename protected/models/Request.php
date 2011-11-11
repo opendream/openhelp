@@ -187,7 +187,7 @@ class Request extends CActiveRecord
 		));
 	}
 
-	protected function beforeValidate()
+	/*protected function beforeValidate()
 	{
 		$this->last_updated = time();
 		return true;
@@ -198,10 +198,11 @@ class Request extends CActiveRecord
 		return array(
 			'timestamps' => array(
 			'class' => 'zii.behaviors.CTimestampBehavior',
+			//'createAttribute' => 'date_created',
 			'updateAttribute' => 'last_updated',
 			'setUpdateOnCreate' => true,
 			),
 		);
-	}
+	}*/
 
 }

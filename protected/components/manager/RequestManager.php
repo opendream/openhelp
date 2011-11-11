@@ -41,15 +41,6 @@ class RequestManager
   function update($model, $params)
   {
     if (isset($model)) {
-      /*$model->detail = $params['detail'];
-      $model->status = $params['status'];
-      
-      // Location Validation
-      $model->location_id = $params['location_id'];
-      if($params['location_id']=='')
-        $model->location_id = null;*/
-      
-
       if ($this->insertRequest($model, $params)) {    
         // Remove all related coordinator request
         $req_coors = $this->findRequestCoordinators($model->id);
@@ -184,12 +175,15 @@ class RequestManager
     if(isset($model['detail'])){
       $request->detail = $model['detail'];
     }
-    // map detail
+    // map date_created
     if(isset($mode['date_created']) && $mode['date_created'] != '') {
-      $request->date_created = $mode['date_created'];
+     // $request->date_created = CDateTimeParser::parse($model['date_created'], 'yyyy-MM-dd');
+      $request->date_created = DateTime::createFromFormat('yyyy-MM-dd', $model['date_created']);
     } else if($request->date_created == null) {
       $request->date_created = time();
     }
+    // add last_updated
+    $request->last_updated = time();
     // map status
     if(isset($model['status'])){
       $request->status = $model['status'];
