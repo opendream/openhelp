@@ -11,7 +11,8 @@
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     basePath = Yii.settings.basePath;
     return $.getJSON("" + basePath + "/api/request/?action=index", function(nodes) {
-      var markers;
+      var info_window, markers;
+      info_window = new google.maps.InfoWindow;
       markers = [];
       $.each(nodes, function(id, node) {
         var marker, placeLatLng;
@@ -21,7 +22,13 @@
           map: map,
           title: node.label
         });
-        return markers.push(marker);
+        markers.push(marker);
+        return google.maps.event.addListener(marker, 'click', function() {
+          return $.getJSON("" + basePath + "/api/request?action=view&id=" + id, function(item_contents) {
+            info_window.setContent(item_contents);
+            return info_window.open(map, marker);
+          });
+        });
       });
       return window.markerCluster = new MarkerClusterer(map, markers);
     });
