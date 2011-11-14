@@ -6,4 +6,8 @@
      // Publishing and registering JavaScript file
      $cs->registerScriptFile(
         Yii::app()->assetManager->publish($assetsDir.'/doMap.js'), CClientScript::POS_HEAD);
+        
+     $cs->registerScriptFile(
+        Yii::app()->assetManager->publish($assetsDir.'/markerclusterer.js'), CClientScript::POS_HEAD);
+         
  ?>
