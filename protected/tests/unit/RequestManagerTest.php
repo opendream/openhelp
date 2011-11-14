@@ -125,8 +125,38 @@ class RequestManagerTest extends CDbTestCase
     $this->assertNotNull($request->update($instance, $attrUdate));
     $this->assertEquals(2, $instance->location_id);
     //delete request
-    //$this->assertTrue($request->delete($instance)); 
+    $this->assertTrue($request->delete($instance)); 
   }
+
+  function testTransactionRequestRollback() {
+    $request = new RequestManager;
+    $attr1 = array();    
+    $attr1['detail']         = 'test request fail';   // Request
+    $attr1['location_id']    = '';       // Location
+    $attr1['extra_text0'] = 'sexy';
+    $attr1['extra_double0'] = 'should fail';
+    $instance = $request->create($attr1);
+    $this->assertNull($instance->id);
+  }
+
+  /*function testTransactionNeedRollback() {
+    $request = new RequestManager;
+    $attr1 = array();    
+    $attr1['detail']         = 'test request fail';   // Request
+    $attr1['location_id']    = '';       // Location
+    $attr1['extra_text0'] = 'sexy';
+    $attr1['extra_double0'] = 9.99;
+
+    $attrUdate['items']['id'][] = '1';
+    $attrUdate['items']['id'][] = '2';
+    $attrUdate['items']['amount'][] = '12'; 
+    $attrUdate['items']['amount'][] = 'should fail'; 
+    $attrUdate['items']['detail'][] = 'hello fail'; 
+    $attrUdate['items']['detail'][] = 'test2';
+    
+    $instance = $request->create($attr1);
+    $this->assertNull($instance->id);
+  }*/
 
   /*function testCreateNullCoordinators()
   {
