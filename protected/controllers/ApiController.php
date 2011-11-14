@@ -28,15 +28,13 @@ class ApiController extends Controller
 	 */
 	public function actionRequest($action, $id=null)
 	{
-	  // TODO: return json for render map
-	  // @author p'Boy
-	  // @author crosalot
-
     // @return teaser views
 	  if ($action == 'view') {
-	    # $model = Request::model()->findByPk($id);
-	    # $data = $this->renderPartial('request._view', array('model'=>$model), true);
-	    # echo CJSON::encode($data);
+	    # TODO: @nazt, @crosalot
+	    # $data = query requests under $id of location and prepare summary data to easy view
+	    $data = array()
+	    $result = $this->renderPartial('//request/_view', array('data'=>$data), true);
+	    echo CJSON::encode($result);
 	  }
 	  
 	  // @return list of request in json format
