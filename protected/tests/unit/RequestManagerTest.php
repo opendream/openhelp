@@ -132,16 +132,18 @@ class RequestManagerTest extends CDbTestCase
     $request = new RequestManager;
     $attr1 = array();    
     $attr1['detail']         = 'test request fail';   // Request
+    $attr1['location_id']    = '';       // Location
     $attr1['extra_text0'] = 'sexy';
     $attr1['extra_double0'] = 'should fail';
     $instance = $request->create($attr1);
     $this->assertNull($instance->id);
   }
 
-  function testTransactionNeedRollback() {
+  /*function testTransactionNeedRollback() {
     $request = new RequestManager;
     $attr1 = array();    
     $attr1['detail']         = 'test request fail';   // Request
+    $attr1['location_id']    = '';       // Location
     $attr1['extra_text0'] = 'sexy';
     $attr1['extra_double0'] = 9.99;
 
@@ -154,7 +156,7 @@ class RequestManagerTest extends CDbTestCase
     
     $instance = $request->create($attr1);
     $this->assertNull($instance->id);
-  }
+  }*/
 
   /*function testCreateNullCoordinators()
   {

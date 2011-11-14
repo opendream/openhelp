@@ -11,7 +11,7 @@ class RequestManager
   {
     $request = new Request;
     //$transaction=Request::model()->dbConnection->beginTransaction();
-    $trans = Yii::app()->db->beginTransaction();
+    //$trans = Yii::app()->db->beginTransaction();
     //try {
         if (isset($model)) { 
           // impl transaction    
@@ -33,7 +33,7 @@ class RequestManager
             }
           }
           //end of transaction
-          $trans->commit();
+          //$trans->commit();
         }
       /*} catch(Exception $e) {
           //$transaction->rollBack();
@@ -49,7 +49,7 @@ class RequestManager
   function update($model, $params)
   {
     if (isset($model)) {
-      $trans = Yii::app()->db->beginTransaction();
+      //$trans = Yii::app()->db->beginTransaction();
       //try{
         if ($this->insertRequest($model, $params)) {    
           // Remove all related coordinator request
@@ -77,7 +77,7 @@ class RequestManager
             $this->insertNeeds($model->id, $params['items']);
           }      
         }
-        $trans->commit();
+        //$trans->commit();
       /*}catch(Exception $e){
         //$tran->rollBack();
       }*/
@@ -286,7 +286,7 @@ class RequestManager
 
   function insertNeeds($reqId, $items){
     $needs = array();
-    $trans = Yii::app()->db->beginTransaction();
+    //$trans = Yii::app()->db->beginTransaction();
     //try{
       Yii::trace('call insert need', 'example');
       for ($i=0; $i < count($items['id']); $i++) { 
@@ -295,7 +295,7 @@ class RequestManager
         $detail = isset($items['detail'][$i])? $items['detail'][$i] : '';
         $needs[] = $this->insertNeed($reqId, $itemId, $amount, $detail);
       }
-      $trans->commit();
+      //$trans->commit();
     /*} catch(Exception $e) {
       //$trans->rollBack();
       Yii::trace('call rollback', 'example');
@@ -312,7 +312,7 @@ class RequestManager
     $need->request_id = $reqId;
     $need->item_id = $itemId;
     $need->status = Need::NEED_STATUS_WAIT;
-
-    return $need->save() ? $need : throw new CException('could not save need');;
+    return $need->save() ? $need : false;
+    //return $need->save() ? $need : throw new CException('could not save need');
   }
 }
