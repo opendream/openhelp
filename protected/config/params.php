@@ -13,7 +13,7 @@ return array(
     	  array('label' => '', 'prefix' => '', 'suffix' => ''),
     	  */
     	  // Remove this when make this project to opensource ==================================================
-	      array('label' => 'สถานการณ์น้ำ', 'prefix' => 'ระดับน้ำ', 'suffix' => 'เซนติเมตร'),
+	      array('label' => 'สถานการณ์น้ำ', 'prefix' => 'ระดับน้ำ', 'suffix' => 'เมตร'),
     	  array('label' => 'จำนวนครัวเรือน', 'prefix' => '', 'suffix' => 'ครัวเรือน'),
 	    ),
 	    'text' => array(
@@ -45,6 +45,15 @@ return array(
 					"height"=>"50px",
 				)),
 				array('label' => 'ทรัพยากรที่มีในชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
+					"height"=>"50px",
+				)),
+				array('label' => 'การเดินทางเข้าชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
+					"height"=>"50px",
+				)),
+				array('label' => 'ข้อสังเกตุอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array(
+					"height"=>"50px",
+				)),
+				array('label' => 'การจัดการในชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
 				)),
 	    ),

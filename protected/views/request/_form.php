@@ -13,7 +13,7 @@
 	
 	<div class="row location-list">
 	  <h3><?php echo Yii::t('locale', 'Location'); ?></h3>
-		<?php echo LocationHtml::locationList($model, 'location_id'); ?>
+		<?php $this->widget('ext.location.LocationWidget', array('model' => $model, 'attribute' => 'location_id')); ?>
 		
 		
   	<?php $extraDouble = Yii::app()->params['request']['extra']['double']; ?>
@@ -49,9 +49,6 @@
           'value'=>$model->date_created,
             // additional javascript options for the date picker plugin
             'options'=>array(
-              'showAnim'=>'fold',
-              'showButtonPanel'=>true,
-              //'autoSize'=>true,
               'dateFormat'=>'yy-mm-dd',
               'defaultDate'=>$model->date_created,
              ),
@@ -167,8 +164,8 @@
   					  array('Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink', 'Image'),
   					),
             
-            "filebrowserBrowseUrl" => '/filemanager/browser/default/browser.html?Connector=/filemanager/connectors/php/connector.php',
-            "filebrowserImageBrowseUrl" =>  '/filemanager/browser/default/browser.html?Type=Image&     Connector=/filemanager/connectors/php/connector.php',
+            "filebrowserBrowseUrl" => Yii::app()->baseUrl.'/filemanager/browser/default/browser.html?Connector='.Yii::app()->baseUrl.'/filemanager/connectors/php/connector.php',
+            "filebrowserImageBrowseUrl" =>  Yii::app()->baseUrl.'/filemanager/browser/default/browser.html?Type=Image&Connector='.Yii::app()->baseUrl.'/filemanager/connectors/php/connector.php',
   				);
     			$options['config'] = $dummy;
     			$options['config'] += $config;
