@@ -41,8 +41,14 @@ class ApiController extends Controller
 	  
 	  // @return list of request in json format
 	  elseif ($action == 'index') {
-	   Request::model()->findAll();
-	   # echo CJSON::encode($dataProvider);
+	   $requests = Request::model()->findAll();
+	   $locations = new CMap();
+	   //$locations = array();
+	   foreach ($requests as $request) {
+	   		$locations[$request->location_id] = array('label'=>$request->location['label'], 'lat'=>$request->location['lat'], 'lng'=>$request->location['lng']);	
+	   }
+	   
+	   echo CJSON::encode($locations->toArray());
 	  }
 
 	}
