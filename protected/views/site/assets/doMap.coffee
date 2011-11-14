@@ -20,4 +20,4 @@ window.mapLoadded = (args) ->
         title: node.label
       })
       markers.push marker
-    markerCluster = new MarkerClusterer(map, markers);
+    window.markerCluster = new MarkerClusterer map, markers
