@@ -10,27 +10,35 @@ class RequestManager
   function create($model)
   {
     $request = new Request;
-    if (isset($model)) { 
-      // impl transaction    
-      if ($this->insertRequest($request, $model)) {  
-        // Find coordinator
-        if(isset($model['coordinators'])) {            
-          $coordinators = $model['coordinators'];
-          $coordinatorsIds = $this->getCoordinators($coordinators);
+    //$transaction=Request::model()->dbConnection->beginTransaction();
+    $trans = Yii::app()->db->beginTransaction();
+    //try {
+        if (isset($model)) { 
+          // impl transaction    
+          if ($this->insertRequest($request, $model)) {  
+            // Find coordinator
+            if(isset($model['coordinators'])) {            
+              $coordinators = $model['coordinators'];
+              $coordinatorsIds = $this->getCoordinators($coordinators);
 
-          foreach ($coordinatorsIds as $cId) {
-            // Bridge table
-            $this->insertRequestCoordinator($request->id, $cId->id);
+              foreach ($coordinatorsIds as $cId) {
+                // Bridge table
+                $this->insertRequestCoordinator($request->id, $cId->id);
+              }
+            }
+
+            // Save Needs
+            if (isset($model['items'])) {
+              $this->insertNeeds($request->id, $model['items']);
+            }
           }
+          //end of transaction
+          $trans->commit();
         }
-
-        // Save Needs
-        if (isset($model['items'])) {
-          $this->insertNeeds($request->id, $model['items']);
-        }
-      }
-      //end of transaction
-    }
+      /*} catch(Exception $e) {
+          //$transaction->rollBack();
+          $trans->rollBack();
+      }*/
     return $request;
   }
 
@@ -41,32 +49,38 @@ class RequestManager
   function update($model, $params)
   {
     if (isset($model)) {
-      if ($this->insertRequest($model, $params)) {    
-        // Remove all related coordinator request
-        $req_coors = $this->findRequestCoordinators($model->id);
-        foreach ($req_coors as $req_coor) $req_coor->delete();
-        
-        if (isset($params['coordinators']) && count($params['coordinators']) > 0) {
-          // Find coordinator
-          $coordinators = $params['coordinators'];
-          $coordinatorsIds = $this->getCoordinators($coordinators);
+      $trans = Yii::app()->db->beginTransaction();
+      //try{
+        if ($this->insertRequest($model, $params)) {    
+          // Remove all related coordinator request
+          $req_coors = $this->findRequestCoordinators($model->id);
+          foreach ($req_coors as $req_coor) $req_coor->delete();
+          
+          if (isset($params['coordinators']) && count($params['coordinators']) > 0) {
+            // Find coordinator
+            $coordinators = $params['coordinators'];
+            $coordinatorsIds = $this->getCoordinators($coordinators);
 
-          foreach ($coordinatorsIds as $cId) {
-            // Bridge table
-            $tmp = $this->findRequestCoordinator($model->id, $cId->id);
+            foreach ($coordinatorsIds as $cId) {
+              // Bridge table
+              $tmp = $this->findRequestCoordinator($model->id, $cId->id);
 
-            if ($tmp==NULL) {
-              $this->insertRequestCoordinator($model->id, $cId->id);
+              if ($tmp==NULL) {
+                $this->insertRequestCoordinator($model->id, $cId->id);
+              }
             }
-          }
-        }  
-        
-        // Remove all need request
-        foreach ($model->needs as $need) $need->delete(); 
-        if (isset($params['items']) && count($params['items']) > 0) {
-          $this->insertNeeds($model->id, $params['items']);
-        }      
-      }
+          }  
+          
+          // Remove all need request
+          foreach ($model->needs as $need) $need->delete(); 
+          if (isset($params['items']) && count($params['items']) > 0) {
+            $this->insertNeeds($model->id, $params['items']);
+          }      
+        }
+        $trans->commit();
+      /*}catch(Exception $e){
+        //$tran->rollBack();
+      }*/
     }
     // Return Request Model
     return $model;
@@ -272,12 +286,21 @@ class RequestManager
 
   function insertNeeds($reqId, $items){
     $needs = array();
-    for ($i=0; $i < count($items['id']); $i++) { 
-      $itemId = isset($items['id'][$i])? $items['id'][$i] : null;
-      $amount = isset($items['amount'][$i])? $items['amount'][$i] : 0;
-      $detail = isset($items['detail'][$i])? $items['detail'][$i] : '';
-      $needs[] = $this->insertNeed($reqId, $itemId, $amount, $detail);
-    }
+    $trans = Yii::app()->db->beginTransaction();
+    //try{
+      Yii::trace('call insert need', 'example');
+      for ($i=0; $i < count($items['id']); $i++) { 
+        $itemId = isset($items['id'][$i])? $items['id'][$i] : null;
+        $amount = isset($items['amount'][$i])? $items['amount'][$i] : 0;
+        $detail = isset($items['detail'][$i])? $items['detail'][$i] : '';
+        $needs[] = $this->insertNeed($reqId, $itemId, $amount, $detail);
+      }
+      $trans->commit();
+    /*} catch(Exception $e) {
+      //$trans->rollBack();
+      Yii::trace('call rollback', 'example');
+      throw new CException('type miss match!');
+    }*/
     return $needs;
   }
 
@@ -290,6 +313,6 @@ class RequestManager
     $need->item_id = $itemId;
     $need->status = Need::NEED_STATUS_WAIT;
 
-    return $need->save() ? $need : false;
+    return $need->save() ? $need : throw new CException('could not save need');;
   }
 }
