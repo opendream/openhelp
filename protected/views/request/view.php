@@ -22,6 +22,32 @@ $this->menu=array(
     <div class="main-location">
       <?php echo LocationHtml::locationView($model->location_id); ?>
     </div>
+    
+    <div class="extra-location">
+      <?php $extraLocation = Yii::app()->params['request']['extra']['location']; ?>
+
+    	<?php if ($extraLocation): ?>
+    	<div class="extra-location">
+    	    <table>
+    	      <tbody>
+        	  <?php foreach ($extraLocation as $key => $row): ?>
+            <tr>
+              <td id="extra-location-label-<?php echo $key; ?>" class="extra-location-label"><?php echo $row['label']; ?></td>
+              <td class="extra-location-input">
+                <span id="extra-location-prefic-<?php echo $key; ?>" class="extra-location-prefix"><?php echo $row['prefix']; ?></span>
+                <span id="extra-location-value-<?php echo $key; ?>" class="extra-location-value">
+                  <?php echo $model->getAttribute('extra_location'.$key); ?>
+                </span>
+                <span id="extra-location-suffix-<?php echo $key; ?>" class="extra-location-suffix"><?php echo $row['suffix']; ?></span>
+              </td>
+            </tr>
+        	  <?php endforeach ?>
+        	  </tbody>
+      	  </table>
+    	</div>
+    	<?php endif ?>
+    </div>
+    
     <div class="extra-double">
       <?php $extraDouble = Yii::app()->params['request']['extra']['double']; ?>
 

@@ -29,6 +29,12 @@ CREATE TABLE `request` (
   `location_id` bigint(20),
   `detail` text,
   
+  `extra_location0` varchar(255),
+  `extra_location1` varchar(255),
+  `extra_location2` varchar(255),
+  `extra_location3` varchar(255),
+  `extra_location4` varchar(255),
+  
   `extra_text0` text,
   `extra_text1` text,
   `extra_text2` text,

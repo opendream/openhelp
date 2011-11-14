@@ -266,6 +266,22 @@ class RequestManager
     if(isset($params['extra_double9'])){
       $request->extra_double9 = $params['extra_double9'];
     }
+    // map extra_location
+    if(isset($params['extra_location0'])){
+      $request->extra_location0 = $params['extra_location0'];
+    }
+    if(isset($params['extra_location1'])){
+      $request->extra_location1 = $params['extra_location1'];
+    }
+    if(isset($params['extra_location2'])){
+      $request->extra_location2 = $params['extra_location2'];
+    }
+    if(isset($params['extra_location3'])){
+      $request->extra_location3 = $params['extra_location3'];
+    }
+    if(isset($params['extra_location4'])){
+      $request->extra_location4 = $params['extra_location4'];
+    }
     // map location
     $request->location_id = $params['location_id'];
     if($params['location_id']=='')
