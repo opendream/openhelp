@@ -32,10 +32,8 @@ class ApiController extends Controller
 	  if ($action == 'view') {
 	    # TODO: @nazt, @crosalot
 	    # $data = query requests under $id of location and prepare summary data to easy view
-	    // print_r($id);
-	    //$data = Request::model()->findAllByAttributes(array('id' =>$id));
-	    $data = Request::model()->findByPk($id);
-	    //$data = array();
+		if($data === null)
+			throw new CHttpException(404,'The requested page does not exist.');
 	    $result = $this->renderPartial('//request/_view', array('data'=>$data), true);
 	    echo CJSON::encode($result);
 	  }
