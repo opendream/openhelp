@@ -1,6 +1,6 @@
 (function() {
   window.mapLoadded = function(args) {
-    var map, myLatlng, myOptions, prefix, zoom;
+    var basePath, map, myLatlng, myOptions, zoom;
     myLatlng = new google.maps.LatLng(13.768, 100.554);
     zoom = 12;
     myOptions = {
@@ -9,9 +9,9 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    prefix = "/opendream/openhelp/";
-    return $.getJSON("" + prefix + "/api/request/?action=index", function(nodes) {
-      var markerCluster, markers;
+    basePath = Yii.settings.basePath;
+    return $.getJSON("" + basePath + "/api/request/?action=index", function(nodes) {
+      var markers;
       markers = [];
       $.each(nodes, function(id, node) {
         var marker, placeLatLng;
@@ -23,7 +23,7 @@
         });
         return markers.push(marker);
       });
-      return markerCluster = new MarkerClusterer(map, markers);
+      return window.markerCluster = new MarkerClusterer(map, markers);
     });
   };
 }).call(this);
