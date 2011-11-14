@@ -32,7 +32,10 @@ class ApiController extends Controller
 	  if ($action == 'view') {
 	    # TODO: @nazt, @crosalot
 	    # $data = query requests under $id of location and prepare summary data to easy view
-	    $data = array();
+	    // print_r($id);
+	    //$data = Request::model()->findAllByAttributes(array('id' =>$id));
+	    $data = Request::model()->findByPk($id);
+	    //$data = array();
 	    $result = $this->renderPartial('//request/_view', array('data'=>$data), true);
 	    echo CJSON::encode($result);
 	  }
