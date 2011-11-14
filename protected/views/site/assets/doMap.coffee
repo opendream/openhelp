@@ -9,8 +9,8 @@ window.mapLoadded = (args) ->
 
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions)
 
-  prefix = "/opendream/openhelp/"
-  $.getJSON "#{prefix}/api/request/?action=index", (nodes) ->
+  basePath = Yii.settings.basePath
+  $.getJSON "#{basePath}/api/request/?action=index", (nodes) ->
     markers = []
     $.each nodes, (id, node) ->
       placeLatLng = new google.maps.LatLng node?.lat, node?.lng

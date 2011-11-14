@@ -1,7 +1,8 @@
 <?php
+	$assetsDir = dirname(__FILE__).'/assets';
 	$cs = Yii::app()->getClientScript();
 	$this->pageTitle=Yii::app()->name;
-	
+
 	echo $this->renderPartial('_map', array('model'=>$model));
 
      // Publishing and registering JavaScript file
@@ -13,4 +14,9 @@
 	google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
 GLOAD;
 	$cs->registerScript('gload', $gload);
+	$basePath = Yii::app()->getRequest()->getBaseUrl();
+	$options = array('basePath' => $basePath);
+
+	$js_settings_str = CJavaScript::encode($options);
+	echo CHtml::Script('var Yii= Yii || {}; Yii.settings = ' . $js_settings_str);	
 ?>
