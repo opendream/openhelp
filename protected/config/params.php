@@ -4,6 +4,9 @@ return array(
 	'location'=>array('level0','level1','level2'),
 	'request'=>array(
 	  'extra' => array(
+	    'location' => array(
+	      array('label' => 'หมู่บ้าน', 'prefix' => '', 'suffix' => ''),
+	    ),
 	    'double' => array(
 	      /* Limit for 10 fields
     	  array('label' => '', 'prefix' => '', 'suffix' => ''),
@@ -34,7 +37,6 @@ return array(
     	   'ปานกลาง' => 'ปานกลาง',
     	   'น้อย' => 'น้อย',
     	  )),
-    	  array('label' => 'หมู่บ้าน', 'editor' => 'textField'),
     	  array('label' => 'ปัญหาอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
 				)),
