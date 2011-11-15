@@ -361,8 +361,16 @@ strong.location{
 * map
 */
 #map {width: 540px; padding: 10px;}
+.st-request ul {
+  float: left;
+  list-style: none;
+  margin: 0 0 20px;
+}
+  .st-request ul li {float: left; margin: 0 20px 0 0;}
+  .st-request ul li .label {margin: 0 10px 0 0; color: #3e3e3e;}
+  .st-request ul li .level0, .st-request ul li .level1, .st-request ul li .level2 {color: #666}
 
-
+.st-request h2 {clear: both;}
 /*
 * ฐานข้อมูล
 */
