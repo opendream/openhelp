@@ -3,7 +3,7 @@
 	$cs = Yii::app()->getClientScript();
 	$this->pageTitle=Yii::app()->name;
 
-	echo $this->renderPartial('_map');
+	$this->renderPartial('_map');
 
      // Publishing and registering JavaScript file
      $cs->registerScriptFile(

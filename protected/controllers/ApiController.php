@@ -58,51 +58,7 @@ class ApiController extends Controller
 	   }
 	   
 	   echo CJSON::encode($locations->toArray());
-	  }
-
-	  elseif ($action == 'location') {
-	  	$result = array();
-	  	$location = Location::model()->findByPk($id);
-	  	$result['location'] = $location->label;
-	  	$result['requests'] = $location->requests;
-
-	  	//get coordinators
-	  	$qtxt = "SELECT distinct coordinator.fullname, coordinator.position, coordinator.tel
-				 FROM location INNER JOIN request ON location.id = request.location_id
-     				INNER JOIN request_coordinator ON request.id = request_coordinator.request_id
-     				INNER JOIN coordinator ON request_coordinator.coordinator_id = coordinator.id
-				 WHERE location.id = $id
-				 ORDER BY coordinator.fullname";
-      	$command = Yii::app()->db->createCommand($qtxt);
-      	$coordinators = $command->queryAll();
-      	$result['coordinators'] = $coordinators;
-      	// get items detail
-      	$qtxt = "SELECT item.id, item.name, need.amount
-     			 FROM location INNER JOIN request ON location.id = request.location_id
-     			 	INNER JOIN need ON request.id = need.request_id
-     				INNER JOIN item ON need.item_id = item.id
-     			 WHERE location.id = $id
-	 			 ORDER BY item.id";
-	 	$command = Yii::app()->db->createCommand($qtxt);
-      	$items = $command->queryAll();
-      	$result['items'] = $items;
-      	
-      	$qtxt = "SELECT sum(request.extra_double0) as household 
-					FROM location INNER JOIN request ON location.id = request.location_id
-					WHERE location.id = $id";
-		$command = Yii::app()->db->createCommand($qtxt);
-      	$household = $command->queryRow();
-      	$result['household'] = $household;
-
-      	$qtxt = "SELECT min(request.extra_double1) as minLevel, max(request.extra_double1) as maxLevel
-				FROM location INNER JOIN request ON location.id = request.location_id
-     			WHERE location.id = $id";
-     	$command = Yii::app()->db->createCommand($qtxt);
-     	$water_level = $command->queryRow();
-      	$result['water_level'] = $water_level;
-
-	  	echo CJSON::encode($result);
-	  }
+	  }  
 
 	}
 

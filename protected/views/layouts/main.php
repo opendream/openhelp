@@ -13,9 +13,6 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
-	<!-- Special Stuff -->
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/coffee-script.js"></script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -32,6 +29,7 @@
 			'items'=>array(
 				array('label'=> Yii::t('locale','home'), 'url'=>array('/site/index')),
 				array('label'=> Yii::t('locale','request'), 'url'=>array('/request/admin')),
+				array('label'=> Yii::t('locale','database'), 'url'=>array('/site/database')),
 				array('label'=> Yii::t('locale','about'), 'url'=>array('/site/page', 'view'=>'about')),
 				// array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=> Yii::t('locale','login'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
