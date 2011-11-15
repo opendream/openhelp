@@ -109,7 +109,14 @@ class SiteController extends Controller
 	{
 		$items = WidgetManager::getItemDetails($id);
 		$coordinators = WidgetManager::getCoordinators($id);
-		
-		$this->render('database', array('items' => $items, 'coordinators' => $coordinators));
+		$journey_detail = WidgetManager::getExtratexts($id, 5);
+		$remark_detail = WidgetManager::getExtratexts($id, 6);
+
+		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
+		$this->render('database', array('items' => $items, 
+										'coordinators' => $coordinators, 
+										'extra' => $extra
+										)
+					);
 	}
 }
