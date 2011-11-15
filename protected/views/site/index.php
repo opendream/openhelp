@@ -163,9 +163,9 @@
 			</select>
 		</header>
     <?php $this->renderPartial('//request/locationIndex', array(
- 			'query'=>isset($_GET['query'])? $_GET['query']: array(),
- 			'page' => isset($_GET['page'])? $_GET['page']: 0,
- 			'ipp' => isset($_GET['ipp'])? $_GET['ipp']: 10,
+ 			'query'=> array(),
+ 			'page' => 0,
+ 			'ipp' => 10,
  		)); ?>
   </div> <!-- end section-database -->
 </div> <!-- end content -->
