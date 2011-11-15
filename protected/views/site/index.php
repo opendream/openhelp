@@ -1,6 +1,5 @@
 <?php
-	$assetsDir = dirname(__FILE__).'/assets';
-	$cs = Yii::app()->getClientScript();
+
 	$this->pageTitle=Yii::app()->name;
 
 ?>
