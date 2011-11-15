@@ -2,9 +2,17 @@
 	echo $this->renderPartial('_database_detail_lastupdate');
 	echo $this->renderPartial('_database_detail_map');
 	echo $this->renderPartial('_database_detail_need', array('items' => $items	));
-	echo $this->renderPartial('_database_detail_coordinators', array('coordinators' => $coordinators,
-	 'journey'=>$extra['journey'], 'remark' => $extra['remark'], 'location_detail' => $location));
+	$coordinators_params = array(
+		'coordinators' => $coordinators,
+		'journey' => $extra['journey'],
+		'remark' => $extra['remark'],
+		'location_detail' => $location
+	);
+	echo $this->renderPartial('_database_detail_coordinators', $coordinators_params);
 	echo $this->renderPartial('_database_detail_villages', array('location_extra0s' => $location_extra0s));
+
+
+	//SCRIPT
 	$assetsDir = dirname(__FILE__).'/assets';
 	$cs = Yii::app()->getClientScript();
      // Publishing and registering JavaScript file
@@ -20,7 +28,6 @@ GLOAD;
 	$options = array('basePath' => $basePath);
 
 	$js_settings_str = CJavaScript::encode($options);
-	echo CHtml::Script('var Yii= Yii || {}; Yii.settings = ' . $js_settings_str);		 
-
+	echo CHtml::Script('var Yii= Yii || {}; Yii.settings = ' . $js_settings_str);
 ?>
 	
