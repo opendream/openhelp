@@ -107,9 +107,9 @@ class SiteController extends Controller
 
 	public function actionDatabase($id)
 	{
-		print $id;
 		$items = WidgetManager::getItemDetails($id);
+		$coordinators = WidgetManager::getCoordinators($id);
 		
-		$this->render('database', array('items' => $items));
+		$this->render('database', array('items' => $items, 'coordinators' => $coordinators));
 	}
 }
