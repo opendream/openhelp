@@ -344,7 +344,7 @@ strong.location{
 		width: 270px;
 	}
 
-#section-database header h2, #section-database header form{
+#section-database header h2, #section-database header form, #section-database header h1{
 	float: left;
 	margin: 0 15px 0 0;
 }
@@ -387,6 +387,7 @@ footer{
 }
 #nav-footer{
 	float: left;
+	margin: 0;
 }
 	#nav-footer li {
 	  display: inline;
@@ -407,11 +408,12 @@ footer{
 	clear: both;
 	float: right;
 }
-
+.readmore {clear: both;}
 .readmore a{
 	clear: both;
 	float: right;
 	display: block;
+	overflow: hidden;
 	width: 81px;
 	height: 34px;
 	text-indent: -999em;
