@@ -25,7 +25,7 @@ class WidgetManager
 	}
 
 	public static function getItemDetails($id, $village = null, $idOnly = null) {
-		$qtxt = "SELECT item.id, item.name, item.image_url, sum(need.amount)
+		$qtxt = "SELECT item.id, item.name, item.image_url, sum(need.amount) as amount
      			 FROM location INNER JOIN request ON location.id = request.location_id
      			 	INNER JOIN need ON request.id = need.request_id
      				INNER JOIN item ON need.item_id = item.id
