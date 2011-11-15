@@ -42,7 +42,7 @@ return array(
   * Menu
   */
   'home' => 'หน้าหลัก',
-  'about' => 'เกี่ยวกับ',
+  'about' => 'เกี่ยวกับเรา',
   'request' => 'ความต้องการ',
 
   /*
@@ -66,15 +66,21 @@ return array(
   'Add need' => 'เพิ่มความต้องการ',
   'Name' => 'รายการ',
   'Amount' => 'จำนวน',
-
+  'Summary needs' => 'ข้อมูลพื้นที่ที่ได้รับความเสียหาย',
+  'All needs' => 'สิ่งที่ต้องการ',
+  
   /**
    * Dialog
    */
   'Cancel' => 'ยกเลิก',
   'Add Item' => 'เพิ่ม',
   'Add New Need' => 'เพิ่มความต้องการ',
-  'Select Item' => 'เลือกสิ่งของ'
+  'Select Item' => 'เลือกสิ่งของ',
 
-
+  /**
+   * Request
+   */
+  'Waiting for help' => 'รอช่วยเหลือ',
+  'Total areas' => 'พื้นที่ทั้งหมด',
   
 );
