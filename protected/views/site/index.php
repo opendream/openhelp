@@ -162,7 +162,7 @@
 				<option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา</option>
 			</select>
 		</header>
-    <?php $this->renderPartial('//request/locationIndex', array(
+    <?php $this->renderPartial('//request/location', array(
  			'query'=> array(),
  			'page' => 0,
  			'ipp' => 10,

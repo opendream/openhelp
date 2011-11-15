@@ -86,7 +86,7 @@ $nextPage = $page + 1;
 </article><!-- /db-list -->
 <?php endforeach ?>
 
-<p class="readmore"><a class="request-location-readmore" href="<?php echo CController::createUrl("/api/request?action=locationIndex&page=$nextPage&ipp=$ipp"); ?>"><?php echo Yii::t('locale', 'read more'); ?></a></p>
+<p class="readmore"><a class="request-location-readmore" href="<?php echo CController::createUrl("/api/request?action=location&page=$nextPage&ipp=$ipp"); ?>"><?php echo Yii::t('locale', 'read more'); ?></a></p>
 <script>
   $('.request-location-readmore').click(function (e) {
     e.preventDefault();

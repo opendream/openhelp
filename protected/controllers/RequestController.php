@@ -27,7 +27,7 @@ class RequestController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'locationView', 'requestView'),
+				'actions'=>array('index','view', 'locationView', 'requestView', 'location'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -161,6 +161,19 @@ class RequestController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+	
+	/**
+	 * Lists all models.
+	 */
+	public function actionLocation()
+	{
+	  $this->layout='layout1';
+		$this->render('location', array(
+ 			'query'=>isset($_GET['query'])? $_GET['query']: array(),
+ 			'page' => isset($_GET['page'])? $_GET['page']: 0,
+ 			'ipp' => isset($_GET['ipp'])? $_GET['ipp']: 15,
+ 		));
 	}
 
 	
