@@ -27,7 +27,7 @@ class RequestController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'locationView'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -234,6 +234,28 @@ class RequestController extends Controller
 
 	  	echo CJSON::encode($result);	
 	}
+
+	/**
+	 * Database Menu
+	 */
+
+	public function actionLocationView($id)
+	{
+		$items = WidgetManager::getItemDetails($id);
+		$coordinators = WidgetManager::getCoordinators($id);
+		$journey_detail = WidgetManager::getExtratexts($id, 5);
+		$remark_detail = WidgetManager::getExtratexts($id, 6);
+		$locaton_text = LookupManager::getLocationString($id);
+		$location_text = LocationHtml::locationView($id);
+		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
+		// print_r(WidgetManager::getExtraLocation0s($id));
+		$this->render('database', array('items' => $items, 
+										'coordinators' => $coordinators, 
+										'extra' => $extra,
+										'location' => $location_text
+										)
+					);
+	}	
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
