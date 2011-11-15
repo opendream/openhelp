@@ -381,7 +381,6 @@ strong.location{
 	  .db-item1 li span.level2 {font-weight: bold; font-size: 1.1em;}
 	
 	  .db-item1 li span.label, .db-item2 .extra-double-label {margin: 0 10px 0 0; color: #666; font-weight: bold}
-		.db-item1 li span.label:after, .db-item2 .extra-double-label:after {content: " :"}
 	
 	.db-item2{
 		float: left;
@@ -389,7 +388,7 @@ strong.location{
 		margin-right: 20px;
 	}
 	
-	  .db-item2 .extra-double-input {padding: 0 0 0 10px; color: #000}
+	  .db-item2 .extra-double-input {color: #000}
 	
 	
 	.db-item3{
@@ -424,10 +423,18 @@ strong.location{
 	display: block;
 }
 
+.db-item2 tr {
+  height: 20px;
+}
+.db-item1 table td, .db-item2 table td {
+  padding: 5px 3px 3px;
+}
+
 .db-item3 li{
 	float: left;
 	margin: 0 10px 5px 0;
 	width: 25px;
+	list-style: none;
 }
 .db-item3 li .in-active{
 	opacity: 0.5;
