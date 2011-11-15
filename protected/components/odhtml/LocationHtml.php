@@ -5,9 +5,7 @@ Class LocationHtml extends CHtml {
     $output = '';
     if ($id) {
       $locationModel = new Location;
-      
-      $output .= '<ul>';
-      
+
       $levels = Yii::app()->params['location'];
       if (isset($options['showLatLng']) && $options['showLatLng']) {
         $levels[] = 'lat';
@@ -18,16 +16,42 @@ Class LocationHtml extends CHtml {
       $qtxt = "SELECT $levels FROM location WHERE id = '$id'";
       $command = Yii::app()->db->createCommand($qtxt);
       $row = $command->queryRow();
-
-      foreach ($row as $level => $value) {
-        $output .= '<li>';
-        $output .= '<span class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</span>';
-        $output .= '<span class="'.$level.'">'.$value.'</span>';
-        $output .= '</li>';
-        
-      }
       
-      $output .= '</ul>';
+      if (isset($options['style'])) {
+        if ($options['style'] == 'endLevelLink') {
+          $row = array_reverse($row);
+          $level = key($row);
+          $value = array_shift($row);
+          
+          
+          $output .= '<ul>';
+          
+          $output .= '<li class="first">';
+          $output .= '<span class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</span>';
+          $output .= '<span class="'.$level.'"><a href="'.CController::createUrl("/request/locationView/".$id).'">'.$value.'</a></span>';
+          $output .= '</li>';
+          
+          foreach ($row as $level => $value) {
+            $output .= '<li>';
+            $output .= '<span class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</span>';
+            $output .= '<span class="'.$level.'">'.$value.'</span>';
+            $output .= '</li>';
+
+          }
+          $output .= '</ul>';
+        }
+      }
+      else {
+        $output .= '<ul>';
+        foreach ($row as $level => $value) {
+          $output .= '<li>';
+          $output .= '<span class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</span>';
+          $output .= '<span class="'.$level.'">'.$value.'</span>';
+          $output .= '</li>';
+
+        }
+        $output .= '</ul>';
+      }
       
       if (isset($options['showMap'])) {
         # TODO: show google map
