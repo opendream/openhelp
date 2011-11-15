@@ -360,7 +360,7 @@ strong.location{
 /*
 * map
 */
-#map_canvas {height: 360px !important}
+#map {width: 540px; padding: 10px;}
 
 
 /*
@@ -580,14 +580,20 @@ footer{
 * Entry page
 */
 /* Set width & width shadow */
-.st-update, #map{
+.st-update{
 	width: 520px;
 }
+
 #request-locationView .st-need{
-	float: left;
+/* 	float: left; */
 	width: 230px;
+	position: absolute;
+	top: 47px;
+	right: 0;
+/*
 	margin-top: -245px;
 	margin-left: 585px;
+*/
 }
 #request-locationView .curved-hz-1:before{
 	left: 30px;
@@ -609,7 +615,9 @@ footer{
 #request-locationView .st-need{
 	padding: 20px 0 20px 25px;
 }
-
+.entry {
+  position: relative;
+}
 .entry-update{
 	width: 380px;
 	float: left;
