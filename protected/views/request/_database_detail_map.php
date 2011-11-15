@@ -1,10 +1,12 @@
-<section id="map_canvas" style="width:560px; height:200px"></section>
-
+<section id = "map" class="drop-shadow curved curved-hz-1">
+	<div id="map_canvas" style="width:520px; height:270px"></div>
+</section>
 <?php 
 	$assetsDir = dirname(__FILE__).'/assets';
 	$cs = Yii::app()->getClientScript();
      // Publishing and registering JavaScript file
      $cs->registerScriptFile(
         Yii::app()->assetManager->publish($assetsDir.'/doMap.js'), CClientScript::POS_HEAD);
-
  ?>
+
+

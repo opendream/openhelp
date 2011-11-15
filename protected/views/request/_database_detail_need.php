@@ -1,4 +1,4 @@
-<section class="st-need">
+<section class="st-need drop-shadow curved curved-hz-1">
 	  <header><h2>สิ่งของที่ต้องการ</h2></header>
 	  <ul>
 	  <?php foreach ($items as $item): ?>

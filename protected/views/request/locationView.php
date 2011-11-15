@@ -1,3 +1,4 @@
+<div id="content">
 <?php
 	echo $this->renderPartial('_database_detail_lastupdate');
 	echo $this->renderPartial('_database_detail_map');
@@ -10,7 +11,6 @@
 	);
 	echo $this->renderPartial('_database_detail_coordinators', $coordinators_params);
 	echo $this->renderPartial('_database_detail_villages', array('location_extra0s' => $location_extra0s));
-
 
 	//SCRIPT
 	$assetsDir = dirname(__FILE__).'/assets';
@@ -30,4 +30,4 @@ GLOAD;
 	$js_settings_str = CJavaScript::encode($options);
 	echo CHtml::Script('var Yii= Yii || {}; Yii.settings = ' . $js_settings_str);
 ?>
-	
+</div>	
