@@ -6,4 +6,3 @@
 	  <?php endforeach; ?>
 	  </ul>
 </section> <!-- /st-need -->
-<?php print_r($items) ?>
