@@ -52,6 +52,7 @@ class WidgetManager
        	
        	foreach ($items as &$item) {
        	  $item['percent'] = floor($item['amount'] / $max * 100);
+       	  $item['percent'] = $item['percent'] ? $item['percent'] : 1;
        	}
     	
       	return $items;
@@ -91,6 +92,7 @@ class WidgetManager
       	  	
       	  	foreach ($items as &$item) {
            	  $item['percent'] = floor($item['amount'] / $max * 100);
+         	  $item['percent'] = $item['percent'] ? $item['percent'] : 1;
            	}
     	}
       	return $items;
