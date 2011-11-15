@@ -1,6 +1,6 @@
 <article id="entry-1" class="entry">
 <header><h1>ต.เกาะเกิด อ.บางปะอิน จ.อยุธยา</h1></header>
-<section class="st-update">
+<section class="st-update drop-shadow curved curved-hz-1">
 <div id="entry-date">
     <span class="year">2011</span>
     <span class="day">15</span>

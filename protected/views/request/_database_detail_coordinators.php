@@ -1,4 +1,4 @@
-<section class="st-request">
+<section class="st-request drop-shadow curved curved-hz-1">
 <h2>ข้อมูลพื้นที่</h2>
 <p><?php echo $location_detail ?></p>
 <h2>ผู้ประสานงานในพื้นที่</h2>
