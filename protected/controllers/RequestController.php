@@ -27,7 +27,7 @@ class RequestController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'locationView'),
+				'actions'=>array('index','view', 'locationView', 'requestView'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -236,7 +236,7 @@ class RequestController extends Controller
 	}
 
 	/**
-	 * Database Menu
+	 *  LocationView [level 1]
 	 */
 
 	public function actionLocationView($id)
@@ -254,8 +254,13 @@ class RequestController extends Controller
 			'extra' => $extra,
 			'location' => $location_text
 		);
-		$this->render('database', $params);
+		$this->render('locationView', $params);
 	}	
+
+	public function actionRequestView($id)
+	{
+		$this->render('requestView');
+	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
