@@ -1,6 +1,6 @@
 <section class="st-request">
 <h2>ข้อมูลพื้นที่</h2>
-<p>ต. เกาะเสม็ด อ.บางปะอิน จ.อยุธยา</p>
+<p><?php echo $location_detail ?></p>
 <h2>ผู้ประสานงานในพื้นที่</h2>
 <table class="zebra-striped request_coordinators">
 			<thead>

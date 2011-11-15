@@ -235,6 +235,21 @@ class RequestManager
     if(isset($params['extra_text9'])){
       $request->extra_text9 = $params['extra_text9'];
     }
+    if(isset($params['extra_text10'])){
+      $request->extra_text10 = $params['extra_text10'];
+    }
+    if(isset($params['extra_text11'])){
+      $request->extra_text11 = $params['extra_text11'];
+    }
+    if(isset($params['extra_text12'])){
+      $request->extra_text12 = $params['extra_text12'];
+    }
+    if(isset($params['extra_text13'])){
+      $request->extra_text13 = $params['extra_text13'];
+    }
+    if(isset($params['extra_text14'])){
+      $request->extra_text14 = $params['extra_text14'];
+    }
     // map extra_double
     if(isset($params['extra_double0'])){
       $request->extra_double0 = $params['extra_double0'];
