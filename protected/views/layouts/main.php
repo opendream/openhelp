@@ -29,7 +29,7 @@
 			'items'=>array(
 				array('label'=> Yii::t('locale','home'), 'url'=>array('/site/index')),
 				array('label'=> Yii::t('locale','request'), 'url'=>array('/request/admin')),
-				array('label'=> Yii::t('locale','database'), 'url'=>array('/site/database')),
+				array('label'=> Yii::t('locale','LocationView'), 'url'=>array('/request/locationView')),
 				array('label'=> Yii::t('locale','about'), 'url'=>array('/site/page', 'view'=>'about')),
 				// array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=> Yii::t('locale','login'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

@@ -245,16 +245,16 @@ class RequestController extends Controller
 		$coordinators = WidgetManager::getCoordinators($id);
 		$journey_detail = WidgetManager::getExtratexts($id, 5);
 		$remark_detail = WidgetManager::getExtratexts($id, 6);
-		$locaton_text = LookupManager::getLocationString($id);
 		$location_text = LocationHtml::locationView($id);
 		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
-		// print_r(WidgetManager::getExtraLocation0s($id));
-		$this->render('database', array('items' => $items, 
-										'coordinators' => $coordinators, 
-										'extra' => $extra,
-										'location' => $location_text
-										)
-					);
+		// print_r(WidgetManagerk::getExtraLocation0s($id));
+		$params = array(
+			'items' => $items, 
+			'coordinators' => $coordinators, 
+			'extra' => $extra,
+			'location' => $location_text
+		);
+		$this->render('database', $params);
 	}	
 
 	/**
