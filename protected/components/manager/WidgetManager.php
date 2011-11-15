@@ -24,6 +24,26 @@ class WidgetManager
       	return $coordinators;
 	}
 
+	public static function getAllItemDetails() {
+		$qtxt = "SELECT item.id, item.name, item.image_url, sum(need.amount) as amount
+     			 FROM location INNER JOIN request ON location.id = request.location_id
+     			 	INNER JOIN need ON request.id = need.request_id
+     				INNER JOIN item ON need.item_id = item.id
+     			 WHERE location.id = $id 
+     			 GROUP BY item.id, item.name, item.image_url";
+	 	$command = Yii::app()->db->createCommand($qtxt);
+	 	
+      	$items = $command->queryAll();
+      	$models = Item::model()->findAll();
+      	for ($i=0; $i < count($models); $i++) { 
+      		if(!self::findItemById($items, $models[$i]['id'])) {
+      			$items[] = array('id' => $models[$i]['id'], 'name' => $models[$i]['name'], 'image_url' => $models[$i]['id'], 'amount' => 0);
+      		}
+       	}
+    	
+      	return $items;
+	}
+
 	public static function getItemDetails($id, $village = null, $idOnly = null) {
 		$qtxt = "SELECT item.id, item.name, item.image_url, sum(need.amount) as amount
      			 FROM location INNER JOIN request ON location.id = request.location_id
@@ -49,29 +69,41 @@ class WidgetManager
       	return $items;
 	}
 
+	// under construction, pls dont use it!
 	public static function getExtraDouble($id, $number, $village = null) {
 		$double = Yii::app()->params['request']['extra']['double'];
 		$params = 'request.extra_double'.$number;
+		$results = array();
 		$villages = array();
 		if(!$village) {
-			$qtxt = "SELECT request.extra_location0 as village
+			$qtxt = "SELECT request.extra_location0 as name
 				FROM location INNER JOIN request ON location.id = request.location_id 
 				WHERE location.id = $id ";
 			$command = Yii::app()->db->createCommand($qtxt);
 			$villages = $command->queryAll();
 		} else {
-		 	$villages[] = array('village' => $village);
+		 	$villages[] = array('name' => $village);
 		}
 
 		if($double[$number]['func']=='sum') {
-
+			$sumExtraDouble = 0;			
+			foreach ($villages as $village) {	
+				$villageName = $village['name'];		
+				$qtxt = "SELECT $params as value
+					FROM request where $params = $villageName
+					order by date_created desc";
+				$command = Yii::app()->db->createCommand($qtxt);
+				$result = $command->queryRow();
+				$sumExtraDouble += $result['value'];
+			}
+			$results[$params] = $sumExtraDouble;
 		} elseif($double[$number]['func']=='min-max') {
 			
 		}
 		//Yii::trace($qtxt,'example');
 
 		
-		$result['sum_'.$params] = $sumReqult;
+		return $results;
 	}
 
 	public static function getSumExtraDouble($id, $village = null) {
