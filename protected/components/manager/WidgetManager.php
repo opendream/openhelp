@@ -29,16 +29,29 @@ class WidgetManager
      			 FROM location INNER JOIN request ON location.id = request.location_id
      			 	INNER JOIN need ON request.id = need.request_id
      				INNER JOIN item ON need.item_id = item.id
-     			 WHERE location.id = $id 
      			 GROUP BY item.id, item.name, item.image_url";
 	 	$command = Yii::app()->db->createCommand($qtxt);
 	 	
       	$items = $command->queryAll();
+      	
+      	$sum = 0;
+      	$max = 0;
+      	foreach ($items as $item) {
+      	  $sum += $item['amount'];
+      	  if ($max < $item['amount']) {
+      	    $max = $item['amount'];
+      	  }
+      	}
+       	
       	$models = Item::model()->findAll();
       	for ($i=0; $i < count($models); $i++) { 
       		if(!self::findItemById($items, $models[$i]['id'])) {
       			$items[] = array('id' => $models[$i]['id'], 'name' => $models[$i]['name'], 'image_url' => $models[$i]['id'], 'amount' => 0);
       		}
+       	}
+       	
+       	foreach ($items as &$item) {
+       	  $item['percent'] = floor($item['amount'] / $max * 100);
        	}
     	
       	return $items;

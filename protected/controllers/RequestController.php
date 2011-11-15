@@ -184,6 +184,8 @@ class RequestController extends Controller
 
 	public function actionLocationView($id)
 	{
+	  $this->layout='layout1';
+	  
 		$items = WidgetManager::getItemDetails($id);
 		$coordinators = WidgetManager::getCoordinators($id);
 		$journey_detail = WidgetManager::getExtratexts($id, 5);
