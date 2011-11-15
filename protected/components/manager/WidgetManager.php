@@ -97,11 +97,9 @@ class WidgetManager
 
 	public static function getExtratexts($id, $text, $village = null){
 		$result = array();
-		//$label = Yii::app()->params['request']['extra']['location']['label'];
-		$label = 'หมู่บ้าน';
 		$params = 'request.extra_text'.$text;
 
-		$qtxt = "SELECT concat('$label',' ',$params) as label
+		$qtxt = "SELECT concat(request.extra_location0,' ',$params) as label
 				FROM location INNER JOIN request ON location.id = request.location_id
      			WHERE location.id = $id ";
      	if($village) {
