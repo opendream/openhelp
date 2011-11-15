@@ -224,20 +224,19 @@ CREATE TABLE IF NOT EXISTS `item` (
 -- Dumping data for table `item`
 --
 
-INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES
-(1, 'เสื้อผ้า', 1, ''),
-(2, 'เครื่องสูบน้ำ', 1, ''),
-(3, 'เครื่องกันหนาว', 1, ''),
-(4, 'เครื่องกำเนิดกระแสไฟฟ้า', 1, ''),
-(5, 'น้ำมันเชื้อเพลิง', 1, ''),
-(6, 'ก๊าซหุงต้ม', 1, ''),
-(7, 'ถุงยังชีพ', 1, ''),
-(8, 'น้ำ', 1, ''),
-(9, 'สุขาลอยน้ำ', 1, ''),
-(10, 'เรือ', 1, ''),
-(11, 'ยารักษาโรค', 1, ''),
-(12, 'เต้นท์ที่พัก', 1, ''),
-(13, 'อื่นๆ', 1, '');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(1, 'เสื้อผ้า', 1, 'images/need-1.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(2, 'เครื่องสูบน้ำ', 1, 'images/need-2.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(3, 'เครื่องกันหนาว', 1, 'images/need-3.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(4, 'เครื่องกำเนิดกระแสไฟฟ้า', 1, 'images/need-4.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(5, 'น้ำมันเชื้อเพลิง', 1, 'images/need-5.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(6, 'ก๊าซหุงต้ม', 1, 'images/need-6.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(7, 'ถุงยังชีพ', 1, 'images/need-7.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(8, 'น้ำ', 1, 'images/need-8.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(9, 'สุขาลอยน้ำ', 1, 'images/need-9.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(10, 'เรือ', 1, 'images/need-10.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(11, 'ยารักษาโรค', 1, 'images/need-11.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(12, 'เต้นท์ที่พัก', 1, 'images/need-12.png');
+INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES(13, 'อื่นๆ', 1, 'images/need-13.png');
 
 -- --------------------------------------------------------
 
