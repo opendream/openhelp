@@ -190,6 +190,7 @@ nav {
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 */
 	}
+	#section-stat ul {list-style: none; margin: 0;}
 
 
 /*
@@ -357,8 +358,15 @@ strong.location{
 #situation-list article p.desc {float: left; width: 370px;}
 
 /*
+* map
+*/
+#map_canvas {height: 360px !important}
+
+
+/*
 * ฐานข้อมูล
 */
+.db-list table td {border-top: none;}
 .db-list{
 	float: left;
 	width: 800px;
@@ -378,10 +386,10 @@ strong.location{
 		font-size: 13px;
 		font-family: Thonburi,Helvetica,Tahoma,sans-serif;		
 	}
-	  .db-item1 li span.level2 {font-weight: bold; font-size: 1.1em;}
+	  .db-item1 .level2 {font-weight: bold; font-size: 1.1em;}
 	
-	  .db-item1 li span.label, .db-item2 .extra-double-label {margin: 0 10px 0 0; color: #666; font-weight: bold}
-	
+	  .db-item1 .label, .db-item2 .extra-double-label {margin: 0 10px 0 0; color: #666; font-weight: bold}
+	  .db-item1 .label {width: 100px}
 	.db-item2{
 		float: left;
 		width: 250px;
@@ -439,6 +447,12 @@ strong.location{
 .db-item3 li .in-active{
 	opacity: 0.5;
 }
+
+/*
+* Location
+*/
+#request-location {}
+
 
 
 /*
