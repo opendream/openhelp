@@ -39,13 +39,13 @@ class ApiController extends Controller
 	    echo CJSON::encode($result);
 	  }
 	  
-	  elseif ($action == 'locationIndex') {
-   		$result = $this->renderPartial('//request/locationIndex', array(
+	  elseif ($action == 'location') {
+   		$result = $this->renderPartial('//request/location', array(
    			'query'=>isset($_GET['query'])? $_GET['query']: array(),
    			'page' => isset($_GET['page'])? $_GET['page']: 0,
    			'ipp' => isset($_GET['ipp'])? $_GET['ipp']: 10,
    		), true);
-   		echo $result;
+   		echo CJSON::encode($result);
 	  }
 	  
 	  // @return list of request in json format

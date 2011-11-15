@@ -9,6 +9,7 @@
 	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico" />
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" />		 	
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-tambon.css" />
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.5.1.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -26,11 +27,11 @@
 			<nav>		
 				<?php $this->widget('zii.widgets.CMenu',array(
     			'items'=>array(
-    				array('label'=> Yii::t('locale','home'), 'url'=>array('/site/index')),
-    				array('label'=> Yii::t('locale','news'), 'url'=>array('/news/index')),
-    				array('label'=> Yii::t('locale','volunteer'), 'url'=>array('/volunteer/index')),
+    				array('label'=> Yii::t('locale','home'), 'url'=>array('/')),
+    				array('label'=> Yii::t('locale','news'), 'url'=>array('/')),
+    				array('label'=> Yii::t('locale','volunteer'), 'url'=>array('/')),
     				array('label'=> Yii::t('locale','database'), 'url'=>array('/request/location')),
-    				array('label'=> Yii::t('locale','about'), 'url'=>array('/site/page', 'view'=>'about')),
+    				array('label'=> Yii::t('locale','about'), 'url'=>array('/site/page', 'view'=>'about'), 'layout' => 'layout1'),
     				// array('label'=>'Contact', 'url'=>array('/site/contact')),
     				// array('label'=> Yii::t('locale','login'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
     				// array('label'=> Yii::t('locale','logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
@@ -44,16 +45,22 @@
 
   <div id="footer">	
 		<footer>
-		  <ul id="nav-footer">
-		    <li><a href="">หน้าหลัก</a></li>
-				<li><a href="">สถานการณ์ประจำวัน</a></li>
-				<li><a href="">อาสาสมัคร</a></li>
-				<li><a href="">ฐานข้อมูลรายตำบล</a></li>
-				<li><a href="">เกี่ยวกับเรา</a></li>
-		  </ul>
+		  <?php $this->widget('zii.widgets.CMenu',array(
+		    'id' => 'nav-footer',
+  			'items'=>array(
+  				array('label'=> Yii::t('locale','home'), 'url'=>array('/')),
+  				array('label'=> Yii::t('locale','news'), 'url'=>array('/')),
+  				array('label'=> Yii::t('locale','volunteer'), 'url'=>array('/')),
+  				array('label'=> Yii::t('locale','database'), 'url'=>array('/request/location')),
+  				array('label'=> Yii::t('locale','about'), 'url'=>array('/site/page', 'view'=>'about')),
+  				// array('label'=>'Contact', 'url'=>array('/site/contact')),
+  				// array('label'=> Yii::t('locale','login'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+  				// array('label'=> Yii::t('locale','logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+  			),
+  		)); ?>
 
 			<div id="footer-copyright">
-				<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/th/"><img src="images/cc-80x15.png" width="80" height="15" alt="สัญญาอนุญาต cc by-nc-sa" title="สัญญาอนุญาต cc by-nc-sa แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 3.0 ประเทศไทย"></a>แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 3.0 ประเทศไทย
+				<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/th/"><img src="<?php echo bu('images/cc-80x15.png'); ?>" width="80" height="15" alt="สัญญาอนุญาต cc by-nc-sa" title="สัญญาอนุญาต cc by-nc-sa แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 3.0 ประเทศไทย"></a>แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 3.0 ประเทศไทย
 			</div>
 
 			<div id="develop">
