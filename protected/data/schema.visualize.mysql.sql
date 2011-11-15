@@ -229,15 +229,15 @@ INSERT INTO `item` (`id`, `name`, `category_item_id`, `image_url`) VALUES
 (2, 'เครื่องสูบน้ำ', 1, ''),
 (3, 'เครื่องกันหนาว', 1, ''),
 (4, 'เครื่องกำเนิดกระแสไฟฟ้า', 1, ''),
-(6, 'น้ำมันเชื้อเพลิง', 1, ''),
-(7, 'ก๊าซหุงต้ม', 1, ''),
-(8, 'ถุงยังชีพ', 1, ''),
-(9, 'น้ำ', 1, ''),
-(10, 'สุขาลอยน้ำ', 1, ''),
-(11, 'เรือ', 1, ''),
-(12, 'ยารักษาโรค', 1, ''),
-(13, 'เต้นท์ที่พัก', 1, ''),
-(14, 'อื่นๆ', 1, '');
+(5, 'น้ำมันเชื้อเพลิง', 1, ''),
+(6, 'ก๊าซหุงต้ม', 1, ''),
+(7, 'ถุงยังชีพ', 1, ''),
+(8, 'น้ำ', 1, ''),
+(9, 'สุขาลอยน้ำ', 1, ''),
+(10, 'เรือ', 1, ''),
+(11, 'ยารักษาโรค', 1, ''),
+(12, 'เต้นท์ที่พัก', 1, ''),
+(13, 'อื่นๆ', 1, '');
 
 -- --------------------------------------------------------
 
@@ -8675,6 +8675,11 @@ CREATE TABLE IF NOT EXISTS `request` (
   `last_updated` datetime NOT NULL,
   `location_id` bigint(20) DEFAULT NULL,
   `detail` text,
+  `extra_location0` varchar(255),
+  `extra_location1` varchar(255),
+  `extra_location2` varchar(255),
+  `extra_location3` varchar(255),
+  `extra_location4` varchar(255),
   `extra_text0` text,
   `extra_text1` text,
   `extra_text2` text,
@@ -8694,8 +8699,7 @@ CREATE TABLE IF NOT EXISTS `request` (
   `extra_double6` double DEFAULT NULL,
   `extra_double7` double DEFAULT NULL,
   `extra_double8` double DEFAULT NULL,
-  `extra_double9` double DEFAULT NULL,
-  `extra_location0` varchar(255) NOT NULL,
+  `extra_double9` double DEFAULT NULL,  
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_request_location_id` (`location_id`)

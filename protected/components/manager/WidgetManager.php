@@ -24,8 +24,8 @@ class WidgetManager
       	return $coordinators;
 	}
 
-	public static function getItemDetails($id, $village = null) {
-		$qtxt = "SELECT item.id, item.name, sum(need.amount)
+	public static function getItemDetails($id, $village = null, $idOnly = null) {
+		$qtxt = "SELECT item.id, item.name, item.image_url, sum(need.amount)
      			 FROM location INNER JOIN request ON location.id = request.location_id
      			 	INNER JOIN need ON request.id = need.request_id
      				INNER JOIN item ON need.item_id = item.id
@@ -35,7 +35,12 @@ class WidgetManager
 		}
 	 	$qtxt .= "  GROUP BY item.id, item.name";
 	 	$command = Yii::app()->db->createCommand($qtxt);
-      	$items = $command->queryAll();
+	 	    if ($idOnly) {
+	 	      $items = $command->queryColumn();
+	 	    }
+	 	    else {
+      	  $items = $command->queryAll();
+    	  }
       	return $items;
 	}
 
