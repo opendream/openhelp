@@ -16,11 +16,13 @@ return array(
     	  array('label' => '', 'prefix' => '', 'suffix' => ''),
     	  */
     	  // Remove this when make this project to opensource ==================================================
-	      array('label' => 'สถานการณ์น้ำ', 'prefix' => 'ระดับน้ำ', 'suffix' => 'เมตร', 'func' => 'min-max'),
     	  array('label' => 'จำนวนครัวเรือน', 'prefix' => '', 'suffix' => 'ครัวเรือน', 'func' => 'sum'),
+    	  array('label' => 'จำนวนประชากร', 'prefix' => '', 'suffix' => 'คน', 'func' => 'sum'),
+    	  array('label' => 'ระดับน้ำ', 'prefix' => '', 'suffix' => 'เมตร', 'func' => 'min-max'),
+	      
 	    ),
 	    'text' => array(
-	      /* Limit for 10 fields
+	      /* Limit for 15 fields
     	  array('label' => '',  'editor' => 'textField', 'options' => array()),
     	  array('label' => '',  'editor' => 'dropDownList', 'options' => array('key', 'value')),
     	  array('label' => '',  'editor' => 'textArea', 'options' => array()),
@@ -31,33 +33,40 @@ return array(
 				))),
     	  */
     	  // Remove this when make this project to opensource ==================================================
-    	  array('label' => 'ความเร่งด่วน', 'editor' => 'dropDownList', 'options' => array(
-    	   'มากที่สุด' => 'มากที่สุด',
-    	   'มาก' => 'มาก',
-    	   'ปานกลาง' => 'ปานกลาง',
-    	   'น้อย' => 'น้อย',
-    	  )),
-    	  array('label' => 'ปัญหาอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array(
+
+    	  array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านสุขภาวะ', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
 				)),
-    	  array('label' => 'ลักษณะของชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
+    	  array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านเศรษฐกิจ', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'ประวัติความช่วยเหลือ', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านสิ่งแวดล้อม', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'ทรัพยากรที่มีในชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านเยาวชน', 'editor' => 'CKEditorWidget', 'options' => array(
+					"height"=>"50px",
+				)),
+				array('label' => 'สถานการณ์ปัญหาในชุมชน - ปัญหาอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array(
+					"height"=>"50px",
+				)),
+				array('label' => 'ทรัพยากรและการจัดการในชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
+					"height"=>"50px",
+				)),
+				array('label' => 'ลักษณะชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
 				)),
 				array('label' => 'การเดินทางเข้าชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'ข้อสังเกตุอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'ข้อสังเกตอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'การจัดการในชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
-					"height"=>"50px",
-				)),
+				array('label' => 'ความเร่งด่วน', 'editor' => 'dropDownList', 'options' => array(
+    	   'มากที่สุด' => 'มากที่สุด',
+    	   'มาก' => 'มาก',
+    	   'ปานกลาง' => 'ปานกลาง',
+    	   'น้อย' => 'น้อย',
+    	  )),
 	    ),
 	  ),
 	), 

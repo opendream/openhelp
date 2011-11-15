@@ -45,6 +45,11 @@ CREATE TABLE `request` (
   `extra_text7` text,
   `extra_text8` text,
   `extra_text9` text,
+  `extra_text10` text,
+  `extra_text11` text,
+  `extra_text12` text,
+  `extra_text13` text,
+  `extra_text14` text,
   
   `extra_double0` double,
   `extra_double1` double,
