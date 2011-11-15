@@ -20,12 +20,7 @@
 		<?php endforeach ?>
 		</ul>
 
-		<h2>ข้อสังเกตอื่น ๆ</h2>
-		<ul>
-		<?php foreach ($remark as $key => $point): ?>
-			<li><?php echo $point['label'] ?></li>
-		<?php endforeach ?>
-		</ul>				     
+		<h2>ข้อสังเกตอื่น ๆ</h2>			     
 
 </section> <!-- /st-detail -->
 <?php     
