@@ -161,7 +161,7 @@ class WidgetManager
      			WHERE status != 2 OR status != 3 ";
      	$command = Yii::app()->db->createCommand($qtxt);
 		$requestNo = $command->queryColumn();
-		return $requestNo['requestNo'];
+		return $requestNo[0];
 	}
 
 	public static function findItemById($items, $id) {

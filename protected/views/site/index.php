@@ -11,11 +11,7 @@
   <div id="section-stat" class="drop-shadow curved curved-hz-1">
     <section class="st-area">
 		  <header><h1>ข้อมูลพื้นที่ที่ได้รับความเสียหาย</h1></header>
-
-		  <ul>
-		    <li><h2>รอความช่วย</h2><strong class="help">1,435</strong></li>
-		    <li><h2>พื้นที่ทั้งหมด</h2><strong class="location">4,201</strong></li>
-		  </ul>
+      <?php $this->renderPartial('//request/summary'); ?>
 	  </section> <!-- /st-area -->
     <section class="st-need">
 
