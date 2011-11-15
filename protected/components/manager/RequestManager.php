@@ -10,27 +10,35 @@ class RequestManager
   function create($model)
   {
     $request = new Request;
-    if (isset($model)) { 
-      // impl transaction    
-      if ($this->insertRequest($request, $model)) {  
-        // Find coordinator
-        if(isset($model['coordinators'])) {            
-          $coordinators = $model['coordinators'];
-          $coordinatorsIds = $this->getCoordinators($coordinators);
+    //$transaction=Request::model()->dbConnection->beginTransaction();
+    //$trans = Yii::app()->db->beginTransaction();
+    //try {
+        if (isset($model)) { 
+          // impl transaction    
+          if ($this->insertRequest($request, $model)) {  
+            // Find coordinator
+            if(isset($model['coordinators'])) {            
+              $coordinators = $model['coordinators'];
+              $coordinatorsIds = $this->getCoordinators($coordinators);
 
-          foreach ($coordinatorsIds as $cId) {
-            // Bridge table
-            $this->insertRequestCoordinator($request->id, $cId->id);
+              foreach ($coordinatorsIds as $cId) {
+                // Bridge table
+                $this->insertRequestCoordinator($request->id, $cId->id);
+              }
+            }
+
+            // Save Needs
+            if (isset($model['items'])) {
+              $this->insertNeeds($request->id, $model['items']);
+            }
           }
+          //end of transaction
+          //$trans->commit();
         }
-
-        // Save Needs
-        if (isset($model['items'])) {
-          $this->insertNeeds($request->id, $model['items']);
-        }
-      }
-      //end of transaction
-    }
+      /*} catch(Exception $e) {
+          //$transaction->rollBack();
+          $trans->rollBack();
+      }*/
     return $request;
   }
 
@@ -41,41 +49,38 @@ class RequestManager
   function update($model, $params)
   {
     if (isset($model)) {
-      /*$model->detail = $params['detail'];
-      $model->status = $params['status'];
-      
-      // Location Validation
-      $model->location_id = $params['location_id'];
-      if($params['location_id']=='')
-        $model->location_id = null;*/
-      
+      //$trans = Yii::app()->db->beginTransaction();
+      //try{
+        if ($this->insertRequest($model, $params)) {    
+          // Remove all related coordinator request
+          $req_coors = $this->findRequestCoordinators($model->id);
+          foreach ($req_coors as $req_coor) $req_coor->delete();
+          
+          if (isset($params['coordinators']) && count($params['coordinators']) > 0) {
+            // Find coordinator
+            $coordinators = $params['coordinators'];
+            $coordinatorsIds = $this->getCoordinators($coordinators);
 
-      if ($this->insertRequest($model, $params)) {    
-        // Remove all related coordinator request
-        $req_coors = $this->findRequestCoordinators($model->id);
-        foreach ($req_coors as $req_coor) $req_coor->delete();
-        
-        if (isset($params['coordinators']) && count($params['coordinators']) > 0) {
-          // Find coordinator
-          $coordinators = $params['coordinators'];
-          $coordinatorsIds = $this->getCoordinators($coordinators);
+            foreach ($coordinatorsIds as $cId) {
+              // Bridge table
+              $tmp = $this->findRequestCoordinator($model->id, $cId->id);
 
-          foreach ($coordinatorsIds as $cId) {
-            // Bridge table
-            $tmp = $this->findRequestCoordinator($model->id, $cId->id);
-
-            if ($tmp==NULL) {
-              $this->insertRequestCoordinator($model->id, $cId->id);
+              if ($tmp==NULL) {
+                $this->insertRequestCoordinator($model->id, $cId->id);
+              }
             }
-          }
-        }  
-        
-        // Remove all need request
-        foreach ($model->needs as $need) $need->delete(); 
-        if (isset($params['items']) && count($params['items']) > 0) {
-          $this->insertNeeds($model->id, $params['items']);
-        }      
-      }
+          }  
+          
+          // Remove all need request
+          foreach ($model->needs as $need) $need->delete(); 
+          if (isset($params['items']) && count($params['items']) > 0) {
+            $this->insertNeeds($model->id, $params['items']);
+          }      
+        }
+        //$trans->commit();
+      /*}catch(Exception $e){
+        //$tran->rollBack();
+      }*/
     }
     // Return Request Model
     return $model;
@@ -179,49 +184,107 @@ class RequestManager
     return $coordinator;    
   }
 
-  function insertRequest($request, $model){
-    
-    if(isset($model['detail'])){
-      $request->detail = $model['detail'];
+  function insertRequest($request, $params){
+    // map detail
+    if(isset($params['detail'])){
+      $request->detail = $params['detail'];
     }
-    if(isset($model['status'])){
-      $request->status = $model['status'];
+    // map date_created
+    if(isset($params['date_created']) && $params['date_created'] != '') {
+      //$request->date_created = date('Y-m-d H:i:s',strtotime($params['date_created']));
+      $request->date_created = $params['date_created'];
+    } else if($request->date_created == null) {
+      $request->date_created = date('Y-m-d');
+    }
+    // add last_updated
+    $request->last_updated = date('Y-m-d H:i:s');
+    // map status
+    if(isset($params['status'])){
+      $request->status = $params['status'];
     }else{
       $request->status = Request::REQUEST_STATUS_OPEN;
     }
-    if(isset($model['extra_text0'])){
-      $request->extra_text0 = $model['extra_text0'];
+    // map extra_text
+    if(isset($params['extra_text0'])){
+      $request->extra_text0 = $params['extra_text0'];
     }
-    if(isset($model['extra_text1'])){
-      $request->extra_text1 = $model['extra_text1'];
+    if(isset($params['extra_text1'])){
+      $request->extra_text1 = $params['extra_text1'];
     }
-    if(isset($model['extra_text2'])){
-      $request->extra_text2 = $model['extra_text2'];
+    if(isset($params['extra_text2'])){
+      $request->extra_text2 = $params['extra_text2'];
     }
-    if(isset($model['extra_text3'])){
-      $request->extra_text3 = $model['extra_text3'];
+    if(isset($params['extra_text3'])){
+      $request->extra_text3 = $params['extra_text3'];
     }
-    if(isset($model['extra_text4'])){
-      $request->extra_text4 = $model['extra_text4'];
+    if(isset($params['extra_text4'])){
+      $request->extra_text4 = $params['extra_text4'];
     }
-    if(isset($model['extra_double0'])){
-      $request->extra_double0 = $model['extra_double0'];
+    if(isset($params['extra_text5'])){
+      $request->extra_text5 = $params['extra_text5'];
     }
-    if(isset($model['extra_double1'])){
-      $request->extra_double1 = $model['extra_double1'];
+    if(isset($params['extra_text6'])){
+      $request->extra_text6 = $params['extra_text6'];
     }
-    if(isset($model['extra_double2'])){
-      $request->extra_double2 = $model['extra_double2'];
+    if(isset($params['extra_text7'])){
+      $request->extra_text7 = $params['extra_text7'];
     }
-    if(isset($model['extra_double3'])){
-      $request->extra_double3 = $model['extra_double3'];
+    if(isset($params['extra_text8'])){
+      $request->extra_text8 = $params['extra_text8'];
     }
-    if(isset($model['extra_double4'])){
-      $request->extra_double4 = $model['extra_double4'];
+    if(isset($params['extra_text9'])){
+      $request->extra_text9 = $params['extra_text9'];
     }
-
-    $request->location_id = $model['location_id'];
-    if($model['location_id']=='')
+    // map extra_double
+    if(isset($params['extra_double0'])){
+      $request->extra_double0 = $params['extra_double0'];
+    }
+    if(isset($params['extra_double1'])){
+      $request->extra_double1 = $params['extra_double1'];
+    }
+    if(isset($params['extra_double2'])){
+      $request->extra_double2 = $params['extra_double2'];
+    }
+    if(isset($params['extra_double3'])){
+      $request->extra_double3 = $params['extra_double3'];
+    }
+    if(isset($params['extra_double4'])){
+      $request->extra_double4 = $params['extra_double4'];
+    }
+    if(isset($params['extra_double5'])){
+      $request->extra_double5 = $params['extra_double5'];
+    }
+    if(isset($params['extra_double6'])){
+      $request->extra_double6 = $params['extra_double6'];
+    }
+    if(isset($params['extra_double7'])){
+      $request->extra_double7 = $params['extra_double7'];
+    }
+    if(isset($params['extra_double8'])){
+      $request->extra_double8 = $params['extra_double8'];
+    }
+    if(isset($params['extra_double9'])){
+      $request->extra_double9 = $params['extra_double9'];
+    }
+    // map extra_location
+    if(isset($params['extra_location0'])){
+      $request->extra_location0 = $params['extra_location0'];
+    }
+    if(isset($params['extra_location1'])){
+      $request->extra_location1 = $params['extra_location1'];
+    }
+    if(isset($params['extra_location2'])){
+      $request->extra_location2 = $params['extra_location2'];
+    }
+    if(isset($params['extra_location3'])){
+      $request->extra_location3 = $params['extra_location3'];
+    }
+    if(isset($params['extra_location4'])){
+      $request->extra_location4 = $params['extra_location4'];
+    }
+    // map location
+    $request->location_id = $params['location_id'];
+    if($params['location_id']=='')
       $request->location_id = null;
     
     return $request->save();    
@@ -239,12 +302,21 @@ class RequestManager
 
   function insertNeeds($reqId, $items){
     $needs = array();
-    for ($i=0; $i < count($items['id']); $i++) { 
-      $itemId = isset($items['id'][$i])? $items['id'][$i] : null;
-      $amount = isset($items['amount'][$i])? $items['amount'][$i] : 0;
-      $detail = isset($items['detail'][$i])? $items['detail'][$i] : '';
-      $needs[] = $this->insertNeed($reqId, $itemId, $amount, $detail);
-    }
+    //$trans = Yii::app()->db->beginTransaction();
+    //try{
+      Yii::trace('call insert need', 'example');
+      for ($i=0; $i < count($items['id']); $i++) { 
+        $itemId = isset($items['id'][$i])? $items['id'][$i] : null;
+        $amount = isset($items['amount'][$i])? $items['amount'][$i] : 0;
+        $detail = isset($items['detail'][$i])? $items['detail'][$i] : '';
+        $needs[] = $this->insertNeed($reqId, $itemId, $amount, $detail);
+      }
+      //$trans->commit();
+    /*} catch(Exception $e) {
+      //$trans->rollBack();
+      Yii::trace('call rollback', 'example');
+      throw new CException('type miss match!');
+    }*/
     return $needs;
   }
 
@@ -256,7 +328,7 @@ class RequestManager
     $need->request_id = $reqId;
     $need->item_id = $itemId;
     $need->status = Need::NEED_STATUS_WAIT;
-
     return $need->save() ? $need : false;
+    //return $need->save() ? $need : throw new CException('could not save need');
   }
 }

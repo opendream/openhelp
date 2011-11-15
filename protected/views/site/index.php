@@ -1,16 +1,22 @@
-<?php $this->pageTitle=Yii::app()->name; ?>
+<?php
+	$assetsDir = dirname(__FILE__).'/assets';
+	$cs = Yii::app()->getClientScript();
+	$this->pageTitle=Yii::app()->name;
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+	$this->renderPartial('_map');
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+     // Publishing and registering JavaScript file
+     $cs->registerScriptFile(
+        Yii::app()->assetManager->publish($assetsDir.'/coffee-script.js'), CClientScript::POS_HEAD );
+	echo CGoogleApi::init();
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <tt><?php echo __FILE__; ?></tt></li>
-	<li>Layout file: <tt><?php echo $this->getLayoutFile('main'); ?></tt></li>
-</ul>
+	$gload = <<<GLOAD
+	google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
+GLOAD;
+	$cs->registerScript('gload', $gload);
+	$basePath = Yii::app()->getRequest()->getBaseUrl();
+	$options = array('basePath' => $basePath);
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+	$js_settings_str = CJavaScript::encode($options);
+	echo CHtml::Script('var Yii= Yii || {}; Yii.settings = ' . $js_settings_str);	
+?>

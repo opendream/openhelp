@@ -147,7 +147,7 @@ class RequestController extends Controller
 			'dataProvider'=>$dataProvider,
 		));
 	}
-
+	
 	/**
 	 * Manages all models.
 	 */
@@ -161,6 +161,78 @@ class RequestController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+
+	public function actionLocation($id)
+	{
+		$result = array();
+	  	$location = Location::model()->findByPk($id);
+	  	$result['location'] = $location->label;
+	  	$result['requests'] = $location->requests;
+
+	  	//get coordinators
+	  	$qtxt = "SELECT distinct coordinator.fullname, coordinator.position, coordinator.tel
+				 FROM location INNER JOIN request ON location.id = request.location_id
+     				INNER JOIN request_coordinator ON request.id = request_coordinator.request_id
+     				INNER JOIN coordinator ON request_coordinator.coordinator_id = coordinator.id
+				 WHERE location.id = $id
+				 ORDER BY coordinator.fullname";
+      	$command = Yii::app()->db->createCommand($qtxt);
+      	$coordinators = $command->queryAll();
+      	$result['coordinators'] = $coordinators;
+
+      	// get items detail
+      	$qtxt = "SELECT item.id, item.name, need.amount
+     			 FROM location INNER JOIN request ON location.id = request.location_id
+     			 	INNER JOIN need ON request.id = need.request_id
+     				INNER JOIN item ON need.item_id = item.id
+     			 WHERE location.id = $id
+	 			 ORDER BY item.id";
+	 	$command = Yii::app()->db->createCommand($qtxt);
+      	$items = $command->queryAll();
+      	$result['items'] = $items;
+      	
+      	
+      	
+
+      	/* 	get sum from setting params
+      	 *	get min from setting params
+      	 *  get max from setting params
+      	*/
+      	$double = Yii::app()->params['request']['extra']['double'];
+      	for ($i=0; $i < count($double); $i++) { 
+      		if($double[$i]['func']=='sum') {
+      			$params = 'request'.'extra_double'.$i;
+      			$qtxt = "SELECT sum($params) as sum_extra_double$i 
+					 FROM location INNER JOIN request ON location.id = request.location_id 
+					 WHERE location.id = $id";
+				$command = Yii::app()->db->createCommand($qtxt);
+		      	$sum_result = $command->queryRow();
+		      	$result['sum_'.$params] = $sum_result;
+      		}
+      		elseif($double[$i]['func']=='min-max') {
+      			$params = 'request'.'extra_double'.$i;
+      			$qtxt = "SELECT min($params) as min_extra_double$i, max($params) as max_extra_double$i
+				FROM location INNER JOIN request ON location.id = request.location_id
+     			WHERE location.id = $id";
+
+		     	$command = Yii::app()->db->createCommand($qtxt);
+		     	$water_level = $command->queryRow();
+
+		      	$result['min_'.$params] = $water_level['min_extra_double$i'];
+		      	$result['max_'.$params] = $water_level['max_extra_double$i'];
+
+      		}
+      	}
+      	
+      	/*$qtxt = "SELECT min(request.extra_double1) as minLevel, max(request.extra_double1) as maxLevel
+				FROM location INNER JOIN request ON location.id = request.location_id
+     			WHERE location.id = $id";
+     	$command = Yii::app()->db->createCommand($qtxt);
+     	$water_level = $command->queryRow();
+      	$result['water_level'] = $water_level;*/
+
+	  	echo CJSON::encode($result);	
 	}
 
 	/**

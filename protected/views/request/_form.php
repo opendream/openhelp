@@ -13,9 +13,33 @@
 	
 	<div class="row location-list">
 	  <h3><?php echo Yii::t('locale', 'Location'); ?></h3>
-		<?php echo LocationHtml::locationList($model, 'location_id'); ?>
+		<?php $this->widget('ext.location.LocationWidget', array('model' => $model, 'attribute' => 'location_id')); ?>
 		
-		
+		<?php $extraLocation = Yii::app()->params['request']['extra']['location']; ?>
+
+  	<?php if ($extraLocation): ?>
+  	<div class="extra-location">
+  	    <table>
+  	      <tbody>
+      	  <?php foreach ($extraLocation as $key => $row): ?>
+          <tr>
+            <td id="extra-location-label-<?php echo $key; ?>" class="extra-location-label"><?php echo $row['label']; ?></td>
+            <td class="extra-location-input">
+              <span id="extra-location-prefic-<?php echo $key; ?>" class="extra-location-prefix"><?php echo $row['prefix']; ?></span>
+              <span id="extra-location-value-<?php echo $key; ?>" class="extra-location-value">
+                <?php echo $form->textField($model,'extra_location'.$key); ?>
+              </span>
+              <span id="extra-location-suffix-<?php echo $key; ?>" class="extra-location-suffix"><?php echo $row['suffix']; ?></span>
+              <?php echo $form->error($model,'extra_location'.$key); ?>
+            </td>
+          </tr>
+      	  <?php endforeach ?>
+      	  </tbody>
+    	  </table>
+  	</div>
+  	<?php endif ?>
+  	
+  	
   	<?php $extraDouble = Yii::app()->params['request']['extra']['double']; ?>
 
   	<?php if ($extraDouble): ?>
@@ -39,6 +63,21 @@
     	  </table>
   	</div>
   	<?php endif ?>
+  	
+  	<div class="date-created row">
+			<h3><?php echo Yii::t('locale', 'Date Created'); ?></h3>
+			<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+          //'name'=>'publishDate',
+          'model' => $model,
+          'attribute' => 'date_created',
+          'value'=>$model->date_created,
+            // additional javascript options for the date picker plugin
+            'options'=>array(
+              'dateFormat'=>'yy-mm-dd',
+              'defaultDate'=>$model->date_created,
+             ),
+      )); ?>
+		</div> <!-- row /-->
 		
 	</div> <!-- end location-list -->
 
@@ -127,7 +166,7 @@
 	
 	<?php if ($extraText): ?>
 	  <?php foreach ($extraText as $key => $row): ?>
-	  <div class="extra-text-<?php echo $key; ?>-list">
+	  <div id="extra-text-<?php echo $key; ?>" class="extra-text-<?php echo $key; ?>-list">
   	  <h3><?php echo Yii::t('locale', $row['label']); ?></h3>
   	  <?php
   	    $options =  (!isset($row['options']) || !$row['options'])? array(): $row['options'];
@@ -135,16 +174,25 @@
   	  ?>
   	  <?php if ($editor == 'CKEditorWidget' || $editor == 'ext.ckeditor.CKEditorWidget'): ?>	    
   	    <?php
-  	      $options += array(
+  	      $dummy = $options;
+  	      $options = array(
   	        "model"=>$model, 
   	        "attribute"=>'extra_text'.$key,
   	        "defaultValue"=>$model->getAttribute('extra_text'.$key),
-    				"config" => array(
-    					"height"=>"200px",
-    					"width"=>"100%",
-    					"toolbar"=>"Basic",
-    				),
-    			)
+
+    			);
+    			$config = array(
+  					"height"=>"200px",
+  					"width"=>"100%",
+  					"toolbar"=>array(
+  					  array('Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink', 'Image'),
+  					),
+            
+            "filebrowserBrowseUrl" => Yii::app()->baseUrl.'/filemanager/browser/default/browser.html?Connector='.Yii::app()->baseUrl.'/filemanager/connectors/php/connector.php',
+            "filebrowserImageBrowseUrl" =>  Yii::app()->baseUrl.'/filemanager/browser/default/browser.html?Type=Image&Connector='.Yii::app()->baseUrl.'/filemanager/connectors/php/connector.php',
+  				);
+    			$options['config'] = $dummy;
+    			$options['config'] += $config;
     		?>
         <div class="ckeditor-wrapper">
           <?php $this->widget('ext.ckeditor.CKEditorWidget', $options); ?>
@@ -175,3 +223,6 @@
 	<?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script type="text/javascript">
+</script>

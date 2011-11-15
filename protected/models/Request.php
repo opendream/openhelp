@@ -14,11 +14,21 @@
  * @property string $extra_text2
  * @property string $extra_text3
  * @property string $extra_text4
+ * @property string $extra_text5
+ * @property string $extra_text6
+ * @property string $extra_text7
+ * @property string $extra_text8
+ * @property string $extra_text9
  * @property double $extra_double0
  * @property double $extra_double1
  * @property double $extra_double2
  * @property double $extra_double3
  * @property double $extra_double4
+ * @property double $extra_double5
+ * @property double $extra_double6
+ * @property double $extra_double7
+ * @property double $extra_double8
+ * @property double $extra_double9
  * @property integer $status
  *
  * The followings are the available model relations:
@@ -74,9 +84,9 @@ class Request extends CActiveRecord
 		return array(
 			// array('date_created, last_updated', 'required'),
 			array('status', 'numerical', 'integerOnly'=>true),
-			array('extra_double0, extra_double1, extra_double2, extra_double3, extra_double4', 'numerical'),
+			array('extra_double0, extra_double1, extra_double2, extra_double3, extra_double4, extra_double5, extra_double6, extra_double7, extra_double8, extra_double9', 'numerical'),
 			array('location_id', 'length', 'max'=>20),
-			array('detail, extra_text0, extra_text1, extra_text2, extra_text3, extra_text4', 'safe'),
+			array('detail, extra_text0, extra_text1, extra_text2, extra_text3, extra_text4, extra_text5, extra_text6, extra_text7, extra_text8, extra_text9', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, date_created, last_updated, location_id, locationLabel, detail, extra_text0, extra_text1, extra_text2, extra_text3, extra_text4, extra_double0, extra_double1, extra_double2, extra_double3, extra_double4, status', 'safe', 'on'=>'search'),
@@ -113,11 +123,21 @@ class Request extends CActiveRecord
 			'extra_text2' => 'Extra Text2',
 			'extra_text3' => 'Extra Text3',
 			'extra_text4' => 'Extra Text4',
+			'extra_text5' => 'Extra Text5',
+			'extra_text6' => 'Extra Text6',
+			'extra_text7' => 'Extra Text7',
+			'extra_text8' => 'Extra Text8',
+			'extra_text9' => 'Extra Text9',
 			'extra_double0' => 'Extra Double0',
 			'extra_double1' => 'Extra Double1',
 			'extra_double2' => 'Extra Double2',
 			'extra_double3' => 'Extra Double3',
 			'extra_double4' => 'Extra Double4',
+			'extra_double5' => 'Extra Double5',
+			'extra_double6' => 'Extra Double6',
+			'extra_double7' => 'Extra Double7',
+			'extra_double8' => 'Extra Double8',
+			'extra_double9' => 'Extra Double9',
 			'status' => 'Status',
 		);
 	}
@@ -145,11 +165,21 @@ class Request extends CActiveRecord
 		$criteria->compare('extra_text2',$this->extra_text2,true);
 		$criteria->compare('extra_text3',$this->extra_text3,true);
 		$criteria->compare('extra_text4',$this->extra_text4,true);
+		$criteria->compare('extra_text5',$this->extra_text5,true);
+		$criteria->compare('extra_text6',$this->extra_text6,true);
+		$criteria->compare('extra_text7',$this->extra_text7,true);
+		$criteria->compare('extra_text8',$this->extra_text8,true);
+		$criteria->compare('extra_text9',$this->extra_text9,true);
 		$criteria->compare('extra_double0',$this->extra_double0);
 		$criteria->compare('extra_double1',$this->extra_double1);
 		$criteria->compare('extra_double2',$this->extra_double2);
 		$criteria->compare('extra_double3',$this->extra_double3);
 		$criteria->compare('extra_double4',$this->extra_double4);
+		$criteria->compare('extra_double5',$this->extra_double5);
+		$criteria->compare('extra_double6',$this->extra_double6);
+		$criteria->compare('extra_double7',$this->extra_double7);
+		$criteria->compare('extra_double8',$this->extra_double8);
+		$criteria->compare('extra_double9',$this->extra_double9);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
@@ -157,10 +187,8 @@ class Request extends CActiveRecord
 		));
 	}
 
-	protected function beforeValidate()
+	/*protected function beforeValidate()
 	{
-		if($this->getIsNewRecord())
-			$this->date_created = time();
 		$this->last_updated = time();
 		return true;
 	}
@@ -170,11 +198,11 @@ class Request extends CActiveRecord
 		return array(
 			'timestamps' => array(
 			'class' => 'zii.behaviors.CTimestampBehavior',
-			'createAttribute' => 'date_created',
+			//'createAttribute' => 'date_created',
 			'updateAttribute' => 'last_updated',
 			'setUpdateOnCreate' => true,
 			),
 		);
-	}
+	}*/
 
 }
