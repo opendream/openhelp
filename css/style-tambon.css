@@ -36,7 +36,10 @@ h2{
 	font-size: 18px;
 	margin-bottom: 0.9em;
 }
-
+h3{
+	font-size: 16px;
+	margin-bottom: 0.7em;
+}
 
 p{
 	margin-bottom: 1em;
@@ -114,6 +117,9 @@ a:active  {}
 /*
 * Nav
 */
+*+html nav{
+	overflow: hidden;
+}
 nav {
 	clear: both;
 	text-align: right;
@@ -295,7 +301,7 @@ strong.location{
 	margin: 0 0 10px;
 	line-height: 1.8em;
 }
-#rp-list span, #rp-sticky span{
+#rp-list span, #rp-sticky span, #situation-list article span{
 	padding: 3px 7px;
 	background: #dbdbdb;
 	font-size: 11px;
@@ -313,6 +319,21 @@ strong.location{
 	display: inline;
 }
 
+/* สถานการณ์ */
+#situation-list article {
+  width: 760px;
+  overflow: hidden;
+  padding: 20px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+#situation-list article.odd {background: #f2f2f2;}
+#situation-list article.even {background: #fff;}
+
+#situation-list article span {float: left; margin-right: 20px;}
+#situation-list article p.title {float: left; margin-right: 20px; width: 220px; font-size: 1.1em;}
+#situation-list article p.desc {float: left; width: 370px;}
 
 /*
 * ฐานข้อมูล
@@ -352,7 +373,10 @@ strong.location{
 	line-height: 26px;
 }
 	#section-database header form label{
-		margin-right: 10px;
+		/* margin-right: 10px; */
+		text-indent: -999em;
+		position: absolute;
+		overflow: hidden;
 	}
 
 .db-item1 h2{
@@ -368,17 +392,40 @@ strong.location{
 
 .db-item3 li{
 	float: left;
-	margin: 0 10px 0 0;
+	margin: 0 10px 5px 0;
+	width: 25px;
 }
 .db-item3 li .in-active{
 	opacity: 0.5;
+}
+
+
+/*
+* about
+*/
+#about ol {margin: 0 0 20px 20px}
+
+/*
+* form
+*/
+
+select {
+  display: inline-block;
+  padding: 4px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 /*
 * footer
 */
 #footer {
-  padding: 20px 0;
+  padding: 10px 0;
   clear: both;
   font-size: 11px;
 }
@@ -387,7 +434,6 @@ footer{
 }
 #nav-footer{
 	float: left;
-	margin: 0;
 }
 	#nav-footer li {
 	  display: inline;
@@ -407,13 +453,13 @@ footer{
 #develop{
 	clear: both;
 	float: right;
+	width: 215px;
 }
-.readmore {clear: both;}
+
 .readmore a{
 	clear: both;
 	float: right;
 	display: block;
-	overflow: hidden;
 	width: 81px;
 	height: 34px;
 	text-indent: -999em;
@@ -483,9 +529,10 @@ footer{
 	width: 520px;
 }
 #entry-page .st-need{
-	float: right;
+	float: left;
 	width: 230px;
 	margin-top: -245px;
+	margin-left: 585px;
 }
 #entry-page .curved-hz-1:before{
 	left: 30px;
@@ -590,4 +637,3 @@ footer{
 @media all and (orientation: landscape) {
 	
 }
-
