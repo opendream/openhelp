@@ -1,6 +1,6 @@
 <section class="st-request drop-shadow curved curved-hz-1">
     <h2>ข้อมูลพื้นที่</h2>
-    <p><?php echo $location_detail ?></p>
+    <p><?php echo $location_text ?></p>
     <h2>ผู้ประสานงานในพื้นที่</h2>
     <table class="zebra-striped request_coordinators">
         <thead>

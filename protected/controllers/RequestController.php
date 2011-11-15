@@ -176,7 +176,6 @@ class RequestController extends Controller
  		));
 	}
 
-	
 
 	/**
 	 *  LocationView [level 1]
@@ -194,13 +193,18 @@ class RequestController extends Controller
 		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
 
 		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
-		// print_r(WidgetManagerk::getExtraLocation0s($id));
+
+		$extraDouble = array(
+			'sum' => WidgetManager::getSumExtraDouble($id),
+			'water_level' => WidgetManager::getMinMaxExtraDouble($id),
+		);
 		$params = array(
 			'items' => $items, 
 			'coordinators' => $coordinators, 
 			'extra' => $extra,
-			'location' => $location_text,
+			'location_text' => $location_text,
 			'location_extra0s' => $extraLocation0s,
+			'extraDouble' => $extraDouble
 		);
 		$this->render('locationView', $params);
 	}	
