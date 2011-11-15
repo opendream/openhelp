@@ -100,4 +100,16 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	/**
+	 * Database Menu
+	 */
+
+	public function actionDatabase($id)
+	{
+		print $id;
+		$items = WidgetManager::getItemDetails($id);
+		
+		$this->render('database', array('items' => $items));
+	}
 }
