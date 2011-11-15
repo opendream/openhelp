@@ -42,7 +42,7 @@ Class LocationHtml extends CHtml {
         }
       }
       else {
-        if ($options['style'] == 'reverse') {
+        if (isset($options['style']) && $options['style'] == 'reverse') {
           $row = array_reverse($row);
         }
         $output .= '<ul>';
