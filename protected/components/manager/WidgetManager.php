@@ -72,12 +72,26 @@ class WidgetManager
 	 	    $items = $command->queryColumn();
 	 	} else {
       	  	$items = $command->queryAll();
+      	  	
+      	  	$sum = 0;
+          	$max = 0;
+          	foreach ($items as $item) {
+          	  $sum += $item['amount'];
+          	  if ($max < $item['amount']) {
+          	    $max = $item['amount'];
+          	  }
+          	}
+      	  	
       	  	$models = Item::model()->findAll();
       	  	for ($i=0; $i < count($models); $i++) { 
       	  		if(!self::findItemById($items, $models[$i]['id'])) {
       	  			$items[] = array('id' => $models[$i]['id'], 'name' => $models[$i]['name'], 'image_url' => $models[$i]['id'], 'amount' => 0);
       	  		}
       	  	}
+      	  	
+      	  	foreach ($items as &$item) {
+           	  $item['percent'] = floor($item['amount'] / $max * 100);
+           	}
     	}
       	return $items;
 	}

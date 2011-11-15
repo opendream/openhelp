@@ -42,6 +42,9 @@ Class LocationHtml extends CHtml {
         }
       }
       else {
+        if ($options['style'] == 'reverse') {
+          $row = array_reverse($row);
+        }
         $output .= '<ul>';
         foreach ($row as $level => $value) {
           $output .= '<li>';
