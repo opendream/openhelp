@@ -101,7 +101,7 @@ class WidgetManager
 	}
 
 	public static function getExtratexts($id, $text, $village = null){
-		$result = array();
+		//$result = array();
 		$params = 'request.extra_text'.$text;
 
 		$qtxt = "SELECT concat(request.extra_location0,' ',$params) as label
