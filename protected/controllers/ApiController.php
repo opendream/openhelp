@@ -50,14 +50,10 @@ class ApiController extends Controller
 	  
 	  // @return list of request in json format
 	  elseif ($action == 'index') {
-	   $requests = Request::model()->findAll();
-	   $locations = new CMap();
-	   //$locations = array();
-	   foreach ($requests as $request) {
-	   		$locations[$request->location_id] = array('label'=>$request->location['label'], 'lat'=>$request->location['lat'], 'lng'=>$request->location['lng']);	
-	   }
-	   
-	   echo CJSON::encode($locations->toArray());
+	  	$locations = WidgetManager::getLocationList();
+	  	print_r($locations);
+	  	exit();
+	    echo CJSON::encode($locations);
 	  }  
 
 	}
