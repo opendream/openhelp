@@ -33,14 +33,19 @@ class WidgetManager
      	if($village) {
 		 	$qtxt .= " AND request.extra_location0 = '$village'";
 		}
-	 	$qtxt .= "  GROUP BY item.id, item.name";
+	 	$qtxt .= "  GROUP BY item.id, item.name, item.image_url";
 	 	$command = Yii::app()->db->createCommand($qtxt);
-	 	    if ($idOnly) {
-	 	      $items = $command->queryColumn();
-	 	    }
-	 	    else {
-      	  $items = $command->queryAll();
-    	  }
+	 	if ($idOnly) {
+	 	    $items = $command->queryColumn();
+	 	} else {
+      	  	$items = $command->queryAll();
+      	  	$models = Item::model()->findAll();
+      	  	for ($i=0; $i < count($models); $i++) { 
+      	  		if(!self::findItemById($items, $models[$i]['id'])) {
+      	  			$items[] = array('id' => $models[$i]['id'], 'name' => $models[$i]['name'], 'image_url' => $models[$i]['id'], 'amount' => 0);
+      	  		}
+      	  	}
+    	}
       	return $items;
 	}
 
@@ -114,6 +119,15 @@ class WidgetManager
      	$command = Yii::app()->db->createCommand($qtxt);
 		$extraTexts = $command->queryAll();
 		return $extraTexts;
+	}
+
+	public static function findItemById($items, $id) {
+		foreach ($items as $item) {
+			if($item['id']==$id) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
