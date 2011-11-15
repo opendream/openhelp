@@ -176,20 +176,34 @@ class RequestController extends Controller
 		$journey_detail = WidgetManager::getExtratexts($id, 5);
 		$remark_detail = WidgetManager::getExtratexts($id, 6);
 		$location_text = LocationHtml::locationView($id);
+		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
+
 		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
 		// print_r(WidgetManagerk::getExtraLocation0s($id));
 		$params = array(
 			'items' => $items, 
 			'coordinators' => $coordinators, 
 			'extra' => $extra,
-			'location' => $location_text
+			'location' => $location_text,
+			'location_extra0s' => $extraLocation0s,
 		);
 		$this->render('locationView', $params);
 	}	
 
 	public function actionRequestView($id)
 	{
-		$this->render('requestView');
+		$items = WidgetManager::getItemDetails($id);
+		$coordinators = WidgetManager::getCoordinators($id);
+		$journey_detail = WidgetManager::getExtratexts($id, 5);
+		$remark_detail = WidgetManager::getExtratexts($id, 6);
+		$location_text = LocationHtml::locationView($id);
+		$params = array(
+			'items' => $items, 
+			'coordinators' => $coordinators, 
+			'extra' => $extra,
+			'location' => $location_text
+		);
+		$this->render('requestView', $params);
 	}
 
 	/**
