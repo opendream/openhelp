@@ -49,6 +49,31 @@ class WidgetManager
       	return $items;
 	}
 
+	public static function getExtraDouble($id, $number, $village = null) {
+		$double = Yii::app()->params['request']['extra']['double'];
+		$params = 'request.extra_double'.$number;
+		$villages = array();
+		if(!$village) {
+			$qtxt = "SELECT request.extra_location0 as village
+				FROM location INNER JOIN request ON location.id = request.location_id 
+				WHERE location.id = $id ";
+			$command = Yii::app()->db->createCommand($qtxt);
+			$villages = $command->queryAll();
+		} else {
+		 	$villages[] = array('village' => $village);
+		}
+
+		if($double[$number]['func']=='sum') {
+
+		} elseif($double[$number]['func']=='min-max') {
+			
+		}
+		//Yii::trace($qtxt,'example');
+
+		
+		$result['sum_'.$params] = $sumReqult;
+	}
+
 	public static function getSumExtraDouble($id, $village = null) {
 		$result = array();
 		$double = Yii::app()->params['request']['extra']['double'];
@@ -119,6 +144,24 @@ class WidgetManager
      	$command = Yii::app()->db->createCommand($qtxt);
 		$extraTexts = $command->queryAll();
 		return $extraTexts;
+	}
+
+	public static function getRequestLocation() {
+		$qtxt = "SELECT distinct location_id 
+				FROM request
+     			WHERE status != 2 OR status != 3 ";
+     	$command = Yii::app()->db->createCommand($qtxt);
+		$request_location = $command->queryColumn();
+		return count($request_location);
+	}
+
+	public static function getInProcessRequest() {
+		$qtxt = "SELECT count(id) as requestNo
+				FROM request
+     			WHERE status != 2 OR status != 3 ";
+     	$command = Yii::app()->db->createCommand($qtxt);
+		$requestNo = $command->queryColumn();
+		return $requestNo['requestNo'];
 	}
 
 	public static function findItemById($items, $id) {

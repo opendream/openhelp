@@ -45,7 +45,7 @@ class ApiController extends Controller
    			'page' => isset($_GET['page'])? $_GET['page']: 0,
    			'ipp' => isset($_GET['ipp'])? $_GET['ipp']: 10,
    		), true);
-   		echo $result;
+   		echo CJSON::encode($result);
 	  }
 	  
 	  // @return list of request in json format
