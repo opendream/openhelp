@@ -16,8 +16,8 @@ return array(
     	  array('label' => '', 'prefix' => '', 'suffix' => ''),
     	  */
     	  // Remove this when make this project to opensource ==================================================
-	      array('label' => 'สถานการณ์น้ำ', 'prefix' => 'ระดับน้ำ', 'suffix' => 'เมตร'),
-    	  array('label' => 'จำนวนครัวเรือน', 'prefix' => '', 'suffix' => 'ครัวเรือน'),
+	      array('label' => 'สถานการณ์น้ำ', 'prefix' => 'ระดับน้ำ', 'suffix' => 'เมตร', 'func' => 'sum'),
+    	  array('label' => 'จำนวนครัวเรือน', 'prefix' => '', 'suffix' => 'ครัวเรือน', 'func' => 'min-max'),
 	    ),
 	    'text' => array(
 	      /* Limit for 10 fields
