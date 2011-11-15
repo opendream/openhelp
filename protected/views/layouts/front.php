@@ -1,11 +1,9 @@
-<?php
-	$assetsDir = dirname(__FILE__).'/assets';
-	$cs = Yii::app()->getClientScript();
-	$this->pageTitle=Yii::app()->name;
-
-?>
+<?php $this->beginContent('//layouts/base'); ?>
 <div id="header-top">
-  <?php $this->renderPartial('_map'); ?>
+  <?php //echo $headerTop; ?>
+  <section id="map">
+    Map
+  </section>
 </div> <!-- end header-top -->
 
 <div id="content">
@@ -230,3 +228,5 @@
     <p class="readmore"><a href="#">readmore</a></p>     
   </div> <!-- end section-database -->
 </div> <!-- end content -->
+
+<?php $this->endContent(); ?>

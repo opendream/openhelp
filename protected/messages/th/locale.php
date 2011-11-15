@@ -1,6 +1,15 @@
 <?php
 return array(
   /*
+  * Hard code
+  */
+  'home' => 'หน้าหลัก',
+  'news' => 'สถานการณ์ประจำวัน',
+  'volunteer' => 'อาสาสมัคร',
+  'database' => 'ฐานข้อมูลรายตำบล',
+  'about' => 'เกี่ยวกับเรา',
+  
+  /*
   * Global
   */
   '- Select -' => '- เลือก -',
