@@ -1,5 +1,5 @@
-<section id="map" style="width:400px; height:200px" class="drop-shadow curved curved-hz-1">
- 
+<section id = "map" class="drop-shadow curved curved-hz-1">
+	<div id="map_canvas" style="width:520px; height:270px"></div>
 </section>
 <?php 
 	$assetsDir = dirname(__FILE__).'/assets';
