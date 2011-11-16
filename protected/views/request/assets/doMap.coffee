@@ -4,6 +4,7 @@ window.mapLoadded = (args) ->
   zoom = 14
 
   myOptions = 
+    scrollwheel: false
     zoom: zoom
     center: myLatlng
     mapTypeId: google.maps.MapTypeId.ROADMAP
