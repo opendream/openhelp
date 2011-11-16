@@ -14,11 +14,11 @@
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body id="<?php echo $this->id.'-'.$this->action->id; ?>">
 <div class="wrapper">
   <div id="header">
 		<header>
-			<h1 id = "logo"><a href="/">Floodtambon</a></h1>
+			<h1 id = "logo"><a href="<?php bu('/'); ?>">Floodtambon</a></h1>
 			<form id ="search">
 				<label for = "">Search</label>
 				<input type="text" class="form-text" value="Search"/>

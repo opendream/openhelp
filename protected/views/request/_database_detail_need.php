@@ -1,11 +1,11 @@
-<section class="st-need">
+<section class="st-need drop-shadow curved curved-hz-1">
 	  <header><h2>สิ่งของที่ต้องการ</h2></header>
 	  <ul>
 	  <?php foreach ($items as $item): ?>
 	  <li class="need-<?php print $item['id']?>">
-           <img src="<?php echo bu() ?>/images/need-<?php echo $item['id'] ?>.png" alt="$item['name']" title="$item['name']" class="in-active"/>
+           <img src="<?php echo bu() ?>/images/need-<?php echo $item['id'] ?>.png" alt="<?php echo $item['name'] ?>" title="<?php echo $item['name'] ?>" class="in-active"/>
             <div class="bar">
-	            <div style="width:50%;">
+	            <div style="width: 0px>;" width="<?php echo $item['percent'] ?>">
 		            <span class="value"><?php echo $item['amount'] ?></span>
 	            </div>
             </div>
@@ -13,3 +13,18 @@
 	  <?php endforeach; ?>
 	  </ul>
 </section> <!-- /st-need -->
+<?php 
+	$jq_animate = <<<JQ
+	bars = $('.bar > div').each(function(k,v ) {
+	  var self = $(this);
+	  var bar = $(v).parent('div');
+	  if ($(v).attr('width') < 12)
+	  	$(v).attr('width', 12);
+	  var width = $(v).attr('width') * (bar.width() / 100);
+	  $(v).width(width, 'slow');
+		  // $(this).animate({width:width, opacity: 1}, { queue: false, duration: 3000 });
+	  })
+JQ;
+
+	cs()->registerScript('jq_animate', $jq_animate, CClientScript::POS_READY);
+ ?>	

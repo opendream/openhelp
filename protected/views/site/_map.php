@@ -1,4 +1,4 @@
-<div id="map_canvas" style="width:100%; height:460px"></div>
+<div id="map_canvas" style="width:100%; height:360px"></div>
 
 <?php 
 	$assetsDir = dirname(__FILE__).'/assets';

@@ -17,31 +17,32 @@ Class LocationHtml extends CHtml {
       $command = Yii::app()->db->createCommand($qtxt);
       $row = $command->queryRow();
       
-      if (isset($options['style'])) {
-        if ($options['style'] == 'endLevelLink') {
+      if (isset($options['style']) && $options['style'] == 'endLevelLink') {
           $row = array_reverse($row);
           $level = key($row);
           $value = array_shift($row);
           
           
-          $output .= '<ul>';
+          $output .= '<table><tbody>';
           
-          $output .= '<li class="first">';
-          $output .= '<span class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</span>';
-          $output .= '<span class="'.$level.'"><a href="'.CController::createUrl("/request/locationView/".$id).'">'.$value.'</a></span>';
-          $output .= '</li>';
+          $output .= '<tr class="first">';
+          $output .= '<td class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</td>';
+          $output .= '<td class="'.$level.'"><a href="'.CController::createUrl("/request/locationView/".$id).'">'.$value.'</a></td>';
+          $output .= '</tr>';
           
           foreach ($row as $level => $value) {
-            $output .= '<li>';
-            $output .= '<span class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</span>';
-            $output .= '<span class="'.$level.'">'.$value.'</span>';
-            $output .= '</li>';
+            $output .= '<tr>';
+            $output .= '<td class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</td>';
+            $output .= '<td class="'.$level.'">'.$value.'</td>';
+            $output .= '</tr>';
 
           }
-          $output .= '</ul>';
-        }
+          $output .= '</tbody></table>';
       }
       else {
+        if (isset($options['style']) && $options['style'] == 'reverse') {
+          $row = array_reverse($row);
+        }
         $output .= '<ul>';
         foreach ($row as $level => $value) {
           $output .= '<li>';
