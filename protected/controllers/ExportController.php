@@ -65,28 +65,10 @@ class ExportController extends Controller
       foreach ($first as $col => $value) {
         $header[$col] = isset($labels[$col])? $labels[$col]: $col;
       }
-      $header['end'] = '""';
       $header = array(-1 => $header);
       $rows = $header + $rows;
     }
     
-    // Data ============================================    
-    foreach ($rows as $row) {
-      foreach ($row as $col => $value) {
-        if (is_array($value)) {
-          $this->export($value, false, ':', '/', true);
-        }
-        else {
-          if ($merge) {
-            # code...
-          }
-          else {
-            echo '"'.$value.'"'.$sCol;
-          }
-        }
-      }
-      //echo '""'.$sRow;
-    }    
   }
 
 
