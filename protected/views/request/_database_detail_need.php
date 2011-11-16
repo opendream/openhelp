@@ -5,7 +5,7 @@
 	  <li class="need-<?php print $item['id']?>">
            <img src="<?php echo bu() ?>/images/need-<?php echo $item['id'] ?>.png" alt="<?php echo $item['name'] ?>" title="<?php echo $item['name'] ?>" class="in-active"/>
             <div class="bar">
-	            <div style="width:<?php echo $item['percent'] ?>%;">
+	            <div style="width: 0px>;" width="<?php echo $item['percent'] ?>">
 		            <span class="value"><?php echo $item['amount'] ?></span>
 	            </div>
             </div>
