@@ -4,6 +4,7 @@
     myLatlng = new google.maps.LatLng(13.768, 100.554);
     zoom = 12;
     myOptions = {
+      scrollwheel: false,
       zoom: zoom,
       center: myLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP

@@ -17,8 +17,7 @@ Class LocationHtml extends CHtml {
       $command = Yii::app()->db->createCommand($qtxt);
       $row = $command->queryRow();
       
-      if (isset($options['style'])) {
-        if ($options['style'] == 'endLevelLink') {
+      if (isset($options['style']) && $options['style'] == 'endLevelLink') {
           $row = array_reverse($row);
           $level = key($row);
           $value = array_shift($row);
@@ -39,7 +38,6 @@ Class LocationHtml extends CHtml {
 
           }
           $output .= '</tbody></table>';
-        }
       }
       else {
         if (isset($options['style']) && $options['style'] == 'reverse') {
