@@ -241,7 +241,6 @@ h3{
 
 /* Nav */
 nav {
-	clear: both;
 	padding: 10px 0 0;
 	text-align: right;
 }
@@ -503,13 +502,12 @@ nav {
 	}
 
 /* Form */
-#section-database header form{
+#section-database header form, #request-location header form{
 	line-height: 26px;
 }
-	#section-database header form label{
-		position: absolute;
-		overflow: hidden;
-		text-indent: -999em;
+	#section-database header form label, #section-database header form span,
+	#request-location header form label, #request-location header form span{
+		margin: 0 10px 0 0;
 	}
 
 /* Heading */
@@ -667,6 +665,7 @@ nav {
 }
 .entry header ul{
 	list-style: none;
+	margin: 0;
 }
 .entry header li{
 	float: left;

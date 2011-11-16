@@ -6,7 +6,8 @@
 		'coordinators' => $coordinators,
 		'journey' => $extra['journey'],
 		'remark' => $extra['remark'],
-		'location_text' => $location_text
+		'location_text' => $location_text, 
+		'allExtraTexts' => $allExtraTexts
 	);
 	echo $this->renderPartial('_database_detail_coordinators', $coordinators_params);
 	$assetsDir = dirname(__FILE__).'/assets';
