@@ -592,7 +592,7 @@ footer{
 	width: 520px;
 }
 
-#request-locationView .st-need{
+#request-locationView .st-need, #request-requestView .st-need{
 /* 	float: left; */
 	width: 230px;
 	position: absolute;
@@ -603,7 +603,7 @@ footer{
 	margin-left: 585px;
 */
 }
-#request-locationView .curved-hz-1:before{
+#request-locationView .curved-hz-1:before, #request-requestView .curved-hz-1:before{
 	left: 30px;
 }
 
@@ -620,7 +620,7 @@ footer{
 	width: 230px;
 	margin: 0 20px 5px 0;
 }
-#request-locationView .st-need{
+#request-locationView .st-need, #request-requestView .st-need{
 	padding: 20px 0 20px 25px;
 }
 .entry {
