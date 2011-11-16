@@ -169,10 +169,12 @@ class RequestController extends Controller
 	public function actionLocation()
 	{
 	  $this->layout='layout1';
+	  
 		$this->render('location', array(
  			'query'=>isset($_GET['query'])? $_GET['query']: array(),
  			'page' => isset($_GET['page'])? $_GET['page']: 0,
  			'ipp' => isset($_GET['ipp'])? $_GET['ipp']: 15,
+ 			'search' => true,
  		));
 	}
 

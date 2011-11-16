@@ -99,7 +99,7 @@ pre, code, kbd, samp {font-family: monospace, sans-serif;}
 label, 
 input[type=button], 
 input[type=submit], 
-button {cursor: pointer;}
+button {/* cursor: pointer; */}
 
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
 button, input, select, textarea {margin: 0;}
