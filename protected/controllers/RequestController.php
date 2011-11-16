@@ -204,7 +204,8 @@ class RequestController extends Controller
 			'extra' => $extra,
 			'location_text' => $location_text,
 			'location_extra0s' => $extraLocation0s,
-			'extraDouble' => $extraDouble
+			'extraDouble' => $extraDouble,
+			'location_id' => $id
 		);
 		$this->render('locationView', $params);
 	}	
