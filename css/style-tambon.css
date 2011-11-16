@@ -500,6 +500,17 @@ nav {
 	.db-item3 li .in-active{
 		opacity: 0.5;
 	}
+	
+	.request_extra_text ul li {
+	  clear: both;
+	  list-style: initial;
+	  margin: 0 15px 5px 25px;
+	}
+	
+	.location-header label {
+	  margin-right: 5px;
+	  color: #AAA;
+	}
 
 /* Form */
 #section-database header form, #request-location header form{

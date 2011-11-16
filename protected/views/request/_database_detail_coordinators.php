@@ -12,17 +12,35 @@
         <?php endforeach ?>
         </tbody>
     </table>
-<?php foreach ($allExtraTexts as $label => $value): ?>
-    <div class="col2">
-    <h2><?php echo $label ?></h2>
-        <ul>
-        <?php foreach ($value as $node): ?>
-            <li><?php echo $node['label'] ?></li>
-        <?php endforeach ?>
+    <div class="request_extra_text">
+    <?php foreach ($allExtraTexts as $label => $value): ?>
+      <?php 
+        $isEmpty = true;
+        foreach ($value as $v) {
+          if($v['label']) {
+            $isEmpty = false;
+            break;
+          }
+        } 
+      ?>
+      <?php if (!$isEmpty ): ?>
+    
+        <div class="col2">
+        <h2><?php echo $label ?></h2>
+            <ul>
+            <?php foreach ($value as $node): ?>
+                <?php if ($node['label']): ?>
+                  <li><?php echo $node['label']; ?></li>
+                <?php endif ?>
 
-        </ul>
-    </div><!-- /sth -->
-<?php endforeach ?>
+            <?php endforeach ?>
+
+            </ul>
+        </div><!-- /sth -->
+      <?php endif ?>
+  
+    <?php endforeach ?>
+    </div>
 </section> <!-- /st-detail -->
 <?php     
     Yii::app()->clientScript->registerScript('odd_even',"

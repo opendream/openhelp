@@ -1,5 +1,5 @@
 <article id="entry-1" class="entry">
-<header><h1><?php print $location_text ?></h1></header>
+<header><h1 class="location-header"><?php print $location_text ?></h1></header>
 <section class="st-update drop-shadow curved curved-hz-1">
 <div id="entry-date">
     <span class="year">2011</span>
