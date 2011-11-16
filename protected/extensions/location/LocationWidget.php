@@ -9,7 +9,7 @@ class LocationWidget extends CInputWidget
 			throw new CHttpException(500,'"model" have to be set!');
 		}
 		if(!isset($this->attribute)){
-		  $this->attribute == 'location_id';
+		  $this->attribute = 'location_id';
 			//throw new CHttpException(500,'"attribute" have to be set!');
 		}
 

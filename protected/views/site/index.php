@@ -39,23 +39,11 @@
   </div> <!-- end section-report -->
 
   <div id="section-database" class="drop-shadow curved curved-hz-1">
-    <header><h2>ฐานข้อมูล</h2>
-    <form action="*" enctype="multipart/form-data" id="Location_level0" method="post">
-	    <label for="Location">จังหวัด</label>
-
-	    <select name="" id="Location-level0">
-				<option value="">- เลือก -</option>
-				<option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
-				<option value="สมุทรปราการ">สมุทรปราการ</option>
-				<option value="นนทบุรี">นนทบุรี</option>
-				<option value="ปทุมธานี">ปทุมธานี</option>
-				<option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา</option>
-			</select>
-		</header>
     <?php $this->renderPartial('//request/location', array(
  			'query'=> array(),
  			'page' => 0,
  			'ipp' => 10,
+ 			'search' => true,
  		)); ?>
   </div> <!-- end section-database -->
 </div> <!-- end content -->

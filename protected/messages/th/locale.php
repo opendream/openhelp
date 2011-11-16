@@ -19,8 +19,10 @@ return array(
   'Coordinators' => 'ผู้ประสานงานในพื้นที่',
   'Needs' => 'ความต้องการ/ความช่วยเหลือ',
   'Location' => 'รายละเอียดสถานที่',
+  'Location List' => 'ฐานข้อมูล',
   'Status' => 'สถานะ',
   'Number detail' => 'ข้อมูลตัวเลข',
+  'Find' => 'ค้นหา',
    
   /*
   * Location

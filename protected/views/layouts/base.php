@@ -19,11 +19,6 @@
   <div id="header">
 		<header>
 			<h1 id = "logo"><a href="<?php echo bu('/'); ?>">Floodtambon</a></h1>
-			<form id ="search">
-				<label for = "">Search</label>
-				<input type="text" class="form-text" value="Search"/>
-				<input type="submit" value="&rsaquo;" class = "submit-search"/>
-			</form>
 			<nav>		
 				<?php $this->widget('zii.widgets.CMenu',array(
     			'items'=>array(
