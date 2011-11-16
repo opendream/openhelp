@@ -34,13 +34,18 @@ $qtxt = "SELECT location.id AS id, $select FROM location, request WHERE location
 $command = Yii::app()->db->createCommand($qtxt);
 $locationList = $command->queryAll();
 
-$qtxt = "SELECT * FROM item";
-$command = Yii::app()->db->createCommand($qtxt);
-$itemList = $command->queryAll();
-
 $nextPage = $page + 1;
 
 ?>
+<?php if (isset($search) && $search): ?>
+  <header><h2><?php echo Yii::t('locale', 'Location List'); ?></h2>
+    <form action="" method="get">
+      <?php $this->widget('ext.location.LocationWidget', array('model' => new Location, 'attribute' => 'id')); ?>
+      <input id="find-location-submit" type="submit" value="<?php echo Yii::t('locale', 'Find'); ?>" />
+    </form>
+	</header>
+	
+<?php endif ?>
 
 <?php foreach ($locationList as $location): ?>	 
 <article class="db-list">
@@ -71,15 +76,16 @@ $nextPage = $page + 1;
   
   <div class="db-item3">
     <ul>
-      <?php $itemDetails = WidgetManager::getItemDetails($location['id'], null, true);?>
-      <?php foreach ($itemList as $item): ?>
+      <?php $itemDetails = WidgetManager::getItemDetails($location['id']);?>
+      <?php foreach ($itemDetails as $item): ?>
       <li class="need-<?php echo $item['id']; ?>">
         <img 
           src="<?php echo bu($item['image_url']); ?>" 
           alt="<?php echo $item['name']; ?>" 
           title="<?php echo $item['name']; ?>" 
-          class="<?php echo in_array($item['id'], $itemDetails)? 'active': 'in-active';  ?>"/>
-        </li>
+          class="<?php echo $item['amount']? 'active': 'in-active'; ?>"/>
+        <div class="tooltip-popup"><?php echo $item['name']; ?> <?php echo $item['amount']; ?></div>
+      </li>
       <?php endforeach ?>
     </ul>
   </div> <!-- /db-item3 -->
