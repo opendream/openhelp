@@ -234,16 +234,36 @@ class WidgetManager
     return false;
   }
 
-  public static function getLocationList($rid = null)
+  public static function getAllLocations($rid = null)
   {
      $requests = Request::model()->findAll();
-     print_r($requests);
      $locations = new CMap();
      //$locations = array();
      foreach ($requests as $request) {
       $locations[$request->location_id] = array('label'=>$request->location['label'], 'lat'=>$request->location['lat'], 'lng'=>$request->location['lng']);  
      }
      return $locations->toArray();
+  }
+
+  public static function getVillageByLocation($id = null, $village = null) {
+    $result = array();
+    if ($id === null) {
+      return self::getAllLocations();
+    }
+    
+    $location = Location::model()->findByPk($id);
+    $result['location'] = $location->label;
+    $result['requests'] = $location->requests;
+
+    $locations = new CMap();
+    foreach ($result['requests'] as $request) {
+      $locations[$request->id] = array(
+        'label' => $request->extra_location0,
+        'lat' => $location->lat,
+        'lng' => $location->lng
+      );
+    }
+    return $locations->toArray();
   }
 
 }
