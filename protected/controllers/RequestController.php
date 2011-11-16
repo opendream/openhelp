@@ -189,7 +189,7 @@ class RequestController extends Controller
 		$coordinators = WidgetManager::getCoordinators($id);
 		$journey_detail = WidgetManager::getExtratexts($id, 5);
 		$remark_detail = WidgetManager::getExtratexts($id, 6);
-		$location_text = LocationHtml::locationView($id);
+		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
 		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
 
 		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
