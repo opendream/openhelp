@@ -22,6 +22,13 @@
 
 	$gload = <<<GLOAD
 	google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
+	bars = $('.bar > div').each(function(k,v ) {
+	  var bar = $(v).parent('div');
+	  var width = $(v).attr('width') * bar.width() / 100;
+	  $(this).animate({width:width, opacity: 1}, 1000, "linear", function(){ console.log("all done"); });
+	})
+
+
 GLOAD;
 	$cs->registerScript('gload', $gload);
 	$basePath = Yii::app()->getRequest()->getBaseUrl();
@@ -29,4 +36,4 @@ GLOAD;
 	$js_settings_str = CJavaScript::encode($options);
 	echo CHtml::Script('var Yii= Yii || {}; Yii.settings = ' . $js_settings_str);
 ?>
-</div>	
+</div>
