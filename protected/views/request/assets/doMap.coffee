@@ -1,7 +1,7 @@
 
 window.mapLoadded = (args) ->
-  myLatlng = new google.maps.LatLng(13.768, 100.554)
-  zoom = 12
+  myLatlng = new google.maps.LatLng 13.768, 100.554
+  zoom = 14
 
   myOptions = 
     zoom: zoom
@@ -11,7 +11,8 @@ window.mapLoadded = (args) ->
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions)
 
   basePath = Yii.settings.basePath
-  $.getJSON "#{basePath}/api/request/?action=index", (nodes) ->
+  location_id = Yii.settings.location_id
+  $.getJSON "#{basePath}/api/request/?action=locationView&id=#{location_id}", (nodes) ->
     info_window = new google.maps.InfoWindow
     markers = []
     $.each nodes, (id, node) ->
@@ -21,6 +22,8 @@ window.mapLoadded = (args) ->
         map: map
         title: node.label
       })
+      myLatlng = new google.maps.LatLng node?.lat, node?.lng
+      map.panTo(myLatlng)
       markers.push marker
       google.maps.event.addListener marker, 'click', ->
         $.getJSON "#{basePath}/api/request?action=view&id=#{id}", (item_contents) ->

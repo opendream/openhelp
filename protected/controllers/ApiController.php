@@ -50,11 +50,13 @@ class ApiController extends Controller
 	  
 	  // @return list of request in json format
 	  elseif ($action == 'index') {
-	  	$locations = WidgetManager::getLocationList();
-	  	print_r($locations);
-	  	exit();
+	  	$locations = WidgetManager::getVillageByLocation();
 	    echo CJSON::encode($locations);
-	  }  
+	  } 
+	  elseif ($action == 'locationView') {
+	  	$locations = WidgetManager::getVillageByLocation($id);
+	    echo CJSON::encode($locations);
+	  }
 
 	}
 

@@ -1,7 +1,7 @@
 <div id="content">
 <?php
 	echo $this->renderPartial('_database_detail_lastupdate', array('extraDouble' => $extraDouble, location_text => $location_text));
-	echo $this->renderPartial('_database_detail_map');
+	echo $this->renderPartial('_database_detail_map', array('location_id' => $location_id));
 	echo $this->renderPartial('_database_detail_need', array('items' => $items	));
 	$coordinators_params = array(
 		'coordinators' => $coordinators,
@@ -25,8 +25,7 @@
 GLOAD;
 	$cs->registerScript('gload', $gload);
 	$basePath = Yii::app()->getRequest()->getBaseUrl();
-	$options = array('basePath' => $basePath);
-
+	$options = array('basePath' => $basePath, 'location_id' => $location_id);
 	$js_settings_str = CJavaScript::encode($options);
 	echo CHtml::Script('var Yii= Yii || {}; Yii.settings = ' . $js_settings_str);
 ?>

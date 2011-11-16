@@ -1,8 +1,8 @@
 (function() {
   window.mapLoadded = function(args) {
-    var basePath, map, myLatlng, myOptions, zoom;
+    var basePath, location_id, map, myLatlng, myOptions, zoom;
     myLatlng = new google.maps.LatLng(13.768, 100.554);
-    zoom = 12;
+    zoom = 14;
     myOptions = {
       zoom: zoom,
       center: myLatlng,
@@ -10,7 +10,8 @@
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     basePath = Yii.settings.basePath;
-    return $.getJSON("" + basePath + "/api/request/?action=index", function(nodes) {
+    location_id = Yii.settings.location_id;
+    return $.getJSON("" + basePath + "/api/request/?action=locationView&id=" + location_id, function(nodes) {
       var info_window, markers;
       info_window = new google.maps.InfoWindow;
       markers = [];
@@ -22,6 +23,8 @@
           map: map,
           title: node.label
         });
+        myLatlng = new google.maps.LatLng(node != null ? node.lat : void 0, node != null ? node.lng : void 0);
+        map.panTo(myLatlng);
         markers.push(marker);
         return google.maps.event.addListener(marker, 'click', function() {
           return $.getJSON("" + basePath + "/api/request?action=view&id=" + id, function(item_contents) {
