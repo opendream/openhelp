@@ -18,8 +18,8 @@
 	bars = $('.bar > div').each(function(k,v ) {
 	  var self = $(this);
 	  var bar = $(v).parent('div');
-	  if ($(v).attr('width') < 15)
-	  	$(v).attr('width', 15);
+	  if ($(v).attr('width') < 12)
+	  	$(v).attr('width', 12);
 	  var width = $(v).attr('width') * (bar.width() / 100);
 	  $(v).width(width, 'slow');
 		  // $(this).animate({width:width, opacity: 1}, { queue: false, duration: 3000 });

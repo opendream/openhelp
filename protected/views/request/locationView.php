@@ -10,7 +10,7 @@
 		'location_text' => $location_text
 	);
 	echo $this->renderPartial('_database_detail_coordinators', $coordinators_params);
-	echo $this->renderPartial('_database_detail_villages', array('location_extra0s' => $location_extra0s));
+	echo $this->renderPartial('_database_detail_villages', array('location_extra0s' => $location_extra0s, 'location_id' => $location_id));
 
 	//SCRIPT
 	$assetsDir = dirname(__FILE__).'/assets';
