@@ -192,6 +192,7 @@ class RequestController extends Controller
 		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
 		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
 		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
+		$allExtraTexts = WidgetManager::getAllExtratexts($id, $village);
 
 		$extraDouble = array(
 			'sum' => WidgetManager::getSumExtraDouble($id),
@@ -204,7 +205,8 @@ class RequestController extends Controller
 			'location_text' => $location_text,
 			'location_extra0s' => $extraLocation0s,
 			'extraDouble' => $extraDouble,
-			'location_id' => $id
+			'location_id' => $id,
+			'allExtraTexts' => $allExtraTexts,			
 		);
 		$this->render('locationView', $params);
 	}	
@@ -218,8 +220,8 @@ class RequestController extends Controller
 		$remark_detail = WidgetManager::getExtratexts($id, 6, $village);
 		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
 		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
-
 		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
+		$allExtraTexts = WidgetManager::getAllExtratexts($id, $village);
 
 		$extraDouble = array(
 			'sum' => WidgetManager::getSumExtraDouble($id),
@@ -232,7 +234,8 @@ class RequestController extends Controller
 			'location_text' => $location_text,
 			'location_extra0s' => $extraLocation0s,
 			'extraDouble' => $extraDouble,
-			'location_id' => $id
+			'location_id' => $id,
+			'allExtraTexts' => $allExtraTexts,
 		);
 		$this->render('requestView', $params);
 	}

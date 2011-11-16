@@ -24,6 +24,19 @@ class WidgetManager
     return $coordinators;
   }
 
+  public static function getDateByLocation($id, $village = null)
+  {
+    $qtxt = "SELECT date_created, date_updated INNER JOIN request ON location.id = request.location_id WHERE location_id = $id";
+    if($village) {
+      $qtxt .= " AND request.extra_location0 = '$village'";
+    }
+    $qtxt .= " ORDER BY coordinator.fullname";
+    $command = Yii::app()->db->createCommand($qtxt);
+
+    $dates = $command->queryAll();
+    print_r($dates);
+  }
+
   public static function getAllItemDetails() {
     $qtxt = "SELECT item.id, item.name, item.image_url, sum(need.amount) as amount
          FROM location INNER JOIN request ON location.id = request.location_id
@@ -189,6 +202,15 @@ class WidgetManager
     $command = Yii::app()->db->createCommand($qtxt);
     $extraLocation0s = $command->queryAll();
     return $extraLocation0s;
+  }
+
+ public static function getAllExtratexts($id, $village = null)
+  {
+    $result = array();
+    foreach (Yii::app()->params['request']['extra']['text'] as $key => $value) {
+      $result[$value['label']] = self::getExtratexts($id, $key, $village);
+    }
+    return $result;
   }
 
   public static function getExtratexts($id, $text, $village = null){
