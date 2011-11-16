@@ -22,15 +22,6 @@
 
 	$gload = <<<GLOAD
 	google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
-	bars = $('.bar > div').each(function(k,v ) {
-	  var self = $(this);
-	  var bar = $(v).parent('div');
-	  var width = $(v).attr('width') * (bar.width() / 100);
-	  $(v).css('width', width);
-	  // $(this).animate({width:width, opacity: 1}, { queue: false, duration: 3000 });
-	})
-
-
 GLOAD;
 	$cs->registerScript('gload', $gload);
 	$basePath = Yii::app()->getRequest()->getBaseUrl();
