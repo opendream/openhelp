@@ -18,12 +18,12 @@
 	$('.bar > div').each(function(k, v) {
 	  var self = $(this);
 	  var bar = $(v).parent('div');
-      $('span.value', bar).fadeIn('slow');
 	  if ($(v).attr('width') < 12) {
 	  	$(v).attr('width', 12);
 	  }
 	  var width = $(v).attr('width') * (bar.width() / 100);
-	  $(v).width(width, 'slow');
+	  $(v).width(width);
+	  $('span.value', bar).delay(1500).fadeIn(500);
 	  // $(this).animate({width:width, opacity: 1}, { queue: false, duration: 3000 });
 	})
 JQ;
