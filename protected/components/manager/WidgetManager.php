@@ -227,21 +227,20 @@ class WidgetManager
   }
 
   public static function getRequestLocation() {
-    $qtxt = "SELECT distinct location_id 
-        FROM request
-        WHERE status != 2 OR status != 3 ";
+    $qtxt = "SELECT COUNT(id) 
+        FROM request";
     $command = Yii::app()->db->createCommand($qtxt);
-    $request_location = $command->queryColumn();
-    return count($request_location);
+    $request_location = $command->queryScalar();
+    return $request_location;
   }
 
   public static function getInProcessRequest() {
-    $qtxt = "SELECT count(id) as requestNo
+    $qtxt = "SELECT count(id)
         FROM request
         WHERE status != 2 OR status != 3 ";
     $command = Yii::app()->db->createCommand($qtxt);
-    $requestNo = $command->queryColumn();
-    return $requestNo[0];
+    $requestNo = $command->queryScalar();
+    return $requestNo;
   }
 
   public static function findItemById($items, $id) {
