@@ -42,7 +42,7 @@ class WidgetManager
   public static function getRequestReport($id) {
   	//get request by location_id
   	$qtxt = "SELECT 
-     request.id, request.date_created, request.last_updated, request.extra_location0, request.extra_location1, request.extra_location2, request.extra_location3, request.extra_location4, request.extra_text0, request.extra_text1, request.extra_text2, request.extra_text3, request.extra_text4, request.extra_text5, request.extra_text6, request.extra_text7, request.extra_text8, request.extra_text9, request.extra_text10, request.extra_text11, request.extra_text12, request.extra_text13, request.extra_text14, request.extra_double0, request.extra_double1, request.extra_double2, request.extra_double3, request.extra_double4, request.extra_double5, request.extra_double6, request.extra_double7, request.extra_double8, request.extra_double9, location.level0, location.level1, location.level2
+     request.id, request.date_created, request.last_updated, location.level0, location.level1, location.level2, request.extra_location0, request.extra_location1, request.extra_location2, request.extra_location3, request.extra_location4, '' as coordinators, '' as needs, request.extra_text0, request.extra_text1, request.extra_text2, request.extra_text3, request.extra_text4, request.extra_text5, request.extra_text6, request.extra_text7, request.extra_text8, request.extra_text9, request.extra_text10, request.extra_text11, request.extra_text12, request.extra_text13, request.extra_text14, request.extra_double0, request.extra_double1, request.extra_double2, request.extra_double3, request.extra_double4, request.extra_double5, request.extra_double6, request.extra_double7, request.extra_double8, request.extra_double9
 	FROM
      location INNER JOIN request ON location.id = request.location_id
   	WHERE location.id = $id ";
@@ -62,6 +62,7 @@ class WidgetManager
     	if($needs) {
     		$request['needs'] = self::mergeRows($needs);
     	}
+    	unset($request['id']);
     }
 
     $labels = array(
