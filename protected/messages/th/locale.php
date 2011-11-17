@@ -23,14 +23,16 @@ return array(
   'Status' => 'สถานะ',
   'Number detail' => 'ข้อมูลตัวเลข',
   'Find' => 'ค้นหา',
+  'Export to CSV' => 'ส่งออกเป็น csv',
    
   /*
   * Location
   */
-  'level0' => 'จังหวัด',
-  'level1' => 'อำเภอ,แขวง',
-  'level2' => 'ตำบล,เขต',
-  'level3' => 'ถนน',
+  'level0' => 'ภาค',
+  'level1' => 'จังหวัด',
+  'level2' => 'อำเภอ,แขวง',
+  'level3' => 'ตำบล,เขต',
+  'level4' => 'ถนน',
 
   /*
   * Lookup Manager
