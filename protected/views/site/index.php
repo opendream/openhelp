@@ -20,7 +20,7 @@
 	  </section> <!-- /st-need -->
   </div> <!-- end section-stat -->
 
-  <div id="section-database">
+  <div id="section-database" class="drop-shadow curved curved-hz-1">
     <?php $this->renderPartial('//request/location', array(
  			'query'=> array(),
  			'page' => 0,
