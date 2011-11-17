@@ -22,7 +22,7 @@ class ExportController extends Controller
     foreach(WidgetManager::getRequestReport($id) as $row) {
       $rowList = array();
       foreach ($row as $col => $value) {
-        $rowList[] = '"'.trim(strip_tags(str_replace(array('"', "&nbsp;"), array('\"', " "), $value))).'"';
+        $rowList[] = '"'.trim(strip_tags(str_replace(array('"', "&nbsp;", "\t", "\r", "\c"), array('\"', " ", "", "", ""), $value))).'"';
       }
       echo implode(',', $rowList)."\n";
     }
