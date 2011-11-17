@@ -23,7 +23,7 @@ $select = implode(', ', $selectList);
 // WHERE ========
 $whereList = array(1);
 foreach ($query as $level => $value) {
-  $whereList[] = $level.'='.$value;
+  $whereList[] = $level.'="'.$value.'"';
 }
 $where = implode(' AND ', $whereList);
 
