@@ -70,6 +70,7 @@ return array(
   'Amount' => 'จำนวน',
   'Summary needs' => 'ข้อมูลพื้นที่ที่ได้รับความเสียหาย',
   'All needs' => 'สิ่งที่ต้องการ',
+  'Please enter numberic' => 'กรุณาใส่ตัวเลข',
   
   /**
    * Dialog

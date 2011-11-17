@@ -13,63 +13,22 @@ class ExportController extends Controller
 	 */
 	public function actionLocation($id)
 	{
-	  /*
+	  
 	  header("Content-type: application/csv");
     header("Content-Disposition: attachment; filename=file.csv");
     header("Pragma: no-cache");
     header("Expires: 0");
-    */
     
-    $col = array(
-      array('col0' => '0-0', 'col1' => '0-1', 'col2' => '0-2'), 
-      array('col0' => '1-0', 'col1' => '1-1', 'col2' => '1-2'),
-      array('col0' => '2-0', 'col1' => '2-1', 'col2' => array()),
-    );
-    
-	  $rows = array(
-      array('col0' => '0-0', 'col1' => '0-1', 'col2' => '0-2'), 
-      array('col0' => '1-0', 'col1' => '1-1', 'col2' => '1-2'),
-      array('col0' => '2-0', 'col1' => '2-1', 'col2' => $col),
-    );
-	  $this->export($rows);
+    foreach(WidgetManager::getRequestReport($id) as $row) {
+      $rowList = array();
+      foreach ($row as $col => $value) {
+        $rowList[] = '"'.str_replace('"', '\"', $value).'"';
+      }
+      echo implode(',', $rowList)."\n";
+    }
 	  exit();
 	}
-	
-	public function export($rows, $addHeader=true, $sCol=',', $sRow="\n", $merge=false)
-	{
-    
-    // Header ============================================
-    if ($addHeader) {
-      $labels = array(
-        'coordinators' => Yii::t('locale', 'Coordinators'),
-        'needs'        => Yii::t('locale', 'Needs'),
-        'date_created' => Yii::t('locale', 'Date Created'),
-        'last_updated' => Yii::t('locale', 'Last Updated'),
-        'status'       => Yii::t('locale', 'Status'),
-      );
-      foreach(Yii::app()->params['location'] as $key) {
-        $labels[$key] = Yii::t('locale', $key);
-      }
-      foreach (Yii::app()->params['request']['extra']['location'] as $key => $value) {
-        $labels['extra_location'.$key] = $value['label'];
-      }
-      foreach (Yii::app()->params['request']['extra']['double'] as $key => $value) {
-        $labels['extra_double'.$key] = $value['label'];
-      }
-      foreach (Yii::app()->params['request']['extra']['text'] as $key => $value) {
-        $labels['extra_text'.$key] = $value['label'];
-      }
 
-      $first = current($rows);
-      $header = array();
-      foreach ($first as $col => $value) {
-        $header[$col] = isset($labels[$col])? $labels[$col]: $col;
-      }
-      $header = array(-1 => $header);
-      $rows = $header + $rows;
-    }
-    
-  }
 
 
 }

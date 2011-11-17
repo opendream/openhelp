@@ -739,7 +739,7 @@ table td input, table td select  {width: 95% !important;}
 
 /* style block popup */
 .add_coordinator_dialog .item-wrapper {margin: 0 0 10px;}
-  .add_coordinator_dialog span, .dialog_input span {width: 90px; float: left; font-size: 0.9em}
+  .add_coordinator_dialog span, .dialog_input span {width: 150px; float: left; font-size: 0.9em}
 
 .dialog_input select, .dialog_input .item-wrapper {margin: 0 0 10px}  
 /* Create Request */
