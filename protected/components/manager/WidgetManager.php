@@ -326,6 +326,7 @@ class WidgetManager
 
   public static function getExtratexts($id, $text, $village = null){
     //$result = array();
+    $label = Yii::app()->params['request']['extra']['location'][0]['label'];
     $params = 'request.extra_text'.$text;
 
     $qtxt = "SELECT concat(request.extra_location0,' ',$params) as label
