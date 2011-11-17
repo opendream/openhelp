@@ -33,8 +33,6 @@ class ApiController extends Controller
 	    # TODO: @nazt, @crosalot
 	    # $data = query requests under $id of location and prepare summary data to easy view
 	    $data = Request::model()->findByPk($id);
-		if($data === null)
-			throw new CHttpException(404,'The requested page does not exist.');
 	    $result = $this->renderPartial('//request/_view', array('data'=>$data), true);
 	    echo CJSON::encode($result);
 	  }
