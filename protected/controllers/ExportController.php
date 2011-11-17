@@ -15,7 +15,7 @@ class ExportController extends Controller
 	{
 	  
 	  header("Content-type: application/csv");
-    header("Content-Disposition: attachment; filename=file.csv");
+    header("Content-Disposition: attachment; filename=".LocationHtml::locationView($id, array('style' => 'pain')).".csv");
     header("Pragma: no-cache");
     header("Expires: 0");
     

@@ -1,5 +1,8 @@
 <article id="entry-1" class="entry">
-<header><h1 class="location-header"><?php print $location_text ?></h1></header>
+<header>
+  <h1 class="location-header"><?php print $location_text ?></h1>
+  <a class="export-csv" href="<?php echo CController::createUrl("/export/location/$location_id"); ?>" title="<?php echo Yii::t('locale', 'Export to CSV'); ?>"><?php echo Yii::t('locale', 'Export to CSV'); ?></a>
+</header>
 <section class="st-update drop-shadow curved curved-hz-1">
 <div id="entry-date">
     <span class="year">2011</span>

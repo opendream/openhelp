@@ -506,6 +506,9 @@ nav {
 	  list-style: initial;
 	  margin: 0 15px 5px 25px;
 	}
+	.request_extra_text li p {
+    margin-bottom: 0px;
+  }
 	
 	.location-header label {
 	  margin-right: 5px;
@@ -535,9 +538,7 @@ nav {
 * Location
 */
 #request-location {}
-.request_coordinators li p {
-  margin-bottom: 0px;
-}
+
 
 
 
