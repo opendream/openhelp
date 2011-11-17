@@ -16,6 +16,7 @@
   $('.bar > div').each(function(k, v) {
     var self = $(this);
     var bar = $(v).parent('div');
+    $('span.value', bar).fadeIn('slow');
     if ($(v).attr('width') < 12) {
       $(v).attr('width', 12);
     }
