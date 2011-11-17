@@ -140,7 +140,7 @@ a {color: #f15350; text-decoration: none}
 a:hover {color: #bc3a38; text-decoration: underline;}
 
 /* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
-::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
+::-moz-selection{background: #ff6666; color: #fff; text-shadow: none;}
 ::selection {background: #ff6666; color: #fff; text-shadow: none;} 
 
 /*	j.mp/webkit-tap-highlight-color */

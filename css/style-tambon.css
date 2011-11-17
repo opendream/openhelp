@@ -44,7 +44,7 @@ ul {
 }
 li {
 	line-height: 18px;
-	color: gray;
+/* 	color: gray; */
 }
 
 
@@ -84,13 +84,15 @@ li {
 
 /* Content */
 #content {
-	overflow: hidden;
 	padding: 0 0 40px;
-	background: url('../images/bg-bottom-tambon.png') center bottom no-repeat ; /* Horizon line */
 }
 	#section-stat ul {
 		margin: 0;
 		list-style: none; 
+	}
+	
+	*+html #content{
+		overflow: hidden;
 	}
 	
 /* Footer */
@@ -100,7 +102,10 @@ li {
   font-size: 11px;
 }
 footer{
+	text-align: center;
 	overflow: hidden;
+	padding-top: 30px;
+	background: url('../images/bg-bottom-tambon.png') center top no-repeat ; /* Horizon line */
 }
 
 /**********************
@@ -138,6 +143,7 @@ h2{
 h3{
 	font-size: 16px;
 	line-height: 24px;
+	margin-bottom: 10px;
 }
 
 
@@ -241,6 +247,7 @@ h3{
 
 /* Nav */
 nav {
+	clear: both;
 	padding: 10px 0 0;
 	text-align: right;
 }
@@ -327,7 +334,7 @@ nav {
 .st-need li{
 	float: left;
 	width: 220px;
-	margin: 0 20px 10px 0;
+	margin: 0 20px 5px 0;
 }
 
 
@@ -341,7 +348,7 @@ nav {
 		margin: 0 0 10px;
 		line-height: 1.8em;
 	}
-	#rp-list span, #rp-sticky span, #situation-list article span{
+	#rp-list span, #rp-sticky span, #situation-list article span, .date-time{ /* Time */
 		padding: 3px 7px;
 		background: #dbdbdb;
 		font-size: 11px;
@@ -394,6 +401,12 @@ nav {
 	width: 540px;
 	padding: 10px;
 }
+#map_canvas .request-list{
+	-moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
 
 /* ข้อมูลพื้นที่ Block (Node) */
 .st-request ul {
@@ -511,6 +524,10 @@ nav {
 	  margin-right: 5px;
 	  color: #AAA;
 	}
+	
+	.entry .location-header label{
+		color: #444;
+	}
 
 /* Form */
 #section-database header form, #request-location header form{
@@ -544,7 +561,26 @@ nav {
 #about ol {
 	margin: 0 0 20px 20px
 }
-
+.about-teaser {float: left; margin: 0 0 20px}
+	.slide-img {
+	  float: left;
+	  width: 550px;
+	}
+	.slide-desc {
+	  float: left;
+	  height: 210px;
+	  width: 220px;
+	  position: relative;
+	  background: #CD6151;
+	  padding: 15px;
+	  color: #fff;
+	  -moz-border-radius-topright: 10px;
+	  -moz-border-radius-bottomright: 10px;
+	  -webkit-border-top-right-radius: 10px;
+	  -webkit-border-bottom-right-radius: 10px;
+	  border-top-right-radius: 10px;
+	  border-bottom-right-radius: 10px;
+	}
 
 
 /**********************
@@ -561,17 +597,21 @@ nav {
 	  color: #7d7d7d;
 	}
 	
+/*
 #footer-copyright{
 	float: right;
 	width: 385px;
 }
+*/
 #footer-copyright img{
 	margin-right: 10px;
 }
+/*
 #develop{
 	float: right;
 	width: 200px;
 }
+*/
 .readmore a{
 	clear: both;
 	float: right;
@@ -600,8 +640,11 @@ nav {
 	height: 17px;
 	margin-top: 2px;
 }
+.bar .value{
+	display: none;
+}
 .bar div{ /* Bar */
-	background: #ff5959;
+	background: #D2644A;
 	height: 17px;
 	color: #fff;
 	-moz-border-radius: 10px;
@@ -623,6 +666,7 @@ nav {
   -moz-transition-delay: 1s;
   -o-transition-delay: 1s;
 }
+
 .bar div span{ /* Number */
 	font-weight: bold;
 	padding: 0 5px;
@@ -721,7 +765,7 @@ nav {
 }
 #entry-date .day, #entry-date .month{
 	width: 42px;
-	padding: 30px 5px 15px 5px;
+	padding: 30px 5px 5px 5px;
 	font-size: 32px;
 	text-align: center;
 	background: #F7F4EE;
@@ -814,7 +858,10 @@ table tbody th {
 }
 
 
-/* pop up */
+
+/********************
+			pop up
+********************/
 .tooltip-popup{
 	height: 15px;
 	white-space: nowrap;
@@ -824,7 +871,20 @@ table tbody th {
 	-webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  -moz-animation-name: pop;
+
+}
+.db-item3 li, .st-need li{
+	position: relative;
+}
+.db-item3 li .tooltip-popup, .st-need li .tooltip-popup{
+	display: none;
+}
+.db-item3 li:hover .tooltip-popup, .st-need li:hover .tooltip-popup{
+	display: block;
+	position: absolute;
+	left: -15px;
+	top: -45px;
+	-moz-animation-name: pop;
   -moz-animation-duration: 300ms;
   -moz-animation-fill-mode: forwards;
   -webkit-animation-name: pop;
@@ -834,29 +894,17 @@ table tbody th {
   animation-duration: 300ms;
   animation-fill-mode: forwards;
 }
-.db-item3 li{
-	position: relative;
-}
-.db-item3 li .tooltip-popup{
-	display: none;
-}
-.db-item3 li:hover .tooltip-popup{
-	display: block;
-	position: absolute;
-	left: -15px;
-	top: -45px;	
-}
 
 .tooltip-popup:after {
-    border-color: #dadada transparent;
-    border-style: solid;
-    border-width: 10px 10px 0;
-    bottom: -10px;
-    content: "";
-    display: block;
-    left: 10px;
-    position: absolute;
-    width: 0;
+  border-color: #dadada transparent;
+  border-style: solid;
+  border-width: 10px 10px 0;
+  bottom: -10px;
+  content: "";
+  display: block;
+  left: 15px;
+  position: absolute;
+  width: 0;
 }
 
 @-webkit-keyframes pop{
@@ -888,4 +936,19 @@ table tbody th {
 		opacity: 1;
 		top: -45px;
 	}
+}
+
+
+
+/**********************
+			Post Section
+**********************/
+#post header h1{
+	font-size: 24px;
+	font-family: Helvetica, Thonburi;
+}
+#post .date-time{
+	display: block;
+	margin: 0 0 10px;
+	width: 100px;
 }
