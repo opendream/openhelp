@@ -401,10 +401,9 @@ nav {
 	width: 540px;
 	padding: 10px;
 }
-#map_canvas .request-list{
-	-moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+#map_canvas .request-list .label{
+	float: left;
+	margin: 0 10px 0 0;
 }
 
 
@@ -506,7 +505,7 @@ nav {
 	/* 	item3 - Need */
 	.db-item3 li{
 		float: left;
-		margin: 0 10px 5px 0;
+		margin: 0 5px 0 0;
 		width: 25px;
 		list-style: none;
 	}
@@ -597,21 +596,20 @@ nav {
 	  color: #7d7d7d;
 	}
 	
-/*
 #footer-copyright{
-	float: right;
+	float: left;
 	width: 385px;
 }
-*/
 #footer-copyright img{
 	margin-right: 10px;
 }
-/*
 #develop{
 	float: right;
-	width: 200px;
+	width: 233px;
 }
-*/
+#develop small{
+	font-size: 11px;
+}
 .readmore a{
 	clear: both;
 	float: right;
@@ -866,8 +864,8 @@ table tbody th {
 	height: 15px;
 	white-space: nowrap;
 	padding: 5px;
-	background: #dadada;
-	color: #333;
+	background: #333;
+	color: #fff;
 	-webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -896,7 +894,7 @@ table tbody th {
 }
 
 .tooltip-popup:after {
-  border-color: #dadada transparent;
+  border-color: #333 transparent;
   border-style: solid;
   border-width: 10px 10px 0;
   bottom: -10px;
