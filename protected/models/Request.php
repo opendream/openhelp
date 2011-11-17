@@ -9,6 +9,11 @@
  * @property string $last_updated
  * @property string $location_id
  * @property string $detail
+ * @property string $extra_location0
+ * @property string $extra_location1
+ * @property string $extra_location2
+ * @property string $extra_location3
+ * @property string $extra_location4
  * @property string $extra_text0
  * @property string $extra_text1
  * @property string $extra_text2
@@ -19,6 +24,11 @@
  * @property string $extra_text7
  * @property string $extra_text8
  * @property string $extra_text9
+ * @property string $extra_text10
+ * @property string $extra_text11
+ * @property string $extra_text12
+ * @property string $extra_text13
+ * @property string $extra_text14
  * @property double $extra_double0
  * @property double $extra_double1
  * @property double $extra_double2
@@ -86,10 +96,11 @@ class Request extends CActiveRecord
 			array('status', 'numerical', 'integerOnly'=>true),
 			array('extra_double0, extra_double1, extra_double2, extra_double3, extra_double4, extra_double5, extra_double6, extra_double7, extra_double8, extra_double9', 'numerical'),
 			array('location_id', 'length', 'max'=>20),
+			array('extra_location0, extra_location1, extra_location2, extra_location3, extra_location4', 'length', 'max'=>255),
 			array('detail, extra_text0, extra_text1, extra_text2, extra_text3, extra_text4, extra_text5, extra_text6, extra_text7, extra_text8, extra_text9', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, date_created, last_updated, location_id, locationLabel, detail, extra_text0, extra_text1, extra_text2, extra_text3, extra_text4, extra_double0, extra_double1, extra_double2, extra_double3, extra_double4, status', 'safe', 'on'=>'search'),
+			array('id, date_created, last_updated, location_id, locationLabel, detail, extra_location0, extra_location1, extra_location2, extra_location3, extra_location4, extra_text0, extra_text1, extra_text2, extra_text3, extra_text4, extra_double0, extra_double1, extra_double2, extra_double3, extra_double4, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -118,6 +129,11 @@ class Request extends CActiveRecord
 			'last_updated' => 'Last Updated',
 			'location_id' => 'Location',
 			'detail' => 'Detail',
+			'extra_location0' => 'Extra Location0',
+			'extra_location1' => 'Extra Location1',
+			'extra_location2' => 'Extra Location2',
+			'extra_location3' => 'Extra Location3',
+			'extra_location4' => 'Extra Location4',
 			'extra_text0' => 'Extra Text0',
 			'extra_text1' => 'Extra Text1',
 			'extra_text2' => 'Extra Text2',
@@ -128,6 +144,11 @@ class Request extends CActiveRecord
 			'extra_text7' => 'Extra Text7',
 			'extra_text8' => 'Extra Text8',
 			'extra_text9' => 'Extra Text9',
+			'extra_text10' => 'Extra Text10',
+			'extra_text11' => 'Extra Text11',
+			'extra_text12' => 'Extra Text12',
+			'extra_text13' => 'Extra Text13',
+			'extra_text14' => 'Extra Text14',
 			'extra_double0' => 'Extra Double0',
 			'extra_double1' => 'Extra Double1',
 			'extra_double2' => 'Extra Double2',
@@ -160,6 +181,11 @@ class Request extends CActiveRecord
 		$criteria->compare('location_id',$this->location_id,true);
 		$criteria->compare('location.label',$this->locationLabel,true);
 		$criteria->compare('detail',$this->detail,true);
+		$criteria->compare('extra_location0',$this->extra_location0,true);
+		$criteria->compare('extra_location1',$this->extra_location1,true);
+		$criteria->compare('extra_location2',$this->extra_location2,true);
+		$criteria->compare('extra_location3',$this->extra_location3,true);
+		$criteria->compare('extra_location4',$this->extra_location4,true);
 		$criteria->compare('extra_text0',$this->extra_text0,true);
 		$criteria->compare('extra_text1',$this->extra_text1,true);
 		$criteria->compare('extra_text2',$this->extra_text2,true);
@@ -170,6 +196,11 @@ class Request extends CActiveRecord
 		$criteria->compare('extra_text7',$this->extra_text7,true);
 		$criteria->compare('extra_text8',$this->extra_text8,true);
 		$criteria->compare('extra_text9',$this->extra_text9,true);
+		$criteria->compare('extra_text10',$this->extra_text10,true);
+		$criteria->compare('extra_text11',$this->extra_text11,true);
+		$criteria->compare('extra_text12',$this->extra_text12,true);
+		$criteria->compare('extra_text13',$this->extra_text13,true);
+		$criteria->compare('extra_text14',$this->extra_text14,true);
 		$criteria->compare('extra_double0',$this->extra_double0);
 		$criteria->compare('extra_double1',$this->extra_double1);
 		$criteria->compare('extra_double2',$this->extra_double2);

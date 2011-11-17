@@ -14,6 +14,7 @@
  * @property string $label
  * @property string $lat
  * @property string $lng
+ * @property integer $disabled
  *
  * The followings are the available model relations:
  * @property Donator[] $donators
@@ -47,10 +48,11 @@ class Location extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('disabled', 'numerical', 'integerOnly'=>true),
 			array('level0, level1, level2, level3, level4, level5, label, lat, lng', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, level0, level1, level2, level3, level4, level5, label, lat, lng', 'safe', 'on'=>'search'),
+			array('id, level0, level1, level2, level3, level4, level5, label, lat, lng, disabled', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -84,6 +86,7 @@ class Location extends CActiveRecord
 			'label' => 'Label',
 			'lat' => 'Lat',
 			'lng' => 'Lng',
+			'disabled' => 'Disabled',
 		);
 	}
 
@@ -108,6 +111,7 @@ class Location extends CActiveRecord
 		$criteria->compare('label',$this->label,true);
 		$criteria->compare('lat',$this->lat,true);
 		$criteria->compare('lng',$this->lng,true);
+		$criteria->compare('disabled',$this->disabled);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

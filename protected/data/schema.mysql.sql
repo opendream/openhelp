@@ -18,6 +18,7 @@ CREATE TABLE `location` (
   `label` varchar(255),
   `lat` varchar(255),
   `lng` varchar(255),
+  `disabled` tinyint(1),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

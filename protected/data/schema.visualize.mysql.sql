@@ -256,6 +256,7 @@ CREATE TABLE IF NOT EXISTS `location` (
   `label` varchar(255) DEFAULT NULL,
   `lat` varchar(255) DEFAULT NULL,
   `lng` varchar(255) DEFAULT NULL,
+  `disabled` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7417 ;
 

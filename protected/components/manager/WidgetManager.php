@@ -60,12 +60,12 @@ class WidgetManager
     $models = Item::model()->findAll();
     for ($i=0; $i < count($models); $i++) { 
       if(!self::findItemById($items, $models[$i]['id'])) {
-        $items[] = array('id' => $models[$i]['id'], 'name' => $models[$i]['name'], 'image_url' => $models[$i]['id'], 'amount' => 0);
+        $items[] = array('id' => $models[$i]['id'], 'name' => $models[$i]['name'], 'image_url' => $models[$i]['image_url'], 'amount' => 0);
       }
     }
     
     foreach ($items as &$item) {
-      $item['percent'] = floor($item['amount'] / $max * 100);
+      $item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
       $item['percent'] = $item['percent'] ? $item['percent'] : 1;
     }
     
@@ -103,7 +103,7 @@ class WidgetManager
   	  	}
   	  	
   	  	foreach ($items as &$item) {
-       	  $item['percent'] = floor($item['amount'] / $max * 100);
+       	  $item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
        	}
       	return $items;
 	}
