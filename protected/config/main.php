@@ -77,10 +77,10 @@ return array(
 					'levels'=>'error, warning',
 				),
 				array(
-         'class' => 'CWebLogRoute',
+         'class' => 'CFileLogRoute',
          'categories' => 'example',
          'levels' => 'trace',
-         'showInFireBug' => true,
+         //'showInFireBug' => true,
         ),
 			),
 		),
