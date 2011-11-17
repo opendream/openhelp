@@ -746,7 +746,7 @@ table td input, table td select  {width: 95% !important;}
 div.form .row {margin: 0 0 15px;}
 #request-form .row {}
 .location-list, .coordinator-list, .need-list, .detail-list,
-.extra-text-0-list, .extra-text-1-list {
+.extra-text-list {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -755,6 +755,9 @@ div.form .row {margin: 0 0 15px;}
   overflow: hidden;
   width: auto;
   margin: 0 0 10px !important
+}
+.extra-text-list textarea {
+  width: 100%;
 }
 .location-list span {float: left; margin: 0 15px 0 0;}
 .extra-double  {padding: 5px 0 0; clear: both;}

@@ -34,31 +34,31 @@ return array(
     	  */
     	  // Remove this when make this project to opensource ==================================================
 
-    	  array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านสุขภาวะ', 'editor' => 'CKEditorWidget', 'options' => array(
+    	  array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านสุขภาวะ', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
-    	  array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านเศรษฐกิจ', 'editor' => 'CKEditorWidget', 'options' => array(
+    	  array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านเศรษฐกิจ', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านสิ่งแวดล้อม', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านสิ่งแวดล้อม', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านเยาวชน', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'สถานการณ์ปัญหาในชุมชน - ด้านเยาวชน', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'สถานการณ์ปัญหาในชุมชน - ปัญหาอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'สถานการณ์ปัญหาในชุมชน - ปัญหาอื่นๆ', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'ทรัพยากรและการจัดการในชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'ทรัพยากรและการจัดการในชุมชน', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'ลักษณะชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'ลักษณะชุมชน', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'การเดินทางเข้าชุมชน', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'การเดินทางเข้าชุมชน', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
-				array('label' => 'ข้อสังเกตอื่นๆ', 'editor' => 'CKEditorWidget', 'options' => array(
+				array('label' => 'ข้อสังเกตอื่นๆ', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
 				array('label' => 'ความเร่งด่วน', 'editor' => 'dropDownList', 'options' => array(

@@ -23,6 +23,7 @@ return array(
   'Status' => 'สถานะ',
   'Number detail' => 'ข้อมูลตัวเลข',
   'Find' => 'ค้นหา',
+  'Export to CSV' => 'ส่งออกเป็น csv',
    
   /*
   * Location

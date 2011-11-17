@@ -530,6 +530,10 @@ nav {
 	.entry .location-header label{
 		color: #444;
 	}
+	
+	a.export-csv {
+	  float: right;
+	}
 
 /* Form */
 #section-database header form, #request-location header form{

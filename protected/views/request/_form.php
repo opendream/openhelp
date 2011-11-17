@@ -166,7 +166,7 @@
 	
 	<?php if ($extraText): ?>
 	  <?php foreach ($extraText as $key => $row): ?>
-	  <div id="extra-text-<?php echo $key; ?>" class="extra-text-<?php echo $key; ?>-list">
+	  <div id="extra-text-<?php echo $key; ?>" class="extra-text-list extra-text-<?php echo $key; ?>-list">
   	  <h3><?php echo Yii::t('locale', $row['label']); ?></h3>
   	  <?php
   	    $options =  (!isset($row['options']) || !$row['options'])? array(): $row['options'];
@@ -198,8 +198,10 @@
           <?php $this->widget('ext.ckeditor.CKEditorWidget', $options); ?>
         </div>
     	<?php else: ?>
+    	  <div class="ckeditor-wrapper">
     	  <?php echo $form->{$editor}($model,'extra_text'.$key, $options); ?>
     	  <?php echo $form->error($model,'extra_text'.$key); ?>
+    	  </div>
   	  <?php endif ?>
     </div>
 	  <?php endforeach ?>
