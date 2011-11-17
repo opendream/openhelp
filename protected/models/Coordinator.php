@@ -8,7 +8,6 @@
  * @property string $fullname
  * @property string $position
  * @property string $tel
- * @property string $detail
  *
  * The followings are the available model relations:
  * @property Request[] $requests
@@ -42,10 +41,9 @@ class Coordinator extends CActiveRecord
 		return array(
 			array('fullname', 'required'),
 			array('fullname, position, tel', 'length', 'max'=>255),
-			array('detail', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, fullname, position, tel, detail', 'safe', 'on'=>'search'),
+			array('id, fullname, position, tel', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,7 +69,6 @@ class Coordinator extends CActiveRecord
 			'fullname' => 'Fullname',
 			'position' => 'Position',
 			'tel' => 'Tel',
-			'detail' => 'Detail',
 		);
 	}
 
@@ -90,7 +87,6 @@ class Coordinator extends CActiveRecord
 		$criteria->compare('fullname',$this->fullname,true);
 		$criteria->compare('position',$this->position,true);
 		$criteria->compare('tel',$this->tel,true);
-		$criteria->compare('detail',$this->detail,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
