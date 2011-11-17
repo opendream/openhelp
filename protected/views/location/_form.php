@@ -8,27 +8,65 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-    
-    <?php $addresses = Yii::app()->params['location'];?>
-    
-    <?php foreach ($addresses as $address): ?>
-        <div class="row">
-    		<?php echo $form->labelEx($model,Yii::t('locale',"$address")); ?>
-    		<?php echo $form->textField($model,"$address",array('size'=>60,'maxlength'=>255)); ?>
-    		<?php echo $form->error($model,"$address"); ?>
-    	</div>
-    <?php endforeach ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('locale', 'lat')); ?>
+		<?php echo $form->labelEx($model,'level0'); ?>
+		<?php echo $form->textField($model,'level0',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'level0'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'level1'); ?>
+		<?php echo $form->textField($model,'level1',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'level1'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'level2'); ?>
+		<?php echo $form->textField($model,'level2',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'level2'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'level3'); ?>
+		<?php echo $form->textField($model,'level3',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'level3'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'level4'); ?>
+		<?php echo $form->textField($model,'level4',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'level4'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'level5'); ?>
+		<?php echo $form->textField($model,'level5',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'level5'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'label'); ?>
+		<?php echo $form->textField($model,'label',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'label'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'lat'); ?>
 		<?php echo $form->textField($model,'lat',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'lat'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('locale', 'lng')); ?>
+		<?php echo $form->labelEx($model,'lng'); ?>
 		<?php echo $form->textField($model,'lng',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'lng'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'disabled'); ?>
+		<?php echo $form->textField($model,'disabled'); ?>
+		<?php echo $form->error($model,'disabled'); ?>
 	</div>
 
 	<div class="row buttons">

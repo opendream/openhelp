@@ -29,12 +29,20 @@
 	<br />
 
 	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('label')); ?>:</b>
+	<?php echo CHtml::encode($data->label); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('lat')); ?>:</b>
 	<?php echo CHtml::encode($data->lat); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('lng')); ?>:</b>
 	<?php echo CHtml::encode($data->lng); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('disabled')); ?>:</b>
+	<?php echo CHtml::encode($data->disabled); ?>
 	<br />
 
 	*/ ?>

@@ -41,6 +41,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'label'); ?>
+		<?php echo $form->textField($model,'label',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'lat'); ?>
 		<?php echo $form->textField($model,'lat',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
@@ -48,6 +53,11 @@
 	<div class="row">
 		<?php echo $form->label($model,'lng'); ?>
 		<?php echo $form->textField($model,'lng',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'disabled'); ?>
+		<?php echo $form->textField($model,'disabled'); ?>
 	</div>
 
 	<div class="row buttons">

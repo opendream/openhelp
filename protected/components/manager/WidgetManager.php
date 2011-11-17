@@ -38,6 +38,113 @@ class WidgetManager
     $dates = $command->queryAll();
   }
 
+
+  public static function getRequestReport($id) {
+  	//get request by location_id
+  	$qtxt = "SELECT 
+     request.id, request.date_created, request.last_updated, location.level0, location.level1, location.level2, request.extra_location0, request.extra_location1, request.extra_location2, request.extra_location3, request.extra_location4, '' as coordinators, '' as needs, request.extra_text0, request.extra_text1, request.extra_text2, request.extra_text3, request.extra_text4, request.extra_text5, request.extra_text6, request.extra_text7, request.extra_text8, request.extra_text9, request.extra_text10, request.extra_text11, request.extra_text12, request.extra_text13, request.extra_text14, request.extra_double0, request.extra_double1, request.extra_double2, request.extra_double3, request.extra_double4, request.extra_double5, request.extra_double6, request.extra_double7, request.extra_double8, request.extra_double9
+	FROM
+     location INNER JOIN request ON location.id = request.location_id
+  	WHERE location.id = $id ";
+  	$command = Yii::app()->db->createCommand($qtxt);
+    $requests = $command->queryAll();
+
+
+
+    // add needs and coordinators
+    foreach ($requests as &$request) {
+    	$coordinators = self::getCoodinators($request['id']);
+    	if($coordinators) {
+    		$request['coordinators'] = self::mergeRows($coordinators);
+    	}
+
+    	$needs = self::getNeeds($request['id']);
+    	if($needs) {
+    		$request['needs'] = self::mergeRows($needs);
+    	}
+    	unset($request['id']);
+    }
+
+    $labels = array(
+	'coordinators' => Yii::t('locale', 'Coordinators'),
+	'needs' => Yii::t('locale', 'Needs'),
+	'date_created' => Yii::t('locale', 'Date Created'),
+	'last_updated' => Yii::t('locale', 'Last Updated'),
+	'status' => Yii::t('locale', 'Status'),
+	);
+	foreach(Yii::app()->params['location'] as $key) {
+		$labels[$key] = Yii::t('locale', $key);	
+	}
+	foreach (Yii::app()->params['request']['extra']['location'] as $key => $value) {
+		$labels['extra_location'.$key] = $value['label'];
+	}
+	foreach (Yii::app()->params['request']['extra']['double'] as $key => $value) {
+		$labels['extra_double'.$key] = $value['label'];
+	}
+	foreach (Yii::app()->params['request']['extra']['text'] as $key => $value) {
+		$labels['extra_text'.$key] = $value['label'];
+	}
+
+	$first = $requests[0];
+	$header = array();
+	foreach ($first as $col => $value) {
+		$header[$col] = isset($labels[$col])? $labels[$col]: $col;
+		//Yii::trace('result '.$col.' value '.$value, 'example');
+	}
+	$header = array(-1 => $header);
+	$requests = $header + $requests;
+	//Yii::trace('result '.$first, 'example');
+
+	return $requests;
+  }
+
+
+  public static function mergeRows($rows) {
+  	$str = '';
+  	$limited = count($rows);
+  	for ($i = 0; $i < $limited; $i++) {
+  		//$row = $rows[$i];
+  		$size = count($rows[$i]);
+  		$index = 0;
+  		foreach ($rows[$i] as $attrbute) {
+  			$str .= $attrbute;
+  			if($index < $size - 1) {
+  				$str .= ':';
+  			}
+  			$index++;
+  		}
+  		if($i < $limited - 1) {
+  			$str .= '/';
+  		}
+  	}
+  	return $str;
+  }
+
+
+  public static function getNeeds($request_id) {
+  	$qtxt = "SELECT
+			     item.name, need.amount 
+			FROM
+     			item INNER JOIN need ON item.id = need.item_id
+  			WHERE need.request_id = $request_id ";
+  	$command = Yii::app()->db->createCommand($qtxt);
+    $requests = $command->queryAll();
+    return $requests;
+  }
+
+
+  public static function getCoodinators($request_id) {
+  	$qtxt = "SELECT
+     			coordinator.fullname, coordinator.position, coordinator.tel
+			FROM
+     			coordinator INNER JOIN request_coordinator ON coordinator.id = request_coordinator.coordinator_id
+     		WHERE request_coordinator.request_id = $request_id ";
+    $command = Yii::app()->db->createCommand($qtxt);
+    $coordinators = $command->queryAll();
+    return $coordinators;
+  }
+
+
   public static function getAllItemDetails() {
     $qtxt = "SELECT item.id, item.name, item.image_url, sum(need.amount) as amount
          FROM location INNER JOIN request ON location.id = request.location_id

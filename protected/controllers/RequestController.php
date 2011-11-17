@@ -171,7 +171,7 @@ class RequestController extends Controller
 	  $this->layout='layout1';
 	  
 		$this->render('location', array(
- 			'query'=>isset($_GET['query'])? $_GET['query']: array(),
+ 			'query'=>isset($_REQUEST['Location'])? array_filter($_REQUEST['Location']): array(),
  			'page' => isset($_GET['page'])? $_GET['page']: 0,
  			'ipp' => isset($_GET['ipp'])? $_GET['ipp']: 15,
  			'search' => true,

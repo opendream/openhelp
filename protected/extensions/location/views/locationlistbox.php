@@ -12,7 +12,7 @@ else {
   }
   Yii::app()->clientScript->scriptMap['*.js'] = false;
   $locationOptions = array(
-  	'prompt' => Yii::t('locale', '- Select -'),
+    'prompt' => '- '. Yii::t('locale', $current). ' -',
     'ajax' => array(
       'type' => 'GET',
       'url' => CController::createUrl("/forms/locationlistbox"),
@@ -28,7 +28,7 @@ else {
   );
   
   $output = '';
-  $output .=   CHtml::activeLabel($locationModel, Yii::t('locale', $current));
+  //$output .=   CHtml::activeLabel($locationModel, Yii::t('locale', $current));
   $output .=   CHtml::activeDropDownList($locationModel, $current, $rows, $locationOptions);
   echo $output;
 }
