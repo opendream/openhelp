@@ -23,7 +23,7 @@ $select = implode(', ', $selectList);
 // WHERE ========
 $whereList = array(1);
 foreach ($query as $level => $value) {
-  $whereList[] = $level.'='.$value;
+  $whereList[] = $level.'="'.$value.'"';
 }
 $where = implode(' AND ', $whereList);
 
@@ -37,7 +37,6 @@ $locationList = $command->queryAll();
 $nextPage = $page + 1;
 
 ?>
-<div class="article-wrapper drop-shadow curved curved-hz-1">
 <?php if (isset($search) && $search): ?>
   <header><h2><?php echo Yii::t('locale', 'Location List'); ?></h2>
     <form action="" method="get">
@@ -95,7 +94,6 @@ $nextPage = $page + 1;
 
 
 <p class="readmore"><a class="request-location-readmore" href="<?php echo CController::createUrl("/api/request?action=location&page=$nextPage&ipp=$ipp"); ?>"><?php echo Yii::t('locale', 'read more'); ?></a></p>
-</div><!-- /article-wrapper drop-shadow curved curved-hz-1 -->
 <script>
   $('.request-location-readmore').click(function (e) {
     e.preventDefault();

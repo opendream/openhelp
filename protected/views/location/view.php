@@ -25,7 +25,9 @@ $this->menu=array(
 		'level3',
 		'level4',
 		'level5',
+		'label',
 		'lat',
 		'lng',
+		'disabled',
 	),
 )); ?>

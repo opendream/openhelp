@@ -1,7 +1,7 @@
-
 window.mapLoadded = (args) ->
+  info_window = new google.maps.InfoWindow
   myLatlng = new google.maps.LatLng(13.768, 100.554)
-  zoom = 12
+  zoom = 5
 
   myOptions = 
     scrollwheel: false
@@ -10,12 +10,13 @@ window.mapLoadded = (args) ->
     mapTypeId: google.maps.MapTypeId.ROADMAP
 
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions)
-
   basePath = Yii.settings.basePath
   $.getJSON "#{basePath}/api/request/?action=index", (nodes) ->
-    info_window = new google.maps.InfoWindow
-    markers = []
+    bounds = new google.maps.LatLngBounds
+    window.markers = []
     $.each nodes, (id, node) ->
+      #continue in foreach
+      return 0 if !node.lat or !node.lng
       placeLatLng = new google.maps.LatLng node?.lat, node?.lng
       marker = new google.maps.Marker({
         position: placeLatLng
@@ -23,8 +24,13 @@ window.mapLoadded = (args) ->
         title: node.label
       })
       markers.push marker
+      bounds.extend placeLatLng
       google.maps.event.addListener marker, 'click', ->
-        $.getJSON "#{basePath}/api/request?action=view&id=#{id}", (item_contents) ->
+        jxhr = $.getJSON "#{basePath}/api/request?action=view&id=#{id}", (item_contents) ->
           info_window.setContent item_contents
           info_window.open map, marker
+        jxhr.error (-> info_window.setContent 'ยังไม่มีข้อมูล'; info_window.open map, marker)
+    
     window.markerCluster = new MarkerClusterer map, markers
+    map.panTo bounds.getCenter()
+    map.fitBounds bounds
