@@ -27,15 +27,15 @@ class WidgetManager
 
   public static function getDateByLocation($id, $village = null)
   {
-    $qtxt = "SELECT date_created, date_updated INNER JOIN request ON location.id = request.location_id WHERE location_id = $id";
+    $qtxt = "SELECT request.date_created, request.last_updated FROM location INNER JOIN request ON location.id = request.location_id WHERE location.id = $id";
+
     if($village) {
       $qtxt .= " AND request.extra_location0 = '$village'";
     }
-    $qtxt .= " ORDER BY coordinator.fullname";
+    $qtxt .= " ORDER BY request.date_created";
     $command = Yii::app()->db->createCommand($qtxt);
 
     $dates = $command->queryAll();
-    print_r($dates);
   }
 
   public static function getAllItemDetails() {
