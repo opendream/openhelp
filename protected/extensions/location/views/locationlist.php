@@ -13,7 +13,7 @@ if ($model->$attribute || isset($_REQUEST['Location'])) {
     //$model = (object) $query;
     $locationModel = new Location;
     $locationModel->attributes = $query;
-    $queryWhereList = array();
+    $queryWhereList = array(1);
     foreach ($query as $level => $value) {
       $queryWhereList[] = $level.'="'.$value.'"';
     }

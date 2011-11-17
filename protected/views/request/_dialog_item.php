@@ -17,7 +17,7 @@
 			'<span>'. Yii::t('locale', 'Select Item', array()) .'</span>'.
 			CHtml::activedropDownList($model,'id',Item::model()->ItemList, array('prompt' => Yii::t('locale', '- Select -'))) .
             '<div class= "item-wrapper">'.
-	            '<span>'. Yii::t('locale', 'Amount', array()) .'</span>'.
+	            '<span>'. Yii::t('locale', 'Amount', array()) .' ('.Yii::t('locale', 'Please enter numberic') .')</span>'.
 	                CHtml::activeTextField(Need::model(), 'amount', array()).
             '</div>'.
             '<div class= "item-wrapper">'.

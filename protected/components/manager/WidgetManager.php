@@ -41,15 +41,40 @@ class WidgetManager
 
   public static function getRequestReport($id) {
   	//get request by location_id
+  	
+  	  $labels = array(
+  	'request.id' => Yii::t('locale', 'ID'),
+
+  	'date_created' => Yii::t('locale', 'Date Created'),
+  	'last_updated' => Yii::t('locale', 'Last Updated'),
+  	'status' => Yii::t('locale', 'Status'),
+  	"'' as coordinators" => Yii::t('locale', 'Coordinators'),
+  	"'' as needs" => Yii::t('locale', 'Needs'),
+  	);
+  	foreach(Yii::app()->params['location'] as $key) {
+  		$labels[$key] = Yii::t('locale', $key);	
+  	}
+  	foreach (Yii::app()->params['request']['extra']['location'] as $key => $value) {
+  		$labels['extra_location'.$key] = $value['label'];
+  	}
+  	foreach (Yii::app()->params['request']['extra']['double'] as $key => $value) {
+  		$labels['extra_double'.$key] = $value['label'];
+  	}
+  	foreach (Yii::app()->params['request']['extra']['text'] as $key => $value) {
+  		$labels['extra_text'.$key] = $value['label'];
+  	}
+  	
+  	$select = implode(', ', array_keys($labels));
   	$qtxt = "SELECT 
-     request.id, request.date_created, request.last_updated, location.level0, location.level1, location.level2, request.extra_location0, request.extra_location1, request.extra_location2, request.extra_location3, request.extra_location4, '' as coordinators, '' as needs, request.extra_text0, request.extra_text1, request.extra_text2, request.extra_text3, request.extra_text4, request.extra_text5, request.extra_text6, request.extra_text7, request.extra_text8, request.extra_text9, request.extra_text10, request.extra_text11, request.extra_text12, request.extra_text13, request.extra_text14, request.extra_double0, request.extra_double1, request.extra_double2, request.extra_double3, request.extra_double4, request.extra_double5, request.extra_double6, request.extra_double7, request.extra_double8, request.extra_double9
+     $select
 	FROM
      location INNER JOIN request ON location.id = request.location_id
   	WHERE location.id = $id ";
   	$command = Yii::app()->db->createCommand($qtxt);
     $requests = $command->queryAll();
 
-
+    $labels["coordinators"] = Yii::t('locale', 'Coordinators');
+    $labels["needs"] = Yii::t('locale', 'Needs');
 
     // add needs and coordinators
     foreach ($requests as &$request) {
@@ -65,25 +90,7 @@ class WidgetManager
     	unset($request['id']);
     }
 
-    $labels = array(
-	'coordinators' => Yii::t('locale', 'Coordinators'),
-	'needs' => Yii::t('locale', 'Needs'),
-	'date_created' => Yii::t('locale', 'Date Created'),
-	'last_updated' => Yii::t('locale', 'Last Updated'),
-	'status' => Yii::t('locale', 'Status'),
-	);
-	foreach(Yii::app()->params['location'] as $key) {
-		$labels[$key] = Yii::t('locale', $key);	
-	}
-	foreach (Yii::app()->params['request']['extra']['location'] as $key => $value) {
-		$labels['extra_location'.$key] = $value['label'];
-	}
-	foreach (Yii::app()->params['request']['extra']['double'] as $key => $value) {
-		$labels['extra_double'.$key] = $value['label'];
-	}
-	foreach (Yii::app()->params['request']['extra']['text'] as $key => $value) {
-		$labels['extra_text'.$key] = $value['label'];
-	}
+
 
 	$first = $requests[0];
 	$header = array();
@@ -323,32 +330,31 @@ class WidgetManager
 
     $qtxt = "SELECT concat(request.extra_location0,' ',$params) as label
         FROM location INNER JOIN request ON location.id = request.location_id
-        WHERE location.id = $id ";
+        WHERE location.id = $id AND $params <> '' AND $params <> '<p></p>' AND $params IS NOT NULL";
     if($village) {
       $qtxt .= " AND request.extra_location0 = '$village'";
     }
     
     $command = Yii::app()->db->createCommand($qtxt);
-    $extraTexts = $command->queryAll();
+    $extraTexts = $command->queryColumn();
     return $extraTexts;
   }
 
   public static function getRequestLocation() {
-    $qtxt = "SELECT distinct location_id 
-        FROM request
-        WHERE status != 2 OR status != 3 ";
+    $qtxt = "SELECT COUNT(id) 
+        FROM request";
     $command = Yii::app()->db->createCommand($qtxt);
-    $request_location = $command->queryColumn();
-    return count($request_location);
+    $request_location = $command->queryScalar();
+    return $request_location;
   }
 
   public static function getInProcessRequest() {
-    $qtxt = "SELECT count(id) as requestNo
+    $qtxt = "SELECT count(id)
         FROM request
         WHERE status != 2 OR status != 3 ";
     $command = Yii::app()->db->createCommand($qtxt);
-    $requestNo = $command->queryColumn();
-    return $requestNo[0];
+    $requestNo = $command->queryScalar();
+    return $requestNo;
   }
 
   public static function findItemById($items, $id) {

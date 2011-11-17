@@ -13,32 +13,17 @@
         </tbody>
     </table>
     <div class="request_extra_text">
-    <?php foreach ($allExtraTexts as $label => $value): ?>
-      <?php 
-        $isEmpty = true;
-        foreach ($value as $v) {
-          if($v['label']) {
-            $isEmpty = false;
-            break;
-          }
-        } 
-      ?>
-      <?php if (!$isEmpty ): ?>
-    
+    <?php foreach ($allExtraTexts as $label => $value): ?>  
+      <?php if (!empty($value)): ?>
         <div class="col2">
         <h2><?php echo $label ?></h2>
             <ul>
             <?php foreach ($value as $node): ?>
-                <?php if ($node['label']): ?>
-                  <li><?php echo $node['label']; ?></li>
-                <?php endif ?>
-
+                <li><?php echo $node; ?></li>
             <?php endforeach ?>
-
             </ul>
         </div><!-- /sth -->
       <?php endif ?>
-  
     <?php endforeach ?>
     </div>
 </section> <!-- /st-detail -->

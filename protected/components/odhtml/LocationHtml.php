@@ -43,6 +43,9 @@ Class LocationHtml extends CHtml {
         if (isset($options['style']) && $options['style'] == 'reverse') {
           $row = array_reverse($row);
         }
+        elseif (isset($options['style']) && $options['style'] == 'pain') {
+          return implode('-', $row);
+        }
         $output .= '<ul>';
         foreach ($row as $level => $value) {
           $output .= '<li>';
