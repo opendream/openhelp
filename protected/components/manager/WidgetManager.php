@@ -330,13 +330,13 @@ class WidgetManager
 
     $qtxt = "SELECT concat(request.extra_location0,' ',$params) as label
         FROM location INNER JOIN request ON location.id = request.location_id
-        WHERE location.id = $id ";
+        WHERE location.id = $id AND $params <> '' AND $params <> '<p></p>' AND $params IS NOT NULL";
     if($village) {
       $qtxt .= " AND request.extra_location0 = '$village'";
     }
     
     $command = Yii::app()->db->createCommand($qtxt);
-    $extraTexts = $command->queryAll();
+    $extraTexts = $command->queryColumn();
     return $extraTexts;
   }
 

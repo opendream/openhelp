@@ -535,6 +535,9 @@ nav {
 * Location
 */
 #request-location {}
+.request_coordinators li p {
+  margin-bottom: 0px;
+}
 
 
 

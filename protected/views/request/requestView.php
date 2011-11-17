@@ -4,8 +4,6 @@
 	echo $this->renderPartial('_database_detail_need', array('items' => $items	));
 	$coordinators_params = array(
 		'coordinators' => $coordinators,
-		'journey' => $extra['journey'],
-		'remark' => $extra['remark'],
 		'location_text' => $location_text, 
 		'allExtraTexts' => $allExtraTexts
 	);

@@ -188,11 +188,8 @@ class RequestController extends Controller
 	  
 		$items = WidgetManager::getItemDetails($id);
 		$coordinators = WidgetManager::getCoordinators($id);
-		$journey_detail = WidgetManager::getExtratexts($id, 5);
-		$remark_detail = WidgetManager::getExtratexts($id, 6);
 		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
 		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
-		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
 		$allExtraTexts = WidgetManager::getAllExtratexts($id);
 
 		$extraDouble = array(
@@ -202,7 +199,6 @@ class RequestController extends Controller
 		$params = array(
 			'items' => $items, 
 			'coordinators' => $coordinators, 
-			'extra' => $extra,
 			'location_text' => $location_text,
 			'location_extra0s' => $extraLocation0s,
 			'extraDouble' => $extraDouble,
@@ -217,11 +213,8 @@ class RequestController extends Controller
 	    $this->layout='layout1';
 		$items = WidgetManager::getItemDetails($id, $village);
 		$coordinators = WidgetManager::getCoordinators($id, $village);
-		$journey_detail = WidgetManager::getExtratexts($id, 5, $village);
-		$remark_detail = WidgetManager::getExtratexts($id, 6, $village);
 		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
 		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
-		$extra = array('journey'=> $journey_detail, 'remark' => $remark_detail);
 		$allExtraTexts = WidgetManager::getAllExtratexts($id, $village);
 
 		$extraDouble = array(
@@ -231,7 +224,6 @@ class RequestController extends Controller
 		$params = array(
 			'items' => $items, 
 			'coordinators' => $coordinators, 
-			'extra' => $extra,
 			'location_text' => $location_text,
 			'location_extra0s' => $extraLocation0s,
 			'extraDouble' => $extraDouble,
