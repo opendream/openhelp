@@ -6,13 +6,30 @@ $orgAddresses = $addresses;
 $firstLevelCol = array_shift($addresses);
 $children = $addresses[0];
 $locationModel = new Location;
-if ($id = $model->$attribute) {
-  $locationModel = $model->location;
+if ($model->$attribute || isset($_REQUEST['Location'])) {
   $selectList = implode(', ', $orgAddresses);
-  $qtxt = "SELECT $selectList FROM location WHERE id = $id";
+  if (isset($_REQUEST['Location'])) {
+    $query = array_filter($_REQUEST['Location']);
+    //$model = (object) $query;
+    $locationModel = new Location;
+    $locationModel->attributes = $query;
+    $queryWhereList = array();
+    foreach ($query as $level => $value) {
+      $queryWhereList[] = $level.'="'.$value.'"';
+    }
+    $queryWhere = implode(' AND ', $queryWhereList);
+    $qtxt = "SELECT $selectList FROM location WHERE $queryWhere";
+  }
+  else {
+    $id = $model->$attribute;
+    $locationModel = $model->location;
+    $qtxt = "SELECT $selectList FROM location WHERE id = $id";
+
+  }
+  
   $command = Yii::app()->db->createCommand($qtxt);
   $row = $command->queryRow();
-  
+
   $levelList = array_keys($row);
   array_pop($row);
   $whereList = array(array_shift($levelList) => 1);
@@ -45,7 +62,7 @@ foreach ($firstLevelRows as $row) {
   $firstLevel[$row[$firstLevelCol]] = $row[$firstLevelCol];
 }
 
-$defaultOptions = array('prompt' => Yii::t('locale', '- Select -'));
+$defaultOptions = array('prompt' => '- '. Yii::t('locale', $firstLevelCol). ' -');
 $locationOptions = $defaultOptions;
 if ($children) {
   $locationOptions['ajax'] = array(
@@ -73,16 +90,19 @@ $output .= '<span id="Location_id_wrapper">';
 $output .=   CHtml::activeHiddenField($model, $attribute);
 $output .= '</span>';
 $output .= '<span id="Location_'.$firstLevelCol.'_wrapper" class="'.implode(' ', $addresses).'">';
-$output .=   CHtml::activeLabelEx($locationModel,Yii::t('locale',"$firstLevelCol"));
+//$output .=   CHtml::activeLabelEx($locationModel,Yii::t('locale',"$firstLevelCol"));
 $output .=   CHtml::activedropDownList($locationModel, $firstLevelCol, $firstLevel, $locationOptions);
 $output .= '</span>';
 
 while (!empty($addresses)) {
+
   $address = array_shift($addresses);
-  $data = isset($id)? $levelData[$address]: array();
+  $defaultOptions = array('prompt' => '- '. Yii::t('locale', $address). ' -');
+    
+  $data = (isset($id) || isset($_REQUEST['Location']))? $levelData[$address]: array();
   
   $output .= '<span id="Location_'.$address.'_wrapper" class="'.implode(' ', $addresses).'">';
-	$output .=   CHtml::activeLabelEx($locationModel, Yii::t('locale', $address));
+	//$output .=   CHtml::activeLabelEx($locationModel, Yii::t('locale', $address));
 	$output .=   Chtml::activedropDownList($locationModel, $address, $data, $defaultOptions);
 	$output .= '</span>';
 }
