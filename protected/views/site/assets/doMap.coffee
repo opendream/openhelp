@@ -4,23 +4,23 @@ window.mapLoadded = (args) ->
     url: "#{basePath}/images/m1.png",
     height: 53,
     width: 52,
-    anchor: [16, 0],
+    # anchor: [16, 0],
     textColor: '#ffffff',
-    textSize: 10
+    textSize: 11
   }, {
     url: "#{basePath}/images/m2.png",
     height: 56,
     width: 55,
-    anchor: [24, 0],
+    # anchor: [16, 0],
     textColor: '#ffffff',
     textSize: 11
   }, {
     url: "#{basePath}/images/m3.png",
     height: 66,
     width: 65,
-    anchor: [32, 0],
+    # anchor: [32, 0],
     textColor: '#ffffff',
-    textSize: 12
+    textSize: 11
   }]
 
   info_window = new google.maps.InfoWindow
