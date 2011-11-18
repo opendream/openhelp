@@ -1,9 +1,24 @@
 (function() {
   window.mapLoadded = function(args) {
-    var basePath, info_window, map, myLatlng, myOptions, zoom;
+    var basePath, info_window, map, myLatlng, myOptions, styleMapType, styledMapOptions, stylez, zoom;
     info_window = new google.maps.InfoWindow;
     myLatlng = new google.maps.LatLng(13.768, 100.554);
     zoom = 5;
+    stylez = [
+      {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+          {
+            "hue": "#00c3ff"
+          }
+        ]
+      }
+    ];
+    styledMapOptions = {
+      name: "labels"
+    };
+    styleMapType = new google.maps.StyledMapType(stylez, styledMapOptions);
     myOptions = {
       scrollwheel: false,
       zoom: zoom,
@@ -11,6 +26,8 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    map.mapTypes.set('labels', styleMapType);
+    map.setMapTypeId('labels');
     basePath = Yii.settings.basePath;
     return $.getJSON("" + basePath + "/api/request/?action=index", function(nodes) {
       var bounds;
@@ -33,7 +50,7 @@
           var jxhr;
           jxhr = $.getJSON("" + basePath + "/api/request?action=view&id=" + id, function(item_contents) {
             info_window.setContent(item_contents);
-            return info_window.open(map, marker);
+            info_window.open(map, marker);
           });
           return jxhr.error((function() {
             info_window.setContent('ยังไม่มีข้อมูล');
