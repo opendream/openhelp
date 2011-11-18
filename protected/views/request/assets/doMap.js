@@ -1,6 +1,31 @@
 (function() {
   window.mapLoadded = function(args) {
-    var basePath, location_id, map, myLatlng, myOptions, styleMapType, styledMapOptions, stylez, zoom;
+    var basePath, location_id, map, myLatlng, myOptions, styleMapType, styledMapOptions, styles, stylez, zoom;
+    basePath = Yii.settings.basePath;
+    styles = [
+      {
+        url: "" + basePath + "/images/m1.png",
+        height: 53,
+        width: 52,
+        anchor: [16, 0],
+        textColor: '#ffffff',
+        textSize: 10
+      }, {
+        url: "" + basePath + "/images/m2.png",
+        height: 56,
+        width: 55,
+        anchor: [24, 0],
+        textColor: '#ffffff',
+        textSize: 11
+      }, {
+        url: "" + basePath + "/images/m3.png",
+        height: 66,
+        width: 65,
+        anchor: [32, 0],
+        textColor: '#ffffff',
+        textSize: 12
+      }
+    ];
     myLatlng = new google.maps.LatLng(13.768, 100.554);
     zoom = 14;
     stylez = [
@@ -27,7 +52,6 @@
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     map.mapTypes.set('labels', styleMapType);
     map.setMapTypeId('labels');
-    basePath = Yii.settings.basePath;
     location_id = Yii.settings.location_id;
     return $.getJSON("" + basePath + "/api/request/?action=locationView&id=" + location_id, function(nodes) {
       var info_window, markers;
@@ -56,7 +80,9 @@
           });
         });
       });
-      return window.markerCluster = new MarkerClusterer(map, markers);
+      return window.markerCluster = new MarkerClusterer(map, markers, {
+        styles: styles
+      });
     });
   };
 }).call(this);

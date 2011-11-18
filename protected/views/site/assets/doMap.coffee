@@ -1,4 +1,28 @@
 window.mapLoadded = (args) ->
+  basePath = Yii.settings.basePath
+  styles = [{
+    url: "#{basePath}/images/m1.png",
+    height: 53,
+    width: 52,
+    anchor: [16, 0],
+    textColor: '#ffffff',
+    textSize: 10
+  }, {
+    url: "#{basePath}/images/m2.png",
+    height: 56,
+    width: 55,
+    anchor: [24, 0],
+    textColor: '#ffffff',
+    textSize: 11
+  }, {
+    url: "#{basePath}/images/m3.png",
+    height: 66,
+    width: 65,
+    anchor: [32, 0],
+    textColor: '#ffffff',
+    textSize: 12
+  }]
+
   info_window = new google.maps.InfoWindow
   myLatlng = new google.maps.LatLng(13.768, 100.554)
   zoom = 5
@@ -18,7 +42,6 @@ window.mapLoadded = (args) ->
   map.mapTypes.set('labels', styleMapType)
   map.setMapTypeId('labels')
 
-  basePath = Yii.settings.basePath
   $.getJSON "#{basePath}/api/request/?action=index", (nodes) ->
     bounds = new google.maps.LatLngBounds
     window.markers = []
@@ -41,6 +64,7 @@ window.mapLoadded = (args) ->
           return
         jxhr.error (-> info_window.setContent 'ยังไม่มีข้อมูล'; info_window.open map, marker)
     
-    window.markerCluster = new MarkerClusterer map, markers
+
+    window.markerCluster = new MarkerClusterer map, markers, styles: styles
     map.panTo bounds.getCenter()
     map.fitBounds bounds
