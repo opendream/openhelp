@@ -7,6 +7,7 @@
         <span class="value"><?php echo $item['amount']; ?></span>
       </div>
     </div>
+    <div class="tooltip-popup"> <?php echo $item['name'] ?> </div>
   </li>
   <?php endforeach ?>
 </ul>
