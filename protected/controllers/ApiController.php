@@ -35,7 +35,8 @@ class ApiController extends Controller
 	    $data = Request::model()->findByPk($id);
         if($data === null)
             throw new CHttpException(404,'No Data.');	   
-	    $result = $this->renderPartial('//request/_view', array('data'=>$data), true);
+	    $result = $this->renderPartial('//request/_map_popup', array('data'=>$data), true);
+	    // print_r($data);
 	    echo CJSON::encode($result);
 	  }
 	  
