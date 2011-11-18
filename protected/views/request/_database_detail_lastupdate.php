@@ -7,9 +7,9 @@
 </header>
 <section class="st-update drop-shadow curved curved-hz-1">
 <div id="entry-date">
-    <span class="year">2011</span>
-    <span class="day">15</span>
-    <span class="month">11</span>
+    <span class="year"><?php echo $sdate[0]; ?></span>
+    <span class="day"><?php echo $sdate[2]; ?></span>
+    <span class="month"><?php echo $sdate[1]; ?></span>
 </div> <!-- /entry-date -->
 
   <div class="entry-update extra-double">

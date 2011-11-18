@@ -191,6 +191,11 @@ class RequestController extends Controller
 		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
 		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
 		$allExtraTexts = WidgetManager::getAllExtratexts($id);
+		$post_date = WidgetManager::getDateByLocation($id, $village);
+		$last_updated = $post_date[0]['last_updated'];
+		$cdate = explode(" ", $last_updated);
+		$cdate = $cdate[0];
+		$sdate = explode("-", $cdate);
 
 		$extraDouble = array(
 			'sum' => WidgetManager::getSumExtraDouble($id),
@@ -204,6 +209,7 @@ class RequestController extends Controller
 			'extraDouble' => $extraDouble,
 			'location_id' => $id,
 			'allExtraTexts' => $allExtraTexts,			
+			'sdate' => $sdate,
 		);
 		$this->render('locationView', $params);
 	}	
@@ -216,6 +222,12 @@ class RequestController extends Controller
 		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
 		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
 		$allExtraTexts = WidgetManager::getAllExtratexts($id, $village);
+		$post_date = WidgetManager::getDateByLocation($id, $village);
+		$last_updated = $post_date[0]['last_updated'];
+		$cdate = explode(" ", $last_updated);
+		$cdate = $cdate[0];
+		$sdate = explode("-", $cdate);
+
 
 		$extraDouble = array(
 			'sum' => WidgetManager::getSumExtraDouble($id),
@@ -229,6 +241,7 @@ class RequestController extends Controller
 			'extraDouble' => $extraDouble,
 			'location_id' => $id,
 			'allExtraTexts' => $allExtraTexts,
+			'sdate' => $sdate,
 		);
 		$this->render('requestView', $params);
 	}
