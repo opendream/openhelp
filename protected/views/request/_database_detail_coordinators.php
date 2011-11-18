@@ -4,11 +4,11 @@
     <h2>ผู้ประสานงานในพื้นที่</h2>
     <table class="zebra-striped request_coordinators">
         <thead>
-          <tr><th>ชื่อ - นามสกุล</th><th>ตำแหน่ง</th><th>เบอร์โทรศัพท์</th></tr>
+          <tr><th>ชื่อ - นามสกุล</th><th>ตำแหน่ง</th><th>เบอร์โทรศัพท์</th><th>หมู่บ้าน</th></tr>
         </thead>
         <tbody>
         <?php foreach ($coordinators as $person): ?>
-          <tr><td><?php echo $person['fullname'] ?></td><td><?php echo $person['position']?></td><td><?php echo $person['tel'] ?></td></tr>
+          <tr><td><?php echo $person['fullname'] ?></td><td><?php echo $person['position']?></td><td><?php echo $person['tel'] ?></td><td><?php echo $person['extra_location0'] ?></td></tr>
         <?php endforeach ?>
         </tbody>
     </table>

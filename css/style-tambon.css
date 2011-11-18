@@ -123,7 +123,7 @@ footer{
 }
 
 #section-report h2, #section-database header h2, #entry-1 header h1{
-	font-size: 36px;
+	font-size: 32px;
 	margin-bottom: 15px;
 	font-family: DBMettaXMedium;
 	font-weight: lighter;
@@ -348,7 +348,7 @@ nav {
 		margin: 0 0 10px;
 		line-height: 1.8em;
 	}
-	#rp-list span, #rp-sticky span, #situation-list article span, .date-time{ /* Time */
+	#rp-list span, #rp-sticky span, #content-item-list article span, .date-time{ /* Time */
 		padding: 3px 7px;
 		background: #dbdbdb;
 		font-size: 11px;
@@ -365,7 +365,7 @@ nav {
 
 
 /* สถานการณ์ */
-#situation-list article {
+#content-item-list article {
   width: 760px;
   overflow: hidden;
   padding: 20px;
@@ -373,23 +373,23 @@ nav {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-#situation-list article.odd {
+#content-item-list article.odd {
 	background: #f2f2f2;
 }
-#situation-list article.even {
+#content-item-list article.even {
 	background: #fff;
 }
-#situation-list article span {
+#content-item-list article span {
 	float: left;
 	margin-right: 20px;
 }
-#situation-list article p.title {
+#content-item-list article p.title {
 	float: left;
 	margin-right: 20px;
 	width: 220px;
 	font-size: 1.1em;
 }
-#situation-list article p.desc {
+#content-item-list article p.desc {
 	float: left;
 	width: 370px;
 }
@@ -699,9 +699,13 @@ nav {
 
 /* สิ่งของที่ต้องการ block */
 #request-locationView .st-need, #request-requestView .st-need{
+/*
 	position: absolute;
 	top: 37px;
 	right: 0;
+*/
+	float: right;
+	margin-top: -450px;
 	width: 230px;
 	padding: 20px 0 20px 25px;
 }
@@ -959,7 +963,9 @@ table tbody th {
 	width: 100px;
 }
 
-
+/**********************
+		Button Section
+**********************/
 /* Button */
 .btn.danger,
 .alert-message.danger,
@@ -1031,7 +1037,7 @@ table tbody th {
   border-color: #339bb9 #339bb9 #22697d;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
-.btn {
+.btn, #find-location-submit {
   cursor: pointer;
   display: inline-block;
   background-color: #e6e6e6;
@@ -1043,7 +1049,7 @@ table tbody th {
   background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
   background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
-  padding: 5px 14px 6px;
+  padding: 3px 14px 3px;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   color: #333;
   font-size: 13px;
@@ -1062,7 +1068,7 @@ table tbody th {
   -o-transition: 0.1s linear all;
   transition: 0.1s linear all;
 }
-.btn:hover {
+.btn:hover, #find-location-submit:hover {
   background-position: 0 -15px;
   color: #333;
   text-decoration: none;

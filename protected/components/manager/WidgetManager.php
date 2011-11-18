@@ -10,7 +10,7 @@ class WidgetManager
     $result['requests'] = $location->requests;
 
     //get coordinators
-    $qtxt = "SELECT distinct coordinator.fullname, coordinator.position, coordinator.tel
+    $qtxt = "SELECT distinct coordinator.fullname, coordinator.position, coordinator.tel, request.extra_location0 
          FROM location INNER JOIN request ON location.id = request.location_id
           INNER JOIN request_coordinator ON request.id = request_coordinator.request_id
           INNER JOIN coordinator ON request_coordinator.coordinator_id = coordinator.id
@@ -32,10 +32,11 @@ class WidgetManager
     if($village) {
       $qtxt .= " AND request.extra_location0 = '$village'";
     }
-    $qtxt .= " ORDER BY request.date_created";
+    $qtxt .= " ORDER BY request.last_updated";
     $command = Yii::app()->db->createCommand($qtxt);
-
     $dates = $command->queryAll();
+
+    return $dates;
   }
 
 

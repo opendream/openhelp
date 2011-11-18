@@ -1,12 +1,12 @@
 <?php
-	echo $this->renderPartial('_database_detail_lastupdate', array('extraDouble' => $extraDouble, 'location_text' => $location_text, 'location_id' => $location_id));
+	echo $this->renderPartial('_database_detail_lastupdate', array('extraDouble' => $extraDouble, 'location_text' => $location_text, 'location_id' => $location_id, 'sdate'=> $sdate));
 	echo $this->renderPartial('_database_detail_map', array('location_id' => $location_id));
 	echo $this->renderPartial('_database_detail_need', array('items' => $items	));
 
 	$coordinators_params = array(
 		'coordinators' => $coordinators,
 		'location_text' => $location_text,
-		'allExtraTexts' => $allExtraTexts
+		'allExtraTexts' => $allExtraTexts,
 	);
 	echo $this->renderPartial('_database_detail_coordinators', $coordinators_params);
 	echo $this->renderPartial('_database_detail_villages', array('location_extra0s' => $location_extra0s, 'location_id' => $location_id));

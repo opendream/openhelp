@@ -24,6 +24,14 @@ return array(
   'Number detail' => 'ข้อมูลตัวเลข',
   'Find' => 'ค้นหา',
   'Export to CSV' => 'ส่งออกเป็น csv',
+  'Contents' => 'เนื้อหา', 
+  'Content' => 'เนื้อหา', 
+
+  'List'   => 'รายการ',
+  'View'   => 'ดู',
+  'Create' => 'สร้าง',
+  'Update' => 'แก้ไข',
+  'Delete' => 'ลบ',
    
   /*
   * Location

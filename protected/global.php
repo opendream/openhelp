@@ -58,7 +58,7 @@ function l($text, $url = '#', $htmlOptions = array())
 /**
  * This is the shortcut to Yii::t() with default category = 'stay'
  */
-function t($message, $category = 'stay', $params = array(), $source = null, $language = null) 
+function t($message, $category = 'locale', $params = array(), $source = null, $language = null) 
 {
     return Yii::t($category, $message, $params, $source, $language);
 }
@@ -82,6 +82,36 @@ function bu($url=null)
 function param($name) 
 {
     return Yii::app()->params[$name];
+}
+
+function truncate_utf8($string, $len, $wordsafe = FALSE, $dots = FALSE) {
+
+  if (mb_strlen($string) <= $len) {
+    return $string;
+  }
+
+  if ($dots) {
+    $len -= 4;
+  }
+
+  if ($wordsafe) {
+    $string = mb_substr($string, 0, $len + 1); // leave one more character
+    if ($last_space = strrpos($string, ' ')) { // space exists AND is not on position 0
+      $string = substr($string, 0, $last_space);
+    }
+    else {
+      $string = mb_substr($string, 0, $len);
+    }
+  }
+  else {
+    $string = mb_substr($string, 0, $len);
+  }
+
+  if ($dots) {
+    $string .= ' ...';
+  }
+
+  return $string;
 }
 
 ?>
