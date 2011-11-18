@@ -207,7 +207,7 @@ CREATE TABLE `content` (
   `date_created` datetime NOT NULL,
   `last_updated` datetime NOT NULL,
   `title` varchar(255) NOT NULL,
-  `detail` bigint(20),
+  `detail` text,
 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

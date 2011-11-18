@@ -41,7 +41,7 @@ class Content extends CActiveRecord
 			array('type, date_created, last_updated, title', 'required'),
 			array('type', 'length', 'max'=>60),
 			array('title', 'length', 'max'=>255),
-			array('detail', 'length', 'max'=>20),
+			array('detail', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, type, date_created, last_updated, title, detail', 'safe', 'on'=>'search'),

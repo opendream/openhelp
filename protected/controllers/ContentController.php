@@ -50,6 +50,7 @@ class ContentController extends Controller
 	 */
 	public function actionView($id)
 	{
+	  $this->layout='//layouts/layout1';
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -127,7 +128,19 @@ class ContentController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Content');
+	  $type = isset($_GET['type'])? $_GET['type']: null;
+	  
+		$dataProvider=new CActiveDataProvider('Content', array(
+		  'criteria'=>array(
+          'condition'=>"type='$type'",
+          'order'=>'date_created DESC',
+          //'with'=>array('title', 'date_created', 'detail'),
+      ),
+      'pagination'=>array(
+          'pageSize'=>20,
+      ),
+		));
+		
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
