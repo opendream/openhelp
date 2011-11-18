@@ -361,7 +361,7 @@ nav {
 		margin: 0 0 10px;
 		line-height: 1.8em;
 	}
-	#rp-list span, #rp-sticky span, #situation-list article span, .date-time{ /* Time */
+	#rp-list span, #rp-sticky span, #content-item-list article span, .date-time{ /* Time */
 		padding: 3px 7px;
 		background: #dbdbdb;
 		font-size: 11px;
@@ -378,7 +378,7 @@ nav {
 
 
 /* สถานการณ์ */
-#situation-list article {
+#content-item-list article {
   width: 760px;
   overflow: hidden;
   padding: 20px;
@@ -386,23 +386,23 @@ nav {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-#situation-list article.odd {
+#content-item-list article.odd {
 	background: #f2f2f2;
 }
-#situation-list article.even {
+#content-item-list article.even {
 	background: #fff;
 }
-#situation-list article span {
+#content-item-list article span {
 	float: left;
 	margin-right: 20px;
 }
-#situation-list article p.title {
+#content-item-list article p.title {
 	float: left;
 	margin-right: 20px;
 	width: 220px;
 	font-size: 1.1em;
 }
-#situation-list article p.desc {
+#content-item-list article p.desc {
 	float: left;
 	width: 370px;
 }

@@ -1,6 +1,6 @@
 <?php
 
-class RequestController extends Controller
+class ContentController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -27,7 +27,7 @@ class RequestController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'locationView', 'requestView', 'location'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -50,6 +50,7 @@ class RequestController extends Controller
 	 */
 	public function actionView($id)
 	{
+	  $this->layout='//layouts/layout1';
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -61,26 +62,16 @@ class RequestController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Request;
+		$model=new Content;
+
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Request']))
+		if(isset($_POST['Content']))
 		{
-			//$model->attributes=$_POST['Request'];
-
-			// Request Manager
-			$reqManager = new RequestManager;
-			$model = $reqManager->create($_POST['Request']);
-
-			if($model->id!=null){
-
+			$model->attributes=$_POST['Content'];
+			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-			} 
-			// else {
-			// 	Yii::app()->user->setFlash('error', 'save error');
-			//     $this->controller->redirect(array('request/index'));
-			// }
 		}
 
 		$this->render('create',array(
@@ -96,15 +87,14 @@ class RequestController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Request']))
+		if(isset($_POST['Content']))
 		{
-			$reqManager = new RequestManager;
-			$model = $reqManager->update($model, $_POST['Request']);
-
-			if($model->id!=null)
+			$model->attributes=$_POST['Content'];
+			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -123,11 +113,7 @@ class RequestController extends Controller
 		if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
-			$model = $this->loadModel($id);
-
-			// RequestManager Serivce
-			$reqManager = new RequestManager;
-			$reqManager->delete($model);
+			$this->loadModel($id)->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
@@ -142,108 +128,37 @@ class RequestController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Request');
+	  $type = isset($_GET['type'])? $_GET['type']: null;
+	  
+		$dataProvider=new CActiveDataProvider('Content', array(
+		  'criteria'=>array(
+          'condition'=>"type='$type'",
+          'order'=>'date_created DESC',
+          //'with'=>array('title', 'date_created', 'detail'),
+      ),
+      'pagination'=>array(
+          'pageSize'=>20,
+      ),
+		));
+		
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
-	
+
 	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
 	{
-		$model=new Request('search');
+		$model=new Content('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Request']))
-			$model->attributes=$_GET['Request'];
+		if(isset($_GET['Content']))
+			$model->attributes=$_GET['Content'];
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
-	}
-	
-	/**
-	 * Lists all models.
-	 */
-	public function actionLocation()
-	{
-	  $this->layout='layout1';
-	  
-		$this->render('location', array(
- 			'page' => isset($_GET['page'])? $_GET['page']: 0,
- 			'ipp' => isset($_GET['ipp'])? $_GET['ipp']: 15,
- 			'search' => true,
- 		));
-	}
-
-
-	/**
-	 *  LocationView [level 1]
-	 */
-
-	public function actionLocationView($id)
-	{
-	 	 $this->layout='layout1';
-	  
-		$items = WidgetManager::getItemDetails($id);
-		$coordinators = WidgetManager::getCoordinators($id);
-		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
-		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
-		$allExtraTexts = WidgetManager::getAllExtratexts($id);
-		$post_date = WidgetManager::getDateByLocation($id, $village);
-		$last_updated = $post_date[0]['last_updated'];
-		$cdate = explode(" ", $last_updated);
-		$cdate = $cdate[0];
-		$sdate = explode("-", $cdate);
-
-		$extraDouble = array(
-			'sum' => WidgetManager::getSumExtraDouble($id),
-			'water_level' => WidgetManager::getMinMaxExtraDouble($id),
-		);
-		$params = array(
-			'items' => $items, 
-			'coordinators' => $coordinators, 
-			'location_text' => $location_text,
-			'location_extra0s' => $extraLocation0s,
-			'extraDouble' => $extraDouble,
-			'location_id' => $id,
-			'allExtraTexts' => $allExtraTexts,			
-			'sdate' => $sdate,
-		);
-		$this->render('locationView', $params);
-	}	
-
-	public function actionRequestView($id, $village=null)
-	{
-	    $this->layout='layout1';
-		$items = WidgetManager::getItemDetails($id, $village);
-		$coordinators = WidgetManager::getCoordinators($id, $village);
-		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
-		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
-		$allExtraTexts = WidgetManager::getAllExtratexts($id, $village);
-		$post_date = WidgetManager::getDateByLocation($id, $village);
-		$last_updated = $post_date[0]['last_updated'];
-		$cdate = explode(" ", $last_updated);
-		$cdate = $cdate[0];
-		$sdate = explode("-", $cdate);
-
-
-		$extraDouble = array(
-			'sum' => WidgetManager::getSumExtraDouble($id),
-			'water_level' => WidgetManager::getMinMaxExtraDouble($id),
-		);
-		$params = array(
-			'items' => $items, 
-			'coordinators' => $coordinators, 
-			'location_text' => $location_text,
-			'location_extra0s' => $extraLocation0s,
-			'extraDouble' => $extraDouble,
-			'location_id' => $id,
-			'allExtraTexts' => $allExtraTexts,
-			'sdate' => $sdate,
-		);
-		$this->render('requestView', $params);
 	}
 
 	/**
@@ -253,7 +168,7 @@ class RequestController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Request::model()->findByPk($id);
+		$model=Content::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -265,7 +180,7 @@ class RequestController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='request-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='content-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

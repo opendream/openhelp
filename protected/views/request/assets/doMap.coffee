@@ -1,5 +1,27 @@
-
 window.mapLoadded = (args) ->
+  basePath = Yii.settings.basePath
+  styles = [{
+    url: "#{basePath}/images/m1.png",
+    height: 53,
+    width: 52,
+    anchor: [16, 0],
+    textColor: '#ffffff',
+    textSize: 10
+  }, {
+    url: "#{basePath}/images/m2.png",
+    height: 56,
+    width: 55,
+    anchor: [24, 0],
+    textColor: '#ffffff',
+    textSize: 11
+  }, {
+    url: "#{basePath}/images/m3.png",
+    height: 66,
+    width: 65,
+    anchor: [32, 0],
+    textColor: '#ffffff',
+    textSize: 12
+  }]
   myLatlng = new google.maps.LatLng 13.768, 100.554
   zoom = 14
   stylez = ["featureType":"water","elementType":"all","stylers":["hue":"#00c3ff"]]
@@ -16,8 +38,6 @@ window.mapLoadded = (args) ->
   map.mapTypes.set('labels', styleMapType)
   map.setMapTypeId('labels')
 
-
-  basePath = Yii.settings.basePath
   location_id = Yii.settings.location_id
   $.getJSON "#{basePath}/api/request/?action=locationView&id=#{location_id}", (nodes) ->
     info_window = new google.maps.InfoWindow
@@ -38,4 +58,4 @@ window.mapLoadded = (args) ->
           info_window.setContent item_contents
           info_window.open map, marker
         jxhr.error -> alert 'error'
-    window.markerCluster = new MarkerClusterer map, markers
+    window.markerCluster = new MarkerClusterer map, markers, styles: styles

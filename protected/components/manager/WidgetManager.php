@@ -32,10 +32,11 @@ class WidgetManager
     if($village) {
       $qtxt .= " AND request.extra_location0 = '$village'";
     }
-    $qtxt .= " ORDER BY request.date_created";
+    $qtxt .= " ORDER BY request.last_updated";
     $command = Yii::app()->db->createCommand($qtxt);
-
     $dates = $command->queryAll();
+
+    return $dates;
   }
 
 

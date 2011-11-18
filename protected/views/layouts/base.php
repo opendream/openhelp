@@ -27,7 +27,7 @@
     				array('label'=> Yii::t('locale','news'), 'url'=>array('/')),
     			);
     			foreach (Yii::app()->params['pages'] as $url => $page) {
-    			  $menu[] = array('label'=> Yii::t('locale',$page['label']), 'url'=>array('/'.$url));
+    			  $menu[] = array('label'=> Yii::t('locale',$page['label']), 'url'=>array('/page/'.$url));
     			}
   			?>
 				<?php $this->widget('zii.widgets.CMenu',array('items'=>$menu)); ?>
