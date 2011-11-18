@@ -41,7 +41,6 @@
 
   <div id="footer">	
 		<footer>
-		  <?php $this->widget('zii.widgets.CMenu',array('id' => 'nav-footer', 'items'=>$menu)); ?>
 			<div id="footer-copyright">
 				<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/th/"><img src="<?php echo bu('images/cc-80x15.png'); ?>" width="80" height="15" alt="สัญญาอนุญาต cc by-nc-sa" title="สัญญาอนุญาต cc by-nc-sa แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 3.0 ประเทศไทย"></a>แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 3.0 ประเทศไทย
 			</div>
