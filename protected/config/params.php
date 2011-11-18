@@ -1,7 +1,8 @@
 <?php
 return array(
   'adminEmail'=>'webmaster@example.com',
-	'location'=>array('level0','level1','level2'),
+	'location'=>array('level0','level1','level2', 'level3'),
+	'locationDisplay'=>array('level1','level2', 'level3'),
 	'request'=>array(
 	  'extra' => array(
 	    'location' => array(
