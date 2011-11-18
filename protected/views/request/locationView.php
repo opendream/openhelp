@@ -6,7 +6,7 @@
 	$coordinators_params = array(
 		'coordinators' => $coordinators,
 		'location_text' => $location_text,
-		'allExtraTexts' => $allExtraTexts
+		'allExtraTexts' => $allExtraTexts,
 	);
 	echo $this->renderPartial('_database_detail_coordinators', $coordinators_params);
 	echo $this->renderPartial('_database_detail_villages', array('location_extra0s' => $location_extra0s, 'location_id' => $location_id));

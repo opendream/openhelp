@@ -35,8 +35,18 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'detail'); ?>
-		<?php echo $form->textArea($model,'detail',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'detail'); ?>
+		<?php $this->widget('ext.ckeditor.CKEditorWidget', array(
+		  "model"=>$model, 
+      "attribute"=>'detail',
+      "defaultValue"=>$model->getAttribute('detail'),
+      "config" => array(
+				"toolbar"=>array(
+				  array('Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink', 'Table', 'Image'),
+				),
+        "filebrowserBrowseUrl" => Yii::app()->baseUrl.'/filemanager/browser/default/browser.html?Connector='.Yii::app()->baseUrl.'/filemanager/connectors/php/connector.php',
+        "filebrowserImageBrowseUrl" =>  Yii::app()->baseUrl.'/filemanager/browser/default/browser.html?Type=Image&Connector='.Yii::app()->baseUrl.'/filemanager/connectors/php/connector.php',
+      )
+		)); ?>
 	</div>
 
 	<div class="row buttons">

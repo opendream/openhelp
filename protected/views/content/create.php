@@ -12,4 +12,4 @@ $this->menu=array(
 
 <h1>Create Content</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model, 'type'=>$type)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
