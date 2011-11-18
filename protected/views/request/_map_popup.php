@@ -1,5 +1,5 @@
 <div class="map-content-row">
-	<div class="detail"><?php echo LocationHtml::locationView($data->location_id); ?></div>
+	<div class="detail"><?php echo LocationHtml::locationView($data->location_id, array('style' => 'reverse')); ?></div>
 </div>
 <div class="map-content-row">
 	<span class="label">จำนวนครัวเรือน</span>
