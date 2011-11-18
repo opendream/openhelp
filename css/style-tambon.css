@@ -78,9 +78,23 @@ li {
 	border-top: 1px solid #ccc;
   border-bottom: 7px solid #cf614e;
 }
-#header-top section {
-
-}
+	/* 	Style Content */
+	.map-content-row {
+		margin: 0 0 5px;
+	}
+	.map-content-row.row-heading{
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #CCC;
+	}
+	.map-content-row .location1{
+		display: block;
+		font-size: 16px;
+	}
+	.map-content-row .location1 a,
+	.map-content-row label{
+		font-weight: bold;
+	}
 
 /* Content */
 #content {
@@ -128,7 +142,6 @@ footer{
 	font-family: DBMettaXMedium;
 	font-weight: lighter;
 }
-
 h1, h2{
 	margin-bottom: 10px;
 	font-size: 36px;
@@ -412,6 +425,9 @@ nav {
   float: left;
   list-style: none;
   margin: 0 0 20px;
+}
+.st-request .request_extra_text ul{
+	list-style: disc;
 }
   .st-request ul li {
 	  float: left;
@@ -710,6 +726,10 @@ nav {
 	padding: 20px 0 20px 25px;
 }
 
+*+html #request-locationView .st-need, *+html #request-requestView .st-need{
+	margin: 0;
+}
+
 /* 2 Cols - วิธีการเดินทางเข้าพื้นที่, ข้อสังเกตอื่น ๆ*/
 .col2{
 	float: left;
@@ -728,6 +748,10 @@ nav {
 .entry {
   position: relative;
 }
+.entry header h1{
+	float: left;
+	width: 680px;
+}
 .entry header ul{
 	list-style: none;
 	margin: 0;
@@ -736,6 +760,7 @@ nav {
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 20px;
+	line-height: 32px;
 }
 .entry-update{
 	width: 380px;
@@ -874,6 +899,7 @@ table tbody th {
 ********************/
 .tooltip-popup{
 	height: 15px;
+	min-width: 28px;
 	white-space: nowrap;
 	padding: 5px;
 	background: #333;
