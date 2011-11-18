@@ -27,9 +27,11 @@ article, aside, figure, footer, header, hgroup, nav, section {display: block;}
 /* Responsive images and other embedded objects
    Note: keeping IMG here will cause problems if you're using foreground images as sprites.
    If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+/*
 img,
 object,
 embed {max-width: 100%;}
+*/
 
 /* force a vertical scrollbar to prevent a jumpy page */
 html {overflow-y: scroll;}
@@ -140,7 +142,7 @@ a {color: #f15350; text-decoration: none}
 a:hover {color: #bc3a38; text-decoration: underline;}
 
 /* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
-::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
+::-moz-selection{background: #ff6666; color: #fff; text-shadow: none;}
 ::selection {background: #ff6666; color: #fff; text-shadow: none;} 
 
 /*	j.mp/webkit-tap-highlight-color */

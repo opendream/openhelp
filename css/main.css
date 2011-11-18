@@ -739,14 +739,14 @@ table td input, table td select  {width: 95% !important;}
 
 /* style block popup */
 .add_coordinator_dialog .item-wrapper {margin: 0 0 10px;}
-  .add_coordinator_dialog span, .dialog_input span {width: 90px; float: left; font-size: 0.9em}
+  .add_coordinator_dialog span, .dialog_input span {width: 150px; float: left; font-size: 0.9em}
 
 .dialog_input select, .dialog_input .item-wrapper {margin: 0 0 10px}  
 /* Create Request */
 div.form .row {margin: 0 0 15px;}
 #request-form .row {}
 .location-list, .coordinator-list, .need-list, .detail-list,
-.extra-text-0-list, .extra-text-1-list {
+.extra-text-list {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -755,6 +755,9 @@ div.form .row {margin: 0 0 15px;}
   overflow: hidden;
   width: auto;
   margin: 0 0 10px !important
+}
+.extra-text-list textarea {
+  width: 100%;
 }
 .location-list span {float: left; margin: 0 15px 0 0;}
 .extra-double  {padding: 5px 0 0; clear: both;}

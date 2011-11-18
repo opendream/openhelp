@@ -1,5 +1,11 @@
 <?php
 
+$query = isset($_REQUEST['Location'])? array_filter($_REQUEST['Location']): array();
+
+if (isset($query['id'])) {
+  unset($query['id']);
+}
+
 $addresses = Yii::app()->params['location'];
 // GROUP BY ==========
 $groupByList = $addresses;

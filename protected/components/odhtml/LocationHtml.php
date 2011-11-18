@@ -6,7 +6,7 @@ Class LocationHtml extends CHtml {
     if ($id) {
       $locationModel = new Location;
 
-      $levels = Yii::app()->params['location'];
+      $levels = Yii::app()->params['locationDisplay'];
       if (isset($options['showLatLng']) && $options['showLatLng']) {
         $levels[] = 'lat';
         $levels[] = 'lng';
@@ -42,6 +42,9 @@ Class LocationHtml extends CHtml {
       else {
         if (isset($options['style']) && $options['style'] == 'reverse') {
           $row = array_reverse($row);
+        }
+        elseif (isset($options['style']) && $options['style'] == 'pain') {
+          return implode('-', $row);
         }
         $output .= '<ul>';
         foreach ($row as $level => $value) {
