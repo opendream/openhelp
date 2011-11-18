@@ -17,8 +17,15 @@ if ($model->$attribute || isset($_REQUEST['Location'])) {
     foreach ($query as $level => $value) {
       $queryWhereList[] = $level.'="'.$value.'"';
     }
+    
+    $from = 'location';
+  
+    if (isset($join) && $join) {
+      $form .= ", $join";
+      $queryWhereList[] = "location.id = $join.id";
+    }
     $queryWhere = implode(' AND ', $queryWhereList);
-    $qtxt = "SELECT $selectList FROM location WHERE $queryWhere";
+    $qtxt = "SELECT $selectList FROM $from WHERE $queryWhere";
   }
   else {
     $id = $model->$attribute;

@@ -393,7 +393,11 @@ nav {
 	float: left;
 	width: 370px;
 }
-
+.no-result {
+  clear: both;
+  text-align: center;
+  padding-top: 25px;
+}
 
 
 /* map (Node) */

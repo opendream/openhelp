@@ -32,6 +32,8 @@ return array(
   'Create' => 'สร้าง',
   'Update' => 'แก้ไข',
   'Delete' => 'ลบ',
+  
+  'No results found.' => 'ไม่พบผลลัพธ์',
    
   /*
   * Location
