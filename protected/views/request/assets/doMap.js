@@ -47,6 +47,7 @@
         return google.maps.event.addListener(marker, 'click', function() {
           var jxhr;
           jxhr = $.getJSON("" + basePath + "/api/request?action=view&id=" + id, function(item_contents) {
+            item_contents = "<div class='content-map-row'>" + item_contents + "</div>";
             info_window.setContent(item_contents);
             return info_window.open(map, marker);
           });

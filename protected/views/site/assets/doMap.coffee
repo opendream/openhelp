@@ -35,6 +35,7 @@ window.mapLoadded = (args) ->
       bounds.extend placeLatLng
       google.maps.event.addListener marker, 'click', ->
         jxhr = $.getJSON "#{basePath}/api/request?action=view&id=#{id}", (item_contents) ->
+          item_contents = "<div class='content-map-row'>#{item_contents}</div>"
           info_window.setContent item_contents
           info_window.open map, marker
           return
