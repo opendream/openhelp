@@ -24,8 +24,10 @@
   			  $menu = array(
     				array('label'=> Yii::t('locale','home'), 'url'=>array('/')),
     				array('label'=> Yii::t('locale','database'), 'url'=>array('/request/location')),
-    				array('label'=> Yii::t('locale','news'), 'url'=>array('/')),
     			);
+    			foreach (Yii::app()->params['content'] as $type => $conf) {
+    			  $menu[] = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/content?type='.$type));
+    			}
     			foreach (Yii::app()->params['pages'] as $url => $page) {
     			  $menu[] = array('label'=> Yii::t('locale',$page['label']), 'url'=>array('/page/'.$url));
     			}

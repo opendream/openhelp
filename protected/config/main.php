@@ -48,6 +48,7 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 				
+				
 				'api/<controller:\w+>/<id:\d+>'=>'api/<controller>/view',
 				'api/<controller:\w+>/<action:\w+>/<id:\d+>'=>'api/<controller>/<action>',
 				'api/<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
