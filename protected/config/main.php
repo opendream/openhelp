@@ -49,6 +49,8 @@ return array(
 				'api/<controller:\w+>/<id:\d+>'=>'api/<controller>/view',
 				'api/<controller:\w+>/<action:\w+>/<id:\d+>'=>'api/<controller>/<action>',
 				'api/<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				
+				'<url:\w+>'=>'page/view',
 			),
 		),
 		

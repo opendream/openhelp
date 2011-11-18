@@ -3,6 +3,10 @@ return array(
   'adminEmail'=>'webmaster@example.com',
 	'location'=>array('level0','level1','level2', 'level3'),
 	'locationDisplay'=>array('level1','level2', 'level3'),
+	'pages' => array(
+	  'volunteer' => array('label' => 'อาสาสมัคร', 'file' => 'pages/volunteer.html'),
+	  'about' => array('label' => 'เกี่ยวกับเรา', 'url' => 'about', 'file' => 'pages/about.html'),
+	),
 	'request'=>array(
 	  'extra' => array(
 	    'location' => array(
