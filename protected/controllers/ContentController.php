@@ -60,7 +60,7 @@ class ContentController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($type)
 	{
 		$model=new Content;
 
@@ -73,6 +73,9 @@ class ContentController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+		
+		$model->type = $type;
+		$model->last_updated = $model->date_created = date('Y-m-d H:i:s');
 
 		$this->render('create',array(
 			'model'=>$model,
@@ -97,6 +100,8 @@ class ContentController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+		
+		$model->last_updated = date('Y-m-d H:i:s');
 
 		$this->render('update',array(
 			'model'=>$model,
@@ -128,21 +133,43 @@ class ContentController extends Controller
 	 */
 	public function actionIndex()
 	{
+	  $this->layout='//layouts/layout1';
 	  $type = isset($_GET['type'])? $_GET['type']: null;
 	  
-		$dataProvider=new CActiveDataProvider('Content', array(
+	  if ($type && !isset(Yii::app()->params['content'][$type])) {
+	    throw new CHttpException(400,'Invalid request. Please do not repeat this request again.'); 
+	  }
+	  
+	  if ($type) {
+	    $contentConf = Yii::app()->params['content'][$type];
+  	  $contentConf['name'] = isset($contentConf['name'])? $contentConf['name']: $type;
+  	  $contentConf['detail'] = isset($contentConf['detail'])? $contentConf['detail']: '';
+	  }
+	  else {
+	    $contentConf = array('name' => Yii::t('locale', 'Contents'), 'detail' => '');
+	  }
+
+	  
+	  
+	  $options = array(
 		  'criteria'=>array(
-          'condition'=>"type='$type'",
-          'order'=>'date_created DESC',
-          //'with'=>array('title', 'date_created', 'detail'),
+        'order'=>'date_created DESC',
+        //'with'=>array('title', 'date_created', 'detail'),
       ),
       'pagination'=>array(
-          'pageSize'=>20,
-      ),
-		));
+        'pageSize'=>20,
+      )
+    );
+    
+    if ($type) {
+      $options['criteria']['condition'] = "type='$type'";
+    }
+    
+		$dataProvider=new CActiveDataProvider('Content', $options);
 		
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'contentConf'=>$contentConf,
 		));
 	}
 
