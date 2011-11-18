@@ -78,35 +78,9 @@ li {
 	border-top: 1px solid #ccc;
   border-bottom: 7px solid #cf614e;
 }
-	/* 	Style Content */
-	.map-content-row {
-		margin: 0 0 5px;
-	}
-	.map-content-row .detail ul{
-		list-style: none;
-		margin: 0;
-	}
-	.map-content-row .detail ul label,
-	.map-content-row .detail ul .level1,
-	.map-content-row .detail ul .level2,
-	.map-content-row .detail ul .level3{
-		margin-right: 5px;
-		font-size : 15px;
-		font-weight: bold;
-	}
-	.map-content-row.row-heading{
-		margin-bottom: 10px;
-		padding-bottom: 10px;
-		border-bottom: 1px solid #CCC;
-	}
-	.map-content-row .location1{
-		display: block;
-		font-size: 16px;
-	}
-	.map-content-row .location1 a,
-	.map-content-row label{
-		font-weight: bold;
-	}
+#header-top section {
+
+}
 
 /* Content */
 #content {
@@ -148,12 +122,13 @@ footer{
   font-style: normal;
 }
 
-#section-situation h2, #section-database header h2, #entry-1 header h1{
+#section-report h2, #section-database header h2, #entry-1 header h1{
 	font-size: 32px;
 	margin-bottom: 15px;
 	font-family: DBMettaXMedium;
 	font-weight: lighter;
 }
+
 h1, h2{
 	margin-bottom: 10px;
 	font-size: 36px;
@@ -298,6 +273,9 @@ nav {
 /**********************
 		Content Section
 ***********************/
+.list-view .summary {
+  display: none;
+}
 /* 2 Cols block - ข้อมูลพื้นที่ที่ได้รับความเสียหาย, รายงานสถานการณ์-sticky (fornt) */
 .st-area, #rp-sticky{
 	float: left;
@@ -373,7 +351,7 @@ nav {
 		margin: 0 0 10px;
 		line-height: 1.8em;
 	}
-	#rp-list span, #rp-sticky span, #situation-list article span, .date-time{ /* Time */
+	#rp-list span, #rp-sticky span, #content-item-list article span, .date-time{ /* Time */
 		padding: 3px 7px;
 		background: #dbdbdb;
 		font-size: 11px;
@@ -390,7 +368,7 @@ nav {
 
 
 /* สถานการณ์ */
-#situation-list article {
+#content-item-list article {
   width: 760px;
   overflow: hidden;
   padding: 20px;
@@ -398,23 +376,23 @@ nav {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-#situation-list article.odd {
+#content-item-list article.odd {
 	background: #f2f2f2;
 }
-#situation-list article.even {
+#content-item-list article.even {
 	background: #fff;
 }
-#situation-list article span {
+#content-item-list article span {
 	float: left;
 	margin-right: 20px;
 }
-#situation-list article p.title {
+#content-item-list article p.title {
 	float: left;
 	margin-right: 20px;
 	width: 220px;
 	font-size: 1.1em;
 }
-#situation-list article p.desc {
+#content-item-list article p.desc {
 	float: left;
 	width: 370px;
 }
@@ -441,9 +419,6 @@ nav {
   float: left;
   list-style: none;
   margin: 0 0 20px;
-}
-.st-request .request_extra_text ul{
-	list-style: disc;
 }
   .st-request ul li {
 	  float: left;
@@ -494,10 +469,9 @@ nav {
 	}
 	
 	/* 	item1 - Location */
-	.db-item1 .level3 {font-weight: bold}
   .db-item1 .level2 {
-	  /* font-weight: bold;  */
-	  /* font-size: 1.1em; */
+	  font-weight: bold; 
+	  font-size: 1.1em;
   }
   .db-item1 .label, .db-item2 .extra-double-label {
 	  margin: 0 10px 0 0; 
@@ -651,7 +625,6 @@ nav {
 #develop small{
 	font-size: 11px;
 }
-p.readmore {float: right; margin: 20px 0 0}
 .readmore a{
 	clear: both;
 	float: right;
@@ -713,7 +686,6 @@ p.readmore {float: right; margin: 20px 0 0}
 	color: #fff;
 	float: right;
 	font-size: 11px;
-	letter-spacing: 0.05em;
 }
 
 
@@ -745,10 +717,6 @@ p.readmore {float: right; margin: 20px 0 0}
 	padding: 20px 0 20px 25px;
 }
 
-*+html #request-locationView .st-need, *+html #request-requestView .st-need{
-	margin: 0;
-}
-
 /* 2 Cols - วิธีการเดินทางเข้าพื้นที่, ข้อสังเกตอื่น ๆ*/
 .col2{
 	float: left;
@@ -767,10 +735,6 @@ p.readmore {float: right; margin: 20px 0 0}
 .entry {
   position: relative;
 }
-.entry header h1{
-	float: left;
-	width: 680px;
-}
 .entry header ul{
 	list-style: none;
 	margin: 0;
@@ -779,7 +743,6 @@ p.readmore {float: right; margin: 20px 0 0}
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 20px;
-	line-height: 32px;
 }
 .entry-update{
 	width: 380px;
@@ -918,7 +881,6 @@ table tbody th {
 ********************/
 .tooltip-popup{
 	height: 15px;
-	min-width: 28px;
 	white-space: nowrap;
 	padding: 5px;
 	background: #333;
