@@ -490,9 +490,10 @@ nav {
 	}
 	
 	/* 	item1 - Location */
+	.db-item1 .level3 {font-weight: bold}
   .db-item1 .level2 {
-	  font-weight: bold; 
-	  font-size: 1.1em;
+	  /* font-weight: bold;  */
+	  /* font-size: 1.1em; */
   }
   .db-item1 .label, .db-item2 .extra-double-label {
 	  margin: 0 10px 0 0; 
@@ -646,6 +647,7 @@ nav {
 #develop small{
 	font-size: 11px;
 }
+p.readmore {float: right; margin: 20px 0 0}
 .readmore a{
 	clear: both;
 	float: right;
@@ -707,6 +709,7 @@ nav {
 	color: #fff;
 	float: right;
 	font-size: 11px;
+	letter-spacing: 0.05em;
 }
 
 
