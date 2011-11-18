@@ -198,6 +198,20 @@ CREATE TABLE `transporter` (
   KEY `fk_transporter_location_id` (`location_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+# Content ==============================================================================================================
+
+CREATE TABLE `content` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `type` varchar(60) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `last_updated` datetime NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `detail` text,
+
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
 
 ALTER TABLE `request`
   ADD CONSTRAINT `fk_request_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
