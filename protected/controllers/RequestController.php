@@ -182,7 +182,7 @@ class RequestController extends Controller
 	 *  LocationView [level 1]
 	 */
 
-	public function actionLocationView($id)
+	public function actionLocationView($id, $village=null)
 	{
 	 	 $this->layout='layout1';
 	  
