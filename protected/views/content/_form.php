@@ -9,23 +9,9 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>60,'maxlength'=>60)); ?>
-		<?php echo $form->error($model,'type'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'date_created'); ?>
-		<?php echo $form->textField($model,'date_created'); ?>
-		<?php echo $form->error($model,'date_created'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'last_updated'); ?>
-		<?php echo $form->textField($model,'last_updated'); ?>
-		<?php echo $form->error($model,'last_updated'); ?>
-	</div>
+		<?php echo $form->hiddenField($model,'type',array('size'=>60,'maxlength'=>60)); ?>
+		<?php echo $form->hiddenField($model,'date_created'); ?>
+		<?php echo $form->hiddenField($model,'last_updated'); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
