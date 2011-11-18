@@ -19,19 +19,18 @@
   <div id="header">
 		<header>
 			<h1 id = "logo"><a href="<?php echo bu('/'); ?>">Floodtambon</a></h1>
-			<nav>		
-				<?php $this->widget('zii.widgets.CMenu',array(
-    			'items'=>array(
+			<nav>
+			  <?php 
+  			  $menu = array(
     				array('label'=> Yii::t('locale','home'), 'url'=>array('/')),
-    				array('label'=> Yii::t('locale','news'), 'url'=>array('/')),
-    				array('label'=> Yii::t('locale','volunteer'), 'url'=>array('/')),
     				array('label'=> Yii::t('locale','database'), 'url'=>array('/request/location')),
-    				array('label'=> Yii::t('locale','about'), 'url'=>array('/site/page', 'view'=>'about'), 'layout' => 'layout1'),
-    				// array('label'=>'Contact', 'url'=>array('/site/contact')),
-    				// array('label'=> Yii::t('locale','login'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-    				// array('label'=> Yii::t('locale','logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-    			),
-    		)); ?>
+    				array('label'=> Yii::t('locale','news'), 'url'=>array('/')),
+    			);
+    			foreach (Yii::app()->params['pages'] as $url => $page) {
+    			  $menu[] = array('label'=> Yii::t('locale',$page['label']), 'url'=>array('/'.$url));
+    			}
+  			?>
+				<?php $this->widget('zii.widgets.CMenu',array('items'=>$menu)); ?>
 			</nav>	
 		</header>
 	</div> <!-- end header -->
@@ -40,20 +39,7 @@
 
   <div id="footer">	
 		<footer>
-		  <?php $this->widget('zii.widgets.CMenu',array(
-		    'id' => 'nav-footer',
-  			'items'=>array(
-  				array('label'=> Yii::t('locale','home'), 'url'=>array('/')),
-  				array('label'=> Yii::t('locale','news'), 'url'=>array('/')),
-  				array('label'=> Yii::t('locale','volunteer'), 'url'=>array('/')),
-  				array('label'=> Yii::t('locale','database'), 'url'=>array('/request/location')),
-  				array('label'=> Yii::t('locale','about'), 'url'=>array('/site/page', 'view'=>'about')),
-  				// array('label'=>'Contact', 'url'=>array('/site/contact')),
-  				// array('label'=> Yii::t('locale','login'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-  				// array('label'=> Yii::t('locale','logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-  			),
-  		)); ?>
-
+		  <?php $this->widget('zii.widgets.CMenu',array('id' => 'nav-footer', 'items'=>$menu)); ?>
 			<div id="footer-copyright">
 				<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/th/"><img src="<?php echo bu('images/cc-80x15.png'); ?>" width="80" height="15" alt="สัญญาอนุญาต cc by-nc-sa" title="สัญญาอนุญาต cc by-nc-sa แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 3.0 ประเทศไทย"></a>แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 3.0 ประเทศไทย
 			</div>
