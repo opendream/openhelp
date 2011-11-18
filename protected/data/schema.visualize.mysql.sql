@@ -10571,7 +10571,19 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
 --
 -- Dumping data for table `vehicle`
 --
+# Content ==============================================================================================================
 
+CREATE TABLE `content` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `type` varchar(60) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `last_updated` datetime NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `detail` bigint(20),
+
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Constraints for dumped tables
