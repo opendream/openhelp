@@ -1,8 +1,3 @@
-<?php
-
-	$this->pageTitle=Yii::app()->name;
-
-?>
 <div id="header-top">
   <?php $this->renderPartial('_map'); ?>
 </div> <!-- end header-top -->

@@ -14,6 +14,7 @@ class PageController extends Controller
 	 */
 	public function actionView($url)
 	{
+	  $this->pageTitle = Yii::app()->params['pages'][$url]['label'];
 	  $html = file_get_contents(substr(bu(Yii::app()->params['pages'][$url]['file']), 1));
     $this->render('view', array('html' => $html));
 	}

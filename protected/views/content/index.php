@@ -1,7 +1,9 @@
 <?php
+if(Yii::app()->user->getId()) {
 $this->menu=array(
 	array('label'=>t('Create'), 'url'=>array('create?type='.$contentConf['type'])),
 );
+}
 ?>
 
 <div id="content-item" class="drop-shadow curved curved-hz-1">

@@ -2,7 +2,7 @@
 <html lang="th" dir="ltr">
 <head>
 	<meta charset="utf-8" />	
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<title><?php echo $this->pageTitle? CHtml::encode($this->pageTitle).'|': ''; ?><?php echo Yii::app()->params['siteName']; ?></title>
 	<meta name="title" content="Openhelp" />
 	<meta name="description" content="<?php echo CHtml::encode($this->pageTitle); ?>" />
 	<meta name="google-site-verification" content="" />
