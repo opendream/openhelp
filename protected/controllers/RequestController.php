@@ -190,7 +190,7 @@ class RequestController extends Controller
 		$items = WidgetManager::getItemDetails($id);
 		$coordinators = WidgetManager::getCoordinators($id);
 		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
-		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
+		$extraLocation0s = WidgetManager::getExtraLocation0s($id, true);
 		$allExtraTexts = WidgetManager::getAllExtratexts($id);
 		$post_date = WidgetManager::getDateByLocation($id, $village);
 		$last_updated = $post_date[0]['last_updated'];
@@ -215,15 +215,17 @@ class RequestController extends Controller
 		$this->render('locationView', $params);
 	}	
 
-	public function actionRequestView($id, $village=null)
+	public function actionRequestView($id)
 	{
-	    $this->layout='layout1';
-		$items = WidgetManager::getItemDetails($id, $village);
-		$coordinators = WidgetManager::getCoordinators($id, $village);
+	  $this->layout='layout1';
+	  $rid = isset($_GET['rid'])? $_GET['rid']: null;
+	  $village = isset($_GET['village'])? $_GET['village']: null;
+		$items = WidgetManager::getItemDetails($id, $village, $rid);
+		$coordinators = WidgetManager::getCoordinators($id, $village, $rid);
 		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
 		$extraLocation0s = WidgetManager::getExtraLocation0s($id);
-		$allExtraTexts = WidgetManager::getAllExtratexts($id, $village);
-		$post_date = WidgetManager::getDateByLocation($id, $village);
+		$allExtraTexts = WidgetManager::getAllExtratexts($id, $village, $rid);
+		$post_date = WidgetManager::getDateByLocation($id, $village, $rid);
 		$last_updated = $post_date[0]['last_updated'];
 		$cdate = explode(" ", $last_updated);
 		$cdate = $cdate[0];
