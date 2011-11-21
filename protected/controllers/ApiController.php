@@ -32,10 +32,26 @@ class ApiController extends Controller
 	  if ($action == 'view') {
 	    # TODO: @nazt, @crosalot
 	    # $data = query requests under $id of location and prepare summary data to easy view
-	    $data = Request::model()->findByPk($id);
-        if($data === null)
+	    // $data = Request::model()->findByPk($id);
+
+	    $prep_data = array();
+	    $prep_data[] = array(
+	    	'id' => $id,
+	    	'level0' => $request['level0'],
+	    	'level1' => $request['level1'],
+	    	'level2' => $request['level2'],
+	    	'extra_double0' => 0,
+	    	'extra_double1' => 1,
+	    	'extra_double2' => 2,
+		    );
+	    $extraDouble = Yii::app()->params['request']['extra']['double'];		
+
+	  	$data = $prep_data;
+	  	$location = $prep_data;
+
+        if(count($data) < 1)
             throw new CHttpException(404,'No Data.');	   
-	    $result = $this->renderPartial('//request/_map_popup', array('data'=>$data), true);
+	    $result = $this->renderPartial('//request/_location_db_list', array('locationList' => $location, 'extraDouble' => $extraDouble), true);
 	    // print_r($data);
 	    echo CJSON::encode($result);
 	  }
