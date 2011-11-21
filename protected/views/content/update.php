@@ -1,15 +1,8 @@
 <?php
-$this->breadcrumbs=array(
-	'Contents'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
-
 $this->menu=array(
-	array('label'=>'List Content', 'url'=>array('index')),
-	array('label'=>'Create Content', 'url'=>array('create')),
-	array('label'=>'View Content', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Content', 'url'=>array('admin')),
+  array('label'=>t('Create'), 'url'=>array('create?type='.$model->type)),
+	array('label'=>t('View'  ), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>t('Delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>t('Are you sure you want to delete this item?'))),
 );
 ?>
 

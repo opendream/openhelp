@@ -26,12 +26,16 @@ return array(
   'Export to CSV' => 'ส่งออกเป็น csv',
   'Contents' => 'เนื้อหา', 
   'Content' => 'เนื้อหา', 
+  'Title' => 'ชื่อเรื่อง',
 
   'List'   => 'รายการ',
   'View'   => 'ดู',
   'Create' => 'สร้าง',
   'Update' => 'แก้ไข',
   'Delete' => 'ลบ',
+  'Manage' => 'จัดการ',
+  
+  'No results found.' => 'ไม่พบผลลัพธ์',
    
   /*
   * Location

@@ -5,36 +5,19 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>60,'maxlength'=>60)); ?>
-		<?php echo $form->error($model,'type'); ?>
-	</div>
+	<?php echo $form->hiddenField($model,'type',array('size'=>60,'maxlength'=>60)); ?>
+	<?php echo $form->hiddenField($model,'last_updated'); ?>
+
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'date_created'); ?>
-		<?php echo $form->textField($model,'date_created'); ?>
-		<?php echo $form->error($model,'date_created'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'last_updated'); ?>
-		<?php echo $form->textField($model,'last_updated'); ?>
-		<?php echo $form->error($model,'last_updated'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
+		<?php echo t('Title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'detail'); ?>
 		<?php $this->widget('ext.ckeditor.CKEditorWidget', array(
 		  "model"=>$model, 
       "attribute"=>'detail',
@@ -47,6 +30,22 @@
         "filebrowserImageBrowseUrl" =>  Yii::app()->baseUrl.'/filemanager/browser/default/browser.html?Type=Image&Connector='.Yii::app()->baseUrl.'/filemanager/connectors/php/connector.php',
       )
 		)); ?>
+	</div>
+	
+	
+	<div class="row">
+	  <?php echo t('Date Created'); ?>
+	  <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+        //'name'=>'publishDate',
+        'model' => $model,
+        'attribute' => 'date_created',
+        'value'=>$model->date_created,
+          // additional javascript options for the date picker plugin
+          'options'=>array(
+            'dateFormat'=>'yy-mm-dd',
+            'defaultDate'=>$model->date_created,
+           ),
+    )); ?>
 	</div>
 
 	<div class="row buttons">

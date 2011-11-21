@@ -42,6 +42,8 @@ $locationList = $command->queryAll();
 
 $nextPage = $page + 1;
 
+$qstr = http_build_query(array('Location' => $query));
+
 ?>
 <?php if (isset($search) && $search): ?>
   <header><h2><?php echo Yii::t('locale', 'Location List'); ?></h2>
@@ -54,16 +56,20 @@ $nextPage = $page + 1;
 <?php endif ?> 
 <?php  $this->renderPartial("//request/_location_db_list", array('locationList' => $locationList, 'extraDouble' => $extraDouble)); ?>
 
+<?php if (!isset($page) && empty($locationList)): ?>
+  <div class="no-result"><?php echo t('No results found.'); ?></div>
+<?php elseif (count($locationList) >= $ipp): ?>  
+  <p class="readmore"><a class="request-location-readmore" href="<?php echo CController::createUrl("/api/request?action=location&$qstr&page=$nextPage&ipp=$ipp"); ?>"><?php echo Yii::t('locale', 'read more'); ?></a></p>
+  <script>
+    $('.request-location-readmore').click(function (e) {
+      e.preventDefault();
+      var self = $(this);
+      $.getJSON($(this).attr('href'), {}, function(resp) {
+        //console.log(resp);
+        self.parent().parent().append(resp);
+        self.remove();
+      });
+    })
+  </script>
+<?php endif ?>
 
-<p class="readmore"><a class="request-location-readmore" href="<?php echo CController::createUrl("/api/request?action=location&page=$nextPage&ipp=$ipp"); ?>"><?php echo Yii::t('locale', 'read more'); ?></a></p>
-<script>
-  $('.request-location-readmore').click(function (e) {
-    e.preventDefault();
-    var self = $(this);
-    $.getJSON($(this).attr('href'), {}, function(resp) {
-      //console.log(resp);
-      self.parent().parent().append(resp);
-      self.remove();
-    });
-  })
-</script>
