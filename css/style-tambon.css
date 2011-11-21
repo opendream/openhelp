@@ -1147,3 +1147,42 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
+/*
+ * Programer css
+ */
+.content-manager {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 840px;
+}
+.content-manager .portlet-title {
+  display: none;
+}
+.content-manager ul {
+  float: right;
+  margin-bottom: 5px;
+}
+.content-manager li {
+  float: left;
+  list-style: none;
+  background-color: #FFF;
+  padding: 5px 10px 2px;
+  margin-left: 2px;
+}
+.content-manager li:first-child {
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.content-manager li:last-child {
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}

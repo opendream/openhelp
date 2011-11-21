@@ -1,11 +1,8 @@
 <?php
 $this->menu=array(
-	array('label'=>t('List'  ).' '.t('Content'), 'url'=>array('index')),
-	array('label'=>t('View'  ).' '.t('Content'), 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>t('Create').' '.t('Content'), 'url'=>array('create')),
-	array('label'=>t('Update').' '.t('Content'), 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>t('Delete').' '.t('Content'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>t('Are you sure you want to delete this item?'))),
-	array('label'=>t('Manage Content'), 'url'=>array('admin')),
+	array('label'=>t('Create'), 'url'=>array('create?type='.$model->type)),
+	array('label'=>t('Update'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>t('Delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>t('Are you sure you want to delete this item?'))),
 );
 ?>
 
