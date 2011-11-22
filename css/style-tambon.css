@@ -473,6 +473,9 @@ nav {
 	  font-weight: bold; 
 	  font-size: 1.1em;
   }
+  .db-item1 .level3 a{
+	  font-weight: bold;
+  }
   .db-item1 .label, .db-item2 .extra-double-label {
 	  margin: 0 10px 0 0; 
 	  color: #666; 
@@ -552,7 +555,8 @@ nav {
 	}
 
 /* Heading */
-#section-database header h2, #section-database header form, #section-database header h1{
+#section-database header h2, #section-database header form, #section-database header h1,
+{
 	float: left;
 	margin: 0 15px 0 0;
 	font-weight: lighter;
@@ -575,7 +579,10 @@ nav {
 #about ol {
 	margin: 0 0 20px 20px
 }
-.about-teaser {float: left; margin: 0 0 20px}
+.about-teaser {
+	float: left; 
+	margin: 0 0 20px
+}
 	.slide-img {
 	  float: left;
 	  width: 550px;
@@ -881,7 +888,9 @@ table tbody th {
 ********************/
 .tooltip-popup{
 	height: 15px;
+	min-width: 80px;
 	white-space: nowrap;
+	text-align: center;
 	padding: 5px;
 	background: #333;
 	color: #fff;
@@ -900,7 +909,7 @@ table tbody th {
 	display: block;
 	position: absolute;
 	left: -15px;
-	top: -45px;
+	top: -35px;
 	-moz-animation-name: pop;
   -moz-animation-duration: 300ms;
   -moz-animation-fill-mode: forwards;
@@ -915,11 +924,11 @@ table tbody th {
 .tooltip-popup:after {
   border-color: #333 transparent;
   border-style: solid;
-  border-width: 10px 10px 0;
-  bottom: -10px;
+  border-width: 5px 5px 0;
+  bottom: -5px;
   content: "";
   display: block;
-  left: 15px;
+  left: 21px;
   position: absolute;
   width: 0;
 }
@@ -931,7 +940,7 @@ table tbody th {
 	}
 	100%{
 		opacity: 1;
-		top: -45px;
+		top: -35px;
 	}
 }
 @-moz-keyframes pop {
@@ -941,7 +950,7 @@ table tbody th {
 	}
 	100%{
 		opacity: 1;
-		top: -45px;
+		top: -35px;
 	}
 }
 @keyframes pop {
@@ -951,7 +960,7 @@ table tbody th {
 	}
 	100%{
 		opacity: 1;
-		top: -45px;
+		top: -35px;
 	}
 }
 
