@@ -23,7 +23,9 @@
         textSize: 11
       }
     ];
-    info_window = new google.maps.InfoWindow;
+    info_window = new google.maps.InfoWindow({
+      maxWidth: 540
+    });
     myLatlng = new google.maps.LatLng(13.768, 100.554);
     zoom = 5;
     stylez = [

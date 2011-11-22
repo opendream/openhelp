@@ -52,7 +52,7 @@ class ApiController extends Controller
 
         if(count($data) < 1)
             throw new CHttpException(404,'No Data.');	   
-	    $result = $this->renderPartial('//request/_location_db_list', array('locationList' => $location, 'extraDouble' => $extraDouble), true);
+	    $result = $this->renderPartial('//request/_location_db_list', array('locationList' => $location, 'extraDouble' => $extraDouble, 'hideNeed' => true), true);
 	    // print_r($data);
 	    echo CJSON::encode($result);
 	  }
