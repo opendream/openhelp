@@ -41,19 +41,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'detail',
 		'locationLabel',
-		/*array(
-			'name' => 'location_id',
-			'header' => 'location',
-			'value' => 'isset($data->location)? $data->location->label : null ',
-		),*/
-		/*array(
-		  'name' => 'location.name',	
+		array(
+		  'name' => 'extra_location0',
 		  'header' => 'location',
-		  'value' => 'LookupManager::getLocationString($data->location_id)',
-		  'filter' => true,
-		),*/
+		  'value' => 'Yii::app()->params["request"]["extra"]["location"][0]["label"]." ".(isset($data->location)? $data->extra_location0 : null)',
+		  //'filter' => LookupManager::requestStatus(),
+		),
 		array(
 		  'name' => 'status',
 		  'value' => 'Yii::t("locale",LookupManager::getRequestStatus($data->status))',
