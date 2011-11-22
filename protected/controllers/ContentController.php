@@ -134,6 +134,7 @@ class ContentController extends Controller
 	public function actionIndex()
 	{
 	  $this->layout='//layouts/layout1';
+
 	  $type = isset($_GET['type'])? $_GET['type']: null;
 	  
 	  if ($type && !isset(Yii::app()->params['content'][$type])) {
@@ -149,6 +150,8 @@ class ContentController extends Controller
 	  else {
 	    $contentConf = array('name' => Yii::t('locale', 'Contents'), 'detail' => '');
 	  }
+	  
+	  $this->pageTitle = $contentConf['name'];
 
 	  
 	  

@@ -186,7 +186,9 @@ class WidgetManager
     }
     
     foreach ($items as &$item) {
-      $item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
+      $ln = $item['amount']? log($item['amount']): 0;
+      $item['percent'] = $max? floor($ln / log($max) * 100): 0;
+      //$item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
       $item['percent'] = $item['percent'] ? $item['percent'] : 1;
     }
     
