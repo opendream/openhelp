@@ -10,6 +10,7 @@ $this->menu=array(
 	array('label'=>'Create Request', 'url'=>array('create')),
 	array('label'=>'View Request', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Request', 'url'=>array('admin')),
+	array('label'=>'Location Request', 'url'=>array('admin?Request[locationLabel]='.$model->location->label)),
 );
 ?>
 
