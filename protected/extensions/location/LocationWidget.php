@@ -14,7 +14,7 @@ class LocationWidget extends CInputWidget
 			//throw new CHttpException(500,'"attribute" have to be set!');
 		}
 		if(!isset($this->join)){
-		  $this->join = null;
+		  $this->join = 0;
 	  }
 
 		$controller=$this->controller;

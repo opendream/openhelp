@@ -825,3 +825,4 @@ td.operations {vertical-align: middle}
 .request-list ul li {display: inline; margin: 0 30px 0 0;}
 .request-list ul li label {font-weight: bold}
 .request-list ul li .label {width: 65px;float: none; margin: 0 10px 0 0; width: 65px; font-weight: bold;}
+.extra-location table { clear: both;}
