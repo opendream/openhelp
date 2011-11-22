@@ -426,5 +426,25 @@ class WidgetManager
     }
     return $locations->toArray();
   }
+  public static function isActiveFromUrl($menu, $request_uri)
+  {
+    $_menu = $menu['url'][0];
+    $request_uri = str_replace('requestView', 'location', $request_uri);
+    $request_uri = str_replace('requestLocation', 'location', $request_uri);
 
+    $pos = false;
+    if ($_menu == "/") {
+      $_menu = "index.php";
+
+      $request_uri = substr($request_uri, -9);
+      if ($_menu == $request_uri) {
+        return true;
+      }
+    } 
+    else if (is_array($menu) && strlen($menu['url'][0]) > 1) {
+      $url = $menu['url'][0];
+      $pos = strpos($request_uri, $url);
+    }
+    return $pos !== FALSE;
+  }
 }
