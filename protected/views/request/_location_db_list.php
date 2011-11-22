@@ -24,7 +24,7 @@
       </table>
   </div>
   <?php endif ?>
-  <?php if (!$hideNeed): ?>
+  <?php if (!isset($hideNeed) || !$hideNeed): ?>
     <div class="db-item3">
       <ul>
         <?php $itemDetails = WidgetManager::getItemDetails($location['id']);?>
