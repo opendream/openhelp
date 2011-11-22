@@ -212,6 +212,7 @@ class RequestController extends Controller
 			'allExtraTexts' => $allExtraTexts,			
 			'sdate' => $sdate,
 		);
+		$this->pageTitle = strip_tags($location_text);
 		$this->render('locationView', $params);
 	}	
 
@@ -246,6 +247,7 @@ class RequestController extends Controller
 			'allExtraTexts' => $allExtraTexts,
 			'sdate' => $sdate,
 		);
+		$this->pageTitle = strip_tags($location_text);
 		$this->render('requestView', $params);
 	}
 
