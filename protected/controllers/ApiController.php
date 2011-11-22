@@ -34,17 +34,18 @@ class ApiController extends Controller
 	    # $data = query requests under $id of location and prepare summary data to easy view
 	    // $data = Request::model()->findByPk($id);
 
+	    $request = WidgetManager::getRequestReport($id);
 	    $prep_data = array();
 	    $prep_data[] = array(
 	    	'id' => $id,
-	    	'level0' => $request['level0'],
-	    	'level1' => $request['level1'],
-	    	'level2' => $request['level2'],
-	    	'extra_double0' => 0,
-	    	'extra_double1' => 1,
-	    	'extra_double2' => 2,
+	    	'level0' => $request[0]['level0'],
+	    	'level1' => $request[0]['level1'],
+	    	'level2' => $request[0]['level2'],
+	    	'extra_double0' => $request[0]['extra_double0'],
+	    	'extra_double1' => $request[0]['extra_double1'],
+	    	'extra_double2' => $request[0]['extra_double2'],
 		    );
-	    $extraDouble = Yii::app()->params['request']['extra']['double'];		
+	    $extraDouble = Yii::app()->params['request']['extra']['double'];
 
 	  	$data = $prep_data;
 	  	$location = $prep_data;
