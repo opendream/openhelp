@@ -10539,25 +10539,6 @@ CREATE TABLE IF NOT EXISTS `transporter` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
---
-
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(128) NOT NULL,
-  `password` varchar(128) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `user`
---
-
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `vehicle`
 --
 
@@ -10583,6 +10564,31 @@ CREATE TABLE `content` (
   `detail` text,
 
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE `user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `username` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `email` varchar(128),
+  
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `webform` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `type` varchar(60) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `last_updated` datetime NOT NULL,
+  `user_id` bigint(20),
+  `location_id` bigint(20),
+  `data` text,
+
+  PRIMARY KEY (`id`),
+  KEY `fk_webform_user_id` (`user_id`),
+  KEY `fk_webform_location_id` (`location_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
@@ -10656,3 +10662,8 @@ ALTER TABLE `stock_vehicle`
 --
 ALTER TABLE `transporter`
   ADD CONSTRAINT `fk_transporter_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+  
+
+ALTER TABLE `webform`
+  ADD CONSTRAINT `fk_webform_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `fk_webform_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);

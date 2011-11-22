@@ -48,7 +48,7 @@ $qstr = http_build_query(array('Location' => $query));
 <?php if (isset($search) && $search): ?>
   <header><h2><?php echo Yii::t('locale', 'Location List'); ?></h2>
     <form action="" method="get">
-      <?php $this->widget('ext.location.LocationWidget', array('model' => new Location, 'attribute' => 'id')); ?>
+      <?php $this->widget('ext.location.LocationWidget', array('model' => new Location, 'attribute' => 'id', 'join' => 'request')); ?>
       <input id="find-location-submit" type="submit" value="<?php echo Yii::t('locale', 'Find'); ?>" />
     </form>
 	</header>

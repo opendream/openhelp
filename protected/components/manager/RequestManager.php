@@ -322,6 +322,8 @@ class RequestManager
       Yii::trace('call insert need', 'example');
       for ($i=0; $i < count($items['id']); $i++) { 
         $itemId = isset($items['id'][$i])? $items['id'][$i] : null;
+        //print 'yyyyy'.$items['amount'][$i].'xxxxx';
+        //exit();
         $amount = isset($items['amount'][$i])? $items['amount'][$i] : 0;
         $detail = isset($items['detail'][$i])? $items['detail'][$i] : '';
         $needs[] = $this->insertNeed($reqId, $itemId, $amount, $detail);
@@ -338,8 +340,8 @@ class RequestManager
   function insertNeed($reqId, $itemId, $amount, $detail)
   {
     $need = new Need;
-    $need->amount = $amount;
-    $need->detail = $detail;
+    $need->amount = $amount? $amount: 0;
+    $need->detail = $detail? $detail: '';
     $need->request_id = $reqId;
     $need->item_id = $itemId;
     $need->status = Need::NEED_STATUS_WAIT;

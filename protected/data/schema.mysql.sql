@@ -212,6 +212,31 @@ CREATE TABLE `content` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+CREATE TABLE `user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `username` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `email` varchar(128),
+  
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `webform` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
+  `type` varchar(60) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `last_updated` datetime NOT NULL,
+  `user_id` bigint(20),
+  `location_id` bigint(20),
+  `data` text,
+
+  PRIMARY KEY (`id`),
+  KEY `fk_webform_user_id` (`user_id`),
+  KEY `fk_webform_location_id` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
 
 ALTER TABLE `request`
   ADD CONSTRAINT `fk_request_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
@@ -253,6 +278,12 @@ ALTER TABLE `shipment`
   
 ALTER TABLE `transporter`
   ADD CONSTRAINT `fk_transporter_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+
+# Webform ==============================================================================================================
+ALTER TABLE `webform`
+  ADD CONSTRAINT `fk_webform_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `fk_webform_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+  
 
 
 INSERT INTO `location` (`id`, `level0`, `level1`, `level2`, `level3`, `level4`, `level5`, `label`, `lat`, `lng`, `disabled`) VALUES

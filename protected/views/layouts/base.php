@@ -25,14 +25,23 @@
     				array('label'=> Yii::t('locale','home'), 'url'=>array('/')),
     				array('label'=> Yii::t('locale','database'), 'url'=>array('/request/location')),
     			);
+
+    			$menu[0]['active'] = WidgetManager::isActiveFromUrl($menu[0], $_SERVER['REQUEST_URI']);
+    			$menu[1]['active'] = WidgetManager::isActiveFromUrl($menu[1], $_SERVER['REQUEST_URI']);
     			foreach (Yii::app()->params['content'] as $type => $conf) {
-    			  $menu[] = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/content?type='.$type));
+    			  $_menu = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/content?type='.$type));
+				  $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
+				  $_menu['active'] = $isActive;
+    			  $menu[] = $_menu;
     			}
     			foreach (Yii::app()->params['pages'] as $url => $page) {
-    			  $menu[] = array('label'=> Yii::t('locale',$page['label']), 'url'=>array('/page/'.$url));
+    			  $_menu = array('label'=> Yii::t('locale',$page['label']), 'url'=>array('/page/'.$url));
+				  $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
+				  $_menu['active'] = $isActive;
+    			  $menu[] = $_menu;
     			}
   			?>
-				<?php $this->widget('zii.widgets.CMenu',array('items'=>$menu)); ?>
+				<?php $this->widget('zii.widgets.CMenu',array('items'=>$menu, 'firstItemCssClass' => 'first', 'firstItemCssClass' => 'last')); ?>
 			</nav>	
 		</header>
 	</div> <!-- end header -->

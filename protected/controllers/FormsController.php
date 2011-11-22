@@ -8,6 +8,7 @@ class FormsController extends Controller
     $model = new $model;
 
     $attribute = isset($_GET['attribute'])? $_GET['attribute']:'locaion_id';
+    $join = isset($_GET['join'])? $_GET['join']: 0;
     
     $query = $_GET['query'];
 	  $current = key($query);
@@ -22,12 +23,18 @@ class FormsController extends Controller
 	  
 
 	  $where = array();
+	  $from = 'location';
+	  if ($join) {
+	    $from .= ", $join";
+	    $where[] = "location.id = $join.location_id";
+	  }
 	  foreach ($query as $key => $value) {
 	    $where[] = $key." = '".$value['value']."'";
 	  }
 	  $where = implode(' AND ', $where);
+
 	  
-	  $qtxt = "SELECT $children FROM location WHERE $where";
+	  $qtxt = "SELECT $children FROM $from WHERE $where";
 
 		$command = Yii::app()->db->createCommand($qtxt);
 		$rows = $command->queryAll();
@@ -46,6 +53,7 @@ class FormsController extends Controller
   	  'childrenTree' => $childrenTree,
   	  'queryTree' => $queryTree,
   	  'children' => empty($childrenTree)? 'id': $childrenTree[0],
+  	  'join' => $join,
   	));
 	
   

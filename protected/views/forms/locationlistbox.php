@@ -21,9 +21,10 @@ else {
         'model' => get_class($model),
         'attribute' => $attribute,
         'query' => $query,
+        'join' => $join,
       ),
     ),
-    'onchange'=>'js:$("#Location_'.$children.'").focus()',
+    'onchange'=>'js:$("#Location_'.$children.'").change().focus()',
   
   );
   

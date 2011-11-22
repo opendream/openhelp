@@ -48,7 +48,7 @@ class ApiController extends Controller
 	    $extraDouble = Yii::app()->params['request']['extra']['double'];
 
 	  	$data = $prep_data;
-	  	$location = $prep_data;
+	  	$location = $data;
 
         if(count($data) < 1)
             throw new CHttpException(404,'No Data.');	   
