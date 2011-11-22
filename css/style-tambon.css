@@ -1186,3 +1186,10 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
+
+
+.content-map-row .db-list{
+	width: 530px;	
+	height: 90px;
+	border-bottom: none;
+}

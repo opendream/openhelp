@@ -24,21 +24,22 @@
       </table>
   </div>
   <?php endif ?>
-  
-  <div class="db-item3">
-    <ul>
-      <?php $itemDetails = WidgetManager::getItemDetails($location['id']);?>
-      <?php foreach ($itemDetails as $item): ?>
-      <li class="need-<?php echo $item['id']; ?>">
-        <img 
-          src="<?php echo bu($item['image_url']); ?>" 
-          alt="<?php echo $item['name']; ?>" 
-          title="<?php echo $item['name']; ?>" 
-          class="<?php echo $item['amount']? 'active': 'in-active'; ?>"/>
-        <div class="tooltip-popup"><?php echo $item['name']; ?> <?php echo $item['amount']; ?></div>
-      </li>
-      <?php endforeach ?>
-    </ul>
-  </div> <!-- /db-item3 -->
+  <?php if (!isset($hideNeed) || !$hideNeed): ?>
+    <div class="db-item3">
+      <ul>
+        <?php $itemDetails = WidgetManager::getItemDetails($location['id']);?>
+        <?php foreach ($itemDetails as $item): ?>
+        <li class="need-<?php echo $item['id']; ?>">
+          <img 
+            src="<?php echo bu($item['image_url']); ?>" 
+            alt="<?php echo $item['name']; ?>" 
+            title="<?php echo $item['name']; ?>" 
+            class="<?php echo $item['amount']? 'active': 'in-active'; ?>"/>
+          <div class="tooltip-popup"><?php echo $item['name']; ?> <?php echo $item['amount']; ?></div>
+        </li>
+        <?php endforeach ?>
+      </ul>
+    </div> <!-- /db-item3 -->
+  <?php endif ?>
 </article><!-- /db-list -->
 <?php endforeach ?>
