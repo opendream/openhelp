@@ -47,4 +47,15 @@ class WidgetManagerTest extends CDbTestCase
 		$result = WidgetManager::getMinMaxExtraDouble(1, 'หมู่บ้าน เอ');
 		$this->assertNotNull($result);
 	}
+
+	function testGetExtraDouble(){
+		$result = WidgetManager::getExtraDouble(1, 0);
+		$this->assertNotNull($result);
+		$this->assertEquals(250, $result['request.extra_double0']['sum']);
+		$result = WidgetManager::getExtraDouble(1, 1);
+		$this->assertEquals(499, $result['request.extra_double1']['sum']);
+		$result = WidgetManager::getExtraDouble(1, 2);
+		$this->assertEquals(1.8, $result['request.extra_double2']['min']);
+		$this->assertEquals(1.8, $result['request.extra_double2']['max']);
+	}
 }
