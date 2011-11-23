@@ -3,7 +3,7 @@
 class WidgetManager
 {
 
-  public static function getCoordinators($id, $village = null) {
+  public static function getCoordinators($id, $village = null, $rid=null) {
     $result = array();
     $location = Location::model()->findByPk($id);
     $result['location'] = $location->label;
@@ -18,6 +18,9 @@ class WidgetManager
     if($village) {
       $qtxt .= " AND request.extra_location0 = '$village'";
     }
+    elseif ($rid) {
+      $qtxt .= " AND request.id = $rid";
+    }
     $qtxt .= " ORDER BY coordinator.fullname";
     Yii::trace($qtxt, 'example');
     $command = Yii::app()->db->createCommand($qtxt);
@@ -25,12 +28,15 @@ class WidgetManager
     return $coordinators;
   }
 
-  public static function getDateByLocation($id, $village = null)
+  public static function getDateByLocation($id, $village = null, $rid=null)
   {
     $qtxt = "SELECT request.date_created, request.last_updated FROM location INNER JOIN request ON location.id = request.location_id WHERE location.id = $id";
 
     if($village) {
       $qtxt .= " AND request.extra_location0 = '$village'";
+    }
+    elseif ($rid) {
+      $qtxt .= " AND request.id = $rid";
     }
     $qtxt .= " ORDER BY request.last_updated";
     $command = Yii::app()->db->createCommand($qtxt);
@@ -180,14 +186,16 @@ class WidgetManager
     }
     
     foreach ($items as &$item) {
-      $item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
+      $ln = $item['amount']? log($item['amount']): 0;
+      $item['percent'] = $max? floor($ln / log($max) * 100): 0;
+      //$item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
       $item['percent'] = $item['percent'] ? $item['percent'] : 1;
     }
     
     return $items;
   }
 
-	public static function getItemDetails($id, $village = null) {
+	public static function getItemDetails($id, $village = null, $rid=null) {
 		$qtxt = "SELECT item.id, item.name, item.image_url, sum(need.amount) as amount
      			 FROM location INNER JOIN request ON location.id = request.location_id
      			 	INNER JOIN need ON request.id = need.request_id
@@ -196,6 +204,9 @@ class WidgetManager
      	if($village) {
 		 	$qtxt .= " AND request.extra_location0 = '$village'";
 		}
+		elseif ($rid) {
+      $qtxt .= " AND request.id = $rid";
+    }
 	 	$qtxt .= "  GROUP BY item.id, item.name, item.image_url";
 	 	$command = Yii::app()->db->createCommand($qtxt);
 
@@ -289,7 +300,7 @@ class WidgetManager
     return $results;
   }
 
-  public static function getSumExtraDouble($id, $village = null) {
+  public static function getSumExtraDouble($id, $village = null, $rid = null) {
     $result = array();
     $double = Yii::app()->params['request']['extra']['double'];
     for ($i=0; $i < count($double); $i++) { 
@@ -302,6 +313,9 @@ class WidgetManager
         if($village) {
           $qtxt .= " AND request.extra_location0 = '$village'";
         }
+        elseif ($rid) {
+          $qtxt .= " AND request.id = $rid";
+        }
         //Yii::trace($qtxt,'example');
 
         $command = Yii::app()->db->createCommand($qtxt);
@@ -312,7 +326,7 @@ class WidgetManager
     return $result;
   }
 
-  public static function getMinMaxExtraDouble($id, $village = null) {
+  public static function getMinMaxExtraDouble($id, $village = null, $rid = null) {
     $result = array();
     $double = Yii::app()->params['request']['extra']['double'];
     for ($i=0; $i < count($double); $i++) { 
@@ -323,6 +337,9 @@ class WidgetManager
         WHERE location.id = $id ";
         if($village) {
           $qtxt .= " AND request.extra_location0 = '$village'";
+        }
+        elseif ($rid) {
+          $qtxt .= " AND request.id = $rid";
         }
 
         Yii::trace($qtxt, 'example');
@@ -335,26 +352,33 @@ class WidgetManager
     return $result;
   }
 
-  public static function getExtraLocation0s($id) {
-    $qtxt = "SELECT distinct request.extra_location0 as label
-        FROM location INNER JOIN request ON location.id = request.location_id
-        WHERE location.id = $id ";
+  public static function getExtraLocation0s($id, $getId = false) {
+    if(!$getId) {
+      $qtxt = "SELECT distinct request.extra_location0 as label
+          FROM location INNER JOIN request ON location.id = request.location_id
+          WHERE location.id = $id ";
+    }
+    else {
+      $qtxt = "SELECT distinct request.extra_location0 as label , request.id 
+          FROM location INNER JOIN request ON location.id = request.location_id
+          WHERE location.id = $id ";
+    }
     
     $command = Yii::app()->db->createCommand($qtxt);
     $extraLocation0s = $command->queryAll();
     return $extraLocation0s;
   }
 
- public static function getAllExtratexts($id, $village = null)
+ public static function getAllExtratexts($id, $village = null, $rid = null)
   {
     $result = array();
     foreach (Yii::app()->params['request']['extra']['text'] as $key => $value) {
-      $result[$value['label']] = self::getExtratexts($id, $key, $village);
+      $result[$value['label']] = self::getExtratexts($id, $key, $village, $rid);
     }
     return $result;
   }
 
-  public static function getExtratexts($id, $text, $village = null){
+  public static function getExtratexts($id, $text, $village = null, $rid = null){
     //$result = array();
     $label = Yii::app()->params['request']['extra']['location'][0]['label'];
     $params = 'request.extra_text'.$text;
@@ -364,6 +388,9 @@ class WidgetManager
         WHERE location.id = $id AND $params <> '' AND $params <> '<p></p>' AND $params IS NOT NULL";
     if($village) {
       $qtxt .= " AND request.extra_location0 = '$village'";
+    }
+    elseif ($rid) {
+      $qtxt .= " AND request.id = $rid";
     }
     
     $command = Yii::app()->db->createCommand($qtxt);
@@ -428,5 +455,25 @@ class WidgetManager
     }
     return $locations->toArray();
   }
+  public static function isActiveFromUrl($menu, $request_uri)
+  {
+    $_menu = $menu['url'][0];
+    $request_uri = str_replace('requestView', 'location', $request_uri);
+    $request_uri = str_replace('requestLocation', 'location', $request_uri);
 
+    $pos = false;
+    if ($_menu == "/") {
+      $_menu = "index.php";
+
+      $request_uri = substr($request_uri, -9);
+      if ($_menu == $request_uri) {
+        return true;
+      }
+    } 
+    else if (is_array($menu) && strlen($menu['url'][0]) > 1) {
+      $url = $menu['url'][0];
+      $pos = strpos($request_uri, $url);
+    }
+    return $pos !== FALSE;
+  }
 }

@@ -6,6 +6,18 @@ $orgAddresses = $addresses;
 $firstLevelCol = array_shift($addresses);
 $children = $addresses[0];
 $locationModel = new Location;
+
+    
+$from = 'location';
+$queryWhereList = array(1);
+$where = '1';
+
+if ($join) {
+  $from .= ", $join";
+  $queryWhereList[] = "location.id = $join.location_id";
+  $where = "location.id = $join.location_id";
+}
+
 if ($model->$attribute || isset($_REQUEST['Location'])) {
   $selectList = implode(', ', $orgAddresses);
   if (isset($_REQUEST['Location'])) {
@@ -13,12 +25,14 @@ if ($model->$attribute || isset($_REQUEST['Location'])) {
     //$model = (object) $query;
     $locationModel = new Location;
     $locationModel->attributes = $query;
-    $queryWhereList = array(1);
+
     foreach ($query as $level => $value) {
       $queryWhereList[] = $level.'="'.$value.'"';
     }
+
+
     $queryWhere = implode(' AND ', $queryWhereList);
-    $qtxt = "SELECT $selectList FROM location WHERE $queryWhere";
+    $qtxt = "SELECT $selectList FROM $from WHERE $queryWhere";
   }
   else {
     $id = $model->$attribute;
@@ -27,6 +41,8 @@ if ($model->$attribute || isset($_REQUEST['Location'])) {
 
   }
   
+  //print $qtxt;
+  //exit();
   $command = Yii::app()->db->createCommand($qtxt);
   $row = $command->queryRow();
 
@@ -39,11 +55,14 @@ if ($model->$attribute || isset($_REQUEST['Location'])) {
   }
   
   $whereList = array_reverse($whereList);
+  if ($join) {
+    $whereList[] = "location.id = $join.location_id";
+  }
   $levelData = array();
   $whereListLoop = $whereList;
   foreach ($whereListLoop as $level => $value) {
     $where = implode(' AND ', $whereList);
-    $qtxt = "SELECT DISTINCT $level FROM location WHERE $where";
+    $qtxt = "SELECT DISTINCT $level FROM $from WHERE $where";
     $command = Yii::app()->db->createCommand($qtxt);
     $data = $command->queryColumn(array($level));
     $levelData[$level] = array_combine($data, $data);
@@ -55,7 +74,7 @@ if ($model->$attribute || isset($_REQUEST['Location'])) {
   
 }
 
-$qtxt = "SELECT DISTINCT $firstLevelCol FROM location";
+$qtxt = "SELECT DISTINCT $firstLevelCol FROM $from WHERE $where";
 $command = Yii::app()->db->createCommand($qtxt);
 $firstLevelRows = $command->queryAll();
 foreach ($firstLevelRows as $row) {
@@ -78,9 +97,10 @@ if ($children) {
           'childrenLevels' => "js:$(this).parent().attr('class')",
         )
       ),
+      'join' => $join,
     )
   );
-  $locationOptions['onchange'] = 'js:$("#Location_'.$children.'").focus()';
+  $locationOptions['onchange'] = 'js:$("#Location_'.$children.'").change().focus()';
 }
 else {
   # TODO: Update location_id
