@@ -241,6 +241,8 @@ class WidgetManager
     $params = 'request.extra_double'.$number;
     $results = array();
     $villages = array();
+
+    // get vilages by last_updated
     if(!$village) {
       $qtxt = "SELECT request.extra_location0 as name
         FROM location INNER JOIN request ON location.id = request.location_id 
@@ -251,20 +253,47 @@ class WidgetManager
       $villages[] = array('name' => $village);
     }
 
+    //check match function for each extra_double
     if($double[$number]['func']=='sum') {
       $sumExtraDouble = 0;      
       foreach ($villages as $village) { 
         $villageName = $village['name'];    
         $qtxt = "SELECT $params as value
-          FROM request where $params = $villageName
+          FROM request where extra_location0 = '$villageName'
           order by date_created desc";
         $command = Yii::app()->db->createCommand($qtxt);
         $result = $command->queryRow();
         $sumExtraDouble += $result['value'];
       }
-      $results[$params] = $sumExtraDouble;
+      $results[$params]['sum'] = $sumExtraDouble;
+      //$results['request.extra_double0.sum'] = $sumExtraDouble;
     } elseif($double[$number]['func']=='min-max') {
-      
+      //$results[$params]['min']
+      //$results[$params]['max']
+      $min = null;
+      $max = null;
+      foreach ($villages as $village) { 
+        $villageName = $village['name'];
+        $qtxt = "SELECT min($params) as min, max($params) as max
+          FROM request
+          WHERE location_id = $id 
+          AND extra_location0 = '$villageName'";        
+
+        $command = Yii::app()->db->createCommand($qtxt);
+        $minMaxExtraDoubles = $command->queryRow();
+
+        if($min == null || $min > $minMaxExtraDoubles['min']){
+          $min = $minMaxExtraDoubles['min'];
+        }
+
+        if($max == null || $max < $minMaxExtraDoubles['max']){
+          $max = $minMaxExtraDoubles['max'];
+        }
+
+      }
+
+      $results[$params]['min'] = $min;
+      $results[$params]['max'] = $max; 
     }
     //Yii::trace($qtxt,'example');
 
@@ -434,5 +463,25 @@ class WidgetManager
     }
     return $locations->toArray();
   }
+  public static function isActiveFromUrl($menu, $request_uri)
+  {
+    $_menu = $menu['url'][0];
+    $request_uri = str_replace('requestView', 'location', $request_uri);
+    $request_uri = str_replace('requestLocation', 'location', $request_uri);
 
+    $pos = false;
+    if ($_menu == "/") {
+      $_menu = "index.php";
+
+      $request_uri = substr($request_uri, -9);
+      if ($_menu == $request_uri) {
+        return true;
+      }
+    } 
+    else if (is_array($menu) && strlen($menu['url'][0]) > 1) {
+      $url = $menu['url'][0];
+      $pos = strpos($request_uri, $url);
+    }
+    return $pos !== FALSE;
+  }
 }
