@@ -29,7 +29,8 @@
 		input.span1, textarea.span1 {
 		  width: 40px;
 		}
-		
+		.clear {clear: both;}
+		.indent {padding: 0 0 0 30px}
 	</style>
 </head>
 <body>
@@ -162,7 +163,7 @@
 	            </li> 
 						</ul>
           </li>   <!-- /end ข้อมูลด้านการบริการสาธารณะและสาธารณูปโภค -->
-          <li>
+          <li class="clear">
             <p>ข้อมูลด้านสุขภาพของชุมชน</p>
             <ul>
               <li>กลุ่มผู้ช่วยเหลือตัวเองไม่ได้
@@ -255,7 +256,7 @@
                 </ul>
               </li> <! -- /end 1.6.2 ผู้ป่วยด้วยโรคเรื้อรังพอช่วยตนเองได้ -->           
             </ul> <! -- /end 6 -->
-            <li>
+            <li class="clear">
               <label for="fileInput">แผนที่แสดงขอบเขตและเส้นทางภายในหมู่บ้าน โดยระบายสีพื้นที่ที่ได้รับผลกระทบจากน้ำท่วม</label>
               <input class="input-file" id="fileInput" name="fileInput" type="file">
             </li>
@@ -266,8 +267,7 @@
       <fieldset>
         <legend>ส่วนที่ 2 การสำรวจความเสียหาย</legend>
         <ol>
-          <li>
-          <label id="optionsRadio">ในปัจจุบันพื้นที่ของท่านอยู่ในสถานการณ์ใดมากที่สุด</label>
+          <li><p>ในปัจจุบันพื้นที่ของท่านอยู่ในสถานการณ์ใดมากที่สุด</p>
             <ul class="inputs-list">
               <li>
                 <label>
@@ -278,29 +278,211 @@
               <li>
                 <label>
                   <input type="radio" name="optionsRadios" value="option2">
-                  <span>กำลังประสบปัญหาน้ำท่วม ประมาณร้อยละเท่าไรของพื้นที่</span> <input class="span1" id="" name="" type="text"  placeholder=""> <label class="no-float">เป็นระยะเวลารวม</span> <input class="span1" id="" name="" type="text"  placeholder=""> <span>วัน</span>
+                  <span>กำลังประสบปัญหาน้ำท่วม ประมาณร้อยละเท่าไรของพื้นที่</span> <input class="span1" id="" name="" type="text"  placeholder=""> <span>เป็นระยะเวลารวม</span> <input class="span1" id="" name="" type="text"  placeholder=""> <span>วัน</span>
                 </label>
               </li>
               <li>
                 <label>
                   <input type="radio" name="optionsRadios" value="option2">
-                  <span>น้ำลดแล้ว กำลังอยู่ในช่วงฟื้นฟู โดยประมาณร้อยละ</span> <input class="span1" id="" name="" type="text"  placeholder=""> <span>ของพื้นที่</span><label class="no-float">เป็นระยะเวลารวม</span> <input class="span1" id="" name="" type="text"  placeholder=""> <span>วัน</span>
+                  <span>น้ำลดแล้ว กำลังอยู่ในช่วงฟื้นฟู โดยประมาณร้อยละ</span> <input class="span1" id="" name="" type="text"  placeholder=""> <span>ของพื้นที่</span><span>เป็นระยะเวลารวม</span> <input class="span1" id="" name="" type="text"  placeholder=""> <span>วัน</span>
                 </label>
               </li>
               <li>
                 <label>
                   <input type="radio" name="optionsRadios" value="option2">
                   <span>พื้นที่กำลังจะรับน้ำท่วม ในอีกประมาณ</span> <input class="span1" id="" name="" type="text"  placeholder=""> <span>วัน</span>
+                </label>     
+                <p>
+			            <label for="textarea">โปรดสรุปสถานการณ์ในปัจจุบันของพื้นที่คร่าวๆ</label>
+			            <textarea class="xxlarge" id="textarea2" name="textarea2" rows="3"></textarea>
+						  </p>
+						  </li>
+            </ul>
+          </li> <!-- /end 2.1  ในปัจจุบันพื้นที่ของท่านอยู่ในสถานการณ์ใดมากที่สุด -->
+          <li><p>พื้นที่ที่ได้รับผลกระทบในความรับผิดชอบของท่าน</p>
+            <label class="no-float">มีจำนวน</label>
+				    <input class="span1" id="" name="" type="text"  placeholder=""> <span>หมู่บ้าน</span>
+				    <label class="no-float">ได้แก่</label>
+				    <input class="span4" id="" name="" type="text"  placeholder="">
+				    <label class="no-float">ประมาณ</label>
+				    <input class="span1" id="" name="" type="text"  placeholder=""> <span>ครัวเรือน</span>
+				    <label class="no-float">ผู้ต้องอพยพออกจากครัวเรือนประมาณ</label>
+				    <input class="span1" id="" name="" type="text"  placeholder=""> <span>ครัวเรือน</span>
+          </li> <!-- /end 2.2 พื้นที่ที่ได้รับผลกระทบในความรับผิดชอบของท่าน -->
+          
+          <li><p>คนที่เสียชีวิต สูญหาย หรือบาดเจ็บจากวิกฤตินี้</p>
+	          <div class="clearfix">
+	            <label class="no-float">เสียชีวิต</label>
+					    <input class="span1" id="" name="" type="text"  placeholder=""> <span>คน</span>
+					    <input class="span1" id="" name="" type="text"  placeholder=""> <span>วันที่แล้ว</span>
+							<label class="no-float">สาเหตุหลัก</label> <input class="span4" id="" name="" type="text"  placeholder=""> 
+					  </div>
+	          <div class="clearfix">
+	            <label class="no-float">สูญหาย</label>
+					    <input class="span1" id="" name="" type="text"  placeholder=""> <span>คน</span>
+					    <input class="span1" id="" name="" type="text"  placeholder=""> <span>วันที่แล้ว</span>
+							<label class="no-float">สาเหตุหลัก</label> <input class="span4" id="" name="" type="text"  placeholder=""> 
+					  </div>
+	          <div class="clearfix">
+	            <label class="no-float">บาดเจ็บ</label>
+					    <input class="span1" id="" name="" type="text"  placeholder=""> <span>คน</span>
+					    <input class="span1" id="" name="" type="text"  placeholder=""> <span>วันที่แล้ว</span>
+							<label class="no-float">สาเหตุหลัก</label> <input class="span4" id="" name="" type="text"  placeholder=""> 
+					  </div>
+          </li> <!-- /end 2.3 คนที่เสียชีวิต สูญหาย หรือบาดเจ็บจากวิกฤตินี้ -->          
+          
+          <li><p>พื้นที่มีปัจจัยเสี่ยงต่อความปลอดภัยในชีวิตและทรัพย์สินหรือไม่</p>
+            <ul class="inputs-list">
+              <li>
+                <label>
+                  <input type="radio" checked="" name="optionsRadios" value="option1">
+                  <span>ไม่มี</span>
                 </label>
               </li>
-            </ul>
+              <li>
+                <label>
+                  <input type="radio" checked="" name="optionsRadios" value="option2">
+                  <span>มี โปรดเลือก</span>
+                </label>
+                <ul>
+		              <li>
+		                <label>
+		                  <input type="radio" checked="" name="optionsRadios" value="option3">
+		                  <span>การโจรกรรมทรัพย์สิน</span>
+		                </label>
+		              </li>
+		              <li>
+		                <label>
+		                  <input type="radio" checked="" name="optionsRadios" value="option4">
+		                  <span>สัตว์ร้าย เช่น จระเข้ งู</span>
+		                </label>
+		              </li>		
+		            	<li>
+		                <label>
+		                  <input type="radio" checked="" name="optionsRadios" value="option5">
+		                  <span>อื่น ๆ</span> <input class="span2" id="" name="" type="text"  placeholder="">
+		                </label>
+		              </li>	
+                </ul> 
+              </li>	
+            </ul><! -- /inputs-list -->
+          </li> <!-- /end 2.4 พื้นที่มีปัจจัยเสี่ยงต่อความปลอดภัยในชีวิตและทรัพย์สินหรือไม่ -->
           
-          
-          </li>
+          <li><p>การดำเนินการบรรเทาสาธารณภัยที่ผ่านมา</p>
+            <ul class="inputs-list">
+              <li>
+                <label>
+                  <input type="radio" checked="" name="optionsRadios" value="option1">
+                  <span>มีหน่วยงานภายนอกมาช่วยดำเนินการ ได้</span> <input class="span4" id="" name="" type="text"  placeholder="">
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" checked="" name="optionsRadios" value="option2">
+                  <span>พื้นที่จัดการเองโดยการ</span>
+                </label>
+                <ul>
+		              <li>
+		                <label>
+		                  <input type="radio" checked="" name="optionsRadios" value="option3">
+		                  <span>จัดศูนย์ผู้อพยพจำนวน</span> <input class="span1" id="" name="" type="text"  placeholder=""> <span>ศูนย์</span>
+		                  <label class="left">สถานที่</label> <input class="span2" id="" name="" type="text"  placeholder="">
+		                </label>
+		              </li>
+		              <li>
+		                <label>
+		                  <input type="radio" checked="" name="optionsRadios" value="option4">
+		                  <span>มีระบบเตือนภัยล่งหน้าก่อนเกิดภัยพิบัติ</span>
+		                </label>
+		              </li>		
+		            	<li>
+		                <label>
+		                  <input type="radio" checked="" name="optionsRadios" value="option5">
+		                  <span>มีจัดการด้านอื่นๆ ได้แก่</span> <input class="span2" id="" name="" type="text"  placeholder="">
+		                </label>
+		              </li>	
+                </ul> 
+               </li>  
+             </ul>
+           </li> <!-- /end 2.5 การดำเนินการบรรเทาสาธารณภัยที่ผ่านมา -->   
         </ol>
       </fieldset>
       <br/><br/>
       
+      <fieldset>
+        <legend>ส่วนที่ 3 ศักยภาพและความต้องการของพื้นที่</legend>
+        <h3>3.1 ด้านเครื่องมือ/อุปกรณ์</h3>
+        <span class="help-block">***กรุณาเติมคำตอบลงในช่องว่างทุกข้อ ถ้าไม่มีกรุณา  ( - )  ดังตัวอย่างข้างบนนี้ ***</span>
+        <table class="bordered-table">
+        <thead>
+          <tr>
+            <th width="400">ด้านเครื่องมือ / อุปกรณ์</th>
+            <th>จำนวนที่มีอยู่จริงในพื้นที่</th>
+            <th>จำนวนที่สามารถให้ความช่วยเหลือในพื้นที่อื่นได้</th>
+            <th>จำนวนที่ต้องการการสนับสนุนเพิ่มเติม</th>
+            <th>ระดับความต้องการสนับสนุน (วัน)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1. รถ</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th class="indent">1.1 รถกระบะ (สูง)</th>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+          </tr>          
+          <tr>
+            <th class="indent">1.2 รถบรรทุก 6 ล้อ</th>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+          </tr>     
+          <tr>
+            <th class="indent">1.3 รถบรรทุก 10 ล้อ</th>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+          </tr>          
+          <tr>
+            <th class="indent">1.4 รถตู้</th>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+          </tr>  
+          <tr>
+            <th class="indent">1.5 รถดับเพลิง</th>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+          </tr>          
+          <tr>
+            <th class="indent">1.6 รถไฟฟ้าส่องสว่าง</th>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+          </tr>  
+          <tr>
+            <th class="indent">1.7 อื่นๆ</th>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+            <td><input class="span4" id="" name="" type="text"></td>
+          </tr>  
+        </tbody>
+      </table>
+      </fidldset>
       
        
     </form>
