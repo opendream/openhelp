@@ -234,7 +234,7 @@ class WidgetManager
       	return $items;
 	}
 	
-  // under construction, pls dont use it!
+  
   public static function getExtraDouble($id, $number, $village = null) {
     $double = Yii::app()->params['request']['extra']['double'];
     $params = 'request.extra_double'.$number;
@@ -243,9 +243,9 @@ class WidgetManager
 
     // get vilages by last_updated
     if(!$village) {
-      $qtxt = "SELECT request.extra_location0 as name
-        FROM location INNER JOIN request ON location.id = request.location_id 
-        WHERE location.id = $id ";
+      $qtxt = "SELECT distinct request.extra_location0 as name
+        FROM request
+        WHERE request.location_id = $id ";
       $command = Yii::app()->db->createCommand($qtxt);
       $villages = $command->queryAll();
     } else {
@@ -264,19 +264,17 @@ class WidgetManager
         $result = $command->queryRow();
         $sumExtraDouble += $result['value'];
       }
-      $results[$params]['sum'] = $sumExtraDouble;
-      //$results['request.extra_double0.sum'] = $sumExtraDouble;
+      $results[$params]['sum'] = $sumExtraDouble;      
     } elseif($double[$number]['func']=='min-max') {
-      //$results[$params]['min']
-      //$results[$params]['max']
       $min = null;
       $max = null;
       foreach ($villages as $village) { 
         $villageName = $village['name'];
-        $qtxt = "SELECT min($params) as min, max($params) as max
+        $qtxt = "SELECT $params as min, $params as max
           FROM request
           WHERE location_id = $id 
-          AND extra_location0 = '$villageName'";        
+          AND extra_location0 = '$villageName'
+          order by date_created desc";        
 
         $command = Yii::app()->db->createCommand($qtxt);
         $minMaxExtraDoubles = $command->queryRow();
