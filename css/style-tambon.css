@@ -258,6 +258,11 @@ nav {
 	  display: inline;
 	  margin: 0 15px;
   }
+  nav ul li.active a{
+	  font-weight: bold;
+	  color: #CF614E;
+	  text-decoration: underline;
+  }
   nav ul li:last-child{
 	  margin-right: 0;
   }
