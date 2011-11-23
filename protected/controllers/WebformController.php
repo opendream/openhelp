@@ -48,8 +48,9 @@ class WebformController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($url)
+	public function actionView($id)
 	{
+	  $this->layout='//layouts/layout1';
 	  $this->pageTitle = Yii::app()->params['webforms'][$url]['label'];
     $this->render('view', array('url' => $url));
 
@@ -59,23 +60,21 @@ class WebformController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($type)
 	{
-		$model=new Webform;
+	  print_r($_POST);
+	  $this->layout='//layouts/layout1';
+	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
+	  
+	  $model = new Webform;
+	  
+	  $data = range(0, 300);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Webform']))
-		{
-			$model->attributes=$_POST['Webform'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+    $this->render('create', array(
+      'type' => $type, 
+      'model' => $model,
+      'Data' => $data,
+    ));
 	}
 
 	/**

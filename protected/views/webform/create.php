@@ -1,15 +1,11 @@
 <?php
-$this->breadcrumbs=array(
-	'Webforms'=>array('index'),
-	'Create',
-);
 
 $this->menu=array(
 	array('label'=>'List Webform', 'url'=>array('index')),
 	array('label'=>'Manage Webform', 'url'=>array('admin')),
 );
 ?>
-
-<h1>Create Webform</h1>
-
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<form action=".">
+<input type="hidden" name="type" value="<?php echo $type; ?>" />
+<?php require(substr(bu(Yii::app()->params['webforms'][$type]['file']), 1)); ?>
+</form>
