@@ -188,7 +188,6 @@ class WidgetManager
     foreach ($items as &$item) {
       $ln = $item['amount']? log($item['amount']): 0;
       $item['percent'] = $max? floor($ln / log($max) * 100): 0;
-      //$item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
       $item['percent'] = $item['percent'] ? $item['percent'] : 1;
     }
     
@@ -229,7 +228,9 @@ class WidgetManager
   	  	}
   	  	
   	  	foreach ($items as &$item) {
-       	  $item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
+  	  	  $ln = $item['amount']? log($item['amount']): 0;
+          $item['percent'] = $max? floor($ln / log($max) * 100): 0;
+       	  $item['percent'] = $max? floor($item['amount'] / $max * 100): 1;
        	}
       	return $items;
 	}
@@ -380,8 +381,15 @@ class WidgetManager
     //$result = array();
     $label = Yii::app()->params['request']['extra']['location'][0]['label'];
     $params = 'request.extra_text'.$text;
+    
+    if ($rid) {
+      $select = $params;
+    }
+    else {
+      $select = "concat('[ $label ', request.extra_location0,' ] ',$params)";
+    }
 
-    $qtxt = "SELECT concat(request.extra_location0,' ',$params) as label
+    $qtxt = "SELECT $select as label
         FROM location INNER JOIN request ON location.id = request.location_id
         WHERE location.id = $id AND $params <> '' AND $params <> '<p></p>' AND $params IS NOT NULL";
     if($village) {

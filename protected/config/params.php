@@ -19,6 +19,9 @@ return array(
 	    'detail' => '',
 	  )
 	),
+	'webforms' => array(
+	  'reliefsurvey' => array('label' => 'แบบพอร์ม ฟื้นฟูตำบล', 'file' => 'webforms/reliefsurvey.php'),
+	),
 	'request'=>array(
 	  'extra' => array(
 	    'location' => array(

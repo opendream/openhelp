@@ -15,7 +15,7 @@
     <div class="request_extra_text">
     <?php foreach ($allExtraTexts as $label => $value): ?>  
       <?php if (!empty($value)): ?>
-        <div class="col2">
+        <div>
         <h2><?php echo $label ?></h2>
             <ul>
             <?php foreach ($value as $node): ?>
