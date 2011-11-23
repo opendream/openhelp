@@ -43,6 +43,7 @@ return array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'page/<url:\w+>'=>'page/view',
+				'webform/<url:\w+>'=>'webform/view',
 				
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -62,13 +63,7 @@ return array(
 		),
 		*/
 		// uncomment the following to use a MySQL database
-		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=openhelp',
-			'emulatePrepare' => true,
-			'username' => 'openhelp',
-			'password' => 'openhelp',
-			'charset' => 'utf8',
-		),
+		'db'=>require(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.'/config/db.php'),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			 'errorAction'=>'site/error',

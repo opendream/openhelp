@@ -528,9 +528,10 @@ nav {
 		opacity: 0.5;
 	}
 	
+
 	.request_extra_text ul li {
 	  clear: both;
-	  list-style: initial;
+	  list-style: circle;
 	  margin: 0 15px 5px 25px;
 	}
 	.request_extra_text li p {

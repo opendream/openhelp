@@ -188,7 +188,6 @@ class WidgetManager
     foreach ($items as &$item) {
       $ln = $item['amount']? log($item['amount']): 0;
       $item['percent'] = $max? floor($ln / log($max) * 100): 0;
-      //$item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
       $item['percent'] = $item['percent'] ? $item['percent'] : 1;
     }
     
@@ -229,7 +228,9 @@ class WidgetManager
   	  	}
   	  	
   	  	foreach ($items as &$item) {
-       	  $item['percent'] = $max? floor($item['amount'] / $max * 100): 0;
+  	  	  $ln = $item['amount']? log($item['amount']): 0;
+          $item['percent'] = $max? floor($ln / log($max) * 100): 0;
+       	  $item['percent'] = $max? floor($item['amount'] / $max * 100): 1;
        	}
       	return $items;
 	}
@@ -240,6 +241,8 @@ class WidgetManager
     $params = 'request.extra_double'.$number;
     $results = array();
     $villages = array();
+
+    // get vilages by last_updated
     if(!$village) {
       $qtxt = "SELECT request.extra_location0 as name
         FROM location INNER JOIN request ON location.id = request.location_id 
@@ -250,20 +253,47 @@ class WidgetManager
       $villages[] = array('name' => $village);
     }
 
+    //check match function for each extra_double
     if($double[$number]['func']=='sum') {
       $sumExtraDouble = 0;      
       foreach ($villages as $village) { 
         $villageName = $village['name'];    
         $qtxt = "SELECT $params as value
-          FROM request where $params = $villageName
+          FROM request where extra_location0 = '$villageName'
           order by date_created desc";
         $command = Yii::app()->db->createCommand($qtxt);
         $result = $command->queryRow();
         $sumExtraDouble += $result['value'];
       }
-      $results[$params] = $sumExtraDouble;
+      $results[$params]['sum'] = $sumExtraDouble;
+      //$results['request.extra_double0.sum'] = $sumExtraDouble;
     } elseif($double[$number]['func']=='min-max') {
-      
+      //$results[$params]['min']
+      //$results[$params]['max']
+      $min = null;
+      $max = null;
+      foreach ($villages as $village) { 
+        $villageName = $village['name'];
+        $qtxt = "SELECT min($params) as min, max($params) as max
+          FROM request
+          WHERE location_id = $id 
+          AND extra_location0 = '$villageName'";        
+
+        $command = Yii::app()->db->createCommand($qtxt);
+        $minMaxExtraDoubles = $command->queryRow();
+
+        if($min == null || $min > $minMaxExtraDoubles['min']){
+          $min = $minMaxExtraDoubles['min'];
+        }
+
+        if($max == null || $max < $minMaxExtraDoubles['max']){
+          $max = $minMaxExtraDoubles['max'];
+        }
+
+      }
+
+      $results[$params]['min'] = $min;
+      $results[$params]['max'] = $max; 
     }
     //Yii::trace($qtxt,'example');
 
@@ -353,8 +383,15 @@ class WidgetManager
     //$result = array();
     $label = Yii::app()->params['request']['extra']['location'][0]['label'];
     $params = 'request.extra_text'.$text;
+    
+    if ($rid) {
+      $select = $params;
+    }
+    else {
+      $select = "concat('[ $label ', request.extra_location0,' ] ',$params)";
+    }
 
-    $qtxt = "SELECT concat(request.extra_location0,' ',$params) as label
+    $qtxt = "SELECT $select as label
         FROM location INNER JOIN request ON location.id = request.location_id
         WHERE location.id = $id AND $params <> '' AND $params <> '<p></p>' AND $params IS NOT NULL";
     if($village) {
