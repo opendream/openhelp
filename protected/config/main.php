@@ -43,7 +43,8 @@ return array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'page/<url:\w+>'=>'page/view',
-				'webform/<url:\w+>'=>'webform/view',
+				//'webform/<url:\w+>'=>'webform/view',
+				//'webform/<url:\w+>/<action:\w+>'=>'webform/<action>/<url>',
 				
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
