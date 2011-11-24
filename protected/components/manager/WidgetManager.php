@@ -259,7 +259,9 @@ class WidgetManager
       foreach ($villages as $village) { 
         $villageName = $village['name'];    
         $qtxt = "SELECT $params as value
-          FROM request where extra_location0 = '$villageName'
+          FROM request 
+          where extra_location0 = '$villageName'
+          AND $params is not null  
           order by date_created desc";
         $command = Yii::app()->db->createCommand($qtxt);
         $result = $command->queryRow();
@@ -275,6 +277,7 @@ class WidgetManager
           FROM request
           WHERE location_id = $id 
           AND extra_location0 = '$villageName'
+          AND $params is not null 
           order by date_created desc";        
 
         $command = Yii::app()->db->createCommand($qtxt);
