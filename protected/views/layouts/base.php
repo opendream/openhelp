@@ -57,6 +57,17 @@
 			<div id="develop">
 				<p><small>พัฒนาระบบโดย<a href="http://www.opendream.co.th">โอเพ่นดรีม</a> สนับสนุนโดย openhelp</small></p>
 			</div>
+			
+			<div id="user-form">
+				<?php
+				  $userForm = array(
+    				array('label'=> Yii::t('locale','login'), 'url'=>array('/site/login')),
+    				array('label'=> Yii::t('locale','logout'), 'url'=>array('/site/logout')),
+    			);
+    			$this->widget('zii.widgets.CMenu',array('items'=>$userForm));
+
+				?>
+			</div>
 
 		</footer>
 	</div> <!-- end footer-->

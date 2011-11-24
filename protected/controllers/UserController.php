@@ -1,6 +1,6 @@
 <?php
 
-class WebformController extends Controller
+class UserController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -43,13 +43,6 @@ class WebformController extends Controller
 			),
 		);
 	}
-	
-	public function getWebForm($type, $model, $Data) {
-    ob_start();
-    ob_implicit_flush(false);
-    require(substr(bu(Yii::app()->params['webforms'][$type]['file']), 1));
-    return ob_get_clean();
-  }
 
 	/**
 	 * Displays a particular model.
@@ -57,40 +50,32 @@ class WebformController extends Controller
 	 */
 	public function actionView($id)
 	{
-	  $this->layout='//layouts/layout1';
-	  $this->pageTitle = Yii::app()->params['webforms'][$url]['label'];
-    $this->render('view', array('url' => $url));
-
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($type)
+	public function actionCreate()
 	{
-	  $this->layout='//layouts/layout1';
-	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
-	  
-	  $model = new Webform;
-	  
-	  $data = range(0, 1000);
+		$model=new User;
 
-		if(isset($_POST['Webform']))
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['User']))
 		{
-		  $attributes = $_POST['Webform'];
-		  $attributes['user_id'] = Yii::app()->user->getIntId();
-		  $attributes['data'] = serialize($_POST['Data']);
-			$model->attributes=$attributes;
+			$model->attributes=$_POST['User'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-    $this->render('create', array(
-      'type' => $type, 
-      'model' => $model,
-      'Data' => $data,
-    ));
+		$this->render('create',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -105,19 +90,15 @@ class WebformController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Webform']))
+		if(isset($_POST['User']))
 		{
-			$attributes = $_POST['Webform'];
-		  $attributes['data'] = serialize($_POST['Data']);
-			$model->attributes=$attributes;
+			$model->attributes=$_POST['User'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
-			'type' => $model->type, 
-      'model' => $model,
-      'Data' => unserialize($model->data),
+			'model'=>$model,
 		));
 	}
 
@@ -146,7 +127,7 @@ class WebformController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Webform');
+		$dataProvider=new CActiveDataProvider('User');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -157,10 +138,10 @@ class WebformController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Webform('search');
+		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Webform']))
-			$model->attributes=$_GET['Webform'];
+		if(isset($_GET['User']))
+			$model->attributes=$_GET['User'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -174,7 +155,7 @@ class WebformController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Webform::model()->findByPk($id);
+		$model=User::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -186,7 +167,7 @@ class WebformController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='webform-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
