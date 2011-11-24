@@ -1,3 +1,5 @@
+<div class="webform-content">
+
 <?php
 $this->menu=array(
 	array('label'=>t('List'), 'url'=>array('index')),
@@ -19,3 +21,5 @@ $this->menu=array(
   ), 
   $this->getWebForm($type, $model, $Data)
 ); ?>
+
+</div>

@@ -1,3 +1,4 @@
+<div class="webform-content">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'content-form',
 	'enableAjaxValidation'=>false,
@@ -11,3 +12,4 @@
 </div>
 
 <?php $this->endWidget(); ?>
+</div>
