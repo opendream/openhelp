@@ -20,6 +20,11 @@
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'group'); ?>
+		<?php echo $form->textField($model,'group',array('size'=>60,'maxlength'=>128)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

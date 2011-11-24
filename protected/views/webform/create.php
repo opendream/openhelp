@@ -1,31 +1,13 @@
-<?php
-$this->menu=array(
-	array('label'=>'List Webform', 'url'=>array('index')),
-	array('label'=>'Manage Webform', 'url'=>array('admin')),
-);
-?>
-
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'content-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
 <?php echo $form->hiddenField($model,'type'); ?>
-<?php echo $form->hiddenField($model,'last_updated'); ?>
+<?php echo $this->getWebForm($type, $model, $Data); ?>
 
-<?php
-$output = $this->getWebForm($type, $model, $Data);
-$output = str_replace(array(
-    '<input',
-    '<textarea',
-    '<select',
-  ), array(
-    '<input disabled="disabled"',
-    '<textarea disabled="disabled"',
-    '<select disabled="disabled"',
-  ), $output);
-
-echo $output;
-?>
+<div class="actions">
+  <input type="submit" class="btn primary" value="<?php echo t('Save changes'); ?>">&nbsp;<button type="reset" class="btn"><?php echo t('Cancel'); ?></button>
+</div>
 
 <?php $this->endWidget(); ?>

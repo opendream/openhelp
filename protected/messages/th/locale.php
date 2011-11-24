@@ -28,7 +28,7 @@ return array(
   'Content' => 'เนื้อหา', 
   'Title' => 'ชื่อเรื่อง',
 
-  'List'   => 'รายการ',
+  'List'   => 'รายการทั้งหมด',
   'View'   => 'ดู',
   'Create' => 'สร้าง',
   'Update' => 'แก้ไข',
@@ -36,6 +36,7 @@ return array(
   'Manage' => 'จัดการ',
   
   'No results found.' => 'ไม่พบผลลัพธ์',
+  'Save changes' => 'บันทึก',
    
   /*
   * Location

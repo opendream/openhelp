@@ -68,7 +68,9 @@ class UserController extends Controller
 
 		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['User'];
+		  $attributes = $_POST['User'];
+		  $attributes['password'] = md5($attributes['password']);
+			$model->attributes=$attributes;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -92,11 +94,13 @@ class UserController extends Controller
 
 		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['User'];
+		  $attributes = $_POST['User'];
+  		$attributes['password'] = ($attributes['password'] != $model->password)? md5($attributes['password']): $model->password;
+			$model->attributes=$attributes;
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
 		$this->render('update',array(
 			'model'=>$model,
 		));

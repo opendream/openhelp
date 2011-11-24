@@ -1,10 +1,4 @@
 <?php
-$this->breadcrumbs=array(
-	'Webforms'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
 $this->menu=array(
 	array('label'=>'List Webform', 'url'=>array('index')),
 	array('label'=>'Create Webform', 'url'=>array('create')),

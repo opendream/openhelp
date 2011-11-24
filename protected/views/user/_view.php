@@ -16,5 +16,9 @@
 	<?php echo CHtml::encode($data->email); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('group')); ?>:</b>
+	<?php echo CHtml::encode($data->group); ?>
+	<br />
+
 
 </div>

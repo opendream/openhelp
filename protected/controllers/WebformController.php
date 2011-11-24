@@ -31,7 +31,7 @@ class WebformController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update', 'list'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -58,9 +58,16 @@ class WebformController extends Controller
 	public function actionView($id)
 	{
 	  $this->layout='//layouts/layout1';
-	  $this->pageTitle = Yii::app()->params['webforms'][$url]['label'];
-    $this->render('view', array('url' => $url));
+	  
+	  $model=$this->loadModel($id);
+	  $this->pageTitle = Yii::app()->params['webforms'][$model->type]['label'];
 
+    $this->render('view', array(
+      'type' => $model->type, 
+      'model' => $model,
+      'Data' => array_fill(0, 1000, '') + unserialize($model->data),
+    ));
+    
 	}
 
 	/**
@@ -70,22 +77,26 @@ class WebformController extends Controller
 	public function actionCreate($type)
 	{
 	  $this->layout='//layouts/layout1';
-	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
+	  $this->pageTitle = t('Create').' '.Yii::app()->params['webforms'][$type]['label'];
+	  $this->menu=array(
+    	array('label'=>t('List'), 'url'=>array('index')),
+    );
 	  
 	  $model = new Webform;
 	  
-	  $data = range(0, 1000);
-
+	  $data = array_fill(0, 1000, 'test');
 		if(isset($_POST['Webform']))
 		{
 		  $attributes = $_POST['Webform'];
+		  $attributes['type'] = $type;
+		  $attributes['date_created'] = $attributes['date_created']? $attributes['date_created']: date('Y-m-d H:i:s');
+		  $attributes['last_updated'] = date('Y-m-d H:i:s');
 		  $attributes['user_id'] = Yii::app()->user->getIntId();
 		  $attributes['data'] = serialize($_POST['Data']);
 			$model->attributes=$attributes;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
     $this->render('create', array(
       'type' => $type, 
       'model' => $model,
@@ -100,24 +111,39 @@ class WebformController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+	  $this->layout='//layouts/layout1';
+	  
+	  $model=$this->loadModel($id);
+		
+	  $this->pageTitle = t('Update').' '.Yii::app()->params['webforms'][$model->type]['label'];
+	  $this->menu=array(
+    	array('label'=>t('List'), 'url'=>array('list?type='.$model->type)),
+    	array('label'=>t('Create'), 'url'=>array('create?type='.$model->type)),
+    	array('label'=>t('View'), 'url'=>array('view', 'id'=>$model->id)),
+    );
+    
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+    $data = array_fill(0, 1000, '');
 		if(isset($_POST['Webform']))
 		{
 			$attributes = $_POST['Webform'];
+		  $attributes['type'] = $model->type;
+		  $attributes['date_created'] = $attributes['date_created']? $attributes['date_created']: date('Y-m-d H:i:s');
+		  $attributes['last_updated'] = date('Y-m-d H:i:s');
+		  $attributes['user_id'] = Yii::app()->user->getIntId();
 		  $attributes['data'] = serialize($_POST['Data']);
 			$model->attributes=$attributes;
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array(
+		$this->render('create',array(
 			'type' => $model->type, 
       'model' => $model,
-      'Data' => unserialize($model->data),
+      'Data' => unserialize($model->data) + $data,
 		));
 	}
 
@@ -144,8 +170,20 @@ class WebformController extends Controller
 	/**
 	 * Lists all models.
 	 */
+	public function actionList($type)
+	{
+		$dataProvider=new CActiveDataProvider('Webform');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	/**
+	 * Lists all models.
+	 */
 	public function actionIndex()
 	{
+	  $type = $_GET['type'];
 		$dataProvider=new CActiveDataProvider('Webform');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

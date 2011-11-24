@@ -9,20 +9,22 @@
  * @property string $date_created
  * @property string $last_updated
  * @property string $user_id
- * @property string $location_id0
- * @property string $location_id1
- * @property string $location_id2
- * @property string $location_id3
- * @property string $location_id4
+ * @property string $location_id
  * @property string $data
+ * @property string $filter0
+ * @property string $filter1
+ * @property string $filter2
+ * @property string $filter3
+ * @property string $filter4
+ * @property string $filter5
+ * @property string $filter6
+ * @property string $filter7
+ * @property string $filter8
+ * @property string $filter9
  *
  * The followings are the available model relations:
  * @property User $user
- * @property Location $locationId0
- * @property Location $locationId1
- * @property Location $locationId2
- * @property Location $locationId3
- * @property Location $locationId4
+ * @property Location $location
  */
 class Webform extends CActiveRecord
 {
@@ -53,11 +55,12 @@ class Webform extends CActiveRecord
 		return array(
 			array('type, date_created, last_updated', 'required'),
 			array('type', 'length', 'max'=>60),
-			array('user_id, location_id0, location_id1, location_id2, location_id3, location_id4', 'length', 'max'=>20),
+			array('user_id, location_id', 'length', 'max'=>20),
+			array('filter0, filter1, filter2, filter3, filter4, filter5, filter6, filter7, filter8, filter9', 'length', 'max'=>128),
 			array('data', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, date_created, last_updated, user_id, location_id0, location_id1, location_id2, location_id3, location_id4, data', 'safe', 'on'=>'search'),
+			array('id, type, date_created, last_updated, user_id, location_id, data, filter0, filter1, filter2, filter3, filter4, filter5, filter6, filter7, filter8, filter9', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,11 +73,7 @@ class Webform extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
-			'locationId0' => array(self::BELONGS_TO, 'Location', 'location_id0'),
-			'locationId1' => array(self::BELONGS_TO, 'Location', 'location_id1'),
-			'locationId2' => array(self::BELONGS_TO, 'Location', 'location_id2'),
-			'locationId3' => array(self::BELONGS_TO, 'Location', 'location_id3'),
-			'locationId4' => array(self::BELONGS_TO, 'Location', 'location_id4'),
+			'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
 		);
 	}
 
@@ -89,12 +88,18 @@ class Webform extends CActiveRecord
 			'date_created' => 'Date Created',
 			'last_updated' => 'Last Updated',
 			'user_id' => 'User',
-			'location_id0' => 'Location Id0',
-			'location_id1' => 'Location Id1',
-			'location_id2' => 'Location Id2',
-			'location_id3' => 'Location Id3',
-			'location_id4' => 'Location Id4',
+			'location_id' => 'Location',
 			'data' => 'Data',
+			'filter0' => 'Filter0',
+			'filter1' => 'Filter1',
+			'filter2' => 'Filter2',
+			'filter3' => 'Filter3',
+			'filter4' => 'Filter4',
+			'filter5' => 'Filter5',
+			'filter6' => 'Filter6',
+			'filter7' => 'Filter7',
+			'filter8' => 'Filter8',
+			'filter9' => 'Filter9',
 		);
 	}
 
@@ -114,12 +119,18 @@ class Webform extends CActiveRecord
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('last_updated',$this->last_updated,true);
 		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('location_id0',$this->location_id0,true);
-		$criteria->compare('location_id1',$this->location_id1,true);
-		$criteria->compare('location_id2',$this->location_id2,true);
-		$criteria->compare('location_id3',$this->location_id3,true);
-		$criteria->compare('location_id4',$this->location_id4,true);
+		$criteria->compare('location_id',$this->location_id,true);
 		$criteria->compare('data',$this->data,true);
+		$criteria->compare('filter0',$this->filter0,true);
+		$criteria->compare('filter1',$this->filter1,true);
+		$criteria->compare('filter2',$this->filter2,true);
+		$criteria->compare('filter3',$this->filter3,true);
+		$criteria->compare('filter4',$this->filter4,true);
+		$criteria->compare('filter5',$this->filter5,true);
+		$criteria->compare('filter6',$this->filter6,true);
+		$criteria->compare('filter7',$this->filter7,true);
+		$criteria->compare('filter8',$this->filter8,true);
+		$criteria->compare('filter9',$this->filter9,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

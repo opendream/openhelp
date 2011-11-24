@@ -10572,6 +10572,7 @@ CREATE TABLE `user` (
   `username` varchar(128) NOT NULL,
   `password` varchar(128) NOT NULL,
   `email` varchar(128),
+  `group` varchar(128),
   
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -10583,20 +10584,23 @@ CREATE TABLE `webform` (
   `date_created` datetime NOT NULL,
   `last_updated` datetime NOT NULL,
   `user_id` bigint(20),
-  `location_id0` bigint(20),
-  `location_id1` bigint(20),
-  `location_id2` bigint(20),
-  `location_id3` bigint(20),
-  `location_id4` bigint(20),
+  `location_id` bigint(20),
   `data` text,
+  
+  `filter0` varchar(128),
+  `filter1` varchar(128),
+  `filter2` varchar(128),
+  `filter3` varchar(128),
+  `filter4` varchar(128),
+  `filter5` varchar(128),
+  `filter6` varchar(128),
+  `filter7` varchar(128),
+  `filter8` varchar(128),
+  `filter9` varchar(128),
 
   PRIMARY KEY (`id`),
   KEY `fk_webform_user_id` (`user_id`),
-  KEY `fk_webform_location_id0` (`location_id0`),
-  KEY `fk_webform_location_id1` (`location_id1`),
-  KEY `fk_webform_location_id2` (`location_id2`),
-  KEY `fk_webform_location_id3` (`location_id3`),
-  KEY `fk_webform_location_id4` (`location_id4`)
+  KEY `fk_webform_location_id` (`location_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
@@ -10672,11 +10676,6 @@ ALTER TABLE `transporter`
   ADD CONSTRAINT `fk_transporter_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
   
 
-# Webform ==============================================================================================================
 ALTER TABLE `webform`
   ADD CONSTRAINT `fk_webform_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `fk_webform_location_id0` FOREIGN KEY (`location_id0`) REFERENCES `location` (`id`),
-  ADD CONSTRAINT `fk_webform_location_id1` FOREIGN KEY (`location_id1`) REFERENCES `location` (`id`),
-  ADD CONSTRAINT `fk_webform_location_id2` FOREIGN KEY (`location_id2`) REFERENCES `location` (`id`),
-  ADD CONSTRAINT `fk_webform_location_id3` FOREIGN KEY (`location_id3`) REFERENCES `location` (`id`),
-  ADD CONSTRAINT `fk_webform_location_id4` FOREIGN KEY (`location_id4`) REFERENCES `location` (`id`);
+  ADD CONSTRAINT `fk_webform_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);

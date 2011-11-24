@@ -27,6 +27,17 @@
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'group'); ?>
+		<?php echo $form->dropDownList($model,'group',array(
+		  'webform' => 'webform', 
+		  'writer' => 'writer', 
+		  'data' => 'data', 
+		  'webmaster' => 'webmaster'
+		)); ?>
+		<?php echo $form->error($model,'group'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
