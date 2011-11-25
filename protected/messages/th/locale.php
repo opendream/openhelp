@@ -37,6 +37,9 @@ return array(
   
   'No results found.' => 'ไม่พบผลลัพธ์',
   'Save changes' => 'บันทึก',
+  'Author' => 'ผู้สร้าง',
+  'ID' => 'รหัส',
+  'Date' => 'วันที่', 
    
   /*
   * Location

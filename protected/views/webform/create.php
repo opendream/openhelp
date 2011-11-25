@@ -1,7 +1,6 @@
-
+<div class="webform-content drop-shadow curved curved-hz-1">
 <h1><?php echo $this->pageTitle; ?></h1>
 
-<div class="webform-content drop-shadow curved curved-hz-1">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'content-form',
 	'enableAjaxValidation'=>false,

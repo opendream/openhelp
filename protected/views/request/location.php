@@ -45,6 +45,8 @@ $nextPage = $page + 1;
 $qstr = http_build_query(array('Location' => $query));
 
 ?>
+<div class="webform-content drop-shadow curved curved-hz-1">
+
 <?php if (isset($search) && $search): ?>
   <header><h2><?php echo Yii::t('locale', 'Location List'); ?></h2>
     <form action="" method="get">
@@ -73,3 +75,4 @@ $qstr = http_build_query(array('Location' => $query));
   </script>
 <?php endif ?>
 
+</div>
