@@ -8,6 +8,8 @@ return array(
   'volunteer' => 'อาสาสมัคร',
   'database' => 'ฐานข้อมูลรายตำบล',
   'about' => 'เกี่ยวกับเรา',
+  'Total areas' => 'ตำบลทั้งหมด',
+  
   
   /*
   * Global
@@ -102,6 +104,5 @@ return array(
    * Request
    */
   'Waiting for help' => 'รอช่วยเหลือ',
-  'Total areas' => 'พื้นที่ทั้งหมด',
   
 );

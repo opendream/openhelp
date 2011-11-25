@@ -405,8 +405,8 @@ class WidgetManager
   }
 
   public static function getRequestLocation() {
-    $qtxt = "SELECT COUNT(id) 
-        FROM request";
+  $qtxt = "SELECT COUNT(DISTINCT location.id) 
+        FROM location, request WHERE location.id = request.location_id";
     $command = Yii::app()->db->createCommand($qtxt);
     $request_location = $command->queryScalar();
     return $request_location;
