@@ -1202,9 +1202,66 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   border-bottom-right-radius: 6px;
 }
 
-
 .content-map-row .db-list{
 	width: 530px;	
 	height: 90px;
 	border-bottom: none;
+}
+
+
+
+/****************************************************
+									 Webforms
+*****************************************************/
+.webform-content{
+	padding: 20px;
+	background: #fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.webform-content h1{
+	font-size: 22px !important;
+}
+.no-float{
+	float: none;
+	width: 125px;
+	display: inline-block;
+}
+
+table input.span3, textarea.span3, table input.span2, textarea.span2{
+	margin: 0;
+}
+input.span3, textarea.span3, input.span2, textarea.span2, input.span7, #Webform_date_created,
+input.span1{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/* Radio list row */
+.radio-list label{
+	float: none;
+}
+
+.list-textbox{
+	margin-bottom: 18px;
+}
+
+#Location_level0_wrapper, #Location_level1_wrapper, #Location_level2_wrapper{
+	float: left;
+	margin-right: 20px;
+}
+#Location_level0_wrapper select, #Location_level1_wrapper select, #Location_level2_wrapper select{
+	width: 170px;
+}
+
+fieldset legend{ /* Heading fieldset */
+	width: 780px;
+	padding: 10px !important;
+	font-size: 16px !important;
+	font-weight: bold !important;
+	background: #dadada;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }

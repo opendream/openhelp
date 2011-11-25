@@ -53,7 +53,7 @@
 			<label class="no-float">สถานที่ทํางาน</label>
 			<input class="span2"  name="Data[1]" type="text"  placeholder="" value="<?php echo $Data[1]; ?>">
 			<label class="no-float">หมู่ที่</label>
-			<input class="span2"  name="Data[2]" type="text"  placeholder="" value="<?php echo $Data[2]; ?>">
+			<input class="span1"  name="Data[2]" type="text"  placeholder="" value="<?php echo $Data[2]; ?>">
 			<label class="no-float">ตําบล</label>
 			<input class="span2"  name="Data[3]" type="text"  placeholder="" value="<?php echo $Data[3]; ?>">
 		</div>
@@ -62,7 +62,7 @@
 			<input class="span2"  name="Data[4]" type="text"  placeholder="" value="<?php echo $Data[4]; ?>">
 			<label class="no-float">จังหวัด</label>
 			<input class="span2"  name="Data[5]" type="text"  placeholder="" value="<?php echo $Data[5]; ?>">
-			<label class="no-float">โทรศัพท</label>
+			<label class="no-float">โทรศัพท์</label>
 			<input class="span2"  name="Data[6]" type="text"  placeholder="" value="<?php echo $Data[6]; ?>">
 		</div>
 		<div class="clearfix">
@@ -80,30 +80,30 @@
       <div class="clearfix">
 			  <label>1.1 จํานวนครัวเรือน</label>
 			  <div class="input">
-			    <input class="xlarge"  name="Data[8]" size="30" type="text" value="<?php echo $Data[8]; ?>">
+			    <input class="span1"  name="Data[8]" size="30" type="text" value="<?php echo $Data[8]; ?>">
 			  </div>
 			</div><!-- /clearfix -->
 			<div class="clearfix">
 				<label class="no-float">1.2 ประชากรปัจจุบันทั้งหมดโดยประมาณ</label>
-				<input class="span2"  name="Data[9]" type="text"  placeholder="" value="<?php echo $Data[9]; ?>">
+				<input class="span1"  name="Data[9]" type="text"  placeholder="" value="<?php echo $Data[9]; ?>">
 				<label class="no-float">ชาย</label>
-				<input class="span2"  name="Data[10]" type="text"  placeholder="" value="<?php echo $Data[10]; ?>">
+				<input class="span1"  name="Data[10]" type="text"  placeholder="" value="<?php echo $Data[10]; ?>">
 				<label class="no-float">หญิง</label>
-				<input class="span2"  name="Data[11]" type="text"  placeholder="" value="<?php echo $Data[11]; ?>">
+				<input class="span1"  name="Data[11]" type="text"  placeholder="" value="<?php echo $Data[11]; ?>">
 			</div>
 			<div class="clearfix">
 				<label class="no-float">โดยเฉลี่ยครัวเรือนละ/คน</label>
-				<input class="span2"  name="Data[12]" type="text"  placeholder="" value="<?php echo $Data[12]; ?>">
+				<input class="span1"  name="Data[12]" type="text"  placeholder="" value="<?php echo $Data[12]; ?>">
 				<label class="no-float">มีประชากรแฝง/คน</label>
-				<input class="span2"  name="Data[13]" type="text" placeholder="" value="<?php echo $Data[13]; ?>">
+				<input class="span1"  name="Data[13]" type="text" placeholder="" value="<?php echo $Data[13]; ?>">
 			</div>
 			<div class="clearfix">
-				<label class="no-float">1.3 การนับถือศาสนา พุทธ(ร้อยละ)</label>
-				<input class="span2"  name="Data[14]" type="text"  placeholder="" value="<?php echo $Data[14]; ?>">
-				<label class="no-float">อิสลาม(ร้อยละ)</label>
-				<input class="span2"  name="Data[15]" type="text"  placeholder="" value="<?php echo $Data[15]; ?>">
-				<label class="no-float">คริสต์(ร้อยละ)</label>
-				<input class="span2"  name="Data[16]" type="text"  placeholder="" value="<?php echo $Data[16]; ?>">
+				<label class="no-float">1.3 การนับถือศาสนา พุทธ (ร้อยละ)</label>
+				<input class="span1"  name="Data[14]" type="text"  placeholder="" value="<?php echo $Data[14]; ?>">
+				<label class="no-float">อิสลาม (ร้อยละ)</label>
+				<input class="span1"  name="Data[15]" type="text"  placeholder="" value="<?php echo $Data[15]; ?>">
+				<label class="no-float">คริสต์ (ร้อยละ)</label>
+				<input class="span1"  name="Data[16]" type="text"  placeholder="" value="<?php echo $Data[16]; ?>">
 			</div>
 			<div class="clearfix">
 				<label class="no-float">1.4 ส่วนใหญ่ประกอบอาชีพ</label>
@@ -122,7 +122,7 @@
 			<table class="bordered-table">
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
             <th>ชื่อ-นามสกุล</th>
             <th>ตําแหน่ง</th>
             <th>เบอร์โทร</th>
@@ -150,11 +150,11 @@
         </tbody>
       </table>
       
-      <h3>ระดับหมู่บ้ําน</h3>
+      <h3>ระดับหมู่บ้าน</h3>
 			<table class="bordered-table">
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
             <th>หมู่ที่</th>
             <th>ชื่อหมู่บ้าน</th>
             <th>ชื่อ-นามสกุล</th>
@@ -165,7 +165,7 @@
         <tbody>
           <tr>
             <th>1</th>
-            <td><input class="span2"  name="Data[27]" type="text" placeholder="" value="<?php echo $Data[27]; ?>"></td>
+            <td><input class="span1"  name="Data[27]" type="text" placeholder="" value="<?php echo $Data[27]; ?>"></td>
             <td><input class="span2"  name="Data[28]" type="text" placeholder="" value="<?php echo $Data[28]; ?>"></td>
             <td><input class="span4"  name="Data[29]" type="text" placeholder="" value="<?php echo $Data[29]; ?>"></td>
             <td><input class="span4"  name="Data[30]" type="text" placeholder="" value="<?php echo $Data[30]; ?>"></td>
@@ -173,7 +173,7 @@
           </tr>
           <tr>
             <th>2</th>
-            <td><input class="span2"  name="Data[32]" type="text" placeholder="" value="<?php echo $Data[32]; ?>"></td>
+            <td><input class="span1"  name="Data[32]" type="text" placeholder="" value="<?php echo $Data[32]; ?>"></td>
             <td><input class="span2"  name="Data[33]" type="text" placeholder="" value="<?php echo $Data[33]; ?>"></td>
             <td><input class="span4"  name="Data[34]" type="text" placeholder="" value="<?php echo $Data[34]; ?>"></td>
             <td><input class="span4"  name="Data[35]" type="text" placeholder="" value="<?php echo $Data[35]; ?>"></td>
@@ -181,7 +181,7 @@
           </tr>
           <tr>
             <th>3</th>
-            <td><input class="span2"  name="Data[37]" type="text" placeholder="" value="<?php echo $Data[37]; ?>"></td>
+            <td><input class="span1"  name="Data[37]" type="text" placeholder="" value="<?php echo $Data[37]; ?>"></td>
             <td><input class="span2"  name="Data[38]" type="text" placeholder="" value="<?php echo $Data[38]; ?>"></td>
             <td><input class="span4"  name="Data[39]" type="text" placeholder="" value="<?php echo $Data[39]; ?>"></td>
             <td><input class="span4"  name="Data[40]" type="text" placeholder="" value="<?php echo $Data[40]; ?>"></td>
@@ -196,7 +196,7 @@
 <!--       ส่วนที่ 3 การสํารวจเพื่อการฟื้นฟู -->
   <fieldset>
       <legend>ส่วนที่ 3 การสํารวจเพื่อการฟื้นฟู</legend>
-      <h3>3.1 ความเสยี หายต่อชีวิตและความปลอดภัย</h3>
+      <h3>3.1 ความเสียหายต่อชีวิตและความปลอดภัย</h3>
       <h4>3.1.1 ผู้เสียชีวิต สูญหาย บาดเจ็บ</h4>
       <table class="bordered-table">
         <thead>
@@ -209,17 +209,17 @@
         <tbody>
           <tr>
             <th>เสียชีวิต</th>
-            <td><input class="span4"  name="Data[42]" type="text" placeholder="" value="<?php echo $Data[42]; ?>"></td>
+            <td><input class="span1"  name="Data[42]" type="text" placeholder="" value="<?php echo $Data[42]; ?>"></td>
             <td><input class="span4"  name="Data[43]" type="text" placeholder="" value="<?php echo $Data[43]; ?>"></td>
           </tr>
           <tr>
             <th>สูญหาย</th>
-            <td><input class="span4"  name="Data[44]" type="text" placeholder="" value="<?php echo $Data[44]; ?>"></td>
+            <td><input class="span1"  name="Data[44]" type="text" placeholder="" value="<?php echo $Data[44]; ?>"></td>
             <td><input class="span4"  name="Data[45]" type="text" placeholder="" value="<?php echo $Data[45]; ?>"></td>
           </tr>
           <tr>
             <th>บาดเจ็บ</th>
-            <td><input class="span4"  name="Data[46]" type="text" placeholder="" value="<?php echo $Data[46]; ?>"></td>
+            <td><input class="span1"  name="Data[46]" type="text" placeholder="" value="<?php echo $Data[46]; ?>"></td>
             <td><input class="span4"  name="Data[47]" type="text" placeholder="" value="<?php echo $Data[47]; ?>"></td>
           </tr>
         </tbody>
@@ -282,7 +282,7 @@
         </label>
 			</div>
 			<div class="clearfix">
-			  <label for="xlInput">อ่ืน	ๆ โปรดระบ</label>
+			  <label for="xlInput">อ่ืน	ๆ โปรดระบุ</label>
 			  <div class="input">
 			    <input class="xlarge"  name="Data[53]" size="30" type="text" value="<?php echo $Data[53]; ?>">
 			  </div>
@@ -293,17 +293,17 @@
   <h4>3.1.3 บ้านเรือนพังเสียหายทั้งหลัง</h4>
   <div class="clearfix">
 		<label class="no-float">จํานวน/หลัง</label>
-		<input class="span2"  name="Data[54]" type="text"  placeholder="" value="<?php echo $Data[54]; ?>">
+		<input class="span1"  name="Data[54]" type="text"  placeholder="" value="<?php echo $Data[54]; ?>">
 		<label class="no-float">ในพื้นที่ (หมู่)</label>
-		<input class="span2"  name="Data[55]" type="text"  placeholder="" value="<?php echo $Data[55]; ?>">
+		<input class="span1"  name="Data[55]" type="text"  placeholder="" value="<?php echo $Data[55]; ?>">
 	</div>
   
   <h4>3.1.4 ประชาชนไร้ที่อยู่</h4>
   <div class="clearfix">
 		<label class="no-float">จํานวน/คน</label>
-		<input class="span2"  name="Data[56]" type="text"  placeholder="" value="<?php echo $Data[56]; ?>">
+		<input class="span1"  name="Data[56]" type="text"  placeholder="" value="<?php echo $Data[56]; ?>">
 		<label class="no-float">ในพื้นที่ (หมู่)</label>
-		<input class="span2"  name="Data[57]" type="text"  placeholder="" value="<?php echo $Data[57]; ?>">
+		<input class="span1"  name="Data[57]" type="text"  placeholder="" value="<?php echo $Data[57]; ?>">
 	</div>
 	
 	
@@ -314,7 +314,7 @@
 	      <li>
 	        <label>
 	          <input type="radio" <?php if ($Data[58] == '1) ไม่มีผู้เสียชีวิต หรือสูญหายหรือบาดเจ็บ บ้านเรือนเสีย หายบางส่วน'): ?> checked="checked" <?php endif; ?>  name="Data[58]" value="1) ไม่มีผู้เสียชีวิต หรือสูญหายหรือบาดเจ็บ บ้านเรือนเสีย หายบางส่วน">
-	          <span>1) ไม่มีผู้เสียชีวิต หรือสูญหายหรือบาดเจ็บ บ้านเรือนเสีย หายบางส่วน</span>
+	          <span>1) ไม่มีผู้เสียชีวิต หรือสูญหายหรือบาดเจ็บ บ้านเรือนเสียหายบางส่วน</span>
 	        </label>
 	      </li>
 	      <li>
@@ -338,7 +338,7 @@
 	      <li>
 	        <label>
 	          <input type="radio" <?php if ($Data[58] == '5) มีผู้เสียชีวิตหรือสูญหายหรือบาดเจ็บ บ้านเรือนพังเสียหาย ทั้งหมดมากกว่า 50% ของชุมชน'): ?> checked="checked" <?php endif; ?>name="Data[58]" value="5) มีผู้เสียชีวิตหรือสูญหายหรือบาดเจ็บ บ้านเรือนพังเสียหาย ทั้งหมดมากกว่า 50% ของชุมชน">
-	          <span>5) มีผู้เสียชีวิตหรือสูญหายหรือบาดเจ็บ บ้านเรือนพังเสียหาย ทั้งหมดมากกว่า 50% ของชุมชน</span>
+	          <span>5) มีผู้เสียชีวิตหรือสูญหายหรือบาดเจ็บ บ้านเรือนพังเสียหายทั้งหมดมากกว่า 50% ของชุมชน</span>
 	        </label>
 	      </li>
 	    </ul>
@@ -350,11 +350,11 @@
   <h4>3.2.1 กลุ่มที่ช่วยเหลือตัวเองไม่ได้</h4>
   <div class="clearfix">
 		<label class="no-float">คนพิการ</label>
-		<input class="span2"  name="Data[59]" type="text"  placeholder="" value="<?php echo $Data[59]; ?>" >
+		<input class="span1"  name="Data[59]" type="text"  placeholder="" value="<?php echo $Data[59]; ?>" >
 		<label class="no-float">ผู้สูงอายุ</label>
-		<input class="span2"  name="Data[60]" type="text"  placeholder="" value="<?php echo $Data[60]; ?>" >
+		<input class="span1"  name="Data[60]" type="text"  placeholder="" value="<?php echo $Data[60]; ?>" >
 		<label class="no-float">ผู้ป่วย</label>
-		<input class="span2"  name="Data[61]" type="text"  placeholder="" value="<?php echo $Data[61]; ?>" >
+		<input class="span1"  name="Data[61]" type="text"  placeholder="" value="<?php echo $Data[61]; ?>" >
 	</div>
   
   
@@ -369,42 +369,42 @@
     </thead>
     <tbody>
       <tr>
-        <th><input class="span7"  name="Data[62]" type="text" placeholder="" value="<?php echo $Data[62]; ?>" ></th>
+        <td><input class="span7"  name="Data[62]" type="text" placeholder="" value="<?php echo $Data[62]; ?>" ></td>
         <td><input class="span5"  name="Data[63]" type="text" placeholder="" value="<?php echo $Data[63]; ?>" ></td>
-        <td><input class="span4"  name="Data[64]" type="text" placeholder="" value="<?php echo $Data[64]; ?>" ></td>
+        <td><input class="span1"  name="Data[64]" type="text" placeholder="" value="<?php echo $Data[64]; ?>" ></td>
       </tr>
       <tr>
-        <th><input class="span7"  name="Data[65]" type="text" placeholder="" value="<?php echo $Data[65]; ?>" ></th>
+        <td><input class="span7"  name="Data[65]" type="text" placeholder="" value="<?php echo $Data[65]; ?>" ></td>
         <td><input class="span5"  name="Data[66]" type="text" placeholder="" value="<?php echo $Data[66]; ?>" ></td>
-        <td><input class="span4"  name="Data[67]" type="text" placeholder="" value="<?php echo $Data[67]; ?>" ></td>
+        <td><input class="span1"  name="Data[67]" type="text" placeholder="" value="<?php echo $Data[67]; ?>" ></td>
       </tr>
       <tr>
-        <th><input class="span7"  name="Data[68]" type="text" placeholder="" value="<?php echo $Data[68]; ?>" ></th>
+        <td><input class="span7"  name="Data[68]" type="text" placeholder="" value="<?php echo $Data[68]; ?>" ></td>
         <td><input class="span5"  name="Data[69]" type="text" placeholder="" value="<?php echo $Data[69]; ?>" ></td>
-        <td><input class="span4"  name="Data[70]" type="text" placeholder="" value="<?php echo $Data[70]; ?>" ></td>
+        <td><input class="span1"  name="Data[70]" type="text" placeholder="" value="<?php echo $Data[70]; ?>" ></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4>3.2.3 ความลําบากในการเข้าถึงบรกิารทางแพทย์ (1น้อยทีสุ่ด–5มากท่ีสุด)</h4>
-  <h5>พื้นท่ีที่เข้าถงึบรกิารทางการแพทย์ยากลําบากที่สดุคือ</h5>
-  <div class="clearfix">
+  <h4>3.2.3 ความลําบากในการเข้าถึงบริการทางแพทย์ (1 น้อยที่สุด – 5 มากท่ีสุด)</h4>
+  <h5>พื้นท่ีที่เข้าถึงบริการทางการแพทย์ยากลําบากที่สุดคือ</h5>
+  <div class="clearfix radio-list">
       <?php echo CHtml::activeRadioButtonList($model, 'filter0', array(
-        1 => '1) มีหน่วยพยาบาล ในพื้นที่มากกว่า 1 หน่วย การเดิน ทางถึงโรง พยาบาลใช้เวลา น้อยกว่า 1 ชม.',
-        2 => '2) มีหน่วยพยาบาล ในพื้นที่มากกว่า 1 หน่วย การเดิน ทางถึงโรง พยาบาลใช้เวลา ประมาณ 1 ชม.',
-        3 => '3) มีหน่วย พยาบาลใน พื้นที่ การเดิน ทางถึงโรง พยาบาลใช้เวลา ประมาณ 1 ชม.',
-        4 => '4) มีหน่วยพยาบาล ในพนื้ ที่การเดิน ทางถึงโรง พยาบาลใช้เวลา เกิน 1 ชม.',
-        5 => '5) ไม่มีหน่วย พยาบาลในพื้นที่ การเดินทางถึง โรงพยาบาลใช้ เวลาเกิน 1 ชม.',
+        1 => '1) มีหน่วยพยาบาลในพื้นที่มากกว่า 1 หน่วย การเดินทางถึงโรงพยาบาลใช้เวลาน้อยกว่า 1 ชม.',
+        2 => '2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1 หน่วย การเดินทางถึงโรงพยาบาลใช้เวลาประมาณ 1 ชม.',
+        3 => '3) มีหน่วย พยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาลใช้เวลาประมาณ 1 ชม.',
+        4 => '4) มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม.',
+        5 => '5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม.',
       )) ?>
 	  </div>
 	  
 	  
-	  <h4>3.2.4 ระดับความเครียด และความกังวลของคนในชุมชน (1น้อยที่สุด – 5 มากที่สุด)</h4>
+	  <h4>3.2.4 ระดับความเครียดและความกังวลของคนในชุมชน (1 น้อยที่สุด – 5 มากที่สุด)</h4>
     <h5>พ้ืนที่ที่ประชาชนมีภาวะความเครียดมากท่ีสุดคือ</h5>
-    <div class="clearfix">
+    <div class="clearfix radio-list">
       <?php echo CHtml::activeRadioButtonList($model, 'filter1', array(
-        1 => '1) ไม่พบประชาชนมี ภาวะความเครียด',
+        1 => '1) ไม่พบประชาชนมีภาวะความเครียด',
         2 => '2) มีพบประชาชนมีภาวะความเครียด แต่สามารถปรับตัวได้',
         3 => '3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้',
         4 => '4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย',
@@ -418,7 +418,7 @@
       <table class="bordered-table">
       <thead>
         <tr>
-          <th>#</th>
+          <th></th>
           <th>ดําเนินการเองได้</th>
           <th>ต้องการสนับสนุน</th>
           <th>ลักษณะการสนับสนุนและจํานวน</th>
@@ -438,7 +438,7 @@
           <td><input class="span7"  name="Data[76]" type="text" placeholder="" value="<?php echo $Data[76]; ?>"></td>
         </tr>
         <tr>
-          <td>เพิ่มบริการทางการแพทย</td>
+          <td>เพิ่มบริการทางการแพทย์</td>
           <td><input type="radio" <?php if ($Data[77] == 'ดําเนินการเองได้'): ?> checked="checked" <?php endif; ?> name="Data[77]" value="ดําเนินการเองได้"></td>
           <td><input type="radio" <?php if ($Data[77] == 'ต้องการสนับสนุน'): ?> checked="checked" <?php endif; ?> name="Data[77]" value="ต้องการสนับสนุน"></td>
           <td><input class="span7"  name="Data[78]" type="text" placeholder="" value="<?php echo $Data[78]; ?>"></td>
@@ -451,51 +451,53 @@
         </tr>
       </tbody>
     </table>
-    <h5>ลักษณะการสนับสนนุในประเดน็สุขภาพหากเป็นสิ่งของกรณุาบอกจํานวนคร่าวๆ(เพิ่มเติม)</h5>
+    <h5>ลักษณะการสนับสนุนในประเด็นสุขภาพหากเป็นสิ่งของกรุณาบอกจํานวนคร่าวๆ (เพิ่มเติม)</h5>
+    <div class="clearfix">
     <textarea class="xxlarge"  name="Data[81]" rows="3"><?php echo $Data[81]; ?></textarea>
+    </div>
     
   
-    <h4>ท่านคิดว่าความรุนแรงด้านปัญหาสุขภาพในชุมชนอยู่ในระดับใด (1น้อยที่สุด – 5 มากท่ีสดุ )</h4>
-    <div class="clearfix">
+    <h4>ท่านคิดว่าความรุนแรงด้านปัญหาสุขภาพในชุมชนอยู่ในระดับใด (1 น้อยที่สุด – 5 มากท่ีสุด )</h4>
+    <div class="clearfix radio-list">
       <?php echo CHtml::activeRadioButtonList($model, 'filter2', array(
-        1 => '1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้โรคระบาดบริการทางการแพทย์ และความเครียด ในชุมชน',
+        1 => '1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้โรคระบาดบริการทางการแพทย์ และความเครียดในชุมชน',
         2 => '2) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้โรคระบาดบริการทางการแพทย์ และความเครียดในชุมชนบ้างแต่ควบคุมได้',
-        3 => '3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้โรคระบาดบริการทางการแพทย์และความเครียดในชุมชนต้องการการสนุบสนุนบางส่วน',
-        4 => '4) มีปัญหาด้านบริการทางการแพทย์ในชุมชนต้องการการสนุบสนุน',
-        5 => '5) มีปัญหาด้านโรค ระบาดและบริการ ทางการแพทย์ในชุมชนต้องการการสนุบสนุนเร่งด่วน',
+        3 => '3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้โรคระบาดบริการทางการแพทย์และความเครียดในชุมชนต้องการการสนับสนุนบางส่วน',
+        4 => '4) มีปัญหาด้านบริการทางการแพทย์ในชุมชนต้องการการสนับสนุน',
+        5 => '5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชนต้องการการสนับสนุนเร่งด่วน',
       )) ?>
     </div>
 
 	    <br/>
   
-      <h3>3.3 สภาพแวดล้อม (ข้อมูลบํางประเด็นขอให้อบต.ประสํานกับหน่วยงํานในพื้นที่)</h3>
-      <h4>3.3.1การซ่อมแซมที่อยู่อาศัย</h4>
+      <h3>3.3 สภาพแวดล้อม (ข้อมูลบางประเด็นขอให้ อบต. ประสานกับหน่วยงานในพื้นที่)</h3>
+      <h4>3.3.1 การซ่อมแซมที่อยู่อาศัย</h4>
       <div class="clearfix">
 			  <label for="xlInput">ที่อยู่อาศัยที่ได้รับความเสียหาย/หลังคาเรือน</label>
 			  <div class="input">
-			    <input class="xlarge"  name="Data[83]" size="30" type="text" value="<?php echo $Data[83]; ?>">
+			    <input class="span1"  name="Data[83]" size="30" type="text" value="<?php echo $Data[83]; ?>">
 			  </div>
 			</div><!-- /clearfix -->
 			<h5>ลักษณะความเสียหายของบ้านโดยทั่วไปคือ</h5>
 			<ol>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[84]" size="30" type="text" value="<?php echo $Data[84]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[85]" size="30" type="text" value="<?php echo $Data[85]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[86]" size="30" type="text" value="<?php echo $Data[86]; ?>">
 			    </div>
 				</li>
 			</ol>
-			<div class="clearfix">
-			  <label for="xlInput">พื้นที่ที่บ้านได้รับความเสียหายมากที่สดุ คือ</label>
+			<div class="list-textbox">
+			  <label for="xlInput">พื้นที่ที่บ้านได้รับความเสียหายมากที่สุด คือ</label>
 			  <div class="input">
 			    <input class="xlarge"  name="Data[87]" size="30" type="text" value="<?php echo $Data[87]; ?>">
 			  </div>
@@ -503,27 +505,27 @@
 			
 			
       <h4>3.3.2 สิ่งสาธารณะประโยชน์</h4>
-			<h5>(1)สถานีขนส่งมวลชนหรือเส้นทางที่ใช้สัญจรไม่ได้ท้ังทางบกและทางน้ำ</h5>
+			<h5>(1) สถานีขนส่งมวลชนหรือเส้นทางที่ใช้สัญจรไม่ได้ท้ังทางบกและทางน้ำ</h5>
 			<ol>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[88]" size="30" type="text" value="<?php echo $Data[88]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[89]" size="30" type="text" value="<?php echo $Data[89]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[90]" size="30" type="text" value="<?php echo $Data[90]; ?>">
 			    </div>
 				</li>
 			</ol>
 			
 			
-			<h5>(2)โรงเรียน(สถานศึกษา)ได้รับความเสียหาย</h5>
+			<h5>(2) โรงเรียน(สถานศึกษา)ได้รับความเสียหาย</h5>
 			<div class="clearfix">
 			  <label for="xlInput">โรงเรียนได้รับความเสียหาย/โรงเรียน</label>
 			  <div class="input">
@@ -533,17 +535,17 @@
 			<h5>ลักษณะความเสียหายของโรงเรียนโดยทั่วไปคือ</h5>
 			<ol>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[92]" size="30" type="text" value="<?php echo $Data[92]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[93]" size="30" type="text" value="<?php echo $Data[93]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[94]" size="30" type="text" value="<?php echo $Data[94]; ?>">
 			    </div>
 				</li>
@@ -557,40 +559,40 @@
 			
 			
 			
-			<h5>(3)ศูนย์ดูแลเด็กเล็กได้รับความเสียหาย</h5>
+			<h5>(3) ศูนย์ดูแลเด็กเล็กได้รับความเสียหาย</h5>
 			<div class="clearfix">
 			  <label for="xlInput">ศูนย์ดูแลเด็กเล็กได้รับความเสียหาย/ศูนย์</label>
 			  <div class="input">
 			    <input class="xlarge"  name="Data[96]" size="30" type="text" value="<?php echo $Data[96]; ?>">
 			  </div>
 			</div><!-- /clearfix -->
-			<h5>ลักษณะความเสียหายของศนูย์ดูแลเด็กเล็กโดยทั่วไปคือ</h5>
+			<h5>ลักษณะความเสียหายของศูนย์ดูแลเด็กเล็กโดยทั่วไปคือ</h5>
 			<ol>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[97]" size="30" type="text" value="<?php echo $Data[97]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[98]" size="30" type="text" value="<?php echo $Data[98]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[99]" size="30" type="text" value="<?php echo $Data[99]; ?>">
 			    </div>
 				</li>
 			</ol>
-			<div class="clearfix">
+			<div class="list-textbox">
 			  <label for="xlInput">ศูนย์ดแูลเด็กเล็กที่ได้รับความเสียหายมากที่สดุคือ</label>
 			  <div class="input">
 			    <input class="xlarge"  name="Data[100]" size="30" type="text" value="<?php echo $Data[100]; ?>">
 			  </div>
 			</div><!-- /clearfix -->
+			<div class="clearfix"></div>
 			
-			
-			<h5>(4) อําคารของชุมชนได้รับความเสียหาย</h5>
+			<h5>(4) อาคารของชุมชนได้รับความเสียหาย</h5>
 			<div class="clearfix">
 			  <label for="xlInput">อาคารของชุมชนได้รับความเสียหาย/แห่ง</label>
 			  <div class="input">
@@ -600,17 +602,17 @@
 			<h5>ลักษณะความเสียหายของอาคารชุมชนโดยทั่วไปคือ</h5>
 			<ol>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[102]" size="30" type="text" value="<?php echo $Data[102]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[103]" size="30" type="text" value="<?php echo $Data[103]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[104]" size="30" type="text" value="<?php echo $Data[104]; ?>">
 			    </div>
 				</li>
@@ -633,17 +635,17 @@
 			<h5>ลักษณะความเสียหายของสถานพยาบาลโดยทั่วไปคือ</h5>
 			<ol>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[107]" size="30" type="text" value="<?php echo $Data[107]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[108]" size="30" type="text" value="<?php echo $Data[108]; ?>">
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[109]" size="30" type="text" value="<?php echo $Data[109]; ?>">
 			    </div>
 				</li>
@@ -708,7 +710,7 @@
       <table class="bordered-table">
       <thead>
         <tr>
-          <th>#</th>
+          <th></th>
           <th>มีความเสียหาย</th>
           <th>ไม่มีความเสียหาย</th>
           <th>พื้นที่ (หมู่บ้าน)</th>
@@ -752,7 +754,7 @@
       <table class="bordered-table">
       <thead>
         <tr>
-          <th>#</th>
+          <th></th>
           <th>มีปัญหา</th>
           <th>ไม่มีปัญหา</th>
           <th>พื้นที่ (หมู่บ้าน)</th>
@@ -761,14 +763,14 @@
       </thead>
       <tbody>
         <tr>
-          <td>กํารจัดกํารขยะ</td>
+          <td>การจัดการขยะ</td>
           <td><input type="radio" <?php if ($Data[129] == 'ปัญหา'): ?> checked="checked" <?php endif; ?> name="Data[129]" value="ปัญหา"></td>
           <td><input type="radio" <?php if ($Data[129] == 'ไม่มีปัญหา'): ?> checked="checked" <?php endif; ?> name="Data[129]" value="ไม่มีปัญหา"></td>
           <td><input class="span5"  name="Data[130]" type="text" placeholder="" value="<?php echo $Data[130]; ?>"></td>
           <td><input class="span5"  name="Data[131]" type="text" placeholder="" value="<?php echo $Data[131]; ?>"></td>
         </tr>
         <tr>
-          <td>น้ําาเน่ําเสีย</td>
+          <td>น้ำเน่าเสีย</td>
           <td><input type="radio" <?php if ($Data[132] == 'ปัญหา'): ?> checked="checked" <?php endif; ?> name="Data[132]" value="ปัญหา"></td>
           <td><input type="radio" <?php if ($Data[132] == 'ไม่มีปัญหา'): ?> checked="checked" <?php endif; ?> name="Data[132]" value="ไม่มีปัญหา"></td>
           <td><input class="span5"  name="Data[133]" type="text" placeholder="" value="<?php echo $Data[133]; ?>"></td>
@@ -789,7 +791,7 @@
     <table class="bordered-table">
       <thead>
         <tr>
-          <th>#</th>
+          <th></th>
           <th>ดําเนินการเองได้</th>
           <th>ต้องการสนับสนุน</th>
           <th>ลักษณะการสนับสนุนและจํานวน</th>
@@ -828,18 +830,18 @@
         </tr>
       </tbody>
     </table>
-    <h5>ลักษณะการสนับสนุนในประเด็นสภาพแวดล้อมหากเป็นสิ่งของกรุณาบอกจํานวนครา่วๆ(เพิ่มเติม)</h5>
+    <h5>ลักษณะการสนับสนุนในประเด็นสภาพแวดล้อมหากเป็นสิ่งของกรุณาบอกจํานวนครา่วๆ (เพิ่มเติม)</h5>
     <textarea class="xxlarge" name="Data[148]" rows="3"><?php echo $Data[148]; ?></textarea>
     
     <br/><br/>
-    <h5>ท่านคิดว่าความรุนแรงด้านปัญหาสภาพแวดล้อมในชุมชนอยู่ในระดับใด (1 น้อยทสีุ่ด–5มากที่สุด)</h5>
-    <div class="clearfix">
+    <h5>ท่านคิดว่าความรุนแรงด้านปัญหาสภาพแวดล้อมในชุมชนอยู่ในระดับใด (1 น้อยที่สุด–5 มากที่สุด)</h5>
+    <div class="clearfix radio-list">
       <?php echo CHtml::activeRadioButtonList($model, 'filter3', array(
-        1 => '1) อาคารถาวรวัตถุ เส้นทางเสียหายเล็ก น้อยไม่มีปัญหา แหล่งน้ําและมลพิษ',
-        2 => '2) อาคาร ถาวรวัตถุเส้นทาง แหล่งท่องเที่ยวเสียหาย ไม่มีปัญหา แหล่งน้ําและมลพิษ',
-        3 => '3) อาคารถาวรวัตถุ เส้นทาง แหล่ง ท่องเที่ยวเสียหาย มีปัญหาแหล่งน้ํา ต้องการสนับสนุนบางส่วน',
-        4 => '4) อาคารถาวรวัตถุ เส้นทาง แหล่งท่อง เที่ยวเสียหายทั้งหมด มีปัญหาแหล่งน้ํา และมลพิษต้องการ สนับสนุน',
-        5 => '5) อาคารถาวรวัตถุเส้น ทาง แหล่งท่องเที่ยว เสียหายทั้งหมด มีปัญหาแหล่งน้ําและ มลพิษรุนแรงต้องการ สนับสนุนเร่งด่วน',
+        1 => '1) อาคารถาวร วัตถุ เส้นทางเสียหายเล็กน้อย ไม่มีปัญหาแหล่งน้ําและมลพิษ',
+        2 => '2) อาคารถาวร วัตถุ เส้นทาง แหล่งท่องเที่ยวเสียหาย ไม่มีปัญหาแหล่งน้ําและมลพิษ',
+        3 => '3) อาคารถาวร วัตถุ เส้นทาง แหล่งท่องเที่ยวเสียหาย มีปัญหาแหล่งน้ํา ต้องการสนับสนุนบางส่วน',
+        4 => '4) อาคารถาวร วัตถุ เส้นทาง แหล่งท่องเที่ยวเสียหายทั้งหมด มีปัญหาแหล่งน้ํา และมลพิษต้องการสนับสนุน',
+        5 => '5) อาคารถาวร วัตถุ เส้นทาง แหล่งท่องเที่ยวเสียหายทั้งหมด มีปัญหาแหล่งน้ําและมลพิษรุนแรงต้องการสนับสนุนเร่งด่วน',
       )) ?>
     </div>
     
@@ -875,12 +877,16 @@
 			</div><!-- /clearfix -->
 
       
-      <h4>3.4.2 พื้นที่ปุศสัตว์เสียหาย ความเสียหาย (โปรดระบุ)</h4>
+      <h4>3.4.2 พื้นที่ปศุสัตว์เสียหาย ความเสียหาย (โปรดระบุ)</h4>
+      <div class="clearfix">
       <textarea class="xxlarge" name="Data[154]" rows="3"><?php echo $Data[154]; ?></textarea>
+      </div>
       
       
       <h4>3.4.3 พื้นที่ประมงเสียหาย ความเสียหาย (โปรดระบุ)</h4>
+      <div class="clearfix">
       <textarea class="xxlarge" name="Data[155]" rows="3"><?php echo $Data[155]; ?></textarea>
+      </div>
       
       
       <h4>3.4.4 ตลาดย่านธุรกิจเสียหาย (โปรดระบุ)</h4>
@@ -888,46 +894,46 @@
 				<label class="no-float">พื้นที่</label>
 				<input class="span2" name="Data[156]" type="text" placeholder="" value="<?php echo $Data[156]; ?>" >
 				<label class="no-float">ความเสียหาย (โปรดระบุ)</label>
-				<input class="span7" name="Data[157]" type="text" placeholder="" value="<?php echo $Data[157]; ?>" >
+				<input class="span5" name="Data[157]" type="text" placeholder="" value="<?php echo $Data[157]; ?>" >
 			</div>
 			<div class="clearfix">
 				<label class="no-float">พื้นที่</label>
 				<input class="span2"  name="Data[158]" type="text" placeholder="" value="<?php echo $Data[158]; ?>" >
 				<label class="no-float">ความเสียหาย (โปรดระบุ)</label>
-				<input class="span7"  name="Data[159]" type="text" placeholder="" value="<?php echo $Data[159]; ?>" >
+				<input class="span5"  name="Data[159]" type="text" placeholder="" value="<?php echo $Data[159]; ?>" >
 			</div>
 			<div class="clearfix">
 				<label class="no-float">พื้นที่</label>
 				<input class="span2"  name="Data[160]" type="text" placeholder="" value="<?php echo $Data[160]; ?>" >
 				<label class="no-float">ความเสียหาย (โปรดระบุ)</label>
-				<input class="span7"  name="Data[161]" type="text" placeholder="" value="<?php echo $Data[161]; ?>" >
+				<input class="span5"  name="Data[161]" type="text" placeholder="" value="<?php echo $Data[161]; ?>" >
 			</div>
 			
 			
-			<h4>3.4.5 อุตสําหกรรมเสียหาย</h4>
+			<h4>3.4.5 อุตสาหกรรมเสียหาย</h4>
       <div class="clearfix">
 				<label class="no-float">พื้นที่</label>
 				<input class="span2"  name="Data[162]" type="text" placeholder="" value="<?php echo $Data[162]; ?>" >
 				<label class="no-float">ความเสียหาย (โปรดระบุ)</label>
-				<input class="span7"  name="Data[163]" type="text" placeholder="" value="<?php echo $Data[162]; ?>" >
+				<input class="span5"  name="Data[163]" type="text" placeholder="" value="<?php echo $Data[162]; ?>" >
 			</div>
 			<div class="clearfix">
 				<label class="no-float">พื้นที่</label>
 				<input class="span2"  name="Data[164]" type="text" placeholder="" value="<?php echo $Data[164]; ?>" >
 				<label class="no-float">ความเสียหาย (โปรดระบุ)</label>
-				<input class="span7"  name="Data[165]" type="text" placeholder="" value="<?php echo $Data[165]; ?>" >
+				<input class="span5"  name="Data[165]" type="text" placeholder="" value="<?php echo $Data[165]; ?>" >
 			</div>
 			<div class="clearfix">
 				<label class="no-float">พื้นที่</label>
 				<input class="span2"  name="Data[166]" type="text" placeholder="" value="<?php echo $Data[166]; ?>" >
 				<label class="no-float">ความเสียหาย (โปรดระบุ)</label>
-				<input class="span7"  name="Data[167]" type="text" placeholder="" value="<?php echo $Data[167]; ?>" >
+				<input class="span5"  name="Data[167]" type="text" placeholder="" value="<?php echo $Data[167]; ?>" >
 			</div>
       
       
-      <h4>3.4.6 ประมาณการคนวา่งงานจากภัยพิบัติ</h4>
+      <h4>3.4.6 ประมาณการคนว่างงานจากภัยพิบัติ</h4>
 			<div class="clearfix">
-			  <label for="xlInput">ประมาณการคนวา่งงานจากภัยพบิตัิ/คน</label>
+			  <label for="xlInput">ประมาณการคนว่างงานจากภัยพิบัติ/คน</label>
 			  <div class="input">
 			    <input class="xlarge"  name="Data[168]" size="30" type="text" value="<?php echo $Data[168]; ?>" >
 			  </div>
@@ -941,7 +947,7 @@
 			</div><!-- /clearfix -->
 
 			<div class="clearfix">
-			  <label for="xlInput">ว่างงานภาคอุตุ สาหกรรม/คน</label>
+			  <label for="xlInput">ว่างงานภาคอุตสาหกรรม/คน</label>
 			  <div class="input">
 			    <input class="xlarge"  name="Data[170]" size="30" type="text" value="<?php echo $Data[170]; ?>" >
 			  </div>
@@ -950,11 +956,11 @@
       
       <h4>3.4.7 กลุ่มอาชีพ</h4>
       <div class="clearfix">
-			  <label class="no-float">กลุ่มอําชีพในชุมชนมี/กลุ่ม</label>
+			  <label class="no-float">กลุ่มอาชีพในชุมชนมี/กลุ่ม</label>
 			  <input class="span2"  name="Data[171]" type="text" placeholder="" value="<?php echo $Data[171]; ?>" >
 			</div><!-- /clearfix -->
 			<div class="clearfix">
-			  <label class="no-float">กลุ่มอาชีพ ที่มีความโดดเด่นในชุมชนคือกลุ่ม</label>
+			  <label class="no-float">กลุ่มอาชีพที่มีความโดดเด่นในชุมชนคือกลุ่ม</label>
 			  <input class="span2"  name="Data[172]" type="text" placeholder="" value="<?php echo $Data[172]; ?>" >
 			</div><!-- /clearfix -->
 			<div class="clearfix">
@@ -968,37 +974,37 @@
 			<h5>ลักษณะความเสียหาย/กลุ่ม</h5>
 			<ol>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[175]" size="30" type="text" value="<?php echo $Data[175]; ?>" >
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[176]" size="30" type="text" value="<?php echo $Data[176]; ?>" >
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[177]" size="30" type="text" value="<?php echo $Data[177]; ?>" >
 			    </div>
 				</li>
 			</ol>
       
       
-      <h4>3.4.8 เครื่องจักรอุปกรณ์ประกอบอาชีพี่ทเสียหาย เช่น รถไถ รถกะบะ รถบรรทุก รถมอเตอร์ไซต์ รถยนต์ จักรเย็บ ผ้า อปุ กรณ์กลุ่ม อาชีพ ฯลฯ เครื่องจักร อปุกรณป์ ระกอบอาชีพที่ได้รับความเสียหายมาก คือ</h4>
+      <h4>3.4.8 เครื่องจักรอุปกรณ์ประกอบอาชีพที่เสียหาย เช่น รถไถ รถกะบะ รถบรรทุก รถมอเตอร์ไซต์ รถยนต์ จักรเย็บผ้า อุปกรณ์กลุ่มอาชีพ ฯลฯ เครื่องจักร อุปกรณ์ประกอบอาชีพที่ได้รับความเสียหายมาก คือ</h4>
       <ol>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[178]" size="30" type="text" value="<?php echo $Data[178]; ?>" >
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[179]" size="30" type="text" value="<?php echo $Data[179]; ?>" >
 			    </div>
 				</li>
 				<li>
-					<div class="clearfix">
+					<div class="list-textbox">
 				    <input class="xlarge"  name="Data[180]" size="30" type="text" value="<?php echo $Data[180]; ?>" >
 			    </div>
 				</li>
@@ -1006,7 +1012,7 @@
 			
 			
 			
-			<h4>3.4.9 ปัญหาการส่ือสารโทรคมนาคมในพื้น ที่</h4>
+			<h4>3.4.9 ปัญหาการส่ือสารโทรคมนาคมในพื้นที่</h4>
 			<table class="bordered-table">
       <thead>
         <tr>
@@ -1045,14 +1051,14 @@
     </table>
     
     
-    <h4>กิจกรรมทชี่มุชนดําเนินการเองได้(ถ้ําไม่มีไม่ต้องกรอก)</h4>
+    <h4>กิจกรรมที่ชุมชนดําเนินการเองได้ (ถ้าไม่มีไม่ต้องกรอก)</h4>
     <table class="bordered-table">
       <thead>
         <tr>
           <th></th>
           <th>ดําเนินการเอง</th>
           <th>ต้องการสนับสนุน</th>
-          <th>ลักษณะการสนับสนุนและจําานวน</th>
+          <th>ลักษณะการสนับสนุนและจํานวน</th>
         </tr>
       </thead>
       <tbody>
@@ -1107,12 +1113,15 @@
       </tbody>
     </table>
     
-    <h5>ลักษณะสนับสนุนในประเด็นเศรษฐกิจหากเป็นสิ่งของกรุณาบอกจํานวนคร่าวๆ(เพิ่มเติม)</h5>
+    <h5>ลักษณะสนับสนุนในประเด็นเศรษฐกิจหากเป็นสิ่งของกรุณาบอกจํานวนคร่าวๆ (เพิ่มเติม)</h5>
+    <div class="clearfix">
     <textarea class="xxlarge" name="Data[201]" rows="3"><?php echo $Data[201]; ?></textarea>
+    </div>
     
     
-    <h4>ท่านคิดว่าความรุนแรงด้านปัญหาเศรษฐกจิ ในชุมชนอยู่ในระดับใด ( 1 น้อยที่สุด – 5 มากท่ีสุด )</h4>
-
+    <h4>ท่านคิดว่าความรุนแรงด้านปัญหาเศรษฐกิจในชุมชนอยู่ในระดับใด ( 1 น้อยที่สุด – 5 มากท่ีสุด )</h4>
+		
+	  <div class="clearfix radio-list">
     <?php echo CHtml::activeRadioButtonList($model, 'filter4', array(
       1 => '1) ไม่มีผลกระทบสามารถทําการเกษตรในฤดูการผลิตครั้งใหม่ ธรุ กิจกิจและ อุตสาหกรรมสามารถดําเนินการต่อได้',
       2 => '2) ได้รับผลกระทบแต่สามารถทําการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรม สามารถดําเนินการต่อได้',
@@ -1120,7 +1129,7 @@
       4 => '4) ไม่สามารถทําการเกษตรในฤดูการผลิตครั้งใหม่การฟื้นฟูธุรกจิ อุตสาหกรรม ต้องใช้เวลาอย่างน้อย 3 เดือนต้องการการสนับสนุน',
       5 => '5) ไม่สามารถดําเนินกิจกรรมทางเศรษฐกิจใดๆ ได้ ประชากรเกินครึ่งว่างงาน',
     )) ?>
-      
+    </div>
       
       <h4>3.5 การจัดการภัยพิบัติ</h4>
     <table class="bordered-table">
@@ -1153,7 +1162,7 @@
         </tr>
         <tr>
           <td><input type="checkbox" <?php if ($Data[213] == 'มี'): ?> checked="checked" <?php endif; ?> name="Data[213]" value="มี"></td>
-          <td>อื่น ๆ (โปรดระบุ)</td>
+          <td>อื่นๆ (โปรดระบุ)</td>
           <td><input type="radio" <?php if ($Data[214] == 'ดําเนินการเอง'): ?> checked="checked" <?php endif; ?> name="Data[214]" value="ดําเนินการเอง"></td>
           <td><input type="radio" <?php if ($Data[214] == 'ต้องการสนับสนุน'): ?> checked="checked" <?php endif; ?>name="Data[214]" value="ต้องการสนับสนุน"></td>
         </tr>
