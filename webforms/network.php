@@ -17,6 +17,7 @@
 		}
 		.clear {clear: both;}
 		.indent {padding: 0 0 0 30px}
+		table thead tr th {text-align: center;}
 	</style>
     <h1>แบบสำรวจข้อมูลเครือข่ายร่วมสร้างชุมชนท้องถิ่นน่าอยู่เพื่อการจัดการภัยพิบัติ</h1>
     <form action="*" id="" method="post">
@@ -391,11 +392,14 @@
         <table class="bordered-table">
         <thead>
           <tr>
-            <th width="400">ด้านเครื่องมือ / อุปกรณ์</th>
+            <th colspan="1" rowspan="2">ด้านเครื่องมือ / อุปกรณ์</th>
+            <th colspan="3" valign="middle">จำนวน</th>
+            <th colspan="1" rowspan="2">ระดับความต้องการสนับสนุน (วัน)</th>
+          </tr>
+          <tr>
             <th>จำนวนที่มีอยู่จริงในพื้นที่</th>
             <th>จำนวนที่สามารถให้ความช่วยเหลือในพื้นที่อื่นได้</th>
             <th>จำนวนที่ต้องการการสนับสนุนเพิ่มเติม</th>
-            <th>ระดับความต้องการสนับสนุน (วัน)</th>
           </tr>
         </thead>
         <tbody>
@@ -408,53 +412,116 @@
           </tr>
           <tr>
             <th class="indent">1.1 รถกระบะ (สูง)</th>
-            <td><input class="span4" name="Data[74]" type="text" value="<?php echo $Data[74]; ?>"></td>
-            <td><input class="span4" name="Data[75]" type="text" value="<?php echo $Data[75]; ?>"></td>
-            <td><input class="span4" name="Data[76]" type="text" value="<?php echo $Data[76]; ?>"></td>
-            <td><input class="span4" name="Data[77]" type="text" value="<?php echo $Data[77]; ?>"></td>
+            <td><input class="span2" name="Data[254]" type="text" value="<?php echo $Data[254]; ?>"></td>
+            <td><input class="span2" name="Data[255]" type="text" value="<?php echo $Data[255]; ?>"></td>
+            <td><input class="span2" name="Data[256]" type="text" value="<?php echo $Data[256]; ?>"></td>
+            <td><input class="span2" name="Data[257]" type="text" value="<?php echo $Data[257]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">1.2 รถบรรทุก 6 ล้อ</th>
-            <td><input class="span4" name="Data[78]" type="text" value="<?php echo $Data[78]; ?>"></td>
-            <td><input class="span4" name="Data[79]" type="text" value="<?php echo $Data[79]; ?>"></td>
-            <td><input class="span4" name="Data[80]" type="text" value="<?php echo $Data[80]; ?>"></td>
-            <td><input class="span4" name="Data[81]" type="text" value="<?php echo $Data[81]; ?>"></td>
+            <td><input class="span2" name="Data[258]" type="text" value="<?php echo $Data[258]; ?>"></td>
+            <td><input class="span2" name="Data[259]" type="text" value="<?php echo $Data[259]; ?>"></td>
+            <td><input class="span2" name="Data[260]" type="text" value="<?php echo $Data[260]; ?>"></td>
+            <td><input class="span2" name="Data[261]" type="text" value="<?php echo $Data[261]; ?>"></td>
           </tr>     
           <tr>
             <th class="indent">1.3 รถบรรทุก 10 ล้อ</th>
-            <td><input class="span4" name="Data[82]" type="text" value="<?php echo $Data[82]; ?>"></td>
-            <td><input class="span4" name="Data[83]" type="text" value="<?php echo $Data[83]; ?>"></td>
-            <td><input class="span4" name="Data[84]" type="text" value="<?php echo $Data[84]; ?>"></td>
-            <td><input class="span4" name="Data[85]" type="text" value="<?php echo $Data[85]; ?>"></td>
+            <td><input class="span2" name="Data[262]" type="text" value="<?php echo $Data[262]; ?>"></td>
+            <td><input class="span2" name="Data[263]" type="text" value="<?php echo $Data[263]; ?>"></td>
+            <td><input class="span2" name="Data[264]" type="text" value="<?php echo $Data[264]; ?>"></td>
+            <td><input class="span2" name="Data[265]" type="text" value="<?php echo $Data[265]; ?>"></td>
           </tr>          
           <tr>
-            <th class="indent">1.4 รถตู้</th>
-            <td><input class="span4" name="Data[86]" type="text" value="<?php echo $Data[86]; ?>"></td>
-            <td><input class="span4" name="Data[87]" type="text" value="<?php echo $Data[87]; ?>"></td>
-            <td><input class="span4" name="Data[88]" type="text" value="<?php echo $Data[88]; ?>"></td>
-            <td><input class="span4" name="Data[89]" type="text" value="<?php echo $Data[89]; ?>"></td>
+            <th class="indent">1.4 รถพยาบาล</th>
+            <td><input class="span2" name="Data[266]" type="text" value="<?php echo $Data[266]; ?>"></td>
+            <td><input class="span2" name="Data[267]" type="text" value="<?php echo $Data[267]; ?>"></td>
+            <td><input class="span2" name="Data[268]" type="text" value="<?php echo $Data[268]; ?>"></td>
+            <td><input class="span2" name="Data[269]" type="text" value="<?php echo $Data[269]; ?>"></td>
           </tr>  
           <tr>
-            <th class="indent">1.5 รถดับเพลิง</th>
-            <td><input class="span4" name="Data[90]" type="text" value="<?php echo $Data[90]; ?>"></td>
-            <td><input class="span4" name="Data[91]" type="text" value="<?php echo $Data[91]; ?>"></td>
-            <td><input class="span4" name="Data[92]" type="text" value="<?php echo $Data[92]; ?>"></td>
-            <td><input class="span4" name="Data[93]" type="text" value="<?php echo $Data[93]; ?>"></td>
+            <th class="indent">1.5 รถตรวจการ</th>
+            <td><input class="span2" name="Data[270]" type="text" value="<?php echo $Data[270]; ?>"></td>
+            <td><input class="span2" name="Data[271]" type="text" value="<?php echo $Data[271]; ?>"></td>
+            <td><input class="span2" name="Data[272]" type="text" value="<?php echo $Data[272]; ?>"></td>
+            <td><input class="span2" name="Data[273]" type="text" value="<?php echo $Data[273]; ?>"></td>
           </tr>          
           <tr>
-            <th class="indent">1.6 รถไฟฟ้าส่องสว่าง</th>
-            <td><input class="span4" name="Data[94]" type="text" value="<?php echo $Data[94]; ?>"></td>
-            <td><input class="span4" name="Data[95]" type="text" value="<?php echo $Data[95]; ?>"></td>
-            <td><input class="span4" name="Data[96]" type="text" value="<?php echo $Data[96]; ?>"></td>
-            <td><input class="span4" name="Data[97]" type="text" value="<?php echo $Data[97]; ?>"></td>
+            <th class="indent">1.6 รถดับเพลิง</th>
+            <td><input class="span2" name="Data[274]" type="text" value="<?php echo $Data[274]; ?>"></td>
+            <td><input class="span2" name="Data[275]" type="text" value="<?php echo $Data[275]; ?>"></td>
+            <td><input class="span2" name="Data[276]" type="text" value="<?php echo $Data[276]; ?>"></td>
+            <td><input class="span2" name="Data[277]" type="text" value="<?php echo $Data[277]; ?>"></td>
           </tr>  
           <tr>
-            <th class="indent">1.7 อื่นๆ</th>
-            <td><input class="span4" name="Data[98]" type="text" value="<?php echo $Data[98]; ?>"></td>
-            <td><input class="span4" name="Data[99]" type="text" value="<?php echo $Data[99]; ?>"></td>
-            <td><input class="span4" name="Data[100]" type="text" value="<?php echo $Data[100]; ?>"></td>
-            <td><input class="span4" name="Data[101]" type="text" value="<?php echo $Data[101]; ?>"></td>
+            <th class="indent">1.7 รถบรรทุกน้ำพร้อมหัวฉีดน้ำ</th>
+            <td><input class="span2" name="Data[278]" type="text" value="<?php echo $Data[278]; ?>"></td>
+            <td><input class="span2" name="Data[279]" type="text" value="<?php echo $Data[279]; ?>"></td>
+            <td><input class="span2" name="Data[280]" type="text" value="<?php echo $Data[280]; ?>"></td>
+            <td><input class="span2" name="Data[281]" type="text" value="<?php echo $Data[281]; ?>"></td>
           </tr> 
+          <tr>
+            <th class="indent">1.8 รถกระเช้าไฟฟ้า</th>
+            <td><input class="span2" name="Data[37]" type="text" value="<?php echo $Data[37]; ?>"></td>
+            <td><input class="span2" name="Data[218]" type="text" value="<?php echo $Data[218]; ?>"></td>
+            <td><input class="span2" name="Data[219]" type="text" value="<?php echo $Data[219]; ?>"></td>
+            <td><input class="span2" name="Data[220]" type="text" value="<?php echo $Data[220]; ?>"></td>
+          </tr>
+          <tr>
+            <th class="indent">1.9 รถขยะ</th>
+            <td><input class="span2" name="Data[221]" type="text" value="<?php echo $Data[221]; ?>"></td>
+            <td><input class="span2" name="Data[222]" type="text" value="<?php echo $Data[222]; ?>"></td>
+            <td><input class="span2" name="Data[223]" type="text" value="<?php echo $Data[223]; ?>"></td>
+            <td><input class="span2" name="Data[224]" type="text" value="<?php echo $Data[224]; ?>"></td>
+          </tr>
+          <tr>
+            <th class="indent">1.10 รถเจซีบี</th>
+            <td><input class="span2" name="Data[225]" type="text" value="<?php echo $Data[225]; ?>"></td>
+            <td><input class="span2" name="Data[226]" type="text" value="<?php echo $Data[226]; ?>"></td>
+            <td><input class="span2" name="Data[227]" type="text" value="<?php echo $Data[227]; ?>"></td>
+            <td><input class="span2" name="Data[228]" type="text" value="<?php echo $Data[228]; ?>"></td>
+          </tr>
+          <tr>
+            <th class="indent">1.11 รถแบคโฮ</th>
+            <td><input class="span2" name="Data[229]" type="text" value="<?php echo $Data[229]; ?>"></td>
+            <td><input class="span2" name="Data[230]" type="text" value="<?php echo $Data[230]; ?>"></td>
+            <td><input class="span2" name="Data[231]" type="text" value="<?php echo $Data[231]; ?>"></td>
+            <td><input class="span2" name="Data[232]" type="text" value="<?php echo $Data[232]; ?>"></td>
+          </tr>
+          <tr>
+            <th class="indent">1.12 รถเกลี่ยถนน</th>
+            <td><input class="span2" name="Data[233]" type="text" value="<?php echo $Data[233]; ?>"></td>
+            <td><input class="span2" name="Data[234]" type="text" value="<?php echo $Data[234]; ?>"></td>
+            <td><input class="span2" name="Data[235]" type="text" value="<?php echo $Data[235]; ?>"></td>
+            <td><input class="span2" name="Data[236]" type="text" value="<?php echo $Data[236]; ?>"></td>
+          </tr>
+          <tr>
+            <th class="indent">1.13 รถบดถนน</th>
+            <td><input class="span2" name="Data[237]" type="text" value="<?php echo $Data[237]; ?>"></td>
+            <td><input class="span2" name="Data[238]" type="text" value="<?php echo $Data[238]; ?>"></td>
+            <td><input class="span2" name="Data[239]" type="text" value="<?php echo $Data[239]; ?>"></td>
+            <td><input class="span2" name="Data[240]" type="text" value="<?php echo $Data[240]; ?>"></td>
+          </tr>
+          <tr>
+            <th class="indent">1.14 รถไถ</th>
+            <td><input class="span2" name="Data[241]" type="text" value="<?php echo $Data[241]; ?>"></td>
+            <td><input class="span2" name="Data[242]" type="text" value="<?php echo $Data[242]; ?>"></td>
+            <td><input class="span2" name="Data[243]" type="text" value="<?php echo $Data[243]; ?>"></td>
+            <td><input class="span2" name="Data[244]" type="text" value="<?php echo $Data[244]; ?>"></td>
+          </tr>
+          <tr>
+            <th class="indent">1.15 รถไฟฟ้าส่องสว่าง</th>
+            <td><input class="span2" name="Data[245]" type="text" value="<?php echo $Data[245]; ?>"></td>
+            <td><input class="span2" name="Data[246]" type="text" value="<?php echo $Data[246]; ?>"></td>
+            <td><input class="span2" name="Data[247]" type="text" value="<?php echo $Data[247]; ?>"></td>
+            <td><input class="span2" name="Data[248]" type="text" value="<?php echo $Data[248]; ?>"></td>
+          </tr>
+          <tr>
+            <th class="indent">1.16 อื่นๆ <input class="span4" name="Data[249]" type="text" value="<?php echo $Data[249]; ?>"></th>
+            <td><input class="span2" name="Data[250]" type="text" value="<?php echo $Data[250]; ?>"></td>
+            <td><input class="span2" name="Data[251]" type="text" value="<?php echo $Data[251]; ?>"></td>
+            <td><input class="span2" name="Data[252]" type="text" value="<?php echo $Data[252]; ?>"></td>
+            <td><input class="span2" name="Data[253]" type="text" value="<?php echo $Data[253]; ?>"></td>
+          </tr>  
           <tr>
             <th>2. เรือ</th>
             <td></td>
@@ -464,66 +531,66 @@
           </tr>
           <tr>
             <th class="indent">2.1 เรือท้องแบนแบบอลูมิเนียม</th>
-            <td><input class="span4" name="Data[102]" type="text" value="<?php echo $Data[102]; ?>"></td>
-            <td><input class="span4" name="Data[103]" type="text" value="<?php echo $Data[103]; ?>"></td>
-            <td><input class="span4" name="Data[104]" type="text" value="<?php echo $Data[104]; ?>"></td>
-            <td><input class="span4" name="Data[105]" type="text" value="<?php echo $Data[105]; ?>"></td>
+            <td><input class="span4" name="Data[282]" type="text" value="<?php echo $Data[282]; ?>"></td>
+            <td><input class="span4" name="Data[283]" type="text" value="<?php echo $Data[283]; ?>"></td>
+            <td><input class="span4" name="Data[284]" type="text" value="<?php echo $Data[284]; ?>"></td>
+            <td><input class="span4" name="Data[285]" type="text" value="<?php echo $Data[285]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">2.2 เรือท้องแบนไฟเบอร์</th>
-            <td><input class="span4" name="Data[106]" type="text" value="<?php echo $Data[106]; ?>"></td>
-            <td><input class="span4" name="Data[107]" type="text" value="<?php echo $Data[107]; ?>"></td>
-            <td><input class="span4" name="Data[108]" type="text" value="<?php echo $Data[108]; ?>"></td>
-            <td><input class="span4" name="Data[109]" type="text" value="<?php echo $Data[109]; ?>"></td>
+            <td><input class="span4" name="Data[286]" type="text" value="<?php echo $Data[286]; ?>"></td>
+            <td><input class="span4" name="Data[287]" type="text" value="<?php echo $Data[287]; ?>"></td>
+            <td><input class="span4" name="Data[288]" type="text" value="<?php echo $Data[288]; ?>"></td>
+            <td><input class="span4" name="Data[289]" type="text" value="<?php echo $Data[289]; ?>"></td>
           </tr>     
           <tr>
             <th class="indent">2.3 เรือเล็กพร้อมพายแบบ HDPE</th>
-            <td><input class="span4" name="Data[110]" type="text" value="<?php echo $Data[110]; ?>"></td>
-            <td><input class="span4" name="Data[111]" type="text" value="<?php echo $Data[111]; ?>"></td>
-            <td><input class="span4" name="Data[112]" type="text" value="<?php echo $Data[112]; ?>"></td>
-            <td><input class="span4" name="Data[113]" type="text" value="<?php echo $Data[113]; ?>"></td>
+            <td><input class="span4" name="Data[290]" type="text" value="<?php echo $Data[290]; ?>"></td>
+            <td><input class="span4" name="Data[291]" type="text" value="<?php echo $Data[291]; ?>"></td>
+            <td><input class="span4" name="Data[292]" type="text" value="<?php echo $Data[292]; ?>"></td>
+            <td><input class="span4" name="Data[293]" type="text" value="<?php echo $Data[293]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">2.4 เรือเล็กพร้อมพายแบบไฟเบอร์</th>
-            <td><input class="span4" name="Data[114]" type="text" value="<?php echo $Data[114]; ?>"></td>
-            <td><input class="span4" name="Data[115]" type="text" value="<?php echo $Data[115]; ?>"></td>
-            <td><input class="span4" name="Data[116]" type="text" value="<?php echo $Data[116]; ?>"></td>
-            <td><input class="span4" name="Data[117]" type="text" value="<?php echo $Data[117]; ?>"></td>
+            <td><input class="span4" name="Data[294]" type="text" value="<?php echo $Data[294]; ?>"></td>
+            <td><input class="span4" name="Data[295]" type="text" value="<?php echo $Data[295]; ?>"></td>
+            <td><input class="span4" name="Data[296]" type="text" value="<?php echo $Data[296]; ?>"></td>
+            <td><input class="span4" name="Data[297]" type="text" value="<?php echo $Data[297]; ?>"></td>
           </tr>  
           <tr>
             <th class="indent">2.5 เรือยาง</th>
-            <td><input class="span4" name="Data[118]" type="text" value="<?php echo $Data[118]; ?>"></td>
-            <td><input class="span4" name="Data[119]" type="text" value="<?php echo $Data[119]; ?>"></td>
-            <td><input class="span4" name="Data[120]" type="text" value="<?php echo $Data[120]; ?>"></td>
-            <td><input class="span4" name="Data[121]" type="text" value="<?php echo $Data[121]; ?>"></td>
+            <td><input class="span4" name="Data[298]" type="text" value="<?php echo $Data[298]; ?>"></td>
+            <td><input class="span4" name="Data[299]" type="text" value="<?php echo $Data[299]; ?>"></td>
+            <td><input class="span4" name="Data[300]" type="text" value="<?php echo $Data[300]; ?>"></td>
+            <td><input class="span4" name="Data[301]" type="text" value="<?php echo $Data[301]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">2.6 เรือหางยาว</th>
-            <td><input class="span4" name="Data[122]" type="text" value="<?php echo $Data[122]; ?>"></td>
-            <td><input class="span4" name="Data[123]" type="text" value="<?php echo $Data[123]; ?>"></td>
-            <td><input class="span4" name="Data[124]" type="text" value="<?php echo $Data[124]; ?>"></td>
-            <td><input class="span4" name="Data[125]" type="text" value="<?php echo $Data[125]; ?>"></td>
+            <td><input class="span4" name="Data[302]" type="text" value="<?php echo $Data[302]; ?>"></td>
+            <td><input class="span4" name="Data[303]" type="text" value="<?php echo $Data[303]; ?>"></td>
+            <td><input class="span4" name="Data[304]" type="text" value="<?php echo $Data[304]; ?>"></td>
+            <td><input class="span4" name="Data[305]" type="text" value="<?php echo $Data[305]; ?>"></td>
           </tr>  
           <tr>
             <th class="indent">2.7 เจ็ตสกี</th>
-            <td><input class="span4" name="Data[126]" type="text" value="<?php echo $Data[126]; ?>"></td>
-            <td><input class="span4" name="Data[127]" type="text" value="<?php echo $Data[127]; ?>"></td>
-            <td><input class="span4" name="Data[128]" type="text" value="<?php echo $Data[128]; ?>"></td>
-            <td><input class="span4" name="Data[129]" type="text" value="<?php echo $Data[129]; ?>"></td>
+            <td><input class="span4" name="Data[306]" type="text" value="<?php echo $Data[306]; ?>"></td>
+            <td><input class="span4" name="Data[307]" type="text" value="<?php echo $Data[307]; ?>"></td>
+            <td><input class="span4" name="Data[308]" type="text" value="<?php echo $Data[308]; ?>"></td>
+            <td><input class="span4" name="Data[309]" type="text" value="<?php echo $Data[309]; ?>"></td>
           </tr> 
           <tr>
             <th class="indent">2.8 เครื่องยนต์เรือ</th>
-            <td><input class="span4" name="Data[130]" type="text" value="<?php echo $Data[130]; ?>"></td>
-            <td><input class="span4" name="Data[131]" type="text" value="<?php echo $Data[131]; ?>"></td>
-            <td><input class="span4" name="Data[132]" type="text" value="<?php echo $Data[132]; ?>"></td>
-            <td><input class="span4" name="Data[133]" type="text" value="<?php echo $Data[133]; ?>"></td>
+            <td><input class="span4" name="Data[310]" type="text" value="<?php echo $Data[310]; ?>"></td>
+            <td><input class="span4" name="Data[311]" type="text" value="<?php echo $Data[311]; ?>"></td>
+            <td><input class="span4" name="Data[312]" type="text" value="<?php echo $Data[312]; ?>"></td>
+            <td><input class="span4" name="Data[313]" type="text" value="<?php echo $Data[313]; ?>"></td>
           </tr>
           <tr>
-            <th class="indent">2.9 อื่น ๆ</th>
-            <td><input class="span4" name="Data[134]" type="text" value="<?php echo $Data[134]; ?>"></td>
-            <td><input class="span4" name="Data[135]" type="text" value="<?php echo $Data[135]; ?>"></td>
-            <td><input class="span4" name="Data[136]" type="text" value="<?php echo $Data[136]; ?>"></td>
-            <td><input class="span4" name="Data[137]" type="text" value="<?php echo $Data[137]; ?>"></td>
+            <th class="indent">2.9 อื่น ๆ <input class="span4" name="Data[318]" type="text" value="<?php echo $Data[318]; ?>"></th>
+            <td><input class="span4" name="Data[314]" type="text" value="<?php echo $Data[314]; ?>"></td>
+            <td><input class="span4" name="Data[315]" type="text" value="<?php echo $Data[315]; ?>"></td>
+            <td><input class="span4" name="Data[316]" type="text" value="<?php echo $Data[316]; ?>"></td>
+            <td><input class="span4" name="Data[317]" type="text" value="<?php echo $Data[317]; ?>"></td>
           </tr>                    
           <tr>
             <th>3. เครื่องสูบน้ำ</th>
@@ -534,47 +601,47 @@
           </tr>
           <tr>
             <th class="indent">3.1 ขนาดท่อ 8 นิ้ว (ไฟฟ้า)</th>
-            <td><input class="span4" name="Data[138]" type="text" value="<?php echo $Data[138]; ?>"></td>
-            <td><input class="span4" name="Data[139]" type="text" value="<?php echo $Data[139]; ?>"></td>
-            <td><input class="span4" name="Data[140]" type="text" value="<?php echo $Data[140]; ?>"></td>
-            <td><input class="span4" name="Data[141]" type="text" value="<?php echo $Data[141]; ?>"></td>
+            <td><input class="span4" name="Data[319]" type="text" value="<?php echo $Data[319]; ?>"></td>
+            <td><input class="span4" name="Data[320]" type="text" value="<?php echo $Data[320]; ?>"></td>
+            <td><input class="span4" name="Data[321]" type="text" value="<?php echo $Data[321]; ?>"></td>
+            <td><input class="span4" name="Data[322]" type="text" value="<?php echo $Data[322]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">3.2 ขนาดท่อ 8 นิ้ว (น้ำมันดีเซล)</th>
-            <td><input class="span4" name="Data[142]" type="text" value="<?php echo $Data[142]; ?>"></td>
-            <td><input class="span4" name="Data[143]" type="text" value="<?php echo $Data[143]; ?>"></td>
-            <td><input class="span4" name="Data[144]" type="text" value="<?php echo $Data[144]; ?>"></td>
-            <td><input class="span4" name="Data[145]" type="text" value="<?php echo $Data[145]; ?>"></td>
+            <td><input class="span4" name="Data[323]" type="text" value="<?php echo $Data[323]; ?>"></td>
+            <td><input class="span4" name="Data[324]" type="text" value="<?php echo $Data[324]; ?>"></td>
+            <td><input class="span4" name="Data[325]" type="text" value="<?php echo $Data[325]; ?>"></td>
+            <td><input class="span4" name="Data[326]" type="text" value="<?php echo $Data[326]; ?>"></td>
           </tr>     
           <tr>
             <th class="indent">3.3 ขนาดท่อ 10 นิ้ว (น้ำมันดีเซล)</th>
-            <td><input class="span4" name="Data[146]" type="text" value="<?php echo $Data[146]; ?>"></td>
-            <td><input class="span4" name="Data[147]" type="text" value="<?php echo $Data[147]; ?>"></td>
-            <td><input class="span4" name="Data[148]" type="text" value="<?php echo $Data[148]; ?>"></td>
-            <td><input class="span4" name="Data[149]" type="text" value="<?php echo $Data[149]; ?>"></td>
+            <td><input class="span4" name="Data[327]" type="text" value="<?php echo $Data[327]; ?>"></td>
+            <td><input class="span4" name="Data[328]" type="text" value="<?php echo $Data[328]; ?>"></td>
+            <td><input class="span4" name="Data[329]" type="text" value="<?php echo $Data[329]; ?>"></td>
+            <td><input class="span4" name="Data[330]" type="text" value="<?php echo $Data[330]; ?>"></td>
           </tr>  
           <tr>
-            <th class="indent">3.4 ขนาดท่อ 12 นิ้ว (ไฟฟ้า)</th>
-            <td><input class="span4" name="Data[150]" type="text" value="<?php echo $Data[150]; ?>"></td>
-            <td><input class="span4" name="Data[151]" type="text" value="<?php echo $Data[151]; ?>"></td>
-            <td><input class="span4" name="Data[152]" type="text" value="<?php echo $Data[152]; ?>"></td>
-            <td><input class="span4" name="Data[153]" type="text" value="<?php echo $Data[153]; ?>"></td>
+            <th class="indent">3.4 ขนาดท่อ 12 นิ้ว (น้ำมันดีเซล)</th>
+            <td><input class="span4" name="Data[331]" type="text" value="<?php echo $Data[331]; ?>"></td>
+            <td><input class="span4" name="Data[332]" type="text" value="<?php echo $Data[332]; ?>"></td>
+            <td><input class="span4" name="Data[333]" type="text" value="<?php echo $Data[333]; ?>"></td>
+            <td><input class="span4" name="Data[334]" type="text" value="<?php echo $Data[334]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">3.5 ขนาดท่อ 18 นิ้ว (น้ำมันดีเซล)</th>
-            <td><input class="span4" name="Data[154]" type="text" value="<?php echo $Data[154]; ?>"></td>
-            <td><input class="span4" name="Data[155]" type="text" value="<?php echo $Data[155]; ?>"></td>
-            <td><input class="span4" name="Data[156]" type="text" value="<?php echo $Data[156]; ?>"></td>
-            <td><input class="span4" name="Data[157]" type="text" value="<?php echo $Data[157]; ?>"></td>
+            <td><input class="span4" name="Data[335]" type="text" value="<?php echo $Data[335]; ?>"></td>
+            <td><input class="span4" name="Data[336]" type="text" value="<?php echo $Data[336]; ?>"></td>
+            <td><input class="span4" name="Data[337]" type="text" value="<?php echo $Data[337]; ?>"></td>
+            <td><input class="span4" name="Data[338]" type="text" value="<?php echo $Data[338]; ?>"></td>
           </tr>     
           <tr>
-            <th class="indent">3.6 อื่น ๆ</th>
-            <td><input class="span4" name="Data[158]" type="text" value="<?php echo $Data[158]; ?>"></td>
-            <td><input class="span4" name="Data[159]" type="text" value="<?php echo $Data[159]; ?>"></td>
-            <td><input class="span4" name="Data[160]" type="text" value="<?php echo $Data[160]; ?>"></td>
-            <td><input class="span4" name="Data[161]" type="text" value="<?php echo $Data[161]; ?>"></td>
+            <th class="indent">3.6 อื่น ๆ <input class="span4" name="Data[339]" type="text" value="<?php echo $Data[339]; ?>"></th>
+            <td><input class="span4" name="Data[340]" type="text" value="<?php echo $Data[340]; ?>"></td>
+            <td><input class="span4" name="Data[341]" type="text" value="<?php echo $Data[341]; ?>"></td>
+            <td><input class="span4" name="Data[342]" type="text" value="<?php echo $Data[342]; ?>"></td>
+            <td><input class="span4" name="Data[343]" type="text" value="<?php echo $Data[343]; ?>"></td>
           </tr>            
-					<tr>
+		  <tr>
             <th>4. สุขา</th>
             <td></td>
             <td></td>
@@ -583,31 +650,31 @@
           </tr>
           <tr>
             <th class="indent">4.1 รถสุขาเคลื่อนที่</th>
-            <td><input class="span4" name="Data[162]" type="text" value="<?php echo $Data[162]; ?>"></td>
-            <td><input class="span4" name="Data[163]" type="text" value="<?php echo $Data[163]; ?>"></td>
-            <td><input class="span4" name="Data[164]" type="text" value="<?php echo $Data[164]; ?>"></td>
-            <td><input class="span4" name="Data[165]" type="text" value="<?php echo $Data[165]; ?>"></td>
+            <td><input class="span4" name="Data[344]" type="text" value="<?php echo $Data[344]; ?>"></td>
+            <td><input class="span4" name="Data[345]" type="text" value="<?php echo $Data[345]; ?>"></td>
+            <td><input class="span4" name="Data[346]" type="text" value="<?php echo $Data[346]; ?>"></td>
+            <td><input class="span4" name="Data[347]" type="text" value="<?php echo $Data[347]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">4.2 สุขาชั่วคราวแบบลอยน้ำ</th>
-            <td><input class="span4" name="Data[166]" type="text" value="<?php echo $Data[166]; ?>"></td>
-            <td><input class="span4" name="Data[167]" type="text" value="<?php echo $Data[167]; ?>"></td>
-            <td><input class="span4" name="Data[168]" type="text" value="<?php echo $Data[168]; ?>"></td>
-            <td><input class="span4" name="Data[169]" type="text" value="<?php echo $Data[169]; ?>"></td>
+            <td><input class="span4" name="Data[348]" type="text" value="<?php echo $Data[348]; ?>"></td>
+            <td><input class="span4" name="Data[349]" type="text" value="<?php echo $Data[349]; ?>"></td>
+            <td><input class="span4" name="Data[350]" type="text" value="<?php echo $Data[350]; ?>"></td>
+            <td><input class="span4" name="Data[351]" type="text" value="<?php echo $Data[351]; ?>"></td>
           </tr>     
           <tr>
             <th class="indent">4.3 สุขาชั่วคราวแบบใช้ถุงดำ</th>
-            <td><input class="span4" name="Data[170]" type="text" value="<?php echo $Data[170]; ?>"></td>
-            <td><input class="span4" name="Data[171]" type="text" value="<?php echo $Data[171]; ?>"></td>
-            <td><input class="span4" name="Data[172]" type="text" value="<?php echo $Data[172]; ?>"></td>
-            <td><input class="span4" name="Data[173]" type="text" value="<?php echo $Data[173]; ?>"></td>
+            <td><input class="span4" name="Data[352]" type="text" value="<?php echo $Data[352]; ?>"></td>
+            <td><input class="span4" name="Data[353]" type="text" value="<?php echo $Data[353]; ?>"></td>
+            <td><input class="span4" name="Data[354]" type="text" value="<?php echo $Data[354]; ?>"></td>
+            <td><input class="span4" name="Data[355]" type="text" value="<?php echo $Data[355]; ?>"></td>
           </tr>             
           <tr>
-            <th class="indent">4.4 อื่น ๆ</th>
-            <td><input class="span4" name="Data[174]" type="text" value="<?php echo $Data[174]; ?>"></td>
-            <td><input class="span4" name="Data[175]" type="text" value="<?php echo $Data[175]; ?>"></td>
-            <td><input class="span4" name="Data[176]" type="text" value="<?php echo $Data[176]; ?>"></td>
-            <td><input class="span4" name="Data[177]" type="text" value="<?php echo $Data[177]; ?>"></td>
+            <th class="indent">4.4 อื่นๆ <input class="span4" name="Data[174]" type="text" value="<?php echo $Data[174]; ?>"></th>
+            <td><input class="span4" name="Data[356]" type="text" value="<?php echo $Data[356]; ?>"></td>
+            <td><input class="span4" name="Data[357]" type="text" value="<?php echo $Data[357]; ?>"></td>
+            <td><input class="span4" name="Data[358]" type="text" value="<?php echo $Data[358]; ?>"></td>
+            <td><input class="span4" name="Data[359]" type="text" value="<?php echo $Data[359]; ?>"></td>
           </tr>             
           <tr>
             <th>5. เครื่องกรองน้ำ</th>
@@ -618,24 +685,24 @@
           </tr>
           <tr>
             <th class="indent">5.1 ถาวร</th>
-            <td><input class="span4" name="Data[178]" type="text" value="<?php echo $Data[178]; ?>"></td>
-            <td><input class="span4" name="Data[179]" type="text" value="<?php echo $Data[179]; ?>"></td>
-            <td><input class="span4" name="Data[180]" type="text" value="<?php echo $Data[180]; ?>"></td>
-            <td><input class="span4" name="Data[181]" type="text" value="<?php echo $Data[181]; ?>"></td>
+            <td><input class="span4" name="Data[360]" type="text" value="<?php echo $Data[360]; ?>"></td>
+            <td><input class="span4" name="Data[361]" type="text" value="<?php echo $Data[361]; ?>"></td>
+            <td><input class="span4" name="Data[362]" type="text" value="<?php echo $Data[362]; ?>"></td>
+            <td><input class="span4" name="Data[363]" type="text" value="<?php echo $Data[363]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">5.2 เคลื่อนที่</th>
-            <td><input class="span4" name="Data[182]" type="text" value="<?php echo $Data[182]; ?>"></td>
-            <td><input class="span4" name="Data[183]" type="text" value="<?php echo $Data[183]; ?>"></td>
-            <td><input class="span4" name="Data[184]" type="text" value="<?php echo $Data[184]; ?>"></td>
-            <td><input class="span4" name="Data[185]" type="text" value="<?php echo $Data[185]; ?>"></td>
+            <td><input class="span4" name="Data[364]" type="text" value="<?php echo $Data[364]; ?>"></td>
+            <td><input class="span4" name="Data[365]" type="text" value="<?php echo $Data[365]; ?>"></td>
+            <td><input class="span4" name="Data[366]" type="text" value="<?php echo $Data[366]; ?>"></td>
+            <td><input class="span4" name="Data[367]" type="text" value="<?php echo $Data[367]; ?>"></td>
           </tr>     
           <tr>
-            <th class="indent">5.3 อื่น ๆ</th>
-            <td><input class="span4" name="Data[186]" type="text" value="<?php echo $Data[186]; ?>"></td>
-            <td><input class="span4" name="Data[187]" type="text" value="<?php echo $Data[187]; ?>"></td>
-            <td><input class="span4" name="Data[188]" type="text" value="<?php echo $Data[188]; ?>"></td>
-            <td><input class="span4" name="Data[189]" type="text" value="<?php echo $Data[189]; ?>"></td>
+            <th class="indent">5.3 อื่นๆ <input class="span4" name="Data[186]" type="text" value="<?php echo $Data[186]; ?>"></th>
+            <td><input class="span4" name="Data[368]" type="text" value="<?php echo $Data[368]; ?>"></td>
+            <td><input class="span4" name="Data[369]" type="text" value="<?php echo $Data[369]; ?>"></td>
+            <td><input class="span4" name="Data[370]" type="text" value="<?php echo $Data[370]; ?>"></td>
+            <td><input class="span4" name="Data[371]" type="text" value="<?php echo $Data[371]; ?>"></td>
           </tr>          
           <tr>
             <th>6. เสื้อชูชีพ</th>
@@ -646,24 +713,24 @@
           </tr>
           <tr>
             <th class="indent">6.1 ผู้ใหญ่</th>
-            <td><input class="span4" name="Data[190]" type="text" value="<?php echo $Data[190]; ?>"></td>
-            <td><input class="span4" name="Data[191]" type="text" value="<?php echo $Data[191]; ?>"></td>
-            <td><input class="span4" name="Data[192]" type="text" value="<?php echo $Data[192]; ?>"></td>
-            <td><input class="span4" name="Data[193]" type="text" value="<?php echo $Data[193]; ?>"></td>
+            <td><input class="span4" name="Data[372]" type="text" value="<?php echo $Data[372]; ?>"></td>
+            <td><input class="span4" name="Data[373]" type="text" value="<?php echo $Data[373]; ?>"></td>
+            <td><input class="span4" name="Data[374]" type="text" value="<?php echo $Data[374]; ?>"></td>
+            <td><input class="span4" name="Data[375]" type="text" value="<?php echo $Data[375]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">6.2 เด็ก</th>
-            <td><input class="span4" name="Data[194]" type="text" value="<?php echo $Data[194]; ?>"></td>
-            <td><input class="span4" name="Data[195]" type="text" value="<?php echo $Data[195]; ?>"></td>
-            <td><input class="span4" name="Data[196]" type="text" value="<?php echo $Data[196]; ?>"></td>
-            <td><input class="span4" name="Data[197]" type="text" value="<?php echo $Data[197]; ?>"></td>
+            <td><input class="span4" name="Data[376]" type="text" value="<?php echo $Data[376]; ?>"></td>
+            <td><input class="span4" name="Data[377]" type="text" value="<?php echo $Data[377]; ?>"></td>
+            <td><input class="span4" name="Data[378]" type="text" value="<?php echo $Data[378]; ?>"></td>
+            <td><input class="span4" name="Data[379]" type="text" value="<?php echo $Data[379]; ?>"></td>
           </tr>     
           <tr>
-            <th class="indent">6.3 อื่น ๆ</th>
-            <td><input class="span4" name="Data[198]" type="text" value="<?php echo $Data[198]; ?>"></td>
-            <td><input class="span4" name="Data[199]" type="text" value="<?php echo $Data[199]; ?>"></td>
-            <td><input class="span4" name="Data[200]" type="text" value="<?php echo $Data[200]; ?>"></td>
-            <td><input class="span4" name="Data[201]" type="text" value="<?php echo $Data[201]; ?>"></td>
+            <th class="indent">6.3 อื่นๆ <input class="span4" name="Data[380]" type="text" value="<?php echo $Data[380]; ?>"></th>
+            <td><input class="span4" name="Data[381]" type="text" value="<?php echo $Data[381]; ?>"></td>
+            <td><input class="span4" name="Data[382]" type="text" value="<?php echo $Data[382]; ?>"></td>
+            <td><input class="span4" name="Data[383]" type="text" value="<?php echo $Data[383]; ?>"></td>
+            <td><input class="span4" name="Data[384]" type="text" value="<?php echo $Data[384]; ?>"></td>
           </tr>                         
           <tr>
             <th>7. เครื่องปั่นไฟแบบเคลื่อนที่</th>
@@ -674,24 +741,31 @@
           </tr>
           <tr>
             <th class="indent">7.1 ขนาดเล็ก 1-20 กิโลวัตต์</th>
-            <td><input class="span4" name="Data[202]" type="text" value="<?php echo $Data[202]; ?>"></td>
-            <td><input class="span4" name="Data[203]" type="text" value="<?php echo $Data[203]; ?>"></td>
-            <td><input class="span4" name="Data[204]" type="text" value="<?php echo $Data[204]; ?>"></td>
-            <td><input class="span4" name="Data[205]" type="text" value="<?php echo $Data[205]; ?>"></td>
+            <td><input class="span4" name="Data[385]" type="text" value="<?php echo $Data[385]; ?>"></td>
+            <td><input class="span4" name="Data[386]" type="text" value="<?php echo $Data[386]; ?>"></td>
+            <td><input class="span4" name="Data[387]" type="text" value="<?php echo $Data[387]; ?>"></td>
+            <td><input class="span4" name="Data[388]" type="text" value="<?php echo $Data[388]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">7.2 ขนาดกลาง 21-500 กิโลวัตต์</th>
-            <td><input class="span4" name="Data[206]" type="text" value="<?php echo $Data[206]; ?>"></td>
-            <td><input class="span4" name="Data[207]" type="text" value="<?php echo $Data[207]; ?>"></td>
-            <td><input class="span4" name="Data[208]" type="text" value="<?php echo $Data[208]; ?>"></td>
-            <td><input class="span4" name="Data[209]" type="text" value="<?php echo $Data[209]; ?>"></td>
+            <td><input class="span4" name="Data[389]" type="text" value="<?php echo $Data[389]; ?>"></td>
+            <td><input class="span4" name="Data[390]" type="text" value="<?php echo $Data[390]; ?>"></td>
+            <td><input class="span4" name="Data[391]" type="text" value="<?php echo $Data[391]; ?>"></td>
+            <td><input class="span4" name="Data[392]" type="text" value="<?php echo $Data[392]; ?>"></td>
           </tr>     
           <tr>
             <th class="indent">7.3 ขนาดใหญ่ >500 กิโลวัตต์</th>
-            <td><input class="span4" name="Data[210]" type="text" value="<?php echo $Data[210]; ?>"></td>
-            <td><input class="span4" name="Data[211]" type="text" value="<?php echo $Data[211]; ?>"></td>
-            <td><input class="span4" name="Data[212]" type="text" value="<?php echo $Data[212]; ?>"></td>
-            <td><input class="span4" name="Data[213]" type="text" value="<?php echo $Data[213]; ?>"></td>
+            <td><input class="span4" name="Data[393]" type="text" value="<?php echo $Data[393]; ?>"></td>
+            <td><input class="span4" name="Data[394]" type="text" value="<?php echo $Data[394]; ?>"></td>
+            <td><input class="span4" name="Data[395]" type="text" value="<?php echo $Data[395]; ?>"></td>
+            <td><input class="span4" name="Data[396]" type="text" value="<?php echo $Data[396]; ?>"></td>
+          </tr>   
+          <tr>
+            <th class="indent">7.4 อื่นๆ <input class="span4" name="Data[397]" type="text" value="<?php echo $Data[397]; ?>"></th>
+            <td><input class="span4" name="Data[398]" type="text" value="<?php echo $Data[398]; ?>"></td>
+            <td><input class="span4" name="Data[399]" type="text" value="<?php echo $Data[399]; ?>"></td>
+            <td><input class="span4" name="Data[400]" type="text" value="<?php echo $Data[400]; ?>"></td>
+            <td><input class="span4" name="Data[401]" type="text" value="<?php echo $Data[401]; ?>"></td>
           </tr>                         
           <tr>
             <th>8. เครื่องปั่นไฟแบบติดตั้ง</th>
@@ -702,25 +776,32 @@
           </tr>
           <tr>
             <th class="indent">8.1 ขนาดเล็ก 1-20 กิโลวัตต์</th>
-            <td><input class="span4" name="Data[214]" type="text" value="<?php echo $Data[214]; ?>"></td>
-            <td><input class="span4" name="Data[215]" type="text" value="<?php echo $Data[215]; ?>"></td>
-            <td><input class="span4" name="Data[216]" type="text" value="<?php echo $Data[216]; ?>"></td>
-            <td><input class="span4" name="Data[217]" type="text" value="<?php echo $Data[217]; ?>"></td>
+            <td><input class="span4" name="Data[402]" type="text" value="<?php echo $Data[402]; ?>"></td>
+            <td><input class="span4" name="Data[403]" type="text" value="<?php echo $Data[403]; ?>"></td>
+            <td><input class="span4" name="Data[404]" type="text" value="<?php echo $Data[404]; ?>"></td>
+            <td><input class="span4" name="Data[405]" type="text" value="<?php echo $Data[405]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">8.2 ขนาดกลาง 21-500 กิโลวัตต์</th>
-            <td><input class="span4" name="Data[218]" type="text" value="<?php echo $Data[218]; ?>"></td>
-            <td><input class="span4" name="Data[219]" type="text" value="<?php echo $Data[219]; ?>"></td>
-            <td><input class="span4" name="Data[220]" type="text" value="<?php echo $Data[220]; ?>"></td>
-            <td><input class="span4" name="Data[221]" type="text" value="<?php echo $Data[221]; ?>"></td>
+            <td><input class="span4" name="Data[406]" type="text" value="<?php echo $Data[406]; ?>"></td>
+            <td><input class="span4" name="Data[407]" type="text" value="<?php echo $Data[407]; ?>"></td>
+            <td><input class="span4" name="Data[408]" type="text" value="<?php echo $Data[408]; ?>"></td>
+            <td><input class="span4" name="Data[409]" type="text" value="<?php echo $Data[409]; ?>"></td>
           </tr>     
           <tr>
             <th class="indent">8.3 ขนาดใหญ่ >500 กิโลวัตต์</th>
-            <td><input class="span4" name="Data[222]" type="text" value="<?php echo $Data[222]; ?>"></td>
-            <td><input class="span4" name="Data[223]" type="text" value="<?php echo $Data[223]; ?>"></td>
-            <td><input class="span4" name="Data[224]" type="text" value="<?php echo $Data[224]; ?>"></td>
-            <td><input class="span4" name="Data[225]" type="text" value="<?php echo $Data[225]; ?>"></td>
-          </tr>     
+            <td><input class="span4" name="Data[410]" type="text" value="<?php echo $Data[410]; ?>"></td>
+            <td><input class="span4" name="Data[411]" type="text" value="<?php echo $Data[411]; ?>"></td>
+            <td><input class="span4" name="Data[412]" type="text" value="<?php echo $Data[412]; ?>"></td>
+            <td><input class="span4" name="Data[413]" type="text" value="<?php echo $Data[413]; ?>"></td>
+          </tr> 
+          <tr>
+            <th class="indent">8.4 อื่นๆ <input class="span4" name="Data[414]" type="text" value="<?php echo $Data[414]; ?>"></th>
+            <td><input class="span4" name="Data[415]" type="text" value="<?php echo $Data[415]; ?>"></td>
+            <td><input class="span4" name="Data[416]" type="text" value="<?php echo $Data[416]; ?>"></td>
+            <td><input class="span4" name="Data[417]" type="text" value="<?php echo $Data[417]; ?>"></td>
+            <td><input class="span4" name="Data[418]" type="text" value="<?php echo $Data[418]; ?>"></td>
+          </tr>               
           <tr>
             <th>9. วิทยุสื่อสาร</th>
             <td></td>
@@ -730,18 +811,39 @@
           </tr>
           <tr>
             <th class="indent">9.1 วิทยุดำ</th>
-            <td><input class="span4" name="Data[226]" type="text" value="<?php echo $Data[226]; ?>"></td>
-            <td><input class="span4" name="Data[227]" type="text" value="<?php echo $Data[227]; ?>"></td>
-            <td><input class="span4" name="Data[228]" type="text" value="<?php echo $Data[228]; ?>"></td>
-            <td><input class="span4" name="Data[229]" type="text" value="<?php echo $Data[229]; ?>"></td>
+            <td><input class="span4" name="Data[419]" type="text" value="<?php echo $Data[419]; ?>"></td>
+            <td><input class="span4" name="Data[420]" type="text" value="<?php echo $Data[420]; ?>"></td>
+            <td><input class="span4" name="Data[421]" type="text" value="<?php echo $Data[421]; ?>"></td>
+            <td><input class="span4" name="Data[422]" type="text" value="<?php echo $Data[422]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">9.2 วิทยุแดง</th>
-            <td><input class="span4" name="Data[230]" type="text" value="<?php echo $Data[230]; ?>"></td>
-            <td><input class="span4" name="Data[231]" type="text" value="<?php echo $Data[231]; ?>"></td>
-            <td><input class="span4" name="Data[232]" type="text" value="<?php echo $Data[232]; ?>"></td>
-            <td><input class="span4" name="Data[233]" type="text" value="<?php echo $Data[233]; ?>"></td>
+            <td><input class="span4" name="Data[423]" type="text" value="<?php echo $Data[423]; ?>"></td>
+            <td><input class="span4" name="Data[424]" type="text" value="<?php echo $Data[424]; ?>"></td>
+            <td><input class="span4" name="Data[425]" type="text" value="<?php echo $Data[425]; ?>"></td>
+            <td><input class="span4" name="Data[426]" type="text" value="<?php echo $Data[426]; ?>"></td>
           </tr>        
+          <tr>
+            <th class="indent">9.3 อื่นๆ <input class="span4" name="Data[427]" type="text" value="<?php echo $Data[427]; ?>"></th>
+            <td><input class="span4" name="Data[428]" type="text" value="<?php echo $Data[428]; ?>"></td>
+            <td><input class="span4" name="Data[429]" type="text" value="<?php echo $Data[429]; ?>"></td>
+            <td><input class="span4" name="Data[430]" type="text" value="<?php echo $Data[430]; ?>"></td>
+            <td><input class="span4" name="Data[431]" type="text" value="<?php echo $Data[431]; ?>"></td>
+          </tr>
+          <tr>
+            <th>10. เชือกกู้ภัย</th>
+            <td><input class="span4" name="Data[432]" type="text" value="<?php echo $Data[432]; ?>"></td>
+            <td><input class="span4" name="Data[433]" type="text" value="<?php echo $Data[433]; ?>"></td>
+            <td><input class="span4" name="Data[434]" type="text" value="<?php echo $Data[434]; ?>"></td>
+            <td><input class="span4" name="Data[435]" type="text" value="<?php echo $Data[435]; ?>"></td>
+          </tr>
+          <tr>
+            <th>11. เลื่อยยนต์</th>
+            <td><input class="span4" name="Data[436]" type="text" value="<?php echo $Data[436]; ?>"></td>
+            <td><input class="span4" name="Data[437]" type="text" value="<?php echo $Data[437]; ?>"></td>
+            <td><input class="span4" name="Data[438]" type="text" value="<?php echo $Data[438]; ?>"></td>
+            <td><input class="span4" name="Data[439]" type="text" value="<?php echo $Data[439]; ?>"></td>
+          </tr>            
         </tbody>
       </table>
       
@@ -767,38 +869,45 @@
           </tr>
           <tr>
             <th class="indent">1.1 ความจุของศูนย์จำนวน  < 50 คน</th>
-            <td><input class="span4" name="Data[234]" type="text" value="<?php echo $Data[234]; ?>"></td>
-            <td><input class="span4" name="Data[235]" type="text" value="<?php echo $Data[235]; ?>"></td>
-            <td><input class="span4" name="Data[236]" type="text" value="<?php echo $Data[236]; ?>"></td>
-            <td><input class="span4" name="Data[237]" type="text" value="<?php echo $Data[237]; ?>"></td>
+            <td><input class="span4" name="Data[440]" type="text" value="<?php echo $Data[440]; ?>"></td>
+            <td><input class="span4" name="Data[441]" type="text" value="<?php echo $Data[441]; ?>"></td>
+            <td><input class="span4" name="Data[442]" type="text" value="<?php echo $Data[442]; ?>"></td>
+            <td><input class="span4" name="Data[443]" type="text" value="<?php echo $Data[443]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">1.2 ความจุของศูนย์จำนวน 50 - 100 คน </th>
-            <td><input class="span4" name="Data[238]" type="text" value="<?php echo $Data[238]; ?>"></td>
-            <td><input class="span4" name="Data[239]" type="text" value="<?php echo $Data[239]; ?>"></td>
-            <td><input class="span4" name="Data[240]" type="text" value="<?php echo $Data[240]; ?>"></td>
-            <td><input class="span4" name="Data[241]" type="text" value="<?php echo $Data[241]; ?>"></td>
+            <td><input class="span4" name="Data[444]" type="text" value="<?php echo $Data[444]; ?>"></td>
+            <td><input class="span4" name="Data[445]" type="text" value="<?php echo $Data[445]; ?>"></td>
+            <td><input class="span4" name="Data[446]" type="text" value="<?php echo $Data[446]; ?>"></td>
+            <td><input class="span4" name="Data[447]" type="text" value="<?php echo $Data[447]; ?>"></td>
           </tr>     
           <tr>
             <th class="indent">1.3 ความจุของศูนย์จำนวน  100-200 คน</th>
-            <td><input class="span4" name="Data[242]" type="text" value="<?php echo $Data[242]; ?>"></td>
-            <td><input class="span4" name="Data[243]" type="text" value="<?php echo $Data[243]; ?>"></td>
-            <td><input class="span4" name="Data[244]" type="text" value="<?php echo $Data[244]; ?>"></td>
-            <td><input class="span4" name="Data[245]" type="text" value="<?php echo $Data[245]; ?>"></td>
+            <td><input class="span4" name="Data[448]" type="text" value="<?php echo $Data[448]; ?>"></td>
+            <td><input class="span4" name="Data[449]" type="text" value="<?php echo $Data[449]; ?>"></td>
+            <td><input class="span4" name="Data[450]" type="text" value="<?php echo $Data[450]; ?>"></td>
+            <td><input class="span4" name="Data[451]" type="text" value="<?php echo $Data[451]; ?>"></td>
           </tr> 
           <tr>
             <th class="indent">1.4 ความจุของศูนย์จำนวน  > 200 คน</th>
-            <td><input class="span4" name="Data[246]" type="text" value="<?php echo $Data[246]; ?>"></td>
-            <td><input class="span4" name="Data[247]" type="text" value="<?php echo $Data[247]; ?>"></td>
-            <td><input class="span4" name="Data[248]" type="text" value="<?php echo $Data[248]; ?>"></td>
-            <td><input class="span4" name="Data[249]" type="text" value="<?php echo $Data[249]; ?>"></td>
+            <td><input class="span4" name="Data[452]" type="text" value="<?php echo $Data[452]; ?>"></td>
+            <td><input class="span4" name="Data[453]" type="text" value="<?php echo $Data[453]; ?>"></td>
+            <td><input class="span4" name="Data[454]" type="text" value="<?php echo $Data[454]; ?>"></td>
+            <td><input class="span4" name="Data[455]" type="text" value="<?php echo $Data[455]; ?>"></td>
+          </tr> 
+          <tr>
+            <th class="indent">1.5 อื่นๆ <input class="span4" name="Data[456]" type="text" value="<?php echo $Data[456]; ?>"></th>
+            <td><input class="span4" name="Data[457]" type="text" value="<?php echo $Data[457]; ?>"></td>
+            <td><input class="span4" name="Data[458]" type="text" value="<?php echo $Data[458]; ?>"></td>
+            <td><input class="span4" name="Data[459]" type="text" value="<?php echo $Data[459]; ?>"></td>
+            <td><input class="span4" name="Data[460]" type="text" value="<?php echo $Data[460]; ?>"></td>
           </tr> 
           <tr>
             <th>2. บ้านน็อคดาวน์</th>
-            <td><input class="span4" name="Data[250]" type="text" value="<?php echo $Data[250]; ?>"></td>
-            <td><input class="span4" name="Data[251]" type="text" value="<?php echo $Data[251]; ?>"></td>
-            <td><input class="span4" name="Data[252]" type="text" value="<?php echo $Data[252]; ?>"></td>
-            <td><input class="span4" name="Data[253]" type="text" value="<?php echo $Data[253]; ?>"></td>
+            <td><input class="span4" name="Data[461]" type="text" value="<?php echo $Data[461]; ?>"></td>
+            <td><input class="span4" name="Data[462]" type="text" value="<?php echo $Data[462]; ?>"></td>
+            <td><input class="span4" name="Data[463]" type="text" value="<?php echo $Data[463]; ?>"></td>
+            <td><input class="span4" name="Data[464]" type="text" value="<?php echo $Data[464]; ?>"></td>
           </tr>
           <tr>
             <th>3. เต็นท์</th>
@@ -809,24 +918,24 @@
           </tr> 
           <tr>
             <th class="indent">3.1 เต็นท์อำนวยการ</th>
-            <td><input class="span4" name="Data[254]" type="text" value="<?php echo $Data[254]; ?>"></td>
-            <td><input class="span4" name="Data[255]" type="text" value="<?php echo $Data[255]; ?>"></td>
-            <td><input class="span4" name="Data[256]" type="text" value="<?php echo $Data[256]; ?>"></td>
-            <td><input class="span4" name="Data[257]" type="text" value="<?php echo $Data[257]; ?>"></td>
+            <td><input class="span4" name="Data[465]" type="text" value="<?php echo $Data[465]; ?>"></td>
+            <td><input class="span4" name="Data[466]" type="text" value="<?php echo $Data[466]; ?>"></td>
+            <td><input class="span4" name="Data[467]" type="text" value="<?php echo $Data[467]; ?>"></td>
+            <td><input class="span4" name="Data[468]" type="text" value="<?php echo $Data[468]; ?>"></td>
           </tr> 
           <tr>
             <th class="indent">3.2 เต็นท์ที่พักอาศัยชั่วคราว</th>
-            <td><input class="span4" name="Data[258]" type="text" value="<?php echo $Data[258]; ?>"></td>
-            <td><input class="span4" name="Data[259]" type="text" value="<?php echo $Data[259]; ?>"></td>
-            <td><input class="span4" name="Data[260]" type="text" value="<?php echo $Data[260]; ?>"></td>
-            <td><input class="span4" name="Data[261]" type="text" value="<?php echo $Data[261]; ?>"></td>
+            <td><input class="span4" name="Data[469]" type="text" value="<?php echo $Data[469]; ?>"></td>
+            <td><input class="span4" name="Data[470]" type="text" value="<?php echo $Data[470]; ?>"></td>
+            <td><input class="span4" name="Data[471]" type="text" value="<?php echo $Data[471]; ?>"></td>
+            <td><input class="span4" name="Data[472]" type="text" value="<?php echo $Data[472]; ?>"></td>
           </tr> 
           <tr>
             <th class="indent">3.3 เต็นท์ยกพื้น (ใช้สำหรับพื้นที่ที่มีน้ำท่วมขังเล็กน้อย)</th>
-            <td><input class="span4" name="Data[262]" type="text" value="<?php echo $Data[262]; ?>"></td>
-            <td><input class="span4" name="Data[263]" type="text" value="<?php echo $Data[263]; ?>"></td>
-            <td><input class="span4" name="Data[264]" type="text" value="<?php echo $Data[264]; ?>"></td>
-            <td><input class="span4" name="Data[265]" type="text" value="<?php echo $Data[265]; ?>"></td>
+            <td><input class="span4" name="Data[473]" type="text" value="<?php echo $Data[473]; ?>"></td>
+            <td><input class="span4" name="Data[474]" type="text" value="<?php echo $Data[474]; ?>"></td>
+            <td><input class="span4" name="Data[475]" type="text" value="<?php echo $Data[475]; ?>"></td>
+            <td><input class="span4" name="Data[476]" type="text" value="<?php echo $Data[476]; ?>"></td>
           </tr> 
         </tbody>
       </table>
@@ -853,8 +962,8 @@
           </tr>
           <tr>
             <th class="indent">1.1 ตลาดสด</th>
-            <td><input class="span4" name="Data[266]" type="text" value="<?php echo $Data[266]; ?>"></td>
-            <td><input class="span4" name="Data[267]" type="text" value="<?php echo $Data[267]; ?>"></td>
+            <td><input class="span4" name="Data[477]" type="text" value="<?php echo $Data[477]; ?>"></td>
+            <td><input class="span4" name="Data[478]" type="text" value="<?php echo $Data[478]; ?>"></td>
             <td><input class="span4" name="Data[268]" type="text" value="<?php echo $Data[268]; ?>"></td>
             <td><input class="span4" name="Data[269]" type="text" value="<?php echo $Data[269]; ?>"></td>
           </tr>          
@@ -935,6 +1044,13 @@
             <td><input class="span4" name="Data[264]" type="text" value="<?php echo $Data[264]; ?>"></td>
             <td><input class="span4" name="Data[265]" type="text" value="<?php echo $Data[265]; ?>"></td>
           </tr>   
+           <tr>
+            <th class="indent">3.5 ศูนย์บริการสาธารณะสุข</th>
+            <td><input class="span4" name="Data[258]" type="text" value="<?php echo $Data[258]; ?>"></td>
+            <td><input class="span4" name="Data[259]" type="text" value="<?php echo $Data[259]; ?>"></td>
+            <td><input class="span4" name="Data[260]" type="text" value="<?php echo $Data[260]; ?>"></td>
+            <td><input class="span4" name="Data[261]" type="text" value="<?php echo $Data[261]; ?>"></td>
+          </tr>  
           <tr>
             <th>4. เครื่องนุ่งห่ม</th>
             <td></td>
@@ -1035,6 +1151,26 @@
       </table>      
       </fidldset> <!-- /end ส่วนที่ 3 ศักยภาพและความต้องการของพื้นที่ -->
 			<br /><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <fieldset>
         <legend>ส่วนที่ 4 การประสานงาน</legend>

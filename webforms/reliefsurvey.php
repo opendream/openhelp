@@ -118,11 +118,11 @@
 <!--       ส่วนที่ 2 ข้อมูลผู้ประสานงานในพื้นที่ -->
   <fieldset>
       <legend>ส่วนที่ 2 ข้อมูลผู้ประสานงานในพื้นที่</legend>
-      <h3>ระดับตําบล</h3>
+      <h3>ระดับตําบล/เทศบาล</h3>
 			<table class="bordered-table">
         <thead>
           <tr>
-            <th></th>
+            <th>ชื่อตำบล/เทศบาล</th>
             <th>ชื่อ-นามสกุล</th>
             <th>ตําแหน่ง</th>
             <th>เบอร์โทร</th>
@@ -130,33 +130,19 @@
         </thead>
         <tbody>
           <tr>
-            <th>1</th>
+            <td><input class="span4"  name="Data[217]" type="text" placeholder="" value="<?php echo $Data[217]; ?>"></td>
             <td><input class="span4"  name="Data[19]" type="text" placeholder="" value="<?php echo $Data[19]; ?>"></td>
             <td><input class="span4"  name="Data[20]" type="text" placeholder="" value="<?php echo $Data[20]; ?>"></td>
             <td><input class="span4"  name="Data[215]" type="text" placeholder="" value="<?php echo $Data[215]; ?>"></td>
           </tr>
-          <tr>
-            <th>2</th>
-            <td><input class="span4"  name="Data[21]" type="text" placeholder="" value="<?php echo $Data[21]; ?>"></td>
-            <td><input class="span4"  name="Data[22]" type="text" placeholder="" value="<?php echo $Data[22]; ?>"></td>
-            <td><input class="span4"  name="Data[23]" type="text" placeholder="" value="<?php echo $Data[23]; ?>"></td>
-          </tr>
-          <tr>
-            <th>3</th>
-            <td><input class="span4"  name="Data[24]" type="text" placeholder="" value="<?php echo $Data[24]; ?>"></td>
-            <td><input class="span4"  name="Data[25]" type="text" placeholder="" value="<?php echo $Data[25]; ?>"></td>
-            <td><input class="span4"  name="Data[26]" type="text" placeholder="" value="<?php echo $Data[26]; ?>"></td>
-          </tr>
         </tbody>
       </table>
       
-      <h3>ระดับหมู่บ้าน</h3>
+      <h3>ระดับหมู่บ้าน/ชุมชน</h3>
 			<table class="bordered-table">
         <thead>
           <tr>
-            <th></th>
-            <th>หมู่ที่</th>
-            <th>ชื่อหมู่บ้าน</th>
+            <th>ชื่อหมู่บ้าน/ชุมชน</th>
             <th>ชื่อ-นามสกุล</th>
             <th>ตําแหน่ง</th>
             <th>เบอร์โทร</th>
@@ -164,28 +150,34 @@
         </thead>
         <tbody>
           <tr>
-            <th>1</th>
-            <td><input class="span1"  name="Data[27]" type="text" placeholder="" value="<?php echo $Data[27]; ?>"></td>
             <td><input class="span2"  name="Data[28]" type="text" placeholder="" value="<?php echo $Data[28]; ?>"></td>
             <td><input class="span4"  name="Data[29]" type="text" placeholder="" value="<?php echo $Data[29]; ?>"></td>
             <td><input class="span4"  name="Data[30]" type="text" placeholder="" value="<?php echo $Data[30]; ?>"></td>
             <td><input class="span4"  name="Data[31]" type="text" placeholder="" value="<?php echo $Data[31]; ?>"></td>
           </tr>
           <tr>
-            <th>2</th>
-            <td><input class="span1"  name="Data[32]" type="text" placeholder="" value="<?php echo $Data[32]; ?>"></td>
             <td><input class="span2"  name="Data[33]" type="text" placeholder="" value="<?php echo $Data[33]; ?>"></td>
             <td><input class="span4"  name="Data[34]" type="text" placeholder="" value="<?php echo $Data[34]; ?>"></td>
             <td><input class="span4"  name="Data[35]" type="text" placeholder="" value="<?php echo $Data[35]; ?>"></td>
             <td><input class="span4"  name="Data[36]" type="text" placeholder="" value="<?php echo $Data[36]; ?>"></td>
           </tr>
           <tr>
-            <th>3</th>
-            <td><input class="span1"  name="Data[37]" type="text" placeholder="" value="<?php echo $Data[37]; ?>"></td>
             <td><input class="span2"  name="Data[38]" type="text" placeholder="" value="<?php echo $Data[38]; ?>"></td>
             <td><input class="span4"  name="Data[39]" type="text" placeholder="" value="<?php echo $Data[39]; ?>"></td>
             <td><input class="span4"  name="Data[40]" type="text" placeholder="" value="<?php echo $Data[40]; ?>"></td>
             <td><input class="span4"  name="Data[41]" type="text" placeholder="" value="<?php echo $Data[41]; ?>"></td>
+          </tr>
+          <tr>
+            <td><input class="span2"  name="Data[21]" type="text" placeholder="" value="<?php echo $Data[21]; ?>"></td>
+            <td><input class="span4"  name="Data[22]" type="text" placeholder="" value="<?php echo $Data[22]; ?>"></td>
+            <td><input class="span4"  name="Data[23]" type="text" placeholder="" value="<?php echo $Data[23]; ?>"></td>
+            <td><input class="span4"  name="Data[24]" type="text" placeholder="" value="<?php echo $Data[24]; ?>"></td>
+          </tr>
+          <tr>
+            <td><input class="span2"  name="Data[25]" type="text" placeholder="" value="<?php echo $Data[25]; ?>"></td>
+            <td><input class="span4"  name="Data[26]" type="text" placeholder="" value="<?php echo $Data[26]; ?>"></td>
+            <td><input class="span4"  name="Data[27]" type="text" placeholder="" value="<?php echo $Data[27]; ?>"></td>
+            <td><input class="span4"  name="Data[32]" type="text" placeholder="" value="<?php echo $Data[32]; ?>"></td>
           </tr>
         </tbody>
       </table>
