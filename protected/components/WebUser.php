@@ -16,5 +16,18 @@ class WebUser extends CWebUser {
 	  $user = User::model()->findByAttributes(array('username' =>Yii::app()->user->id));
     return $user->id;
 	}
+	
+	public function inGroup($group)
+	{
+	  if (Yii::app()->user->id == 'admin') {
+	    return true;
+	  }
+	  $user = User::model()->findByAttributes(array('username' =>Yii::app()->user->id));
+	  if ($user->group == 'webmaster') {
+	    return true;
+	  }
+	  
+    return $group == $user->group;
+	}
 }
 ?>

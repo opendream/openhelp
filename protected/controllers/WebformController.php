@@ -174,10 +174,21 @@ class WebformController extends Controller
 	public function actionList($type)
 	{
 	  $this->layout='//layouts/layout1';
-	  
+	  $user = Yii::app()->user;
 	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
+		$condition = "type='$type'";
 		
-		$dataProvider=new CActiveDataProvider('Webform');
+		if ($user->inGroup('webform')) {
+		  $user_id = $user->getIntId();
+		  $condition .= " AND user_id=$user_id";
+		}
+		
+		$dataProvider=new CActiveDataProvider('Webform', array(
+		  'criteria'=>array(
+        'condition'=>"type='$type'",
+        'order'=>'date_created DESC',
+      ),
+		));
 		$this->render('list',array(
 			'dataProvider'=>$dataProvider,
 			'type'=>$type,
