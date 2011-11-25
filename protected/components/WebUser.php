@@ -29,5 +29,15 @@ class WebUser extends CWebUser {
 	  
     return $group == $user->group;
 	}
+	
+	public function getGroup()
+	{
+	  if (Yii::app()->user->id == 'admin') {
+	    return 'webmaster';
+	  }
+	  $user = User::model()->findByAttributes(array('username' =>Yii::app()->user->id));
+
+    return $user->group;
+	}
 }
 ?>

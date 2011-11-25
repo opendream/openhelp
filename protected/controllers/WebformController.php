@@ -178,14 +178,14 @@ class WebformController extends Controller
 	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
 		$condition = "type='$type'";
 		
-		if ($user->inGroup('webform')) {
+		if ($user->getGroup() == 'webform') {
 		  $user_id = $user->getIntId();
 		  $condition .= " AND user_id=$user_id";
 		}
 		
 		$dataProvider=new CActiveDataProvider('Webform', array(
 		  'criteria'=>array(
-        'condition'=>"type='$type'",
+        'condition'=>$condition,
         'order'=>'date_created DESC',
       ),
 		));
