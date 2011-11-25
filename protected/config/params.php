@@ -20,7 +20,11 @@ return array(
 	  )
 	),
 	'webforms' => array(
-	  'reliefsurvey' => array('label' => 'แบบพอร์ม ฟื้นฟูตำบล', 'file' => 'webforms/reliefsurvey.php'),
+	  'reliefsurvey' => array('label' => 'แบบสํารวจเพื่อการฟื้นฟูชุมชนหลังสถานการณ์ภัยพิบัติระดับตําบล', 'file' => 'webforms/reliefsurvey.php'),
+	  'network' => array('label' => 'แบบสำรวจข้อมูลเครือข่ายร่วมสร้างชุมชนท้องถิ่นน่าอยู่เพื่อการจัดการภัยพิบัติ', 'file' => 'webforms/network.php'),
+	  'supply' => array('label' => 'แบบสำรวจโครงการเพื่อช่วยเหลือ / ฟื้นฟูพื้นที่ประสบภัยน้ำท่วม', 'file' => 'webforms/supply.php'),
+	  
+	  
 	),
 	'request'=>array(
 	  'extra' => array(

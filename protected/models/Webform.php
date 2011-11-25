@@ -21,10 +21,15 @@
  * @property string $filter7
  * @property string $filter8
  * @property string $filter9
+ * @property string $filter10
+ * @property string $filter11
+ * @property string $filter12
+ * @property string $filter13
+ * @property string $filter14
  *
  * The followings are the available model relations:
- * @property User $user
  * @property Location $location
+ * @property User $user
  */
 class Webform extends CActiveRecord
 {
@@ -56,11 +61,11 @@ class Webform extends CActiveRecord
 			array('type, date_created, last_updated', 'required'),
 			array('type', 'length', 'max'=>60),
 			array('user_id, location_id', 'length', 'max'=>20),
-			array('filter0, filter1, filter2, filter3, filter4, filter5, filter6, filter7, filter8, filter9', 'length', 'max'=>128),
+			array('filter0, filter1, filter2, filter3, filter4, filter5, filter6, filter7, filter8, filter9, filter10, filter11, filter12, filter13, filter14', 'length', 'max'=>128),
 			array('data', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, date_created, last_updated, user_id, location_id, data, filter0, filter1, filter2, filter3, filter4, filter5, filter6, filter7, filter8, filter9', 'safe', 'on'=>'search'),
+			array('id, type, date_created, last_updated, user_id, location_id, data, filter0, filter1, filter2, filter3, filter4, filter5, filter6, filter7, filter8, filter9, filter10, filter11, filter12, filter13, filter14', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,8 +77,8 @@ class Webform extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 			'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -100,6 +105,11 @@ class Webform extends CActiveRecord
 			'filter7' => 'Filter7',
 			'filter8' => 'Filter8',
 			'filter9' => 'Filter9',
+			'filter10' => 'Filter10',
+			'filter11' => 'Filter11',
+			'filter12' => 'Filter12',
+			'filter13' => 'Filter13',
+			'filter14' => 'Filter14',
 		);
 	}
 
@@ -131,6 +141,11 @@ class Webform extends CActiveRecord
 		$criteria->compare('filter7',$this->filter7,true);
 		$criteria->compare('filter8',$this->filter8,true);
 		$criteria->compare('filter9',$this->filter9,true);
+		$criteria->compare('filter10',$this->filter10,true);
+		$criteria->compare('filter11',$this->filter11,true);
+		$criteria->compare('filter12',$this->filter12,true);
+		$criteria->compare('filter13',$this->filter13,true);
+		$criteria->compare('filter14',$this->filter14,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

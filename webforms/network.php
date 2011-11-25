@@ -1,17 +1,5 @@
-<!doctype html>
-<html lang="th" dir="ltr">
-<head>
-	<meta charset="utf-8" />	
-	<title>แบบสำรวจข้อมูลเครือข่ายร่วมสร้างชุมชนท้องถิ่นน่าอยู่เพื่อการจัดการภัยพิบัติ</title>	
-	<meta name="title" content="Openhelp" />
-	<meta name="description" content="แบบสำรวจข้อมูลเครือข่ายร่วมสร้างชุมชนท้องถิ่นน่าอยู่เพื่อการจัดการภัยพิบัติ">
-	<meta name="google-site-verification" content="" />
-	<link rel="shortcut icon" href="/images/favicon.ico" />
-	<!--
-<link rel="stylesheet" href="/css/reset.css" />		 	
-	<link rel="stylesheet" href="/css/style.css" />
--->
-	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 		<style type="text/css">
 		.no-float{
 			float: none;
@@ -30,12 +18,30 @@
 		.clear {clear: both;}
 		.indent {padding: 0 0 0 30px}
 	</style>
-</head>
-
-<body>
-<div class="container">
     <h1>แบบสำรวจข้อมูลเครือข่ายร่วมสร้างชุมชนท้องถิ่นน่าอยู่เพื่อการจัดการภัยพิบัติ</h1>
     <form action="*" id="" method="post">
+      <fieldset>
+        <legend>ข้อมูลพื้นที่</legend>
+        <div class="clearfix">
+          <?php $this->widget('ext.location.LocationWidget', array('model' => $model, 'attribute' => 'location_id')); ?>
+    		</div>
+    		<div class="clearfix">
+    		  <label>วันที่ให้ข้อมูล</label>
+    		  <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+              //'name'=>'publishDate',
+              'model' => $model,
+              'attribute' => 'date_created',
+              'value'=>$model->date_created,
+                // additional javascript options for the date picker plugin
+                'options'=>array(
+                  'dateFormat'=>'yy-mm-dd',
+                  'defaultDate'=>$model->date_created,
+                 ),
+          )); ?>
+    		</div><!-- /clearfix -->
+      </fieldset>
+      <br/><br/>
+      
       <fieldset title="ข้อมูลทั่วไปของผู้ให้ข้อมูล" class="info-general">
         <legend>ข้อมูลทั่วไปของผู้ให้ข้อมูล</legend>
         <div class="clearfix">
@@ -72,12 +78,6 @@
 				    <input class="xlarge" name="Data[8]" size="30" type="text" value="<?php echo $Data[8]; ?>">
 				  </div>
 				</div><!-- /clearfix -->				
-				<div class="clearfix">
-				  <label>วันที่ให้ข้อมูล</label>
-				  <div class="input">
-				    <input class="xlarge" name="Data[9]" size="30" type="text" value="<?php echo $Data[9]; ?>">
-				  </div>
-				</div><!-- /clearfix -->
       </fieldset> <!-- /ข้อมูลทั่วไปของผู้ให้ข้อมูล -->
       <br/><br/>
       
@@ -1004,7 +1004,7 @@
           <tr>
             <th>5. กิจกรรมการฟื้นฟูพื้นที่เกษตรกรรมขนาดเล็ก</th>
             <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[286]"<?php if ($Data[286] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[286]" <?php if ($Data286 == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[286]" <?php if ($Data[286] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
             <td><input class="span4" name="Data[287]" type="text" value="<?php echo $Data[287]; ?>"></td>
           </tr>  
           <tr>
@@ -1143,6 +1143,3 @@
         </fieldset> <!-- /end ส่วนที่ 4 การประสานงาน -->
        
     </form>
-</div>  <!-- end container -->
-</body>
-</html>

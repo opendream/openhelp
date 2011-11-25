@@ -79,7 +79,7 @@ class WebformController extends Controller
 	  $this->layout='//layouts/layout1';
 	  $this->pageTitle = t('Create').' '.Yii::app()->params['webforms'][$type]['label'];
 	  $this->menu=array(
-    	array('label'=>t('List'), 'url'=>array('index')),
+    	array('label'=>t('List'), 'url'=>array('list?type='.$type)),
     );
 	  
 	  $model = new Webform;
@@ -89,11 +89,12 @@ class WebformController extends Controller
 		{
 		  $attributes = $_POST['Webform'];
 		  $attributes['type'] = $type;
-		  $attributes['date_created'] = $attributes['date_created']? $attributes['date_created']: date('Y-m-d H:i:s');
+		  $attributes['date_created'] = (isset($attributes['date_created']) && $attributes['date_created'])? $attributes['date_created']: date('Y-m-d H:i:s');
 		  $attributes['last_updated'] = date('Y-m-d H:i:s');
 		  $attributes['user_id'] = Yii::app()->user->getIntId();
 		  $attributes['data'] = serialize($_POST['Data']);
-			$model->attributes=$attributes;
+			$model->attributes=array_filter($attributes);
+			//print_r($attributes);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -130,11 +131,11 @@ class WebformController extends Controller
 		{
 			$attributes = $_POST['Webform'];
 		  $attributes['type'] = $model->type;
-		  $attributes['date_created'] = $attributes['date_created']? $attributes['date_created']: date('Y-m-d H:i:s');
+		  $attributes['date_created'] = (isset($attributes['date_created']) && $attributes['date_created'])? $attributes['date_created']: date('Y-m-d H:i:s');
 		  $attributes['last_updated'] = date('Y-m-d H:i:s');
 		  $attributes['user_id'] = Yii::app()->user->getIntId();
 		  $attributes['data'] = serialize($_POST['Data']);
-			$model->attributes=$attributes;
+			$model->attributes=array_filter($attributes);
 			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -172,9 +173,14 @@ class WebformController extends Controller
 	 */
 	public function actionList($type)
 	{
+	  $this->layout='//layouts/layout1';
+	  
+	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
+		
 		$dataProvider=new CActiveDataProvider('Webform');
-		$this->render('index',array(
+		$this->render('list',array(
 			'dataProvider'=>$dataProvider,
+			'type'=>$type,
 		));
 	}
 	

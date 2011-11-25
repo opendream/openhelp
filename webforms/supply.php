@@ -1,16 +1,4 @@
-<!doctype html>
-<html lang="th" dir="ltr">
-<head>
-	<meta charset="utf-8" />	
-	<title>InfoAid | ข้อมูลเปิดสาธารณะเพื่อช่วยเหลือผู้ประสบอุทกภัย</title>	
-	<meta name="title" content="Openhelp" />
-	<meta name="description" content="ข้อมูลเปิดสาธารณะเพื่อช่วยเหลือผู้ประสบอุกทกภัย">
-	<meta name="google-site-verification" content="" />
-	<link rel="shortcut icon" href="/images/favicon.ico" />
-	<!--
-<link rel="stylesheet" href="/css/reset.css" />		 	
-	<link rel="stylesheet" href="/css/style.css" />
--->
+
 	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 		<style type="text/css">
 		.no-float{
@@ -27,13 +15,10 @@
 			margin-right: 20px;
 		}
 	</style>
-</head>
-<body>
-<div class="container">
-    <h1>แบบสำรวจโครงการเพื่อช่วยเหลือ / ฟื้นฟูพื้นที่ประสบภัยน้ำท่วม</h1>
     
 <!--     1. ข้อมูลทั่วไปของกลุ่ม / องค์กร -->
-		<h2>1. ข้อมูลทั่วไปของกลุ่ม / องค์กร</h2>    
+  <fieldset>
+		<legend>1. ข้อมูลทั่วไปของกลุ่ม / องค์กร</legend>    
     <form >
         <h3>1.1 ประเภทของกลุ่ม / องค์กร :</h3>
         <div class="clearfix">
@@ -141,67 +126,67 @@
 					    <ul class="inputs-list">
 					      <li>
 					        <label>
-					          <input type="checkbox" name="Data[12]" value="การเกษตร">
+					          <?php echo CHtml::activeCheckBox($model, 'filter0'); ?>
 					          <span>การเกษตร</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label>
-					          <input type="checkbox" name="Data[13]" value="การจัดการภัยพิบัติ">
+					          <?php echo CHtml::activeCheckBox($model, 'filter1'); ?>
 					          <span>การจัดการภัยพิบัติ</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label>
-					          <input type="checkbox" name="Data[14]" value="เศรษฐกิจและการฟื้นฟูอาชีพ">
+                    <?php echo CHtml::activeCheckBox($model, 'filter2'); ?>
 					          <span>เศรษฐกิจและการฟื้นฟูอาชีพ</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label >
-					          <input type="checkbox" name="Data[15]" value="การศึกษา" >
+					          <?php echo CHtml::activeCheckBox($model, 'filter3'); ?>
 					          <span>การศึกษา</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label >
-					          <input type="checkbox" name="Data[16]" value="สิ่งแวดล้อม" >
+					          <?php echo CHtml::activeCheckBox($model, 'filter4'); ?>
 					          <span>สิ่งแวดล้อม</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label >
-					          <input type="checkbox" name="Data[17]" value="อาหาร" >
+					          <?php echo CHtml::activeCheckBox($model, 'filter5'); ?>
 					          <span>อาหาร</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label >
-					          <input type="checkbox" name="Data[18]" value="สุขภาพ" >
+					          <?php echo CHtml::activeCheckBox($model, 'filter6'); ?>
 					          <span>สุขภาพ</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label >
-					          <input type="checkbox" name="Data[19]" value="ที่อยู่อาศัย" >
+					          <?php echo CHtml::activeCheckBox($model, 'filter7'); ?>
 					          <span>ที่อยู่อาศัย</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label >
-					          <input type="checkbox" name="Data[20]" value="สาธารณสุขและน้ำสะอาด" >
+					          <?php echo CHtml::activeCheckBox($model, 'filter8'); ?>
 					          <span>สาธารณสุขและน้ำสะอาด</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label >
-					          <input type="checkbox" name="Data[21]" value="ความเท่าเทียม สิทธิมนุษยชน ความยุติธรรม และประชาธิปไตย" >
+					          <?php echo CHtml::activeCheckBox($model, 'filter9'); ?>
 					          <span>ความเท่าเทียม สิทธิมนุษยชน ความยุติธรรม และประชาธิปไตย</span>
 					        </label>
 					      </li>
 					      <li>
 					        <label >
-					          <input type="checkbox" name="Data[22]" value="อื่นๆ (โปรดระบุ)" >
+					          <?php echo CHtml::activeCheckBox($model, 'filter10'); ?>
 					          <span>อื่นๆ (โปรดระบุ)</span>
 									  <input class="xlarge"  name="Data[23]" size="30" type="text" value="<?php echo $Data[23]; ?>" >
 					        </label>
@@ -212,17 +197,12 @@
 					
 					<h3>2.1.2 พื้นที่เป้าหมาย</h3>
 					<div class="clearfix">
-						<label class="no-float">จังหวัด</label>
-						<input class="span2" name="Data[24]" type="text"  placeholder="" value="<?php echo $Data[24]; ?>" >
-						<label class="no-float">อำเภอ</label>
-						<input class="span2" name="Data[25]" type="text"  placeholder="" value="<?php echo $Data[25]; ?>" >
-						<label class="no-float">ตําบล</label>
-						<input class="span2" name="Data[26]" type="text"  placeholder="" value="<?php echo $Data[26]; ?>" >
+						<?php $this->widget('ext.location.LocationWidget', array('model' => $model, 'attribute' => 'location_id')); ?>
+            
 					</div>
 					
-					<h3>2.1.2 พื้นที่เป้าหมาย</h3>
+					<h3>2.1.3 ลักษณะกิจกรรม</h3>
 					<div class="clearfix">
-					  <label >พื้นที่เป้าหมาย</label>
 					  <div class="input">
 					    <input class="xlarge"  name="Data[27]" size="30" type="text" value="<?php echo $Data[27]; ?>" >
 					  </div>
@@ -433,6 +413,3 @@
       </fieldset>
 
     </form>
-</div>  <!-- end container -->
-</body>
-</html>

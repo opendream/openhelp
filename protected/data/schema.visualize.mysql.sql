@@ -10597,6 +10597,11 @@ CREATE TABLE `webform` (
   `filter7` varchar(128),
   `filter8` varchar(128),
   `filter9` varchar(128),
+  `filter10` varchar(128),
+  `filter12` varchar(128),
+  `filter12` varchar(128),
+  `filter13` varchar(128),
+  `filter14` varchar(128),
 
   PRIMARY KEY (`id`),
   KEY `fk_webform_user_id` (`user_id`),
