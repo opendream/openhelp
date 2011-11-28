@@ -65,7 +65,7 @@ class WebformController extends Controller
     $this->render('view', array(
       'type' => $model->type, 
       'model' => $model,
-      'Data' => array_fill(0, 1000, '') + unserialize($model->data),
+      'Data' => array_fill(0, 1500, '') + unserialize($model->data),
     ));
     
 	}
@@ -84,7 +84,7 @@ class WebformController extends Controller
 	  
 	  $model = new Webform;
 	  
-	  $data = array_fill(0, 1000, '');
+	  $data = array_fill(0, 1500, '');
 		if(isset($_POST['Webform']))
 		{
 		  $attributes = $_POST['Webform'];

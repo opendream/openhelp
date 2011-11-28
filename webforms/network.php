@@ -964,29 +964,29 @@
             <th class="indent">1.1 ตลาดสด</th>
             <td><input class="span4" name="Data[477]" type="text" value="<?php echo $Data[477]; ?>"></td>
             <td><input class="span4" name="Data[478]" type="text" value="<?php echo $Data[478]; ?>"></td>
-            <td><input class="span4" name="Data[268]" type="text" value="<?php echo $Data[268]; ?>"></td>
-            <td><input class="span4" name="Data[269]" type="text" value="<?php echo $Data[269]; ?>"></td>
+            <td><input class="span4" name="Data[479]" type="text" value="<?php echo $Data[479]; ?>"></td>
+            <td><input class="span4" name="Data[480]" type="text" value="<?php echo $Data[480]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">1.2 ร้านขายของใช้และอาหารแห้ง(ซูปเปอร์มาร์เก็ต โชห่วย)</th>
-            <td><input class="span4" name="Data[230]" type="text" value="<?php echo $Data[230]; ?>"></td>
-            <td><input class="span4" name="Data[231]" type="text" value="<?php echo $Data[231]; ?>"></td>
-            <td><input class="span4" name="Data[232]" type="text" value="<?php echo $Data[232]; ?>"></td>
-            <td><input class="span4" name="Data[233]" type="text" value="<?php echo $Data[233]; ?>"></td>
+            <td><input class="span4" name="Data[481]" type="text" value="<?php echo $Data[481]; ?>"></td>
+            <td><input class="span4" name="Data[482]" type="text" value="<?php echo $Data[482]; ?>"></td>
+            <td><input class="span4" name="Data[483]" type="text" value="<?php echo $Data[483]; ?>"></td>
+            <td><input class="span4" name="Data[484]" type="text" value="<?php echo $Data[484]; ?>"></td>
           </tr>     
           <tr>
             <th class="indent">1.3 ครัวเคลื่อนที่</th>
-            <td><input class="span4" name="Data[234]" type="text" value="<?php echo $Data[234]; ?>"></td>
-            <td><input class="span4" name="Data[235]" type="text" value="<?php echo $Data[235]; ?>"></td>
-            <td><input class="span4" name="Data[236]" type="text" value="<?php echo $Data[236]; ?>"></td>
-            <td><input class="span4" name="Data[237]" type="text" value="<?php echo $Data[237]; ?>"></td>
+            <td><input class="span4" name="Data[485]" type="text" value="<?php echo $Data[485]; ?>"></td>
+            <td><input class="span4" name="Data[486]" type="text" value="<?php echo $Data[486]; ?>"></td>
+            <td><input class="span4" name="Data[487]" type="text" value="<?php echo $Data[487]; ?>"></td>
+            <td><input class="span4" name="Data[488]" type="text" value="<?php echo $Data[488]; ?>"></td>
           </tr>    
           <tr>
             <th class="indent">1.4 เชื้อเพลิงที่ใช้ในการทำอาหาร</th>
-            <td><input class="span4" name="Data[238]" type="text" value="<?php echo $Data[238]; ?>"></td>
-            <td><input class="span4" name="Data[239]" type="text" value="<?php echo $Data[239]; ?>"></td>
-            <td><input class="span4" name="Data[240]" type="text" value="<?php echo $Data[240]; ?>"></td>
-            <td><input class="span4" name="Data[241]" type="text" value="<?php echo $Data[241]; ?>"></td>
+            <td><input class="span4" name="Data[489]" type="text" value="<?php echo $Data[489]; ?>"></td>
+            <td><input class="span4" name="Data[490]" type="text" value="<?php echo $Data[490]; ?>"></td>
+            <td><input class="span4" name="Data[491]" type="text" value="<?php echo $Data[491]; ?>"></td>
+            <td><input class="span4" name="Data[492]" type="text" value="<?php echo $Data[492]; ?>"></td>
           </tr>    
           <tr>
             <th>2. น้ำ</th>
@@ -997,17 +997,17 @@
           </tr>
           <tr>
             <th class="indent">2.1 บริโภค</th>
-            <td><input class="span4" name="Data[242]" type="text" value="<?php echo $Data[242]; ?>"></td>
-            <td><input class="span4" name="Data[243]" type="text" value="<?php echo $Data[243]; ?>"></td>
-            <td><input class="span4" name="Data[244]" type="text" value="<?php echo $Data[244]; ?>"></td>
-            <td><input class="span4" name="Data[245]" type="text" value="<?php echo $Data[245]; ?>"></td>
+            <td><input class="span4" name="Data[493]" type="text" value="<?php echo $Data[493]; ?>"></td>
+            <td><input class="span4" name="Data[494]" type="text" value="<?php echo $Data[494]; ?>"></td>
+            <td><input class="span4" name="Data[495]" type="text" value="<?php echo $Data[495]; ?>"></td>
+            <td><input class="span4" name="Data[496]" type="text" value="<?php echo $Data[496]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">2.2 อุปโภค</th>
-            <td><input class="span4" name="Data[246]" type="text" value="<?php echo $Data[246]; ?>"></td>
-            <td><input class="span4" name="Data[247]" type="text" value="<?php echo $Data[247]; ?>"></td>
-            <td><input class="span4" name="Data[248]" type="text" value="<?php echo $Data[248]; ?>"></td>
-            <td><input class="span4" name="Data[249]" type="text" value="<?php echo $Data[249]; ?>"></td>
+            <td><input class="span4" name="Data[497]" type="text" value="<?php echo $Data[497]; ?>"></td>
+            <td><input class="span4" name="Data[498]" type="text" value="<?php echo $Data[498]; ?>"></td>
+            <td><input class="span4" name="Data[499]" type="text" value="<?php echo $Data[499]; ?>"></td>
+            <td><input class="span4" name="Data[500]" type="text" value="<?php echo $Data[500]; ?>"></td>
           </tr>     
           <tr>
             <th>3. สถานพยาบาล</th>
@@ -1018,38 +1018,38 @@
           </tr>
           <tr>
             <th class="indent">3.1 โรงพยาบาลจังหวัด/อำเภอ</th>
-            <td><input class="span4" name="Data[250]" type="text" value="<?php echo $Data[250]; ?>"></td>
-            <td><input class="span4" name="Data[251]" type="text" value="<?php echo $Data[251]; ?>"></td>
-            <td><input class="span4" name="Data[252]" type="text" value="<?php echo $Data[252]; ?>"></td>
-            <td><input class="span4" name="Data[253]" type="text" value="<?php echo $Data[253]; ?>"></td>
+            <td><input class="span4" name="Data[501]" type="text" value="<?php echo $Data[501]; ?>"></td>
+            <td><input class="span4" name="Data[502]" type="text" value="<?php echo $Data[502]; ?>"></td>
+            <td><input class="span4" name="Data[503]" type="text" value="<?php echo $Data[503]; ?>"></td>
+            <td><input class="span4" name="Data[504]" type="text" value="<?php echo $Data[504]; ?>"></td>
           </tr>          
           <tr>
-            <th class="indent">3.2 บริการเคลื่อนที่ (ระบุโดยหน่วยงาน <input class="span3" name="Data[73]" type="text" value="<?php echo $Data[73]; ?>">)</th>
-            <td><input class="span4" name="Data[254]" type="text" value="<?php echo $Data[254]; ?>"></td>
-            <td><input class="span4" name="Data[255]" type="text" value="<?php echo $Data[255]; ?>"></td>
-            <td><input class="span4" name="Data[256]" type="text" value="<?php echo $Data[256]; ?>"></td>
-            <td><input class="span4" name="Data[257]" type="text" value="<?php echo $Data[257]; ?>"></td>
+            <th class="indent">3.2 บริการเคลื่อนที่ (ระบุโดยหน่วยงาน <input class="span3" name="Data[505]" type="text" value="<?php echo $Data[505]; ?>">)</th>
+            <td><input class="span4" name="Data[506]" type="text" value="<?php echo $Data[506]; ?>"></td>
+            <td><input class="span4" name="Data[507]" type="text" value="<?php echo $Data[507]; ?>"></td>
+            <td><input class="span4" name="Data[508]" type="text" value="<?php echo $Data[508]; ?>"></td>
+            <td><input class="span4" name="Data[509]" type="text" value="<?php echo $Data[509]; ?>"></td>
           </tr>   
           <tr>
             <th class="indent">3.3 สถานีอนามัย/รพ.สต.</th>
-            <td><input class="span4" name="Data[258]" type="text" value="<?php echo $Data[258]; ?>"></td>
-            <td><input class="span4" name="Data[259]" type="text" value="<?php echo $Data[259]; ?>"></td>
-            <td><input class="span4" name="Data[260]" type="text" value="<?php echo $Data[260]; ?>"></td>
-            <td><input class="span4" name="Data[261]" type="text" value="<?php echo $Data[261]; ?>"></td>
+            <td><input class="span4" name="Data[510]" type="text" value="<?php echo $Data[510]; ?>"></td>
+            <td><input class="span4" name="Data[511]" type="text" value="<?php echo $Data[511]; ?>"></td>
+            <td><input class="span4" name="Data[512]" type="text" value="<?php echo $Data[512]; ?>"></td>
+            <td><input class="span4" name="Data[513]" type="text" value="<?php echo $Data[513]; ?>"></td>
           </tr>          
           <tr>
-            <th class="indent">3.4 คลิกนิค/ร้านขายยา (ระบุจำนวน <input class="span1" name="Data[73]" type="text"> ร้าน)</th>
-            <td><input class="span4" name="Data[262]" type="text" value="<?php echo $Data[262]; ?>"></td>
-            <td><input class="span4" name="Data[263]" type="text" value="<?php echo $Data[263]; ?>"></td>
-            <td><input class="span4" name="Data[264]" type="text" value="<?php echo $Data[264]; ?>"></td>
-            <td><input class="span4" name="Data[265]" type="text" value="<?php echo $Data[265]; ?>"></td>
+            <th class="indent">3.4 คลิกนิค/ร้านขายยา (ระบุจำนวน <input class="span1" name="Data[514]" type="text" value="<?php echo $Data[514]; ?>"> ร้าน)</th>
+            <td><input class="span4" name="Data[515]" type="text" value="<?php echo $Data[515]; ?>"></td>
+            <td><input class="span4" name="Data[516]" type="text" value="<?php echo $Data[516]; ?>"></td>
+            <td><input class="span4" name="Data[517]" type="text" value="<?php echo $Data[517]; ?>"></td>
+            <td><input class="span4" name="Data[518]" type="text" value="<?php echo $Data[518]; ?>"></td>
           </tr>   
            <tr>
             <th class="indent">3.5 ศูนย์บริการสาธารณะสุข</th>
-            <td><input class="span4" name="Data[258]" type="text" value="<?php echo $Data[258]; ?>"></td>
-            <td><input class="span4" name="Data[259]" type="text" value="<?php echo $Data[259]; ?>"></td>
-            <td><input class="span4" name="Data[260]" type="text" value="<?php echo $Data[260]; ?>"></td>
-            <td><input class="span4" name="Data[261]" type="text" value="<?php echo $Data[261]; ?>"></td>
+            <td><input class="span4" name="Data[519]" type="text" value="<?php echo $Data[519]; ?>"></td>
+            <td><input class="span4" name="Data[520]" type="text" value="<?php echo $Data[520]; ?>"></td>
+            <td><input class="span4" name="Data[521]" type="text" value="<?php echo $Data[521]; ?>"></td>
+            <td><input class="span4" name="Data[522]" type="text" value="<?php echo $Data[522]; ?>"></td>
           </tr>  
           <tr>
             <th>4. เครื่องนุ่งห่ม</th>
@@ -1060,24 +1060,24 @@
           </tr>
           <tr>
             <th class="indent">4.1 เสื้อผ้า</th>
-            <td><input class="span4" name="Data[266]" type="text" value="<?php echo $Data[266]; ?>"></td>
-            <td><input class="span4" name="Data[267]" type="text" value="<?php echo $Data[267]; ?>"></td>
-            <td><input class="span4" name="Data[268]" type="text" value="<?php echo $Data[268]; ?>"></td>
-            <td><input class="span4" name="Data[269]" type="text" value="<?php echo $Data[269]; ?>"></td>
+            <td><input class="span4" name="Data[523]" type="text" value="<?php echo $Data[523]; ?>"></td>
+            <td><input class="span4" name="Data[524]" type="text" value="<?php echo $Data[524]; ?>"></td>
+            <td><input class="span4" name="Data[525]" type="text" value="<?php echo $Data[525]; ?>"></td>
+            <td><input class="span4" name="Data[526]" type="text" value="<?php echo $Data[526]; ?>"></td>
           </tr>          
           <tr>
             <th class="indent">4.2 ผ้าห่มและเครื่องนอน</th>
-            <td><input class="span4" name="Data[270]" type="text" value="<?php echo $Data[270]; ?>"></td>
-            <td><input class="span4" name="Data[271]" type="text" value="<?php echo $Data[271]; ?>"></td>
-            <td><input class="span4" name="Data[272]" type="text" value="<?php echo $Data[272]; ?>"></td>
-            <td><input class="span4" name="Data[273]" type="text" value="<?php echo $Data[273]; ?>"></td>
+            <td><input class="span4" name="Data[527]" type="text" value="<?php echo $Data[527]; ?>"></td>
+            <td><input class="span4" name="Data[528]" type="text" value="<?php echo $Data[528]; ?>"></td>
+            <td><input class="span4" name="Data[529]" type="text" value="<?php echo $Data[529]; ?>"></td>
+            <td><input class="span4" name="Data[530]" type="text" value="<?php echo $Data[530]; ?>"></td>
           </tr>     
           <tr>
             <th>5. ภูมิปัญญาท้องถิ่นที่สนับสนุน</th>
-            <td><input class="span4" name="Data[274]" type="text" value="<?php echo $Data[274]; ?>"></td>
-            <td><input class="span4" name="Data[275]" type="text" value="<?php echo $Data[275]; ?>"></td>
-            <td><input class="span4" name="Data[276]" type="text" value="<?php echo $Data[276]; ?>"></td>
-            <td><input class="span4" name="Data[277]" type="text" value="<?php echo $Data[277]; ?>"></td>
+            <td><input class="span4" name="Data[531]" type="text" value="<?php echo $Data[531]; ?>"></td>
+            <td><input class="span4" name="Data[532]" type="text" value="<?php echo $Data[532]; ?>"></td>
+            <td><input class="span4" name="Data[533]" type="text" value="<?php echo $Data[533]; ?>"></td>
+            <td><input class="span4" name="Data[534]" type="text" value="<?php echo $Data[534]; ?>"></td>
           </tr>
         </tbody>
       </table>      
@@ -1095,57 +1095,57 @@
         <tbody>
           <tr>
             <th>1. กิจกรรมการทำความสะอาดพื้นที่ (Big Cleaning Day)</th>
-            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[278]" <?php if ($Data[278] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[278]" <?php if ($Data[278] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input class="span4" name="Data[279]" type="text" value="<?php echo $Data[279]; ?>"></td>
+            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[535]" <?php if ($Data[535] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[536]" <?php if ($Data[536] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input class="span4" name="Data[537]" type="text" value="<?php echo $Data[537]; ?>"></td>
           </tr>          
           <tr>
             <th>2. กิจกรรมการฝึกอบรบการผลิตน้ำหมักจุลินทรีย์ (EM)</th>
-            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[280]" <?php if ($Data[280] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[280]" <?php if ($Data[280] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input class="span4" name="Data[281]" type="text" value="<?php echo $Data[281]; ?>"></td>
+            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[538]" <?php if ($Data[538] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[539]" <?php if ($Data[539] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input class="span4" name="Data[540]" type="text" value="<?php echo $Data[540]; ?>"></td>
           </tr>        
           <tr>
             <th>3. กิจกรรมการฝึกอบรมอาชีพ</th>
-            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[282]" <?php if ($Data[282] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[282]" <?php if ($Data[282] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input class="span4" name="Data[283]" type="text" value="<?php echo $Data[283]; ?>"></td>
+            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[541]" <?php if ($Data[541] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[542]" <?php if ($Data[542] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input class="span4" name="Data[543]" type="text" value="<?php echo $Data[543]; ?>"></td>
           </tr>  
           <tr>
             <th>4. กิจกรรมการจัดหาอาชีพเสริม</th>
-            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[284]" <?php if ($Data[284] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[284]" <?php if ($Data[284] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input class="span4" name="Data[285]" type="text" value="<?php echo $Data[285]; ?>"></td>
+            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[544]" <?php if ($Data[544] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[545]" <?php if ($Data[545] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input class="span4" name="Data[546]" type="text" value="<?php echo $Data[546]; ?>"></td>
           </tr>        
           <tr>
             <th>5. กิจกรรมการฟื้นฟูพื้นที่เกษตรกรรมขนาดเล็ก</th>
-            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[286]"<?php if ($Data[286] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[286]" <?php if ($Data[286] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input class="span4" name="Data[287]" type="text" value="<?php echo $Data[287]; ?>"></td>
+            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[547]"<?php if ($Data[547] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[548]" <?php if ($Data[548] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input class="span4" name="Data[549]" type="text" value="<?php echo $Data[549]; ?>"></td>
           </tr>  
           <tr>
             <th>6. การดูแลผู้ป่วย/ผู้พิการ</th>
-            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[288]" <?php if ($Data[288] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[288]" <?php if ($Data[288] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input class="span4" name="Data[289]" type="text" value="<?php echo $Data[289]; ?>"></td>
+            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[550]" <?php if ($Data[550] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[551]" <?php if ($Data[551] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input class="span4" name="Data[552]" type="text" value="<?php echo $Data[552]; ?>"></td>
           </tr>        
           <tr>
             <th>7. การดูแลสัตว์เลี้ยง</th>
-            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[290]" <?php if ($Data[290] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[290]" <?php if ($Data[290] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input class="span4" name="Data[291]" type="text" value="<?php echo $Data[291]; ?>"></td>
+            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[553]" <?php if ($Data[553] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[554]" <?php if ($Data[554] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input class="span4" name="Data[555]" type="text" value="<?php echo $Data[555]; ?>"></td>
           </tr>  
           <tr>
             <th>8. การจัดการบ้าน/ที่พักอาศัย</th>
-            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[292]" <?php if ($Data[292] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[292]" <?php if ($Data[292] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input class="span4" name="Data[293]" type="text" value="<?php echo $Data[293]; ?>"></td>
+            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[556]" <?php if ($Data[556] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[557]" <?php if ($Data[557] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input class="span4" name="Data[558]]" type="text" value="<?php echo $Data[558]; ?>"></td>
           </tr>  
           <tr>
-            <th>9. อื่นๆ ระบุ <input class="span3" name="Data[294]" type="text" value="<?php echo $Data[294]; ?>"></th>
-            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[295]" <?php if ($Data[295] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[295]" <?php if ($Data[295] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
-            <td><input class="span4" name="Data[296]" type="text" value="<?php echo $Data[296]; ?>"></td>
+            <th>9. อื่นๆ ระบุ <input class="span3" name="Data[559]" type="text" value="<?php echo $Data[559]; ?>"></th>
+            <td><input type="radio" value="กิจกรรมที่ชุมชนสามารถดำเนินการเองได้" name="Data[560]" <?php if ($Data[560] == 'value'): ?> checked="checked" <?php endif; ?>>></td>
+            <td><input type="radio" value="กิจกรรมที่ต้องการขอรับการสนับสนุน" name="Data[561]" <?php if ($Data[561] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+            <td><input class="span4" name="Data[562]" type="text" value="<?php echo $Data[562]; ?>"></td>
           </tr>  
         </tbody>
       </table>      
