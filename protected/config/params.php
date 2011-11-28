@@ -2,6 +2,7 @@
 return array(
   'adminEmail'=>'webmaster@example.com',
   'siteName' => 'FloodTambon',
+  //'logo' => 'images/infoaid.png',
 	'location'=>array('level0','level1','level2', 'level3'),
 	'locationDisplay'=>array('level1','level2', 'level3'),
 	'pages' => array(

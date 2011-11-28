@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
-	<style type="text/css">
+
+<style type="text/css">
 	.no-float{
 		float: none;
 		width: 125px;
 		display: inline-block;
 	}
-	
 	table input.span3, textarea.span3, table input.span2, textarea.span2{
 		margin: 0;
 	}
@@ -13,6 +13,13 @@
 		margin-left: 20px;
 		margin-right: 20px;
 	}
+	fieldset.section3 {
+	  width: 90%;
+	  height: 320px;
+	  overflow: auto;
+	  margin: 0 auto;
+	}
+
 </style>
 
 <h1>แบบสํารวจเพื่อการฟื้นฟูชุมชนหลังสถานการณ์ภัยพิบัติระดับตําบล</h1>
@@ -186,7 +193,7 @@
   
   
 <!--       ส่วนที่ 3 การสํารวจเพื่อการฟื้นฟู -->
-  <fieldset>
+  <fieldset class="section3">
     <legend>ส่วนที่ 3 การสํารวจเพื่อการฟื้นฟู</legend>
 	<table class="bordered-table">
 	  <thead>

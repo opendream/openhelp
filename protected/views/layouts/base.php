@@ -18,7 +18,17 @@
 <div class="wrapper">
   <div id="header">
 		<header>
-			<h1 id = "logo"><a href="<?php echo bu('/'); ?>">Floodtambon</a></h1>
+			  
+			  <?php if (isset(Yii::app()->params['logo'])): ?>
+			    <h1 id="logo-img">
+			      <a href="<?php echo bu('/'); ?>"><img src="<?php echo bu(Yii::app()->params['logo']); ?>" /></a>
+			    </h1>
+			  <?php else: ?>
+			    <h1 id = "logo">
+			      <a href="<?php echo bu('/'); ?>"><?php echo Yii::app()->params['siteName']; ?></a>
+			    </h1>
+			  <?php endif ?>
+			</h1>
 			<nav>
 			  <?php 
   			  $menu = array(
