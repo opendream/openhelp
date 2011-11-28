@@ -85,12 +85,14 @@ return array(
 				array('label' => 'ข้อสังเกตอื่นๆ', 'editor' => 'textArea', 'options' => array(
 					"height"=>"50px",
 				)),
+				/*
 				array('label' => 'ความเร่งด่วน', 'editor' => 'dropDownList', 'options' => array(
     	   'มากที่สุด' => 'มากที่สุด',
     	   'มาก' => 'มาก',
     	   'ปานกลาง' => 'ปานกลาง',
     	   'น้อย' => 'น้อย',
     	  )),
+    	  */
 	    ),
 	  ),
 	), 

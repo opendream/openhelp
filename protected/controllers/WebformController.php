@@ -84,7 +84,7 @@ class WebformController extends Controller
 	  
 	  $model = new Webform;
 	  
-	  $data = array_fill(0, 1000, 'test');
+	  $data = array_fill(0, 1000, '');
 		if(isset($_POST['Webform']))
 		{
 		  $attributes = $_POST['Webform'];

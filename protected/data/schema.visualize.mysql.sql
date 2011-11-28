@@ -10598,7 +10598,7 @@ CREATE TABLE `webform` (
   `filter8` varchar(128),
   `filter9` varchar(128),
   `filter10` varchar(128),
-  `filter12` varchar(128),
+  `filter11` varchar(128),
   `filter12` varchar(128),
   `filter13` varchar(128),
   `filter14` varchar(128),
