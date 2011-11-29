@@ -31,11 +31,11 @@ class WebformController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'list'),
+				'actions'=>array('create','update', 'list', 'delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -61,11 +61,13 @@ class WebformController extends Controller
 	  
 	  $model=$this->loadModel($id);
 	  $this->pageTitle = Yii::app()->params['webforms'][$model->type]['label'];
+	  
+	  //print_r(unserialize($model->data)+array_fill(0, 1500, ''));
 
     $this->render('view', array(
       'type' => $model->type, 
       'model' => $model,
-      'Data' => array_fill(0, 1500, '') + unserialize($model->data),
+      'Data' => unserialize($model->data) + array_fill(0, 1500, ''),
     ));
     
 	}
@@ -115,18 +117,24 @@ class WebformController extends Controller
 	  $this->layout='//layouts/layout1';
 	  
 	  $model=$this->loadModel($id);
+		if (Yii::app()->user->getGroup() == 'webform' && $model->user_id != Yii::app()->user->getIntId()) {
+	    $this->redirect(array('list?type='.$type));
+	    exit();
+	  }
 		
 	  $this->pageTitle = t('Update').' '.Yii::app()->params['webforms'][$model->type]['label'];
 	  $this->menu=array(
     	array('label'=>t('List'), 'url'=>array('list?type='.$model->type)),
     	array('label'=>t('Create'), 'url'=>array('create?type='.$model->type)),
     	array('label'=>t('View'), 'url'=>array('view', 'id'=>$model->id)),
+    	array('label'=>t('Delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'type' => $model->type),'confirm'=>'Are you sure you want to delete this item?')),
+    	
     );
     
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-    $data = array_fill(0, 1000, '');
+    $data = array_fill(0, 1500, '');
 		if(isset($_POST['Webform']))
 		{
 			$attributes = $_POST['Webform'];
@@ -135,6 +143,7 @@ class WebformController extends Controller
 		  $attributes['last_updated'] = date('Y-m-d H:i:s');
 		  $attributes['user_id'] = Yii::app()->user->getIntId();
 		  $attributes['data'] = serialize($_POST['Data']);
+		  //print_r(array_filter($attributes));
 			$model->attributes=array_filter($attributes);
 			
 			if($model->save())
@@ -157,12 +166,19 @@ class WebformController extends Controller
 	{
 		if(Yii::app()->request->isPostRequest)
 		{
+
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+			$model = $this->loadModel($id);
+			if (Yii::app()->user->getGroup() == 'webform' && $model->user_id != Yii::app()->user->getIntId()) {
+  	    $this->redirect(array('list?type='.$type));
+  	    exit();
+  	  }
+  	  
+  	  $model->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('list?type='.$_REQUEST['type']));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');

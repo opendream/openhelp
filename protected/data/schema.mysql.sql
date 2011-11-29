@@ -1,10 +1,3 @@
-CREATE TABLE `user` (
-    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(128) NOT NULL,
-    password VARCHAR(128) NOT NULL,
-    email VARCHAR(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;;
-
 # Copy from location extension
 CREATE TABLE `location` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,

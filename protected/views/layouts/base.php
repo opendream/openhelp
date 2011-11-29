@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico" />
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" />		 	
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-tambon.css" />
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.5.1.min.js"></script>
+	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -32,24 +32,46 @@
 			<nav>
 			  <?php 
   			  $menu = array(
-    				array('label'=> Yii::t('locale','home'), 'url'=>array('/')),
-    				array('label'=> Yii::t('locale','database'), 'url'=>array('/request/location')),
+    				array(
+    				  'label'=> Yii::t('locale','home'), 
+    				  'url'=>array('/'),
+    				),
     			);
-
     			$menu[0]['active'] = WidgetManager::isActiveFromUrl($menu[0], $_SERVER['REQUEST_URI']);
-    			$menu[1]['active'] = WidgetManager::isActiveFromUrl($menu[1], $_SERVER['REQUEST_URI']);
-    			foreach (Yii::app()->params['content'] as $type => $conf) {
-    			  $_menu = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/content?type='.$type));
-				  $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
-				  $_menu['active'] = $isActive;
-    			  $menu[] = $_menu;
+    			
+    			if (isset(Yii::app()->params['request']) && Yii::app()->params['request']) {    			
+            $menu[] = array(
+              'label'=> Yii::t('locale','database'), 
+              'url'=>array('/request/location'),
+            );
+            $menu[1]['active'] = WidgetManager::isActiveFromUrl($menu[1], $_SERVER['REQUEST_URI']);
+      			
+				  }
+    			if (isset(Yii::app()->params['content']) && Yii::app()->params['content']) {
+    			  foreach (Yii::app()->params['content'] as $type => $conf) {
+      			  $_menu = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/content?type='.$type));
+  				    $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
+  				    $_menu['active'] = $isActive;
+      			  $menu[] = $_menu;
+      			}
     			}
-    			foreach (Yii::app()->params['pages'] as $url => $page) {
-    			  $_menu = array('label'=> Yii::t('locale',$page['label']), 'url'=>array('/page/'.$url));
-				  $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
-				  $_menu['active'] = $isActive;
-    			  $menu[] = $_menu;
+    			if (isset(Yii::app()->params['webforms']) && Yii::app()->params['webforms']) {
+    			  foreach (Yii::app()->params['webforms'] as $type => $conf) {
+      			  $_menu = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/webform/list?type='.$type));
+  				    $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
+  				    $_menu['active'] = $isActive;
+      			  $menu[] = $_menu;
+      			}
     			}
+          if (isset(Yii::app()->params['pages']) && Yii::app()->params['pages']) {
+            foreach (Yii::app()->params['pages'] as $url => $page) {
+      			  $_menu = array('label'=> Yii::t('locale',$page['label']), 'url'=>array('/page/'.$url));
+  				    $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
+  				    $_menu['active'] = $isActive;
+      			  $menu[] = $_menu;
+      			}
+          }
+
   			?>
 				<?php $this->widget('zii.widgets.CMenu',array('items'=>$menu, 'firstItemCssClass' => 'first', 'firstItemCssClass' => 'last')); ?>
 			</nav>	
