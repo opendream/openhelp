@@ -90,3 +90,10 @@
 	    }
 
 /* @end */
+
+/* develop css */
+
+.fht-fixed-column .fht-tbody {/* background: #ccc; */}
+table.fht-table thead tr th {
+/*   padding: 10px; */
+}

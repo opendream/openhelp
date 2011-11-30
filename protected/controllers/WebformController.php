@@ -62,12 +62,12 @@ class WebformController extends Controller
 	  $model=$this->loadModel($id);
 	  $this->pageTitle = Yii::app()->params['webforms'][$model->type]['label'];
 	  
-	  //print_r(unserialize($model->data)+array_fill(0, 1500, ''));
+	  //print_r(unserialize($model->data)+array_fill(0, 4000, ''));
 
     $this->render('view', array(
       'type' => $model->type, 
       'model' => $model,
-      'Data' => unserialize($model->data) + array_fill(0, 1500, ''),
+      'Data' => unserialize($model->data) + array_fill(0, 4000, ''),
     ));
     
 	}
@@ -86,7 +86,7 @@ class WebformController extends Controller
 	  
 	  $model = new Webform;
 	  
-	  $data = array_fill(0, 1500, '');
+	  $data = array_fill(0, 4000, '');
 		if(isset($_POST['Webform']))
 		{
 		  $attributes = $_POST['Webform'];
@@ -134,7 +134,7 @@ class WebformController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-    $data = array_fill(0, 1500, '');
+    $data = array_fill(0, 4000, '');
 		if(isset($_POST['Webform']))
 		{
 			$attributes = $_POST['Webform'];
@@ -214,13 +214,14 @@ class WebformController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex($type)
 	{
-	  $type = $_GET['type'];
-		$dataProvider=new CActiveDataProvider('Webform');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+	  $this->layout='//layouts/layout1';
+	  
+	  
+	  $filters = Yii::app()->params['webforms'][$type]['filters'];
+	  $filters['type'] = $type;
+	  $this->render('//webform/index', get_defined_vars());
 	}
 
 	/**

@@ -9,7 +9,41 @@ return array(
 	  'reliefsurvey' => array(
 	    'name' => 'ฟื้นฟูตำบล',
 	    'label' => 'แบบสํารวจเพื่อการฟื้นฟูชุมชนหลังสถานการณ์ภัยพิบัติระดับตําบล', 
-	    'file' => 'webforms/reliefsurvey.php'
+	    'file' => 'webforms/reliefsurvey.php',
+	    'filters' => array(
+	      'data' => array(
+  	      'filter0' => array(
+  	        'label' => 'ความเสียหายต่อชีวิตและความปลอดภัย',
+  	        'description' => '',
+  	        'widget' => 'dropDownList',
+  	      ),
+  	      'filter1' => array(
+  	        'label' => 'สุขภาพ',
+  	        'description' => '',
+  	        'widget' => 'dropDownList',
+  	      ),
+  	      'filter2' => array(
+  	        'label' => 'สภาพแวดล้อม',
+  	        'description' => '',
+  	        'widget' => 'dropDownList',
+  	      ),
+  	      'filter3' => array(
+  	        'label' => 'เศรษฐกิจ',
+  	        'description' => '',
+  	        'widget' => 'dropDownList',
+  	      ),
+  	      'filter4' => array(
+  	        'label' => 'การเตรียมรับมือภัยพิบัติในอนาคต',
+  	        'description' => '',
+  	        'widget' => 'dropDownList',
+  	      ),
+	      ),
+	      'all' => array(
+	        'label' => 'ทั้งหมด',
+	        'description' => '',
+	        'widget' => 'activeRadioButtonList',
+	      ),
+	    )
 	  ),
 	  'supply' => array(
 	    'name' => 'โครงการฟื้นฟู',
