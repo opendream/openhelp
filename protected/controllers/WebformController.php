@@ -45,6 +45,7 @@ class WebformController extends Controller
 	}
 	
 	public function getWebForm($type, $model, $Data) {
+	  $Webform = $model;
     ob_start();
     ob_implicit_flush(false);
     require(substr(bu(Yii::app()->params['webforms'][$type]['file']), 1));

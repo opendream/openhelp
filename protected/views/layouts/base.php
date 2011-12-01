@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" />		 	
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-tambon.css" />
 	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+	<script type="text/javascript" src="<?php echo bu('js/jquery.form.js'); ?>"></script>
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->

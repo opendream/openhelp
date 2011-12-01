@@ -1,4 +1,4 @@
-<form action="api/webform/list" method="get">
+<form id="webform-filters" action="api/webform?action=location&type=<?php echo $type; ?>" method="post">
   <input type="hidden" name="type" value="<?php echo $type; ?>" />
   <ul>
   <?php foreach ($data as $name => $filter): ?>
@@ -14,3 +14,9 @@
   <?php endforeach ?>
   </ul>
 </form>
+
+<script type="text/javascript" charset="utf-8">
+  $('#webform-filters').ajaxForm(function (resp) { 
+    console.log(resp);
+  });
+</script>

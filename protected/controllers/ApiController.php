@@ -77,6 +77,10 @@ class ApiController extends Controller
 	  }
 
 	}
+	
+	public function actionWebform($action, $type=null) {
+	  echo $type;
+	}
 
 
 }
