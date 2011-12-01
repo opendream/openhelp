@@ -18,7 +18,7 @@
 		margin-right: 10px;
 	}
 	
-	fieldset.section3 tbody tr td {padding: 5px;}
+	fieldset.section3 tbody tr td, .section2 tbody tr td{padding: 5px;}
 	fieldset.section3 .table-inner{
     border: 1px solid #eee;
 	}
@@ -67,12 +67,12 @@
  .help-block {margin: 0 0 5px;}
  .al-left {text-align: left !important;}
  
- td.h-line {height: 40px; padding: 0; }
+ td.h-line {height: 40px;}
  h3.h-line,  h4.h-line {position: absolute; line-height: 0}
  
  /* table */ 
- .fht-table th,  .section3-table th {padding: 0;}
- .fht-table td,  .section3-table td{padding: 5px 5px 0; vertical-align: middle; line-height: 1.5em; text-align: center;} 
+ .fht-table th,  .section3-table th {/* padding: 0; */}
+ .fht-table td,  .section3-table td{vertical-align: middle; line-height: 1.5em; text-align: center;} 
 
  .fht-table td {background: #e3e3e3;}
  .bgheadlv1 {background: #a3a3a3 !important;} 
@@ -84,13 +84,12 @@
    vertical-align: middle;
    color: #fff;
    background: #919191;
-   padding: 10px 0
  }
  .fht-table th {
-   padding: 10px 0;
    background: #666;
    font-size: 13px;
-   color: #fff
+   color: #fff;
+   line-height: 30px;
  }
  
  .section3 textarea {width: 140px;}
@@ -364,6 +363,7 @@
 <!-- ส่วนที่ 3 การสํารวจเพื่อการฟื้นฟู -->
   <fieldset title="การสํารวจเพื่อการฟื้นฟู" class="section3">
   <legend>ส่วนที่ 3 การสํารวจเพื่อการฟื้นฟู</legend>
+  <span class="help-block">*** กรุณาเลื่อนแถบเลื่อนด้านล่าง (scrollbar) ของตาราง เพื่อทำการกรอกข้อมูลในแต่ละหมู่ ***</span>
 	<table class="bordered-top section3-table">
 	  <thead>
 	    <tr>
@@ -398,7 +398,7 @@
 		    <tr class="table-lv1">
 		      <td class="h-line bgheadlv1" style="width: 260px;"><div style="width: 260px;"><h3 class="h-line">3.1 ความเสียหายต่อชีวิต</h3></div></td>
 		      <td class="bgheadlv1" style="width: 115px;"><div style="width: 115px;"></div></td>
-		      <td class="bgheadlv1" style="width: 120px;"><div style="width: 120px;"></div></td>
+		      <td class="bgheadlv1" style="width: 170px;"><div style="width: 170px;"></div></td>
 		      <td></td>
 		      <td></td>
 		      <td></td>
@@ -798,6 +798,7 @@
 
 		    </tr>
 
+
 		    <tr class="table-lv2">
 		      <td class="h-line bgheadlv2"><h4 class="h-line">3.1.5 ความเสียหายต่อชีวิตและความปลอดภัย (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
 		      <td class="bgheadlv2"></td>
@@ -823,35 +824,136 @@
 		      <td></td>
 		      <td></td>
 		    </tr>		 
+
 		    		   
 		    <tr>
-		      <td class="al-left">1) ไม่มีผู้เสียชีวิตหรือสูญหายหรือบาดเจ็บบ้านเรือนเสียหายบางส่วน</td>
+		      <td class="al-left">1) <strong>ไม่มี</strong>ผู้เสียชีวิตหรือสูญหายหรือบาดเจ็บบ้านเรือนเสียหายบางส่วน</td>
 		      <td><input type="radio" value="1" name="Webform[filter0]" <?php if ($Webform['filter0'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
-		      <td rowspan="5"><textarea name="" row="8"></textarea></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
+		      <td rowspan="5"><textarea name="Data[1764]" row="8"><?php echo $Data[1764]; ?></textarea></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>	
 
-		    
+		    <tr>
+		      <td class="al-left">2) มีผู้เสียชีวิตหรือสูญหาย หรือบาดเจ็บบ้านเรือนพังเสียหายทั้งหมด<strong>น้อยกว่า10%</strong>ของชุมชน</td>
+		      <td><input type="radio" value="2" name="Webform[filter0]" <?php if ($Webform['filter0'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+
+		    </tr>		    
+		    <tr>
+		      <td class="al-left">3) มีผู้เสียชีวิตหรือสูญหายหรือบาดเจ็บบ้านเรือนพังเสียหายทั้งหมด<strong>มากกว่า10%</strong>ของชุมชน</td>
+		      <td><input type="radio" value="3" name="Webform[filter0]" <?php if ($Webform['filter0'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+
+		    </tr>		   
+		    <tr>
+		      <td class="al-left">4) มีผู้เสียชีวิตสูญหายและบาดเจ็บบ้านเรือนพังเสียหาย<strong>ทั้งหมดประมาณ25%</strong>ของชุมชน</td>
+		      <td><input type="radio" value="4" name="Webform[filter0]" <?php if ($Webform['filter0'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+
+		    </tr>		   
+		    <tr>
+		      <td class="al-left">5) มีผู้เสียชีวิตสูญหายและบาดเจ็บจำนวนมากบ้านเรือนเสียหาย<strong>ทั้งหมดมากกว่า50%</strong>ของชุมชน</td>
+		      <td><input type="radio" value="5" name="Webform[filter0]" <?php if ($Webform['filter0'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1913]" <?php if ($Data[1913] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		    </tr>	
+	   
+
 <!--
 		    <tr>
 		      <th colspan="8" class="table-lv1"><h3>3.2 สุขภาพ</h3></th>
@@ -1287,137 +1389,133 @@
 		    		   
 		    <tr>
 		      <td class="al-left">1) มีหน่วยพยาบาลในพื้นที่<strong>มากกว่า 1หน่วย</strong> การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาน้อยกว่า 1 ชม.</strong></td>
-		      <td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-		      <td rowspan="5"><textarea name="" row="8"></textarea></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
+		      <td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td rowspan="5"><textarea name="Data[1765]" row="8"><?php echo $Data[1765]; ?></textarea></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>	
 		    <tr>
 		      <td class="al-left">2) มีหน่วยพยาบาลในพื้นที่<strong>มากกว่า 1หน่วย</strong> การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาประมาณ 1 ชม.</strong></td>
-		      <td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-
+		      <td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	 	        
 
 		    <tr>
 		      <td class="al-left">3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาประมาณ 1 ชม.</strong></td>
-		      <td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
-
+		      <td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	 
 
 
 		    <tr>
 		      <td class="al-left">4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาเกิน 1 ชม.</strong></td>
-		      <td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-
+		      <td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	 
 
 		    <tr>
 		      <td class="al-left">5) <strong>ไม่มี</strong>หน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาเกิน 1 ชม.</strong></td>
-		      <td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
-
+		      <td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1737]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	
 
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.4 ระดับความเครียด และความกังวลของคนในชุมชน <span>(ให้เลือก 1 น้อยที่สุด- 5 มากที่สุด) </span></h4></td>
+		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.4 ระดับความเครียดและความกังวลของคนในชุมชน (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
 		      <td class="bgheadlv2"></td>
 		      <td class="bgheadlv2"></td>
 		      <td></td>
@@ -1449,119 +1547,127 @@
 		   
 		    <tr>
 		      <td class="al-left">1) ไม่พบประชาชนมีภาวะความเครียด</td>
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>			      
-					<td rowspan="5"><textarea name="" row="8"></textarea></td>
-					<!-- <td><input class="span4"  name="Data[695]" type="text" value="<?php //echo $Data[695]; ?>"></td> -->
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
-					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>		      
+		      <td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td rowspan="5"><textarea name="Data[1766]" row="8"><?php echo $Data[1766]; ?></textarea></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td> 
 
 		    </tr>	
 		    <tr>
 		      <td class="al-left">2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้</td>
-		      <td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>
-		      <!-- <td><input class="span4"  name="Data[702]" type="text" value="<?php echo $Data[702]; ?>"></td> -->
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
+		      <td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td> 
 
 		    <tr>
 		      <td class="al-left">3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้</td>
-		      <td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[709]" type="text" value="<?php echo $Data[709]; ?>"></td> -->
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
-
+		      <td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td> 
 		    </tr>	 
 		    <tr>
 		      <td class="al-left">4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย</td>
-		      <td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[716]" type="text" value="<?php echo $Data[716]; ?>"></td> -->
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
-
-		    </tr>	 
+		      <td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td> 		    
+			  </tr>	 
 		    <tr>
 		      <td class="al-left">5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม</td>
-		      <td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[723]" type="text" value="<?php echo $Data[723]; ?>"></td> -->
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
-
+		      <td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1738]" <?php if ($Data[1737] == 'value'): ?> checked="checked" <?php endif; ?>></td> 
 		    </tr>	 
+		    
 		    <tr class="table-lv2">
 		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.5 กิจกรรมที่ชุมชนที่ต้องการการสนับสนุน</h4></td>
 		      <td class="bgheadlv2"></td>
@@ -1700,7 +1806,7 @@
 -->
 
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.6 ความรุนแรงด้านปัญหาสุขภาพในชุมชนอยู่ในระดับ<span>(ให้เลือก 1 น้อยที่สุด- 5 มากที่สุด)</span></h4></td>
+		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.6 ความรุนแรงด้านปัญหาสุขภาพในชุมชนอยู่ในระดับ(1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
 		      <td class="bgheadlv2"></td>
 		      <td class="bgheadlv2"></td>
 		      <td></td>
@@ -1727,134 +1833,125 @@
 		   
 		    <tr>
 		      <td class="al-left">1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ไม่มีโรคระบาดมีบริการทางการแพทย์และไม่มีความเครียดในชุมชน</td>
-		      <td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-				  <td rowspan="5"><textarea name="" row="8"></textarea></td>
-<!-- 		      <td><input class="span4"  name="Data[695]" type="text" value="<?php echo $Data[695]; ?>"></td> -->
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-					<td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
-
+		      <td><input type="radio" value="1" name="Webform[filter1]" <?php if ($Webform['filter1'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+				  <td rowspan="5"><textarea name="Data[1767]" row="8"><?php echo $Data[1767]; ?></textarea></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	
+		    
 		    <tr>
 		      <td class="al-left">2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้มีโรคระบาดมีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้</td>
-		      <td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[702]" type="text" value="<?php echo $Data[702]; ?>"></td> -->
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
-
+		      <td><input type="radio" value="2" name="Webform[filter1]" <?php if ($Webform['filter1'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	 	        
 		    <tr>
 		      <td class="al-left">3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้มีโรคระบาดมีบริการทางการแพทย์และมีความเครียดในชุมชนและต้องการการสนับสนุนบางส่วน</td>
-		      <td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[709]" type="text" value="<?php echo $Data[709]; ?>"></td> -->
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>		    
-
+		      <td><input type="radio" value="3" name="Webform[filter1]" <?php if ($Webform['filter1'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 			  </tr>	 
 		    <tr>
 		      <td class="al-left">4) มีปัญหาด้านบริการทางการแพทย์ในชุมชนและชุมชนต้องการการสนับสนุน</td>
-		      <td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[716]" type="text" value="<?php echo $Data[716]; ?>"></td> -->
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
-
+		      <td><input type="radio" value="4" name="Webform[filter1]" <?php if ($Webform['filter1'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	 
 		    <tr>
 		      <td class="al-left">5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุนเร่งด่วน</td>
-		      <td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[723]" type="text" value="<?php echo $Data[723]; ?>"></td> -->
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
-					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
+		      <td><input type="radio" value="5" name="Webform[filter1]" <?php if ($Webform['filter1'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1734]" <?php if ($Data[1734] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>
 		    <tr class="table-lv1">
 		      <td class="h-line bgheadlv1"><h3 class="h-line">3.3  สภาพแวดล้อมที่ได้รับผลกระทบ</h3></td>
@@ -1882,7 +1979,7 @@
 		      <td></td>
 		    </tr>			    
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.1 ที่อยู่อาศัย (ระบุจำนวน)</h4></td>
+		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.1 ที่อยู่อาศัย (ระบุจำนวน)</h4></td>
 		      <td class="bgheadlv2"></td>
 		      <td class="bgheadlv2"></td>
 		      <td></td>
@@ -3104,6 +3201,159 @@
 		      <td><input type="checkbox" name="Data[2549]" value="มลพิษอื่น ๆ" <?php if ($Data[2549] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>
+		    <tr class="table-lv2">
+		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.10 ความรุนแรงด้านปัญหาสภาพแวดล้อมในชุมชน (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
+		      <td class="bgheadlv2"></td>
+		      <td class="bgheadlv2"></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		    </tr>		 
+
+		    		   
+		    <tr>
+		      <td class="al-left">1) อาคาร ถาวรวัตถุเส้นทางเสียหายเล็กน้อย ไม่มีปัญหาแหล่งน้ำและมลพิษ</td>
+		      <td><input type="radio" value="1" name="Webform[filter2]" <?php if ($Webform['filter2'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td rowspan="5"><textarea name="Data[1768]" row="8"><?php echo $Data[1768]; ?></textarea></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="1" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		    </tr>			    
+
+		    <tr>
+		      <td class="al-left">2) อาคารถาวรวัตถุ เส้นทาง แหล่งท่องเที่ยวเสียหายไม่มีปัญหาแหล่งน้ำและมลพิษ</td>
+		      <td><input type="radio" value="2" name="Webform[filter2]" <?php if ($Webform['filter2'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="2" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		    </tr>		
+
+		    <tr>
+		      <td class="al-left">3) อาคาร ถาวรวัตถุเส้นทาง แหล่งท่องเที่ยวเสียหายมีปัญหาแหล่งน้ำต้องการสนับสนุนบางส่วน</td>
+		      <td><input type="radio" value="3" name="Webform[filter2]" <?php if ($Webform['filter2'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="3" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		    </tr>		
+
+		    <tr>
+		      <td class="al-left">4) อาคาร ถาวรวัตถุเส้นทาง แหล่งท่องเที่ยวเสียหายทั้งหมดมีปัญหาแหล่งน้ำและมลพิษต้องการสนับสนุน</td>
+		      <td><input type="radio" value="4" name="Webform[filter2]" <?php if ($Webform['filter2'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="4" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		    </tr>		
+		    
+		    <tr>
+		      <td class="al-left">5) อาคาร ถาวรวัตถุ เส้นทาง แหล่งท่องเที่ยวเสียหายทั้งหมด มีปัญหาแหล่งน้ำและมลพิษรุนแรงต้องการสนับสนุนเร่งด่วน</td>
+		      <td><input type="radio" value="5" name="Webform[filter2]" <?php if ($Webform['filter2'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td><input type="radio" value="5" name="Data[1736]" <?php if ($Data[1736] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		    </tr>		
+
 <!--
 		    <tr>
 		      <th colspan="8" class="table-lv1"><h3>3.4 เศรษฐกิจ (หากในพื้นที่ของท่านไม่มีส่วนใดก็ไม่ต้องกรอก)</h3></th>
@@ -4496,130 +4746,124 @@
 		   
 		    <tr>
 		      <td class="al-left">1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้</td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-					<td rowspan="5"><textarea name="" row="8"></textarea></td>
-<!-- 		      <td><input class="span4"  name="Data[1058]" type="text" value="<?php echo $Data[1058]; ?>"></td> -->
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
+		      <td><input type="radio" value="1" name="Webform[filter3]" <?php if ($Webform['filter4'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+					<td rowspan="5"><textarea name="Data[1769]" row="8"><?php echo $Data[1764]; ?></textarea></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="1" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	
 		    <tr>
 		      <td class="al-left">2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้</td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[1065]" type="text" value="<?php echo $Data[1065]; ?>"></td> -->
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
-		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
+		      <td><input type="radio" value="2" name="Webform[filter4]" <?php if ($Webform['filter4'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="2" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	
 		    <tr>
 		      <td class="al-left">3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจ และอุตสาหกรรมสามารถดำเนินการต่อได้แต่ต้องการการสนับสนุนบางส่วน</td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[1072]" type="text" value="<?php echo $Data[1072]; ?>"></td> -->
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
-		    </tr>	
+		      <td><input type="radio" value="3" name="Webform[filter4]" <?php if ($Webform['filter4'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="3" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		    </tr>
 		    <tr>
 		      <td class="al-left">4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน</td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[1079]" type="text" value="<?php echo $Data[1079]; ?>"></td> -->
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
-
+		      <td><input type="radio" value="4" name="Webform[filter4]" <?php if ($Webform['filter4'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="4" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	
 		    <tr>
 		      <td class="al-left">5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใดๆได้ประชากรเกินครึ่งว่างงาน</td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-<!-- 		      <td><input class="span4"  name="Data[1086]" type="text" value="<?php echo $Data[1086]; ?>"></td> -->
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
-		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
+		      <td><input type="radio" value="5" name="Webform[filter4]" <?php if ($Webform['filter4'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td><input type="radio" value="5" name="Data[1735]" <?php if ($Data[1735] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>	
 <!--
 		    <tr>
@@ -4759,7 +5003,7 @@
         <legend>ส่วนที่ 4 การสำรวจศักยภาพและความต้องการของตำบล</legend>
         <div class="clearfix">
         <h3>4.1 ด้านเครื่องมือ/อุปกรณ์</h3>
-        <span class="help-block">***กรุณาเติมคำตอบลงในช่องว่างทุกข้อ ถ้าไม่มีกรุณา  ( - )  ดังตัวอย่างข้างบนนี้ ***</span>
+        <span class="help-block">*** กรุณาเติมคำตอบลงในช่องว่างทุกข้อ ถ้าไม่มีกรุณา  ( - ) ***</span>
         <table class="bordered-table center">
         <thead>
           <tr>
@@ -5526,6 +5770,6 @@
       <script type="text/javascript">
           $.getScript('/js/jquery.fixedheadertable.js', function() {
             $('.table-village-tb').fixedHeaderTable({ footer: false, fixedColumns: 0 , height: '300px'});
-            $('.section3-table').fixedHeaderTable({ footer: false, fixedColumns: 3 , height: '500px'});
+            $('.section3-table').fixedHeaderTable({ footer: false, fixedColumns: 3 , height: '600px'});
           });
       </script>
