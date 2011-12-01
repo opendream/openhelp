@@ -3,6 +3,8 @@
 class LocationWidget extends CInputWidget
 {
   public $join;
+  public $multiple;
+  public $index;
 
 	public function run()
 	{
@@ -16,6 +18,13 @@ class LocationWidget extends CInputWidget
 		if(!isset($this->join)){
 		  $this->join = 0;
 	  }
+	  if(!isset($this->multiple)){
+		  $this->multiple = 0;
+	  }
+	  if(!isset($this->index)){
+		  $this->index = 0;
+	  }
+	  
 
 		$controller=$this->controller;
 		$action=$controller->action;
@@ -23,6 +32,8 @@ class LocationWidget extends CInputWidget
 			"model"=>$this->model,
 			"attribute"=>$this->attribute,
 			"join" => $this->join,
+			"multiple" => $this->multiple,
+			"index" => $this->index,
 		));
 	}
 }

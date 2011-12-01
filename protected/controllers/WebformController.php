@@ -91,6 +91,7 @@ class WebformController extends Controller
 		if(isset($_POST['Webform']))
 		{
 		  $attributes = $_POST['Webform'];
+		  print_r($attributes);
 		  $attributes['type'] = $type;
 		  $attributes['date_created'] = (isset($attributes['date_created']) && $attributes['date_created'])? $attributes['date_created']: date('Y-m-d H:i:s');
 		  $attributes['last_updated'] = date('Y-m-d H:i:s');
@@ -98,6 +99,7 @@ class WebformController extends Controller
 		  $attributes['data'] = serialize($_POST['Data']);
 			$model->attributes=array_filter($attributes);
 			//print_r($attributes);
+			$model->locations = $attributes['locations'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -139,6 +141,9 @@ class WebformController extends Controller
 		if(isset($_POST['Webform']))
 		{
 			$attributes = $_POST['Webform'];
+			//print_r($attributes);
+			//exit();
+		  
 		  $attributes['type'] = $model->type;
 		  $attributes['date_created'] = (isset($attributes['date_created']) && $attributes['date_created'])? $attributes['date_created']: date('Y-m-d H:i:s');
 		  $attributes['last_updated'] = date('Y-m-d H:i:s');
@@ -146,6 +151,7 @@ class WebformController extends Controller
 		  $attributes['data'] = serialize($_POST['Data']);
 		  //print_r(array_filter($attributes));
 			$model->attributes=array_filter($attributes);
+			$model->locations = $attributes['locations'];
 			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));

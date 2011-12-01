@@ -18,7 +18,15 @@ if ($join) {
   $where = "location.id = $join.location_id";
 }
 
-if ($model->$attribute || isset($_REQUEST['Location'])) {
+$mattr = $model->$attribute;
+$mattrId = $mattr;
+
+if ($multiple) {
+  $mattr = isset($mattr[$index])? $mattr[$index]: 0;
+  $mattrId = $mattr->id;
+  $attribute = $attribute."[$index]";
+}
+if ($mattrId || isset($_REQUEST['Location'])) {
   $selectList = implode(', ', $orgAddresses);
   if (isset($_REQUEST['Location'])) {
     $query = array_filter($_REQUEST['Location']);
@@ -35,8 +43,8 @@ if ($model->$attribute || isset($_REQUEST['Location'])) {
     $qtxt = "SELECT $selectList FROM $from WHERE $queryWhere";
   }
   else {
-    $id = $model->$attribute;
-    $locationModel = $model->location;
+    $id = $mattrId;
+    $locationModel = $multiple? $model->locations[$index]: $model->location;
     $qtxt = "SELECT $selectList FROM location WHERE id = $id";
 
   }
@@ -107,7 +115,12 @@ else {
 }
 $output = '';
 $output .= '<span id="Location_id_wrapper">';
-$output .=   CHtml::activeHiddenField($model, $attribute);
+if ($multiple) {
+  $output .=  '<input id="Webform_locations_'.$index.'" type="hidden" name="Webform[locations]['.$index.']" value="'.$mattrId.'">';
+}
+else {
+  $output .=   CHtml::activeHiddenField($model, $attribute);
+}
 $output .= '</span>';
 $output .= '<span id="Location_'.$firstLevelCol.'_wrapper" class="'.implode(' ', $addresses).'">';
 //$output .=   CHtml::activeLabelEx($locationModel,Yii::t('locale',"$firstLevelCol"));
