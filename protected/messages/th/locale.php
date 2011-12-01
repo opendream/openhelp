@@ -42,6 +42,7 @@ return array(
   'Author' => 'ผู้สร้าง',
   'ID' => 'รหัส',
   'Date' => 'วันที่', 
+  'Please, alway save.' => 'กรุณาบันทึกบ่อยๆ',
    
   /*
   * Location

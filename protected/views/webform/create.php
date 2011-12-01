@@ -9,7 +9,7 @@
 
 
 <div class="actions">
-  <input type="submit" class="btn primary" value="<?php echo t('Save changes'); ?>">&nbsp;<button type="reset" class="btn"><?php echo t('Cancel'); ?></button>
+  <input type="submit" class="btn primary" value="<?php echo t('Save changes'); ?>">&nbsp;<button type="reset" class="btn"><?php echo t('Cancel'); ?></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo t('Please, alway save.') ?>
 </div>
 <script>
     $('.actions').scrollToFixed({ marginTop: -19 });
@@ -18,8 +18,5 @@
 <?php echo $form->hiddenField($model,'type'); ?>
 <?php echo $this->getWebForm($type, $model, $Data); ?>
 
-<div class="actions">
-  <input type="submit" class="btn primary" value="<?php echo t('Save changes'); ?>">&nbsp;<button type="reset" class="btn"><?php echo t('Cancel'); ?></button>
-</div>
 <?php $this->endWidget(); ?>
 </div>

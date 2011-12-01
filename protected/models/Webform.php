@@ -273,7 +273,7 @@ class Webform extends CActiveRecord
 
    }
    public function makeManyManyCommand($model, $rel, $foreignrel) {
-     return sprintf("insert into %s values ('%s', '%s')", $model, $rel, $foreignrel);
+     return sprintf("delete from webform_location where webform_id = %s; insert into %s values (%s, %s)", $rel, $model, $rel, $foreignrel);
    }
   
 }
