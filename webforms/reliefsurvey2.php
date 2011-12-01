@@ -65,7 +65,7 @@
 	  text-align: left;
 	}
  .help-block {margin: 0 0 5px;}
- .al-left {text-align: left !important;}
+ .al-left {text-align: left;}
  
  td.h-line {height: 40px; padding: 0; }
  h3.h-line,  h4.h-line {position: absolute; line-height: 0}
@@ -691,166 +691,6 @@
 		      <td><input type="checkbox" name="Data[1478]" value="อื่น ๆ" <?php if ($Data[1478] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>
-		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.1.3 บ้านเรือนพังเสียหาย</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		    </tr>
-
-		    <tr>
-		      <td class="al-left">บ้านเรือนพังเสียหายทั้งหลัง (จำนวนหลัง)</td>
-		      <td><input class="span3"  name="Data[1869]" type="text" value="<?php echo $Data[1869]; ?>"></td>
-		      <td><input class="span4"  name="Data[1870]" type="text" value="<?php echo $Data[1870]; ?>"></td>
-		      <td><input class="span1"  name="Data[1871]" type="text" value="<?php echo $Data[1871]; ?>"></td>
-		      <td><input class="span1"  name="Data[1872]" type="text" value="<?php echo $Data[1872]; ?>"></td>
-		      <td><input class="span1"  name="Data[1873]" type="text" value="<?php echo $Data[1873]; ?>"></td>
-		      <td><input class="span1"  name="Data[1874]" type="text" value="<?php echo $Data[1874]; ?>"></td>
-		      <td><input class="span1"  name="Data[1875]" type="text" value="<?php echo $Data[1875]; ?>"></td>
-		      <td><input class="span1"  name="Data[1876]" type="text" value="<?php echo $Data[1876]; ?>"></td>
-		      <td><input class="span1"  name="Data[1877]" type="text" value="<?php echo $Data[1877]; ?>"></td>
-		      <td><input class="span1"  name="Data[1878]" type="text" value="<?php echo $Data[1878]; ?>"></td>
-		      <td><input class="span1"  name="Data[1879]" type="text" value="<?php echo $Data[1879]; ?>"></td>
-		      <td><input class="span1"  name="Data[1880]" type="text" value="<?php echo $Data[1880]; ?>"></td>
-		      <td><input class="span1"  name="Data[1881]" type="text" value="<?php echo $Data[1881]; ?>"></td>
-		      <td><input class="span1"  name="Data[1882]" type="text" value="<?php echo $Data[1882]; ?>"></td>
-		      <td><input class="span1"  name="Data[1883]" type="text" value="<?php echo $Data[1883]; ?>"></td>
-		      <td><input class="span1"  name="Data[1884]" type="text" value="<?php echo $Data[1884]; ?>"></td>
-		      <td><input class="span1"  name="Data[1885]" type="text" value="<?php echo $Data[1885]; ?>"></td>
-		      <td><input class="span1"  name="Data[1886]" type="text" value="<?php echo $Data[1886]; ?>"></td>
-		      <td><input class="span1"  name="Data[1887]" type="text" value="<?php echo $Data[1887]; ?>"></td>
-		      <td><input class="span1"  name="Data[1888]" type="text" value="<?php echo $Data[1888]; ?>"></td>
-		      <td><input class="span1"  name="Data[1889]" type="text" value="<?php echo $Data[1889]; ?>"></td>
-		      <td><input class="span1"  name="Data[1890]" type="text" value="<?php echo $Data[1890]; ?>"></td>
-
-		    </tr>
-
-		    </tr>
-		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.1.4 ประชาชนไร้ที่อยู่อาศัย</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		    </tr>
-
-		    <tr>
-		      <td class="al-left">ประชาชนไร้ที่อยู่อาศัย (จำนวนคน)</td>
-		      <td><input class="span3"  name="Data[1891]" type="text" value="<?php echo $Data[1891]; ?>"></td>
-		      <td><input class="span4"  name="Data[1892]" type="text" value="<?php echo $Data[1892]; ?>"></td>
-		      <td><input class="span1"  name="Data[1893]" type="text" value="<?php echo $Data[1893]; ?>"></td>
-		      <td><input class="span1"  name="Data[1894]" type="text" value="<?php echo $Data[1894]; ?>"></td>
-		      <td><input class="span1"  name="Data[1895]" type="text" value="<?php echo $Data[1895]; ?>"></td>
-		      <td><input class="span1"  name="Data[1896]" type="text" value="<?php echo $Data[1896]; ?>"></td>
-		      <td><input class="span1"  name="Data[1897]" type="text" value="<?php echo $Data[1897]; ?>"></td>
-		      <td><input class="span1"  name="Data[1898]" type="text" value="<?php echo $Data[1898]; ?>"></td>
-		      <td><input class="span1"  name="Data[1899]" type="text" value="<?php echo $Data[1899]; ?>"></td>
-		      <td><input class="span1"  name="Data[1900]" type="text" value="<?php echo $Data[1900]; ?>"></td>
-		      <td><input class="span1"  name="Data[1901]" type="text" value="<?php echo $Data[1901]; ?>"></td>
-		      <td><input class="span1"  name="Data[1902]" type="text" value="<?php echo $Data[1902]; ?>"></td>
-		      <td><input class="span1"  name="Data[1903]" type="text" value="<?php echo $Data[1903]; ?>"></td>
-		      <td><input class="span1"  name="Data[1904]" type="text" value="<?php echo $Data[1904]; ?>"></td>
-		      <td><input class="span1"  name="Data[1905]" type="text" value="<?php echo $Data[1905]; ?>"></td>
-		      <td><input class="span1"  name="Data[1906]" type="text" value="<?php echo $Data[1906]; ?>"></td>
-		      <td><input class="span1"  name="Data[1907]" type="text" value="<?php echo $Data[1907]; ?>"></td>
-		      <td><input class="span1"  name="Data[1908]" type="text" value="<?php echo $Data[1908]; ?>"></td>
-		      <td><input class="span1"  name="Data[1909]" type="text" value="<?php echo $Data[1909]; ?>"></td>
-		      <td><input class="span1"  name="Data[1910]" type="text" value="<?php echo $Data[1910]; ?>"></td>
-		      <td><input class="span1"  name="Data[1911]" type="text" value="<?php echo $Data[1911]; ?>"></td>
-		      <td><input class="span1"  name="Data[1912]" type="text" value="<?php echo $Data[1912]; ?>"></td>
-
-		    </tr>
-
-		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.1.5 ความเสียหายต่อชีวิตและความปลอดภัย (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		    </tr>		 
-		    		   
-		    <tr>
-		      <td class="al-left">1) ไม่มีผู้เสียชีวิตหรือสูญหายหรือบาดเจ็บบ้านเรือนเสียหายบางส่วน</td>
-		      <td><input type="radio" value="1" name="Webform[filter0]" <?php if ($Webform['filter0'] == 'value'): ?> checked="checked" <?php endif; ?>></td>
-		      <td rowspan="5"><textarea name="" row="8"></textarea></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
-
-		    </tr>	
-
 		    
 <!--
 		    <tr>
@@ -912,7 +752,7 @@
 		    </tr>
 		   
 		    <tr>
-		      <td class="al-left">- คนพิการ</td>
+		      <td>- คนพิการ</td>
 		      <td><input class="span3"  name="Data[645]" type="text" value="<?php echo $Data[645]; ?>"></td>
 		      <td><input class="span4"  name="Data[646]" type="text" value="<?php echo $Data[646]; ?>"></td>
 		      <td><input class="span1"  name="Data[640]" type="text" value="<?php echo $Data[640]; ?>"></td>
@@ -938,7 +778,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ผู้สูงอายุ</td>
+		      <td>- ผู้สูงอายุ</td>
 		      <td><input class="span3"  name="Data[652]" type="text" value="<?php echo $Data[652]; ?>"></td>
 		      <td><input class="span4"  name="Data[653]" type="text" value="<?php echo $Data[653]; ?>"></td>
 		      <td><input class="span1"  name="Data[647]" type="text" value="<?php echo $Data[647]; ?>"></td>
@@ -964,7 +804,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ผู้ป่วย</td>
+		      <td>- ผู้ป่วย</td>
 		      <td><input class="span3"  name="Data[53]" type="text" value="<?php echo $Data[53]; ?>"></td>
 		      <td><input class="span4"  name="Data[54]" type="text" value="<?php echo $Data[54]; ?>"></td>
 		      <td><input class="span1"  name="Data[48]" type="text" value="<?php echo $Data[48]; ?>"></td>
@@ -990,7 +830,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- เด็กทารก</td>
+		      <td>- เด็กทารก</td>
 		      <td><input class="span3"  name="Data[60]" type="text" value="<?php echo $Data[60]; ?>"></td>
 		      <td><input class="span4"  name="Data[61]" type="text" value="<?php echo $Data[61]; ?>"></td>
 		      <td><input class="span1"  name="Data[55]" type="text" value="<?php echo $Data[55]; ?>"></td>
@@ -1016,7 +856,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- เด็กอายุต่ำกว่า 5 ขวบ</td>
+		      <td>- เด็กอายุต่ำกว่า 5 ขวบ</td>
 		      <td><input class="span3"  name="Data[588]" type="text" value="<?php echo $Data[588]; ?>"></td>
 		      <td><input class="span4"  name="Data[589]" type="text" value="<?php echo $Data[589]; ?>"></td>
 		      <td><input class="span1"  name="Data[583]" type="text" value="<?php echo $Data[583]; ?>"></td>
@@ -1042,7 +882,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ผู้ป่วยทางจิต</td>
+		      <td>- ผู้ป่วยทางจิต</td>
 		      <td><input class="span3"  name="Data[595]" type="text" value="<?php echo $Data[595]; ?>"></td>
 		      <td><input class="span4"  name="Data[596]" type="text" value="<?php echo $Data[596]; ?>"></td>
 		      <td><input class="span1"  name="Data[590]" type="text" value="<?php echo $Data[590]; ?>"></td>
@@ -1100,7 +940,7 @@
 -->
 		   
 		    <tr>
-		      <td class="al-left">- โรค <input class="span3"  name="Data[62]" type="text" value="<?php echo $Data[62]; ?>"></td>
+		      <td>- โรค <input class="span3"  name="Data[62]" type="text" value="<?php echo $Data[62]; ?>"></td>
 		      <td><input class="span3"  name="Data[68]" type="text" value="<?php echo $Data[68]; ?>"></td>
 		      <td><input class="span4"  name="Data[69]" type="text" value="<?php echo $Data[69]; ?>"></td>
 		      <td><input class="span1"  name="Data[63]" type="text" value="<?php echo $Data[63]; ?>"></td>
@@ -1126,7 +966,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- โรค <input class="span3"  name="Data[70]" type="text" value="<?php echo $Data[70]; ?>"></td>
+		      <td>- โรค <input class="span3"  name="Data[70]" type="text" value="<?php echo $Data[70]; ?>"></td>
 		      <td><input class="span3"  name="Data[602]" type="text" value="<?php echo $Data[602]; ?>"></td>
 		      <td><input class="span4"  name="Data[603]" type="text" value="<?php echo $Data[603]; ?>"></td>
 		      <td><input class="span1"  name="Data[597]" type="text" value="<?php echo $Data[597]; ?>"></td>
@@ -1153,7 +993,7 @@
 		    </tr>
 		    
 		    <tr>
-		      <td class="al-left">- โรค <input class="span3"  name="Data[1343]" type="text" value="<?php echo $Data[1343]; ?>"></td>
+		      <td>- โรค <input class="span3"  name="Data[1343]" type="text" value="<?php echo $Data[1343]; ?>"></td>
 		      <td><input class="span3"  name="Data[1297]" type="text" value="<?php echo $Data[1297]; ?>"></td>
 		      <td><input class="span4"  name="Data[1298]" type="text" value="<?php echo $Data[1298]; ?>"></td>
 		      <td><input class="span1"  name="Data[1292]" type="text" value="<?php echo $Data[1292]; ?>"></td>
@@ -1179,7 +1019,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- โรค <input class="span3"  name="Data[1299]" type="text" value="<?php echo $Data[1299]; ?>"></td>
+		      <td>- โรค <input class="span3"  name="Data[1299]" type="text" value="<?php echo $Data[1299]; ?>"></td>
 		      <td><input class="span3"  name="Data[1305]" type="text" value="<?php echo $Data[1305]; ?>"></td>
 		      <td><input class="span4"  name="Data[1306]" type="text" value="<?php echo $Data[1306]; ?>"></td>
 		      <td><input class="span1"  name="Data[1300]" type="text" value="<?php echo $Data[1300]; ?>"></td>
@@ -1204,7 +1044,7 @@
 		      <td><input class="span1"  name="Data[1628]" type="text" value="<?php echo $Data[1628]; ?>"></td>
 		    </tr>
 		    <tr>
-		      <td class="al-left">- โรค <input class="span3"  name="Data[1307]" type="text" value="<?php echo $Data[1307]; ?>"></td>
+		      <td>- โรค <input class="span3"  name="Data[1307]" type="text" value="<?php echo $Data[1307]; ?>"></td>
 		      <td><input class="span3"  name="Data[1313]" type="text" value="<?php echo $Data[1313]; ?>"></td>
 		      <td><input class="span4"  name="Data[1314]" type="text" value="<?php echo $Data[1314]; ?>"></td>
 		      <td><input class="span1"  name="Data[1308]" type="text" value="<?php echo $Data[1308]; ?>"></td>
@@ -1229,7 +1069,7 @@
 		      <td><input class="span1"  name="Data[1643]" type="text" value="<?php echo $Data[1643]; ?>"></td>
 		    </tr>
 		    <tr>
-		      <td class="al-left">- โรค <input class="span3"  name="Data[1315]" type="text" value="<?php echo $Data[1315]; ?>"></td>
+		      <td>- โรค <input class="span3"  name="Data[1315]" type="text" value="<?php echo $Data[1315]; ?>"></td>
 		      <td><input class="span3"  name="Data[1321]" type="text" value="<?php echo $Data[1321]; ?>"></td>
 		      <td><input class="span4"  name="Data[1322]" type="text" value="<?php echo $Data[1322]; ?>"></td>
 		      <td><input class="span1"  name="Data[1316]" type="text" value="<?php echo $Data[1316]; ?>"></td>
@@ -1286,8 +1126,8 @@
 		    </tr>		 
 		    		   
 		    <tr>
-		      <td class="al-left">1) มีหน่วยพยาบาลในพื้นที่<strong>มากกว่า 1หน่วย</strong> การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาน้อยกว่า 1 ชม.</strong></td>
-		      <td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
+		      <td>1) มีหน่วยพยาบาลในพื้นที่<strong>มากกว่า 1หน่วย</strong> การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาน้อยกว่า 1 ชม.</strong></td>
+		      <td><input type="radio" value="1" name="Webform[filter0]" <?php //if ($Webform['filter0'] == 'value'): ?> checked="checked" <?php //endif; ?>></td>
 		      <td rowspan="5"><textarea name="" row="8"></textarea></td>
 					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
 					<td><input type="radio" value="1) มีหน่วยพยาบาลในพื้นที่ มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาน้อยกว่า 1 ชม." name="" checked="checked"></td>
@@ -1312,7 +1152,7 @@
 
 		    </tr>	
 		    <tr>
-		      <td class="al-left">2) มีหน่วยพยาบาลในพื้นที่<strong>มากกว่า 1หน่วย</strong> การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาประมาณ 1 ชม.</strong></td>
+		      <td>2) มีหน่วยพยาบาลในพื้นที่<strong>มากกว่า 1หน่วย</strong> การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาประมาณ 1 ชม.</strong></td>
 		      <td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
 					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
 					<td><input type="radio" value="2) มีหน่วยพยาบาลในพื้นที่มากกว่า 1หน่วย การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
@@ -1338,7 +1178,7 @@
 		    </tr>	 	        
 
 		    <tr>
-		      <td class="al-left">3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาประมาณ 1 ชม.</strong></td>
+		      <td>3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาประมาณ 1 ชม.</strong></td>
 		      <td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
 					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
 					<td><input type="radio" value="3) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาประมาณ 1 ชม." name="" checked="checked"></td>
@@ -1365,7 +1205,7 @@
 
 
 		    <tr>
-		      <td class="al-left">4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาเกิน 1 ชม.</strong></td>
+		      <td>4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาเกิน 1 ชม.</strong></td>
 		      <td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
 					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
 					<td><input type="radio" value="4) มีหน่วยพยาบาลในพื้นที่ การเดินทางถึงโรงพยาบาล ใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
@@ -1391,7 +1231,7 @@
 		    </tr>	 
 
 		    <tr>
-		      <td class="al-left">5) <strong>ไม่มี</strong>หน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาเกิน 1 ชม.</strong></td>
+		      <td>5) <strong>ไม่มี</strong>หน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาล<strong>ใช้เวลาเกิน 1 ชม.</strong></td>
 		      <td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
 					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
 					<td><input type="radio" value="5) ไม่มีหน่วยพยาบาลในพื้นที่การเดินทางถึงโรงพยาบาลใช้เวลาเกิน 1 ชม." name="" checked="checked"></td>
@@ -1448,7 +1288,7 @@
 -->
 		   
 		    <tr>
-		      <td class="al-left">1) ไม่พบประชาชนมีภาวะความเครียด</td>
+		      <td>1) ไม่พบประชาชนมีภาวะความเครียด</td>
 					<td><input type="radio" value="1) ไม่พบประชาชนมีภาวะความเครียด" name="" checked="checked"></td>			      
 					<td rowspan="5"><textarea name="" row="8"></textarea></td>
 					<!-- <td><input class="span4"  name="Data[695]" type="text" value="<?php //echo $Data[695]; ?>"></td> -->
@@ -1465,7 +1305,7 @@
 
 		    </tr>	
 		    <tr>
-		      <td class="al-left">2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้</td>
+		      <td>2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้</td>
 		      <td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>
 		      <!-- <td><input class="span4"  name="Data[702]" type="text" value="<?php echo $Data[702]; ?>"></td> -->
 					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
@@ -1485,7 +1325,7 @@
 					<td><input type="radio" value="2) พบประชาชนมีภาวะความเครียดแต่สามารถปรับตัวได้" name="" checked="checked"></td>		      
 
 		    <tr>
-		      <td class="al-left">3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้</td>
+		      <td>3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้</td>
 		      <td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[709]" type="text" value="<?php echo $Data[709]; ?>"></td> -->
 					<td><input type="radio" value="3) พบประชาชนมีภาวะความเครียดและมีกรณีควบคุมสติไม่ได้" name="" checked="checked"></td>		      
@@ -1511,7 +1351,7 @@
 
 		    </tr>	 
 		    <tr>
-		      <td class="al-left">4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย</td>
+		      <td>4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย</td>
 		      <td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[716]" type="text" value="<?php echo $Data[716]; ?>"></td> -->
 					<td><input type="radio" value="4) พบประชาชนมีภาวะความเครียดและมีความเสี่ยงฆ่าตัวตาย" name="" checked="checked"></td>		      
@@ -1537,7 +1377,7 @@
 
 		    </tr>	 
 		    <tr>
-		      <td class="al-left">5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม</td>
+		      <td>5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม</td>
 		      <td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[723]" type="text" value="<?php echo $Data[723]; ?>"></td> -->
 					<td><input type="radio" value="5) พบประชาชนมีภาวะความเครียดและมีกรณีฆ่าตัวตายจากภาวะน้ำท่วม" name="" checked="checked"></td>		      
@@ -1594,7 +1434,7 @@
 -->
 		   
 		    <tr>
-		      <td class="al-left">- การดูแลกลุ่มที่ช่วยเหลือตัวเองไม่ได้</td>
+		      <td>- การดูแลกลุ่มที่ช่วยเหลือตัวเองไม่ได้</td>
 		      <td><input class="span3"  name="Data[609]" type="text" value="<?php echo $Data[609]; ?>"></td>
 		      <td><input class="span4"  name="Data[610]" type="text" value="<?php echo $Data[610]; ?>"></td>
 		      <td><input type="checkbox" name="Data[604]" value="การดูแลกลุ่มที่ช่วยเหลือตัวเองไม่ได้" <?php if ($Data[604] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -1619,7 +1459,7 @@
 		      <td><input type="checkbox" name="Data[1823]" value="การดูแลกลุ่มที่ช่วยเหลือตัวเองไม่ได้" <?php if ($Data[1823] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ป้องกันโรคระบาด</td>
+		      <td>- ป้องกันโรคระบาด</td>
 		      <td><input class="span3"  name="Data[616]" type="text" value="<?php echo $Data[616]; ?>"></td>
 		      <td><input class="span4"  name="Data[617]" type="text" value="<?php echo $Data[617]; ?>"></td>
 		      <td><input type="checkbox" name="Data[611]" value="ป้องกันโรคระบาด" <?php if ($Data[611] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -1644,7 +1484,7 @@
 		      <td><input type="checkbox" name="Data[1838]" value="ป้องกันโรคระบาด" <?php if ($Data[1838] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>
 		    <tr>
-		      <td class="al-left">- เพิ่มบริการทางการแพทย์</td>
+		      <td>- เพิ่มบริการทางการแพทย์</td>
 		      <td><input class="span3"  name="Data[623]" type="text" value="<?php echo $Data[623]; ?>"></td>
 		      <td><input class="span4"  name="Data[624]" type="text" value="<?php echo $Data[624]; ?>"></td>	
 		      <td><input type="checkbox" name="Data[618]" value="เพิ่มบริการทางการแพทย์" <?php if ($Data[618] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -1669,7 +1509,7 @@
 		      <td><input type="checkbox" name="Data[1853]" value="เพิ่มบริการทางการแพทย์" <?php if ($Data[1853] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ฟื้นฟูภาวะจิตใจคนในชุมชน</td>
+		      <td>- ฟื้นฟูภาวะจิตใจคนในชุมชน</td>
 		      <td><input class="span3"  name="Data[630]" type="text" value="<?php echo $Data[630]; ?>"></td>
 		      <td><input class="span4"  name="Data[631]" type="text" value="<?php echo $Data[631]; ?>"></td>
 		      <td><input type="checkbox" name="Data[625]" value="ฟื้นฟูภาวะจิตใจคนในชุมชน" <?php if ($Data[625] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -1726,7 +1566,7 @@
 		    </tr>		
 		   
 		    <tr>
-		      <td class="al-left">1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ไม่มีโรคระบาดมีบริการทางการแพทย์และไม่มีความเครียดในชุมชน</td>
+		      <td>1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ไม่มีโรคระบาดมีบริการทางการแพทย์และไม่มีความเครียดในชุมชน</td>
 		      <td><input type="radio" value="1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ ไม่มีโรคระบาด  มีบริการทางการแพทย์ และไม่มีความเครียดในชุมชน" name="" checked="checked"></td>
 				  <td rowspan="5"><textarea name="" row="8"></textarea></td>
 <!-- 		      <td><input class="span4"  name="Data[695]" type="text" value="<?php echo $Data[695]; ?>"></td> -->
@@ -1753,7 +1593,7 @@
 
 		    </tr>	
 		    <tr>
-		      <td class="al-left">2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้มีโรคระบาดมีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้</td>
+		      <td>2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้มีโรคระบาดมีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้</td>
 		      <td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[702]" type="text" value="<?php echo $Data[702]; ?>"></td> -->
 					<td><input type="radio" value="2) มีปัญหาด้านการดูแล กลุ่มช่วยเหลือตัวเองไม่ได้  มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชนบ้างแต่ควบคุมได้" name="" checked="checked"></td>
@@ -1780,7 +1620,7 @@
 
 		    </tr>	 	        
 		    <tr>
-		      <td class="al-left">3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้มีโรคระบาดมีบริการทางการแพทย์และมีความเครียดในชุมชนและต้องการการสนับสนุนบางส่วน</td>
+		      <td>3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้มีโรคระบาดมีบริการทางการแพทย์และมีความเครียดในชุมชนและต้องการการสนับสนุนบางส่วน</td>
 		      <td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[709]" type="text" value="<?php echo $Data[709]; ?>"></td> -->
 					<td><input type="radio" value="3) มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ มีโรคระบาด มีบริการทางการแพทย์และมีความเครียดในชุมชน และต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
@@ -1806,7 +1646,7 @@
 
 			  </tr>	 
 		    <tr>
-		      <td class="al-left">4) มีปัญหาด้านบริการทางการแพทย์ในชุมชนและชุมชนต้องการการสนับสนุน</td>
+		      <td>4) มีปัญหาด้านบริการทางการแพทย์ในชุมชนและชุมชนต้องการการสนับสนุน</td>
 		      <td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[716]" type="text" value="<?php echo $Data[716]; ?>"></td> -->
 					<td><input type="radio" value="4) มีปัญหาด้านบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุน" name="" checked="checked"></td>		    
@@ -1832,7 +1672,7 @@
 
 		    </tr>	 
 		    <tr>
-		      <td class="al-left">5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุนเร่งด่วน</td>
+		      <td>5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน และชุมชนต้องการการสนับสนุนเร่งด่วน</td>
 		      <td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[723]" type="text" value="<?php echo $Data[723]; ?>"></td> -->
 					<td><input type="radio" value="5) มีปัญหาด้านโรคระบาดและบริการทางการแพทย์ในชุมชน  และชุมชนต้องการการสนับสนุนเร่งด่วน" name="" checked="checked"></td>		    
@@ -1908,7 +1748,7 @@
 		    </tr>	
 		   
 		    <tr>
-		      <td class="al-left">- ที่อยู่อาศัยได้รับความเสียหาย</td>
+		      <td>- ที่อยู่อาศัยได้รับความเสียหาย</td>
 		      <td><input class="span3"  name="Data[78]" type="text" value="<?php echo $Data[78]; ?>"></td>
 		      <td><input class="span4"  name="Data[79]" type="text" value="<?php echo $Data[79]; ?>"></td>
 		      <td><input class="span1"  name="Data[73]" type="text" value="<?php echo $Data[73]; ?>"></td>
@@ -1933,7 +1773,7 @@
 		      <td><input class="span1"  name="Data[1958]" type="text" value="<?php echo $Data[1958]; ?>"></td>
 		    </tr>
 		    <tr>
-		      <td class="al-left">- บริเวณบ้านที่ได้รับความเสียหาย</td>
+		      <td>- บริเวณบ้านที่ได้รับความเสียหาย</td>
 		      <td><input class="span3"  name="Data[726]" type="text" value="<?php echo $Data[726]; ?>"></td>
 		      <td><input class="span4"  name="Data[727]" type="text" value="<?php echo $Data[727]; ?>"></td>	
 		      <td><input class="span1"  name="Data[80]" type="text" value="<?php echo $Data[80]; ?>"></td>
@@ -1990,7 +1830,7 @@
 		    </tr>
 		    		   
 		    <tr>
-		      <td class="al-left">- ถนนชำรุด (สาย)</td>
+		      <td>- ถนนชำรุด (สาย)</td>
 		      <td><input class="span3"  name="Data[733]" type="text" value="<?php echo $Data[733]; ?>"></td>
 		      <td><input class="span4"  name="Data[734]" type="text" value="<?php echo $Data[734]; ?>"></td>	
 		      <td><input class="span1"  name="Data[728]" type="text" value="<?php echo $Data[728]; ?>"></td>
@@ -2015,7 +1855,7 @@
 		      <td><input class="span1"  name="Data[1989]" type="text" value="<?php echo $Data[1989]; ?>"></td>
 		    </tr>
 		    <tr>
-		      <td class="al-left">- สถานีขนส่งทางบก</td>
+		      <td>- สถานีขนส่งทางบก</td>
 		      <td><input class="span3"  name="Data[740]" type="text" value="<?php echo $Data[740]; ?>"></td>
 		      <td><input class="span4"  name="Data[741]" type="text" value="<?php echo $Data[741]; ?>"></td>
 		      <td><input class="span1"  name="Data[735]" type="text" value="<?php echo $Data[735]; ?>"></td>
@@ -2040,7 +1880,7 @@
 		      <td><input class="span1"  name="Data[2004]" type="text" value="<?php echo $Data[2004]; ?>"></td>
 		    </tr>	 
 		    <tr>
-		      <td class="al-left">- สถานีขนส่งทางน้ำ</td>
+		      <td>- สถานีขนส่งทางน้ำ</td>
 		      <td><input class="span3"  name="Data[747]" type="text" value="<?php echo $Data[747]; ?>"></td>
 		      <td><input class="span4"  name="Data[748]" type="text" value="<?php echo $Data[748]; ?>"></td>
 		      <td><input class="span1"  name="Data[742]" type="text" value="<?php echo $Data[742]; ?>"></td>
@@ -2066,7 +1906,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ศาลาที่พักผู้โดยสาร</td>
+		      <td>- ศาลาที่พักผู้โดยสาร</td>
 		      <td><input class="span3"  name="Data[754]" type="text" value="<?php echo $Data[754]; ?>"></td>
 		      <td><input class="span4"  name="Data[755]" type="text" value="<?php echo $Data[755]; ?>"></td>
 		      <td><input class="span1"  name="Data[749]" type="text" value="<?php echo $Data[749]; ?>"></td>
@@ -2092,7 +1932,7 @@
 
 		    </tr>	    
 		    <tr>
-		      <td class="al-left">- ตลิ่ง (แห่ง)</td>
+		      <td>- ตลิ่ง (แห่ง)</td>
 		      <td><input class="span3"  name="Data[761]" type="text" value="<?php echo $Data[761]; ?>"></td>
 		      <td><input class="span4"  name="Data[762]" type="text" value="<?php echo $Data[762]; ?>"></td>
 		      <td><input class="span1"  name="Data[756]" type="text" value="<?php echo $Data[756]; ?>"></td>
@@ -2118,7 +1958,7 @@
 
 		    </tr>	  
 		    <tr>
-		      <td class="al-left">- เสาไฟฟ้าหมู่บ้าน (ต้น)</td>
+		      <td>- เสาไฟฟ้าหมู่บ้าน (ต้น)</td>
 		      <td><input class="span3"  name="Data[768]" type="text" value="<?php echo $Data[768]; ?>"></td>
 		      <td><input class="span4"  name="Data[769]" type="text" value="<?php echo $Data[769]; ?>"></td>
 		      <td><input class="span1"  name="Data[763]" type="text" value="<?php echo $Data[763]; ?>"></td>
@@ -2144,7 +1984,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- หม้อแปลง (หม้อ)</td>
+		      <td>- หม้อแปลง (หม้อ)</td>
 		      <td><input class="span3"  name="Data[775]" type="text" value="<?php echo $Data[775]; ?>"></td>
 		      <td><input class="span4"  name="Data[776]" type="text" value="<?php echo $Data[776]; ?>"></td>
 		      <td><input class="span1"  name="Data[770]" type="text" value="<?php echo $Data[770]; ?>"></td>
@@ -2170,7 +2010,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- อื่น ๆ (โปรดระบุ) <input class="span3"  name="Data[777]" type="text" value="<?php echo $Data[777]; ?>"></td>
+		      <td>- อื่น ๆ (โปรดระบุ) <input class="span3"  name="Data[777]" type="text" value="<?php echo $Data[777]; ?>"></td>
 		      <td><input class="span3"  name="Data[783]" type="text" value="<?php echo $Data[783]; ?>"></td>
 		      <td><input class="span4"  name="Data[784]" type="text" value="<?php echo $Data[784]; ?>"></td>
 		      <td><input class="span1"  name="Data[778]" type="text" value="<?php echo $Data[778]; ?>"></td>
@@ -2227,7 +2067,7 @@
 		    </tr>
 		   
 		    <tr>
-		      <td class="al-left">- ศาลาประชาคม</td>
+		      <td>- ศาลาประชาคม</td>
 		      <td><input class="span3"  name="Data[790]" type="text" value="<?php echo $Data[790]; ?>"></td>
 		      <td><input class="span4"  name="Data[791]" type="text" value="<?php echo $Data[791]; ?>"></td>
 		      <td><input class="span1"  name="Data[785]" type="text" value="<?php echo $Data[785]; ?>"></td>
@@ -2253,7 +2093,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ศาลาเอนกประสงค์</td>
+		      <td>- ศาลาเอนกประสงค์</td>
 		      <td><input class="span3"  name="Data[797]" type="text" value="<?php echo $Data[797]; ?>"></td>
 		      <td><input class="span4"  name="Data[798]" type="text" value="<?php echo $Data[798]; ?>"></td>
 		      <td><input class="span1"  name="Data[792]" type="text" value="<?php echo $Data[792]; ?>"></td>
@@ -2279,7 +2119,7 @@
 
 		    </tr>	 
 		    <tr>
-		      <td class="al-left">- ลานกีฬา</td>
+		      <td>- ลานกีฬา</td>
 		      <td><input class="span3"  name="Data[805]" type="text" value="<?php echo $Data[805]; ?>"></td>
 		      <td><input class="span4"  name="Data[806]" type="text" value="<?php echo $Data[806]; ?>"></td>	
 		      <td><input class="span1"  name="Data[799]" type="text" value="<?php echo $Data[799]; ?>"></td>
@@ -2305,7 +2145,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- อื่น ๆ(โปรดระบุ) <input class="span3"  name="Data[807]" type="text" value="<?php echo $Data[807]; ?>"></td>
+		      <td>- อื่น ๆ(โปรดระบุ) <input class="span3"  name="Data[807]" type="text" value="<?php echo $Data[807]; ?>"></td>
 		      <td><input class="span3"  name="Data[813]" type="text" value="<?php echo $Data[813]; ?>"></td>
 		      <td><input class="span4"  name="Data[814]" type="text" value="<?php echo $Data[814]; ?>"></td>
 		      <td><input class="span1"  name="Data[808]" type="text" value="<?php echo $Data[808]; ?>"></td>
@@ -2362,7 +2202,7 @@
 		    </tr>
 		   
 		    <tr>
-		      <td class="al-left">- วัด</td>
+		      <td>- วัด</td>
 		      <td><input class="span3"  name="Data[820]" type="text" value="<?php echo $Data[820]; ?>"></td>
 		      <td><input class="span4"  name="Data[821]" type="text" value="<?php echo $Data[821]; ?>"></td>
 		      <td><input class="span1"  name="Data[815]" type="text" value="<?php echo $Data[815]; ?>"></td>
@@ -2388,7 +2228,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- มัสยิด</td>
+		      <td>- มัสยิด</td>
 		      <td><input class="span3"  name="Data[827]" type="text" value="<?php echo $Data[827]; ?>"></td>
 		      <td><input class="span4"  name="Data[828]" type="text" value="<?php echo $Data[828]; ?>"></td>
 		      <td><input class="span1"  name="Data[822]" type="text" value="<?php echo $Data[822]; ?>"></td>
@@ -2414,7 +2254,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- โบสถ์คริสต์</td>
+		      <td>- โบสถ์คริสต์</td>
 		      <td><input class="span3"  name="Data[834]" type="text" value="<?php echo $Data[834]; ?>"></td>
 		      <td><input class="span4"  name="Data[835]" type="text" value="<?php echo $Data[836]; ?>"></td>
 		      <td><input class="span1"  name="Data[829]" type="text" value="<?php echo $Data[829]; ?>"></td>
@@ -2440,7 +2280,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- โบราณสถาน</td>
+		      <td>- โบราณสถาน</td>
 		      <td><input class="span3"  name="Data[842]" type="text" value="<?php echo $Data[842]; ?>"></td>
 		      <td><input class="span4"  name="Data[843]" type="text" value="<?php echo $Data[843]; ?>"></td>
 		      <td><input class="span1"  name="Data[837]" type="text" value="<?php echo $Data[837]; ?>"></td>
@@ -2466,7 +2306,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- อื่น ๆ(โปรดระบุ) <input class="span3"  name="Data[844]" type="text" value="<?php echo $Data[844]; ?>"></td>
+		      <td>- อื่น ๆ(โปรดระบุ) <input class="span3"  name="Data[844]" type="text" value="<?php echo $Data[844]; ?>"></td>
 		      <td><input class="span3"  name="Data[850]" type="text" value="<?php echo $Data[850]; ?>"></td>
 		      <td><input class="span4"  name="Data[851]" type="text" value="<?php echo $Data[851]; ?>"></td>
 		      <td><input class="span1"  name="Data[845]" type="text" value="<?php echo $Data[845]; ?>"></td>
@@ -2523,7 +2363,7 @@
 		    </tr>
 		   
 		    <tr>
-		      <td class="al-left">- สำนักงานอปท.</td>
+		      <td>- สำนักงานอปท.</td>
 		      <td><input class="span3"  name="Data[857]" type="text" value="<?php echo $Data[857]; ?>"></td>
 		      <td><input class="span4"  name="Data[858]" type="text" value="<?php echo $Data[858]; ?>"></td>
 		      <td><input class="span1"  name="Data[852]" type="text" value="<?php echo $Data[852]; ?>"></td>
@@ -2549,7 +2389,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ที่ว่าการอำเภอ</td>
+		      <td>- ที่ว่าการอำเภอ</td>
 		      <td><input class="span3"  name="Data[864]" type="text" value="<?php echo $Data[864]; ?>"></td>
 		      <td><input class="span4"  name="Data[865]" type="text" value="<?php echo $Data[865]; ?>"></td>
 		      <td><input class="span1"  name="Data[859]" type="text" value="<?php echo $Data[859]; ?>"></td>
@@ -2575,7 +2415,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- สถานีตำรวจ</td>
+		      <td>- สถานีตำรวจ</td>
 		      <td><input class="span3"  name="Data[871]" type="text" value="<?php echo $Data[871]; ?>"></td>
 		      <td><input class="span4"  name="Data[872]" type="text" value="<?php echo $Data[872]; ?>"></td>					      
 		      <td><input class="span1"  name="Data[866]" type="text" value="<?php echo $Data[866]; ?>"></td>
@@ -2601,7 +2441,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- รพ.สต.</td>
+		      <td>- รพ.สต.</td>
 		      <td><input class="span3"  name="Data[878]" type="text" value="<?php echo $Data[878]; ?>"></td>
 		      <td><input class="span4"  name="Data[879]" type="text" value="<?php echo $Data[879]; ?>"></td>
 		      <td><input class="span1"  name="Data[873]" type="text" value="<?php echo $Data[873]; ?>"></td>
@@ -2627,7 +2467,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- โรงพยาบาล</td>
+		      <td>- โรงพยาบาล</td>
 		      <td><input class="span3"  name="Data[885]" type="text" value="<?php echo $Data[885]; ?>"></td>
 		      <td><input class="span4"  name="Data[886]" type="text" value="<?php echo $Data[886]; ?>"></td>
 		      <td><input class="span1"  name="Data[880]" type="text" value="<?php echo $Data[880]; ?>"></td>
@@ -2653,7 +2493,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- โรงเรียน</td>
+		      <td>- โรงเรียน</td>
 		      <td><input class="span3"  name="Data[892]" type="text" value="<?php echo $Data[892]; ?>"></td>
 		      <td><input class="span4"  name="Data[893]" type="text" value="<?php echo $Data[893]; ?>"></td>
 		      <td><input class="span1"  name="Data[887]" type="text" value="<?php echo $Data[887]; ?>"></td>
@@ -2679,7 +2519,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ศูนย์พัฒนาเด็กเล็ก</td>
+		      <td>- ศูนย์พัฒนาเด็กเล็ก</td>
 		      <td><input class="span3"  name="Data[899]" type="text" value="<?php echo $Data[900]; ?>"></td>
 		      <td><input class="span4"  name="Data[901]" type="text" value="<?php echo $Data[901]; ?>"></td>
 		      <td><input class="span1"  name="Data[894]" type="text" value="<?php echo $Data[894]; ?>"></td>
@@ -2705,7 +2545,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- อื่น ๆ (โปรดระบุ) <input class="span3"  name="Data[902]" type="text" value="<?php echo $Data[902]; ?>"></td>
+		      <td>- อื่น ๆ (โปรดระบุ) <input class="span3"  name="Data[902]" type="text" value="<?php echo $Data[902]; ?>"></td>
 		      <td><input class="span3"  name="Data[908]" type="text" value="<?php echo $Data[908]; ?>"></td>
 		      <td><input class="span4"  name="Data[909]" type="text" value="<?php echo $Data[909]; ?>"></td>
 		      <td><input class="span1"  name="Data[903]" type="text" value="<?php echo $Data[903]; ?>"></td>
@@ -2757,7 +2597,7 @@
 		    </tr>
 		    		   
 		    <tr>
-		      <td class="al-left">- ระบุ <input class="span3"  name="Data[910]" type="text" value="<?php echo $Data[910]; ?>"></td>
+		      <td>- ระบุ <input class="span3"  name="Data[910]" type="text" value="<?php echo $Data[910]; ?>"></td>
 		      <td><input class="span3"  name="Data[916]" type="text" value="<?php echo $Data[916]; ?>"></td>
 		      <td><input class="span4"  name="Data[917]" type="text" value="<?php echo $Data[917]; ?>"></td>
 		      <td><input class="span1"  name="Data[911]" type="text" value="<?php echo $Data[911]; ?>"></td>
@@ -2783,7 +2623,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ระบุ <input class="span3"  name="Data[918]" type="text" value="<?php echo $Data[918]; ?>"></td>
+		      <td>- ระบุ <input class="span3"  name="Data[918]" type="text" value="<?php echo $Data[918]; ?>"></td>
 		      <td><input class="span3"  name="Data[924]" type="text" value="<?php echo $Data[924]; ?>"></td>
 		      <td><input class="span4"  name="Data[924]" type="text" value="<?php echo $Data[924]; ?>"></td>
 		      <td><input class="span1"  name="Data[919]" type="text" value="<?php echo $Data[919]; ?>"></td>
@@ -2840,7 +2680,7 @@
 		    </tr>
 		    		   
 		    <tr>
-		      <td class="al-left">- ระบบประปา</td>
+		      <td>- ระบบประปา</td>
 		      <td><input class="span3"  name="Data[930]" type="text" value="<?php echo $Data[930]; ?>"></td>
 		      <td><input class="span4"  name="Data[931]" type="text" value="<?php echo $Data[931]; ?>"></td>
 		      <td><input class="span1"  name="Data[925]" type="text" value="<?php echo $Data[925]; ?>"></td>
@@ -2866,7 +2706,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- บ่อน้ำตื้น</td>
+		      <td>- บ่อน้ำตื้น</td>
 		      <td><input class="span3"  name="Data[937]" type="text" value="<?php echo $Data[937]; ?>"></td>
 		      <td><input class="span4"  name="Data[938]" type="text" value="<?php echo $Data[938]; ?>"></td>
 		      <td><input class="span1"  name="Data[932]" type="text" value="<?php echo $Data[932]; ?>"></td>
@@ -2892,7 +2732,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- บ่อบาดาล</td>
+		      <td>- บ่อบาดาล</td>
 		      <td><input class="span3"  name="Data[944]" type="text" value="<?php echo $Data[944]; ?>"></td>
 		      <td><input class="span4"  name="Data[945]" type="text" value="<?php echo $Data[945]; ?>"></td>
 		      <td><input class="span1"  name="Data[939]" type="text" value="<?php echo $Data[939]; ?>"></td>
@@ -2918,7 +2758,7 @@
 		    
 		    </tr>
 		    <tr>
-		      <td class="al-left">- เขื่อน/ฝ้าย</td>
+		      <td>- เขื่อน/ฝ้าย</td>
 		      <td><input class="span3"  name="Data[951]" type="text" value="<?php echo $Data[951]; ?>"></td>
 		      <td><input class="span4"  name="Data[952]" type="text" value="<?php echo $Data[952]; ?>"></td>
 		      <td><input class="span1"  name="Data[946]" type="text" value="<?php echo $Data[946]; ?>"></td>
@@ -2943,7 +2783,7 @@
 		      <td><input class="span1"  name="Data[2474]" type="text" value="<?php echo $Data[2474]; ?>"></td>
 
 		    <tr>
-		      <td class="al-left">- ห้วย/หนอง/คลอง/บึง</td>
+		      <td>- ห้วย/หนอง/คลอง/บึง</td>
 		      <td><input class="span3"  name="Data[958]" type="text" value="<?php echo $Data[958]; ?>"></td>
 		      <td><input class="span4"  name="Data[959]" type="text" value="<?php echo $Data[959]; ?>"></td>
 		      <td><input class="span1"  name="Data[953]" type="text" value="<?php echo $Data[953]; ?>"></td>
@@ -2969,7 +2809,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- อื่น ๆ <input class="span3"  name="Data[960]" type="text" value="<?php echo $Data[960]; ?>"></td>
+		      <td>- อื่น ๆ <input class="span3"  name="Data[960]" type="text" value="<?php echo $Data[960]; ?>"></td>
 		      <td><input class="span3"  name="Data[966]" type="text" value="<?php echo $Data[966]; ?>"></td>
 		      <td><input class="span4"  name="Data[967]" type="text" value="<?php echo $Data[967]; ?>"></td>
 		      <td><input class="span1"  name="Data[961]" type="text" value="<?php echo $Data[961]; ?>"></td>
@@ -3027,7 +2867,7 @@
 		    </tr>
 		    		   
 		    <tr>
-		      <td class="al-left">- ปัญหาขยะ</td>
+		      <td>- ปัญหาขยะ</td>
 		      <td><input class="span3"  name="Data[973]" type="text" value="<?php echo $Data[973]; ?>"></td>
 		      <td><input class="span4"  name="Data[974]" type="text" value="<?php echo $Data[974]; ?>"></td>		
 		      <td><input type="checkbox" name="Data[968]" value="ปัญหาขยะ" <?php if ($Data[968] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -3053,7 +2893,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- น้ำเน่าเสีย</td>
+		      <td>- น้ำเน่าเสีย</td>
 		      <td><input class="span3"  name="Data[980]" type="text" value="<?php echo $Data[980]; ?>"></td>
 		      <td><input class="span4"  name="Data[981]" type="text" value="<?php echo $Data[981]; ?>"></td>
 		      <td><input type="checkbox" name="Data[975]" value="น้ำเน่าเสีย" <?php if ($Data[975] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -3079,7 +2919,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- มลพิษอื่น ๆ ระบุ <input class="span3"  name="Data[982]" type="text" value="<?php echo $Data[982]; ?>"></td>
+		      <td>- มลพิษอื่น ๆ ระบุ <input class="span3"  name="Data[982]" type="text" value="<?php echo $Data[982]; ?>"></td>
 		      <td><input class="span3"  name="Data[988]" type="text" value="<?php echo $Data[988]; ?>"></td>
 		      <td><input class="span4"  name="Data[989]" type="text" value="<?php echo $Data[989]; ?>"></td>
 		      <td><input type="checkbox" name="Data[983]" value="มลพิษอื่น ๆ" <?php if ($Data[983] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -3164,7 +3004,7 @@
 		    </tr>
 		   
 		    <tr>
-		      <td class="al-left">- นาข้าว</td>
+		      <td>- นาข้าว</td>
 		      <td><input class="span3"  name="Data[83]" type="text" value="<?php echo $Data[83]; ?>"></td>
 		      <td><input class="span4"  name="Data[84]" type="text" value="<?php echo $Data[84]; ?>"></td>
 		      <td><input class="span1"  name="Data[54]" type="text" value="<?php echo $Data[54]; ?>"></td>
@@ -3190,7 +3030,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- พืชสวน</td>
+		      <td>- พืชสวน</td>
 		      <td><input class="span3"  name="Data[90]" type="text" value="<?php echo $Data[90]; ?>"></td>
 		      <td><input class="span4"  name="Data[91]" type="text" value="<?php echo $Data[91]; ?>"></td>
 		      <td><input class="span1"  name="Data[85]" type="text" value="<?php echo $Data[85]; ?>"></td>
@@ -3216,7 +3056,7 @@
 
 		    </tr>	    		    	    
 		    <tr>
-		      <td class="al-left">-พืชไร่</td>
+		      <td>-พืชไร่</td>
 		      <td><input class="span3"  name="Data[97]" type="text" value="<?php echo $Data[97]; ?>"></td>
 		      <td><input class="span4"  name="Data[98]" type="text" value="<?php echo $Data[98]; ?>"></td>
 		      <td><input class="span1"  name="Data[92]" type="text" value="<?php echo $Data[92]; ?>"></td>
@@ -3242,7 +3082,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- อื่น ๆ <input class="span3"  name="Data[99]" type="text" value="<?php echo $Data[99]; ?>"></td>
+		      <td>- อื่น ๆ <input class="span3"  name="Data[99]" type="text" value="<?php echo $Data[99]; ?>"></td>
 		      <td><input class="span3"  name="Data[105]" type="text" value="<?php echo $Data[105]; ?>"></td>
 		      <td><input class="span4"  name="Data[106]" type="text" value="<?php echo $Data[106]; ?>"></td>
 		      <td><input class="span1"  name="Data[100]" type="text" value="<?php echo $Data[100]; ?>"></td>
@@ -3299,7 +3139,7 @@
 		    </tr>
 		   
 	      <tr>
-		      <td class="al-left">- หมู</td>
+		      <td>- หมู</td>
 		      <td><input class="span3"  name="Data[120]" type="text" value="<?php echo $Data[120]; ?>"></td>
 		      <td><input class="span4"  name="Data[121]" type="text" value="<?php echo $Data[121]; ?>"></td>
 		      <td><input class="span1"  name="Data[115]" type="text" value="<?php echo $Data[115]; ?>"></td>
@@ -3325,7 +3165,7 @@
 
 		    </tr>
 	      <tr>
-		      <td class="al-left">- วัว/ควาย</td>
+		      <td>- วัว/ควาย</td>
 		      <td><input class="span3"  name="Data[127]" type="text" value="<?php echo $Data[127]; ?>"></td>
 		      <td><input class="span4"  name="Data[128]" type="text" value="<?php echo $Data[128]; ?>"></td>
 		      <td><input class="span1"  name="Data[122]" type="text" value="<?php echo $Data[122]; ?>"></td>
@@ -3351,7 +3191,7 @@
 
 		    </tr>
 	      <tr>
-		      <td class="al-left">- เป็ด</td>
+		      <td>- เป็ด</td>
 		      <td><input class="span3"  name="Data[134]" type="text" value="<?php echo $Data[134]; ?>"></td>
 		      <td><input class="span4"  name="Data[135]" type="text" value="<?php echo $Data[135]; ?>"></td>
 		      <td><input class="span1"  name="Data[129]" type="text" value="<?php echo $Data[129]; ?>"></td>
@@ -3377,7 +3217,7 @@
 
 		    </tr>
 	      <tr>
-		      <td class="al-left">- ไก่</td>
+		      <td>- ไก่</td>
 		      <td><input class="span3"  name="Data[141]" type="text" value="<?php echo $Data[141]; ?>"></td>
 		      <td><input class="span4"  name="Data[142]" type="text" value="<?php echo $Data[142]; ?>"></td>
 		      <td><input class="span1"  name="Data[136]" type="text" value="<?php echo $Data[136]; ?>"></td>
@@ -3403,7 +3243,7 @@
 
 		    </tr>
 	      <tr>
-		      <td class="al-left">- แพะ</td>
+		      <td>- แพะ</td>
 		      <td><input class="span3"  name="Data[148]" type="text" value="<?php echo $Data[148]; ?>"></td>
 		      <td><input class="span4"  name="Data[150]" type="text" value="<?php echo $Data[150]; ?>"></td>
 		      <td><input class="span1"  name="Data[143]" type="text" value="<?php echo $Data[143]; ?>"></td>
@@ -3429,7 +3269,7 @@
 
 		    </tr>	    
 		    <tr>
-		      <td class="al-left">- อื่น ๆ <input class="span3"  name="Data[151]" type="text" value="<?php echo $Data[151]; ?>"></td>
+		      <td>- อื่น ๆ <input class="span3"  name="Data[151]" type="text" value="<?php echo $Data[151]; ?>"></td>
 		      <td><input class="span3"  name="Data[157]" type="text" value="<?php echo $Data[157]; ?>"></td>
 		      <td><input class="span4"  name="Data[158]" type="text" value="<?php echo $Data[158]; ?>"></td>
 		      <td><input class="span1"  name="Data[152]" type="text" value="<?php echo $Data[152]; ?>"></td>
@@ -3487,7 +3327,7 @@
 		    </tr>
 		    		   
 		    <tr>
-		      <td class="al-left">- ระบุ <input class="span3"  name="Data[159]" type="text" value="<?php echo $Data[159]; ?>"></td>
+		      <td>- ระบุ <input class="span3"  name="Data[159]" type="text" value="<?php echo $Data[159]; ?>"></td>
 		      <td><input class="span3"  name="Data[165]" type="text" value="<?php echo $Data[165]; ?>"></td>
 		      <td><input class="span4"  name="Data[166]" type="text" value="<?php echo $Data[166]; ?>"></td>
 		      <td><input class="span1"  name="Data[160]" type="text" value="<?php echo $Data[160]; ?>"></td>
@@ -3543,7 +3383,7 @@
 		      <td></td>
 		    </tr>	   
 		    <tr>
-		      <td class="al-left">- ระบุ <input class="span3"  name="Data[167]" type="text" value="<?php echo $Data[167]; ?>"></td>
+		      <td>- ระบุ <input class="span3"  name="Data[167]" type="text" value="<?php echo $Data[167]; ?>"></td>
 		      <td><input class="span3"  name="Data[173]" type="text" value="<?php echo $Data[173]; ?>"></td>
 		      <td><input class="span4"  name="Data[174]" type="text" value="<?php echo $Data[174]; ?>"></td>
 		      <td><input class="span1"  name="Data[168]" type="text" value="<?php echo $Data[168]; ?>"></td>
@@ -3600,7 +3440,7 @@
 		    </tr>	 
 		    		   
 		    <tr>
-		      <td class="al-left">- ระบุ <input class="span3"  name="Data[175]" type="text" value="<?php echo $Data[175]; ?>"></td>
+		      <td>- ระบุ <input class="span3"  name="Data[175]" type="text" value="<?php echo $Data[175]; ?>"></td>
 		      <td><input class="span3"  name="Data[1200]" type="text" value="<?php echo $Data[1200]; ?>"></td>
 		      <td><input class="span4"  name="Data[1201]" type="text" value="<?php echo $Data[1201]; ?>"></td>
 		      <td><input class="span1"  name="Data[176]" type="text" value="<?php echo $Data[176]; ?>"></td>
@@ -3657,7 +3497,7 @@
 		    </tr>	
 		    		   
 		    <tr>
-		      <td class="al-left">- จำนวนคนได้รับผลกระทบ <input class="span3"  name="Data[1202]" type="text" value="<?php echo $Data[1202]; ?>"></td>
+		      <td>- จำนวนคนได้รับผลกระทบ <input class="span3"  name="Data[1202]" type="text" value="<?php echo $Data[1202]; ?>"></td>
 		      <td><input class="span3"  name="Data[1208]" type="text" value="<?php echo $Data[1208]; ?>"></td>
 		      <td><input class="span4"  name="Data[1209]" type="text" value="<?php echo $Data[1209]; ?>"></td>
 		      <td><input class="span1"  name="Data[1203]" type="text" value="<?php echo $Data[1203]; ?>"></td>
@@ -3715,7 +3555,7 @@
 		    </tr>	
 		    		   
 		    <tr>
-		      <td class="al-left">- จำนวนคนว่างงาน <input class="span3"  name="Data[1210]" type="text" value="<?php echo $Data[1210]; ?>"></td>
+		      <td>- จำนวนคนว่างงาน <input class="span3"  name="Data[1210]" type="text" value="<?php echo $Data[1210]; ?>"></td>
 		      <td><input class="span3"  name="Data[1216]" type="text" value="<?php echo $Data[1216]; ?>"></td>
 		      <td><input class="span4"  name="Data[1217]" type="text" value="<?php echo $Data[1217]; ?>"></td>
 		      <td><input class="span1"  name="Data[1211]" type="text" value="<?php echo $Data[1211]; ?>"></td>
@@ -3773,7 +3613,7 @@
 		    </tr>	
 		    		   
 		    <tr>
-		      <td class="al-left">- จำนวนกลุ่มอาชีพในชุมชน</td>
+		      <td>- จำนวนกลุ่มอาชีพในชุมชน</td>
 		      <td><input class="span3"  name="Data[1223]" type="text" value="<?php echo $Data[1223]; ?>"></td>
 		      <td><input class="span4"  name="Data[1224]" type="text" value="<?php echo $Data[1224]; ?>"></td>
 		      <td><input class="span1"  name="Data[1218]" type="text" value="<?php echo $Data[1218]; ?>"></td>
@@ -3799,7 +3639,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- กลุ่มอาชีพที่ได้รับความเสียหาย </td>
+		      <td>- กลุ่มอาชีพที่ได้รับความเสียหาย </td>
 		      <td><input class="span3"  name="Data[1230]" type="text" value="<?php echo $Data[1230]; ?>"></td>
 		      <td><input class="span4"  name="Data[1231]" type="text" value="<?php echo $Data[1231]; ?>"></td>
 		      <td><input class="span1"  name="Data[1225]" type="text" value="<?php echo $Data[1225]; ?>"></td>
@@ -3857,7 +3697,7 @@
 		    </tr>			
 		       
 		    <tr>
-		      <td class="al-left">- รถไถ</td>
+		      <td>- รถไถ</td>
 		      <td><input class="span3"  name="Data[1121]" type="text" value="<?php echo $Data[1121]; ?>"></td>
 		      <td><input class="span4"  name="Data[1122]" type="text" value="<?php echo $Data[1122]; ?>"></td>
 		      <td><input class="span1"  name="Data[1116]" type="text" value="<?php echo $Data[1116]; ?>"></td>
@@ -3883,7 +3723,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- รถกระบะ</td>
+		      <td>- รถกระบะ</td>
 		      <td><input class="span3"  name="Data[1128]" type="text" value="<?php echo $Data[1128]; ?>"></td>
 		      <td><input class="span4"  name="Data[1129]" type="text" value="<?php echo $Data[1129]; ?>"></td>
 		      <td><input class="span1"  name="Data[1123]" type="text" value="<?php echo $Data[1123]; ?>"></td>
@@ -3909,7 +3749,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- รถบรรทุก</td>
+		      <td>- รถบรรทุก</td>
 		      <td><input class="span3"  name="Data[1135]" type="text" value="<?php echo $Data[1135]; ?>"></td>
 		      <td><input class="span4"  name="Data[1136]" type="text" value="<?php echo $Data[1136]; ?>"></td>
 		      <td><input class="span1"  name="Data[1130]" type="text" value="<?php echo $Data[1130]; ?>"></td>
@@ -3935,7 +3775,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- รถมอเตอร์ไซต์</td>
+		      <td>- รถมอเตอร์ไซต์</td>
 		      <td><input class="span3"  name="Data[1142]" type="text" value="<?php echo $Data[1142]; ?>"></td>
 		      <td><input class="span4"  name="Data[1143]" type="text" value="<?php echo $Data[1143]; ?>"></td>
 		      <td><input class="span1"  name="Data[1137]" type="text" value="<?php echo $Data[1137]; ?>"></td>
@@ -3961,7 +3801,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- รถยนต์</td>
+		      <td>- รถยนต์</td>
 		      <td><input class="span3"  name="Data[1151]" type="text" value="<?php echo $Data[1151]; ?>"></td>
 		      <td><input class="span4"  name="Data[1152]" type="text" value="<?php echo $Data[1152]; ?>"></td>
 		      <td><input class="span1"  name="Data[1144]" type="text" value="<?php echo $Data[1145]; ?>"></td>
@@ -3987,7 +3827,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- จักรเย็บผ้า</td>
+		      <td>- จักรเย็บผ้า</td>
 		      <td><input class="span3"  name="Data[1158]" type="text" value="<?php echo $Data[1158]; ?>"></td>
 		      <td><input class="span4"  name="Data[1159]" type="text" value="<?php echo $Data[1159]; ?>"></td>
 		      <td><input class="span1"  name="Data[1153]" type="text" value="<?php echo $Data[1153]; ?>"></td>
@@ -4013,7 +3853,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- อุปกรณ์กลุ่มอาชีพ</td>
+		      <td>- อุปกรณ์กลุ่มอาชีพ</td>
 		      <td><input class="span3"  name="Data[1165]" type="text" value="<?php echo $Data[1165]; ?>"></td>
 		      <td><input class="span4"  name="Data[1166]" type="text" value="<?php echo $Data[1166]; ?>"></td>
 		      <td><input class="span1"  name="Data[1160]" type="text" value="<?php echo $Data[1160]; ?>"></td>
@@ -4039,7 +3879,7 @@
 
 		    </tr>	    
 		    <tr>
-		      <td class="al-left">- อื่นๆ <input class="span3"  name="Data[1167]" type="text" value="<?php echo $Data[1167]; ?>"></td>
+		      <td>- อื่นๆ <input class="span3"  name="Data[1167]" type="text" value="<?php echo $Data[1167]; ?>"></td>
 		      <td><input class="span3"  name="Data[1173]" type="text" value="<?php echo $Data[1173]; ?>"></td>
 		      <td><input class="span4"  name="Data[1174]" type="text" value="<?php echo $Data[1174]; ?>"></td>
 		      <td><input class="span1"  name="Data[1168]" type="text" value="<?php echo $Data[1168]; ?>"></td>
@@ -4097,7 +3937,7 @@
 
 		   
 		    <tr>
-		      <td class="al-left">- ระบบโทรศัพท์พื้นฐาน</td>
+		      <td>- ระบบโทรศัพท์พื้นฐาน</td>
 		      <td><input class="span3"  name="Data[186]" type="text" value="<?php echo $Data[186]; ?>"></td>
 		      <td><input class="span4"  name="Data[187]" type="text" value="<?php echo $Data[187]; ?>"></td>
 		      <td><input type="checkbox" name="Data[181]" value="ระบบโทรศัพท์พื้นฐาน" <?php if ($Data[181] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4123,7 +3963,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ระบบโทรศัพท์มือถือ</td>
+		      <td>- ระบบโทรศัพท์มือถือ</td>
 		      <td><input class="span3"  name="Data[193]" type="text" value="<?php echo $Data[193]; ?>"></td>
 		      <td><input class="span4"  name="Data[194]" type="text" value="<?php echo $Data[194]; ?>"></td>
 		      <td><input type="checkbox" name="Data[188]" value="ระบบโทรศัพท์มือถือ" <?php if ($Data[188] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4149,7 +3989,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ระบบอินเทอร์เน็ต</td>
+		      <td>- ระบบอินเทอร์เน็ต</td>
 		      <td><input class="span3"  name="Data[200]" type="text" value="<?php echo $Data[200]; ?>"></td>
 		      <td><input class="span4"  name="Data[201]" type="text" value="<?php echo $Data[201]; ?>"></td>
 		      <td><input type="checkbox" name="Data[195]" value="ระบบอินเทอร์เน็ต" <?php if ($Data[195] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4175,7 +4015,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ระบบไปรษณีย์</td>
+		      <td>- ระบบไปรษณีย์</td>
 		      <td><input class="span3"  name="Data[212]" type="text" value="<?php echo $Data[212]; ?>"></td>
 		      <td><input class="span4"  name="Data[213]" type="text" value="<?php echo $Data[213]; ?>"></td>
 		      <td><input type="checkbox" name="Data[207]" value="ระบบไปรษณีย์" <?php if ($Data[207] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4201,7 +4041,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ระบบวิทยุสื่อสาร</td>
+		      <td>- ระบบวิทยุสื่อสาร</td>
 		      <td><input class="span3"  name="Data[994]" type="text" value="<?php echo $Data[994]; ?>"></td>
 		      <td><input class="span4"  name="Data[995]" type="text" value="<?php echo $Data[995]; ?>"></td>
 		      <td><input type="checkbox" name="Data[214]" value="ระบบวิทยุสื่อสาร" <?php if ($Data[214] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4258,7 +4098,7 @@
 		      <td></td>
 		    </tr>				   
 		    <tr>
-		      <td class="al-left">- การฟื้นฟูด้านการเกษตร (นา,ไร่,สวน)</td>
+		      <td>- การฟื้นฟูด้านการเกษตร (นา,ไร่,สวน)</td>
 		      <td><input class="span3"  name="Data[1001]" type="text" value="<?php echo $Data[1001]; ?>"></td>
 		      <td><input class="span4"  name="Data[1002]" type="text" value="<?php echo $Data[1002]; ?>"></td>
 		      <td><input type="checkbox" name="Data[996]" value="การฟื้นฟูด้านการเกษตร (นา,ไร่,สวน)" <?php if ($Data[996] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4284,7 +4124,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- การฟื้นฟูด้านปศุสัตว์</td>
+		      <td>- การฟื้นฟูด้านปศุสัตว์</td>
 		      <td><input class="span3"  name="Data[1008]" type="text" value="<?php echo $Data[1008]; ?>"></td>
 		      <td><input class="span4"  name="Data[1009]" type="text" value="<?php echo $Data[1009]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1003]" value="การฟื้นฟูด้านปศุสัตว์" <?php if ($Data[1003] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4310,7 +4150,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- การฟื้นฟูด้านการประมง</td>
+		      <td>- การฟื้นฟูด้านการประมง</td>
 		      <td><input class="span3"  name="Data[1015]" type="text" value="<?php echo $Data[1015]; ?>"></td>
 		      <td><input class="span4"  name="Data[1016]" type="text" value="<?php echo $Data[1016]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1010]" value="การฟื้นฟูด้านการประมง" <?php if ($Data[1010] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4336,7 +4176,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- การฟื้นฟูธุรกิจ อุตสาหกรรม</tdh>
+		      <td>- การฟื้นฟูธุรกิจ อุตสาหกรรม</tdh>
 		      <td><input class="span3"  name="Data[1022]" type="text" value="<?php echo $Data[1022]; ?>"></td>
 		      <td><input class="span4"  name="Data[1023]" type="text" value="<?php echo $Data[1023]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1017]" value="การฟื้นฟูธุรกิจ อุตสาหกรรม" <?php if ($Data[1017] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4362,7 +4202,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- การฟื้นฟูแรงงาน</td>
+		      <td>- การฟื้นฟูแรงงาน</td>
 		      <td><input class="span3"  name="Data[1029]" type="text" value="<?php echo $Data[1029]; ?>"></td>
 		      <td><input class="span4"  name="Data[1030]" type="text" value="<?php echo $Data[1030]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1024]" value="การฟื้นฟูแรงงาน" <?php if ($Data[1024] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4388,7 +4228,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- การฟื้นฟูด้านกลุ่มอาชีพ</td>
+		      <td>- การฟื้นฟูด้านกลุ่มอาชีพ</td>
 		      <td><input class="span3"  name="Data[1036]" type="text" value="<?php echo $Data[1036]; ?>"></td>
 		      <td><input class="span4"  name="Data[1037]" type="text" value="<?php echo $Data[1037]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1031]" value="การฟื้นฟูด้านกลุ่มอาชีพ" <?php if ($Data[1031] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4413,7 +4253,7 @@
 		      <td><input type="checkbox" name="Data[3164]" value="การฟื้นฟูด้านกลุ่มอาชีพ" <?php if ($Data[3164] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>
-		      <td class="al-left">- การซ่อมแซมเครื่องจักร อุปกรณ์ประกอบอาชีพ</td>
+		      <td>- การซ่อมแซมเครื่องจักร อุปกรณ์ประกอบอาชีพ</td>
 		      <td><input class="span3"  name="Data[1043]" type="text" value="<?php echo $Data[1043]; ?>"></td>
 		      <td><input class="span4"  name="Data[1044]" type="text" value="<?php echo $Data[1044]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1038]" value="การซ่อมแซมเครื่องจักร อุปกรณ์ประกอบอาชีพ" <?php if ($Data[1038] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4438,7 +4278,7 @@
 		      <td><input type="checkbox" name="Data[3179]" value="การซ่อมแซมเครื่องจักร อุปกรณ์ประกอบอาชีพ" <?php if ($Data[3179] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>
-		      <td class="al-left">- การซ่อมแซมระบบสื่อสารโทรคมนาคม</td>
+		      <td>- การซ่อมแซมระบบสื่อสารโทรคมนาคม</td>
 		      <td><input class="span3"  name="Data[1050]" type="text" value="<?php echo $Data[1050]; ?>"></td>
 		      <td><input class="span4"  name="Data[1051]" type="text" value="<?php echo $Data[1051]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1045]" value="การซ่อมแซมระบบสื่อสารโทรคมนาคม" <?php if ($Data[1045] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4495,7 +4335,7 @@
 		    </tr>		
 		   
 		    <tr>
-		      <td class="al-left">1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้</td>
+		      <td>1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้</td>
 		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
 					<td rowspan="5"><textarea name="" row="8"></textarea></td>
 <!-- 		      <td><input class="span4"  name="Data[1058]" type="text" value="<?php echo $Data[1058]; ?>"></td> -->
@@ -4521,7 +4361,7 @@
 		      <td><input type="radio" value="1) ไม่มีผลกระทบสามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
 		    </tr>	
 		    <tr>
-		      <td class="al-left">2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้</td>
+		      <td>2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้</td>
 		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[1065]" type="text" value="<?php echo $Data[1065]; ?>"></td> -->
 		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
@@ -4546,7 +4386,7 @@
 		      <td><input type="radio" value="2) ได้รับผลกระทบแต่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้" name="" checked="checked"></td>
 		    </tr>	
 		    <tr>
-		      <td class="al-left">3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจ และอุตสาหกรรมสามารถดำเนินการต่อได้แต่ต้องการการสนับสนุนบางส่วน</td>
+		      <td>3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจ และอุตสาหกรรมสามารถดำเนินการต่อได้แต่ต้องการการสนับสนุนบางส่วน</td>
 		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[1072]" type="text" value="<?php echo $Data[1072]; ?>"></td> -->
 		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
@@ -4571,7 +4411,7 @@
 		      <td><input type="radio" value="3) สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ธุรกิจกิจและอุตสาหกรรมสามารถดำเนินการต่อได้ แต่ต้องการการสนับสนุนบางส่วน" name="" checked="checked"></td>
 		    </tr>	
 		    <tr>
-		      <td class="al-left">4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน</td>
+		      <td>4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน</td>
 		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[1079]" type="text" value="<?php echo $Data[1079]; ?>"></td> -->
 		      <td><input type="radio" value="4) ไม่สามารถทำการเกษตรในฤดูการผลิตครั้งใหม่ การฟื้นฟูธุรกิจอุตสาหกรรมต้องใช้เวลาอย่างน้อย 3เดือนต้องการการสนับสนุน" name="" checked="checked"></td>
@@ -4597,7 +4437,7 @@
 
 		    </tr>	
 		    <tr>
-		      <td class="al-left">5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใดๆได้ประชากรเกินครึ่งว่างงาน</td>
+		      <td>5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใดๆได้ประชากรเกินครึ่งว่างงาน</td>
 		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
 <!-- 		      <td><input class="span4"  name="Data[1086]" type="text" value="<?php echo $Data[1086]; ?>"></td> -->
 		      <td><input type="radio" value="5) ไม่สามารถดำเนินกิจกรรมทางเศรษฐกิจใด ๆ ได้ประชากรเกินครึ่งว่างงาน" name="" checked="checked"></td>
@@ -4653,7 +4493,7 @@
 		    </tr>		
 		    
 		    <tr>
-		      <td class="al-left">- จัดทำแผนรับมือภัยพิบัติ</td>
+		      <td>- จัดทำแผนรับมือภัยพิบัติ</td>
 		      <td><input class="span3"  name="Data[1092]" type="text" value="<?php echo $Data[1092]; ?>"></td>
 		      <td><input class="span4"  name="Data[1093]" type="text" value="<?php echo $Data[1093]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1087]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1087] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4679,7 +4519,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- ฝึกซ้อมการรับมือภัยพิบัติ</td>
+		      <td>- ฝึกซ้อมการรับมือภัยพิบัติ</td>
 		      <td><input class="span3"  name="Data[1099]" type="text" value="<?php echo $Data[1099]; ?>"></td>
 		      <td><input class="span4"  name="Data[1100]" type="text" value="<?php echo $Data[1100]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1094]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1094] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4695,7 +4535,7 @@
 
 		    </tr>	    
 		    <tr>
-		      <td class="al-left">- ปรับปรุงระบบผังเมือง/ชุมชน</td>
+		      <td>- ปรับปรุงระบบผังเมือง/ชุมชน</td>
 		      <td><input class="span3"  name="Data[1106]" type="text" value="<?php echo $Data[1106]; ?>"></td>
 		      <td><input class="span4"  name="Data[1107]" type="text" value="<?php echo $Data[1107]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1101]" value="ปรับปรุงระบบผังเมือง/ชุมชน" <?php if ($Data[1101] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4721,7 +4561,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- อื่น ๆ <input class="span3"  name="Data[1108]" type="text" value="<?php echo $Data[623]; ?>"></td>
+		      <td>- อื่น ๆ <input class="span3"  name="Data[1108]" type="text" value="<?php echo $Data[623]; ?>"></td>
 		      <td><input class="span3"  name="Data[1114]" type="text" value="<?php echo $Data[1114]; ?>"></td>
 		      <td><input class="span4"  name="Data[1115]" type="text" value="<?php echo $Data[1115]; ?>"></td>
 		      <td><input type="checkbox" name="Data[1109]" value="อื่น ๆ" <?php if ($Data[1109] == 'value'): ?> checked="checked" <?php endif; ?>></td>
