@@ -567,7 +567,7 @@
                 $obj.find('tbody tr:first-child td').each(function(index) {
                     tableProp.tbody[index] = $(this).width() + tableProp.border;
                 });
-
+								//console.log(tableProp);
                 return tableProp;
             },
             
