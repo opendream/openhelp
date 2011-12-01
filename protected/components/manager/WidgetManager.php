@@ -483,9 +483,13 @@ class WidgetManager
     return $pos !== FALSE;
   }
   
+  // Webform ===========================================================================
   public static function getFilterOptions($type, $name) {
     $qtxt = "SELECT DISTINCT $name FROM webform WHERE type = '$type'";
     $command = Yii::app()->db->createCommand($qtxt);
     return $command->queryColumn();
+  }
+  public static function getWebformLocation($filters) {
+    $qtxt = "SELECT id FROM webform WHERE type = '$type'";
   }
 }

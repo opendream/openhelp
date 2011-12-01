@@ -8,6 +8,7 @@
  * @property string $type
  * @property string $date_created
  * @property string $last_updated
+ * @property string $title
  * @property string $user_id
  * @property string $location_id
  * @property string $data
@@ -53,8 +54,8 @@
  * @property string $filter39
  *
  * The followings are the available model relations:
- * @property User $user
  * @property Location $location
+ * @property User $user
  */
 class Webform extends CActiveRecord
 {
@@ -85,12 +86,13 @@ class Webform extends CActiveRecord
 		return array(
 			array('type, date_created, last_updated', 'required'),
 			array('type', 'length', 'max'=>60),
+			array('title', 'length', 'max'=>255),
 			array('user_id, location_id', 'length', 'max'=>20),
 			array('filter0, filter1, filter2, filter3, filter4, filter5, filter6, filter7, filter8, filter9, filter10, filter11, filter12, filter13, filter14, filter15, filter16, filter17, filter18, filter19, filter20, filter21, filter22, filter23, filter24, filter25, filter26, filter27, filter28, filter29, filter30, filter31, filter32, filter33, filter34, filter35, filter36, filter37, filter38, filter39', 'length', 'max'=>128),
 			array('data', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, date_created, last_updated, user_id, location_id, data, filter0, filter1, filter2, filter3, filter4, filter5, filter6, filter7, filter8, filter9, filter10, filter11, filter12, filter13, filter14, filter15, filter16, filter17, filter18, filter19, filter20, filter21, filter22, filter23, filter24, filter25, filter26, filter27, filter28, filter29, filter30, filter31, filter32, filter33, filter34, filter35, filter36, filter37, filter38, filter39', 'safe', 'on'=>'search'),
+			array('id, type, date_created, last_updated, title, user_id, location_id, data, filter0, filter1, filter2, filter3, filter4, filter5, filter6, filter7, filter8, filter9, filter10, filter11, filter12, filter13, filter14, filter15, filter16, filter17, filter18, filter19, filter20, filter21, filter22, filter23, filter24, filter25, filter26, filter27, filter28, filter29, filter30, filter31, filter32, filter33, filter34, filter35, filter36, filter37, filter38, filter39', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -102,8 +104,8 @@ class Webform extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 			'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -117,6 +119,7 @@ class Webform extends CActiveRecord
 			'type' => 'Type',
 			'date_created' => 'Date Created',
 			'last_updated' => 'Last Updated',
+			'title' => 'Title',
 			'user_id' => 'User',
 			'location_id' => 'Location',
 			'data' => 'Data',
@@ -178,6 +181,7 @@ class Webform extends CActiveRecord
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('last_updated',$this->last_updated,true);
+		$criteria->compare('title',$this->title,true);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('location_id',$this->location_id,true);
 		$criteria->compare('data',$this->data,true);

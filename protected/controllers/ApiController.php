@@ -79,7 +79,18 @@ class ApiController extends Controller
 	}
 	
 	public function actionWebform($action, $type=null) {
-	  echo $type;
+	  switch ($action) {
+	   case 'location':
+	     $allows = isset($_POST['Allows'])? array_filter($_POST['Allows']): array();
+	     $filters = isset($_POST['Filters'])? array_intersect($_POST['Filters'], $allows): array();
+	     print_r($filters);
+
+	     break;
+	   
+	   default:
+	     # code...
+	     break;
+	  }
 	}
 
 
