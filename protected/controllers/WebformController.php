@@ -31,11 +31,11 @@ class WebformController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update', 'list', 'delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -43,39 +43,69 @@ class WebformController extends Controller
 			),
 		);
 	}
+	
+	public function getWebForm($type, $model, $Data) {
+	  $Webform = $model;
+    ob_start();
+    ob_implicit_flush(false);
+    require(substr(bu(Yii::app()->params['webforms'][$type]['file']), 1));
+    return ob_get_clean();
+  }
 
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($url)
+	public function actionView($id)
 	{
-	  $this->pageTitle = Yii::app()->params['webforms'][$url]['label'];
-    $this->render('view', array('url' => $url));
+	  $this->layout='//layouts/layout1';
+	  
+	  $model=$this->loadModel($id);
+	  $this->pageTitle = Yii::app()->params['webforms'][$model->type]['label'];
+	  
+	  //print_r(unserialize($model->data)+array_fill(0, 4000, ''));
 
+    $this->render('view', array(
+      'type' => $model->type, 
+      'model' => $model,
+      'Data' => unserialize($model->data) + array_fill(0, 4000, ''),
+    ));
+    
 	}
 
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($type)
 	{
-		$model=new Webform;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
+	  $this->layout='//layouts/layout1';
+	  $this->pageTitle = t('Create').' '.Yii::app()->params['webforms'][$type]['label'];
+	  $this->menu=array(
+    	array('label'=>t('List'), 'url'=>array('list?type='.$type)),
+    );
+	  
+	  $model = new Webform;
+	  
+	  $data = array_fill(0, 4000, '');
 		if(isset($_POST['Webform']))
 		{
-			$model->attributes=$_POST['Webform'];
+		  $attributes = $_POST['Webform'];
+		  $attributes['type'] = $type;
+		  $attributes['date_created'] = (isset($attributes['date_created']) && $attributes['date_created'])? $attributes['date_created']: date('Y-m-d H:i:s');
+		  $attributes['last_updated'] = date('Y-m-d H:i:s');
+		  $attributes['user_id'] = Yii::app()->user->getIntId();
+		  $attributes['data'] = serialize($_POST['Data']);
+			$model->attributes=array_filter($attributes);
+			//print_r($attributes);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+    $this->render('create', array(
+      'type' => $type, 
+      'model' => $model,
+      'Data' => $data,
+    ));
 	}
 
 	/**
@@ -85,20 +115,46 @@ class WebformController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+	  $this->layout='//layouts/layout1';
+	  
+	  $model=$this->loadModel($id);
+		if (Yii::app()->user->getGroup() == 'webform' && $model->user_id != Yii::app()->user->getIntId()) {
+	    $this->redirect(array('list?type='.$type));
+	    exit();
+	  }
+		
+	  $this->pageTitle = t('Update').' '.Yii::app()->params['webforms'][$model->type]['label'];
+	  $this->menu=array(
+    	array('label'=>t('List'), 'url'=>array('list?type='.$model->type)),
+    	array('label'=>t('Create'), 'url'=>array('create?type='.$model->type)),
+    	array('label'=>t('View'), 'url'=>array('view', 'id'=>$model->id)),
+    	array('label'=>t('Delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'type' => $model->type),'confirm'=>'Are you sure you want to delete this item?')),
+    	
+    );
+    
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+    $data = array_fill(0, 4000, '');
 		if(isset($_POST['Webform']))
 		{
-			$model->attributes=$_POST['Webform'];
+			$attributes = $_POST['Webform'];
+		  $attributes['type'] = $model->type;
+		  $attributes['date_created'] = (isset($attributes['date_created']) && $attributes['date_created'])? $attributes['date_created']: date('Y-m-d H:i:s');
+		  $attributes['last_updated'] = date('Y-m-d H:i:s');
+		  $attributes['user_id'] = Yii::app()->user->getIntId();
+		  $attributes['data'] = serialize($_POST['Data']);
+		  //print_r(array_filter($attributes));
+			$model->attributes=array_filter($attributes);
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
+		$this->render('create',array(
+			'type' => $model->type, 
+      'model' => $model,
+      'Data' => unserialize($model->data) + $data,
 		));
 	}
 
@@ -111,12 +167,19 @@ class WebformController extends Controller
 	{
 		if(Yii::app()->request->isPostRequest)
 		{
+
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+			$model = $this->loadModel($id);
+			if (Yii::app()->user->getGroup() == 'webform' && $model->user_id != Yii::app()->user->getIntId()) {
+  	    $this->redirect(array('list?type='.$type));
+  	    exit();
+  	  }
+  	  
+  	  $model->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('list?type='.$_REQUEST['type']));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -125,12 +188,41 @@ class WebformController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionList($type)
 	{
-		$dataProvider=new CActiveDataProvider('Webform');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+	  $this->layout='//layouts/layout1';
+	  $user = Yii::app()->user;
+	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
+		$condition = "type='$type'";
+		
+		if ($user->getGroup() == 'webform') {
+		  $user_id = $user->getIntId();
+		  $condition .= " AND user_id=$user_id";
+		}
+		
+		$dataProvider=new CActiveDataProvider('Webform', array(
+		  'criteria'=>array(
+        'condition'=>$condition,
+        'order'=>'date_created DESC',
+      ),
 		));
+		$this->render('list',array(
+			'dataProvider'=>$dataProvider,
+			'type'=>$type,
+		));
+	}
+	
+	/**
+	 * Lists all models.
+	 */
+	public function actionIndex($type)
+	{
+	  $this->layout='//layouts/layout1';
+	  
+	  
+	  $filters = Yii::app()->params['webforms'][$type]['filters'];
+	  $filters['type'] = $type;
+	  $this->render('//webform/index', get_defined_vars());
 	}
 
 	/**

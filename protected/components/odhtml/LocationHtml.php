@@ -21,13 +21,13 @@ Class LocationHtml extends CHtml {
           $row = array_reverse($row);
           $level = key($row);
           $value = array_shift($row);
-          
+          $link = isset($options['link'])? $options['link']: CController::createUrl("/request/locationView/".$id);
           
           $output .= '<table><tbody>';
           
           $output .= '<tr class="first">';
           $output .= '<td class="label">'.CHtml::activeLabelEx($locationModel, Yii::t('locale', $level)).'</td>';
-          $output .= '<td class="'.$level.'"><a href="'.CController::createUrl("/request/locationView/".$id).'">'.$value.'</a></td>';
+          $output .= '<td class="'.$level.'"><a href="'.$link.'">'.$value.'</a></td>';
           $output .= '</tr>';
           
           foreach ($row as $level => $value) {

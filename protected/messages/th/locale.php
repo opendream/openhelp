@@ -8,6 +8,8 @@ return array(
   'volunteer' => 'อาสาสมัคร',
   'database' => 'ฐานข้อมูลรายตำบล',
   'about' => 'เกี่ยวกับเรา',
+  'Total areas' => 'ตำบลทั้งหมด',
+  
   
   /*
   * Global
@@ -28,7 +30,7 @@ return array(
   'Content' => 'เนื้อหา', 
   'Title' => 'ชื่อเรื่อง',
 
-  'List'   => 'รายการ',
+  'List'   => 'รายการทั้งหมด',
   'View'   => 'ดู',
   'Create' => 'สร้าง',
   'Update' => 'แก้ไข',
@@ -36,6 +38,10 @@ return array(
   'Manage' => 'จัดการ',
   
   'No results found.' => 'ไม่พบผลลัพธ์',
+  'Save changes' => 'บันทึก',
+  'Author' => 'ผู้สร้าง',
+  'ID' => 'รหัส',
+  'Date' => 'วันที่', 
    
   /*
   * Location
@@ -98,6 +104,5 @@ return array(
    * Request
    */
   'Waiting for help' => 'รอช่วยเหลือ',
-  'Total areas' => 'พื้นที่ทั้งหมด',
   
 );

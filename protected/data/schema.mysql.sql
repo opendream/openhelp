@@ -1,10 +1,3 @@
-CREATE TABLE `user` (
-    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(128) NOT NULL,
-    password VARCHAR(128) NOT NULL,
-    email VARCHAR(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;;
-
 # Copy from location extension
 CREATE TABLE `location` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -218,6 +211,7 @@ CREATE TABLE `user` (
   `username` varchar(128) NOT NULL,
   `password` varchar(128) NOT NULL,
   `email` varchar(128),
+  `group` varchar(128),
   
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -228,10 +222,52 @@ CREATE TABLE `webform` (
   `type` varchar(60) NOT NULL,
   `date_created` datetime NOT NULL,
   `last_updated` datetime NOT NULL,
+  `title` varchar(255),
   `user_id` bigint(20),
   `location_id` bigint(20),
   `data` text,
-
+  
+  `filter0` varchar(128),
+  `filter1` varchar(128),
+  `filter2` varchar(128),
+  `filter3` varchar(128),
+  `filter4` varchar(128),
+  `filter5` varchar(128),
+  `filter6` varchar(128),
+  `filter7` varchar(128),
+  `filter8` varchar(128),
+  `filter9` varchar(128),
+  `filter10` varchar(128),
+  `filter11` varchar(128),
+  `filter12` varchar(128),
+  `filter13` varchar(128),
+  `filter14` varchar(128),
+  `filter15` varchar(128),
+  `filter16` varchar(128),
+  `filter17` varchar(128),
+  `filter18` varchar(128),
+  `filter19` varchar(128),
+  `filter20` varchar(128),
+  `filter21` varchar(128),
+  `filter22` varchar(128),
+  `filter23` varchar(128),
+  `filter24` varchar(128),
+  `filter25` varchar(128),
+  `filter26` varchar(128),
+  `filter27` varchar(128),
+  `filter28` varchar(128),
+  `filter29` varchar(128),
+  `filter30` varchar(128),
+  `filter31` varchar(128),
+  `filter32` varchar(128),
+  `filter33` varchar(128),
+  `filter34` varchar(128),
+  `filter35` varchar(128),
+  `filter36` varchar(128),
+  `filter37` varchar(128),
+  `filter38` varchar(128),
+  `filter39` varchar(128),
+  
   PRIMARY KEY (`id`),
   KEY `fk_webform_user_id` (`user_id`),
   KEY `fk_webform_location_id` (`location_id`)
@@ -283,6 +319,7 @@ ALTER TABLE `transporter`
 ALTER TABLE `webform`
   ADD CONSTRAINT `fk_webform_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `fk_webform_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+  
   
 
 

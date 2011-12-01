@@ -1,15 +1,25 @@
-<?php
-$this->breadcrumbs=array(
-	'Webforms'=>array('index'),
-	'Create',
-);
+<script src="<?php echo bu('js/jquery.scrolltofixed.js'); ?>"></script>
+<div class="webform-content drop-shadow curved curved-hz-1">
+<h1><?php echo $this->pageTitle; ?></h1>
 
-$this->menu=array(
-	array('label'=>'List Webform', 'url'=>array('index')),
-	array('label'=>'Manage Webform', 'url'=>array('admin')),
-);
-?>
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'content-form',
+	'enableAjaxValidation'=>false,
+)); ?>
 
-<h1>Create Webform</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="actions">
+  <input type="submit" class="btn primary" value="<?php echo t('Save changes'); ?>">&nbsp;<button type="reset" class="btn"><?php echo t('Cancel'); ?></button>
+</div>
+<script>
+    $('.actions').scrollToFixed({ marginTop: -19 });
+</script>
+
+<?php echo $form->hiddenField($model,'type'); ?>
+<?php echo $this->getWebForm($type, $model, $Data); ?>
+
+<div class="actions">
+  <input type="submit" class="btn primary" value="<?php echo t('Save changes'); ?>">&nbsp;<button type="reset" class="btn"><?php echo t('Cancel'); ?></button>
+</div>
+<?php $this->endWidget(); ?>
+</div>

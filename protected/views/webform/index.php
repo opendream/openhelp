@@ -1,17 +1,4 @@
 <?php
-$this->breadcrumbs=array(
-	'Webforms',
-);
-
-$this->menu=array(
-	array('label'=>'Create Webform', 'url'=>array('create')),
-	array('label'=>'Manage Webform', 'url'=>array('admin')),
-);
+$this->renderPartial('//webform/_filters', $filters);
+$this->renderPartial('//webform/_map', $filters);
 ?>
-
-<h1>Webforms</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
