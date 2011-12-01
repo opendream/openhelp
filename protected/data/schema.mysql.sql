@@ -224,7 +224,6 @@ CREATE TABLE `webform` (
   `last_updated` datetime NOT NULL,
   `title` varchar(255),
   `user_id` bigint(20),
-  `location_id` bigint(20),
   `data` text,
   
   `filter0` varchar(128),
@@ -269,9 +268,17 @@ CREATE TABLE `webform` (
   `filter39` varchar(128),
   
   PRIMARY KEY (`id`),
-  KEY `fk_webform_user_id` (`user_id`),
-  KEY `fk_webform_location_id` (`location_id`)
+  KEY `fk_webform_user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `webform_location` (
+  `webform_id` bigint(20) NOT NULL,
+  `location_id` bigint(20) NOT NULL,
+  
+  PRIMARY KEY (`webform_id`, `location_id`),
+  KEY `fk_webform_location_webform_id` (`webform_id`),
+  KEY `fk_webform_location_location_id` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 ALTER TABLE `request`
@@ -317,8 +324,11 @@ ALTER TABLE `transporter`
 
 # Webform ==============================================================================================================
 ALTER TABLE `webform`
-  ADD CONSTRAINT `fk_webform_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `fk_webform_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+  ADD CONSTRAINT `fk_webform_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+    
+ALTER TABLE `webform_location`
+  ADD CONSTRAINT `fk_webform_location_webform_id` FOREIGN KEY (`webform_id`) REFERENCES `webform` (`id`),
+  ADD CONSTRAINT `fk_webform_location_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
   
   
 

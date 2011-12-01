@@ -20,6 +20,7 @@
  * @property Donator[] $donators
  * @property Request[] $requests
  * @property Transporter[] $transporters
+ * @property Webform[] $webforms
  */
 class Location extends CActiveRecord
 {
@@ -67,6 +68,7 @@ class Location extends CActiveRecord
 			'donators' => array(self::HAS_MANY, 'Donator', 'location_id'),
 			'requests' => array(self::HAS_MANY, 'Request', 'location_id'),
 			'transporters' => array(self::HAS_MANY, 'Transporter', 'location_id'),
+			'webforms' => array(self::MANY_MANY, 'Webform', 'webform_location(location_id, webform_id)'),
 		);
 	}
 

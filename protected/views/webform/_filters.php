@@ -1,5 +1,4 @@
 <form id="webform-filters" action="api/webform?action=location&type=<?php echo $type; ?>" method="post">
-  <input type="hidden" name="type" value="<?php echo $type; ?>" />
   <ul>
   <?php foreach ($data as $name => $filter): ?>
     <li>
