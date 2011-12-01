@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 18, 2011 at 10:34 AM
+-- Generation Time: Dec 01, 2011 at 04:54 PM
 -- Server version: 5.1.54
 -- PHP Version: 5.3.5-1ubuntu7.3
 
@@ -39,6 +39,27 @@ CREATE TABLE IF NOT EXISTS `category_item` (
 
 INSERT INTO `category_item` (`id`, `name`, `image_url`, `detail`) VALUES
 (1, 'ทั่วไป', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `content`
+--
+
+CREATE TABLE IF NOT EXISTS `content` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `type` varchar(60) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `last_updated` datetime NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `detail` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `content`
+--
+
 
 -- --------------------------------------------------------
 
@@ -7728,7 +7749,6 @@ INSERT INTO `location` (`id`, `level0`, `level1`, `level2`, `level3`, `level4`, 
 (7415, 'ภาคใต้', 'นราธิวาส', 'เจาะไอร้อง', 'บูกิต', NULL, NULL, 'นราธิวาส เจาะไอร้อง บูกิต', '6.18526983261108', '101.827537536621', NULL),
 (7416, 'ภาคใต้', 'นราธิวาส', 'เจาะไอร้อง', 'มะรือโบออก', NULL, NULL, 'นราธิวาส เจาะไอร้อง มะรือโบออก', '6.25747013092041', '101.882308959961', NULL);
 
-
 -- --------------------------------------------------------
 
 --
@@ -10539,6 +10559,28 @@ CREATE TABLE IF NOT EXISTS `transporter` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `username` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `email` varchar(128) DEFAULT NULL,
+  `group` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `group`) VALUES
+(1, 'foo', 'bar', 'foo@bar.com', 'ungroup');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vehicle`
 --
 
@@ -10552,39 +10594,21 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
 --
 -- Dumping data for table `vehicle`
 --
-# Content ==============================================================================================================
 
-CREATE TABLE `content` (
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webform`
+--
+
+CREATE TABLE IF NOT EXISTS `webform` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  
   `type` varchar(60) NOT NULL,
   `date_created` datetime NOT NULL,
   `last_updated` datetime NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `detail` text,
-
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
-
-CREATE TABLE `user` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `username` varchar(128) NOT NULL,
-  `password` varchar(128) NOT NULL,
-  `email` varchar(128),
-  `group` varchar(128),
-  
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
-CREATE TABLE `webform` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  
-  `type` varchar(60) NOT NULL,
-  `date_created` datetime NOT NULL,
-  `last_updated` datetime NOT NULL,
+  `title` varchar(255),
   `user_id` bigint(20),
-  `location_id` bigint(20),
   `data` text,
   
   `filter0` varchar(128),
@@ -10627,11 +10651,19 @@ CREATE TABLE `webform` (
   `filter37` varchar(128),
   `filter38` varchar(128),
   `filter39` varchar(128),
-
+  
   PRIMARY KEY (`id`),
-  KEY `fk_webform_user_id` (`user_id`),
-  KEY `fk_webform_location_id` (`location_id`)
+  KEY `fk_webform_user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `webform_location` (
+  `webform_id` bigint(20) NOT NULL,
+  `location_id` bigint(20) NOT NULL,
+  
+  PRIMARY KEY (`webform_id`, `location_id`),
+  KEY `fk_webform_location_webform_id` (`webform_id`),
+  KEY `fk_webform_location_location_id` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Constraints for dumped tables
@@ -10704,8 +10736,13 @@ ALTER TABLE `stock_vehicle`
 --
 ALTER TABLE `transporter`
   ADD CONSTRAINT `fk_transporter_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
-  
 
+--
+-- Constraints for table `webform`
+--
 ALTER TABLE `webform`
-  ADD CONSTRAINT `fk_webform_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `fk_webform_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+  ADD CONSTRAINT `fk_webform_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+  
+ALTER TABLE `webform_location`
+  ADD CONSTRAINT `fk_webform_location_webform_id` FOREIGN KEY (`webform_id`) REFERENCES `webform` (`id`),
+  ADD CONSTRAINT `fk_webform_location_location_id` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);

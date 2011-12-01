@@ -483,9 +483,33 @@ class WidgetManager
     return $pos !== FALSE;
   }
   
+  // Webform ===========================================================================
   public static function getFilterOptions($type, $name) {
     $qtxt = "SELECT DISTINCT $name FROM webform WHERE type = '$type'";
     $command = Yii::app()->db->createCommand($qtxt);
     return $command->queryColumn();
+  }
+  public static function getWebformLocation($filters, $type=null) {
+    $select = 'id, title, type, date_created, location_id, user_id';
+    $where = 'webform.location_id = location.id';
+    
+    if ($type) {
+      $where .= " AND type='$type'";
+    }
+    
+    if (!empty($filters)) {
+      $select .= ','.implode(', ', array_keys($filters));
+      foreach ($filters as $name => $value) {
+        $where .= " AND $name = '$value'";
+      }
+    }
+
+    $qtxt = "SELECT $select FROM webform, location WHERE $where";
+    $command = Yii::app()->db->createCommand($qtxt);
+    $webforms = $command->queryAll();
+    
+    foreach ($webforms as $webform) {
+      # code...
+    }
   }
 }
