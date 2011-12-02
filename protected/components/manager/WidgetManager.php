@@ -484,6 +484,7 @@ class WidgetManager
   }
   
   // Webform ===========================================================================
+  
   public static function getFilterOptions($type, $name) {
     $qtxt = "SELECT DISTINCT $name FROM webform WHERE type = '$type' ORDER BY $name ASC";
     $command = Yii::app()->db->createCommand($qtxt);
@@ -492,6 +493,7 @@ class WidgetManager
   public static function getWebformLocation($type=null) {
     $qtxt = "SELECT 
       webform.id, 
+      webform.type,
       location.lat+rand()/100000 AS lat, 
       location.lng+rand()/100000 AS lng 
     FROM 
@@ -500,7 +502,8 @@ class WidgetManager
       location 
     WHERE 
       webform_location.webform_id = webform.id AND 
-      webform_location.location_id = location.id";
+      webform_location.location_id = location.id AND
+      location.lat IS NOT NULL AND location.lng IS NOT NULL ";
       
     if ($type) {
       $qtxt .= " AND type='$type'";
