@@ -23,7 +23,7 @@ $mattrId = $mattr;
 
 if ($multiple) {
   $mattr = isset($mattr[$index])? $mattr[$index]: 0;
-  $mattrId = $mattr->id;
+  $mattrId = $mattr? $mattr->id: $mattr;
   $attribute = $attribute."[$index]";
 }
 if ($mattrId || isset($_REQUEST['Location'])) {
