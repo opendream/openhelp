@@ -241,25 +241,23 @@ class Webform extends CActiveRecord
          {
            if(is_object($this->$key) || is_numeric($this->$key))
            {
-             $query = $this->makeManyManyCommand(
+             $query = $this->makeManyMany(
                $relation[2],
                $this->{$this->tableSchema->primaryKey},
                (is_object($this->$key))
                ?  $this->$key->{$this->$key->tableSchema->primaryKey}
                : $this->{$key});
-             $this->insertManyManyEntry($query);
            }
            else if (is_array($this->$key) && $this->$key != array())
            {
              foreach($this->$key as $foreignobject)
              {
-               $query = $this->makeManyManyCommand(
+               $query = $this->makeManyMany(
                  $relation[2],
                  $this->{$this->tableSchema->primaryKey},
                  (is_object($foreignobject))
                  ? $foreignobject->{$foreignobject->tableSchema->primaryKey}
                  : $foreignobject);
-                 $this->insertManyManyEntry($query);
              }
            }
          }
@@ -267,13 +265,11 @@ class Webform extends CActiveRecord
      }
    }
 
-   public function insertManyManyEntry($query) {
-     if(!Yii::app()->db->createCommand($query)->execute())
-       throw new CException(Yii::t('yii','an Error occured while trying to update MANY_MANY relation table'));
-
-   }
-   public function makeManyManyCommand($model, $rel, $foreignrel) {
-     return sprintf("delete from webform_location where webform_id = %s; insert into %s values (%s, %s)", $rel, $model, $rel, $foreignrel);
+   public function makeManyMany($model, $rel, $foreignrel) {
+     $query = sprintf("delete from webform_location where webform_id = %s", $rel);
+     Yii::app()->db->createCommand($query)->execute();
+     $query = sprintf("insert into %s values (%s, %s)", $model, $rel, $foreignrel);
+     Yii::app()->db->createCommand($query)->execute();
    }
   
 }

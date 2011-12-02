@@ -81,10 +81,10 @@ class ApiController extends Controller
 	public function actionWebform($action, $type=null) {
 	  switch ($action) {
 	   case 'location':
-	     $allows = isset($_POST['Allows'])? array_filter($_POST['Allows']): array();
-	     $filters = isset($_POST['Filters'])? array_intersect($_POST['Filters'], $allows): array();
-	     print_r($filters);
-
+	     //$allows = isset($_POST['Allows'])? array_filter($_POST['Allows']): array();
+	     //$filters = isset($_POST['Filters'])? array_intersect($_POST['Filters'], $allows): array();
+	     //print_r($filters);
+	     echo CJSON::encode(WidgetManager::getWebformLocation());
 	     break;
 	   
 	   default:

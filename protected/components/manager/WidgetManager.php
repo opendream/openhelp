@@ -485,31 +485,28 @@ class WidgetManager
   
   // Webform ===========================================================================
   public static function getFilterOptions($type, $name) {
-    $qtxt = "SELECT DISTINCT $name FROM webform WHERE type = '$type'";
+    $qtxt = "SELECT DISTINCT $name FROM webform WHERE type = '$type' ORDER BY $name ASC";
     $command = Yii::app()->db->createCommand($qtxt);
     return $command->queryColumn();
   }
-  public static function getWebformLocation($filters, $type=null) {
-    $select = 'id, title, type, date_created, location_id, user_id';
-    $where = 'webform.location_id = location.id';
-    
+  public static function getWebformLocation($type=null) {
+    $qtxt = "SELECT 
+      webform.id, 
+      location.lat+rand()/100000 AS lat, 
+      location.lng+rand()/100000 AS lng 
+    FROM 
+      webform_location, 
+      webform, 
+      location 
+    WHERE 
+      webform_location.webform_id = webform.id AND 
+      webform_location.location_id = location.id";
+      
     if ($type) {
-      $where .= " AND type='$type'";
+      $qtxt .= " AND type='$type'";
     }
     
-    if (!empty($filters)) {
-      $select .= ','.implode(', ', array_keys($filters));
-      foreach ($filters as $name => $value) {
-        $where .= " AND $name = '$value'";
-      }
-    }
-
-    $qtxt = "SELECT $select FROM webform, location WHERE $where";
     $command = Yii::app()->db->createCommand($qtxt);
-    $webforms = $command->queryAll();
-    
-    foreach ($webforms as $webform) {
-      # code...
-    }
+    return $command->queryAll();
   }
 }

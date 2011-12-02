@@ -1829,7 +1829,6 @@
 		      <td></td>
 		      <td></td>
 		    </tr>		
-		   s
 		    <tr>
 		      <td class="al-left">1) ไม่มีปัญหาด้านการดูแลกลุ่มช่วยเหลือตัวเองไม่ได้ไม่มีโรคระบาดมีบริการทางการแพทย์และไม่มีความเครียดในชุมชน</td>
 		      <td><input type="radio" value="1" name="Webform[filter1]" <?php if ($Webform['filter1'] == '1'): ?> checked="checked" <?php endif; ?>></td>

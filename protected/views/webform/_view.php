@@ -25,18 +25,21 @@
           <?php echo t('Author'); ?>
         </td>
         <td class="extra-double-input">
-          <?php echo CHtml::encode($data->user->username); ?>
+          <?php echo $data->user? CHtml::encode($data->user->username): t('none'); ?>
         </td>
       </tr>
       </tbody>
     </table>
 	</hgroup> <!-- /db-item1 -->
-  <div class="db-item2">
-    <?php echo LocationHtml::locationView($data->location_id, array(
-      'style' => 'endLevelLink',
-      'link' => CController::createUrl("/webform/view/".$data->id),
-    )); ?>
-  </div>
+	<?php if (!empty($data->locations)): ?>
+	  <div class="db-item2">
+      <?php echo LocationHtml::locationView($data->locations[0]['id'], array(
+        'style' => 'endLevelLink',
+        'link' => CController::createUrl("/webform/view/".$data->id),
+      )); ?>
+    </div>
+	<?php endif ?>
+
 
 
 </div>

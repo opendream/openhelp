@@ -91,7 +91,6 @@ class WebformController extends Controller
 		if(isset($_POST['Webform']))
 		{
 		  $attributes = $_POST['Webform'];
-		  print_r($attributes);
 		  $attributes['type'] = $type;
 		  $attributes['date_created'] = (isset($attributes['date_created']) && $attributes['date_created'])? $attributes['date_created']: date('Y-m-d H:i:s');
 		  $attributes['last_updated'] = date('Y-m-d H:i:s');
