@@ -1,7 +1,8 @@
 <div id="sidebar-fix">
 
-  <div class="content-manager">
+  <div class="display-manager">
     <h2><?php echo $name; ?></h2>
+    <span><?php echo t('Select Display'); ?>: </span>
     <ul>
       <li><?php echo l(t('Map'), '#map'); ?></li>
       <li><?php echo l(t('Item List'), '#list'); ?></li>
@@ -300,6 +301,7 @@
       // Location filter
       $('#location-filter select').change(function () {
         console.log(levels);
+        filter.addLocation()
       });
 
   

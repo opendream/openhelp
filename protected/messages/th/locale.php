@@ -39,6 +39,7 @@ return array(
   
   'Item List' => 'รายการ',
   'Map' => 'แผนที่',
+  'Select Display' => 'เลือกการแสดงผล',
   
   'No results found.' => 'ไม่พบผลลัพธ์',
   'Save changes' => 'บันทึก',
