@@ -40,12 +40,15 @@
     </form>
   
     <div id="location-filters">
-      <?php $this->widget('ext.location.LocationWidget', array(
-        'model' => new Location, 
-        'attribute' => 'id', 
-        'join' => 'webform', 
-        'multiple' => 1
-      )); ?>
+      <span class="title"><?php echo $filters['title']['location'] ?></span>
+      <div class="location-filters-input">
+        <?php $this->widget('ext.location.LocationWidget', array(
+          'model' => new Location, 
+          'attribute' => 'id', 
+          'join' => 'webform', 
+          'multiple' => 1
+        )); ?>
+      </div>
     </div>
   
   </div>
