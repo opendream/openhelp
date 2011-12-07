@@ -16,33 +16,37 @@ return array(
   	        'label' => 'ความเสียหายต่อชีวิตและความปลอดภัย',
   	        'description' => '',
   	        'widget' => 'dropDownList',
+  	        'prefix' => 'ระดับ ',
   	      ),
   	      'filter1' => array(
   	        'label' => 'สุขภาพ',
   	        'description' => '',
   	        'widget' => 'dropDownList',
+  	        'prefix' => 'ระดับ ',
   	      ),
   	      'filter2' => array(
   	        'label' => 'สภาพแวดล้อม',
   	        'description' => '',
   	        'widget' => 'dropDownList',
+  	        'prefix' => 'ระดับ ',
   	      ),
   	      'filter3' => array(
   	        'label' => 'เศรษฐกิจ',
   	        'description' => '',
   	        'widget' => 'dropDownList',
+  	        'prefix' => 'ระดับ ',
   	      ),
   	      'filter4' => array(
   	        'label' => 'การเตรียมรับมือภัยพิบัติในอนาคต',
   	        'description' => '',
   	        'widget' => 'dropDownList',
+  	        'prefix' => 'ระดับ ',
   	      ),
 	      ),
-	      'all' => array(
-	        'label' => 'ทั้งหมด',
-	        'description' => '',
-	        'widget' => 'activeRadioButtonList',
-	      ),
+	      'title' => array(
+	        'filter' => 'เลือกประเด็น:', 
+	        'location' => 'เลือกพื้นที่:',
+	      )
 	    )
 	  ),
 	  'supply' => array(
