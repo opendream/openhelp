@@ -69,6 +69,7 @@ select {
 
 
 
+
 /**********************
 			 Layout
 ***********************/
@@ -111,9 +112,14 @@ footer{
 
 }
 
-/* webform-filters */
-#webform-filters{
-	padding: 10px;
+
+
+/**********************
+		webform-filters
+**********************/
+#control-box{
+	width: 298px;
+	padding: 15px;
 	border: 1px solid #b2b2b2;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -121,6 +127,33 @@ footer{
 	-o-border-radius: 10px;
 	background: url('../images/bg-filter.png') ;
 }
+#control-box h2{
+	font: 20px/28px 'DBMettaXMedium';
+	font-weight: lighter;
+	margin: 0 0 15px;
+}
+#webform-filters ul{
+	margin: 0 0 20px;
+}
+	#webform-filters li{
+		padding: 15px 10px;
+		margin: 0 0 1px;
+		background: #cfcfcf;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		-o-border-radius: 5px;
+	}
+	#webform-filters label{
+		display: inline-block;
+		width: 150px;
+		padding: 0 20px;
+		vertical-align: middle;
+		color: #616161;
+		
+		zoom: 1; /* IE7 display: inline-block hack */
+		*display:inline;
+	}
 
 /**********************
 				table
@@ -217,6 +250,7 @@ footer{
 nav {
 	float: left;
 	margin: 26px 0 0 210px;
+	
 }
   nav ul {
 	  list-style: none;
@@ -247,7 +281,6 @@ nav {
 *+html nav{ /* IE7 */
 	overflow: hidden;
 }
-
 
 
 /**********************
@@ -399,6 +432,8 @@ nav {
 		top: -35px;
 	}
 }
+
+
 
 
 
