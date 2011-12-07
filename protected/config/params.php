@@ -14,34 +14,36 @@ return array(
 	      'data' => array(
   	      'filter0' => array(
   	        'label' => 'ความเสียหายต่อชีวิตและความปลอดภัย',
-  	        'description' => '',
+  	        'description' => 'ความเสียหายต่อชีวิตและความปลอดภัย',
   	        'widget' => 'dropDownList',
   	        'prefix' => 'ระดับ ',
   	      ),
   	      'filter1' => array(
   	        'label' => 'สุขภาพ',
-  	        'description' => '',
+  	        'description' => 'การสาธารณสุข',
   	        'widget' => 'dropDownList',
   	        'prefix' => 'ระดับ ',
   	      ),
   	      'filter2' => array(
   	        'label' => 'สภาพแวดล้อม',
-  	        'description' => '',
+  	        'description' => 'ที่อยู่อาศัย, สิ่งสาธารณประโยชน์, การศึกษา, สิ่งแวดล้อม, แหล่งน้ำ',
   	        'widget' => 'dropDownList',
   	        'prefix' => 'ระดับ ',
   	      ),
   	      'filter3' => array(
   	        'label' => 'เศรษฐกิจ',
-  	        'description' => '',
+  	        'description' => 'การฟื้นฟูอาชีพ, การเกษตรและอาหาร, การสื่อสารโทรคมนาคม',
   	        'widget' => 'dropDownList',
   	        'prefix' => 'ระดับ ',
   	      ),
+  	      /*
   	      'filter4' => array(
   	        'label' => 'การเตรียมรับมือภัยพิบัติในอนาคต',
   	        'description' => '',
   	        'widget' => 'dropDownList',
   	        'prefix' => 'ระดับ ',
   	      ),
+  	      */
 	      ),
 	      'title' => array(
 	        'filter' => 'เลือกประเด็น:', 

@@ -70,7 +70,9 @@
       </p>
     </div>  
   </div>
-  <div id="map" style="width: 100%; height: 500px; position: absolute; left: 0;"></div>
+  <div id="map" style="">
+    <div id="map-canvas" style=""></div>
+  </div>
 </div>
 
 <script type="text/javascript" src="<?php echo bu('js/jquery.tmpl.js'); ?>"></script>
@@ -144,7 +146,7 @@
   
     var bounds = new google.maps.LatLngBounds;
 
-    var map = new google.maps.Map($('#map').get(0), options);
+    var map = new google.maps.Map($('#map-canvas').get(0), options);
     var markers = allOptions;
     $.each(locations, function (i, location) {
       var latLng = new google.maps.LatLng(location['lat'], location['lng']);

@@ -534,7 +534,7 @@ class WidgetManager
       webform.type,
       location.lat+rand()/100000 AS lat, 
       location.lng+rand()/100000 AS lng,
-      webform.date_created AS date_created,
+      DATE_FORMAT(webform.date_created, '%d/%m/%Y') AS date_created,
       user.username AS username,
       $filters,
       $locations
