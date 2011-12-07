@@ -2,7 +2,7 @@
 
   <div class="display-manager">
     <h2><?php echo $name; ?></h2>
-    <span><?php echo t('Select Display'); ?>: </span>
+    <span class="title"><?php echo t('Select Display'); ?>: </span>
     <ul>
       <li><?php echo l(t('Map'), '#map'); ?></li>
       <li><?php echo l(t('Item List'), '#list'); ?></li>
@@ -10,7 +10,9 @@
   </div>
 
   <div id="control-box">
+    
     <form id="webform-filters" action="<?php echo bu("api/webform?action=location&type=$type"); ?>" method="post">
+      <span class="title"><?php echo $filters['title']['filter'] ?></span>
       <ul>
       <?php foreach ($filters['data'] as $name => $filter): ?>
         <li>
@@ -37,7 +39,7 @@
       </ul>
     </form>
   
-    <div id="location-filter">
+    <div id="location-filters">
       <?php $this->widget('ext.location.LocationWidget', array(
         'model' => new Location, 
         'attribute' => 'id', 
@@ -65,14 +67,14 @@
 </div>
 
 <script type="text/javascript">
-  $('.content-manager a').click(function (e) {
+  $('.display-manager a').click(function (e) {
     e.preventDefault();
     $('#tab-content > *').hide();
     $($(this).attr('href')).show();
-    $('.content-manager a').removeClass('active');
+    $('.display-manager a').removeClass('active');
     $(this).addClass('active');
   });
-  $('.content-manager a').eq(0).click();
+  $('.display-manager a').eq(0).click();
 </script>
 
 <script type="text/javascript" src="<?php echo bu('js/jquery.tmpl.js'); ?>"></script>
@@ -299,9 +301,9 @@
       })
       
       // Location filter
-      $('#location-filter select').change(function () {
+      $('#location-filters select').change(function () {
         console.log(levels);
-        filter.addLocation()
+        filter.addLocation();
       });
 
   
