@@ -526,7 +526,7 @@ class WidgetManager
   
   public static function getWebformLocation($type=null) {
     $filters = implode(', ', array_keys(Yii::app()->params['webforms'][$type]['filters']['data']));
-    $locations = implode(', ', Yii::app()->params['locationDisplay']);
+    $locations = implode(', ', Yii::app()->params['location']);
     $qtxt = "SELECT 
       CONCAT(webform.id, '-', location.id) AS id,
       webform.id AS webform_id, 
