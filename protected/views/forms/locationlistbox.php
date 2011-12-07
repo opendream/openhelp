@@ -14,7 +14,7 @@ else {
   $locationOptions = array(
   	'prompt' => '- '. Yii::t('locale', $current). ' -',
     'ajax' => array(
-      'type' => 'GET',
+      'type' => 'POST',
       'url' => CController::createUrl("/forms/locationlistbox"),
       'update' => '#Location_'.$children.'_wrapper',
       'data' => array(
@@ -23,9 +23,10 @@ else {
         'query' => $query,
         'join' => $join,
         'multiple' => $multiple,
+        'onclick' => $onclick,
       ),
     ),
-    'onchange'=>'js:$("#Location_'.$children.'").change().focus()',
+    'onchange'=>'js:$("#Location_'.$children.'").val("").change().focus();'.$onclick,
   
   );
   

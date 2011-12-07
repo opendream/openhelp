@@ -109,7 +109,7 @@ $defaultOptions = array('prompt' => '- '. Yii::t('locale', $firstLevelCol). ' -'
 $locationOptions = $defaultOptions;
 if ($children) {
   $locationOptions['ajax'] = array(
-    'type' => 'GET',
+    'type' => 'POST',
     'url' => CController::createUrl("/forms/locationlistbox"),
     'update' => '#Location_'.$children.'_wrapper',
     'data' => array(
@@ -123,9 +123,10 @@ if ($children) {
       ),
       'join' => $join,
       'multiple' => $multiple,
+      'onclick' => $onclick
     )
   );
-  $locationOptions['onchange'] = 'js:$("#Location_'.$children.'").change().focus()';
+  $locationOptions['onchange'] = 'js:$("#Location_'.$children.'").val("").change().focus();'.$onclick;
 }
 else {
   # TODO: Update location_id

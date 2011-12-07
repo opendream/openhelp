@@ -5,6 +5,7 @@ class LocationWidget extends CInputWidget
   public $join;
   public $multiple;
   public $index;
+  public $onclick;
 
 	public function run()
 	{
@@ -24,6 +25,9 @@ class LocationWidget extends CInputWidget
 	  if(!isset($this->index)){
 		  $this->index = 0;
 	  }
+	  if(!isset($this->onclick)){
+		  $this->onclick = '';
+	  }
 	  
 
 		$controller=$this->controller;
@@ -34,6 +38,7 @@ class LocationWidget extends CInputWidget
 			"join" => $this->join,
 			"multiple" => $this->multiple,
 			"index" => $this->index,
+			"onclick" => $this->onclick,
 		));
 	}
 }

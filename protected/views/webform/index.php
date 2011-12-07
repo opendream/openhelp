@@ -46,7 +46,11 @@
           'model' => new Location, 
           'attribute' => 'id', 
           'join' => 'webform', 
-          'multiple' => 1
+          'multiple' => 1,
+          'onclick' => '
+              var level = $(this).attr("id").replace("Location_", "");
+              var value = $(this).val();
+              filter.addLocation(level, value).run();'
         )); ?>
       </div>
     </div>
@@ -69,7 +73,14 @@
   <div id="map" style="width: 100%; height: 500px; position: absolute; left: 0;"></div>
 </div>
 
+<script type="text/javascript" src="<?php echo bu('js/jquery.tmpl.js'); ?>"></script>
+
+<?php echo CGoogleApi::init(); ?>
+<script type="text/javascript" src="<?php echo bu('js/markerclusterer.js'); ?>"></script>
+
 <script type="text/javascript">
+
+  // Tab
   $('.display-manager a').click(function (e) {
     e.preventDefault();
     $('#tab-content > *').hide();
@@ -78,14 +89,13 @@
     $(this).addClass('active');
   });
   $('.display-manager a').eq(0).click();
-</script>
-
-<script type="text/javascript" src="<?php echo bu('js/jquery.tmpl.js'); ?>"></script>
-
-<?php echo CGoogleApi::init(); ?>
-<script type="text/javascript" src="<?php echo bu('js/markerclusterer.js'); ?>"></script>
-
-<script type="text/javascript">
+  
+  
+  
+  
+  // Map List Filter
+  var locations = <?php echo CJSON::encode(WidgetManager::getWebformLocation($type)); ?>;
+  
   var currMarkers = []; // <= Handsome variable :)
   
   var locationMarkers = [];
@@ -123,215 +133,202 @@
   ];
   
   var mapLoadded = function () {
-    $.getJSON($('#webform-filters').attr('action'), function(locations) {
-  
-      var center = new google.maps.LatLng(13.768, 100.554);
-      var options = {
-        'scrollwheel': false,
-        'zoom': 5,
-        'center': center,
-        'mapTypeId': google.maps.MapTypeId.ROADMAP
-      };
-    
-      var bounds = new google.maps.LatLngBounds;
-
-      var map = new google.maps.Map($('#map').get(0), options);
-      var markers = allOptions;
-      $.each(locations, function (i, location) {
-        var latLng = new google.maps.LatLng(location['lat'], location['lng']);
-        var marker = new google.maps.Marker({'position': latLng, 'data': location});
-        currMarkers.push(marker);
-        bounds.extend(latLng);
       
-        // Prepare for filters
-        $.each(location, function (field, value) {
-          if (field.substr(0, 6) == 'filter') {
-            if (!markers[location['type']][field][value]) {
-              markers[location['type']][field][value] = [];
-            }
-            markers[location['type']][field][value].push(marker);
+    var center = new google.maps.LatLng(13.768, 100.554);
+    var options = {
+      'scrollwheel': false,
+      'zoom': 5,
+      'center': center,
+      'mapTypeId': google.maps.MapTypeId.ROADMAP
+    };
+  
+    var bounds = new google.maps.LatLngBounds;
+
+    var map = new google.maps.Map($('#map').get(0), options);
+    var markers = allOptions;
+    $.each(locations, function (i, location) {
+      var latLng = new google.maps.LatLng(location['lat'], location['lng']);
+      var marker = new google.maps.Marker({'position': latLng, 'data': location});
+      currMarkers.push(marker);
+      bounds.extend(latLng);
+    
+      // Prepare for filters
+      $.each(location, function (field, value) {
+        if (field.substr(0, 6) == 'filter') {
+          if (!markers[location['type']][field][value]) {
+            markers[location['type']][field][value] = [];
+          }
+          markers[location['type']][field][value].push(marker);
+        }
+      })
+    });
+    
+    allMarkers = currMarkers;
+  
+    var markerCluster = new MarkerClusterer(map, currMarkers, {'styles': styles});
+  
+  
+    map.panTo(bounds.getCenter());
+    map.fitBounds(bounds);
+  
+    // List =============================================
+    var List = function () {
+      var ipp = 20;
+      var currentPage = 0;
+      
+      var self = this;
+      
+      self.append = function () {
+        for (var i=currentPage*ipp; (i < (currentPage+1)*ipp) && (i < currMarkers.length); i++) {
+          $.tmpl('templateItem', currMarkers[i]['data']).appendTo('#webform-list');
+          if (i == currMarkers.length - 1) {
+            $('.webform-location-readmore').hide();
+          }
+        }
+        currentPage = currentPage + 1;
+      }
+      
+      self.reload = function () {
+        $('#webform-list').html('');
+        $('.webform-location-readmore').show();
+        currentPage = 0;
+        self.append();
+        self.append();
+      }
+    }
+    
+    var list = new List();
+    
+    $.getJSON(basePath + '/api/webform', {'action': 'templateItem'}, function(templateItem) {
+      $.template('templateItem', templateItem);
+      list.reload();
+    });
+    
+    $('.webform-location-readmore').click(function (e) {
+      e.preventDefault();
+      list.append();
+    });
+    
+  
+  
+    // Filter =============================================
+    var scope = $('#webform-filters');
+  
+    var Filter = function () {
+      var types = {};
+      var filters = {};
+      var locations = {};
+    
+      self = this;
+      
+      self.removeType = function (name) {
+        if (types[name]) { delete(types[name]); }
+        return self;
+      }
+      self.addType = function (name) {
+        types[name] = name;
+        return self;
+      }
+      self.removeFilter = function (name) {
+        if (filters[name]) { delete(filters[name]); }
+        return self;
+      }
+      self.addFilter = function (name, value) {
+        filters[name] = value;
+        return self;
+      }        
+      self.removeLocation = function (level) {
+        if (locations[level]) { delete(locations[level]); }
+        return self;
+      }
+      self.addLocation = function (level, value) {
+        if (!value) {
+          return self.removeLocation(level);
+        }
+        locations[level] = value;
+        return self;
+      }
+
+      self.run = function () {
+        currMarkers = [];
+      
+        $.each(types, function (key, type) {
+          if ($.isEmptyObject(filters)) {
+            currMarkers = allMarkers;
+          }
+          else {
+            $.each(filters, function (name, value) {
+              currMarkers = $.merge(currMarkers, markers[type][name][value]);
+            })
           }
         })
-      });
       
-      allMarkers = currMarkers;
-    
-      var markerCluster = new MarkerClusterer(map, currMarkers, {'styles': styles});
-    
-    
-      map.panTo(bounds.getCenter());
-      map.fitBounds(bounds);
-    
-      // List =============================================
-      var List = function () {
-        var ipp = 20;
-        var currentPage = 0;
-        
-        var self = this;
-        
-        self.append = function () {
-          for (var i=currentPage*ipp; (i < (currentPage+1)*ipp) && (i < currMarkers.length); i++) {
-            $.tmpl('templateItem', currMarkers[i]['data']).appendTo('#webform-list');
-            if (i == currMarkers.length - 1) {
-              $('.webform-location-readmore').hide();
-            }
+        currMarkers = $.unique(currMarkers);
+                  
+        // Location Filter
+        var finalMarkers = [];
+        $.each(currMarkers, function(i, marker) {
+          var data = marker['data'];
+          var pass = true;
+          $.each(locations, function(level, value) {
+            pass = pass && (data[level] == value);
+          })
+          if (pass) {
+            finalMarkers.push(marker);
           }
-          currentPage = currentPage + 1;
-        }
-        
-        self.reload = function () {
-          $('#webform-list').html('');
-          $('.webform-location-readmore').show();
-          currentPage = 0;
-          self.append();
-          self.append();
-        }
-      }
+        })
+        currMarkers = finalMarkers;
       
-      var list = new List();
+        markerCluster.clearMarkers();
+        markerCluster.addMarkers(currMarkers);
       
-      $.getJSON(basePath + '/api/webform', {'action': 'templateItem'}, function(templateItem) {
-        $.template('templateItem', templateItem);
         list.reload();
-      });
-      
-      $('.webform-location-readmore').click(function (e) {
-        e.preventDefault();
-        list.append();
-      });
-      
-    
-    
-      // Filter =============================================
-      var scope = $('#webform-filters');
-    
-      var Filter = function () {
-        var types = {};
-        var filters = {};
-        var locations = {};
-      
-        self = this;
         
-        self.removeType = function (name) {
-          if (types[name]) { delete(types[name]); }
-          return self;
-        }
-        self.addType = function (name) {
-          types[name] = name;
-          return self;
-        }
-        self.removeFilter = function (name) {
-          if (filters[name]) { delete(filters[name]); }
-          return self;
-        }
-        self.addFilter = function (name, value) {
-          filters[name] = value;
-          return self;
-        }        
-        self.removeLocation = function (level) {
-          if (locations[level]) { delete(locations[level]); }
-          return self;
-        }
-        self.addLocation = function (level, value) {
-          if (!value) {
-            return self.removeLocation(level);
-          }
-          locations[level] = value;
-          return self;
-        }
-
-        self.run = function () {
-          currMarkers = [];
-        
-          $.each(types, function (key, type) {
-            if ($.isEmptyObject(filters)) {
-              currMarkers = allMarkers;
-            }
-            else {
-              $.each(filters, function (name, value) {
-                currMarkers = $.merge(currMarkers, markers[type][name][value]);
-              })
-            }
-          })
-        
-          currMarkers = $.unique(currMarkers);
-                    
-          // Location Filter
-          var finalMarkers = [];
-          $.each(currMarkers, function(i, marker) {
-            var data = marker['data'];
-            var pass = true;
-            $.each(locations, function(level, value) {
-              pass = pass && (data[level] == value);
-            })
-            if (pass) {
-              finalMarkers.push(marker);
-            }
-          })
-          currMarkers = finalMarkers;
-        
-          markerCluster.clearMarkers();
-          markerCluster.addMarkers(currMarkers);
-        
-          list.reload();
-          
-          return self;
-        }
-      
+        return self;
       }
     
-      var filter = new Filter();
-      filter.addType('reliefsurvey');
-      
-      // Text filter
-      $('input[type=checkbox]', scope).change(function () {
-        var type = $(this).attr('class');
-        var name = $(this).attr('name');
-      
-      
-        var select = $(this).siblings('select');
-        var value = select? select.val(): $(this).val();
-      
-          
-        if($(this).attr('checked')) {
-          filter.addFilter(name, value).run();
-        }
-        else {
-          filter.removeFilter(name).run();
-        }
-      })
+    }
+  
+    filter = new Filter();
+    filter.addType('reliefsurvey');
     
-      $('select', scope).change(function () {
-        var type = $(this).attr('class');
-        var name = $(this).attr('name');
-      
-        var checkbox = $(this).siblings('input[type=checkbox]');
-        var value = $(this).val();
-      
-        var type = $(this).attr('class');
-        if (checkbox && !checkbox.attr('checked')) {
-          return false;
-        }
-      
+    // Text filter
+    $('input[type=checkbox]', scope).change(function () {
+      var type = $(this).attr('class');
+      var name = $(this).attr('name');
+    
+    
+      var select = $(this).siblings('select');
+      var value = select? select.val(): $(this).val();
+    
+        
+      if($(this).attr('checked')) {
         filter.addFilter(name, value).run();
+      }
+      else {
+        filter.removeFilter(name).run();
+      }
+    })
+  
+    $('select', scope).change(function () {
+      var type = $(this).attr('class');
+      var name = $(this).attr('name');
+    
+      var checkbox = $(this).siblings('input[type=checkbox]');
+      var value = $(this).val();
+    
+      var type = $(this).attr('class');
+      if (checkbox && !checkbox.attr('checked')) {
+        return false;
+      }
+    
+      filter.addFilter(name, value).run();
 
-      })
+    })
       
-      // Location filter
-      // Fuck .delegate .change bug
-      
-      $(document).delegate('#location-filters select', 'click', function () {
-        var level = $(this).attr('id').replace('Location_', '');
-        var value = $(this).val();
-        if (levels[level] == value) {
-          return false;
-        }
-        levels[level] = value;
-        filter.addLocation(level, value).run();
-      });
+
 
   
-    });
   }
 
   google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
