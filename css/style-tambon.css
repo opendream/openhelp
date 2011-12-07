@@ -84,6 +84,7 @@ select {
 #content, #header header, footer {
 	width: 940px;
 	margin: 0 auto;
+
 }
 
 #header {
@@ -108,12 +109,25 @@ select {
 	float: left;
 	width: 300px;
 	margin: 20px 20px 0 0;
+/*
 	opacity: 0;
 	-webkit-animation-name: slide;
 	-webkit-animation-duration: 500ms;
 	-webkit-animation-timing-function: ease-out;
 	-webkit-animation-fill-mode: forwards;
 	-webkit-animation-delay: 2s;
+	-moz-animation-name: slide;
+	-moz-animation-duration: 500ms;
+	-moz-animation-timing-function: ease-out;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 2s;
+	animation-name: slide;
+	animation-duration: 500ms;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 2s;
+*/
+
 }
 
 
@@ -231,6 +245,32 @@ select {
 }
 #webform-index .webform-content{
 	width: 578px;
+}
+.readmore{
+	display: block;
+	float: left;
+	width: 580px;
+	padding: 10px 0;
+	margin: 10px 0 0;
+	text-align: center;   
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	background: #525252;
+	/* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#525252), to(#424244));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #525252, #424244);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #525252, #424244);
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #525252, #424244);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #525252, #424244);
+}
+.readmore a{
+	color: #fff;
 }
 
 /**********************
@@ -391,49 +431,45 @@ nav {
 
 
 
-
 /**********************
-		Footer Section
+			Keyframes
 **********************/
-
-
-
-
 /*
-@-webkit-keyframes pop{
+@-moz-keyframes slide{
 	0%{
+		margin-left: -50px;
 		opacity: 0;
-		top: -30px;
 	}
 	100%{
+		margin-left: 0;
+		display: block;
 		opacity: 1;
-		top: -35px;
 	}
 }
-@-moz-keyframes pop {
-  0%{
+@keyframes slide{
+	0%{
+		margin-left: -50px;
 		opacity: 0;
-		top: -30px;
 	}
 	100%{
+		margin-left: 0;
+		display: block;
 		opacity: 1;
-		top: -35px;
 	}
 }
-@keyframes pop {
-  0%{
+
+@-webkit-keyframes slide{
+	0%{
+		margin-left: -50px;
 		opacity: 0;
-		top: -30px;
 	}
 	100%{
+		margin-left: 0;
+		display: block;
 		opacity: 1;
-		top: -35px;
 	}
 }
 */
-
-
-
 
 
 
@@ -482,14 +518,5 @@ nav {
 }
 
 
-@-webkit-keyframes slide{
-	0%{
-		margin-left: -50px;
-		opacity: 0;
-	}
-	100%{
-		margin-left: 0;
-		display: block;
-		opacity: 1;
-	}
-}
+
+
