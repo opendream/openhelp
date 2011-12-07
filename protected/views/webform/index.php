@@ -1,21 +1,12 @@
+<div class="content-manager">
+  <ul>
+    <li><?php echo l(t('Map'), '#map'); ?></li>
+    <li><?php echo l(t('Item List'), '#list'); ?></li>
+  </ul>
+</div>
 
 <div id="control-box">
-  <div class="content-manager">
-    <ul>
-      <li><?php echo l(t('Map'), '#map'); ?></li>
-      <li><?php echo l(t('Item List'), '#list'); ?></li>
-    </ul>
-    <script type="text/javascript">
-      $('.content-manager a').click(function (e) {
-        e.preventDefault();
-        $('#tab-content > *').hide();
-        $($(this).attr('href')).show();
-        $('.content-manager a').removeClass('active');
-        $(this).addClass('active');
-      });
-      $('.content-manager a').eq(0).click();
-    </script>
-  </div>
+  <h2><?php echo $name; ?></h2>
   
   <form id="webform-filters" action="<?php echo bu("api/webform?action=location&type=$type"); ?>" method="post">
     <ul>
@@ -42,7 +33,11 @@
       </li>
     <?php endforeach ?>
     </ul>
+    
+    
   </form>
+  <?php $this->widget('ext.location.LocationWidget', array('model' => new Location, 'attribute' => 'id', 'join' => 'webform', 'multiple' => 1)); ?>
+  
 </div>
 
 <div id="tab-content">
@@ -59,6 +54,16 @@
   <div id="map" style="width: 100%; height: 500px; position: absolute; left: 0;"></div>
 </div>
 
+<script type="text/javascript">
+  $('.content-manager a').click(function (e) {
+    e.preventDefault();
+    $('#tab-content > *').hide();
+    $($(this).attr('href')).show();
+    $('.content-manager a').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('.content-manager a').eq(0).click();
+</script>
 
 <script type="text/javascript" src="<?php echo bu('js/jquery.tmpl.js'); ?>"></script>
 
@@ -67,7 +72,9 @@
 
 <script type="text/javascript">
   var currMarkers = []; // <= Handsome variable :)
-
+  
+  var allMarkers = [];
+  
   var basePath = '<?php echo bu(); ?>';
   var allOptions = <?php echo WidgetManager::getAllTypeFilter(true); ?>;
   var templateItem = '';
@@ -127,6 +134,8 @@
           }
         })
       });
+      
+      allMarkers = currMarkers;
     
       var markerCluster = new MarkerClusterer(map, currMarkers, {'styles': styles});
     
@@ -203,9 +212,14 @@
           currMarkers = [];
         
           $.each(types, function (key, type) {
-            $.each(filters, function (name, value) {
-              currMarkers = $.merge(currMarkers, markers[type][name][value]);
-            })
+            if ($.isEmptyObject(filters)) {
+              currMarkers = allMarkers;
+            }
+            else {
+              $.each(filters, function (name, value) {
+                currMarkers = $.merge(currMarkers, markers[type][name][value]);
+              })
+            }
           })
         
           currMarkers = $.unique(currMarkers);

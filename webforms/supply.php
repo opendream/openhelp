@@ -197,7 +197,7 @@
 					
 					<h3>2.1.2 พื้นที่เป้าหมาย</h3>
 					<div class="clearfix">
-						<?php $this->widget('ext.location.LocationWidget', array('model' => $model, 'attribute' => 'location_id')); ?>
+						<?php $this->widget('ext.location.LocationWidget', array('model' => $model, 'attribute' => 'locations', 'multiple' => true, 'index' => 0)); ?>
             
 					</div>
 					

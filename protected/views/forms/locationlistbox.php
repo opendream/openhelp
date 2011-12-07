@@ -22,6 +22,7 @@ else {
         'attribute' => $attribute,
         'query' => $query,
         'join' => $join,
+        'multiple' => $multiple,
       ),
     ),
     'onchange'=>'js:$("#Location_'.$children.'").change().focus()',

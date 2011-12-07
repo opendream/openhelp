@@ -9,6 +9,7 @@ class FormsController extends Controller
 
     $attribute = isset($_GET['attribute'])? $_GET['attribute']:'locaion_id';
     $join = isset($_GET['join'])? $_GET['join']: 0;
+    $multiple = isset($_GET['multiple'])? $_GET['multiple']: 0;
     
     $query = $_GET['query'];
 	  $current = key($query);
@@ -25,8 +26,16 @@ class FormsController extends Controller
 	  $where = array();
 	  $from = 'location';
 	  if ($join) {
-	    $from .= ", $join";
-	    $where[] = "location.id = $join.location_id";
+	    if ($multiple) {
+	      $mjoin = $join.'_location';
+        $from .= ", $join, $mjoin";
+        $where[] = "$mjoin.location_id = location.id";
+        $where[] = "$mjoin.$join"."_id = $join.id";
+	    }
+	    else {
+	      $from .= ", $join";
+  	    $where[] = "location.id = $join.location_id";
+	    }
 	  }
 	  foreach ($query as $key => $value) {
 	    $where[] = $key." = '".$value['value']."'";
@@ -54,6 +63,7 @@ class FormsController extends Controller
   	  'queryTree' => $queryTree,
   	  'children' => empty($childrenTree)? 'id': $childrenTree[0],
   	  'join' => $join,
+  	  'multiple' => $multiple,
   	));
 	
   

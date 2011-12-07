@@ -7,7 +7,7 @@ return array(
 	'locationDisplay'=>array('level1','level2', 'level3'),
 	'webforms' => array(
 	  'reliefsurvey' => array(
-	    'name' => 'ฟื้นฟูตำบล',
+	    'name' => 'พื้นที่ต้องการฟื้นฟู',
 	    'label' => 'แบบสํารวจเพื่อการฟื้นฟูชุมชนหลังสถานการณ์ภัยพิบัติระดับตําบล', 
 	    'file' => 'webforms/reliefsurvey.php',
 	    'filters' => array(

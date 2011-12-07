@@ -13,9 +13,18 @@ $queryWhereList = array(1);
 $where = '1';
 
 if ($join) {
-  $from .= ", $join";
-  $queryWhereList[] = "location.id = $join.location_id";
-  $where = "location.id = $join.location_id";
+  if ($multiple) {
+    $mjoin = $join.'_location';
+    $from .= ", $join, $mjoin";
+    $queryWhereList[] = "$mjoin.location_id = location.id";
+    $queryWhereList[] = "$mjoin.$join"."_id = $join.id";
+    $where = "$mjoin.location_id = location.id AND $mjoin.$join"."_id = $join.id";
+  }
+  else {
+    $from .= ", $join";
+    $queryWhereList[] = "location.id = $join.location_id";
+    $where = "location.id = $join.location_id";
+  }
 }
 
 $mattr = $model->$attribute;
@@ -64,7 +73,14 @@ if ($mattrId || isset($_REQUEST['Location'])) {
   
   $whereList = array_reverse($whereList);
   if ($join) {
-    $whereList[] = "location.id = $join.location_id";
+    if ($multiple) {
+      $mjoin = $join.'_location';
+      $whereList[] = "$mjoin.location_id = location.id";
+      $whereList[] = "$mjoin.$join"."_id = $join.id";
+    }
+    else {
+      $whereList[] = "location.id = $join.location_id";
+    }
   }
   $levelData = array();
   $whereListLoop = $whereList;
@@ -106,6 +122,7 @@ if ($children) {
         )
       ),
       'join' => $join,
+      'multiple' => $multiple,
     )
   );
   $locationOptions['onchange'] = 'js:$("#Location_'.$children.'").change().focus()';
