@@ -27,7 +27,7 @@ class WebformController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'clusterer'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -51,6 +51,36 @@ class WebformController extends Controller
     require(substr(bu(Yii::app()->params['webforms'][$type]['file']), 1));
     return ob_get_clean();
   }
+  
+  public function actionClusterer($color='210,100,74', $radius=40) {
+    header("Pragma: public"); // required 
+    header("Expires: 0"); 
+    header("Cache-Control: must-revalidate, post-check=0, pre-check=0"); 
+    header("Cache-Control: private",false); // required for certain browsers
+    header('Content-type: image/png');
+    
+    
+    $this->layout='//layouts/empty';
+    $radius = $radius;
+    
+    $image = imagecreatetruecolor($radius, $radius);
+    
+    $wite = imagecolorallocate($image, 254, 254, 254);
+    imagecolortransparent($image, $wite);
+    
+    imageSmoothArc($image, $radius/2-1, $radius/2-1, $radius*2, $radius*2, array(254, 254, 254, 0), 0, 2*M_PI);
+    
+    
+    imageSmoothArc($image, $radius/2-1, $radius/2-1, $radius-1, $radius-1, array(255, 255, 255, 0), 0, 2*M_PI);
+    
+    $color = explode(',', $color);
+    $color[] = 0;
+    imageSmoothArc($image, $radius/2-1, $radius/2-1, $radius-11, $radius-11, $color,  0, 2*M_PI);
+    
+
+    imagepng($image);
+    imagedestroy($image);
+  }
 
 	/**
 	 * Displays a particular model.
@@ -64,11 +94,12 @@ class WebformController extends Controller
 	  $this->pageTitle = Yii::app()->params['webforms'][$model->type]['label'];
 	  
 	  //print_r(unserialize($model->data)+array_fill(0, 4000, ''));
-
+    $data = safe_unserialize($model->data);
+    $data = $data? ($data + array_fill(0, 4000, '')): array_fill(0, 4000, '');
     $this->render('view', array(
       'type' => $model->type, 
       'model' => $model,
-      'Data' => unserialize($model->data) + array_fill(0, 4000, ''),
+      'Data' => $data,
     ));
     
 	}
@@ -223,8 +254,8 @@ class WebformController extends Controller
 	public function actionIndex($type)
 	{
 	  $this->layout='//layouts/layout1';
-	  
-	  
+	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
+		
 	  $filters = Yii::app()->params['webforms'][$type]['filters'];
 	  $filters['type'] = $type;
 	  $this->render('//webform/index', get_defined_vars());

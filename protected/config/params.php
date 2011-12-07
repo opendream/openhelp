@@ -48,7 +48,16 @@ return array(
 	  'supply' => array(
 	    'name' => 'โครงการฟื้นฟู',
 	    'label' => 'แบบสำรวจโครงการเพื่อช่วยเหลือ / ฟื้นฟูพื้นที่ประสบภัยน้ำท่วม', 
-	    'file' => 'webforms/supply.php'
+	    'file' => 'webforms/supply.php',
+	    'filters' => array(
+	      'data' => array(
+	        'filter0' => array(
+  	        'label' => 'tmp',
+  	        'description' => '',
+  	        'widget' => 'dropDownList',
+  	      )
+	      )
+	    ),
 	  ),	  
 	),
 );

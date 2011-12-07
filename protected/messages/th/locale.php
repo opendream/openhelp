@@ -37,6 +37,9 @@ return array(
   'Delete' => 'ลบ',
   'Manage' => 'จัดการ',
   
+  'Item List' => 'รายการ',
+  'Map' => 'แผนที่',
+  
   'No results found.' => 'ไม่พบผลลัพธ์',
   'Save changes' => 'บันทึก',
   'Author' => 'ผู้สร้าง',

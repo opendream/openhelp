@@ -53,7 +53,6 @@ class ApiController extends Controller
         if(count($data) < 1)
             throw new CHttpException(404,'No Data.');	   
 	    $result = $this->renderPartial('//request/_location_db_list', array('locationList' => $location, 'extraDouble' => $extraDouble, 'hideNeed' => true), true);
-	    // print_r($data);
 	    echo CJSON::encode($result);
 	  }
 	  
@@ -80,16 +79,17 @@ class ApiController extends Controller
 	
 	public function actionWebform($action, $type=null) {
 	  switch ($action) {
-	   case 'location':
-	     //$allows = isset($_POST['Allows'])? array_filter($_POST['Allows']): array();
-	     //$filters = isset($_POST['Filters'])? array_intersect($_POST['Filters'], $allows): array();
-	     //print_r($filters);
-	     echo CJSON::encode(WidgetManager::getWebformLocation());
-	     break;
-	   
-	   default:
-	     # code...
-	     break;
+	    case 'location':
+	      echo CJSON::encode(WidgetManager::getWebformLocation($type));
+	      break;
+	      
+	    case 'templateItem':
+	      $result = $this->renderPartial('//webform/_item', array(), true);
+  	    echo CJSON::encode($result);
+  	    break;
+  	    
+	    default:
+	      break;
 	  }
 	}
 

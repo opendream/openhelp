@@ -488,21 +488,65 @@ class WidgetManager
   public static function getFilterOptions($type, $name) {
     $qtxt = "SELECT DISTINCT $name FROM webform WHERE type = '$type' ORDER BY $name ASC";
     $command = Yii::app()->db->createCommand($qtxt);
-    return $command->queryColumn();
+    $result = $command->queryColumn();
+    return array_filter($result);
   }
+  
+  public static function getAllFilterOptions($type, $json=false) {
+    $select = array_keys(Yii::app()->params['webforms'][$type]['filters']['data']);
+    $options = array();
+    foreach ($select as $name) {
+      $options += self::getFilterOptions($type, $name);
+    }
+    $options = array_unique($options);
+    
+    return $json? CJSON::encode(array_fill_keys($options, array())): $options;
+  }
+  
+  public static function getAllTypeFilterOptions($json=false) {
+    $types = array_keys(Yii::app()->params['webforms']);
+    $options = array();
+    foreach ($types as $type) {
+      $options[$type] = self::getAllFilterOptions($type, false);
+    }
+    return $json? CJSON::encode($options): $options;
+  }
+  
+  public static function getAllTypeFilter($json=false) {
+    $types = Yii::app()->params['webforms'];
+    $options = array();
+    foreach ($types as $type => $data) {
+      $options[$type] = array();
+      foreach ($data['filters']['data'] as $name => $filter) {
+        $options[$type][$name] = array();
+      }
+    }
+    return $json? CJSON::encode($options): $options;
+  }
+  
   public static function getWebformLocation($type=null) {
+    $filters = implode(', ', array_keys(Yii::app()->params['webforms'][$type]['filters']['data']));
+    $locations = implode(', ', Yii::app()->params['locationDisplay']);
     $qtxt = "SELECT 
-      webform.id, 
+      CONCAT(webform.id, '-', location.id) AS id,
+      webform.id AS webform_id, 
+      location.id AS location_id, 
       webform.type,
       location.lat+rand()/100000 AS lat, 
-      location.lng+rand()/100000 AS lng 
+      location.lng+rand()/100000 AS lng,
+      webform.date_created AS date_created,
+      user.username AS username,
+      $filters,
+      $locations
     FROM 
       webform_location, 
       webform, 
-      location 
+      location,
+      user
     WHERE 
       webform_location.webform_id = webform.id AND 
       webform_location.location_id = location.id AND
+      webform.user_id = user.id AND 
       location.lat IS NOT NULL AND location.lng IS NOT NULL ";
       
     if ($type) {
