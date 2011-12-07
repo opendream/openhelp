@@ -3,15 +3,17 @@ class FormsController extends Controller
 {
   public $layout='//layouts/empty';
   
-  public function actionLocationlistbox($model)
+  public function actionLocationlistbox()
   {
+    $model = isset($_REQUEST['model'])? $_REQUEST['model']:'Location';
     $model = new $model;
 
-    $attribute = isset($_GET['attribute'])? $_GET['attribute']:'locaion_id';
-    $join = isset($_GET['join'])? $_GET['join']: 0;
-    $multiple = isset($_GET['multiple'])? $_GET['multiple']: 0;
+    $attribute = isset($_REQUEST['attribute'])? $_REQUEST['attribute']:'locaion_id';
+    $join = isset($_REQUEST['join'])? $_REQUEST['join']: 0;
+    $multiple = isset($_REQUEST['multiple'])? $_REQUEST['multiple']: 0;
+    $onclick = isset($_REQUEST['onclick'])? $_REQUEST['onclick']: '';
     
-    $query = $_GET['query'];
+    $query = $_REQUEST['query'];
 	  $current = key($query);
 	  
 	  $childrenTree = explode(' ', $query[$current]['childrenLevels']);
@@ -64,6 +66,7 @@ class FormsController extends Controller
   	  'children' => empty($childrenTree)? 'id': $childrenTree[0],
   	  'join' => $join,
   	  'multiple' => $multiple,
+  	  'onclick' => $onclick,
   	));
 	
   
