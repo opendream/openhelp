@@ -259,6 +259,7 @@ class WebformController extends Controller
 	  $name = Yii::app()->params['webforms'][$type]['name'];
 		
 	  $filters = Yii::app()->params['webforms'][$type]['filters'];
+	  $levels = Yii::app()->params['location'];
 	  $this->render('//webform/index', get_defined_vars());
 	}
 

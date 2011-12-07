@@ -485,8 +485,8 @@ class WidgetManager
   
   // Webform ===========================================================================
   
-  public static function getFilterOptions($type, $name) {
-    $qtxt = "SELECT DISTINCT $name FROM webform WHERE type = '$type' ORDER BY $name ASC";
+  public static function getFilterOptions($type, $name, $prefix='') {
+    $qtxt = "SELECT DISTINCT CONCAT('$prefix', $name) FROM webform WHERE type = '$type' ORDER BY $name ASC";
     $command = Yii::app()->db->createCommand($qtxt);
     $result = $command->queryColumn();
     return array_filter($result);

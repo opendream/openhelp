@@ -1,43 +1,52 @@
-<div class="content-manager">
-  <ul>
-    <li><?php echo l(t('Map'), '#map'); ?></li>
-    <li><?php echo l(t('Item List'), '#list'); ?></li>
-  </ul>
-</div>
+<div id="sidebar-fix">
 
-<div id="control-box">
-  <h2><?php echo $name; ?></h2>
-  
-  <form id="webform-filters" action="<?php echo bu("api/webform?action=location&type=$type"); ?>" method="post">
+  <div class="content-manager">
+    <h2><?php echo $name; ?></h2>
     <ul>
-    <?php foreach ($filters['data'] as $name => $filter): ?>
-      <li>
-        <input class="<?php echo $type; ?>" type="checkbox" name="<?php echo $name; ?>" value="1" id="<?php echo $name; ?>" />
-        <label for="<?php echo $name; ?>"><?php echo $filter['label'] ?></label>
-    
-        <?php if ($filter['widget'] == 'dropDownList'): ?>
-          <?php $options = WidgetManager::getFilterOptions($type, $name); ?>
-          <?php echo CHtml::dropDownList(
-            $name, 
-            key($options), 
-            $options, 
-            array('id' => $name.'-value', 'class' => $type)
-          ) ?>
-      
-        <?php elseif (false): ?>
-      
-          <?php //TODO: make other widget ?>
-    
-        <?php endif ?>
-    
-      </li>
-    <?php endforeach ?>
+      <li><?php echo l(t('Map'), '#map'); ?></li>
+      <li><?php echo l(t('Item List'), '#list'); ?></li>
     </ul>
+  </div>
+
+  <div id="control-box">
+    <form id="webform-filters" action="<?php echo bu("api/webform?action=location&type=$type"); ?>" method="post">
+      <ul>
+      <?php foreach ($filters['data'] as $name => $filter): ?>
+        <li>
+          <input class="<?php echo $type; ?>" type="checkbox" name="<?php echo $name; ?>" value="1" id="<?php echo $name; ?>" />
+          <label for="<?php echo $name; ?>"><?php echo $filter['label'] ?></label>
     
+          <?php if ($filter['widget'] == 'dropDownList'): ?>
+            <?php $options = WidgetManager::getFilterOptions($type, $name, $filter['prefix']); ?>
+            <?php echo CHtml::dropDownList(
+              $name, 
+              key($options), 
+              $options, 
+              array('id' => $name.'-value', 'class' => $type)
+            ) ?>
+      
+          <?php elseif (false): ?>
+      
+            <?php //TODO: make other widget ?>
     
-  </form>
-  <?php $this->widget('ext.location.LocationWidget', array('model' => new Location, 'attribute' => 'id', 'join' => 'webform', 'multiple' => 1)); ?>
+          <?php endif ?>
+    
+        </li>
+      <?php endforeach ?>
+      </ul>
+    </form>
   
+    <div id="location-filter">
+      <?php $this->widget('ext.location.LocationWidget', array(
+        'model' => new Location, 
+        'attribute' => 'id', 
+        'join' => 'webform', 
+        'multiple' => 1
+      )); ?>
+    </div>
+  
+  </div>
+
 </div>
 
 <div id="tab-content">
@@ -73,11 +82,15 @@
 <script type="text/javascript">
   var currMarkers = []; // <= Handsome variable :)
   
+  var locationMarkers = [];
+  
   var allMarkers = [];
   
   var basePath = '<?php echo bu(); ?>';
   var allOptions = <?php echo WidgetManager::getAllTypeFilter(true); ?>;
   var templateItem = '';
+  
+  var levels = <?php echo CJSON::encode($levels); ?>;
   
   
   // Map  =============================================
@@ -189,25 +202,38 @@
       var Filter = function () {
         var types = {};
         var filters = {};
+        var locations = {};
       
         self = this;
-      
-        self.addType = function (name) {
-          types[name] = name;
-          return self;
-        }
+        
         self.removeType = function (name) {
           if (types[name]) { delete(types[name]); }
           return self;
         }
-        self.addFilter = function (name, value) {
-          filters[name] = value;
+        self.addType = function (name) {
+          types[name] = name;
           return self;
         }
         self.removeFilter = function (name) {
           if (filters[name]) { delete(filters[name]); }
           return self;
         }
+        self.addFilter = function (name, value) {
+          filters[name] = value;
+          return self;
+        }        
+        self.removeLocation = function (level) {
+          if (locations[level]) { delete(locations[level]); }
+          return self;
+        }
+        self.addLocation = function (level, value) {
+          if (!value) {
+            return self.removeLocation(level);
+          }
+          locations[level] = value;
+          return self;
+        }
+
         self.run = function () {
           currMarkers = [];
         
@@ -236,7 +262,8 @@
     
       var filter = new Filter();
       filter.addType('reliefsurvey');
-    
+      
+      // Text filter
       $('input[type=checkbox]', scope).change(function () {
         var type = $(this).attr('class');
         var name = $(this).attr('name');
@@ -269,6 +296,11 @@
         filter.addFilter(name, value).run();
 
       })
+      
+      // Location filter
+      $('#location-filter select').change(function () {
+        console.log(levels);
+      });
 
   
     });
