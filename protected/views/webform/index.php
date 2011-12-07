@@ -255,6 +255,20 @@
           })
         
           currMarkers = $.unique(currMarkers);
+                    
+          // Location Filter
+          var finalMarkers = [];
+          $.each(currMarkers, function(i, marker) {
+            var data = marker['data'];
+            var pass = true;
+            $.each(locations, function(level, value) {
+              pass = pass && (data[level] == value);
+            })
+            if (pass) {
+              finalMarkers.push(marker);
+            }
+          })
+          currMarkers = finalMarkers;
         
           markerCluster.clearMarkers();
           markerCluster.addMarkers(currMarkers);
@@ -304,9 +318,16 @@
       })
       
       // Location filter
-      $('#location-filters select').change(function () {
-        console.log(levels);
-        filter.addLocation();
+      // Fuck .delegate .change bug
+      
+      $(document).delegate('#location-filters select', 'click', function () {
+        var level = $(this).attr('id').replace('Location_', '');
+        var value = $(this).val();
+        if (levels[level] == value) {
+          return false;
+        }
+        levels[level] = value;
+        filter.addLocation(level, value).run();
       });
 
   

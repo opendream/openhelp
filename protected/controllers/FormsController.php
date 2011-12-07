@@ -42,8 +42,8 @@ class FormsController extends Controller
 	  }
 	  $where = implode(' AND ', $where);
 
-	  
-	  $qtxt = "SELECT $children FROM $from WHERE $where";
+	  $select = $children == 'id'? 'location.id': $children;
+	  $qtxt = "SELECT $select FROM $from WHERE $where";
 
 		$command = Yii::app()->db->createCommand($qtxt);
 		$rows = $command->queryAll();
