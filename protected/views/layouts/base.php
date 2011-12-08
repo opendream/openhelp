@@ -58,7 +58,7 @@
     			}
     			if (isset(Yii::app()->params['webforms']) && Yii::app()->params['webforms']) {
     			  foreach (Yii::app()->params['webforms'] as $type => $conf) {
-      			  $_menu = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/webform/list?type='.$type));
+      			  $_menu = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/webform?type='.$type));
   				    $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
   				    $_menu['active'] = $isActive;
       			  $menu[] = $_menu;

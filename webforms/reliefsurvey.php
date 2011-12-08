@@ -5768,6 +5768,11 @@
       <script type="text/javascript">
           $.getScript('/js/jquery.fixedheadertable.js', function() {
             $('.table-village-tb').fixedHeaderTable({ footer: false, fixedColumns: 0 , height: '300px'});
-            $('.section3-table').fixedHeaderTable({ footer: false, fixedColumns: 3 , height: '600px'});
+            //$('.section3-table').fixedHeaderTable({ footer: false, fixedColumns: 3 , height: '600px'});
+            $('.section3-table tr').each(function () {
+              $(this).children('td').each(function () {
+                $(this).hide();
+              });
+            });
           });
       </script>

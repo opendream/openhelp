@@ -60,18 +60,18 @@
 </div>
 
 <div id="tab-content">
-  <div id="list">
+  <div id="list" style="display: none;">
     <div class="webform-content drop-shadow curved curved-hz-1">
       <div id="webform-list">
   
       </div>
       <p class="readmore">
-        <a class="webform-location-readmore" href="#">read more</a>
+        <a class="webform-location-readmore" href="#"><?php echo t('read more'); ?></a>
       </p>
     </div>  
   </div>
-  <div id="map" style="">
-    <div id="map-canvas" style=""></div>
+  <div id="map">
+    <div id="map-canvas"></div>
   </div>
 </div>
 
@@ -97,6 +97,8 @@
   
   // Map List Filter
   var locations = <?php echo CJSON::encode(WidgetManager::getWebformLocation($type)); ?>;
+  var templateItem = <?php echo CJSON::encode($this->renderPartial('//webform/_item', array(), true)); ?>;
+  $.template('templateItem', templateItem);
   
   var currMarkers = []; // <= Handsome variable :)
   
@@ -200,11 +202,8 @@
     }
     
     var list = new List();
-    
-    $.getJSON(basePath + '/api/webform', {'action': 'templateItem'}, function(templateItem) {
-      $.template('templateItem', templateItem);
-      list.reload();
-    });
+
+    list.reload();
     
     $('.webform-location-readmore').click(function (e) {
       e.preventDefault();

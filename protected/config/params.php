@@ -61,7 +61,12 @@ return array(
   	        'label' => 'tmp',
   	        'description' => '',
   	        'widget' => 'dropDownList',
-  	      )
+  	        'prefix' => '',
+  	      ),
+	      ),
+	      'title' => array(
+	        'filter' => 'เลือกประเด็น:', 
+	        'location' => 'เลือกพื้นที่:',
 	      )
 	    ),
 	  ),	  
