@@ -27,7 +27,7 @@ class WebformController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'clusterer'),
+				'actions'=>array('index','view', 'clusterer', 'detail'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -81,6 +81,14 @@ class WebformController extends Controller
     imagepng($image);
     imagedestroy($image);
   }
+  
+  
+	public function rebuildStyles($styles) {
+	  foreach ($styles as &$style) {
+	   $style['url'] = bu($style['url']);
+	  }
+	  return $styles;
+	}
 
 	/**
 	 * Displays a particular model.
@@ -103,6 +111,8 @@ class WebformController extends Controller
     ));
     
 	}
+	
+
 
 	/**
 	 * Creates a new model.
@@ -247,6 +257,7 @@ class WebformController extends Controller
 			'type'=>$type,
 		));
 	}
+
 	
 	/**
 	 * Lists all models.
@@ -261,7 +272,29 @@ class WebformController extends Controller
 	  $filters = Yii::app()->params['webforms'][$type]['filters'];
 	  $levels = Yii::app()->params['location'];
 	  $levels = array_combine($levels, array_fill(0, count($levels), ''));
+	  $styles = self::rebuildStyles(Yii::app()->params['webforms'][$type]['styles']);
 	  $this->render('//webform/index', get_defined_vars());
+	}
+	
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionDetail($id)
+	{
+	  $this->layout='//layouts/layout1';
+	  
+	  $model=$this->loadModel($id);
+	  
+	  $type = $model->type;
+	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
+	  
+	  $filters = Yii::app()->params['webforms'][$type]['filters']['data'];
+	  $sections = empty(Yii::app()->params['webforms'][$type]['sections'])? Yii::app()->params['webforms'][$type]['sections']: 0;
+	  $styles = self::rebuildStyles(Yii::app()->params['webforms'][$type]['styles']);
+	  
+    $this->render('detail', get_defined_vars());
+    
 	}
 
 	/**

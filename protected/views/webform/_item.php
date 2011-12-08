@@ -7,7 +7,7 @@
           <?php echo t('ID'); ?>
         </td>
         <td class="extra-double-input">
-            <a href="<?php echo bu(); ?>/webform/${webform_id}">${webform_id}</a>
+            <a href="<?php echo bu(); ?>/webform/detail/${webform_id}">${webform_id}</a>
         </td>
       </tr>
       <tr>
@@ -41,7 +41,7 @@
               <?php echo Yii::t('locale', $firstLevel); ?>
             </td>
             <td class="<?php echo $firstLevel; ?>">
-              <a href="<?php echo bu(); ?>/webform/${webform_id}">
+              <a href="<?php echo bu(); ?>/webform/detail/${webform_id}">
                 ${<?php echo $firstLevel; ?>}
               </a>
             </td>

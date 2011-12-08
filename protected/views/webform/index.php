@@ -112,29 +112,10 @@
   
   var levels = <?php echo CJSON::encode($levels); ?>;
   
+  var styles = <?php echo CJSON::encode($styles); ?>;
+  
   
   // Map  =============================================
-  var styles = [
-    {
-      url: basePath + "/webform/clusterer?radius=35",
-      height: 35,
-      width: 35,
-      textColor: '#ffffff',
-      textSize: 11
-    }, {
-      url: basePath + "/webform/clusterer?radius=40",
-      height: 40,
-      width: 40,
-      textColor: '#ffffff',
-      textSize: 11
-    }, {
-      url: basePath + "/webform/clusterer?radius=50",
-      height: 50,
-      width: 50,
-      textColor: '#ffffff',
-      textSize: 11
-    }
-  ];
   
   var mapLoadded = function () {
       

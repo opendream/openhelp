@@ -10,6 +10,35 @@ return array(
 	    'name' => 'พื้นที่ต้องการฟื้นฟู',
 	    'label' => 'แบบสํารวจเพื่อการฟื้นฟูชุมชนหลังสถานการณ์ภัยพิบัติระดับตําบล', 
 	    'file' => 'webforms/reliefsurvey.php',
+	    'sections' => array(
+	      'request' => array(
+	        'title' => 'ความต้องการ',
+	        'url' => '',
+	      ),
+	    ),
+	    'styles' => array(
+        array(
+          'url'=> ("webform/clusterer?radius=35"),
+          'height'=> 35,
+          'width'=> 35,
+          'textColor'=> '#ffffff',
+          'textSize'=> 11
+        ),
+        array(
+          'url'=> ("webform/clusterer?radius=40"),
+          'height'=> 40,
+          'width'=> 40,
+          'textColor'=> '#ffffff',
+          'textSize'=> 11
+        ),
+        array(
+          'url'=> ("webform/clusterer?radius=50"),
+          'height'=> 50,
+          'width'=> 50,
+          'textColor'=> '#ffffff',
+          'textSize'=> 11
+        ),
+      ),
 	    'filters' => array(
 	      'data' => array(
   	      'filter0' => array(
