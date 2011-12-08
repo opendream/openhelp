@@ -291,17 +291,14 @@ select {
 	height: 100% !important;
 	width: 100% !important;
 	z-index: 0 !important;
-	
 	padding: 85px 0 0;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
-	
 }
 #map-canvas{
 	width: 100%;
 	height: 100%;
-/* 	margin: 85px 0 0; */
 	display: block;
 }
 
