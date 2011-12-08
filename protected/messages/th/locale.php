@@ -47,6 +47,7 @@ return array(
   'ID' => 'รหัส',
   'Date' => 'วันที่', 
   'Please, alway save.' => 'กรุณาบันทึกบ่อยๆ',
+  'read more' => 'ดูเพิ่มเติม',
    
   /*
   * Location
