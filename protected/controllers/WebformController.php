@@ -138,8 +138,8 @@ class WebformController extends Controller
 		  $attributes['user_id'] = Yii::app()->user->getIntId();
 		  $attributes['data'] = serialize($_POST['Data']);
 			$model->attributes=array_filter($attributes);
-			//print_r($attributes);
-			$model->locations = $attributes['locations'];
+		  $model->locations = array_filter($attributes['locations']);
+
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -191,7 +191,7 @@ class WebformController extends Controller
 		  $attributes['data'] = serialize($_POST['Data']);
 		  //print_r(array_filter($attributes));
 			$model->attributes=array_filter($attributes);
-			$model->locations = $attributes['locations'];
+			$model->locations = array_filter($attributes['locations']);
 			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));

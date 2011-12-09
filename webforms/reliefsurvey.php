@@ -68,7 +68,7 @@
  .al-left {text-align: left !important;}
  
  td.h-line {height: 40px;}
- h3.h-line,  h4.h-line {position: absolute; line-height: 0}
+ h3.h-line,  h4.h-line {line-height: 0}
  
  /* table */ 
  .fht-table th,  .section3-table th {/* padding: 0; */}
@@ -98,6 +98,12 @@
    display: none;
    background-color: #aaa;
    width: 50px !important;
+ }
+ 
+ .section3-table tbody {
+   height: 500px;
+   overflow-x: hidden;
+   overflow-y: auto;
  }
 
   #moo-control-wrap {
@@ -457,9 +463,7 @@
 	  <tbody>
 
 		    <tr class="table-lv1">
-		      <td class="h-line bgheadlv1" style=""><div style="width: 400px;"><h3 class="h-line">3.1 ความเสียหายต่อชีวิต</h3></div></td>
-		      <td class="bgheadlv1" style=""><div style="width: 180px;"></div></td>
-		      <td class="bgheadlv1" style=""><div style="width: 180px;"></div></td>
+		      <td class="h-line bgheadlv1" colspan="3" style=""><h3 class="h-line">3.1 ความเสียหายต่อชีวิต3.1 ความเสียหายต่อชีวิต3.1 ความเสียหายต่อชีวิต </h3></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -482,9 +486,7 @@
 		      <td class = "hide-col moo-col-20"></td>
 		    </tr>
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.1.1 ผู้เสียหายต่อชีวิตและความปลอดภัย (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.1.1 ผู้เสียหายต่อชีวิตและความปลอดภัย (ระบุจำนวน)</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -592,9 +594,7 @@
 		    </tr>
 
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.1.2 ปัจจัยเสี่ยงต่อความปลอดภัย</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.1.2 ปัจจัยเสี่ยงต่อความปลอดภัย</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -753,9 +753,7 @@
 
 		    </tr>
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.1.3 บ้านเรือนพังเสียหาย</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.1.3 บ้านเรือนพังเสียหาย</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -799,7 +797,7 @@
 		      <td class = "hide-col moo-col-15"><input class="span1"  name="Data[1885]" type="text" value="<?php echo $Data[1885]; ?>"></td>
 		      <td class = "hide-col moo-col-16"><input class="span1"  name="Data[1886]" type="text" value="<?php echo $Data[1886]; ?>"></td>
 		      <td class = "hide-col moo-col-17"><input class="span1"  name="Data[1887]" type="text" value="<?php echo $Data[1887]; ?>"></td>
-		      <td class = "hide-col moo-col-19"><input class="span1"  name="Data[1888]" type="text" value="<?php echo $Data[1888]; ?>"></td>
+		      <td class = "hide-col moo-col-18"><input class="span1"  name="Data[1888]" type="text" value="<?php echo $Data[1888]; ?>"></td>
 		      <td class = "hide-col moo-col-19"><input class="span1"  name="Data[1889]" type="text" value="<?php echo $Data[1889]; ?>"></td>
 		      <td class = "hide-col moo-col-20"><input class="span1"  name="Data[1890]" type="text" value="<?php echo $Data[1890]; ?>"></td>
 
@@ -807,12 +805,10 @@
 
 		    </tr>
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.1.4 ประชาชนไร้ที่อยู่อาศัย</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.1.4 ประชาชนไร้ที่อยู่อาศัย</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
-		      <td class = "hide-col moo-col-2"></td>
+		      <td class = "hide-col moo-col-3"></td>
 		      <td class = "hide-col moo-col-4"></td>
 		      <td class = "hide-col moo-col-5"></td>
 		      <td class = "hide-col moo-col-6"></td>
@@ -861,9 +857,7 @@
 
 
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.1.5 ความเสียหายต่อชีวิตและความปลอดภัย (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.1.5 ความเสียหายต่อชีวิตและความปลอดภัย (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
 					<td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -1024,9 +1018,7 @@
 		    </tr>
 -->
 		    <tr class="table-lv1">
-		      <td class="h-line bgheadlv1"><h3 class="h-line">3.2 สุขภาพ</h3></td>
-		      <td class="bgheadlv1"></td>
-		      <td class="bgheadlv1"></td>
+		      <td class="h-line bgheadlv1" colspan="3"><h3 class="h-line">3.2 สุขภาพ</h3></td>
 					<td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -1049,9 +1041,7 @@
 					<td class = "hide-col moo-col-20"></td>
 		    </tr>
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.1 กลุ่มที่ช่วยเหลือตัวเองไม่ได้ (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.2.1 กลุ่มที่ช่วยเหลือตัวเองไม่ได้ (ระบุจำนวน)</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -1232,9 +1222,7 @@
 		    </tr>
 
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.2 ตรวจพบโรคระบาดในพื้นที่ในช่วงพิบัติ (ระบุโรคและจำนวนผู้ป่วย)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.2.2 ตรวจพบโรคระบาดในพื้นที่ในช่วงพิบัติ (ระบุโรคและจำนวนผู้ป่วย)</h4></td>
 					<td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -1423,9 +1411,7 @@
 		    </tr>
 -->
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.3 ความลำบากในการเข้าถึงบริการทางด้านการแพทย์ (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.2.3 ความลำบากในการเข้าถึงบริการทางด้านการแพทย์ (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -1575,29 +1561,27 @@
 		    </tr>	
 
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.4 ระดับความเครียดและความกังวลของคนในชุมชน (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.2.4 ระดับความเครียดและความกังวลของคนในชุมชน (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
-		      <td class = "hide-col moo-col-1"></td>
+		      <td class = "hide-col moo-col-2"></td>
+		      <td class = "hide-col moo-col-3"></td>
+		      <td class = "hide-col moo-col-4"></td>
+		      <td class = "hide-col moo-col-5"></td>
+		      <td class = "hide-col moo-col-6"></td>
+		      <td class = "hide-col moo-col-7"></td>
+		      <td class = "hide-col moo-col-8"></td>
+		      <td class = "hide-col moo-col-9"></td>
+		      <td class = "hide-col moo-col-10"></td>
+		      <td class = "hide-col moo-col-11"></td>
+		      <td class = "hide-col moo-col-12"></td>
+		      <td class = "hide-col moo-col-13"></td>
+		      <td class = "hide-col moo-col-14"></td>
+		      <td class = "hide-col moo-col-15"></td>
+		      <td class = "hide-col moo-col-16"></td>
+		      <td class = "hide-col moo-col-17"></td>
+		      <td class = "hide-col moo-col-18"></td>
+		      <td class = "hide-col moo-col-19"></td>
+		      <td class = "hide-col moo-col-20"></td>
 		    </tr>		
 <!--
 		    <tr>
@@ -1729,9 +1713,7 @@
 		    </tr>	 
 		    
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.5 กิจกรรมที่ชุมชนที่ต้องการการสนับสนุน</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.2.5 กิจกรรมที่ชุมชนที่ต้องการการสนับสนุน</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -1866,9 +1848,7 @@
 -->
 
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.2.6 ความรุนแรงด้านปัญหาสุขภาพในชุมชนอยู่ในระดับ(1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.2.6 ความรุนแรงด้านปัญหาสุขภาพในชุมชนอยู่ในระดับ(1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -2013,9 +1993,7 @@
 					<td class = "hide-col moo-col-20"><input type="radio" value="5" name="Data[2943]" <?php if ($Data[2943] == '5'): ?> checked="checked" <?php endif; ?>></td>
 		    </tr>																																					
 		    <tr class="table-lv1">
-		      <td class="h-line bgheadlv1"><h3 class="h-line">3.3  สภาพแวดล้อมที่ได้รับผลกระทบ</h3></td>
-		      <td class="bgheadlv1"></td>
-		      <td class="bgheadlv1"></td>
+		      <td class="h-line bgheadlv1" colspan="3"><h3 class="h-line">3.3  สภาพแวดล้อมที่ได้รับผลกระทบ</h3></td>
 		      <td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -2038,9 +2016,7 @@
 					<td class = "hide-col moo-col-20"></td>
 		    </tr>			    
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.1 ที่อยู่อาศัย (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.3.1 ที่อยู่อาศัย (ระบุจำนวน)</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -2120,9 +2096,7 @@
 		    </tr>
 -->
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.2 สิ่งสาธารณะประโยชน์ของชุมชน (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.3.2 สิ่งสาธารณะประโยชน์ของชุมชน (ระบุจำนวน)</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -2360,9 +2334,7 @@
 		    </tr>
 -->
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.4 อาคารสาธารณะของชุมชน  (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.3.4 อาคารสาธารณะของชุมชน  (ระบุจำนวน)</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -2496,9 +2468,7 @@
 		    </tr>
 -->
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.5 ศาสนสถาน (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.3.5 ศาสนสถาน (ระบุจำนวน)</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -2660,9 +2630,7 @@
 		    </tr>
 -->
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.6 สถานที่ราชการ (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.3.6 สถานที่ราชการ (ระบุจำนวน)</h4></td>
 					<td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -2720,21 +2688,21 @@
 		      <td class = "hide-col moo-col-3"><input class="span1"  name="Data[861]" type="text" value="<?php echo $Data[861]; ?>"></td>
 		      <td class = "hide-col moo-col-4"><input class="span1"  name="Data[862]" type="text" value="<?php echo $Data[862]; ?>"></td>
 		      <td class = "hide-col moo-col-5"><input class="span1"  name="Data[863]" type="text" value="<?php echo $Data[863]; ?>"></td>
-		      <td class = "hide-col moo-col-5"><input class="span1"  name="Data[2241]" type="text" value="<?php echo $Data[2241]; ?>"></td>
-		      <td class = "hide-col moo-col-6"><input class="span1"  name="Data[2242]" type="text" value="<?php echo $Data[2242]; ?>"></td>
-		      <td class = "hide-col moo-col-7"><input class="span1"  name="Data[2243]" type="text" value="<?php echo $Data[2243]; ?>"></td>
-		      <td class = "hide-col moo-col-8"><input class="span1"  name="Data[2244]" type="text" value="<?php echo $Data[2244]; ?>"></td>
-		      <td class = "hide-col moo-col-9"><input class="span1"  name="Data[2245]" type="text" value="<?php echo $Data[2245]; ?>"></td>
-		      <td class = "hide-col moo-col-10"><input class="span1"  name="Data[2246]" type="text" value="<?php echo $Data[2246]; ?>"></td>
-		      <td class = "hide-col moo-col-11"><input class="span1"  name="Data[2247]" type="text" value="<?php echo $Data[2247]; ?>"></td>
-		      <td class = "hide-col moo-col-12"><input class="span1"  name="Data[2248]" type="text" value="<?php echo $Data[2248]; ?>"></td>
-		      <td class = "hide-col moo-col-13"><input class="span1"  name="Data[2249]" type="text" value="<?php echo $Data[2249]; ?>"></td>
-		      <td class = "hide-col moo-col-14"><input class="span1"  name="Data[2250]" type="text" value="<?php echo $Data[2250]; ?>"></td>
-		      <td class = "hide-col moo-col-15"><input class="span1"  name="Data[2251]" type="text" value="<?php echo $Data[2251]; ?>"></td>
-		      <td class = "hide-col moo-col-16"><input class="span1"  name="Data[2252]" type="text" value="<?php echo $Data[2252]; ?>"></td>
-		      <td class = "hide-col moo-col-17"><input class="span1"  name="Data[2253]" type="text" value="<?php echo $Data[2253]; ?>"></td>
-		      <td class = "hide-col moo-col-18"><input class="span1"  name="Data[2254]" type="text" value="<?php echo $Data[2254]; ?>"></td>
-		      <td class = "hide-col moo-col-19"><input class="span1"  name="Data[2255]" type="text" value="<?php echo $Data[2255]; ?>"></td>
+		      <td class = "hide-col moo-col-6"><input class="span1"  name="Data[2241]" type="text" value="<?php echo $Data[2241]; ?>"></td>
+		      <td class = "hide-col moo-col-7"><input class="span1"  name="Data[2242]" type="text" value="<?php echo $Data[2242]; ?>"></td>
+		      <td class = "hide-col moo-col-8"><input class="span1"  name="Data[2243]" type="text" value="<?php echo $Data[2243]; ?>"></td>
+		      <td class = "hide-col moo-col-9"><input class="span1"  name="Data[2244]" type="text" value="<?php echo $Data[2244]; ?>"></td>
+		      <td class = "hide-col moo-col-10"><input class="span1"  name="Data[2245]" type="text" value="<?php echo $Data[2245]; ?>"></td>
+		      <td class = "hide-col moo-col-11"><input class="span1"  name="Data[2246]" type="text" value="<?php echo $Data[2246]; ?>"></td>
+		      <td class = "hide-col moo-col-12"><input class="span1"  name="Data[2247]" type="text" value="<?php echo $Data[2247]; ?>"></td>
+		      <td class = "hide-col moo-col-13"><input class="span1"  name="Data[2248]" type="text" value="<?php echo $Data[2248]; ?>"></td>
+		      <td class = "hide-col moo-col-14"><input class="span1"  name="Data[2249]" type="text" value="<?php echo $Data[2249]; ?>"></td>
+		      <td class = "hide-col moo-col-15"><input class="span1"  name="Data[2250]" type="text" value="<?php echo $Data[2250]; ?>"></td>
+		      <td class = "hide-col moo-col-16"><input class="span1"  name="Data[2251]" type="text" value="<?php echo $Data[2251]; ?>"></td>
+		      <td class = "hide-col moo-col-17"><input class="span1"  name="Data[2252]" type="text" value="<?php echo $Data[2252]; ?>"></td>
+		      <td class = "hide-col moo-col-18"><input class="span1"  name="Data[2253]" type="text" value="<?php echo $Data[2253]; ?>"></td>
+		      <td class = "hide-col moo-col-19"><input class="span1"  name="Data[2254]" type="text" value="<?php echo $Data[2254]; ?>"></td>
+		      <td class = "hide-col moo-col-20"><input class="span1"  name="Data[2255]" type="text" value="<?php echo $Data[2255]; ?>"></td>
 
 		    </tr>
 		    <tr>
@@ -2897,9 +2865,7 @@
 		    
 		    
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.7 สถานที่ท่องเที่ยว (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.3.7 สถานที่ท่องเที่ยว (ระบุจำนวน)</h4></td>
 					<td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -2980,9 +2946,7 @@
 		    </tr>
 -->
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.8 แหล่งน้ำ (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.3.8 แหล่งน้ำ (ระบุจำนวน)</h4></td>
 					<td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -3168,9 +3132,7 @@
 -->
 
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.9 ปัญหาขยะ/น้ำเน่าเสีย/มลพิษ</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.3.9 ปัญหาขยะ/น้ำเน่าเสีย/มลพิษ</h4></td>
 					<td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -3274,9 +3236,7 @@
 		    
 		    
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.3.10 ความรุนแรงด้านปัญหาสภาพแวดล้อมในชุมชน (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.3.10 ความรุนแรงด้านปัญหาสภาพแวดล้อมในชุมชน (1 น้อยที่สุด - 5 มากที่สุด)</h4></td>
 					<td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
@@ -3436,9 +3396,7 @@
 		    </tr>
 -->
 		    <tr class="table-lv1">
-		      <td class="h-line bgheadlv1"><h3 class="h-line">3.4 เศรษฐกิจ (หากในพื้นที่ของท่านไม่มีส่วนใดก็ไม่ต้องกรอก)</h3></td>
-		      <td class="bgheadlv1"></td>
-		      <td class="bgheadlv1"></td>
+		      <td class="h-line bgheadlv1" colspan="3"><h3 class="h-line">3.4 เศรษฐกิจ (หากในพื้นที่ของท่านไม่มีส่วนใดก็ไม่ต้องกรอก)</h3></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -3461,9 +3419,7 @@
 		      <td class="hide-col moo-col-20"></td>
 		    </tr>		    
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.1 พื้นที่การเกษตรเสียหาย (ระบุจำนวนไร่)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.1 พื้นที่การเกษตรเสียหาย (ระบุจำนวนไร่)</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -3596,9 +3552,7 @@
 		    </tr>
 -->
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.3 สัตว์เลี้ยง (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.3 สัตว์เลี้ยง (ระบุจำนวน)</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -3784,9 +3738,7 @@
 -->
 
 		    <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.3 พื้นที่ประมงเสียหาย (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.3 พื้นที่ประมงเสียหาย (ระบุจำนวน)</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -3841,9 +3793,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.4 ตลาด ย่านธุรกิจเสียหาย (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.4 ตลาด ย่านธุรกิจเสียหาย (ระบุจำนวน)</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -3897,9 +3847,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.5 อุตสาหกรรมเสียหาย (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.5 อุตสาหกรรมเสียหาย (ระบุจำนวน)</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -3954,9 +3902,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv2"> 
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.6 ประมาณการคนที่ได้รับผลกระทบจากภัยพิบัติ (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.6 ประมาณการคนที่ได้รับผลกระทบจากภัยพิบัติ (ระบุจำนวน)</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -4012,9 +3958,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.7 ประมาณการคนที่ได้รับว่างงาน จากภัยพิบัติ (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.7 ประมาณการคนที่ได้รับว่างงาน จากภัยพิบัติ (ระบุจำนวน)</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -4070,9 +4014,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.8 กลุ่มอาชีพ (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.8 กลุ่มอาชีพ (ระบุจำนวน)</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -4154,9 +4096,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.9 เครื่องจักร อุปกรณ์ประกอบอาชีพ ที่เสียหาย (ระบุจำนวน)</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.9 เครื่องจักร อุปกรณ์ประกอบอาชีพ ที่เสียหาย (ระบุจำนวน)</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -4393,9 +4333,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.10 ปัญหาการสื่อสารโทรคมนาคมในพื้นที่</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.10 ปัญหาการสื่อสารโทรคมนาคมในพื้นที่</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -4556,9 +4494,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.11 กิจกรรมที่ชุมชนต้องการการสนับสนุน</h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.11 กิจกรรมที่ชุมชนต้องการการสนับสนุน</h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -4792,9 +4728,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv2">
-		      <td class="h-line bgheadlv2"><h4 class="h-line">3.4.12  ระดับความรุนแรงด้านปัญหาเศรษฐกิจในชุมชน<span>(ให้เลือก 1 น้อยที่สุด - 5 มากที่สุด)</span></h4></td>
-		      <td class="bgheadlv2"></td>
-		      <td class="bgheadlv2"></td>
+		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.4.12  ระดับความรุนแรงด้านปัญหาเศรษฐกิจในชุมชน<span>(ให้เลือก 1 น้อยที่สุด - 5 มากที่สุด)</span></h4></td>
 		      <td class="hide-col moo-col-1"></td>
 		      <td class="hide-col moo-col-2"></td>
 		      <td class="hide-col moo-col-3"></td>
@@ -4944,9 +4878,7 @@
 		    </tr>
 -->
 			  <tr class="table-lv1">
-		      <td class="h-line bgheadlv1"><h4 class="h-line">3.5 ชุมชนมีการเตรียมการรับมือภัยพิบัติในอนาคต</h4></td>
-		      <td class="bgheadlv1"></td>
-		      <td class="bgheadlv1"></td>
+		      <td class="h-line bgheadlv1" colspan="3"><h4 class="h-line">3.5 ชุมชนมีการเตรียมการรับมือภัยพิบัติในอนาคต</h4></td>
 					<td class = "hide-col moo-col-1"></td>
 					<td class = "hide-col moo-col-2"></td>
 					<td class = "hide-col moo-col-3"></td>
