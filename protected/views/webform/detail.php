@@ -56,6 +56,45 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
 <?php endif ?>
 
 <div id="filter-detail">
+  
+  <div class="general">
+      <table>
+        <tbody>
+        <tr>
+          <td class="extra-double-label">
+            <?php echo t('ID'); ?>
+          </td>
+          <td class="extra-double-input">
+              <?php echo $model->id; ?>
+          </td>
+        </tr>
+        <tr>
+          <td class="extra-double-label">
+            <?php echo t('Date'); ?>
+          </td>
+          <td class="extra-double-input">
+            <?php echo date('d/m/Y', strtotime($model->date_created)); ?>
+          </td>
+        </tr>
+        <tr>
+          <td class="extra-double-label">
+            <?php echo t('Author'); ?>
+          </td>
+          <td class="extra-double-input">
+            <?php echo $model->user->username; ?>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+  	<div class="db-item2-list">
+  	  <?php foreach ($model->locations as $location): ?>
+	    <div class="db-item2">
+	      <?php echo LocationHtml::locationView($location->id); ?>
+      </div>
+  	  <?php endforeach ?>
+    </div>
+  </div>
+  
   <?php foreach ($filters as $name => $filter): ?>
   <div class="filter-item filter-item-<?php echo $name; ?>">
     <div class="filter-item-label"><?php echo $filter['label']; ?></div>

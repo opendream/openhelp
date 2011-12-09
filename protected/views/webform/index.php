@@ -17,7 +17,7 @@
       <?php foreach ($filters['data'] as $name => $filter): ?>
         <li>
           <input class="<?php echo $type; ?>" type="checkbox" name="<?php echo $name; ?>" value="1" id="<?php echo $name; ?>" />
-          <label for="<?php echo $name; ?>"><?php echo $filter['label'] ?></label>
+          <label for="<?php echo $name; ?>" class="<?php echo $name; ?>"><?php echo $filter['label'] ?></label>
     
           <?php if ($filter['widget'] == 'dropDownList'): ?>
             <?php $options = WidgetManager::getFilterOptions($type, $name, $filter['prefix']); ?>
@@ -75,10 +75,13 @@
   </div>
 </div>
 
-<script type="text/javascript" src="<?php echo bu('js/jquery.tmpl.js'); ?>"></script>
+
+
 
 <?php echo CGoogleApi::init(); ?>
 <script type="text/javascript" src="<?php echo bu('js/markerclusterer.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo bu('js/jquery.tmpl.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo bu('js/jquery.qtip.js'); ?>"></script>
 
 <script type="text/javascript">
 

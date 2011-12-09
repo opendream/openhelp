@@ -94,7 +94,44 @@
  
  .section3 textarea {width: 140px;}
  
+ .section3-table .hide-col {
+   display: none;
+   background-color: #aaa;
+   width: 50px !important;
+ }
+
+  #moo-control-wrap {
+    padding-top: 20px;
+  }
+ #moo-control-wrap span {
+   display: block;
+   float: left;
+   font-size: 15px;
+   padding-top: 2px;
+ }
+ #moo-control-wrap ul {
+   padding: 0px 0 0 20px;
+   overflow: hidden;
+   margin: 0;
+ }
+ #moo-control-wrap li {
+   float: left;
+   padding: 0;
+   margin: 1px;
+   list-style: none;
+   border-top: 1px solid;
+   border-left: 1px solid;
+   border-right: 1px solid;
+ }
  
+ #moo-control-wrap li a{
+   padding: 0px 10px 3px 10px;
+   background-color: #DDD;
+   overflow: hidden;
+ }
+ #moo-control-wrap li a.active {
+   background-color: #FFF;
+ }
 </style>
 
 
@@ -364,6 +401,30 @@
   <fieldset title="การสํารวจเพื่อการฟื้นฟู" class="section3">
   <legend>ส่วนที่ 3 การสํารวจเพื่อการฟื้นฟู</legend>
   <span class="help-block">*** กรุณาเลื่อนแถบเลื่อนด้านล่าง (scrollbar) ของตาราง เพื่อทำการกรอกข้อมูลในแต่ละหมู่ ***</span>
+  <div id="moo-control-wrap">
+    <span>หมู่</span>
+    <ul>
+      <li><a class="moo-control" href=".moo-col-1">1</a></li>
+      <li><a class="moo-control" href=".moo-col-2">2</a></li>
+      <li><a class="moo-control" href=".moo-col-3">3</a></li>
+      <li><a class="moo-control" href=".moo-col-4">4</a></li>
+      <li><a class="moo-control" href=".moo-col-5">5</a></li>
+      <li><a class="moo-control" href=".moo-col-6">6</a></li>
+      <li><a class="moo-control" href=".moo-col-7">7</a></li>
+      <li><a class="moo-control" href=".moo-col-8">8</a></li>
+      <li><a class="moo-control" href=".moo-col-9">9</a></li>
+      <li><a class="moo-control" href=".moo-col-10">10</a></li>
+      <li><a class="moo-control" href=".moo-col-12">12</a></li>
+      <li><a class="moo-control" href=".moo-col-13">13</a></li>
+      <li><a class="moo-control" href=".moo-col-14">14</a></li>
+      <li><a class="moo-control" href=".moo-col-15">15</a></li>
+      <li><a class="moo-control" href=".moo-col-16">16</a></li>
+      <li><a class="moo-control" href=".moo-col-17">17</a></li>
+      <li><a class="moo-control" href=".moo-col-18">18</a></li>
+      <li><a class="moo-control" href=".moo-col-19">19</a></li>
+      <li><a class="moo-control" href=".moo-col-20">20</a></li>
+    </ul>
+  </div>
 	<table class="bordered-top section3-table">
 	  <thead>
 	    <tr>
@@ -396,9 +457,9 @@
 	  <tbody>
 
 		    <tr class="table-lv1">
-		      <td class="h-line bgheadlv1" style="width: 260px;"><div style="width: 260px;"><h3 class="h-line">3.1 ความเสียหายต่อชีวิต</h3></div></td>
-		      <td class="bgheadlv1" style="width: 115px;"><div style="width: 115px;"></div></td>
-		      <td class="bgheadlv1" style="width: 170px;"><div style="width: 170px;"></div></td>
+		      <td class="h-line bgheadlv1" style=""><div style="width: 400px;"><h3 class="h-line">3.1 ความเสียหายต่อชีวิต</h3></div></td>
+		      <td class="bgheadlv1" style=""><div style="width: 180px;"></div></td>
+		      <td class="bgheadlv1" style=""><div style="width: 180px;"></div></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -5782,6 +5843,21 @@
       <script type="text/javascript">
           $.getScript('/js/jquery.fixedheadertable.js', function() {
             $('.table-village-tb').fixedHeaderTable({ footer: false, fixedColumns: 0 , height: '300px'});
-            //$('.section3-table').fixedHeaderTable({ footer: false, fixedColumns: 3 , height: '600px'});
+            
+            var scope = $('.section3-table');
+            //scope.fixedHeaderTable({ footer: false, fixedColumns: 0 , height: '600px'});
+            
+            $('.moo-control').click(function (e) {
+              e.preventDefault();
+              $($('.moo-control.active').attr('href'), scope).addClass('hide-col');
+              var active = $($(this).attr('href'), scope).removeClass('hide-col').eq(0).children('input');
+              var moo = $(this).html();
+              if (!active.val()) {
+                active.val(moo);
+              }
+              $('.moo-control.active').removeClass('active');
+              $(this).addClass('active');
+            })
+            $('.moo-control').eq(0).click();
           });
       </script>
