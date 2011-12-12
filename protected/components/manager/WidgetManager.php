@@ -539,14 +539,20 @@ class WidgetManager
       $filters,
       $locations
     FROM 
-      webform_location, 
-      webform, 
-      location,
+      webform_location
+    LEFT JOIN
+      location
+    ON
+      webform_location.location_id = location.id
+    LEFT JOIN
+      webform
+    ON 
+      webform_location.webform_id = webform.id
+    LEFT JOIN
       user
+    ON
+      webform.user_id = user.id 
     WHERE 
-      webform_location.webform_id = webform.id AND 
-      webform_location.location_id = location.id AND
-      webform.user_id = user.id AND 
       location.lat IS NOT NULL AND location.lng IS NOT NULL ";
       
     if ($type) {
@@ -555,5 +561,14 @@ class WidgetManager
     
     $command = Yii::app()->db->createCommand($qtxt);
     return $command->queryAll();
+  }
+  
+  public static function getAllWebformLocation($type=null) {
+    $types = array_keys(Yii::app()->params['webforms']);
+    $rs = array();
+    foreach ($types as $type) {
+      $rs[$type] = self::getWebformLocation($type);
+    }
+    return $rs;
   }
 }

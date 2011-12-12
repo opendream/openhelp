@@ -126,7 +126,9 @@ if ($children) {
       'onclick' => $onclick
     )
   );
-  $locationOptions['onchange'] = 'js:$("#Location_'.$children.'").val("").change().focus();'.$onclick;
+  $locationOptions['onchange'] = 'js:$("#Location_'.$children.'").val("").change().click().focus();'.$onclick;
+  //$locationOptions['onclick'] = 'js:'.$onclick;
+  
 }
 else {
   # TODO: Update location_id

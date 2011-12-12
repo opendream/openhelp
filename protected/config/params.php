@@ -16,29 +16,7 @@ return array(
 	        'url' => '',
 	      ),
 	    ),
-	    'styles' => array(
-        array(
-          'url'=> ("webform/clusterer?radius=35"),
-          'height'=> 35,
-          'width'=> 35,
-          'textColor'=> '#ffffff',
-          'textSize'=> 11
-        ),
-        array(
-          'url'=> ("webform/clusterer?radius=40"),
-          'height'=> 40,
-          'width'=> 40,
-          'textColor'=> '#ffffff',
-          'textSize'=> 11
-        ),
-        array(
-          'url'=> ("webform/clusterer?radius=50"),
-          'height'=> 50,
-          'width'=> 50,
-          'textColor'=> '#ffffff',
-          'textSize'=> 11
-        ),
-      ),
+	    'color' => '210,100,74',
 	    'filters' => array(
 	      'data' => array(
   	      'filter0' => array(
@@ -76,7 +54,6 @@ return array(
 	      ),
 	      'title' => array(
 	        'filter' => 'เลือกประเด็น:', 
-	        'location' => 'เลือกพื้นที่:',
 	      )
 	    )
 	  ),
@@ -84,6 +61,7 @@ return array(
 	    'name' => 'โครงการฟื้นฟู',
 	    'label' => 'แบบสำรวจโครงการเพื่อช่วยเหลือ / ฟื้นฟูพื้นที่ประสบภัยน้ำท่วม', 
 	    'file' => 'webforms/supply.php',
+	    'color' => '0,100,74',
 	    'filters' => array(
 	      'data' => array(
 	        'filter0' => array(

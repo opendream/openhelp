@@ -30,9 +30,29 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->layout='//layouts/base';
-		$this->pageTitle = '';
-		$this->render('index');
+		require_once('protected/controllers/WebformController.php');
+	  
+		$this->layout='//layouts/layout1';
+	  $this->pageTitle = '';
+	  
+	  $levels = Yii::app()->params['location'];
+	  $levels = array_combine($levels, array_fill(0, count($levels), ''));
+	  
+	  //$type = 'reliefsurvey';
+    $types = array_keys(Yii::app()->params['webforms']);
+    
+    $nameAll = $filtersAll = $stylesAll = array();
+	  foreach ($types as $type) {
+	    $nameAll[$type] = Yii::app()->params['webforms'][$type]['name'];
+  	  $filtersAll[$type] = Yii::app()->params['webforms'][$type]['filters'];
+  	  $colorAll[$type] = Yii::app()->params['webforms'][$type]['color'];
+      $stylesAll[$type] = WebformController::rebuildStyles(Yii::app()->params['webforms'][$type]['color']);
+	  }
+	  
+	  $all = 1;
+    
+	  $this->render('//webform/index', get_defined_vars());
+		
 	}
 
 	/**

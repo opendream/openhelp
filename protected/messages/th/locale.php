@@ -48,6 +48,7 @@ return array(
   'Date' => 'วันที่', 
   'Please, alway save.' => 'กรุณาบันทึกบ่อยๆ',
   'read more' => 'ดูเพิ่มเติม',
+  'Select Location' => 'เลือกพื้นที่: ',
    
   /*
   * Location

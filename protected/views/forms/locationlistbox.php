@@ -26,7 +26,8 @@ else {
         'onclick' => $onclick,
       ),
     ),
-    'onchange'=>'js:$("#Location_'.$children.'").val("").change().focus();'.$onclick,
+    //'onclick' => 'js:'.$onclick,
+    'onchange'=>'js:$("#Location_'.$children.'").val("").change().click().focus();',
   
   );
   

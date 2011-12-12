@@ -83,11 +83,30 @@ class WebformController extends Controller
   }
   
   
-	public function rebuildStyles($styles) {
-	  foreach ($styles as &$style) {
-	   $style['url'] = bu($style['url']);
-	  }
-	  return $styles;
+	public function rebuildStyles($color) {
+	  return array(
+      array(
+        'url'=> bu("webform/clusterer?radius=35&color=$color"),
+        'height'=> 35,
+        'width'=> 35,
+        'textColor'=> '#ffffff',
+        'textSize'=> 11
+      ),
+      array(
+        'url'=> bu("webform/clusterer?radius=40&color=$color"),
+        'height'=> 40,
+        'width'=> 40,
+        'textColor'=> '#ffffff',
+        'textSize'=> 11
+      ),
+      array(
+        'url'=> bu("webform/clusterer?radius=50&color=$color"),
+        'height'=> 50,
+        'width'=> 50,
+        'textColor'=> '#ffffff',
+        'textSize'=> 11
+      ),
+    );
 	}
 
 	/**
@@ -267,12 +286,16 @@ class WebformController extends Controller
 	  $this->layout='//layouts/layout1';
 	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
 	  
-	  $name = Yii::app()->params['webforms'][$type]['name'];
-		
-	  $filters = Yii::app()->params['webforms'][$type]['filters'];
 	  $levels = Yii::app()->params['location'];
 	  $levels = array_combine($levels, array_fill(0, count($levels), ''));
-	  $styles = self::rebuildStyles(Yii::app()->params['webforms'][$type]['styles']);
+	  
+	  $types = array($type);
+	  
+	  $nameAll = array($type => Yii::app()->params['webforms'][$type]['name']);
+	  $filtersAll = array($type => Yii::app()->params['webforms'][$type]['filters']);
+	  $colorAll = array($type => Yii::app()->params['webforms'][$type]['color']);
+	  $stylesAll = array($type => self::rebuildStyles(Yii::app()->params['webforms'][$type]['color']));
+	  
 	  $this->render('//webform/index', get_defined_vars());
 	}
 	
@@ -291,7 +314,7 @@ class WebformController extends Controller
 	  
 	  $filters = Yii::app()->params['webforms'][$type]['filters']['data'];
 	  $sections = empty(Yii::app()->params['webforms'][$type]['sections'])? Yii::app()->params['webforms'][$type]['sections']: 0;
-	  $styles = self::rebuildStyles(Yii::app()->params['webforms'][$type]['styles']);
+	  $styles = self::rebuildStyles(Yii::app()->params['webforms'][$type]['color']);
 	  
     $this->render('detail', get_defined_vars());
     
