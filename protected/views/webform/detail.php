@@ -39,7 +39,7 @@
 </div>
 
 <div id="map">
-  <div id="map-canvas" style="width:540px; height: 245px;"></div>
+  <div id="map-canvas" style="width:598px; height: 245px;"></div>
 </div>
 
 <?php echo CGoogleApi::init(); ?>
@@ -88,12 +88,14 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
 </script>
 
 <?php if (!empty(Yii::app()->params['webforms'][$type]['sections'])): ?>
-<ul class="display-manager">
-  <li><a href="#filter-detail"><?php echo t('Detail'); ?></a></li>
-  <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
-  <li><a href="#<?php echo $name; ?>-detail"><?php echo $section['title']; ?></a></li>
-  <?php endforeach ?>
-</ul>
+<div class="display-manager-wrapper">
+  <ul class="display-manager">
+    <li><a href="#filter-detail"><?php echo t('Detail'); ?></a></li>
+    <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
+    <li><a href="#<?php echo $name; ?>-detail"><?php echo $section['title']; ?></a></li>
+    <?php endforeach ?>
+  </ul>
+</div>
 <?php endif ?>
 
 <div id="tab-content">
