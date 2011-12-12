@@ -87,35 +87,36 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
 
 </script>
 
-<?php if (!empty(Yii::app()->params['webforms'][$type]['sections'])): ?>
-<div class="display-manager-wrapper">
+<div class="render-wrapper">
+  <?php if (!empty(Yii::app()->params['webforms'][$type]['sections'])): ?>
   <ul class="display-manager">
     <li><a href="#filter-detail"><?php echo t('Detail'); ?></a></li>
     <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
     <li><a href="#<?php echo $name; ?>-detail"><?php echo $section['title']; ?></a></li>
     <?php endforeach ?>
   </ul>
-</div>
-<?php endif ?>
+  <?php endif ?>
 
-<div id="tab-content">
-  <div id="filter-detail">
-    <?php foreach ($filters as $name => $filter): ?>
-    <div class="filter-item filter-item-<?php echo $name; ?>">
-      <div class="filter-item-label"><?php echo $filter['label']; ?></div>
-      <div class="filter-item-description"><?php //echo $filter['description']; ?></div>
-      <div class="filter-item-prefix"><?php echo $filter['prefix']; ?></div>
-      <div class="filter-item-value"><?php echo $model->$name; ?></div>
+  <div id="tab-content">
+    <div id="filter-detail">
+      <?php foreach ($filters as $name => $filter): ?>
+      <div class="filter-item filter-item-<?php echo $name; ?>">
+        <div class="filter-item-label"><?php echo $filter['label']; ?></div>
+        <div class="filter-item-description"><?php //echo $filter['description']; ?></div>
+        <div class="filter-item-prefix"><?php echo $filter['prefix']; ?></div>
+        <div class="filter-item-value"><?php echo $model->$name; ?></div>
+      </div>
+      <?php endforeach ?>
+      <div class="full-description"><a href="<?php echo bu('webform/'.$model->id); ?>"><?php echo t('View full descritpion'); ?></a></div>
+    </div>
+
+    <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
+    <div id="<?php echo $name; ?>-detail">
+  
     </div>
     <?php endforeach ?>
-    <div class="full-description"><a href="<?php echo bu('webform/'.$model->id); ?>"><?php echo t('View full descritpion'); ?></a></div>
   </div>
 
-  <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
-  <div id="<?php echo $name; ?>-detail">
-  
-  </div>
-  <?php endforeach ?>
 </div>
 
 <script type="text/javascript" charset="utf-8">
