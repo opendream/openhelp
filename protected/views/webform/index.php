@@ -137,6 +137,14 @@
     $.each(locations, function (i, location) {
       var latLng = new google.maps.LatLng(location['lat'], location['lng']);
       var marker = new google.maps.Marker({'position': latLng, 'data': location});
+      
+      google.maps.event.addListener(marker, 'click', function() {
+        var info_window = new google.maps.InfoWindow;
+        var item_contents = $.tmpl('templateItem', marker['data']).html();
+        info_window.setContent(item_contents);
+        info_window.open(map, marker);
+      });
+      
       currMarkers.push(marker);
       bounds.extend(latLng);
     

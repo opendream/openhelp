@@ -1,5 +1,46 @@
+<div class="general">
+  <div class="meta-wrapper">
+    <ul class="meta">
+    <li>
+      <span class="extra-double-label">
+        <?php echo t('ID'); ?>
+      </span>
+      <span class="extra-double-input">
+          <?php echo $model->id; ?>
+      </span>
+    </li>
+    <li>
+      <span class="extra-double-label">
+        <?php echo t('Date'); ?>
+      </span>
+      <span class="extra-double-input">
+        <?php echo date('d/m/Y', strtotime($model->date_created)); ?>
+      </span>
+    </li>
+    <li>
+      <span class="extra-double-label">
+        <?php echo t('Author'); ?>
+      </span>
+      <span class="extra-double-input">
+        <?php echo $model->user->username; ?>
+      </span>
+    </li>
+    </ul>
+  </div>
+  
+	<div class="location-list">
+	  <?php foreach ($model->locations as $location): ?>
+    <div class="location-item">
+      <?php echo LocationHtml::locationView($location->id); ?>
+    </div>
+	  <?php endforeach ?>
+  </div>
+  
+</div>
 
-<div id="map-canvas" style="width:100%; height: 200px"></div>
+<div id="map">
+  <div id="map-canvas" style="width:540px; height: 245px;"></div>
+</div>
 
 <?php echo CGoogleApi::init(); ?>
 <script type="text/javascript" src="<?php echo bu('js/markerclusterer.js'); ?>"></script>
@@ -47,7 +88,7 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
 </script>
 
 <?php if (!empty(Yii::app()->params['webforms'][$type]['sections'])): ?>
-<ul class="section">
+<ul class="display-manager">
   <li><a href="#filter-detail"><?php echo t('Detail'); ?></a></li>
   <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
   <li><a href="#<?php echo $name; ?>-detail"><?php echo $section['title']; ?></a></li>
@@ -55,58 +96,34 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
 </ul>
 <?php endif ?>
 
-<div id="filter-detail">
-  
-  <div class="general">
-      <table>
-        <tbody>
-        <tr>
-          <td class="extra-double-label">
-            <?php echo t('ID'); ?>
-          </td>
-          <td class="extra-double-input">
-              <?php echo $model->id; ?>
-          </td>
-        </tr>
-        <tr>
-          <td class="extra-double-label">
-            <?php echo t('Date'); ?>
-          </td>
-          <td class="extra-double-input">
-            <?php echo date('d/m/Y', strtotime($model->date_created)); ?>
-          </td>
-        </tr>
-        <tr>
-          <td class="extra-double-label">
-            <?php echo t('Author'); ?>
-          </td>
-          <td class="extra-double-input">
-            <?php echo $model->user->username; ?>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-  	<div class="db-item2-list">
-  	  <?php foreach ($model->locations as $location): ?>
-	    <div class="db-item2">
-	      <?php echo LocationHtml::locationView($location->id); ?>
-      </div>
-  	  <?php endforeach ?>
+<div id="tab-content">
+  <div id="filter-detail">
+    <?php foreach ($filters as $name => $filter): ?>
+    <div class="filter-item filter-item-<?php echo $name; ?>">
+      <div class="filter-item-label"><?php echo $filter['label']; ?></div>
+      <div class="filter-item-description"><?php //echo $filter['description']; ?></div>
+      <div class="filter-item-prefix"><?php echo $filter['prefix']; ?></div>
+      <div class="filter-item-value"><?php echo $model->$name; ?></div>
     </div>
+    <?php endforeach ?>
+    <div class="full-description"><a href="<?php echo bu('webform/'.$model->id); ?>"><?php echo t('View full descritpion'); ?></a></div>
   </div>
+
+  <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
+  <div id="<?php echo $name; ?>-detail">
   
-  <?php foreach ($filters as $name => $filter): ?>
-  <div class="filter-item filter-item-<?php echo $name; ?>">
-    <div class="filter-item-label"><?php echo $filter['label']; ?></div>
-    <div class="filter-item-description"><?php //echo $filter['description']; ?></div>
-    <div class="filter-item-prefix"><?php echo $filter['prefix']; ?></div>
-    <div class="filter-item-value"><?php echo $model->$name; ?></div>
   </div>
   <?php endforeach ?>
 </div>
 
-<?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
-<div id="<?php echo $name; ?>-detail">
-  
-</div>
-<?php endforeach ?>
+<script type="text/javascript" charset="utf-8">
+  // Tab
+  $('.display-manager a').click(function (e) {
+    e.preventDefault();
+    $('#tab-content > *').hide();
+    $($(this).attr('href')).show();
+    $('.display-manager a').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('.display-manager a').eq(0).click();
+</script>
