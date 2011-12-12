@@ -132,7 +132,7 @@ select {
 /**********************
 		Webform Filters
 **********************/
-#control-box, .display-manager, #webform-detail .general, #webform-detail #map {
+#control-box, .display-manager{
 	width: 268px;
 	padding: 15px;
 	border: 1px solid #b2b2b2;
@@ -184,7 +184,7 @@ select {
 /**********************
 		Content Manager
 **********************/	
-.display-manager, #webform-detail .general, #webform-detail #map {
+.display-manager{
 	border: 1px solid #b5b5b5;
 	margin-bottom: 15px;
 	background: url('../images/bg-white.png') ;
@@ -529,131 +529,4 @@ nav {
 
 
 
-/*****************************
-				Web form detail
-*****************************/
-#webform-detail .general {
-  float: left;
-  margin-top: 20px;
-  margin-right: 20px;
-  padding: 10px;
-  width: 278px;
-  height: 245px;
-}
-  #webform-detail .general .meta-wrapper,
-  #webform-detail .general .location-list {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  #webform-detail .general .meta-wrapper {
-    /* display: block;
-    overflow: hidden; */
-    display: inline-block;
-    background: #e4e4e4;
-  }
-    #webform-detail .general .meta { /* ul */
-      overflow: hidden;
-    }
-      #webform-detail .general .meta-wrapper li,
-      #webform-detail .general .location-item li {
-        margin: 0.5em 0;
-        line-height: 1.5;
-      }
-      #webform-detail .general .meta-wrapper li {
-        display: block;
-        float: left;
-        width: 128px;
-      }
-  #webform-detail .general .location-list {
-    margin-top: 10px;
-    overflow: hidden;
-    border: 1px solid #cfcfcf;
-  }
-    #webform-detail .general .location-item {
-      overflow: hidden;
-      padding-left: 30px;
-      background: url("../images/pin-tambon.png") no-repeat 0 0;
-    }
-    #webform-detail .general .location-item label {
-      padding-right: 0.5em;
-    }
 
-#webform-detail #map {
-  float: left;
-  position: static;
-	-webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: content-box;    /* Firefox, other Gecko */
-  box-sizing: content-box;         /* Opera/IE 8+ */
-  margin: 20px 0 15px;
-  border: 1px solid #B5B5B5;
-  padding: 10px;
-  width: 598px !important;
-}
-
-#webform-detail .render-wrapper {
-  clear: both;
-  overflow: hidden;
-  margin-bottom: 40px;
-  border: 1px solid #b5b5b5;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  padding: 40px 20px;
-  background: url("../images/bg-white.png");
-}
-  #webform-detail .display-manager { /* ul */
-    /* overflow: hidden; */
-    margin-bottom: 0;
-    border: none;
-    border-bottom: 1px solid #b5b5b5;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    padding: 0 25px 9px;
-    width: auto;
-    background: transparent;
-  }
-    #webform-detail .display-manager li {
-    }
-    #webform-detail .display-manager li:first-child {
-      border-right: none;
-      padding-right: 0;
-    }
-      #webform-detail .display-manager li a {
-        /* float: left; */
-        padding: 11px 16px;
-        color: #afafaf;
-        text-decoration: none;
-      }
-      #webform-detail .display-manager li a:hover,
-      #webform-detail .display-manager li a:active {
-        text-decoration: underline;
-      }
-      #webform-detail .display-manager li a.active {
-        border: 1px solid #b5b5b5;
-        border-bottom: none;
-        padding: 10px 15px;
-        /* background: url("../images/bg-white.png"); */
-        background: #fbfbfb;
-        color: #444;
-      }
-  
-  #webform-detail #tab-content {
-    clear: both;
-    padding: 20px 0 0;
-    border: none;
-    background: transparent;
-  }
-
-.filter-item, .full-description {
-  margin: 0.5em 0;
-  line-height: 1.5em;
-}
-  .filter-item .filter-item-label,
-  .filter-item .filter-item-description,
-  .filter-item .filter-item-prefix,
-  .filter-item .filter-item-value {
-    display: inline;
-  }
