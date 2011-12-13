@@ -1,0 +1,12 @@
+.section3-table tr{
+	height: 30px !important;
+}
+
+.table-lv1, .table-lv2{
+	height: 60px !important;
+}
+
+input.primary{
+	height: 31px;
+	float: left;
+}
