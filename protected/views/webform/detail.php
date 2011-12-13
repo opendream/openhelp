@@ -112,11 +112,11 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       
       
       <?php 
-      /*
+      
       $data = safe_unserialize($model->data);
       $data = $data? ($data + array_fill(0, 4000, '')): array_fill(0, 4000, '');
       $form = $this->getWebForm($type, $model, $data);
-
+      
       $qp = qp($form);
       $group = $qp->find('.section1');
       foreach ($group as $key => $value) {
@@ -135,7 +135,7 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       //$html = $qp->find('.section2')->eq(0)->html();
       //echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
       
-      */
+      
       
       ?>
       
