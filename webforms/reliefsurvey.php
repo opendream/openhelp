@@ -141,6 +141,97 @@
  #moo-control-wrap li a.active {
    background-color: #FFF;
  }
+ 
+ 
+ /* Some Style from bootstrap */
+/* http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css */
+
+input, textarea, select, .uneditable-input {
+	display: inline-block;
+/* 	width: 210px; */
+	height: 18px;
+	padding: 4px;
+	font-size: 13px;
+	line-height: 18px;
+	color: gray;
+	border: 1px solid #CCC;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.span1{width:40px;}
+.span2{width:100px;}
+.span3{width:160px;}
+.span4{width:220px;}
+.span5{width:280px;}
+.span6{width:340px;}
+.span7{width:400px;}
+.span8{width:460px;}
+.span9{width:520px;}
+.span10{width:580px;}
+.span11{width:640px;}
+.span12{width:700px;}
+.span13{width:760px;}
+.span14{width:820px;}
+.span15{width:880px;}
+.span16{width:940px;}
+.span17{width:1000px;}
+.span18{width:1060px;}
+.span19{width:1120px;}
+
+.bordered-table {
+	border: 1px solid #DDD;
+	border-collapse: separate;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+table th, table td {
+	padding: 10px 10px 9px;
+	line-height: 18px;
+	text-align: left;
+}
+table {
+	width: 100%;
+	margin-bottom: 18px;
+	padding: 0;
+	font-size: 13px;
+	border-collapse: collapse;
+}
+form .clearfix{margin-bottom:18px;zoom:1;}
+
+label {
+	padding-top: 6px;
+	font-size: 13px;
+	line-height: 18px;
+	float: left;
+	width: 130px;
+	text-align: right;
+	color: #404040;
+}
+/*
+fieldset {
+	margin-bottom: 18px;
+	padding-top: 18px;
+}
+*/
+fieldset legend {
+	font-size: 22px;
+/* 	font-weight: bold; */
+	margin-bottom: 20px;
+	float: left;
+	width: 100%;
+	color: #404040;
+}
+h1,h2,h3,h4,h5,h6{font-weight:bold;color:#404040;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{color:#bfbfbf;}
+h1{margin-bottom:18px;font-size:30px;line-height:36px;}h1 small{font-size:18px;}
+h2{font-size:24px;line-height:36px;}h2 small{font-size:14px;}
+h3,h4,h5,h6{line-height:36px;}
+h3{font-size:18px;}h3 small{font-size:14px;}
+h4{font-size:16px;}h4 small{font-size:12px;}
+h5{font-size:14px;}
+h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
+ 
 </style>
 
 
@@ -169,7 +260,7 @@
   
   
 <!-- ข้อมูลทั่วไปของผู้ให้ข้อมูล -->
-  <fieldset title="" class="data-general">
+  <fieldset title="ข้อมูลทั่วไปของผู้ให้ข้อมูล" class="data-general">
       <legend>ข้อมูลทั่วไปของผู้ให้ข้อมูล</legend>
       <div class="clearfix">
 		  <label>ชื่อ - นามสกุลผู้ให้ข้อมูล <span>(นาย/นาง/นางสาว)</span></label>
@@ -203,7 +294,7 @@
   
   
 <!-- ส่วนที่ 1 ข้อมูลทั่วไปของตําบล -->
-  <fieldset title="" class="section1">
+  <fieldset title="ข้อมูลทั่วไปของตําบล" class="section1">
       <legend>ส่วนที่ 1 ข้อมูลทั่วไปของตําบล</legend>
       <div class="clearfix">
 			  <label class="no-floa">1.1 จํานวนครัวเรือน</label>
@@ -244,7 +335,7 @@
   
   
 <!-- ส่วนที่ 2 ข้อมูลผู้ประสานงานในพื้นที่ -->
-  <fieldset title="" class="section2">
+  <fieldset title="ข้อมูลผู้ประสานงานในพื้นที่" class="section2">
       <legend>ส่วนที่ 2 ข้อมูลผู้ประสานงานในพื้นที่</legend>
       <h3>ระดับตําบล/เทศบาล</h3>
 			<table class="bordered-table">
@@ -407,7 +498,7 @@
   
   
 <!-- ส่วนที่ 3 การสํารวจเพื่อการฟื้นฟู -->
-  <fieldset title="" class="section3">
+  <fieldset title="การสํารวจเพื่อการฟื้นฟู" class="section3">
   <legend>ส่วนที่ 3 การสํารวจเพื่อการฟื้นฟู</legend>
   <span class="help-block">*** กรุณาเลื่อนแถบเลื่อนด้านล่าง (scrollbar) ของตาราง เพื่อทำการกรอกข้อมูลในแต่ละหมู่ ***</span>
   <div id="moo-control-wrap">
@@ -466,7 +557,7 @@
 	  <tbody>
 
 		    <tr class="table-lv1">
-		      <td class="h-line bgheadlv1" colspan="3" style=""><h3 class="h-line">3.1 ความเสียหายต่อชีวิต</h3></td>
+		      <td class="h-line bgheadlv1" colspan="3" style=""><h3 class="h-line">3.1 ความเสียหายต่อชีวิต3.1 ความเสียหายต่อชีวิต3.1 ความเสียหายต่อชีวิต </h3></td>
 		      <td class = "hide-col moo-col-1"></td>
 		      <td class = "hide-col moo-col-2"></td>
 		      <td class = "hide-col moo-col-3"></td>
@@ -806,6 +897,7 @@
 
 		    </tr>
 
+		    </tr>
 		    <tr class="table-lv2">
 		      <td class="h-line bgheadlv2" colspan="3"><h4 class="h-line">3.1.4 ประชาชนไร้ที่อยู่อาศัย</h4></td>
 		      <td class = "hide-col moo-col-1"></td>
@@ -4597,7 +4689,7 @@
 
 		    </tr>
 		    <tr>
-		      <td class="al-left">- การฟื้นฟูธุรกิจ อุตสาหกรรม</td>
+		      <td class="al-left">- การฟื้นฟูธุรกิจ อุตสาหกรรม</tdh>
 		      <td><input class="span3"  name="Data[1022]" type="text" value="<?php echo $Data[1022]; ?>"></td>
 		      <td><input class="span4"  name="Data[1023]" type="text" value="<?php echo $Data[1023]; ?>"></td>
 		      <td class="hide-col moo-col-1"><input type="checkbox" name="Data[1017]" value="การฟื้นฟูธุรกิจ อุตสาหกรรม" <?php if ($Data[1017] == 'value'): ?> checked="checked" <?php endif; ?>></td>
@@ -4674,8 +4766,6 @@
 		      <td class="hide-col moo-col-20"><input type="checkbox" name="Data[3164]" value="การฟื้นฟูด้านกลุ่มอาชีพ" <?php if ($Data[3164] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>
-		    
-		    <tr>
 		      <td class="al-left">- การซ่อมแซมเครื่องจักร อุปกรณ์ประกอบอาชีพ</td>
 		      <td><input class="span3"  name="Data[1043]" type="text" value="<?php echo $Data[1043]; ?>"></td>
 		      <td><input class="span4"  name="Data[1044]" type="text" value="<?php echo $Data[1044]; ?>"></td>
@@ -4701,8 +4791,6 @@
 		      <td class="hide-col moo-col-20"><input type="checkbox" name="Data[3179]" value="การซ่อมแซมเครื่องจักร อุปกรณ์ประกอบอาชีพ" <?php if ($Data[3179] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>
-		    
-		    <tr>
 		      <td class="al-left">- การซ่อมแซมระบบสื่อสารโทรคมนาคม</td>
 		      <td><input class="span3"  name="Data[1050]" type="text" value="<?php echo $Data[1050]; ?>"></td>
 		      <td><input class="span4"  name="Data[1051]" type="text" value="<?php echo $Data[1051]; ?>"></td>
@@ -4911,52 +4999,42 @@
 		      <td class="al-left">- จัดทำแผนรับมือภัยพิบัติ</td>
 		      <td><input class="span3"  name="Data[1092]" type="text" value="<?php echo $Data[1092]; ?>"></td>
 		      <td><input class="span4"  name="Data[1093]" type="text" value="<?php echo $Data[1093]; ?>"></td>
-		      <td class = "hide-col moo-col-1"><input type="checkbox" name="Data[1087]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1087] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-2"><input type="checkbox" name="Data[1088]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1088] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-3"><input type="checkbox" name="Data[1089]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1089] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-4"><input type="checkbox" name="Data[1090]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1090] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-5"><input type="checkbox" name="Data[1091]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1091] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-6"><input type="checkbox" name="Data[3195]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3195] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-7"><input type="checkbox" name="Data[3196]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3196] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-8"><input type="checkbox" name="Data[3197]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3197] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-9"><input type="checkbox" name="Data[3198]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3198] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-10"><input type="checkbox" name="Data[3199]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3199] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-11"><input type="checkbox" name="Data[3200]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3200] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-12"><input type="checkbox" name="Data[3201]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3201] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-13"><input type="checkbox" name="Data[3202]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3202] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-14"><input type="checkbox" name="Data[3203]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3203] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-15"><input type="checkbox" name="Data[3204]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3204] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-16"><input type="checkbox" name="Data[3205]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3205] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-17"><input type="checkbox" name="Data[3206]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3206] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-18"><input type="checkbox" name="Data[3207]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3207] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-19"><input type="checkbox" name="Data[3208]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3208] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-20"><input type="checkbox" name="Data[3209]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3209] == 'จัดทำแผนรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-1"><input type="checkbox" name="Data[1087]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1087] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-2"><input type="checkbox" name="Data[1088]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1088] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-3"><input type="checkbox" name="Data[1089]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1089] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-4"><input type="checkbox" name="Data[1090]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1090] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-5"><input type="checkbox" name="Data[1091]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[1091] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-6"><input type="checkbox" name="Data[3195]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3195] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-7"><input type="checkbox" name="Data[3196]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3196] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-8"><input type="checkbox" name="Data[3197]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3197] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-9"><input type="checkbox" name="Data[3198]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3198] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-10"><input type="checkbox" name="Data[3199]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3199] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-11"><input type="checkbox" name="Data[3200]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3200] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-12"><input type="checkbox" name="Data[3201]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3201] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-13"><input type="checkbox" name="Data[3202]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3202] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-14"><input type="checkbox" name="Data[3203]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3203] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-15"><input type="checkbox" name="Data[3204]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3204] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-16"><input type="checkbox" name="Data[3205]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3205] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-17"><input type="checkbox" name="Data[3206]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3206] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-18"><input type="checkbox" name="Data[3207]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3207] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-19"><input type="checkbox" name="Data[3208]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3208] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-20"><input type="checkbox" name="Data[3209]" value="จัดทำแผนรับมือภัยพิบัติ" <?php if ($Data[3209] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>
 		    <tr>
 		      <td class="al-left">- ฝึกซ้อมการรับมือภัยพิบัติ</td>
 		      <td><input class="span3"  name="Data[1099]" type="text" value="<?php echo $Data[1099]; ?>"></td>
 		      <td><input class="span4"  name="Data[1100]" type="text" value="<?php echo $Data[1100]; ?>"></td>
-		      <td class = "hide-col moo-col-1"><input type="checkbox" name="Data[1094]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1094] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-2"><input type="checkbox" name="Data[1095]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1095] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-3"><input type="checkbox" name="Data[1096]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1096] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-4"><input type="checkbox" name="Data[1097]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1097] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-5"><input type="checkbox" name="Data[1098]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1098] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-6"><input type="checkbox" name="Data[3210]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3210] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-7"><input type="checkbox" name="Data[3211]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3211] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-8"><input type="checkbox" name="Data[3212]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3212] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-9"><input type="checkbox" name="Data[3213]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3213] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		      <td class = "hide-col moo-col-10"><input type="checkbox" name="Data[3214]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3214] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-		        <td class = "hide-col moo-col-11"><input type="checkbox" name="Data[1094]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3125] == 'value'): ?> checked="checked" <?php endif; ?>></td>
-  		      <td class = "hide-col moo-col-12"><input type="checkbox" name="Data[1095]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3126] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-  		      <td class = "hide-col moo-col-13"><input type="checkbox" name="Data[1096]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3127] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-  		      <td class = "hide-col moo-col-14"><input type="checkbox" name="Data[1097]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3128] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-  		      <td class = "hide-col moo-col-15"><input type="checkbox" name="Data[1098]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3129] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-  		      <td class = "hide-col moo-col-16"><input type="checkbox" name="Data[3210]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3130] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-  		      <td class = "hide-col moo-col-17"><input type="checkbox" name="Data[3211]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3131] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-  		      <td class = "hide-col moo-col-18"><input type="checkbox" name="Data[3212]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3132] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-  		      <td class = "hide-col moo-col-19"><input type="checkbox" name="Data[3213]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3133] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
-  		      <td class = "hide-col moo-col-20"><input type="checkbox" name="Data[3214]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3134] == 'ฝึกซ้อมการรับมือภัยพิบัติ'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-1"><input type="checkbox" name="Data[1094]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1094] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-2"><input type="checkbox" name="Data[1095]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1095] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-3"><input type="checkbox" name="Data[1096]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1096] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-4"><input type="checkbox" name="Data[1097]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1097] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-5"><input type="checkbox" name="Data[1098]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[1098] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-6"><input type="checkbox" name="Data[3210]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3210] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-7"><input type="checkbox" name="Data[3211]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3211] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-8"><input type="checkbox" name="Data[3212]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3212] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-9"><input type="checkbox" name="Data[3213]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3213] == 'value'): ?> checked="checked" <?php endif; ?>></td>
+		      <td class = "hide-col moo-col-10"><input type="checkbox" name="Data[3214]" value="ฝึกซ้อมการรับมือภัยพิบัติ" <?php if ($Data[3214] == 'value'): ?> checked="checked" <?php endif; ?>></td>
 
 		    </tr>	    
 		    <tr>
@@ -5020,7 +5098,7 @@
   
   
   <!-- ส่วนที่ 4 การสำรวจศักยภาพและความต้องการของตำบล -->
-      <fieldset title="" class="info-faculty">
+      <fieldset title="การสำรวจศักยภาพและความต้องการของตำบล" class="info-faculty">
         <legend>ส่วนที่ 4 การสำรวจศักยภาพและความต้องการของตำบล</legend>
         <div class="clearfix">
         <h3>4.1 ด้านเครื่องมือ/อุปกรณ์</h3>
@@ -5504,7 +5582,7 @@
             <td></td>
           </tr>
           <tr>
-            <th class="indent">1.1 ความจุของศูนย์จำนวน  น้อยกว่า 50 คน</th>
+            <th class="indent">1.1 ความจุของศูนย์จำนวน  < 50 คน</th>
             <td><input class="span2" name="Data[440]" type="text" value="<?php echo $Data[440]; ?>"></td>
             <td><input class="span2" name="Data[441]" type="text" value="<?php echo $Data[441]; ?>"></td>
             <td><input class="span2" name="Data[442]" type="text" value="<?php echo $Data[442]; ?>"></td>
@@ -5525,7 +5603,7 @@
             <td><input class="span2" name="Data[451]" type="text" value="<?php echo $Data[451]; ?>"></td>
           </tr> 
           <tr>
-            <th class="indent">1.4 ความจุของศูนย์จำนวน  มากกว่า 200 คน</th>
+            <th class="indent">1.4 ความจุของศูนย์จำนวน  > 200 คน</th>
             <td><input class="span2" name="Data[452]" type="text" value="<?php echo $Data[452]; ?>"></td>
             <td><input class="span2" name="Data[453]" type="text" value="<?php echo $Data[453]; ?>"></td>
             <td><input class="span2" name="Data[454]" type="text" value="<?php echo $Data[454]; ?>"></td>
@@ -5785,7 +5863,7 @@
           </tr>  
         </tbody>
       </table>      
-      </div></fieldset> <!-- /end ส่วนที่ 3 ศักยภาพและความต้องการของพื้นที่ -->
+      </fidldset> <!-- /end ส่วนที่ 3 ศักยภาพและความต้องการของพื้นที่ -->
   
   
       <script type="text/javascript">
