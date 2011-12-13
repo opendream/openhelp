@@ -28,11 +28,11 @@
           <span class="color-text"><?php echo $filters['title']['filter'] ?></span>
           <?php if (isset($all) && $all): ?>
           <span class="toggle-label">
-            <a href="#webform-filters-list-<?php echo $type; ?>" class="toggle-label-link show">hide</a>
+            <a href="#webform-filters-list-<?php echo $type; ?>" class="toggle-label-link show">toggle</a>
           </span>
           <?php endif ?>
         </span>
-        <ul id="webform-filters-list-<?php echo $type; ?>">
+        <ul class="webform-filters-list" id="webform-filters-list-<?php echo $type; ?>">
         <?php foreach ($filters['data'] as $name => $filter): ?>
           <li>
             <input class="<?php echo $type; ?>" type="checkbox" name="<?php echo $name; ?>" value="1" id="<?php echo $name; ?>" />
@@ -69,26 +69,18 @@
       <span class="title">
         <span class="color-label" style="background-color: rgb(150, 150, 150);"></span>
         <span class="text-label"><?php echo t('Select Location') ?></span>
+        <?php if (isset($all) && $all): ?>
+        <span class="toggle-label">
+          <a href=".location-filters-input" class="toggle-label-link show">toggle</a>
+        </span>
+        <?php endif ?>
       </span>
       <div class="location-filters-input">
-        <?php
-        /*
-          $onclick = '
-            var level = $(this).attr("id").replace("Location_", "");
-            var value = $(this).val();';
-            
-          foreach ($types as $type) {
-            $onclick .= 'filter["'.$type.'"].addLocation(level, value); filter["'.$type.'"].run();';
-          }
-          */
-        
-        ?>
         <?php $this->widget('ext.location.LocationWidget', array(
           'model' => new Location, 
           'attribute' => 'id', 
           'join' => 'webform', 
           'multiple' => 1,
-          //'onclick' => $onclick
         )); ?>
       </div>
     </div>
@@ -135,6 +127,21 @@
     $(this).addClass('active');
   });
   $('.display-manager a').eq(0).click();
+  
+  // Toggle filter
+  $('.toggle-label-link').click(function (e) {
+    e.preventDefault();
+    var status = $(this).hasClass('show');
+    var target = $(this).attr('href');
+    if (status) {
+      $(target).slideUp();
+      $(this).removeClass('show').addClass('hide');
+    }
+    else {
+      $(target).slideDown();
+      $(this).removeClass('hide').addClass('show');
+    }
+  });
   
   
   
@@ -272,6 +279,7 @@
       
       var filters = {};
       var locations = {};
+      var disabled = false;
     
       self = this;
             
@@ -290,36 +298,45 @@
           locations[level] = value;
         }
       }
+      self.enable = function () {
+        disabled = false;
+      }
+      self.disable = function () {
+        disabled = true;
+      }
 
       self.run = function () {
         currMarkers[type] = [];
-        if ($.isEmptyObject(filters)) {
-          currMarkers[type] = allMarkers[type];
-        }
-        else {
-          $.each(filters, function (name, value) {
-            if (markers[type][name][value]) {
-              currMarkers[type] = $.merge(currMarkers[type], markers[type][name][value]);
+        if (!disabled) {
+        
+          if ($.isEmptyObject(filters)) {
+            currMarkers[type] = allMarkers[type];
+          }
+          else {
+            $.each(filters, function (name, value) {
+              if (markers[type][name][value]) {
+                currMarkers[type] = $.merge(currMarkers[type], markers[type][name][value]);
+              }
+            })
+          }
+      
+          currMarkers[type] = $.unique(currMarkers[type]);
+                
+          // Location Filter
+          var finalMarkers = [];
+          $.each(currMarkers[type], function(i, marker) {
+            var data = marker['data'];
+            var pass = true;
+            $.each(locations, function(level, value) {
+              pass = pass && (data[level] == value);
+            })
+            if (pass) {
+              finalMarkers.push(marker);
             }
           })
-        }
-      
-        currMarkers[type] = $.unique(currMarkers[type]);
-                
-        // Location Filter
-        var finalMarkers = [];
-        $.each(currMarkers[type], function(i, marker) {
-          var data = marker['data'];
-          var pass = true;
-          $.each(locations, function(level, value) {
-            pass = pass && (data[level] == value);
-          })
-          if (pass) {
-            finalMarkers.push(marker);
-          }
-        })
-        currMarkers[type] = finalMarkers;
+          currMarkers[type] = finalMarkers;
         
+        }
         markerCluster[type].clearMarkers();
         markerCluster[type].addMarkers(currMarkers[type]);
       
@@ -335,7 +352,7 @@
       filter[type] = new Filter(type);      
     });
     
-    var scope = $('#webform-filters');
+    var scope = $('#webform-filters .webform-filters-list');
   
     // Text filter
     $('input[type=checkbox]', scope).change(function () {
@@ -383,6 +400,18 @@
         levels[level] = value;
       }
     })
+    
+    
+    $('.filter-all').change(function () {
+      var type = $(this).attr('name');
+      if($(this).attr('checked')) {
+        filter[type].enable();
+      }
+      else {
+        filter[type].disable();
+      }
+      filter[type].run();
+    });
     
       
 
