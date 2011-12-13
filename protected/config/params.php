@@ -24,24 +24,28 @@ return array(
   	        'description' => 'ความเสียหายต่อชีวิตและความปลอดภัย',
   	        'widget' => 'dropDownList',
   	        'prefix' => 'ระดับ ',
+  	        'options' => array(1 => 'ระดับ 1', 2 => 'ระดับ 2', 3 => 'ระดับ 3', 4 => 'ระดับ 4', 5 => 'ระดับ 5'),
   	      ),
   	      'filter1' => array(
   	        'label' => 'สุขภาพ',
   	        'description' => 'การสาธารณสุข',
   	        'widget' => 'dropDownList',
   	        'prefix' => 'ระดับ ',
+  	        'options' => array(1 => 'ระดับ 1', 2 => 'ระดับ 2', 3 => 'ระดับ 3', 4 => 'ระดับ 4', 5 => 'ระดับ 5'),
   	      ),
   	      'filter2' => array(
   	        'label' => 'สภาพแวดล้อม',
   	        'description' => 'ที่อยู่อาศัย, สิ่งสาธารณประโยชน์, การศึกษา, สิ่งแวดล้อม, แหล่งน้ำ',
   	        'widget' => 'dropDownList',
   	        'prefix' => 'ระดับ ',
+  	        'options' => array(1 => 'ระดับ 1', 2 => 'ระดับ 2', 3 => 'ระดับ 3', 4 => 'ระดับ 4', 5 => 'ระดับ 5'),
   	      ),
   	      'filter3' => array(
   	        'label' => 'เศรษฐกิจ',
   	        'description' => 'การฟื้นฟูอาชีพ, การเกษตรและอาหาร, การสื่อสารโทรคมนาคม',
   	        'widget' => 'dropDownList',
   	        'prefix' => 'ระดับ ',
+  	        'options' => array(1 => 'ระดับ 1', 2 => 'ระดับ 2', 3 => 'ระดับ 3', 4 => 'ระดับ 4', 5 => 'ระดับ 5'),
   	      ),
   	      /*
   	      'filter4' => array(
@@ -61,6 +65,7 @@ return array(
 	    'name' => 'โครงการฟื้นฟู',
 	    'label' => 'แบบสำรวจโครงการเพื่อช่วยเหลือ / ฟื้นฟูพื้นที่ประสบภัยน้ำท่วม', 
 	    'file' => 'webforms/supply.php',
+	    'sections' => array(),
 	    'color' => '0,100,74',
 	    'filters' => array(
 	      'data' => array(

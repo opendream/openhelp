@@ -19,7 +19,10 @@
     <div id="webform-filters">
       <?php foreach ($filtersAll as $type => $filters): ?>
       <form id="webform-filters-<?php echo $type; ?>" action="<?php echo bu("api/webform?action=location&type=$type"); ?>" method="post">
-        <span class="title" style="border: 2px solid rgb(<?php echo $colorAll[$type]; ?>);"><?php echo $filters['title']['filter'] ?></span>
+        <span class="title">
+          <span class="color-label" style="background-color: rgb(<?php echo $colorAll[$type]; ?>);"></span>
+          <span class="color-text"><?php echo $filters['title']['filter'] ?></span>
+        </span>
         <ul>
         <?php foreach ($filters['data'] as $name => $filter): ?>
           <li>
@@ -27,7 +30,11 @@
             <label for="<?php echo $name; ?>" class="<?php echo $name; ?>"><?php echo $filter['label'] ?></label>
     
             <?php if ($filter['widget'] == 'dropDownList'): ?>
-              <?php $options = WidgetManager::getFilterOptions($type, $name, $filter['prefix']); ?>
+              <?php if (isset($filter['options'])): ?>
+                <?php $options = $filter['options']; ?>
+              <?php else: ?>
+                <?php $options = WidgetManager::getFilterOptions($type, $name, $filter['prefix']); ?>
+              <?php endif ?>
               <?php echo CHtml::dropDownList(
                 $name, 
                 key($options), 
@@ -50,7 +57,10 @@
 
   
     <div id="location-filters">
-      <span class="title" style="border: 2px solid rgb(170, 170, 170)"><?php echo t('Select Location') ?></span>
+      <span class="title">
+        <span class="color-label" style="background-color: rgb(150, 150, 150);"></span>
+        <span class="text-label"><?php echo t('Select Location') ?></span>
+      </span>
       <div class="location-filters-input">
         <?php
         /*

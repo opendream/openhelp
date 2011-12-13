@@ -22,7 +22,7 @@
         <?php echo t('Author'); ?>
       </span>
       <span class="extra-double-input">
-        <?php echo $model->user->username; ?>
+        <?php echo $model->user? $model->user->username: t('system'); ?>
       </span>
     </li>
     </ul>
