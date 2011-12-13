@@ -699,3 +699,14 @@ nav {
   .filter-item .filter-item-value {
     display: inline;
   }
+  
+.webform-field {
+  border: 1px solid #DEDEDE;
+  margin: 20px 0;
+  padding: 10px;
+}
+.webform-field input {
+  border: 0px none;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #AAAAAA;
+}

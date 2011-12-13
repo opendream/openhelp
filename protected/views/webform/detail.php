@@ -134,6 +134,7 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
           ),
           $html
         );
+        $html = '<div class="webform-field">'.$html.'</div>';
         echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
       }
       
@@ -176,6 +177,6 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
   });
   $('.display-manager a').eq(0).click();
   
-  $('#filter-detail input').replaceWith(function () { return $('<span></span>').addClass($(this).attr('class')).html($(this).val()); });
+  //$('#filter-detail input').replaceWith(function () { return $('<span></span>').addClass($(this).attr('class')).html($(this).val()); });
   
 </script>
