@@ -5880,8 +5880,6 @@ h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
   
   
       <script type="text/javascript">
-          $.getScript('/js/jquery.fixedheadertable.js', function() {
-            $('.table-village-tb').fixedHeaderTable({ footer: false, fixedColumns: 0 , height: '300px'});
             
             var scope = $('.section3-table');
             //scope.fixedHeaderTable({ footer: false, fixedColumns: 0 , height: '600px'});
@@ -5898,5 +5896,5 @@ h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
               $(this).addClass('active');
             })
             $('.moo-control').eq(0).click();
-          });
+
       </script>
