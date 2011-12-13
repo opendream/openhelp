@@ -1,5 +1,8 @@
-<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"> -->
 <link rel="stylesheet" href="/css/defaultTheme.css">
+<!--[if IE 6]>
+<link rel="stylesheet" href="/css/ie6.css">
+<![endif]-->
 <style type="text/css">
 	.no-float{
 		float: none;

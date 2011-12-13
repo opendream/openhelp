@@ -58,6 +58,96 @@ select {
 	display: block;
 }
 
+/* Some Style from bootstrap */
+/* http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css */
+
+input, textarea, select, .uneditable-input {
+	display: inline-block;
+/* 	width: 210px; */
+	height: 18px;
+	padding: 4px;
+	font-size: 13px;
+	line-height: 18px;
+	color: gray;
+	border: 1px solid #CCC;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.span1{width:40px;}
+.span2{width:100px;}
+.span3{width:160px;}
+.span4{width:220px;}
+.span5{width:280px;}
+.span6{width:340px;}
+.span7{width:400px;}
+.span8{width:460px;}
+.span9{width:520px;}
+.span10{width:580px;}
+.span11{width:640px;}
+.span12{width:700px;}
+.span13{width:760px;}
+.span14{width:820px;}
+.span15{width:880px;}
+.span16{width:940px;}
+.span17{width:1000px;}
+.span18{width:1060px;}
+.span19{width:1120px;}
+
+.bordered-table {
+	border: 1px solid #DDD;
+	border-collapse: separate;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+table th, table td {
+	padding: 10px 10px 9px;
+	line-height: 18px;
+	text-align: left;
+}
+table {
+	width: 100%;
+	margin-bottom: 18px;
+	padding: 0;
+	font-size: 13px;
+	border-collapse: collapse;
+}
+form .clearfix{margin-bottom:18px;zoom:1;}
+
+label {
+	padding-top: 6px;
+	font-size: 13px;
+	line-height: 18px;
+	float: left;
+	width: 130px;
+	text-align: right;
+	color: #404040;
+}
+/*
+fieldset {
+	margin-bottom: 18px;
+	padding-top: 18px;
+}
+*/
+fieldset legend {
+	font-size: 22px;
+/* 	font-weight: bold; */
+	margin-bottom: 20px;
+	float: left;
+	width: 100%;
+	color: #404040;
+}
+h1,h2,h3,h4,h5,h6{font-weight:bold;color:#404040;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{color:#bfbfbf;}
+h1{margin-bottom:18px;font-size:30px;line-height:36px;}h1 small{font-size:18px;}
+h2{font-size:24px;line-height:36px;}h2 small{font-size:14px;}
+h3,h4,h5,h6{line-height:36px;}
+h3{font-size:18px;}h3 small{font-size:14px;}
+h4{font-size:16px;}h4 small{font-size:12px;}
+h5{font-size:14px;}
+h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
+
+
 
 /**********************
 				 Font
@@ -132,6 +222,9 @@ select {
 /**********************
 		Webform Filters
 **********************/
+#control-box{
+	float: left;
+}
 #control-box, .display-manager, #webform-detail .general, #webform-detail #map {
 	width: 268px;
 	padding: 15px;
@@ -143,19 +236,52 @@ select {
 	background: url('../images/bg-filter.png') ;
 }
 #webform-filters .title, #location-filters .title{
+	float: left;
 	display: block;
-	padding: 5px;
-	margin: 0 0 10px;
+	width: 270px;
 	color: #333333;
+	margin: 0 0 5px;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 	background: #c2c2c2;
 }
-	#webform-filters .title{
-		margin-bottom: 0;
-	}
+.color-label{
+	width: 27px;
+	height: 27px;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px; 
+}
+.color-text, .text-label{
+	margin-top: 5px;
+	display: block;
+	float: left;
+}
+.title .filter-all{
+	margin: 7px 0 0 8px;
+}
+.toggle-label-link, .toggle-label .hide{
+	display: block;
+	float: right;
+	width: 18px;
+	height: 17px;
+	margin: 5px 10px 0 0;
+	text-indent: -999em;
+	background: url('../images/toggle.png') no-repeat ;
+}
+.toggle-label-link:hover{
+	background-position: 0 -17px;
+}
+.toggle-label .hide{
+	background-position: 0 -34px;
+}
+
 	
 #webform-filters ul{
 	margin: 0 0 20px;
@@ -277,7 +403,20 @@ select {
 td.hide-col{
 	display: none;
 }
-
+.section3-table thead{
+	background: #f5f5f5;
+}
+#moo-control-wrap li{
+	border-color: #DDDDDD !important;
+	margin: 0 5px 0 5px !important;
+}
+#moo-control-wrap li a{
+	padding: 5px 10px !important;
+	display: block;
+}
+#moo-control-wrap li a.active{
+	padding: 5px 10px;
+}
 
 /**********************
 			 Heading
