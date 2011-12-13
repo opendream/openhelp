@@ -16,8 +16,7 @@ return array(
 	        'url' => '',
 	      ),
 	    ),
-	    'detail' => array(
-	      '.section1', 'section2'
+	    'detail' => '.section1, .section2'
 	      /*
 	      'group0' => array(
 	        'title' => 'ข้อมูลทั่วไป', 
@@ -51,7 +50,7 @@ return array(
 	        )
 	      ),
 	      */
-	    ),
+	    ,
 	    'color' => '210,100,74',
 	    'filters' => array(
 	      'data' => array(

@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/css/ie6.css">
 <![endif]-->
 <style type="text/css">
+
 	.no-float{
 		float: none;
 		width: 125px;

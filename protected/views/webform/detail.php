@@ -118,17 +118,31 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       $form = $this->getWebForm($type, $model, $data);
       
       $qp = qp($form);
-      $group = $qp->find('.section1');
+      $group = $qp->find(Yii::app()->params['webforms'][$type]['detail']);
       foreach ($group as $key => $value) {
         $html = $value->html();
+        $html = str_replace(
+          array(
+            '<input',
+            '<textarea',
+            '<select',
+          ), 
+          array(
+            '<input disabled="disabled"',
+            '<textarea disabled="disabled"',
+            '<select disabled="disabled"',
+          ),
+          $html
+        );
         echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
       }
       
       $qp = qp($form);
-      
-      $scripts = $qp->find('link, style, script');
-      foreach ($scripts as $script) {
-        $html = $script->html();
+      $styles = $qp->find('style, link');
+      foreach ($styles as $style) {
+        $html = $style->html();
+        $html = str_replace(array('<![CDATA[', ']]>'), array('', ''), $html);
+        
         echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
       }
       
@@ -161,4 +175,7 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
     $(this).addClass('active');
   });
   $('.display-manager a').eq(0).click();
+  
+  $('#filter-detail input').replaceWith(function () { return $('<span></span>').addClass($(this).attr('class')).html($(this).val()); });
+  
 </script>
