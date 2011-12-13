@@ -112,6 +112,7 @@
 
   #moo-control-wrap {
     padding-top: 20px;
+    float: right;
   }
  #moo-control-wrap span {
    display: block;
@@ -124,25 +125,28 @@
    overflow: hidden;
    margin: 0;
  }
- #moo-control-wrap li {
-   float: left;
-   padding: 0;
-   margin: 1px;
-   list-style: none;
-   border-top: 1px solid;
-   border-left: 1px solid;
-   border-right: 1px solid;
- }
  
- #moo-control-wrap li a{
-   padding: 0px 10px 3px 10px;
-   background-color: #DDD;
-   overflow: hidden;
- }
- #moo-control-wrap li a.active {
-   background-color: #FFF;
- }
- 
+ #moo-control-wrap li{
+	margin: 0 1px 0 1px !important;
+	float: left;
+	padding: 0;
+	margin: 1px;
+	list-style: none;
+	border: none !important;
+}
+#moo-control-wrap li a{
+	padding: 5px 10px !important;
+	display: block;
+	padding: 0px 10px 3px 10px;
+	overflow: hidden;
+	background: #535353;
+	color: white;
+	text-decoration: none;
+}
+#moo-control-wrap li a.active{
+	padding: 5px 10px;
+	background: #eb554b;
+}
  
  /* Some Style from bootstrap */
 /* http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css */
@@ -232,6 +236,31 @@ h3{font-size:18px;}h3 small{font-size:14px;}
 h4{font-size:16px;}h4 small{font-size:12px;}
 h5{font-size:14px;}
 h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
+
+.table-village-tb{
+	float: left;
+}
+.table-village-tb tr{
+	display: block;
+}
+.table-village-tb thead {
+	background: #efefef;
+}
+.table-village-tb tbody{
+	height: 300px;
+	display: block;
+	overflow: auto;
+	width: 100%;
+}
+.table-village-tb th{
+	border: none !important;
+	width: 200px;
+	padding: 5px;
+}
+.table-village-tb td{
+	width: 200px;
+	text-align: center;
+}
  
 </style>
 
@@ -350,10 +379,10 @@ h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
         </thead>
         <tbody>
           <tr>
-            <td><input class="span4" name="Data[217]" type="text" placeholder="" value="<?php echo $Data[217]; ?>"></td>
-            <td><input class="span4" name="Data[19]" type="text" placeholder="" value="<?php echo $Data[19]; ?>"></td>
-            <td><input class="span4" name="Data[20]" type="text" placeholder="" value="<?php echo $Data[20]; ?>"></td>
-            <td><input class="span4" name="Data[215]" type="text" placeholder="" value="<?php echo $Data[215]; ?>"></td>
+            <td><input class="span3" name="Data[217]" type="text" placeholder="" value="<?php echo $Data[217]; ?>"></td>
+            <td><input class="span3" name="Data[19]" type="text" placeholder="" value="<?php echo $Data[19]; ?>"></td>
+            <td><input class="span3" name="Data[20]" type="text" placeholder="" value="<?php echo $Data[20]; ?>"></td>
+            <td><input class="span3" name="Data[215]" type="text" placeholder="" value="<?php echo $Data[215]; ?>"></td>
           </tr>
         </tbody>
       </table>
@@ -371,124 +400,124 @@ h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
 </thead>
 <tbody>
 <tr>
-<td><input class="span4" name="Data[1323]" type="text" placeholder="" value="<?php echo $Data[1323]; ?>"></td>
-<td><input class="span4" name="Data[1324]" type="text" placeholder="" value="<?php echo $Data[1324]; ?>"></td>
-<td><input class="span4" name="Data[1325]" type="text" placeholder="" value="<?php echo $Data[1325]; ?>"></td>
-<td><input class="span4" name="Data[1326]" type="text" placeholder="" value="<?php echo $Data[1326]; ?>"></td>
+<td><input class="span3" name="Data[1323]" type="text" placeholder="" value="<?php echo $Data[1323]; ?>"></td>
+<td><input class="span3" name="Data[1324]" type="text" placeholder="" value="<?php echo $Data[1324]; ?>"></td>
+<td><input class="span3" name="Data[1325]" type="text" placeholder="" value="<?php echo $Data[1325]; ?>"></td>
+<td><input class="span3" name="Data[1326]" type="text" placeholder="" value="<?php echo $Data[1326]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1327]" type="text" placeholder="" value="<?php echo $Data[1327]; ?>"></td>
-<td><input class="span4" name="Data[1328]" type="text" placeholder="" value="<?php echo $Data[1328]; ?>"></td>
-<td><input class="span4" name="Data[1329]" type="text" placeholder="" value="<?php echo $Data[1329]; ?>"></td>
-<td><input class="span4" name="Data[1330]" type="text" placeholder="" value="<?php echo $Data[1330]; ?>"></td>
+<td><input class="span3" name="Data[1327]" type="text" placeholder="" value="<?php echo $Data[1327]; ?>"></td>
+<td><input class="span3" name="Data[1328]" type="text" placeholder="" value="<?php echo $Data[1328]; ?>"></td>
+<td><input class="span3" name="Data[1329]" type="text" placeholder="" value="<?php echo $Data[1329]; ?>"></td>
+<td><input class="span3" name="Data[1330]" type="text" placeholder="" value="<?php echo $Data[1330]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1331]" type="text" placeholder="" value="<?php echo $Data[1331]; ?>"></td>
-<td><input class="span4" name="Data[1332]" type="text" placeholder="" value="<?php echo $Data[1332]; ?>"></td>
-<td><input class="span4" name="Data[1333]" type="text" placeholder="" value="<?php echo $Data[1333]; ?>"></td>
-<td><input class="span4" name="Data[1334]" type="text" placeholder="" value="<?php echo $Data[1334]; ?>"></td>
+<td><input class="span3" name="Data[1331]" type="text" placeholder="" value="<?php echo $Data[1331]; ?>"></td>
+<td><input class="span3" name="Data[1332]" type="text" placeholder="" value="<?php echo $Data[1332]; ?>"></td>
+<td><input class="span3" name="Data[1333]" type="text" placeholder="" value="<?php echo $Data[1333]; ?>"></td>
+<td><input class="span3" name="Data[1334]" type="text" placeholder="" value="<?php echo $Data[1334]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1335]" type="text" placeholder="" value="<?php echo $Data[1335]; ?>"></td>
-<td><input class="span4" name="Data[1336]" type="text" placeholder="" value="<?php echo $Data[1336]; ?>"></td>
-<td><input class="span4" name="Data[1337]" type="text" placeholder="" value="<?php echo $Data[1337]; ?>"></td>
-<td><input class="span4" name="Data[1338]" type="text" placeholder="" value="<?php echo $Data[1338]; ?>"></td>
+<td><input class="span3" name="Data[1335]" type="text" placeholder="" value="<?php echo $Data[1335]; ?>"></td>
+<td><input class="span3" name="Data[1336]" type="text" placeholder="" value="<?php echo $Data[1336]; ?>"></td>
+<td><input class="span3" name="Data[1337]" type="text" placeholder="" value="<?php echo $Data[1337]; ?>"></td>
+<td><input class="span3" name="Data[1338]" type="text" placeholder="" value="<?php echo $Data[1338]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1339]" type="text" placeholder="" value="<?php echo $Data[1339]; ?>"></td>
-<td><input class="span4" name="Data[1340]" type="text" placeholder="" value="<?php echo $Data[1340]; ?>"></td>
-<td><input class="span4" name="Data[1341]" type="text" placeholder="" value="<?php echo $Data[1341]; ?>"></td>
-<td><input class="span4" name="Data[1342]" type="text" placeholder="" value="<?php echo $Data[1342]; ?>"></td>
+<td><input class="span3" name="Data[1339]" type="text" placeholder="" value="<?php echo $Data[1339]; ?>"></td>
+<td><input class="span3" name="Data[1340]" type="text" placeholder="" value="<?php echo $Data[1340]; ?>"></td>
+<td><input class="span3" name="Data[1341]" type="text" placeholder="" value="<?php echo $Data[1341]; ?>"></td>
+<td><input class="span3" name="Data[1342]" type="text" placeholder="" value="<?php echo $Data[1342]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1232]" type="text" placeholder="" value="<?php echo $Data[1232]; ?>"></td>
-<td><input class="span4" name="Data[1233]" type="text" placeholder="" value="<?php echo $Data[1233]; ?>"></td>
-<td><input class="span4" name="Data[1234]" type="text" placeholder="" value="<?php echo $Data[1234]; ?>"></td>
-<td><input class="span4" name="Data[1235]" type="text" placeholder="" value="<?php echo $Data[1235]; ?>"></td>
+<td><input class="span3" name="Data[1232]" type="text" placeholder="" value="<?php echo $Data[1232]; ?>"></td>
+<td><input class="span3" name="Data[1233]" type="text" placeholder="" value="<?php echo $Data[1233]; ?>"></td>
+<td><input class="span3" name="Data[1234]" type="text" placeholder="" value="<?php echo $Data[1234]; ?>"></td>
+<td><input class="span3" name="Data[1235]" type="text" placeholder="" value="<?php echo $Data[1235]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1236]" type="text" placeholder="" value="<?php echo $Data[1236]; ?>"></td>
-<td><input class="span4" name="Data[1237]" type="text" placeholder="" value="<?php echo $Data[1237]; ?>"></td>
-<td><input class="span4" name="Data[1238]" type="text" placeholder="" value="<?php echo $Data[1238]; ?>"></td>
-<td><input class="span4" name="Data[1239]" type="text" placeholder="" value="<?php echo $Data[1239]; ?>"></td>
+<td><input class="span3" name="Data[1236]" type="text" placeholder="" value="<?php echo $Data[1236]; ?>"></td>
+<td><input class="span3" name="Data[1237]" type="text" placeholder="" value="<?php echo $Data[1237]; ?>"></td>
+<td><input class="span3" name="Data[1238]" type="text" placeholder="" value="<?php echo $Data[1238]; ?>"></td>
+<td><input class="span3" name="Data[1239]" type="text" placeholder="" value="<?php echo $Data[1239]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1240]" type="text" placeholder="" value="<?php echo $Data[1240]; ?>"></td>
-<td><input class="span4" name="Data[1241]" type="text" placeholder="" value="<?php echo $Data[1241]; ?>"></td>
-<td><input class="span4" name="Data[1242]" type="text" placeholder="" value="<?php echo $Data[1242]; ?>"></td>
-<td><input class="span4" name="Data[1243]" type="text" placeholder="" value="<?php echo $Data[1243]; ?>"></td>
+<td><input class="span3" name="Data[1240]" type="text" placeholder="" value="<?php echo $Data[1240]; ?>"></td>
+<td><input class="span3" name="Data[1241]" type="text" placeholder="" value="<?php echo $Data[1241]; ?>"></td>
+<td><input class="span3" name="Data[1242]" type="text" placeholder="" value="<?php echo $Data[1242]; ?>"></td>
+<td><input class="span3" name="Data[1243]" type="text" placeholder="" value="<?php echo $Data[1243]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1244]" type="text" placeholder="" value="<?php echo $Data[1244]; ?>"></td>
-<td><input class="span4" name="Data[1245]" type="text" placeholder="" value="<?php echo $Data[1245]; ?>"></td>
-<td><input class="span4" name="Data[1246]" type="text" placeholder="" value="<?php echo $Data[1246]; ?>"></td>
-<td><input class="span4" name="Data[1247]" type="text" placeholder="" value="<?php echo $Data[1247]; ?>"></td>
+<td><input class="span3" name="Data[1244]" type="text" placeholder="" value="<?php echo $Data[1244]; ?>"></td>
+<td><input class="span3" name="Data[1245]" type="text" placeholder="" value="<?php echo $Data[1245]; ?>"></td>
+<td><input class="span3" name="Data[1246]" type="text" placeholder="" value="<?php echo $Data[1246]; ?>"></td>
+<td><input class="span3" name="Data[1247]" type="text" placeholder="" value="<?php echo $Data[1247]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1248]" type="text" placeholder="" value="<?php echo $Data[1248]; ?>"></td>
-<td><input class="span4" name="Data[1249]" type="text" placeholder="" value="<?php echo $Data[1249]; ?>"></td>
-<td><input class="span4" name="Data[1250]" type="text" placeholder="" value="<?php echo $Data[1250]; ?>"></td>
-<td><input class="span4" name="Data[1251]" type="text" placeholder="" value="<?php echo $Data[1251]; ?>"></td>
+<td><input class="span3" name="Data[1248]" type="text" placeholder="" value="<?php echo $Data[1248]; ?>"></td>
+<td><input class="span3" name="Data[1249]" type="text" placeholder="" value="<?php echo $Data[1249]; ?>"></td>
+<td><input class="span3" name="Data[1250]" type="text" placeholder="" value="<?php echo $Data[1250]; ?>"></td>
+<td><input class="span3" name="Data[1251]" type="text" placeholder="" value="<?php echo $Data[1251]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1252]" type="text" placeholder="" value="<?php echo $Data[1252]; ?>"></td>
-<td><input class="span4" name="Data[1253]" type="text" placeholder="" value="<?php echo $Data[1253]; ?>"></td>
-<td><input class="span4" name="Data[1254]" type="text" placeholder="" value="<?php echo $Data[1254]; ?>"></td>
-<td><input class="span4" name="Data[1255]" type="text" placeholder="" value="<?php echo $Data[1255]; ?>"></td>
+<td><input class="span3" name="Data[1252]" type="text" placeholder="" value="<?php echo $Data[1252]; ?>"></td>
+<td><input class="span3" name="Data[1253]" type="text" placeholder="" value="<?php echo $Data[1253]; ?>"></td>
+<td><input class="span3" name="Data[1254]" type="text" placeholder="" value="<?php echo $Data[1254]; ?>"></td>
+<td><input class="span3" name="Data[1255]" type="text" placeholder="" value="<?php echo $Data[1255]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1256]" type="text" placeholder="" value="<?php echo $Data[1256]; ?>"></td>
-<td><input class="span4" name="Data[1257]" type="text" placeholder="" value="<?php echo $Data[1257]; ?>"></td>
-<td><input class="span4" name="Data[1258]" type="text" placeholder="" value="<?php echo $Data[1258]; ?>"></td>
-<td><input class="span4" name="Data[1259]" type="text" placeholder="" value="<?php echo $Data[1259]; ?>"></td>
+<td><input class="span3" name="Data[1256]" type="text" placeholder="" value="<?php echo $Data[1256]; ?>"></td>
+<td><input class="span3" name="Data[1257]" type="text" placeholder="" value="<?php echo $Data[1257]; ?>"></td>
+<td><input class="span3" name="Data[1258]" type="text" placeholder="" value="<?php echo $Data[1258]; ?>"></td>
+<td><input class="span3" name="Data[1259]" type="text" placeholder="" value="<?php echo $Data[1259]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1260]" type="text" placeholder="" value="<?php echo $Data[1260]; ?>"></td>
-<td><input class="span4" name="Data[1261]" type="text" placeholder="" value="<?php echo $Data[1261]; ?>"></td>
-<td><input class="span4" name="Data[1262]" type="text" placeholder="" value="<?php echo $Data[1262]; ?>"></td>
-<td><input class="span4" name="Data[1263]" type="text" placeholder="" value="<?php echo $Data[1263]; ?>"></td>
+<td><input class="span3" name="Data[1260]" type="text" placeholder="" value="<?php echo $Data[1260]; ?>"></td>
+<td><input class="span3" name="Data[1261]" type="text" placeholder="" value="<?php echo $Data[1261]; ?>"></td>
+<td><input class="span3" name="Data[1262]" type="text" placeholder="" value="<?php echo $Data[1262]; ?>"></td>
+<td><input class="span3" name="Data[1263]" type="text" placeholder="" value="<?php echo $Data[1263]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1264]" type="text" placeholder="" value="<?php echo $Data[1264]; ?>"></td>
-<td><input class="span4" name="Data[1265]" type="text" placeholder="" value="<?php echo $Data[1265]; ?>"></td>
-<td><input class="span4" name="Data[1266]" type="text" placeholder="" value="<?php echo $Data[1266]; ?>"></td>
-<td><input class="span4" name="Data[1267]" type="text" placeholder="" value="<?php echo $Data[1267]; ?>"></td>
+<td><input class="span3" name="Data[1264]" type="text" placeholder="" value="<?php echo $Data[1264]; ?>"></td>
+<td><input class="span3" name="Data[1265]" type="text" placeholder="" value="<?php echo $Data[1265]; ?>"></td>
+<td><input class="span3" name="Data[1266]" type="text" placeholder="" value="<?php echo $Data[1266]; ?>"></td>
+<td><input class="span3" name="Data[1267]" type="text" placeholder="" value="<?php echo $Data[1267]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1268]" type="text" placeholder="" value="<?php echo $Data[1268]; ?>"></td>
-<td><input class="span4" name="Data[1269]" type="text" placeholder="" value="<?php echo $Data[1269]; ?>"></td>
-<td><input class="span4" name="Data[1270]" type="text" placeholder="" value="<?php echo $Data[1270]; ?>"></td>
-<td><input class="span4" name="Data[1271]" type="text" placeholder="" value="<?php echo $Data[1271]; ?>"></td>
+<td><input class="span3" name="Data[1268]" type="text" placeholder="" value="<?php echo $Data[1268]; ?>"></td>
+<td><input class="span3" name="Data[1269]" type="text" placeholder="" value="<?php echo $Data[1269]; ?>"></td>
+<td><input class="span3" name="Data[1270]" type="text" placeholder="" value="<?php echo $Data[1270]; ?>"></td>
+<td><input class="span3" name="Data[1271]" type="text" placeholder="" value="<?php echo $Data[1271]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1272]" type="text" placeholder="" value="<?php echo $Data[1272]; ?>"></td>
-<td><input class="span4" name="Data[1273]" type="text" placeholder="" value="<?php echo $Data[1273]; ?>"></td>
-<td><input class="span4" name="Data[1274]" type="text" placeholder="" value="<?php echo $Data[1274]; ?>"></td>
-<td><input class="span4" name="Data[1275]" type="text" placeholder="" value="<?php echo $Data[1275]; ?>"></td>
+<td><input class="span3" name="Data[1272]" type="text" placeholder="" value="<?php echo $Data[1272]; ?>"></td>
+<td><input class="span3" name="Data[1273]" type="text" placeholder="" value="<?php echo $Data[1273]; ?>"></td>
+<td><input class="span3" name="Data[1274]" type="text" placeholder="" value="<?php echo $Data[1274]; ?>"></td>
+<td><input class="span3" name="Data[1275]" type="text" placeholder="" value="<?php echo $Data[1275]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1276]" type="text" placeholder="" value="<?php echo $Data[1276]; ?>"></td>
-<td><input class="span4" name="Data[1277]" type="text" placeholder="" value="<?php echo $Data[1277]; ?>"></td>
-<td><input class="span4" name="Data[1278]" type="text" placeholder="" value="<?php echo $Data[1278]; ?>"></td>
-<td><input class="span4" name="Data[1279]" type="text" placeholder="" value="<?php echo $Data[1279]; ?>"></td>
+<td><input class="span3" name="Data[1276]" type="text" placeholder="" value="<?php echo $Data[1276]; ?>"></td>
+<td><input class="span3" name="Data[1277]" type="text" placeholder="" value="<?php echo $Data[1277]; ?>"></td>
+<td><input class="span3" name="Data[1278]" type="text" placeholder="" value="<?php echo $Data[1278]; ?>"></td>
+<td><input class="span3" name="Data[1279]" type="text" placeholder="" value="<?php echo $Data[1279]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1280]" type="text" placeholder="" value="<?php echo $Data[1280]; ?>"></td>
-<td><input class="span4" name="Data[1281]" type="text" placeholder="" value="<?php echo $Data[1281]; ?>"></td>
-<td><input class="span4" name="Data[1282]" type="text" placeholder="" value="<?php echo $Data[1282]; ?>"></td>
-<td><input class="span4" name="Data[1283]" type="text" placeholder="" value="<?php echo $Data[1283]; ?>"></td>
+<td><input class="span3" name="Data[1280]" type="text" placeholder="" value="<?php echo $Data[1280]; ?>"></td>
+<td><input class="span3" name="Data[1281]" type="text" placeholder="" value="<?php echo $Data[1281]; ?>"></td>
+<td><input class="span3" name="Data[1282]" type="text" placeholder="" value="<?php echo $Data[1282]; ?>"></td>
+<td><input class="span3" name="Data[1283]" type="text" placeholder="" value="<?php echo $Data[1283]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1284]" type="text" placeholder="" value="<?php echo $Data[1284]; ?>"></td>
-<td><input class="span4" name="Data[1285]" type="text" placeholder="" value="<?php echo $Data[1285]; ?>"></td>
-<td><input class="span4" name="Data[1286]" type="text" placeholder="" value="<?php echo $Data[1286]; ?>"></td>
-<td><input class="span4" name="Data[1287]" type="text" placeholder="" value="<?php echo $Data[1287]; ?>"></td>
+<td><input class="span3" name="Data[1284]" type="text" placeholder="" value="<?php echo $Data[1284]; ?>"></td>
+<td><input class="span3" name="Data[1285]" type="text" placeholder="" value="<?php echo $Data[1285]; ?>"></td>
+<td><input class="span3" name="Data[1286]" type="text" placeholder="" value="<?php echo $Data[1286]; ?>"></td>
+<td><input class="span3" name="Data[1287]" type="text" placeholder="" value="<?php echo $Data[1287]; ?>"></td>
 </tr>
 <tr>
-<td><input class="span4" name="Data[1288]" type="text" placeholder="" value="<?php echo $Data[1288]; ?>"></td>
-<td><input class="span4" name="Data[1289]" type="text" placeholder="" value="<?php echo $Data[1289]; ?>"></td>
-<td><input class="span4" name="Data[1290]" type="text" placeholder="" value="<?php echo $Data[1290]; ?>"></td>
-<td><input class="span4" name="Data[1291]" type="text" placeholder="" value="<?php echo $Data[1291]; ?>"></td>
+<td><input class="span3" name="Data[1288]" type="text" placeholder="" value="<?php echo $Data[1288]; ?>"></td>
+<td><input class="span3" name="Data[1289]" type="text" placeholder="" value="<?php echo $Data[1289]; ?>"></td>
+<td><input class="span3" name="Data[1290]" type="text" placeholder="" value="<?php echo $Data[1290]; ?>"></td>
+<td><input class="span3" name="Data[1291]" type="text" placeholder="" value="<?php echo $Data[1291]; ?>"></td>
 </tr>
 </tbody>
 </table>
