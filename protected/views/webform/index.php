@@ -36,7 +36,7 @@
         <?php foreach ($filters['data'] as $name => $filter): ?>
           <li>
             <input class="<?php echo $type; ?>" type="checkbox" name="<?php echo $name; ?>" value="1" id="<?php echo $name; ?>" />
-            <label for="<?php echo $name; ?>" class="<?php echo $name; ?>"><?php echo $filter['label'] ?></label>
+            <label title="<?php echo $filter['description']; ?>" for="<?php echo $name; ?>" class="<?php echo $name; ?>"><?php echo $filter['label'] ?></label>
     
             <?php if ($filter['widget'] == 'dropDownList'): ?>
               <?php if (isset($filter['options'])): ?>
@@ -117,34 +117,6 @@
 <script type="text/javascript" src="<?php echo bu('js/jquery.qtip.js'); ?>"></script>
 
 <script type="text/javascript">
-
-  // Tab
-  $('.display-manager a').click(function (e) {
-    e.preventDefault();
-    $('#tab-content > *').hide();
-    $($(this).attr('href')).show();
-    $('.display-manager a').removeClass('active');
-    $(this).addClass('active');
-  });
-  $('.display-manager a').eq(0).click();
-  
-  // Toggle filter
-  $('.toggle-label-link').click(function (e) {
-    e.preventDefault();
-    var status = $(this).hasClass('show');
-    var target = $(this).attr('href');
-    if (status) {
-      $(target).slideUp();
-      $(this).removeClass('show').addClass('hide');
-    }
-    else {
-      $(target).slideDown();
-      $(this).removeClass('hide').addClass('show');
-    }
-  });
-  
-  
-  
   
   // Map List Filter
   var basePath = '<?php echo bu(); ?>';
@@ -412,14 +384,51 @@
       }
       filter[type].run();
     });
-    
-      
 
-
-  
   }
 
   google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
+  
+  
+  // Tab =========================================
+  $('.display-manager a').click(function (e) {
+    e.preventDefault();
+    $('#tab-content > *').hide();
+    $($(this).attr('href')).show();
+    $('.display-manager a').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('.display-manager a').eq(0).click();
+  
+  // Toggle filter ================================
+  $('.toggle-label-link').click(function (e) {
+    e.preventDefault();
+    var status = $(this).hasClass('show');
+    var target = $(this).attr('href');
+    if (status) {
+      $(target).slideUp();
+      $(this).removeClass('show').addClass('hide');
+    }
+    else {
+      $(target).slideDown();
+      $(this).removeClass('hide').addClass('show');
+    }
+  });
+  
+  // Tips =========================================
+  $('.webform-filters-list label').qtip({
+     content: $(this).attr('title'),
+     position: {
+        corner: {
+           target: 'bottomMiddle',
+           tooltip: 'topLeft'
+        }
+     },
+     style: { 
+        name: 'light' // Inherit from preset style
+     }
+  });
+
 
 </script>
 
