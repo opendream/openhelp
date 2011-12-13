@@ -319,17 +319,7 @@ td.hide-col{
 .section3-table thead{
 	background: #f5f5f5;
 }
-#moo-control-wrap li{
-	border-color: #DDDDDD !important;
-	margin: 0 5px 0 5px !important;
-}
-#moo-control-wrap li a{
-	padding: 5px 10px !important;
-	display: block;
-}
-#moo-control-wrap li a.active{
-	padding: 5px 10px;
-}
+
 
 /**********************
 			 Heading
