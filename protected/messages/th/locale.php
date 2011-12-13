@@ -49,6 +49,7 @@ return array(
   'Please, alway save.' => 'กรุณาบันทึกบ่อยๆ',
   'read more' => 'ดูเพิ่มเติม',
   'Select Location' => 'เลือกพื้นที่: ',
+  'View full descritpion' => 'ดูรายละเอียดแบบเต็ม',
    
   /*
   * Location

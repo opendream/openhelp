@@ -19,6 +19,7 @@ return array(
 		'application.components.*',
 		'application.components.manager.*',
 		'application.components.odhtml.*',
+		'application.components.querypath.*',
 	),
 
 	'modules'=>array(

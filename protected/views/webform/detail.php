@@ -1,3 +1,5 @@
+<?php require 'protected/components/querypath/QueryPath.php'; ?>
+
 <div class="general">
   <div class="meta-wrapper">
     <ul class="meta">
@@ -107,6 +109,36 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
         <div class="filter-item-value"><?php echo $model->$name; ?></div>
       </div>
       <?php endforeach ?>
+      
+      
+      <?php 
+      /*
+      $data = safe_unserialize($model->data);
+      $data = $data? ($data + array_fill(0, 4000, '')): array_fill(0, 4000, '');
+      $form = $this->getWebForm($type, $model, $data);
+
+      $qp = qp($form);
+      $group = $qp->find('.section1');
+      foreach ($group as $key => $value) {
+        $html = $value->html();
+        echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
+      }
+      
+      $qp = qp($form);
+      
+      $scripts = $qp->find('link, style, script');
+      foreach ($scripts as $script) {
+        $html = $script->html();
+        echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
+      }
+      
+      //$html = $qp->find('.section2')->eq(0)->html();
+      //echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
+      
+      */
+      
+      ?>
+      
       <div class="full-description"><a href="<?php echo bu('webform/'.$model->id); ?>"><?php echo t('View full descritpion'); ?></a></div>
     </div>
 
