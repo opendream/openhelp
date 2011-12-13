@@ -20,10 +20,19 @@
       <?php foreach ($filtersAll as $type => $filters): ?>
       <form id="webform-filters-<?php echo $type; ?>" action="<?php echo bu("api/webform?action=location&type=$type"); ?>" method="post">
         <span class="title">
-          <span class="color-label" style="background-color: rgb(<?php echo $colorAll[$type]; ?>);"></span>
+          <span class="color-label" style="background-color: rgb(<?php echo $colorAll[$type]; ?>);">
+            <?php if (isset($all) && $all): ?>
+            <input class="filter-all" type="checkbox" name="<?php echo $type; ?>" value="1" id="filter-all-<?php echo $type; ?>" checked="checked" />
+            <?php endif ?>
+          </span>
           <span class="color-text"><?php echo $filters['title']['filter'] ?></span>
+          <?php if (isset($all) && $all): ?>
+          <span class="toggle-label">
+            <a href="#webform-filters-list-<?php echo $type; ?>" class="toggle-label-link show">hide</a>
+          </span>
+          <?php endif ?>
         </span>
-        <ul>
+        <ul id="webform-filters-list-<?php echo $type; ?>">
         <?php foreach ($filters['data'] as $name => $filter): ?>
           <li>
             <input class="<?php echo $type; ?>" type="checkbox" name="<?php echo $name; ?>" value="1" id="<?php echo $name; ?>" />
@@ -224,7 +233,7 @@
       var self = this;
       
       self.append = function () {
-        for (var i=currentPage*ipp; (i < (currentPage+1)*ipp) && (i < currMarkers[type].length); i++) {
+        for (var i=currentPage*ipp; (i < (currentPage+1)*ipp) && currMarkers[type] && (i < currMarkers[type].length); i++) {
           $.tmpl('templateItem', currMarkers[type][i]['data']).appendTo('#webform-list-' + type);
           if (i == currMarkers[type].length - 1) {
             $('.webform-location-readmore-' + type).hide();
@@ -284,13 +293,14 @@
 
       self.run = function () {
         currMarkers[type] = [];
-        console.log(locations);
         if ($.isEmptyObject(filters)) {
           currMarkers[type] = allMarkers[type];
         }
         else {
           $.each(filters, function (name, value) {
-            currMarkers[type] = $.merge(currMarkers[type], markers[type][name][value]);
+            if (markers[type][name][value]) {
+              currMarkers[type] = $.merge(currMarkers[type], markers[type][name][value]);
+            }
           })
         }
       
