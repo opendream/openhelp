@@ -1,23 +1,30 @@
 <div id="sidebar-fix">
 
-    <?php if (isset($all) && $all): ?>
-    <?php //TODO: All name ?>
-    <?php else: ?>
-    <div class="display-manager">    
-    <h2><?php echo current($nameAll); ?></h2>
-      <span class="title"><?php echo t('Select Display'); ?>: </span>
-      <ul>
-        <li><?php echo l(t('Map'), '#map'); ?></li>
-        <li><?php echo l(t('Item List'), '#list'); ?></li>
-      </ul>
+  <?php if (isset($all) && $all): ?>
+    <?php if ($about): ?>
+    <div id="about-box">
+      <?php echo Yii::app()->params['about']; ?>
     </div>
-    
     <?php endif ?>
+  <?php else: ?>
+  <div class="display-manager">    
+  <h2><?php echo current($nameAll); ?></h2>
+    <span class="title"><?php echo t('Select Display'); ?>: </span>
+    <ul>
+      <li><?php echo l(t('Map'), '#map'); ?></li>
+      <li><?php echo l(t('Item List'), '#list'); ?></li>
+    </ul>
+  </div>
 
+  <?php endif ?>
 
+  <?php if ($showFilter): ?>    
   <div id="control-box">
     <div id="webform-filters">
       <?php foreach ($filtersAll as $type => $filters): ?>
+      <?php if (!(isset($all) && $all && $filters['status']['all']) && !((!isset($all) || !$all) && $filters['status']['type'])){
+        continue;
+      } ?>
       <form id="webform-filters-<?php echo $type; ?>" action="<?php echo bu("api/webform?action=location&type=$type"); ?>" method="post">
         <span class="title">
           <span class="color-label" style="background-color: rgb(<?php echo $colorAll[$type]; ?>);">
@@ -64,7 +71,7 @@
       <?php endforeach ?>
     </div>
 
-  
+    <?php if ((isset($all) && $all && $locationFilterStatus['all']) || ((!isset($all) || !$all) && $locationFilterStatus['type'])): ?>
     <div id="location-filters">
       <span class="title">
         <span class="color-label" style="background-color: rgb(150, 150, 150);"></span>
@@ -84,8 +91,12 @@
         )); ?>
       </div>
     </div>
+    <?php endif ?>
+
   
   </div>
+  <?php endif ?>
+  
 
 </div>
 

@@ -93,7 +93,9 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
   <?php if (!empty(Yii::app()->params['webforms'][$type]['sections'])): ?>
   <ul class="display-manager">
     <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
+    <?php if ($name == 'filter' || isset($datas[$name])): ?>
     <li><a href="#<?php echo $name; ?>-detail"><?php echo $section['title']; ?></a></li>
+    <?php endif ?>
     <?php endforeach ?>
   </ul>
   <?php endif ?>
@@ -156,20 +158,11 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       <div class="full-description"><a href="<?php echo bu('webform/'.$model->id); ?>"><?php echo t('View full descritpion'); ?></a></div>
     </div>
     <?php else: ?>
+    <?php if (isset($datas[$name])): ?>
     <div id="<?php echo $name; ?>-detail">
-      <?php
-
-        $data = http_build_query(array(
-          'name' => 'request',
-          'locations' => array(
-            array('level1' => 'ปทุมธานี')
-          )
-        ));
-                
-        $resp = yii_http_request('http://floodtambon.org/index.php/request/LocationMultiple', array('Content-Type' => 'application/x-www-form-urlencoded'), 'POST', $data);
-        echo $resp->data;
-        ?>
+        <?php echo $datas[$name]; ?>
     </div>
+    <?php endif ?>
     <?php endif ?>
     <?php endforeach ?>
   </div>

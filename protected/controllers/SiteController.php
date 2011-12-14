@@ -37,6 +37,7 @@ class SiteController extends Controller
 	  
 	  $levels = Yii::app()->params['location'];
 	  $levels = array_combine($levels, array_fill(0, count($levels), ''));
+	  $locationFilterStatus = Yii::app()->params['locationFilterStatus'];
 	  
 	  //$type = 'reliefsurvey';
     $types = array_keys(Yii::app()->params['webforms']);
@@ -50,6 +51,13 @@ class SiteController extends Controller
 	  }
 	  
 	  $all = 1;
+	  
+	  $showFilter = $locationFilterStatus['all'];
+	  foreach ($filtersAll as $_type => $_filters) {
+	    $showFilter += $_filters['status']['all'];
+	  }
+	  
+	  $about = isset(Yii::app()->params['about'])? Yii::app()->params['about']: '';
     
 	  $this->render('//webform/index', get_defined_vars());
 		
