@@ -11,12 +11,8 @@ input.primary{
 	float: left;
 }
 
-.table-village-tb tbody td, .table-village-tb tbody tr{
-/* 	height: 35px !important; */
-}
-
 div.tableContainer {
-	overflow: hidden;
+	overflow: scroll;
 	width: 900px !important;
 }
 thead.fixedHeader th {
@@ -33,9 +29,8 @@ thead.fixedHeader th {
 .fixedHeader tr{
 	float: none !important;
 	position: relative !important;
-	top: 30px !important;
+	top: 0px !important;
 }
-
 
 .table-lv1 .moo-col-1{
 	background: #A3A3A3 !important;

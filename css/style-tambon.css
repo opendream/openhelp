@@ -222,6 +222,10 @@ select {
 		*display:inline;
 	}
 	
+
+.location-filters-input{
+	clear: both;
+}	
 	
 /**********************
 		Content Manager
@@ -620,8 +624,9 @@ nav {
   }
     #webform-detail .general .location-item {
       overflow: hidden;
-      padding-left: 35px;
-      background: url("../images/pin-tambon.png") no-repeat 3px 8px;
+      padding-left: 5px;
+/*       background: url("../images/pin-tambon.png") no-repeat 3px 8px; */
+			background: none;
     }
     #webform-detail .general .location-item label {
       padding-right: 0.5em;
@@ -716,8 +721,14 @@ nav {
 }
 .webform-field input {
   border: 0px none;
-  background-color: #FFFFFF;
+  background: none;
   border-bottom: 1px solid #AAAAAA;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	-ms-border-radius: 0px;
+	-khtml-border-radius: 0px;
 }
 
 /* Webform list */
@@ -725,7 +736,7 @@ nav {
 	font-size: 18px;
 }
 #webform-list .db-list{
-	width: 890px;
+/* 	width: 890px; */
 }
 #webform-list .pager{
 	clear: both;
