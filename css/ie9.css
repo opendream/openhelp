@@ -1,0 +1,13 @@
+div.tableContainer {
+	overflow: scroll !important;
+}
+
+html > body div.tableContainer {
+	overflow: scroll !important;
+}
+
+.table-village-tb .scrollContent tr, .section3-table .scrollContent tr{
+	height: 30px !important;
+}
+
+

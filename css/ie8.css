@@ -1,0 +1,15 @@
+div.tableContainer {
+	overflow: scroll !important;
+}
+
+html > body div.tableContainer {
+	overflow: scroll !important;
+}
+
+form .clearfix {
+margin-bottom: 18px;
+zoom: 1;
+}
+
+
+

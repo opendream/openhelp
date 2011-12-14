@@ -705,12 +705,26 @@ nav {
   }
   
 .webform-field {
-  border: 1px solid #DEDEDE;
+  border-bottom: 1px solid #dadada;
   margin: 20px 0;
-  padding: 10px;
+  padding: 0 0 40px;
+/*   padding: 10px; */
 }
 .webform-field input {
   border: 0px none;
   background-color: #FFFFFF;
   border-bottom: 1px solid #AAAAAA;
+}
+
+/* Webform list */
+#webform-list h1{
+	font-size: 18px;
+}
+#webform-list .db-list{
+	width: 890px;
+}
+#webform-list .pager{
+	clear: both;
+	padding: 15px 0;
+	text-align: center;
 }
