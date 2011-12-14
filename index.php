@@ -1,10 +1,7 @@
 <?php
-//header('Location: alert');
 $args = explode('/', $_SERVER['REQUEST_URI']);
 $redirect = array_filter($args);
-if (empty($redirect)) {
-    header('Location: alert');
-}
+
 // change the following paths if necessary
 $global=dirname(__FILE__).'/protected/global.php';
 $yii=dirname(__FILE__).'/yii/framework/yii.php';
