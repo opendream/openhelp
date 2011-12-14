@@ -33,7 +33,7 @@
 	<div class="location-list">
 	  <?php foreach ($model->locations as $location): ?>
     <div class="location-item">
-      <?php echo LocationHtml::locationView($location->id); ?>
+      <?php echo LocationHtml::locationView($location->id, array('style' => 'pain')); ?>
     </div>
 	  <?php endforeach ?>
   </div>
@@ -92,7 +92,6 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
 <div class="render-wrapper">
   <?php if (!empty(Yii::app()->params['webforms'][$type]['sections'])): ?>
   <ul class="display-manager">
-    <li><a href="#filter-detail"><?php echo t('Detail'); ?></a></li>
     <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
     <li><a href="#<?php echo $name; ?>-detail"><?php echo $section['title']; ?></a></li>
     <?php endforeach ?>
@@ -100,6 +99,9 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
   <?php endif ?>
 
   <div id="tab-content">
+    <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
+    <?php if ($name == 'filter'): ?>
+      
     <div id="filter-detail">
       
       <?php 
@@ -139,8 +141,8 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       }
       
       ?>
-      <div class="webform-field">
-        <h2><?php echo Yii::app()->params['webforms'][$type]['filters']['title']['detail']; ?></h2>
+      <fieldset class="webform-field">
+        <legend><?php echo Yii::app()->params['webforms'][$type]['filters']['title']['detail']; ?></legend>
         <?php foreach ($filters as $name => $filter): ?>
         <div class="filter-item filter-item-<?php echo $name; ?>">
           <div class="filter-item-label"><?php echo $filter['label']; ?></div>
@@ -149,15 +151,26 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
           <div class="filter-item-value"><?php echo $model->$name; ?></div>
         </div>
         <?php endforeach ?>
-      </div>
+      </fieldset>
       
       <div class="full-description"><a href="<?php echo bu('webform/'.$model->id); ?>"><?php echo t('View full descritpion'); ?></a></div>
     </div>
-
-    <?php foreach (Yii::app()->params['webforms'][$type]['sections'] as $name => $section): ?>
+    <?php else: ?>
     <div id="<?php echo $name; ?>-detail">
-  
+      <?php
+
+        $data = http_build_query(array(
+          'name' => 'request',
+          'locations' => array(
+            array('level1' => 'ปทุมธานี')
+          )
+        ));
+                
+        $resp = yii_http_request('http://floodtambon.org/index.php/request/LocationMultiple', array('Content-Type' => 'application/x-www-form-urlencoded'), 'POST', $data);
+        echo $resp->data;
+        ?>
     </div>
+    <?php endif ?>
     <?php endforeach ?>
   </div>
 
