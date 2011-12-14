@@ -134,14 +134,7 @@ else {
   # TODO: Update location_id
 }
 $output = '';
-$output .= '<span id="Location_id_wrapper">';
-if ($multiple) {
-  $output .=  '<input id="Webform_locations_'.$index.'" type="hidden" name="Webform[locations]['.$index.']" value="'.$mattrId.'">';
-}
-else {
-  $output .=   CHtml::activeHiddenField($model, $attribute);
-}
-$output .= '</span>';
+
 $output .= '<span id="Location_'.$firstLevelCol.'_wrapper" class="'.implode(' ', $addresses).'">';
 //$output .=   CHtml::activeLabelEx($locationModel,Yii::t('locale',"$firstLevelCol"));
 $output .=   CHtml::activedropDownList($locationModel, $firstLevelCol, $firstLevel, $locationOptions);
@@ -159,6 +152,15 @@ while (!empty($addresses)) {
 	$output .=   Chtml::activedropDownList($locationModel, $address, $data, $defaultOptions);
 	$output .= '</span>';
 }
+
+$output .= '<span id="Location_id_wrapper">';
+if ($multiple) {
+  $output .=  '<input id="Webform_locations_'.$index.'" type="hidden" name="Webform[locations]['.$index.']" value="'.$mattrId.'">';
+}
+else {
+  $output .=   CHtml::activeHiddenField($model, $attribute);
+}
+$output .= '</span>';
 
 echo $output;
 

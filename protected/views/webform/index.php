@@ -273,7 +273,10 @@
       var disabled = false;
     
       self = this;
-            
+      
+      self.getLocations = function () {
+        return locations;
+      }
       self.removeFilter = function (name) {        
         if (filters[name]) { delete(filters[name]); }        
       }
@@ -379,11 +382,28 @@
 
     });
     
-
-    $('#location-filters select').live('click', function () {
+    $(document).delegate('#location-filters select', 'click', function () {
+      //console.log('fuck');
       var level = $(this).attr('id').substr(9);
       var value = $(this).val();
+      //var options = $(this).children('option');
+      
+      // Fixed chrome bug
+      var before = $(this).parent().prev().children();
+      var beforeLevel = before.attr('id').substr(9);
+      var beforeValue = before.val();
+      
+      if (levels[beforeLevel] != beforeValue) {        
+        $.each(types, function(i, type) {
+          filter[type].addLocation(beforeLevel, beforeValue);
+          filter[type].run();
+        });
+      }
+      // End fixed
+      
+      
       if (levels[level] != value) {
+
         $.each(types, function(i, type) {
           filter[type].addLocation(level, value);
           filter[type].run();
