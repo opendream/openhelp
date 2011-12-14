@@ -126,7 +126,7 @@ if ($children) {
       'onclick' => $onclick
     )
   );
-  $locationOptions['onchange'] = 'js:$("#Location_'.$children.'").val("").change().click().focus();'.$onclick;
+  $locationOptions['onchange'] = 'js:$(this).parent().next().children().val("").change().click().focus();'.$onclick;
   //$locationOptions['onclick'] = 'js:'.$onclick;
   
 }

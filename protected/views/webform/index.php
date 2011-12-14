@@ -382,8 +382,7 @@
 
     });
     
-    $(document).delegate('#location-filters select', 'click', function () {
-      //console.log('fuck');
+    $(document).delegate('#location-filters select, #location-filters input', 'click', function () {
       var level = $(this).attr('id').substr(9);
       var value = $(this).val();
       //var options = $(this).children('option');
@@ -398,6 +397,8 @@
           filter[type].addLocation(beforeLevel, beforeValue);
           filter[type].run();
         });
+        levels[beforeLevel] = beforeValue;
+        
       }
       // End fixed
       
