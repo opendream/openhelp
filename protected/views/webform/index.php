@@ -269,7 +269,9 @@
     var Filter = function (type) {
       
       var filters = {};
+      var latestFilters = JSON.stringify({});
       var locations = {};
+      var latestLocations = JSON.stringify({});
       var disabled = false;
     
       self = this;
@@ -300,43 +302,58 @@
       }
 
       self.run = function () {
-        currMarkers[type] = [];
-        if (!disabled) {
-        
-          if ($.isEmptyObject(filters)) {
-            currMarkers[type] = allMarkers[type];
+          if (disabled) {
+            currMarkers[type] = [];
+            markerCluster[type].clearMarkers();
+            list[type].reload();
+            
           }
           else {
-            $.each(filters, function (name, value) {
-              if (markers[type][name][value]) {
-                currMarkers[type] = $.merge(currMarkers[type], markers[type][name][value]);
+            if (JSON.stringify(filters) != latestFilters || JSON.stringify(locations) != latestLocations) {
+              
+              currMarkers[type] = [];
+            
+              if ($.isEmptyObject(filters)) {
+                currMarkers[type] = allMarkers[type];
               }
-            })
-          }
-      
-          currMarkers[type] = $.unique(currMarkers[type]);
-                
-          // Location Filter
-          var finalMarkers = [];
-          $.each(currMarkers[type], function(i, marker) {
-            var data = marker['data'];
-            var pass = true;
-            $.each(locations, function(level, value) {
-              pass = pass && (data[level] == value);
-            })
-            if (pass) {
-              finalMarkers.push(marker);
+              else {
+                $.each(filters, function (name, value) {
+                  if (markers[type][name][value]) {
+                    currMarkers[type] = $.merge(currMarkers[type], markers[type][name][value]);
+                  }
+                })
+              }
+    
+              currMarkers[type] = $.unique(currMarkers[type]);
+
+              
+            // Location Filter
+              var finalMarkers = [];
+              $.each(currMarkers[type], function(i, marker) {
+                var data = marker['data'];
+                var pass = true;
+                $.each(locations, function(level, value) {
+                  pass = pass && (data[level] == value);
+                })
+                if (pass) {
+                  finalMarkers.push(marker);
+                }
+              })
+              currMarkers[type] = finalMarkers;
+
+              
+              markerCluster[type].clearMarkers();
+              markerCluster[type].addMarkers(currMarkers[type]);  
+              list[type].reload();
+                          
+              
             }
-          })
-          currMarkers[type] = finalMarkers;
-        
-        }
-        markerCluster[type].clearMarkers();
-        markerCluster[type].addMarkers(currMarkers[type]);
-      
-        list[type].reload();
-        
-        return self;
+          }
+
+          
+          latestFilters = JSON.stringify(filters);
+          latestLocations = JSON.stringify(locations);      
+
       }
     
     }
@@ -389,28 +406,29 @@
       
       // Fixed chrome bug
       var before = $(this).parent().prev().children();
-      var beforeLevel = before.attr('id').substr(9);
-      var beforeValue = before.val();
       
-      if (levels[beforeLevel] != beforeValue) {        
+      var run = !before.length;
+      if (run) {
         $.each(types, function(i, type) {
-          filter[type].addLocation(beforeLevel, beforeValue);
           filter[type].run();
+          //console.log('run');
         });
-        levels[beforeLevel] = beforeValue;
-        
       }
-      // End fixed
-      
-      
-      if (levels[level] != value) {
+      else {
+        var beforeLevel = before.attr('id').substr(9);
+        var beforeValue = before.val();
 
-        $.each(types, function(i, type) {
-          filter[type].addLocation(level, value);
-          filter[type].run();
-        });
-        levels[level] = value;
+        if (levels[beforeLevel] != beforeValue) {        
+          $.each(types, function(i, type) {
+            filter[type].addLocation(beforeLevel, beforeValue);
+          });
+          levels[beforeLevel] = beforeValue;
+        }
+        before.click();
       }
+      
+      // End fixed
+
     })
     
     
