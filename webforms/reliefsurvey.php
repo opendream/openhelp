@@ -1,72 +1,103 @@
 <!-- <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"> -->
 <link rel="stylesheet" href="/css/defaultTheme.css">
-<!--[if IE 6]>
-<link rel="stylesheet" href="/css/ie6.css">
-<![endif]-->
 <style type="text/css">
-	.no-float{
-		float: none;
-		width: 125px;
-		display: inline-block;
-	}
-	.float-none {float: none;}
-	
-	table input.span3, textarea.span3, table input.span2, textarea.span2{
-		margin: 0;
-	}
-	table .span1 {width: 30px; margin-left: 0; margin-right: 0;}
-	
-	input.span3, textarea.span3, input.span2, textarea.span2, input.span7, input.span1,  input.span4{
-    margin-left: 10px;
-		margin-right: 10px;
-	}
-	
-	fieldset.section3 tbody tr td, .section2 tbody tr td{padding: 5px;}
-	fieldset.section3 .table-inner{
-    border: 1px solid #eee;
-	}
-	   .table-inner {}
-	     .table-lv1 {background: #a3a3a3; color: #fff;}
-	       .table-lv1 h3 {}
-	     .table-lv2 {background: #c1c1c1;}
+/*****************************************
+   Override bootstrap
+*****************************************/
 
-	fieldset.section3 .tabletwo {
-	  width: 100%;
-	}
+.no-float{
+	float: none;
+	width: 125px;
+	display: inline-block;
+}
+.float-none {
+	float: none;
+}
+table input.span3, textarea.span3, table input.span2, textarea.span2{
+	margin: 0;
+}
+table .span1 {
+	width: 30px; 
+	margin-left: 0; 
+	margin-right: 0;
+}
 
-	fieldset.section3 .tabletwo input.span4 {margin-left: 0; margin-right: 0;}
-	fieldset.section3 .tabletwo input.span1 {margin-left: 0; margin-right: 0;}
-	.no-padding {padding: 0 !important}
-  .label-s label {
-    width: 100px;
-  }
-  label.label-ss {width: 60px}
-  
-  .section1 label {width: 150px; }
-  .section2 table tbody tr td input {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  .center tbody tr td{text-align: center;}
-  h3 {
-    margin: 0 0  10px;
-    text-align: left;
-  }
-  h4 {text-align: left;}
-	.clear {clear: both;}
-	.indent {padding: 0 0 0 30px}
-	table thead tr th {text-align: center; vertical-align: middle; padding: 5px;}  
-	table tbody tr th {vertical-align: middle; background: #ececec; text-align: left;}
-	table tbody tr td {
-	  vertical-align: middle; 
-	  -webkit-border-radius: 0 !important; 
-	  -moz-border-radius: 0 !important; 
-	  border-radius: 0 !important; 
-	  border-left: 1px solid #eee; 
-	  border-bottom: 1px solid #eee;
-	  text-align: left;
-	}
+input.span3, textarea.span3, input.span2, textarea.span2, input.span7, input.span1,  input.span4{
+  margin-left: 10px;
+	margin-right: 10px;
+}
+
+fieldset.section3 tbody tr td, .section2 tbody tr td{
+	padding: 5px;
+}
+fieldset.section3 .table-inner{
+  border: 1px solid #eee;
+}
+.table-lv1 {
+	background: #a3a3a3; 
+	color: #fff;
+}
+.table-lv2 {
+	background: #c1c1c1;
+}
+fieldset.section3 .tabletwo {
+  width: 100%;
+}
+
+fieldset.section3 .tabletwo input.span4 {margin-left: 0; margin-right: 0;}
+fieldset.section3 .tabletwo input.span1 {margin-left: 0; margin-right: 0;}
+.no-padding {
+	padding: 0 !important;
+}
+.label-s label {
+  width: 100px;
+}
+label.label-ss {
+	width: 60px;
+}
+
+.section1 label {
+	width: 150px; 
+}
+.section2 table tbody tr td input {
+  margin-left: 0;
+  margin-right: 0;
+}
+.center tbody tr td{
+  text-align: center;
+}
+h3 {
+  margin: 0 0  10px;
+  text-align: left;
+}
+h4 {
+  text-align: left;
+}
+.clear {
+	clear: both;
+}
+.indent {
+	padding: 0 0 0 30px;
+}
+table thead tr th {
+	text-align: center; 
+	vertical-align: middle; 
+	padding: 5px;
+}  
+table tbody tr th {
+	vertical-align: middle; 
+	background: #ececec; 
+	text-align: left;
+}
+table tbody tr td {
+  vertical-align: middle; 
+  -webkit-border-radius: 0 !important; 
+  -moz-border-radius: 0 !important; 
+  border-radius: 0 !important; 
+  border-left: 1px solid #eee; 
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
  .help-block {margin: 0 0 5px;}
  .al-left {text-align: left !important;}
  
@@ -95,7 +126,9 @@
    line-height: 30px;
  }
  
- .section3 textarea {width: 140px;}
+ .section3 textarea {
+	 width: 140px;
+ }
  
  .section3-table .hide-col {
    display: none;
@@ -109,10 +142,43 @@
    overflow-y: auto;
  }
 
-  #moo-control-wrap {
-    padding-top: 20px;
-    float: right;
-  }
+.title-head{
+	background: #C1C1C1 ;
+	color: #404040 ;
+	font-weight: bold;
+}
+
+.section3-table tbody.scrollContent{
+	height: 350px !important;
+}
+
+div.section3-form{
+	height: 420px !important;
+}
+
+.section3-table tbody.scrollContent td{
+	width: auto !important;
+}
+
+.table-lv1 .hide-col, .table-lv2 .hide-col{
+	background: #A3A3A3 !important;
+}
+
+.bordered-table thead{
+	background: #C1C1C1;
+}
+
+.fixrows{
+	margin-bottom: 15px;
+}
+
+/*****************************************
+							Moo tab bar
+*****************************************/
+#moo-control-wrap {
+  padding-top: 20px;
+  float: right;
+}
  #moo-control-wrap span {
    display: block;
    float: left;
@@ -124,7 +190,6 @@
    overflow: hidden;
    margin: 0;
  }
- 
  #moo-control-wrap li{
 	margin: 0 1px 0 1px !important;
 	float: left;
@@ -145,11 +210,14 @@
 	padding: 5px 10px;
 	background: #eb554b;
 }
- 
-/* Some Style from bootstrap */
-/* http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css */
 
-input, textarea, select, .uneditable-input {
+
+
+/*****************************************
+   Some Style from bootstrap 
+   http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css 
+*****************************************/
+input, textarea, .uneditable-input {
 	display: inline-block;
 /* 	width: 210px; */
 	height: 18px;
@@ -161,6 +229,9 @@ input, textarea, select, .uneditable-input {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+}
+input[type="radio"], input[type="checkbox"]{
+	border: none;
 }
 .span1{width:40px;}
 .span2{width:100px;}
@@ -212,15 +283,8 @@ label {
 	text-align: right;
 	color: #404040;
 }
-/*
-fieldset {
-	margin-bottom: 18px;
-	padding-top: 18px;
-}
-*/
 fieldset legend {
 	font-size: 22px;
-/* 	font-weight: bold; */
 	margin-bottom: 20px;
 	float: left;
 	width: 100%;
@@ -236,104 +300,109 @@ h5{font-size:14px;}
 h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
 
 .btn.primary {
-color: white;
-background-color: #0064CD;
-background-repeat: repeat-x;
-background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
-background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
-background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
-background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
-background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
-background-image: -o-linear-gradient(top, #049cdb, #0064cd);
-background-image: linear-gradient(top, #049cdb, #0064cd);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#049cdb', endColorstr='#0064cd', GradientType=0);
-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-border-color: #0064CD #0064CD #003F81;
-border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color: white;
+	background-color: #0064CD;
+	background-repeat: repeat-x;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+	background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+	background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+	background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+	background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+	background-image: linear-gradient(top, #049cdb, #0064cd);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#049cdb', endColorstr='#0064cd', GradientType=0);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	border-color: #0064CD #0064CD #003F81;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 
 .btn {
-cursor: pointer;
-display: inline-block;
-background-color: #E6E6E6;
-background-repeat: no-repeat;
-background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
-background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
-background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
-padding: 5px 14px 6px;
-text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-color: #333;
-font-size: 13px;
-line-height: normal;
-border: 1px solid #CCC;
-border-bottom-color: #BBB;
--webkit-border-radius: 4px;
--moz-border-radius: 4px;
-border-radius: 4px;
--webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
--moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
--webkit-transition: 0.1s linear all;
--moz-transition: 0.1s linear all;
--ms-transition: 0.1s linear all;
--o-transition: 0.1s linear all;
-transition: 0.1s linear all;
+	cursor: pointer;
+	display: inline-block;
+	background-color: #E6E6E6;
+	background-repeat: no-repeat;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+	background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+	background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+	background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+	background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+	padding: 5px 14px 6px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	color: #333;
+	font-size: 13px;
+	line-height: normal;
+	border: 1px solid #CCC;
+	border-bottom-color: #BBB;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+	-webkit-transition: 0.1s linear all;
+	-moz-transition: 0.1s linear all;
+	-ms-transition: 0.1s linear all;
+	-o-transition: 0.1s linear all;
+	transition: 0.1s linear all;
 }
 input[type="button"], input[type="reset"], input[type="submit"] {
-width: auto;
-height: auto;
+	width: auto;
+	height: auto;
 }
 .btn:hover {
-background-position: 0 -15px;
-text-decoration: none;
+	background-position: 0 -15px;
+	text-decoration: none;
 }
 button, input[type="button"], input[type="reset"], input[type="submit"] {
-cursor: pointer;
--webkit-appearance: button;
+	cursor: pointer;
+	-webkit-appearance: button;
 }
 .actions {
-background: whiteSmoke;
-margin-top: 18px;
-margin-bottom: 18px;
-padding: 17px 20px 18px 150px;
-border-top: 1px solid #DDD;
--webkit-border-radius: 0 0 3px 3px;
--moz-border-radius: 0 0 3px 3px;
-border-radius: 0 0 3px 3px;
+	background: whiteSmoke;
+	margin-top: 18px;
+	margin-bottom: 18px;
+	padding: 17px 20px 18px 150px;
+	border-top: 1px solid #DDD;
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
 }
 
+/* End bootsrap */
 
 
 
+/*****************************************
+   Table with scroll bar
+   http://www.imaputz.com/cssStuff/bigFourVersion.html
+*****************************************/
 /* define height and width of scrollable area. Add 16px to width for scrollbar          */
 div.tableContainer {
 	clear: both;
 	border: 1px solid #eee;
 	height: 285px;
 	overflow: auto;
-	width: 756px;
+	width: 900px;
 }
 
 /* Reset overflow value to hidden for all non-IE browsers. */
 html>body div.tableContainer {
 	overflow: hidden;
-	width: 880px;
+	width: 900px;
 }
 
 /* define width of table. IE browsers only                 */
 div.tableContainer table {
 	float: left;
-	width: 870px;
+	width: 900px;
 }
 
 /* define width of table. Add 16px to width for scrollbar.           */
 /* All other non-IE browsers.                                        */
 html>body div.tableContainer table {
-	width: 880px;
+	width: 900px;
 }
 
 /* set table header to a fixed position. WinIE 6.x only                                       */
@@ -421,20 +490,6 @@ html>body thead.fixedHeader th {
 	border: none !important;
 }
 
-/*
-html>body thead.fixedHeader th + th {
-	width: 240px;
-}
-
-html>body thead.fixedHeader th + th + th {
-	width: 316px;
-}
-
-html>body thead.fixedHeader th + th + th + th{
-	width: 340px;
-}
-*/
-
 /* define width of TD elements: 1st, 2nd, and 3rd respectively.          */
 /* All other non-IE browsers.                                            */
 /* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors        */
@@ -443,54 +498,96 @@ html>body tbody.scrollContent td {
 	text-align: center;
 }
 
-/*
-html>body tbody.scrollContent td + td {
-	width: 240px;
-}
 
-html>body tbody.scrollContent td + td + td {
-	width: 300px;
-}
 
-html>body tbody.scrollContent td + td + td + td{
-	width: 330px;
-}
-*/
 
-.title-head{
-	background: #C1C1C1 ;
-	color: #404040 ;
-	font-weight: bold;
-}
 
-.section3-table tbody.scrollContent{
-	height: 350px !important;
-}
-
-div.section3-form{
-	height: 420px !important;
-}
-
-.section3-table tbody.scrollContent td{
-	width: auto !important;
-}
-
-.table-lv1 .moo-col-1{
-	background: #A3A3A3 !important;
-}
-
-.table-lv2 .moo-col-1{
-	background: #C1C1C1 !important;
-}
-.bordered-table thead{
-	background: #C1C1C1;
-}
-
- 
 </style>
+
+<!--[if IE 6]>
+<style type="text/css">
+	.section3-table tr{
+		height: 30px !important;
+	}
+	
+	.table-lv1, .table-lv2{
+		height: 60px !important;
+	}
+	
+	input.primary{
+		height: 31px;
+		float: left;
+	}
+	
+	div.tableContainer {
+		overflow: hidden;
+		width: 900px !important;
+	}
+	thead.fixedHeader th {
+		text-align: center !important;
+		background: #C1C1C1 !important;
+		color: #404040 !important;
+		font-weight: bold !important;
+		border: none !important;
+	}
+	.fixedHeader th{
+		float: none !important;
+		display: block !important;
+	}
+	.fixedHeader tr{
+		float: none !important;
+		position: relative !important;
+		top: 30px !important;
+	}
+	
+	.table-lv1 .moo-col-1{
+		background: #A3A3A3 !important;
+	}
+	
+	.table-lv2 .moo-col-1{
+		background: #C1C1C1 !important;
+	}
+
+</style>
+<![endif]-->
+<!--[if IE 7]>
+<style type="text/css">
+
+</style>
+<![endif]-->
+<!--[if IE 8]>
+<style type="text/css">
+	div.tableContainer {
+		overflow: scroll !important;
+	}
+	
+	html > body div.tableContainer {
+		overflow: scroll !important;
+	}
+	
+	form .clearfix {
+		margin-bottom: 18px;
+		zoom: 1;
+	}
+</style>
+<![endif]-->
+<!--[if IE 9]>
+<style type="text/css">
+	div.tableContainer {
+		overflow: scroll !important;
+	}
+	html > body div.tableContainer {
+		overflow: scroll !important;
+	}
+	.table-village-tb .scrollContent tr, .section3-table .scrollContent tr{
+		height: 30px !important;
+	}
+</style>
+<![endif]-->
+
   <fieldset>
     <legend>ข้อมูลพื้นที่</legend>
-    <div class="clearfix">
+    <div class="clearfix fixrows">
 <label class="float-none">วันที่ให้ข้อมูล</label>
 <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
           //'name'=>'publishDate',

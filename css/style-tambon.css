@@ -530,8 +530,9 @@ nav {
 /********************/
 .content-manager {
     margin: 0 auto;
+    padding: 15px 0 0;
     overflow: hidden;
-    width: 840px;
+    width: 940px;
 }
 .content-manager .portlet-title {
   display: none;
@@ -615,11 +616,14 @@ nav {
   }
     #webform-detail .general .location-item {
       overflow: hidden;
-      padding-left: 30px;
-      background: url("../images/pin-tambon.png") no-repeat 0 0;
+      padding-left: 35px;
+      background: url("../images/pin-tambon.png") no-repeat 3px 8px;
     }
     #webform-detail .general .location-item label {
       padding-right: 0.5em;
+      text-align: left;
+			padding-top: 0;
+			width: 85px;
     }
 
 #webform-detail #map {
