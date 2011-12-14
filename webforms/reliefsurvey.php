@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="/css/ie6.css">
 <![endif]-->
 <style type="text/css">
-
 	.no-float{
 		float: none;
 		width: 125px;
@@ -57,7 +56,7 @@
   h4 {text-align: left;}
 	.clear {clear: both;}
 	.indent {padding: 0 0 0 30px}
-	table thead tr th {text-align: center; vertical-align: middle; border: 1px solid #eee; padding: 5px;}  
+	table thead tr th {text-align: center; vertical-align: middle; padding: 5px;}  
 	table tbody tr th {vertical-align: middle; background: #ececec; text-align: left;}
 	table tbody tr td {
 	  vertical-align: middle; 
@@ -137,7 +136,6 @@
 #moo-control-wrap li a{
 	padding: 5px 10px !important;
 	display: block;
-	padding: 0px 10px 3px 10px;
 	overflow: hidden;
 	background: #535353;
 	color: white;
@@ -148,7 +146,7 @@
 	background: #eb554b;
 }
  
- /* Some Style from bootstrap */
+/* Some Style from bootstrap */
 /* http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css */
 
 input, textarea, select, .uneditable-input {
@@ -237,34 +235,259 @@ h4{font-size:16px;}h4 small{font-size:12px;}
 h5{font-size:14px;}
 h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
 
-.table-village-tb{
+.btn.primary {
+color: white;
+background-color: #0064CD;
+background-repeat: repeat-x;
+background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+background-image: linear-gradient(top, #049cdb, #0064cd);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#049cdb', endColorstr='#0064cd', GradientType=0);
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+border-color: #0064CD #0064CD #003F81;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+cursor: pointer;
+display: inline-block;
+background-color: #E6E6E6;
+background-repeat: no-repeat;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+padding: 5px 14px 6px;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+color: #333;
+font-size: 13px;
+line-height: normal;
+border: 1px solid #CCC;
+border-bottom-color: #BBB;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+-webkit-transition: 0.1s linear all;
+-moz-transition: 0.1s linear all;
+-ms-transition: 0.1s linear all;
+-o-transition: 0.1s linear all;
+transition: 0.1s linear all;
+}
+input[type="button"], input[type="reset"], input[type="submit"] {
+width: auto;
+height: auto;
+}
+.btn:hover {
+background-position: 0 -15px;
+text-decoration: none;
+}
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+cursor: pointer;
+-webkit-appearance: button;
+}
+.actions {
+background: whiteSmoke;
+margin-top: 18px;
+margin-bottom: 18px;
+padding: 17px 20px 18px 150px;
+border-top: 1px solid #DDD;
+-webkit-border-radius: 0 0 3px 3px;
+-moz-border-radius: 0 0 3px 3px;
+border-radius: 0 0 3px 3px;
+}
+
+
+
+
+/* define height and width of scrollable area. Add 16px to width for scrollbar          */
+div.tableContainer {
+	clear: both;
+	border: 1px solid #eee;
+	height: 285px;
+	overflow: auto;
+	width: 756px;
+}
+
+/* Reset overflow value to hidden for all non-IE browsers. */
+html>body div.tableContainer {
+	overflow: hidden;
+	width: 880px;
+}
+
+/* define width of table. IE browsers only                 */
+div.tableContainer table {
 	float: left;
+	width: 870px;
 }
-.table-village-tb tr{
+
+/* define width of table. Add 16px to width for scrollbar.           */
+/* All other non-IE browsers.                                        */
+html>body div.tableContainer table {
+	width: 880px;
+}
+
+/* set table header to a fixed position. WinIE 6.x only                                       */
+/* In WinIE 6.x, any element with a position property set to relative and is a child of       */
+/* an element that has an overflow property set, the relative value translates into fixed.    */
+/* Ex: parent element DIV with a class of tableContainer has an overflow property set to auto */
+thead.fixedHeader tr {
+	position: relative;
+}
+
+/* set THEAD element to have block level attributes. All other non-IE browsers            */
+/* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */
+html>body thead.fixedHeader tr {
 	display: block;
 }
-.table-village-tb thead {
-	background: #efefef;
+
+/* make the TH elements pretty */
+thead.fixedHeader th {
+	background: #C96;
+	border-left: 1px solid #EB8;
+	border-right: 1px solid #B74;
+	border-top: 1px solid #EB8;
+	font-weight: normal;
+/* 	padding: 4px 3px; */
+	text-align: left;
 }
-.table-village-tb tbody{
-	height: 300px;
+
+/* make the A elements pretty. makes for nice clickable headers                */
+thead.fixedHeader a, thead.fixedHeader a:link, thead.fixedHeader a:visited {
+	color: #FFF;
 	display: block;
+	text-decoration: none;
+	width: 100%;
+}
+
+/* make the A elements pretty. makes for nice clickable headers                */
+/* WARNING: swapping the background on hover may cause problems in WinIE 6.x   */
+thead.fixedHeader a:hover {
+	color: #FFF;
+	display: block;
+	text-decoration: underline;
+	width: 100%;
+}
+
+/* define the table content to be scrollable                                              */
+/* set TBODY element to have block level attributes. All other non-IE browsers            */
+/* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */
+/* induced side effect is that child TDs no longer accept width: auto                     */
+html>body tbody.scrollContent {
+	display: block;
+	height: 262px;
 	overflow: auto;
 	width: 100%;
 }
-.table-village-tb th{
-	border: none !important;
-	width: 200px;
-	padding: 5px;
+
+/* make TD elements pretty. Provide alternating classes for striping the table */
+/* http://www.alistapart.com/articles/zebratables/                             */
+tbody.scrollContent td, tbody.scrollContent tr.normalRow td {
+	background: #FFF;
+	border-bottom: none;
+	border-left: none;
+	border-right: 1px solid #CCC;
+	border-top: 1px solid #DDD;
+/* 	padding: 2px 3px 3px 4px; */
 }
-.table-village-tb td{
-	width: 200px;
+
+tbody.scrollContent tr.alternateRow td {
+	background: #EEE;
+	border-bottom: none;
+	border-left: none;
+	border-right: 1px solid #CCC;
+	border-top: 1px solid #DDD;
+/* 	padding: 2px 3px 3px 4px; */
+}
+
+/* define width of TH elements: 1st, 2nd, and 3rd respectively.          */
+/* Add 16px to last TH for scrollbar padding. All other non-IE browsers. */
+/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors        */
+html>body thead.fixedHeader th {
+	width: 210px;
+	text-align: center;
+	background: #C1C1C1 !important;
+	color: #404040 !important;
+	font-weight: bold;
+	border: none !important;
+}
+
+/*
+html>body thead.fixedHeader th + th {
+	width: 240px;
+}
+
+html>body thead.fixedHeader th + th + th {
+	width: 316px;
+}
+
+html>body thead.fixedHeader th + th + th + th{
+	width: 340px;
+}
+*/
+
+/* define width of TD elements: 1st, 2nd, and 3rd respectively.          */
+/* All other non-IE browsers.                                            */
+/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors        */
+html>body tbody.scrollContent td {
+	width: 210px;
 	text-align: center;
 }
+
+/*
+html>body tbody.scrollContent td + td {
+	width: 240px;
+}
+
+html>body tbody.scrollContent td + td + td {
+	width: 300px;
+}
+
+html>body tbody.scrollContent td + td + td + td{
+	width: 330px;
+}
+*/
+
+.title-head{
+	background: #C1C1C1 ;
+	color: #404040 ;
+	font-weight: bold;
+}
+
+.section3-table tbody.scrollContent{
+	height: 350px !important;
+}
+
+div.section3-form{
+	height: 420px !important;
+}
+
+.section3-table tbody.scrollContent td{
+	width: auto !important;
+}
+
+.table-lv1 .moo-col-1{
+	background: #A3A3A3 !important;
+}
+
+.table-lv2 .moo-col-1{
+	background: #C1C1C1 !important;
+}
+.bordered-table thead{
+	background: #C1C1C1;
+}
+
  
 </style>
-
-
   <fieldset>
     <legend>ข้อมูลพื้นที่</legend>
     <div class="clearfix">
@@ -369,7 +592,7 @@ h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
       <legend>ส่วนที่ 2 ข้อมูลผู้ประสานงานในพื้นที่</legend>
       <h3>ระดับตําบล/เทศบาล</h3>
 <table class="bordered-table">
-        <thead>
+        <thead class="title-head">
           <tr>
             <th>ชื่อตำบล/เทศบาล</th>
             <th>ชื่อ-นามสกุล</th>
@@ -387,141 +610,149 @@ h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
         </tbody>
       </table>
       
-      <h3>ระดับหมู่บ้าน/ชุมชน</h3>
-      <div class="table-village">
-<table class="bordered-table table-village-tb">
-<thead>
-<tr>
-<th>ชื่อหมู่บ้าน/ชุมชน</th>
-<th>ชื่อ-นามสกุล</th>
-<th>ตําแหน่ง</th>
-<th>เบอร์โทร</th>
-</tr>
+      
+      
+
+     <h3>ระดับหมู่บ้าน/ชุมชน</h3>
+<div id="tableContainer" class="tableContainer">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="bordered-table table-village-tb scrollTable">
+<thead class="fixedHeader">
+	<tr class="alternateRow">
+		<th>ชื่อหมู่บ้าน/ชุมชน</th>
+		<th>ชื่อ-นามสกุล</th>
+		<th>ตําแหน่ง</th>
+		<th>เบอร์โทร</th>
+	</tr>
 </thead>
-<tbody>
-<tr>
-<td><input class="span3" name="Data[1323]" type="text" placeholder="" value="<?php echo $Data[1323]; ?>"></td>
-<td><input class="span3" name="Data[1324]" type="text" placeholder="" value="<?php echo $Data[1324]; ?>"></td>
-<td><input class="span3" name="Data[1325]" type="text" placeholder="" value="<?php echo $Data[1325]; ?>"></td>
-<td><input class="span3" name="Data[1326]" type="text" placeholder="" value="<?php echo $Data[1326]; ?>"></td>
-</tr>
-<tr>
-<td><input class="span3" name="Data[1327]" type="text" placeholder="" value="<?php echo $Data[1327]; ?>"></td>
-<td><input class="span3" name="Data[1328]" type="text" placeholder="" value="<?php echo $Data[1328]; ?>"></td>
-<td><input class="span3" name="Data[1329]" type="text" placeholder="" value="<?php echo $Data[1329]; ?>"></td>
-<td><input class="span3" name="Data[1330]" type="text" placeholder="" value="<?php echo $Data[1330]; ?>"></td>
-</tr>
-<tr>
+<tbody class="scrollContent">
+	<tr class="normalRow">
+		<td><input class="span3" name="Data[1323]" type="text" placeholder="" value="<?php echo $Data[1323]; ?>"></td>
+		<td><input class="span3" name="Data[1324]" type="text" placeholder="" value="<?php echo $Data[1324]; ?>"></td>
+		<td><input class="span3" name="Data[1325]" type="text" placeholder="" value="<?php echo $Data[1325]; ?>"></td>
+		<td><input class="span3" name="Data[1326]" type="text" placeholder="" value="<?php echo $Data[1326]; ?>"></td>
+	</tr>
+	<tr class="alternateRow">
+		<td><input class="span3" name="Data[1327]" type="text" placeholder="" value="<?php echo $Data[1327]; ?>"></td>
+		<td><input class="span3" name="Data[1328]" type="text" placeholder="" value="<?php echo $Data[1328]; ?>"></td>
+		<td><input class="span3" name="Data[1329]" type="text" placeholder="" value="<?php echo $Data[1329]; ?>"></td>
+		<td><input class="span3" name="Data[1330]" type="text" placeholder="" value="<?php echo $Data[1330]; ?>"></td>
+	</tr>
+	<tr class="normalRow">
 <td><input class="span3" name="Data[1331]" type="text" placeholder="" value="<?php echo $Data[1331]; ?>"></td>
 <td><input class="span3" name="Data[1332]" type="text" placeholder="" value="<?php echo $Data[1332]; ?>"></td>
 <td><input class="span3" name="Data[1333]" type="text" placeholder="" value="<?php echo $Data[1333]; ?>"></td>
 <td><input class="span3" name="Data[1334]" type="text" placeholder="" value="<?php echo $Data[1334]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="alternateRow">
 <td><input class="span3" name="Data[1335]" type="text" placeholder="" value="<?php echo $Data[1335]; ?>"></td>
 <td><input class="span3" name="Data[1336]" type="text" placeholder="" value="<?php echo $Data[1336]; ?>"></td>
 <td><input class="span3" name="Data[1337]" type="text" placeholder="" value="<?php echo $Data[1337]; ?>"></td>
 <td><input class="span3" name="Data[1338]" type="text" placeholder="" value="<?php echo $Data[1338]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="normalRow">
 <td><input class="span3" name="Data[1339]" type="text" placeholder="" value="<?php echo $Data[1339]; ?>"></td>
 <td><input class="span3" name="Data[1340]" type="text" placeholder="" value="<?php echo $Data[1340]; ?>"></td>
 <td><input class="span3" name="Data[1341]" type="text" placeholder="" value="<?php echo $Data[1341]; ?>"></td>
 <td><input class="span3" name="Data[1342]" type="text" placeholder="" value="<?php echo $Data[1342]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="alternateRow">
 <td><input class="span3" name="Data[1232]" type="text" placeholder="" value="<?php echo $Data[1232]; ?>"></td>
 <td><input class="span3" name="Data[1233]" type="text" placeholder="" value="<?php echo $Data[1233]; ?>"></td>
 <td><input class="span3" name="Data[1234]" type="text" placeholder="" value="<?php echo $Data[1234]; ?>"></td>
 <td><input class="span3" name="Data[1235]" type="text" placeholder="" value="<?php echo $Data[1235]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="normalRow">
 <td><input class="span3" name="Data[1236]" type="text" placeholder="" value="<?php echo $Data[1236]; ?>"></td>
 <td><input class="span3" name="Data[1237]" type="text" placeholder="" value="<?php echo $Data[1237]; ?>"></td>
 <td><input class="span3" name="Data[1238]" type="text" placeholder="" value="<?php echo $Data[1238]; ?>"></td>
 <td><input class="span3" name="Data[1239]" type="text" placeholder="" value="<?php echo $Data[1239]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="alternateRow">
 <td><input class="span3" name="Data[1240]" type="text" placeholder="" value="<?php echo $Data[1240]; ?>"></td>
 <td><input class="span3" name="Data[1241]" type="text" placeholder="" value="<?php echo $Data[1241]; ?>"></td>
 <td><input class="span3" name="Data[1242]" type="text" placeholder="" value="<?php echo $Data[1242]; ?>"></td>
 <td><input class="span3" name="Data[1243]" type="text" placeholder="" value="<?php echo $Data[1243]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="normalRow">
 <td><input class="span3" name="Data[1244]" type="text" placeholder="" value="<?php echo $Data[1244]; ?>"></td>
 <td><input class="span3" name="Data[1245]" type="text" placeholder="" value="<?php echo $Data[1245]; ?>"></td>
 <td><input class="span3" name="Data[1246]" type="text" placeholder="" value="<?php echo $Data[1246]; ?>"></td>
 <td><input class="span3" name="Data[1247]" type="text" placeholder="" value="<?php echo $Data[1247]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="alternateRow">
 <td><input class="span3" name="Data[1248]" type="text" placeholder="" value="<?php echo $Data[1248]; ?>"></td>
 <td><input class="span3" name="Data[1249]" type="text" placeholder="" value="<?php echo $Data[1249]; ?>"></td>
 <td><input class="span3" name="Data[1250]" type="text" placeholder="" value="<?php echo $Data[1250]; ?>"></td>
 <td><input class="span3" name="Data[1251]" type="text" placeholder="" value="<?php echo $Data[1251]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="normalRow">
 <td><input class="span3" name="Data[1252]" type="text" placeholder="" value="<?php echo $Data[1252]; ?>"></td>
 <td><input class="span3" name="Data[1253]" type="text" placeholder="" value="<?php echo $Data[1253]; ?>"></td>
 <td><input class="span3" name="Data[1254]" type="text" placeholder="" value="<?php echo $Data[1254]; ?>"></td>
 <td><input class="span3" name="Data[1255]" type="text" placeholder="" value="<?php echo $Data[1255]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="alternateRow">
 <td><input class="span3" name="Data[1256]" type="text" placeholder="" value="<?php echo $Data[1256]; ?>"></td>
 <td><input class="span3" name="Data[1257]" type="text" placeholder="" value="<?php echo $Data[1257]; ?>"></td>
 <td><input class="span3" name="Data[1258]" type="text" placeholder="" value="<?php echo $Data[1258]; ?>"></td>
 <td><input class="span3" name="Data[1259]" type="text" placeholder="" value="<?php echo $Data[1259]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="normalRow">
 <td><input class="span3" name="Data[1260]" type="text" placeholder="" value="<?php echo $Data[1260]; ?>"></td>
 <td><input class="span3" name="Data[1261]" type="text" placeholder="" value="<?php echo $Data[1261]; ?>"></td>
 <td><input class="span3" name="Data[1262]" type="text" placeholder="" value="<?php echo $Data[1262]; ?>"></td>
 <td><input class="span3" name="Data[1263]" type="text" placeholder="" value="<?php echo $Data[1263]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="alternateRow">
 <td><input class="span3" name="Data[1264]" type="text" placeholder="" value="<?php echo $Data[1264]; ?>"></td>
 <td><input class="span3" name="Data[1265]" type="text" placeholder="" value="<?php echo $Data[1265]; ?>"></td>
 <td><input class="span3" name="Data[1266]" type="text" placeholder="" value="<?php echo $Data[1266]; ?>"></td>
 <td><input class="span3" name="Data[1267]" type="text" placeholder="" value="<?php echo $Data[1267]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="normalRow">
 <td><input class="span3" name="Data[1268]" type="text" placeholder="" value="<?php echo $Data[1268]; ?>"></td>
 <td><input class="span3" name="Data[1269]" type="text" placeholder="" value="<?php echo $Data[1269]; ?>"></td>
 <td><input class="span3" name="Data[1270]" type="text" placeholder="" value="<?php echo $Data[1270]; ?>"></td>
 <td><input class="span3" name="Data[1271]" type="text" placeholder="" value="<?php echo $Data[1271]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="alternateRow">
 <td><input class="span3" name="Data[1272]" type="text" placeholder="" value="<?php echo $Data[1272]; ?>"></td>
 <td><input class="span3" name="Data[1273]" type="text" placeholder="" value="<?php echo $Data[1273]; ?>"></td>
 <td><input class="span3" name="Data[1274]" type="text" placeholder="" value="<?php echo $Data[1274]; ?>"></td>
 <td><input class="span3" name="Data[1275]" type="text" placeholder="" value="<?php echo $Data[1275]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="normalRow">
 <td><input class="span3" name="Data[1276]" type="text" placeholder="" value="<?php echo $Data[1276]; ?>"></td>
 <td><input class="span3" name="Data[1277]" type="text" placeholder="" value="<?php echo $Data[1277]; ?>"></td>
 <td><input class="span3" name="Data[1278]" type="text" placeholder="" value="<?php echo $Data[1278]; ?>"></td>
 <td><input class="span3" name="Data[1279]" type="text" placeholder="" value="<?php echo $Data[1279]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="alternateRow">
 <td><input class="span3" name="Data[1280]" type="text" placeholder="" value="<?php echo $Data[1280]; ?>"></td>
 <td><input class="span3" name="Data[1281]" type="text" placeholder="" value="<?php echo $Data[1281]; ?>"></td>
 <td><input class="span3" name="Data[1282]" type="text" placeholder="" value="<?php echo $Data[1282]; ?>"></td>
 <td><input class="span3" name="Data[1283]" type="text" placeholder="" value="<?php echo $Data[1283]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="normalRow">
 <td><input class="span3" name="Data[1284]" type="text" placeholder="" value="<?php echo $Data[1284]; ?>"></td>
 <td><input class="span3" name="Data[1285]" type="text" placeholder="" value="<?php echo $Data[1285]; ?>"></td>
 <td><input class="span3" name="Data[1286]" type="text" placeholder="" value="<?php echo $Data[1286]; ?>"></td>
 <td><input class="span3" name="Data[1287]" type="text" placeholder="" value="<?php echo $Data[1287]; ?>"></td>
-</tr>
-<tr>
+	</tr>
+	<tr class="alternateRow">
 <td><input class="span3" name="Data[1288]" type="text" placeholder="" value="<?php echo $Data[1288]; ?>"></td>
 <td><input class="span3" name="Data[1289]" type="text" placeholder="" value="<?php echo $Data[1289]; ?>"></td>
 <td><input class="span3" name="Data[1290]" type="text" placeholder="" value="<?php echo $Data[1290]; ?>"></td>
 <td><input class="span3" name="Data[1291]" type="text" placeholder="" value="<?php echo $Data[1291]; ?>"></td>
-</tr>
+	</tr>
 </tbody>
 </table>
 </div>
+
+     
+      
+      
+      
   </fieldset>
   <br/><br/>
 
@@ -555,36 +786,42 @@ h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
       <li><a class="moo-control" href=".moo-col-20">20</a></li>
     </ul>
   </div>
-<table class="bordered-top section3-table">
-<thead>
-<tr>
-<td>ประเด็นความเสียหาย</td>
-<td>สรุปรวม<br />(เพื่อเป็นภาพตำบล)</td>
-<td>รายละเอียดเพิ่มเติม</td>
-<td class = "hide-col moo-col-1">หมู่ <input class="span1" name="Data[42]" type="text" value="<?php echo $Data[42]; ?>"></td>
-<td class = "hide-col moo-col-2">หมู่ <input class="span1" name="Data[43]" type="text" value="<?php echo $Data[43]; ?>"></td>
-<td class = "hide-col moo-col-3">หมู่ <input class="span1" name="Data[44]" type="text" value="<?php echo $Data[44]; ?>"></td>
-<td class = "hide-col moo-col-4">หมู่ <input class="span1" name="Data[45]" type="text" value="<?php echo $Data[45]; ?>"></td>
-<td class = "hide-col moo-col-5">หมู่ <input class="span1" name="Data[46]" type="text" value="<?php echo $Data[46]; ?>"></td>
-<td class = "hide-col moo-col-6">หมู่ <input class="span1" name="Data[1344]" type="text" value="<?php echo $Data[1344]; ?>"></td>
-<td class = "hide-col moo-col-7">หมู่ <input class="span1" name="Data[1345]" type="text" value="<?php echo $Data[1345]; ?>"></td>
-<td class = "hide-col moo-col-8">หมู่ <input class="span1" name="Data[1346]" type="text" value="<?php echo $Data[1346]; ?>"></td>
-<td class = "hide-col moo-col-9">หมู่ <input class="span1" name="Data[1347]" type="text" value="<?php echo $Data[1347]; ?>"></td>
-<td class = "hide-col moo-col-10">หมู่ <input class="span1" name="Data[1348]" type="text" value="<?php echo $Data[1348]; ?>"></td>
-<td class = "hide-col moo-col-11">หมู่ <input class="span1" name="Data[1349]" type="text" value="<?php echo $Data[1349]; ?>"></td>
-<td class = "hide-col moo-col-12">หมู่ <input class="span1" name="Data[1350]" type="text" value="<?php echo $Data[1350]; ?>"></td>
-<td class = "hide-col moo-col-13">หมู่ <input class="span1" name="Data[1351]" type="text" value="<?php echo $Data[1351]; ?>"></td>
-<td class = "hide-col moo-col-14">หมู่ <input class="span1" name="Data[1352]" type="text" value="<?php echo $Data[1352]; ?>"></td>
-<td class = "hide-col moo-col-15">หมู่ <input class="span1" name="Data[1353]" type="text" value="<?php echo $Data[1353]; ?>"></td>
-<td class = "hide-col moo-col-16">หมู่ <input class="span1" name="Data[1354]" type="text" value="<?php echo $Data[1354]; ?>"></td>
-<td class = "hide-col moo-col-17">หมู่ <input class="span1" name="Data[1355]" type="text" value="<?php echo $Data[1355]; ?>"></td>
-<td class = "hide-col moo-col-18">หมู่ <input class="span1" name="Data[1356]" type="text" value="<?php echo $Data[1356]; ?>"></td>
-<td class = "hide-col moo-col-19">หมู่ <input class="span1" name="Data[1357]" type="text" value="<?php echo $Data[1357]; ?>"></td>
-<td class = "hide-col moo-col-20">หมู่ <input class="span1" name="Data[1358]" type="text" value="<?php echo $Data[1358]; ?>"></td>
+  
+  
+  
+  <div id="tableContainer" class="tableContainer section3-form">
 
+  
+<table class="bordered-top section3-table scrollTable" border="0" cellpadding="0" cellspacing="0" width="100%" >
+<thead class="fixedHeader">
+
+<tr  class="alternateRow">
+<td style = "width:358px;text-align: center;">ประเด็นความเสียหาย</td>
+<td style = "width:161px;text-align: center;">สรุปรวม<br>(เพื่อเป็นภาพตำบล)</td>
+<td style = "width:241px;text-align: center;">รายละเอียดเพิ่มเติม</td>
+<td style = "width:60px;text-align: center;" class="moo-col-1">หมู่ <input class="span1" name="Data[42]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-2">หมู่ <input class="span1" name="Data[43]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-3">หมู่ <input class="span1" name="Data[44]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-4">หมู่ <input class="span1" name="Data[45]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-5">หมู่ <input class="span1" name="Data[46]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-6">หมู่ <input class="span1" name="Data[1344]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-7">หมู่ <input class="span1" name="Data[1345]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-8">หมู่ <input class="span1" name="Data[1346]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-9">หมู่ <input class="span1" name="Data[1347]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-10">หมู่ <input class="span1" name="Data[1348]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-11">หมู่ <input class="span1" name="Data[1349]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-12">หมู่ <input class="span1" name="Data[1350]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-13">หมู่ <input class="span1" name="Data[1351]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-14">หมู่ <input class="span1" name="Data[1352]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-15">หมู่ <input class="span1" name="Data[1353]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-16">หมู่ <input class="span1" name="Data[1354]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-17">หมู่ <input class="span1" name="Data[1355]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-18">หมู่ <input class="span1" name="Data[1356]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-19">หมู่ <input class="span1" name="Data[1357]" type="text" value=""></td>
+<td style = "width:60px;text-align: center;" class="hide-col moo-col-20">หมู่ <input class="span1" name="Data[1358]" type="text" value=""></td>
 </tr>
 </thead>
-<tbody>
+<tbody class="scrollContent">
 
 <tr class="table-lv1">
 <td class="h-line bgheadlv1" colspan="3" style=""><h3 class="h-line">3.1 ความเสียหายต่อชีวิต</h3></td>
@@ -632,6 +869,7 @@ h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
 <td class = "hide-col moo-col-19"></td>
 <td class = "hide-col moo-col-20"></td>
 </tr>
+
         <!--
 <tr>
 <th colspan="23" class="table-lv2" style="width:100%"><h4>3.1.1 ผู้เสียหายต่อชีวิตและความปลอดภัย (ระบุจำนวน)</h4></th>
@@ -5136,6 +5374,8 @@ h6{font-size:13px;color:#bfbfbf;text-transform:uppercase;}
 
 </tbody>
 </table>
+</div>
+
 </fieldset>
 <br /><br />
   
