@@ -28,11 +28,11 @@
           <span class="color-text"><?php echo $filters['title']['filter'] ?></span>
           <?php if (isset($all) && $all): ?>
           <span class="toggle-label">
-            <a href="#webform-filters-list-<?php echo $type; ?>" class="toggle-label-link show">toggle</a>
+            <a href="#webform-filters-list-<?php echo $type; ?>" class="toggle-label-link hide">toggle</a>
           </span>
           <?php endif ?>
         </span>
-        <ul class="webform-filters-list" id="webform-filters-list-<?php echo $type; ?>">
+        <ul class="webform-filters-list" id="webform-filters-list-<?php echo $type; ?>" style="display: none;">
         <?php foreach ($filters['data'] as $name => $filter): ?>
           <li>
             <input class="<?php echo $type; ?>" type="checkbox" name="<?php echo $name; ?>" value="1" id="<?php echo $name; ?>" />
@@ -71,11 +71,11 @@
         <span class="text-label"><?php echo t('Select Location') ?></span>
         <?php if (isset($all) && $all): ?>
         <span class="toggle-label">
-          <a href=".location-filters-input" class="toggle-label-link show">toggle</a>
+          <a href=".location-filters-input" class="toggle-label-link hide">toggle</a>
         </span>
         <?php endif ?>
       </span>
-      <div class="location-filters-input">
+      <div class="location-filters-input" style="display: none;">
         <?php $this->widget('ext.location.LocationWidget', array(
           'model' => new Location, 
           'attribute' => 'id', 
