@@ -12,8 +12,11 @@ return array(
 	    'file' => 'webforms/reliefsurvey.php',
 	    'sections' => array(
 	      'request' => array(
-	        'title' => 'ความต้องการ',
+	        'title' => 'ข้อมูลจาก floodtambon.org',
 	        'url' => '',
+	      ),
+	      'filter' => array(
+	        'title' => 'รายละเอียด',
 	      ),
 	    ),
 	    'detail' => '.section1, .section2',
@@ -51,7 +54,7 @@ return array(
 	      ),
 	      'title' => array(
 	        'filter' => 'เลือกประเด็น:',
-	        'detail' => 'ประเด็น', 
+	        'detail' => 'ส่วนที่ 3 ประเด็นความเสียหาย', 
 	      )
 	    )
 	  ),
