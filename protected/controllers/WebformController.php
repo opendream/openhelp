@@ -288,6 +288,7 @@ class WebformController extends Controller
 	  
 	  $levels = Yii::app()->params['location'];
 	  $levels = array_combine($levels, array_fill(0, count($levels), ''));
+	  $popup = Yii::app()->params['webforms'][$type]['popup'];
 	  
 	  $types = array($type);
 	  

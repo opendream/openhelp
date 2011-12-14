@@ -100,6 +100,14 @@
 
 </div>
 
+<?php if (isset($popup) && $popup): ?>
+<div class="popup-box-wrapper">
+  <div class="popup-box">
+    <?php echo $popup; ?>
+  </div>
+</div>
+<?php endif ?>
+
 <div id="tab-content">
   <div id="list" style="display: none;">
     <div class="webform-content drop-shadow curved curved-hz-1">
