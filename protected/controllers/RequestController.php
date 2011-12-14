@@ -27,7 +27,7 @@ class RequestController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'locationView', 'requestView', 'location'),
+				'actions'=>array('index','view', 'locationView', 'locationView2', 'LocationMultiple', 'requestView', 'location'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -214,7 +214,70 @@ class RequestController extends Controller
 		);
 		$this->pageTitle = strip_tags($location_text);
 		$this->render('locationView', $params);
-	}	
+	}
+	
+	public function locationAPI($id, $village=null)
+	{
+	  
+		$items = WidgetManager::getItemDetails($id);
+		$coordinators = WidgetManager::getCoordinators($id);
+		$location_text = LocationHtml::locationView($id, array('style' => 'reverse'));
+		$extraLocation0s = WidgetManager::getExtraLocation0s($id, true);
+		$allExtraTexts = WidgetManager::getAllExtratexts($id);
+		$post_date = WidgetManager::getDateByLocation($id, $village);
+		$last_updated = $post_date[0]['last_updated'];
+		$cdate = explode(" ", $last_updated);
+		$cdate = $cdate[0];
+		$sdate = explode("-", $cdate);
+
+		$extraDouble = array(
+			'sum' => WidgetManager::getSumExtraDouble($id),
+			'water_level' => WidgetManager::getMinMaxExtraDouble($id),
+		);
+		$params = array(
+			'items' => $items, 
+			'coordinators' => $coordinators, 
+			'location_text' => $location_text,
+			'location_extra0s' => $extraLocation0s,
+			'extraDouble' => $extraDouble,
+			'location_id' => $id,
+			'allExtraTexts' => $allExtraTexts,			
+			'sdate' => $sdate,
+		);
+		$this->pageTitle = strip_tags($location_text);
+		return $this->renderPartial('locationView2', $params, true);
+	}
+	
+	public function actionLocationMultiple() {
+	  $locations = $_REQUEST['locations'];
+	  $name = $_REQUEST['name'];
+	  $whereList = array();
+	  foreach ($locations as $location) {
+	    $whereLocation = array();
+	    foreach ($location as $level => $value) {
+	      $whereLocation[] = "$level = '$value'";
+	    }
+	    $whereList[] = '('.implode(' AND ', $whereLocation).')';
+	  }
+	  $where = implode(' OR ', $whereList);
+	  
+	  //$selectList = Yii::app()->params['locationDisplay'];
+	  //$select = implode(', ', $selectList);
+	  
+	  $qtxt = "SELECT location.id FROM location, request WHERE location.id = request.location_id AND $where";
+    $command = Yii::app()->db->createCommand($qtxt);
+    $list = $command->queryAll();
+    
+    $items = array();
+    foreach ($list as $location) {
+      $items[$location['id']] = array(
+        'label' => LocationHtml::locationView($location['id'], array('style' => 'pain')),
+        'html' => self::locationAPI($location['id'])
+      );
+    }
+    $this->renderPartial('_locationMultiple', array('name' => $name, 'items' => $items));
+	}
+	
 
 	public function actionRequestView($id)
 	{

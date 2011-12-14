@@ -74,6 +74,10 @@ function bu($url=null)
         $baseUrl=Yii::app()->getRequest()->getBaseUrl();
     return $url===null ? $baseUrl : $baseUrl.'/'.ltrim($url,'/');
 }
+
+function au($url=null) {
+  return Yii::app()->createAbsoluteUrl($url);
+}
  
 /**
  * Returns the named application parameter.
