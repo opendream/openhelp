@@ -101,15 +101,6 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
 
   <div id="tab-content">
     <div id="filter-detail">
-      <?php foreach ($filters as $name => $filter): ?>
-      <div class="filter-item filter-item-<?php echo $name; ?>">
-        <div class="filter-item-label"><?php echo $filter['label']; ?></div>
-        <div class="filter-item-description"><?php //echo $filter['description']; ?></div>
-        <div class="filter-item-prefix"><?php echo $filter['prefix']; ?></div>
-        <div class="filter-item-value"><?php echo $model->$name; ?></div>
-      </div>
-      <?php endforeach ?>
-      
       
       <?php 
       
@@ -147,12 +138,18 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
         echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
       }
       
-      //$html = $qp->find('.section2')->eq(0)->html();
-      //echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
-      
-      
-      
       ?>
+      <div class="webform-field">
+        <h2><?php echo Yii::app()->params['webforms'][$type]['filters']['title']['detail']; ?></h2>
+        <?php foreach ($filters as $name => $filter): ?>
+        <div class="filter-item filter-item-<?php echo $name; ?>">
+          <div class="filter-item-label"><?php echo $filter['label']; ?></div>
+          <div class="filter-item-description"><?php //echo $filter['description']; ?></div>
+          <div class="filter-item-prefix"><?php echo $filter['prefix']; ?></div>
+          <div class="filter-item-value"><?php echo $model->$name; ?></div>
+        </div>
+        <?php endforeach ?>
+      </div>
       
       <div class="full-description"><a href="<?php echo bu('webform/'.$model->id); ?>"><?php echo t('View full descritpion'); ?></a></div>
     </div>
