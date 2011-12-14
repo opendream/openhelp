@@ -1,4 +1,7 @@
 <!-- <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"> -->
+<!--[if IE 9]>
+<link rel="stylesheet" href="/css/ie9.css">
+<![endif]-->
 <link rel="stylesheet" href="/css/defaultTheme.css">
 <style type="text/css">
 /*****************************************
@@ -504,7 +507,69 @@ html>body tbody.scrollContent td {
 
 </style>
 
-<!--[if IE 6]>
+
+
+  <fieldset>
+    <legend>ข้อมูลพื้นที่</legend>
+    <div class="clearfix fixrows">
+<label class="float-none">วันที่ให้ข้อมูล</label>
+<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+          //'name'=>'publishDate',
+          'model' => $model,
+          'attribute' => 'date_created',
+          'value'=>$model->date_created,
+            // additional javascript options for the date picker plugin
+            'options'=>array(
+              'dateFormat'=>'yy-mm-dd',
+              'defaultDate'=>$model->date_created,
+             ),
+      )); ?>
+</div><!-- /clearfix -->
+    <div class="clearfix">
+      <?php $this->widget('ext.location.LocationWidget', array('model' => $model, 'attribute' => 'locations', 'multiple' => true, 'index' => 0)); ?>
+</div>
+  </fieldset>
+  <br/><br/>
+  
+  
+  
+<!-- ข้อมูลทั่วไปของผู้ให้ข้อมูล -->
+  <fieldset title="" class="data-general">
+      <legend>ข้อมูลทั่วไปของผู้ให้ข้อมูล</legend>
+      <div class="clearfix">
+<label>ชื่อ - นามสกุลผู้ให้ข้อมูล <span>(นาย/นาง/นางสาว)</span></label>
+<div class="input">
+<input class="xlarge" name="Data[0]" size="60" type="text" value="<?php echo $Data[0]; ?>">
+</div>
+</div><!-- /clearfix -->
+<div class="clearfix label-s">
+<label class="no-float">สถานที่ทํางาน</label>
+<input class="span2" name="Data[1]" type="text" placeholder="" value="<?php echo $Data[1]; ?>">
+<label class="no-float">หมู่ที่</label>
+<input class="span1" name="Data[2]" type="text" placeholder="" value="<?php echo $Data[2]; ?>">
+<label class="no-float">ตําบล</label>
+<input class="span2" name="Data[3]" type="text" placeholder="" value="<?php echo $Data[3]; ?>">
+</div>
+<div class="clearfix label-s">
+<label class="no-float">อําเภอ</label>
+<input class="span2" name="Data[4]" type="text" placeholder="" value="<?php echo $Data[4]; ?>">
+<label class="no-float">จังหวัด</label>
+<input class="span2" name="Data[5]" type="text" placeholder="" value="<?php echo $Data[5]; ?>">
+<label class="no-float">โทรศัพท์</label>
+<input class="span2" name="Data[6]" type="text" placeholder="" value="<?php echo $Data[6]; ?>">
+</div>
+<div class="clearfix label-s">
+<label class="no-float">ตําแหน่งทางสังคม</label>
+<input class="span4" name="Data[7]" type="text" placeholder="" value="<?php echo $Data[7]; ?>">
+</div>
+  </fieldset>
+  <br/><br/>
+  
+  
+  
+<!-- ส่วนที่ 1 ข้อมูลทั่วไปของตําบล -->
+  <fieldset title="" class="section1">
+  <!--[if IE 6]>
 <style type="text/css">
 	.section3-table tr{
 		height: 30px !important;
@@ -585,66 +650,7 @@ html>body tbody.scrollContent td {
 </style>
 <![endif]-->
 
-  <fieldset>
-    <legend>ข้อมูลพื้นที่</legend>
-    <div class="clearfix fixrows">
-<label class="float-none">วันที่ให้ข้อมูล</label>
-<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-          //'name'=>'publishDate',
-          'model' => $model,
-          'attribute' => 'date_created',
-          'value'=>$model->date_created,
-            // additional javascript options for the date picker plugin
-            'options'=>array(
-              'dateFormat'=>'yy-mm-dd',
-              'defaultDate'=>$model->date_created,
-             ),
-      )); ?>
-</div><!-- /clearfix -->
-    <div class="clearfix">
-      <?php $this->widget('ext.location.LocationWidget', array('model' => $model, 'attribute' => 'locations', 'multiple' => true, 'index' => 0)); ?>
-</div>
-  </fieldset>
-  <br/><br/>
   
-  
-  
-<!-- ข้อมูลทั่วไปของผู้ให้ข้อมูล -->
-  <fieldset title="" class="data-general">
-      <legend>ข้อมูลทั่วไปของผู้ให้ข้อมูล</legend>
-      <div class="clearfix">
-<label>ชื่อ - นามสกุลผู้ให้ข้อมูล <span>(นาย/นาง/นางสาว)</span></label>
-<div class="input">
-<input class="xlarge" name="Data[0]" size="60" type="text" value="<?php echo $Data[0]; ?>">
-</div>
-</div><!-- /clearfix -->
-<div class="clearfix label-s">
-<label class="no-float">สถานที่ทํางาน</label>
-<input class="span2" name="Data[1]" type="text" placeholder="" value="<?php echo $Data[1]; ?>">
-<label class="no-float">หมู่ที่</label>
-<input class="span1" name="Data[2]" type="text" placeholder="" value="<?php echo $Data[2]; ?>">
-<label class="no-float">ตําบล</label>
-<input class="span2" name="Data[3]" type="text" placeholder="" value="<?php echo $Data[3]; ?>">
-</div>
-<div class="clearfix label-s">
-<label class="no-float">อําเภอ</label>
-<input class="span2" name="Data[4]" type="text" placeholder="" value="<?php echo $Data[4]; ?>">
-<label class="no-float">จังหวัด</label>
-<input class="span2" name="Data[5]" type="text" placeholder="" value="<?php echo $Data[5]; ?>">
-<label class="no-float">โทรศัพท์</label>
-<input class="span2" name="Data[6]" type="text" placeholder="" value="<?php echo $Data[6]; ?>">
-</div>
-<div class="clearfix label-s">
-<label class="no-float">ตําแหน่งทางสังคม</label>
-<input class="span4" name="Data[7]" type="text" placeholder="" value="<?php echo $Data[7]; ?>">
-</div>
-  </fieldset>
-  <br/><br/>
-  
-  
-  
-<!-- ส่วนที่ 1 ข้อมูลทั่วไปของตําบล -->
-  <fieldset title="" class="section1">
       <legend>ส่วนที่ 1 ข้อมูลทั่วไปของตําบล</legend>
       <div class="clearfix">
 <label class="no-floa">1.1 จํานวนครัวเรือน</label>

@@ -112,6 +112,7 @@ select {
 	float: left;
 	width: 300px;
 	margin: 20px 20px 0 0;
+/*
 	opacity: 0;
 	-webkit-animation-name: slide;
 	-webkit-animation-duration: 500ms;
@@ -128,6 +129,7 @@ select {
 	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 	animation-delay: 2s;
+*/
 
 }
 
@@ -135,10 +137,11 @@ select {
 /**********************
 		Webform Filters
 **********************/
-#control-box{
+#control-box, #about-box{
 	float: left;
 }
-#control-box, .display-manager, #webform-detail .general, #webform-detail #map {
+#control-box, .display-manager, #webform-detail .general, #webform-detail #map,
+#about-box {
 	width: 268px;
 	padding: 15px;
 	border: 1px solid #b2b2b2;
@@ -382,6 +385,7 @@ nav {
 	  font: 16px/24px 'DBMettaXMedium';
 		font-weight: lighter;
 	  color: #afafaf;
+	  text-decoration: none;
   }
 	  nav a:hover, nav ul li.active a{
 		  background: #616161;
@@ -727,4 +731,20 @@ nav {
 	clear: both;
 	padding: 15px 0;
 	text-align: center;
+}
+
+
+.popup-box-wrapper{
+	float: right;
+	width: 590px;
+	margin: 20px 0 0;
+	padding: 10px;
+	background: #fff;
+	position: relative;
+	z-index: 99;
+	border: 1px solid #B2B2B2;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
 }

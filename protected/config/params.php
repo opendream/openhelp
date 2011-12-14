@@ -9,12 +9,12 @@ return array(
 	  'all' => 0,
 	  'type' => 1,
 	),
-	'about' => 'xxxxxxx',
 	'webforms' => array(
 	  'reliefsurvey' => array(
 	    'name' => 'พื้นที่ต้องการฟื้นฟู',
 	    'label' => 'แบบสํารวจเพื่อการฟื้นฟูชุมชนหลังสถานการณ์ภัยพิบัติระดับตําบล', 
 	    'file' => 'webforms/reliefsurvey.php',
+	    'popup' => '',
 	    'sections' => array(
 	      'request' => array(
 	        'title' => 'ข้อมูลจาก floodtambon.org',
@@ -83,7 +83,7 @@ return array(
 	    'file' => 'webforms/supply.php',
 	    'sections' => array(),
 	    'color' => '0,100,74',
-	    'popup' => 'กำลังอยู่ในขั้นตอนดำเนินการ',
+	    'popup' => '<h1 style ="text-align:center;margin:10px 0;font-size:20px;font-weight:bold;">กำลังอยู่ในขั้นตอนดำเนินการ</h1>',
 	    'filters' => array(
 	      'data' => array(
 	        'filter0' => array(
@@ -104,4 +104,34 @@ return array(
 	    ),
 	  ),	  
 	),
+	'about' => '
+<p style = "margin-bottom:10px;font-size:12px;line-height:18px;"><span style = "font-size:18px;font-weight:bold;">infoAid</span> เป็นการริเริ่มในการรวบรวมข้อมูลเพื่อ
+การฟื้นฟูพื้นที่ภัยพิบัติจากมหาอุทกภัยปี 2554  เพื่อให้
+หน่วยงานต่างๆ ทั้งภาคเอกชน ประชาสังคม และหน่วย
+งานรัฐ เข้าถึงข้อมูลความต้องการฟื้นฟูของพื้นที่ และ
+พื้นที่ทำโครงการฟื้นฟูของหน่วยงานต่างๆ โดยแสดงผล
+ในรูปแบบแผนที่และประเภทความต้องการ และ
+โครงการฟื้นฟู</p>
+
+<h2 style = "margin-bottom:5px;font-size:16px;font-weight:bold;">การใช้งาน</h2>
+<h3 style = "margin-bottom:10px;font-size:14px;font-weight:bold;">พื้นที่ต้องการฟื้นฟู</h3>
+<ul style = "margin-bottom:10px;font-size:12px;line-height:18px;list-style:disc inside;">
+<li>เลือกการแสดงผลแบบแผนที่ หรือ แบบรายการ</li>
+<li>เลือกกรองข้อมูลบนกล่องซ้ายมือ โดยเลือกประเด็นที่
+  สนใจและระดับความรุนแรง (1 น้อย - 5 มาก)
+  และพื้นที่</li>
+</ul>
+
+<h3 style = "margin-bottom:10px;font-size:14px;font-weight:bold;">โครงการฟื้นฟู</h3>
+<ul style = "margin-bottom:10px;font-size:12px;line-height:18px;list-style:disc inside;">
+<li>เลือกการแสดงผลแบบแผนที่ หรือ แบบรายการ</li>
+<li>เลือกกรองข้อมูลบนกล่องซ้ายมือ โดยเลือกประเด็น
+  โครงการและพื้นที่</li>
+</ul>
+
+<p style = "margin-bottom:10px;font-size:11px;color:#787878;line-height:18px;">ระบบนี้ร่วมกันพัฒนาโดย <a href = "http://www.changefusion.org/" target = "blank">ChangeFusion<a> และ
+<a href = "http://www.opendream.co.th/" target = "blank">Opendream</a> เพื่อเป็นต้นแบบของการใช้งานระบบ
+ภูมิสารสนเทศแบบเปิด (OpenGIS) เพื่อการจัดการ
+ข้อมูลเพื่อสาธารณประโยชน์</p>',
+
 );
