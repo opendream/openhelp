@@ -295,6 +295,12 @@ class WebformController extends Controller
 	  $filtersAll = array($type => Yii::app()->params['webforms'][$type]['filters']);
 	  $colorAll = array($type => Yii::app()->params['webforms'][$type]['color']);
 	  $stylesAll = array($type => self::rebuildStyles(Yii::app()->params['webforms'][$type]['color']));
+	  $locationFilterStatus = Yii::app()->params['locationFilterStatus'];
+	  
+	  $showFilter = $locationFilterStatus['type'];
+	  foreach ($filtersAll as $_type => $_filters) {
+	    $showFilter += $_filters['status']['type'];
+	  }
 	  
 	  $this->render('//webform/index', get_defined_vars());
 	}
@@ -313,8 +319,25 @@ class WebformController extends Controller
 	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
 	  
 	  $filters = Yii::app()->params['webforms'][$type]['filters']['data'];
-	  $sections = empty(Yii::app()->params['webforms'][$type]['sections'])? Yii::app()->params['webforms'][$type]['sections']: 0;
+	  $sections = !empty(Yii::app()->params['webforms'][$type]['sections'])? Yii::app()->params['webforms'][$type]['sections']: 0;
 	  $styles = self::rebuildStyles(Yii::app()->params['webforms'][$type]['color']);
+
+	  $datas = array();
+	  if ($sections) {
+	    foreach ($sections as $name => $section) {
+	      if (isset($section['url'])) {
+	        $data = array();
+          eval($section['data']);
+
+          $resp = yii_http_request($section['url'], array('Content-Type' => 'application/x-www-form-urlencoded'), 'POST', http_build_query($data));
+          if (trim($resp->data)) {
+            $datas[$name] = $resp->data;
+          }
+	      }
+	    }
+	  }
+	  
+
 	  
     $this->render('detail', get_defined_vars());
     

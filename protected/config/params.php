@@ -5,6 +5,11 @@ return array(
   'logo' => 'images/infoaid.png',
 	'location'=>array('level0','level1','level2', 'level3'),
 	'locationDisplay'=>array('level1','level2', 'level3'),
+	'locationFilterStatus'=> array(
+	  'all' => 0,
+	  'type' => 1,
+	),
+	'about' => 'xxxxxxx',
 	'webforms' => array(
 	  'reliefsurvey' => array(
 	    'name' => 'พื้นที่ต้องการฟื้นฟู',
@@ -13,7 +18,17 @@ return array(
 	    'sections' => array(
 	      'request' => array(
 	        'title' => 'ข้อมูลจาก floodtambon.org',
-	        'url' => '',
+	        'url' => 'http://floodtambon.org/index.php/request/LocationMultiple',
+	        // eval data
+	        'data' => '$data = array("name" => "request", "locations" => array());
+          foreach ($model->locations as $location) {
+            $data["locations"][] = array(
+              "level0" => $location->level0,
+              "level1" => $location->level1,
+              "level2" => $location->level2,
+              "level3" => $location->level3,
+            );
+          }',
 	      ),
 	      'filter' => array(
 	        'title' => 'รายละเอียด',
@@ -52,6 +67,10 @@ return array(
   	        'options' => array(1 => 'ระดับ 1', 2 => 'ระดับ 2', 3 => 'ระดับ 3', 4 => 'ระดับ 4', 5 => 'ระดับ 5'),
   	      ),
 	      ),
+	      'status' => array(
+	        'all' => 0,
+	        'type' => 1,
+	      ),
 	      'title' => array(
 	        'filter' => 'เลือกประเด็น:',
 	        'detail' => 'ส่วนที่ 3 ประเด็นความเสียหาย', 
@@ -64,6 +83,7 @@ return array(
 	    'file' => 'webforms/supply.php',
 	    'sections' => array(),
 	    'color' => '0,100,74',
+	    'popup' => 'กำลังอยู่ในขั้นตอนดำเนินการ',
 	    'filters' => array(
 	      'data' => array(
 	        'filter0' => array(
@@ -72,6 +92,10 @@ return array(
   	        'widget' => 'dropDownList',
   	        'prefix' => '',
   	      ),
+	      ),
+	      'status' => array(
+	        'all' => 0,
+	        'type' => 0,
 	      ),
 	      'title' => array(
 	        'filter' => 'เลือกประเด็น:', 
