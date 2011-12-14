@@ -1,6 +1,6 @@
 <!-- <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"> -->
-<!--[if IE 9]>
-<link rel="stylesheet" href="/css/ie9.css">
+<!--[if IE 6]>
+<link rel="stylesheet" href="/css/ie6.css">
 <![endif]-->
 <link rel="stylesheet" href="/css/defaultTheme.css">
 <style type="text/css">
@@ -585,7 +585,7 @@ html>body tbody.scrollContent td {
 	}
 	
 	div.tableContainer {
-		overflow: hidden;
+		overflow: scroll;
 		width: 900px !important;
 	}
 	thead.fixedHeader th {
@@ -602,7 +602,7 @@ html>body tbody.scrollContent td {
 	.fixedHeader tr{
 		float: none !important;
 		position: relative !important;
-		top: 30px !important;
+		top: 0px !important;
 	}
 	
 	.table-lv1 .moo-col-1{
