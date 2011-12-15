@@ -38,6 +38,7 @@ return array(
 			// enable cookie-based authentication
 			'class' => 'WebUser',
 			'allowAutoLogin'=>true,
+			'autoUpdateFlash' => false,
 		),
 		// uncomment the following to enable URLs in path-format
 		

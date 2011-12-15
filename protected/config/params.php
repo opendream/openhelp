@@ -1,7 +1,10 @@
 <?php
 return array(
   'adminEmail'=>'webmaster@example.com',
-  'siteName' => 'FloodTambon',
+  'siteEmail'=>'site@example.com',
+  'siteName' => 'InfoAid',
+  'salt' => '1qa2ws3ed',
+  'googleAnalytic' => 'UA-21899818-2',
   'logo' => 'images/infoaid.png',
 	'location'=>array('level0','level1','level2', 'level3'),
 	'locationDisplay'=>array('level1','level2', 'level3'),

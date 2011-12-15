@@ -50,10 +50,27 @@ class LoginForm extends CFormModel
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
+				$this->addError('password',t('Incorrect username or password.'));
 		}
 	}
-
+  
+  public function isActivated()
+	{
+		if(!$this->hasErrors())
+		{
+			$model = new User;
+			if($this->username != 'admin') {
+			  $user = $model->find('username=:username', array(':username' => $this->username));
+			  
+  			if (!$user->status) {
+  			  $this->addError('username',t('Your username not activated.'));
+  			  return false;
+  			}
+			}
+			return true;
+		}
+	}
+	
 	/**
 	 * Logs in the user using the given username and password in the model.
 	 * @return boolean whether login is successful
@@ -65,9 +82,12 @@ class LoginForm extends CFormModel
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			$this->_identity->authenticate();
 		}
-		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
+		
+		if($this->_identity->errorCode===UserIdentity::ERROR_NONE && self::isActivated())
 		{
 			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+			
+
 			Yii::app()->user->login($this->_identity,$duration);
 			return true;
 		}

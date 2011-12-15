@@ -9,6 +9,8 @@
  * @property string $password
  * @property string $email
  * @property string $group
+ * @property string $type
+ * @property integer $status
  *
  * The followings are the available model relations:
  * @property Webform[] $webforms
@@ -31,6 +33,24 @@ class User extends CActiveRecord
 	{
 		return 'user';
 	}
+	
+	public function sameAttribute($attribute) {
+	  if ($this->$attribute == 'admin') {
+	    $this->addError($attribute, t('{attribute} already exists'));
+	  }
+	  
+    if ($user = $this->find("$attribute=:$attribute", array(":$attribute" => $this->$attribute))) {
+      if ($this->isNewRecord) {
+        $this->addError($attribute, t('{attribute} already exists'), array('{attribute}' => $attribute));
+  	  }
+  	  else {
+  	    if ($this->id != $user->id) {
+  	      $this->addError($attribute, t('{attribute} already exists'), array('{attribute}' => $attribute));
+  	    }
+  	  }
+	  }
+	}
+
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -40,11 +60,16 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password', 'required'),
-			array('username, password, email, group', 'length', 'max'=>128),
+			array('username, password, email', 'required'),
+			array('status', 'numerical', 'integerOnly'=>true),
+			array('username, password, email, group, type', 'length', 'max'=>128),
+			array('username, email', 'sameAttribute'),
+			array('email', 'CEmailValidator'),
+			
+			
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, password, email, group', 'safe', 'on'=>'search'),
+			array('id, username, password, email, group, type, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,6 +96,8 @@ class User extends CActiveRecord
 			'password' => 'Password',
 			'email' => 'Email',
 			'group' => 'Group',
+			'type' => 'Type',
+			'status' => 'Status',
 		);
 	}
 
@@ -90,6 +117,8 @@ class User extends CActiveRecord
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('group',$this->group,true);
+		$criteria->compare('type',$this->type,true);
+		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

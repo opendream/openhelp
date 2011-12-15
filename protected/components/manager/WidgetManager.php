@@ -556,7 +556,7 @@ class WidgetManager
       location.lat IS NOT NULL AND location.lng IS NOT NULL ";
       
     if ($type) {
-      $qtxt .= " AND type='$type'";
+      $qtxt .= " AND webform.type='$type'";
     }
     
     $command = Yii::app()->db->createCommand($qtxt);

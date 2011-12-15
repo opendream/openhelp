@@ -27,7 +27,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'registration', 'recovery', 'activation', 'resendactivation'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -177,4 +177,126 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
+	public function sendMail($to) {
+	  $header  = 'MIME-Version: 1.0' . "\r\n";
+		$header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+		$header .= 'From: ' . $to['from'] . "\r\n";
+		$header .= 'To: ' . $to['to'] . "\r\n";
+	  return mail($to['to'], $to['subject'], $to['body'], $header);
+	}
+	
+	public function actionRegistration() {
+	  
+	  $this->layout = '//layouts/layout1';
+	  
+	  $this->pageTitle = t('Registration');
+	  
+	  $model = new User;
+
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['User']))
+		{
+		  $attributes = $_POST['User'];
+		  $attributes['status'] = 0;
+		  $attributes['group'] = 'webform';
+		  $attributes['password'] = md5($attributes['password']);
+		  
+			$model->attributes = $attributes;
+			
+			if($model->save()) {
+			  
+			  // Send email			  
+			  $body = t('Verify your account "{username}" on {server} link {activation_url}', 'locale', array(
+			    '{username}' => $model->username,
+			    '{server}' => $_SERVER['SERVER_NAME'],
+			    '{activation_url}' => au('user/activation?key='.md5($model->username.Yii::app()->params['salt']))
+			  ));			  
+  			$mail = array(
+					'from' => Yii::app()->params['siteEmail'],
+					'to' => $model->email,
+					'subject' => t('Verify your account.'),
+					'body' => $body,
+  			);
+  			
+  			self::sendMail($mail);
+			  
+			  
+			  Yii::app()->user->setFlash('success', t('Thank you for your registration. Please check your email for confirm your email.'));
+			  $this->redirect(array('/site/login'));
+			}
+			else {
+			  $model->password = $_POST['User']['password'];
+			}
+			  
+		}
+    
+    $types = array();
+    foreach(Yii::app()->params['webforms'] as $type => $value) {
+      $types[$type] = $value['name'];
+    }
+    $showType = !(isset($_GET['type']) && in_array($_GET['type'], array_keys($types)));
+
+		$this->render('registration', get_defined_vars());
+		
+	}
+
+	// Send the Email to the given user object. $user->email needs to be set.
+	public function sendRegistrationEmail($user) {
+		if (!isset($user->profile->email)) {
+			throw new CException(Yum::t('Email is not set when trying to send Registration Email'));
+		}
+		$activation_url = $user->getActivationUrl();
+
+		// get the text to sent from the yumtextsettings table
+		$content = YumTextSettings::model()->find('language = :lang', array(
+					'lang' => Yii::app()->language));
+		$sent = null;
+
+		if (is_object($content)) {
+			$body = strtr($content->text_email_registration, array(
+						'{username}' => $user->username,
+						'{activation_url}' => $activation_url));
+
+			$mail = array(
+					'from' => Yum::module('registration')->registrationEmail,
+					'to' => $user->profile->email,
+					'subject' => strtr($content->subject_email_registration, array(
+							'{username}' => $user->username)),
+					'body' => $body,
+					);
+			$sent = YumMailer::send($mail);
+		}
+		else {
+			throw new CException(Yum::t('The messages for your application language are not defined.'));
+		}
+
+		return $sent;
+	}
+
+	/**
+	 * Activation of an user account. The Email and the Activation key send
+	 * by email needs to correct in order to continue. The Status will
+	 * be initially set to 1 (active - first Visit) so the administrator
+	 * can see, which accounts have been activated, but not yet logged in 
+	 * (more than once)
+	 */
+	public function actionActivation($email, $key) {
+		// If already logged in, we dont activate anymore
+		if (!Yii::app()->user->isGuest) {
+			Yum::setFlash('You are already logged in, please log out to activate your account');
+			$this->redirect(Yii::app()->user->returnUrl);
+		}
+
+		// If everything is set properly, let the model handle the Validation
+		// and do the Activation
+		$status = YumUser::activate($email, $key);
+
+		if($status instanceof YumUser)
+			$this->render(Yum::module('registration')->activationSuccessView);
+		else
+			$this->render(Yum::module('registration')->activationFailureView, array(
+						'error' => $status));
+	}
+
 }

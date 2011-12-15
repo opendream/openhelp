@@ -19,6 +19,14 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('group')); ?>:</b>
 	<?php echo CHtml::encode($data->group); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
+	<?php echo CHtml::encode($data->type); ?>
+	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
+	<?php echo CHtml::encode($data->status); ?>
+	<br />
 
 
 </div>

@@ -37,6 +37,18 @@
 		)); ?>
 		<?php echo $form->error($model,'group'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'type'); ?>
+		<?php echo $form->textField($model,'type',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'type'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'status'); ?>
+		<?php echo $form->textField($model,'status',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'status'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

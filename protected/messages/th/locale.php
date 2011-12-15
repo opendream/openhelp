@@ -50,6 +50,19 @@ return array(
   'read more' => 'ดูเพิ่มเติม',
   'Select Location' => 'เลือกพื้นที่: ',
   'View full descritpion' => 'ดูรายละเอียดแบบเต็ม',
+  
+  'Registration' => 'สมัครสมาชิก',
+  'Username' => 'ชื้อผู้ใช้',
+  'Password' => 'รหัสผ่าน',
+  'Email' => 'อีเมล',
+  'Register' => 'ลงทะเบียน',
+  'Type' => 'ประเภท',
+  '{attribute} already exists' => 'มีผู้ใช้แล้ว',
+  'Thank you for your registration. Please check your email for confirm your email.' => 'กรุณาเช็คอีเมลของคุณ เพื่อทำการยืนยัน ขอบคุณสำหรับการสมัครสมาชิก',
+  'Login' => 'เข้าสู่ระบบ',
+  'Remember me next time' => 'จดจำในครั้งถัดไป',
+  'Your username not activated.' => 'ชื่อผู้ใช้นี้ ยังไม่ได้ยืนยันผ่านทางอีเมล',
+  'Incorrect username or password.' => 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง',
    
   /*
   * Location

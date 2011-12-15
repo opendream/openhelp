@@ -212,6 +212,8 @@ CREATE TABLE `user` (
   `password` varchar(128) NOT NULL,
   `email` varchar(128),
   `group` varchar(128),
+  `type` varchar(128),
+  `status` int(2) DEFAULT 0,
   
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

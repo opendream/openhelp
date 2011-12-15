@@ -215,11 +215,12 @@ class WebformController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
+    $mdata = safe_unserialize($model->data);
+    $mdata = $mdata? $mdata: array();
 		$this->render('create',array(
 			'type' => $model->type, 
       'model' => $model,
-      'Data' => unserialize($model->data) + $data,
+      'Data' => $mdata + $data,
 		));
 	}
 

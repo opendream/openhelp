@@ -1,3 +1,5 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <!-- <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"> -->
 <!--[if IE 6]>
 <link rel="stylesheet" href="/css/ie6.css">
@@ -60,7 +62,7 @@ label.label-ss {
 }
 
 .section1 label {
-	width: 150px; 
+	width: 120px; 
 }
 .section2 table tbody tr td input {
   margin-left: 0;
@@ -660,17 +662,17 @@ html>body tbody.scrollContent td {
 </div><!-- /clearfix -->
 <div class="clearfix">
 <label class="no-float">1.2 ประชากรปัจจุบันทั้งหมดโดยประมาณ</label>
-<input class="span1" name="Data[9]" type="text" placeholder="" value="<?php echo $Data[9]; ?>"> <span>คน</span>
+<input class="span2" name="Data[9]" type="text" placeholder="" value="<?php echo $Data[9]; ?>"> <span>คน</span>
 <label class="no-float label-ss">ชาย</label>
-<input class="span1" name="Data[10]" type="text" placeholder="" value="<?php echo $Data[10]; ?>"> <span>คน</span>
+<input class="span2" name="Data[10]" type="text" placeholder="" value="<?php echo $Data[10]; ?>"> <span>คน</span>
 <label class="no-float label-ss">หญิง</label>
-<input class="span1" name="Data[11]" type="text" placeholder="" value="<?php echo $Data[11]; ?>"> <span>คน</span>
+<input class="span2" name="Data[11]" type="text" placeholder="" value="<?php echo $Data[11]; ?>"> <span>คน</span>
 </div>
 <div class="clearfix">
 <label class="no-float">โดยเฉลี่ยครัวเรือนละ</label>
-<input class="span1" name="Data[12]" type="text" placeholder="" value="<?php echo $Data[12]; ?>"> <span>คน</span>
+<input class="span2" name="Data[12]" type="text" placeholder="" value="<?php echo $Data[12]; ?>"> <span>คน</span>
 <label class="no-float">มีประชากรแฝง</label>
-<input class="span1" name="Data[13]" type="text" placeholder="" value="<?php echo $Data[13]; ?>"> <span>คน</span>
+<input class="span2" name="Data[13]" type="text" placeholder="" value="<?php echo $Data[13]; ?>"> <span>คน</span>
 </div>
 <div class="clearfix">
 <label class="no-float">1.3 การนับถือศาสนา พุทธ (ร้อยละ)</label>

@@ -129,8 +129,8 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
           ),
           $html
         );
-        $html = '<div class="webform-field">'.$html.'</div>';
-        echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
+        echo $html = '<div class="webform-field">'.$html.'</div>';
+        //echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
       }
       
       $qp = qp($form);
