@@ -147,7 +147,9 @@ class WebformController extends Controller
 	 */
 	public function actionCreate($type)
 	{
-	  Yii::app()->user->check('create', 'own', 'webform', $type);
+    if (!Yii::app()->user->can('create', 'own', 'webform', $type)) {
+      $this->redirect('/site/login?type='.$type);
+    }
 	  
 	  $this->layout='//layouts/layout1';
 	  $this->pageTitle = t('Create').' '.Yii::app()->params['webforms'][$type]['label'];
@@ -155,9 +157,6 @@ class WebformController extends Controller
     	array('label'=>t('List'), 'url'=>array('list?type='.$type)),
     );
 
-    if (!Yii::app()->user->can('create', 'own', 'webform', $type)) {
-      $this->redirect('/site/login?type='.$type);
-    }
 	  
 	  $model = new Webform;
 	  
