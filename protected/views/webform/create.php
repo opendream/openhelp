@@ -1,4 +1,3 @@
-<script src="<?php echo bu('js/jquery.scrolltofixed.js'); ?>"></script>
 <div class="webform-content drop-shadow curved curved-hz-1">
 <h1><?php echo $this->pageTitle; ?></h1>
 
