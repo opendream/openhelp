@@ -239,7 +239,7 @@ class UserController extends Controller
 
 	public function actionActivation($username, $key) {
 		if (!Yii::app()->user->isGuest) {
-			Yum::setFlash(t('You are already logged in, please log out to activate your account'));
+			Yii::app()->user->setFlash(t('You are already logged in, please log out to activate your account'));
 			$this->redirect(Yii::app()->user->returnUrl);
 		}
     
@@ -247,12 +247,12 @@ class UserController extends Controller
       $model = new User;
       $model->find('username=:username', array(':username' => $username));
       if (!$model) {
-        Yii::app()->user->setFlash('error', t('Invalid username "{username}"', array('{username}' => $username)));
+        Yii::app()->user->setFlash('error', t('Invalid username "{username}"', 'locale', array('{username}' => $username)));
         $this->redirect(Yii::app()->user->returnUrl);
       }
       $model->status = 1;
       $model->save();
-      Yii::app()->user->setFlash('success', t('Your account "{username}" has been completed. Please, login to join with {sitename}.', array(
+      Yii::app()->user->setFlash('success', t('Your account "{username}" has been completed. Please, login to join with {sitename}.', 'locale', array(
         '{username}' => $username,
         '{sitename}' => Yii::app()->params['siteName'],
       )));
