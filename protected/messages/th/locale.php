@@ -55,7 +55,7 @@ return array(
   'Username' => 'ชื้อผู้ใช้',
   'Password' => 'รหัสผ่าน',
   'Email' => 'อีเมล',
-  'Register' => 'ลงทะเบียน',
+  'Register' => 'สมัคร',
   'Type' => 'ประเภท',
   '{attribute} already exists' => 'มีผู้ใช้แล้ว',
   'Thank you for your registration. Please check your email for confirm your email.' => 'กรุณาเช็คอีเมลของคุณ เพื่อทำการยืนยัน ขอบคุณสำหรับการสมัครสมาชิก',
@@ -63,6 +63,15 @@ return array(
   'Remember me next time' => 'จดจำในครั้งถัดไป',
   'Your username not activated.' => 'ชื่อผู้ใช้นี้ ยังไม่ได้ยืนยันผ่านทางอีเมล',
   'Incorrect username or password.' => 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง',
+  'Verify your account.' => 'ยืนยันการสมัครสมาชิก',
+  'Verify your account "{username}" on {server} link {activation_url}' => 'ยืนยันการสมัครสมาชิก {server} ของชื่อผู้ใช้ "{username}"  ได้ที่ {activation_url}',
+  'You are already logged in, please log out to activate your account' => 'คุญเข้าระบบอยู่ กรุณาออกจากระบบ เพื่อทำการยืนยันการสมัครสมาชิก', 
+  'Invalid username "{username}"' => 'ชื่อผู้ใช้ "{username}" ไม่ถูกต้อง',
+  'Your account "{username}" has been completed. Please, login to join with {sitename}.' => 'ยืนยัน ชื่อผู้ใช้ "{username}" เสร็จสมบูรณ์ กรุณาเข้าสู่ระบบ เพื่อเข้าร่วมกับ {sitename}',
+  'Recovery' => 'ลืมรหัสผ่าน',
+  'Please check your email for confirm new password.' => 'กรุณาเช็คอีเมลของคุณ เพื่อทำการยืนยันรหัสผ่านใหม่',
+  'Change password account, "{username}" on {server}. Your new password is "{password}" ,confirm link {activation_url}' => 'คุณได้ร้องขอรหัสผ่านของชื่อผู้ใช้ "{username}" ที่ {server} รหัสผ่านใหม่ของคุณคือ {password} ยืนยันการเปลี่ยนรหัสผ่านได้ที่ {activation_url}',
+  'Request new password' => 'ขอรหัสผ่านใหม่',
    
   /*
   * Location

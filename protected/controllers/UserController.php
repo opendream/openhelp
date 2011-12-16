@@ -188,7 +188,6 @@ class UserController extends Controller
 	public function actionRegistration() {
 	  
 	  $this->layout = '//layouts/layout1';
-	  
 	  $this->pageTitle = t('Registration');
 	  
 	  $model = new User;
@@ -205,12 +204,11 @@ class UserController extends Controller
 			$model->attributes = $attributes;
 			
 			if($model->save()) {
-			  
 			  // Send email			  
 			  $body = t('Verify your account "{username}" on {server} link {activation_url}', 'locale', array(
 			    '{username}' => $model->username,
 			    '{server}' => $_SERVER['SERVER_NAME'],
-			    '{activation_url}' => au('user/activation?key='.md5($model->username.Yii::app()->params['salt']))
+			    '{activation_url}' => au('user/activation?username='.$model->username.'&key='.md5($model->username.Yii::app()->params['salt']))
 			  ));			  
   			$mail = array(
 					'from' => Yii::app()->params['siteEmail'],
@@ -218,9 +216,7 @@ class UserController extends Controller
 					'subject' => t('Verify your account.'),
 					'body' => $body,
   			);
-  			
   			self::sendMail($mail);
-			  
 			  
 			  Yii::app()->user->setFlash('success', t('Thank you for your registration. Please check your email for confirm your email.'));
 			  $this->redirect(array('/site/login'));
@@ -241,62 +237,75 @@ class UserController extends Controller
 		
 	}
 
-	// Send the Email to the given user object. $user->email needs to be set.
-	public function sendRegistrationEmail($user) {
-		if (!isset($user->profile->email)) {
-			throw new CException(Yum::t('Email is not set when trying to send Registration Email'));
-		}
-		$activation_url = $user->getActivationUrl();
-
-		// get the text to sent from the yumtextsettings table
-		$content = YumTextSettings::model()->find('language = :lang', array(
-					'lang' => Yii::app()->language));
-		$sent = null;
-
-		if (is_object($content)) {
-			$body = strtr($content->text_email_registration, array(
-						'{username}' => $user->username,
-						'{activation_url}' => $activation_url));
-
-			$mail = array(
-					'from' => Yum::module('registration')->registrationEmail,
-					'to' => $user->profile->email,
-					'subject' => strtr($content->subject_email_registration, array(
-							'{username}' => $user->username)),
-					'body' => $body,
-					);
-			$sent = YumMailer::send($mail);
-		}
-		else {
-			throw new CException(Yum::t('The messages for your application language are not defined.'));
-		}
-
-		return $sent;
-	}
-
-	/**
-	 * Activation of an user account. The Email and the Activation key send
-	 * by email needs to correct in order to continue. The Status will
-	 * be initially set to 1 (active - first Visit) so the administrator
-	 * can see, which accounts have been activated, but not yet logged in 
-	 * (more than once)
-	 */
-	public function actionActivation($email, $key) {
-		// If already logged in, we dont activate anymore
+	public function actionActivation($username, $key) {
 		if (!Yii::app()->user->isGuest) {
-			Yum::setFlash('You are already logged in, please log out to activate your account');
+			Yum::setFlash(t('You are already logged in, please log out to activate your account'));
 			$this->redirect(Yii::app()->user->returnUrl);
 		}
-
-		// If everything is set properly, let the model handle the Validation
-		// and do the Activation
-		$status = YumUser::activate($email, $key);
+    
+    if ($key == md5($username.Yii::app()->params['salt'])) {
+      $model = new User;
+      $model->find('username=:username', array(':username' => $username));
+      if (!$model) {
+        Yii::app()->user->setFlash('error', t('Invalid username "{username}"', array('{username}' => $username)));
+        $this->redirect(Yii::app()->user->returnUrl);
+      }
+      $model->status = 1;
+      $model->save();
+      Yii::app()->user->setFlash('success', t('Your account "{username}" has been completed. Please, login to join with {sitename}.', array(
+        '{username}' => $username,
+        '{sitename}' => Yii::app()->params['siteName'],
+      )));
+      $this->redirect(array('/site/login'));
+		  
+    }
 
 		if($status instanceof YumUser)
 			$this->render(Yum::module('registration')->activationSuccessView);
 		else
 			$this->render(Yum::module('registration')->activationFailureView, array(
 						'error' => $status));
+	}
+	
+	public function actionRecovery() {
+    $this->layout = '//layouts/layout1';
+	  $this->pageTitle = t('Recovery');
+	  
+	  $model = new User;
+
+		if(isset($_POST['User'])) {
+		  
+		  $attributes = $_POST['User'];
+		  
+  	  $model = User::model()->find('username=:username', array(':username' => $attributes['username']));
+  	  
+  	  if (!$model) {
+  	    $model = new User;
+  	    $model->attributes = $_POST['User'];
+  	    Yii::app()->user->setFlash('error', t('Invalid username "{username}".', 'locale', array('{username}' => $attributes['username'])));
+  	  }
+  	  else {
+  	    $body = t('Change password account, "{username}" on {server}. Your new password is "{password}" ,confirm link {activation_url}', 'locale', array(
+			    '{username}' => $model->username,
+			    '{server}' => $_SERVER['SERVER_NAME'],
+			    '{password}' => $attributes['password'],
+			    '{activation_url}' => au('user/activation?username='.$model->username.'&password='.md5($attributes['password']).'&key='.md5($model->username.Yii::app()->params['salt']))
+			  ));			  
+  			$mail = array(
+					'from' => Yii::app()->params['siteEmail'],
+					'to' => $model->email,
+					'subject' => t('Verify change password.'),
+					'body' => $body,
+  			);
+  			self::sendMail($mail);
+  			Yii::app()->user->setFlash('error', t('Please check your email for confirm new password.'));
+  			$this->redirect('/site/login');
+  	  }
+			  
+		}
+
+		$this->render('recovery', get_defined_vars());
+
 	}
 
 }

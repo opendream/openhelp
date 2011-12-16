@@ -1,9 +1,9 @@
 <?php
 return array(
+  'salt' => '1qa2ws3ed', // private key first change only
   'adminEmail'=>'webmaster@example.com',
   'siteEmail'=>'site@example.com',
   'siteName' => 'InfoAid',
-  'salt' => '1qa2ws3ed',
   'googleAnalytic' => 'UA-21899818-2',
   'logo' => 'images/infoaid.png',
 	'location'=>array('level0','level1','level2', 'level3'),

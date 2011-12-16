@@ -27,6 +27,10 @@
   		<?php echo t('Remember me next time'); ?>
   		<?php echo $form->error($model,'rememberMe'); ?>
   	</div>
+  	
+  	<div class="row recovery">
+  		<?php echo l(t('Recovery'), '/user/recovery'); ?>
+  	</div>
 
   	<div class="row buttons">
   		<?php echo CHtml::submitButton(t('Login')); ?>
