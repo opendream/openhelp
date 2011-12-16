@@ -237,25 +237,31 @@ class UserController extends Controller
 		
 	}
 
-	public function actionActivation($username, $key) {
+	public function actionActivation($username, $key, $password=null) {
 		if (!Yii::app()->user->isGuest) {
 			Yii::app()->user->setFlash('error', t('You are already logged in, please log out to activate your account'));
 			$this->redirect(Yii::app()->user->returnUrl);
 		}
     
     if ($key == md5($username.Yii::app()->params['salt'])) {
-      $model = new User;
-      $model->find('username=:username', array(':username' => $username));
+      $model = User::model()->find('username=:username', array(':username' => $username));
       if (!$model) {
         Yii::app()->user->setFlash('error', t('Invalid username "{username}"', 'locale', array('{username}' => $username)));
         $this->redirect(Yii::app()->user->returnUrl);
       }
       $model->status = 1;
+      if ($password) {
+        $model->password = $password;
+        Yii::app()->user->setFlash('success', t('Change password has been completed. Please, login to join.'));
+      }
+      else {
+        Yii::app()->user->setFlash('success', t('Your account "{username}" has been completed. Please, login to join with {sitename}.', 'locale', array(
+          '{username}' => $username,
+          '{sitename}' => Yii::app()->params['siteName'],
+        )));
+      }
       $model->save();
-      Yii::app()->user->setFlash('success', t('Your account "{username}" has been completed. Please, login to join with {sitename}.', 'locale', array(
-        '{username}' => $username,
-        '{sitename}' => Yii::app()->params['siteName'],
-      )));
+
       $this->redirect(array('/site/login'));
 		  
     }
