@@ -118,13 +118,21 @@ class WebformController extends Controller
 	  $this->layout='//layouts/layout1';
 	  
 	  $model=$this->loadModel($id);
-	  $this->pageTitle = Yii::app()->params['webforms'][$model->type]['label'];
+	  $type = $model->type;
+	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
 	  
-	  //print_r(unserialize($model->data)+array_fill(0, 4000, ''));
+	  if (Yii::app()->user->can('update', 'own', 'webform', $type, $id)) {
+      $this->menu=array(
+      	array('label'=>t('List'), 'url'=>array('list?type='.$type)),
+      	array('label'=>t('Update'), 'url'=>array('update', 'id'=>$model->id)),
+      	array('label'=>t('Delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'type' => $type),'confirm'=>'Are you sure you want to delete this item?')),
+      ); 
+	  }
+	  
     $data = safe_unserialize($model->data);
     $data = $data? ($data + array_fill(0, 4000, '')): array_fill(0, 4000, '');
     $this->render('view', array(
-      'type' => $model->type, 
+      'type' => $type, 
       'model' => $model,
       'Data' => $data,
     ));
@@ -139,6 +147,8 @@ class WebformController extends Controller
 	 */
 	public function actionCreate($type)
 	{
+	  Yii::app()->user->check('create', 'own', 'webform', $type);
+	  
 	  $this->layout='//layouts/layout1';
 	  $this->pageTitle = t('Create').' '.Yii::app()->params['webforms'][$type]['label'];
 	  $this->menu=array(
@@ -183,10 +193,8 @@ class WebformController extends Controller
 	  $this->layout='//layouts/layout1';
 	  
 	  $model=$this->loadModel($id);
-		if (Yii::app()->user->getGroup() == 'webform' && $model->user_id != Yii::app()->user->getIntId()) {
-	    $this->redirect(array('list?type='.$type));
-	    exit();
-	  }
+	  Yii::app()->user->check('update', 'own', 'webform', $model->type, $id);
+	  
 		
 	  $this->pageTitle = t('Update').' '.Yii::app()->params['webforms'][$model->type]['label'];
 	  $this->menu=array(
@@ -240,6 +248,9 @@ class WebformController extends Controller
 
 			// we only allow deletion via POST request
 			$model = $this->loadModel($id);
+			
+			Yii::app()->user->check('delete', 'own', 'webform', $model->type, $id);
+  	  
 			if (Yii::app()->user->getGroup() == 'webform' && $model->user_id != Yii::app()->user->getIntId()) {
   	    $this->redirect(array('list?type='.$type));
   	    exit();
@@ -260,6 +271,8 @@ class WebformController extends Controller
 	 */
 	public function actionList($type)
 	{
+	  Yii::app()->user->check('create', 'own', 'webform', $type);
+	  
 	  $this->layout='//layouts/layout1';
 	  $user = Yii::app()->user;
 	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];

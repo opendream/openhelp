@@ -6257,7 +6257,6 @@ html>body tbody.scrollContent td {
       <script type="text/javascript">
             
             var scope = $('.section3-table');
-            //scope.fixedHeaderTable({ footer: false, fixedColumns: 0 , height: '600px'});
             
             $('.moo-control').click(function (e) {
               e.preventDefault();
