@@ -239,7 +239,7 @@ class UserController extends Controller
 
 	public function actionActivation($username, $key) {
 		if (!Yii::app()->user->isGuest) {
-			Yii::app()->user->setFlash(t('error', 'You are already logged in, please log out to activate your account'));
+			Yii::app()->user->setFlash('error', t('You are already logged in, please log out to activate your account'));
 			$this->redirect(Yii::app()->user->returnUrl);
 		}
     
