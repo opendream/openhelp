@@ -259,12 +259,6 @@ class UserController extends Controller
       $this->redirect(array('/site/login'));
 		  
     }
-
-		if($status instanceof YumUser)
-			$this->render(Yum::module('registration')->activationSuccessView);
-		else
-			$this->render(Yum::module('registration')->activationFailureView, array(
-						'error' => $status));
 	}
 	
 	public function actionRecovery() {
