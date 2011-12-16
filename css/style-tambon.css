@@ -1,16 +1,4 @@
 /****************************************************
-
-*** Update 7/12/11 ***
-
-I remove style-tambon.css to style-tambon-backup.css
-
-*****************************************************/
-
-
-
-
-
-/****************************************************
 										Infoaid.org
 *****************************************************/
 body{
@@ -318,6 +306,95 @@ select {
 }
 
 /**********************
+		Webform Login
+**********************/
+.webform-user, .flash-message{
+	float: none;
+	width: 320px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+	.webform-user h1{
+		margin: 0 0 20px;
+		padding: 5px 10px;
+		color: white;
+		font-size: 22px;
+		background: #E24D4D;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+	.webform-user .row{
+		margin: 0 0 10px;
+		font-size: 15px;
+	}
+	.webform-user .text input{
+		width: 295px;
+		margin: 10px 0 0;
+		padding: 10px;
+		color: gray;
+		border: 1px solid #CCC;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+	.errorMessage{
+		width: 300px;
+		margin: 5px 0 0;
+		padding: 7px;
+		font-size: 12px;
+		background-color: #FDDFDE;
+		border: 1px solid #FBC7C6;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+	.webform-user .buttons input{
+		color: #333;
+		width: 317px;
+		font-size: 13px;
+		line-height: normal;
+		border: 1px solid #CCC;
+		padding: 5px 14px 6px;
+		background-color: #E6E6E6;
+		background-repeat: no-repeat;
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+		background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+		background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+	.webform-user .buttons input:hover{
+		cursor: pointer;
+		color: #333;
+	}
+
+.flash-message{
+	width: 365px;
+}
+.flash-success, .flash-error{
+	padding: 20px;
+	font-size: 16px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+	.flash-error{
+		background-color: #FDDFDE;
+		border: 1px solid #FBC7C6;
+	}
+	.flash-success{
+		background-color: #D1EED1;
+		border: 1px solid #a4d5a4;
+}
+	}
+
+/**********************
 				table
 **********************/
 td.hide-col{
@@ -372,7 +449,7 @@ td.hide-col{
 nav {
 	float: left;
 	margin: 26px 0 0 210px;
-	
+	*display: inline
 }
   nav ul {
 	  list-style: none;
@@ -534,7 +611,7 @@ nav {
 
 
 /********************
- * Programer - Content Manager
+	Content Manager
 /********************/
 .content-manager {
     margin: 0 auto;
@@ -734,9 +811,6 @@ nav {
 /* Webform list */
 #webform-list h1{
 	font-size: 18px;
-}
-#webform-list .db-list{
-/* 	width: 890px; */
 }
 #webform-list .pager{
 	clear: both;

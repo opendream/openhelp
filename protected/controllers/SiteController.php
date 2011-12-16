@@ -121,8 +121,10 @@ class SiteController extends Controller
 			if($model->validate() && $model->login())
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
+
+    $type = isset($_GET['type'])? $_GET['type']: '';
 		// display the login form
-		$this->render('login',array('model'=>$model));
+		$this->render('login',array('model'=>$model, 'type' => $type));
 	}
 
 	/**

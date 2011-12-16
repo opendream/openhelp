@@ -1,4 +1,4 @@
-<div class="webform-content">
+<div class="webform-content webform-user">
   
   <h1><?php echo t('Recovery'); ?></h1>
 
@@ -7,13 +7,13 @@
   	'enableAjaxValidation'=>false,
   )); ?>
 
-  	<div class="row">
+  	<div class="row text">
   		<?php echo t('Username'); ?>
   		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>128)); ?>
   		<?php echo $form->error($model,'username'); ?>
   	</div>
 
-  	<div class="row">
+  	<div class="row text">
   		<?php echo t('Password'); ?>
   		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>128)); ?>
   		<?php echo $form->error($model,'password'); ?>

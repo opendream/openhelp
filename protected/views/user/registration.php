@@ -1,4 +1,4 @@
-<div class="webform-content">
+<div class="webform-content webform-user">
   
   <h1><?php echo t('Registration'); ?></h1>
 
@@ -7,26 +7,26 @@
   	'enableAjaxValidation'=>true,
   )); ?>
 
-  	<div class="row">
+  	<div class="row text">
   		<?php echo t('Username'); ?>
   		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>128)); ?>
   		<?php echo $form->error($model,'username'); ?>
   	</div>
 
-  	<div class="row">
+  	<div class="row text">
   		<?php echo t('Password'); ?>
   		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>128)); ?>
   		<?php echo $form->error($model,'password'); ?>
   	</div>
 
-  	<div class="row">
+  	<div class="row text">
   		<?php echo t('Email'); ?>
   		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
   		<?php echo $form->error($model,'email'); ?>
   	</div>
 	
   	<?php if ($showType): ?>
-  	<div class="row">
+  	<div class="row dropdown">
   		<?php echo t('Type'); ?>
   		<?php echo $form->dropDownList($model,'type',$types); ?>
   		<?php echo $form->error($model,'type'); ?>

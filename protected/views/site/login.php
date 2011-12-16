@@ -1,4 +1,4 @@
-<div class="webform-content">
+<div class="webform-content webform-user">
   
   <h1><?php echo t('Login'); ?></h1>
 
@@ -10,25 +10,29 @@
   	),
   )); ?>
 
-  	<div class="row">
+  	<div class="row text">
   		<?php echo t('Username'); ?>
   		<?php echo $form->textField($model,'username'); ?>
   		<?php echo $form->error($model,'username'); ?>
   	</div>
 
-  	<div class="row">
+  	<div class="row text">
   		<?php echo t('Password'); ?>
   		<?php echo $form->passwordField($model,'password'); ?>
   		<?php echo $form->error($model,'password'); ?>
   	</div>
 
-  	<div class="row rememberMe">
+  	<div class="row checkbox rememberMe">
   		<?php echo $form->checkBox($model,'rememberMe'); ?>
   		<?php echo t('Remember me next time'); ?>
   		<?php echo $form->error($model,'rememberMe'); ?>
   	</div>
   	
-  	<div class="row recovery">
+  	<div class="row link registration">
+      <?php $suffix = $type? '?type='.$type: ''; ?>
+  		<?php echo l(t('Registration'), '/user/registration'.$suffix); ?>
+  	</div>
+  	<div class="row link recovery">
   		<?php echo l(t('Recovery'), '/user/recovery'); ?>
   	</div>
 

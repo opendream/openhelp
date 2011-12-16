@@ -40,3 +40,7 @@ thead.fixedHeader th {
 	background: #C1C1C1 !important;
 }
 
+nav{
+	display: inline !important;
+}
+
