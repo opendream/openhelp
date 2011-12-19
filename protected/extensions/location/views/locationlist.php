@@ -153,14 +153,17 @@ while (!empty($addresses)) {
 	$output .= '</span>';
 }
 
-$output .= '<span id="Location_id_wrapper">';
-if ($multiple) {
-  $output .=  '<input id="Webform_locations_'.$index.'" type="hidden" name="Webform[locations]['.$index.']" value="'.$mattrId.'">';
+if (!isset($noinput) || !$noinput) {
+  $output .= '<span id="Location_id_wrapper">';
+  if ($multiple) {
+    $output .=  '<input id="Webform_locations_'.$index.'" type="hidden" name="Webform[locations]['.$index.']" value="'.$mattrId.'">';
+  }
+  else {
+    $output .=   CHtml::activeHiddenField($model, $attribute);
+  }
+  $output .= '</span>';
 }
-else {
-  $output .=   CHtml::activeHiddenField($model, $attribute);
-}
-$output .= '</span>';
+
 
 echo $output;
 

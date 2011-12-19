@@ -2,7 +2,7 @@
 return array(
   'salt' => '1qa2ws3ed', // private key first change only
   'adminEmail'=>'webmaster@example.com',
-  'siteEmail'=>'site@example.com',
+  'siteEmail'=>'confirm@infoaid.org',
   'siteName' => 'InfoAid',
   'googleAnalytic' => 'UA-21899818-2',
   'logo' => 'images/infoaid.png',

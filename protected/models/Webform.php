@@ -239,6 +239,10 @@ class Webform extends CActiveRecord
        {
          if(isset($this->$key))
          {
+           
+           $query = sprintf("delete from webform_location where webform_id = %s", $this->{$this->tableSchema->primaryKey});
+           Yii::app()->db->createCommand($query)->execute();
+           
            if(is_object($this->$key) || is_numeric($this->$key))
            {
              $query = $this->makeManyMany(
@@ -266,8 +270,6 @@ class Webform extends CActiveRecord
    }
 
    public function makeManyMany($model, $rel, $foreignrel) {
-     $query = sprintf("delete from webform_location where webform_id = %s", $rel);
-     Yii::app()->db->createCommand($query)->execute();
      $query = sprintf("insert into %s values (%s, %s)", $model, $rel, $foreignrel);
      Yii::app()->db->createCommand($query)->execute();
    }

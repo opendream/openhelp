@@ -1,0 +1,1 @@
+<?php $this->widget('ext.location.LocationMultipleSelectedWidget', array('model' => $model, 'locations' => $locations, 'join' => $join)); ?>

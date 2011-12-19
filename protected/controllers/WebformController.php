@@ -222,6 +222,7 @@ class WebformController extends Controller
 		  //print_r(array_filter($attributes));
 			$model->attributes=array_filter($attributes);
 			$model->locations = array_filter($attributes['locations']);
+			//print_r($model->locations);
 			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));

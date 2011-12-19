@@ -373,6 +373,11 @@ select {
 		cursor: pointer;
 		color: #333;
 	}
+	
+	.webform-user .registration {
+	  float: left;
+	  margin-right: 10px;
+	}
 
 .flash-message{
 	width: 365px;

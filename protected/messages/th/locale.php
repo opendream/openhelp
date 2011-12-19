@@ -37,6 +37,8 @@ return array(
   'Delete' => 'ลบ',
   'Manage' => 'จัดการ',
   
+  'Add' => 'เพิ่ม',
+  
   'Item List' => 'รายการ',
   'Map' => 'แผนที่',
   'Select Display' => 'เลือกการแสดงผล',

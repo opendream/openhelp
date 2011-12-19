@@ -205,6 +205,8 @@ class UserController extends Controller
 			
 			if($model->save()) {
 			  // Send email			  
+			  Yii::app()->user->setFlash('success', t('Thank you for your registration. Please check your email for confirm your email.'));
+			  
 			  $body = t('Verify your account "{username}" on {server} link {activation_url}', 'locale', array(
 			    '{username}' => $model->username,
 			    '{server}' => $_SERVER['SERVER_NAME'],
@@ -218,7 +220,6 @@ class UserController extends Controller
   			);
   			self::sendMail($mail);
 			  
-			  Yii::app()->user->setFlash('success', t('Thank you for your registration. Please check your email for confirm your email.'));
 			  $this->redirect(array('/site/login'));
 			}
 			else {
