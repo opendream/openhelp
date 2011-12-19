@@ -1,15 +1,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <!-- <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"> -->
-<!--[if IE 6]>
-<link rel="stylesheet" href="/css/ie6.css">
-<![endif]-->
 <link rel="stylesheet" href="/css/defaultTheme.css">
 <style type="text/css">
 /*****************************************
    Override bootstrap
 *****************************************/
-
 .no-float{
 	float: none;
 	width: 125px;
@@ -68,7 +63,7 @@ label.label-ss {
   margin-left: 0;
   margin-right: 0;
 }
-.center tbody tr td{
+.center tbody tr td, .section2 tbody tr td{
   text-align: center;
 }
 h3 {
@@ -103,7 +98,7 @@ table tbody tr td {
   border-bottom: 1px solid #eee;
   text-align: left;
 }
- .help-block {margin: 0 0 5px;}
+ .help-block {margin: 0 0 10px; display: block;}
  .al-left {text-align: left !important;}
  
  td.h-line {height: 40px;}
@@ -132,7 +127,8 @@ table tbody tr td {
  }
  
  .section3 textarea {
-	 width: 140px;
+	 width: 200px;
+	 height: 100px;
  }
  
  .section3-table .hide-col {
@@ -165,16 +161,19 @@ div.section3-form{
 	width: auto !important;
 }
 
-.table-lv1 .hide-col, .table-lv2 .hide-col{
-	background: #A3A3A3 !important;
-}
-
 .bordered-table thead{
 	background: #C1C1C1;
 }
 
 .fixrows{
 	margin-bottom: 15px;
+}
+
+.section3-table .table-lv2 td{
+	background: #C1C1C1;
+}
+.section3-table .table-lv1 td{
+	background: #a3a3a3;
 }
 
 /*****************************************
@@ -216,6 +215,15 @@ div.section3-form{
 	background: #eb554b;
 }
 
+
+
+/*****************************************
+					Location info
+*****************************************/
+#Location_level0_wrapper, #Location_level1_wrapper, #Location_level2_wrapper, #Location_level3_wrapper{
+	float: left;
+	width: 180px;
+}
 
 
 /*****************************************
@@ -277,7 +285,7 @@ table {
 	font-size: 13px;
 	border-collapse: collapse;
 }
-form .clearfix{margin-bottom:18px;zoom:1;}
+form .clearfix, .clearfix{margin-bottom:18px;zoom:1;}
 
 label {
 	padding-top: 6px;
@@ -295,7 +303,7 @@ fieldset legend {
 	width: 100%;
 	color: #404040;
 }
-h1,h2,h3,h4,h5,h6{font-weight:bold;color:#404040;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{color:#bfbfbf;}
+h1,h2,h3,h4,h5,h6{color:#404040;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{color:#bfbfbf;}
 h1{margin-bottom:18px;font-size:30px;line-height:36px;}h1 small{font-size:18px;}
 h2{font-size:24px;line-height:36px;}h2 small{font-size:14px;}
 h3,h4,h5,h6{line-height:36px;}
@@ -531,7 +539,7 @@ html>body tbody.scrollContent td {
       <?php $this->widget('ext.location.LocationWidget', array('model' => $model, 'attribute' => 'locations', 'multiple' => true, 'index' => 0)); ?>
 </div>
   </fieldset>
-  <br/><br/>
+
   
   
   
@@ -565,7 +573,7 @@ html>body tbody.scrollContent td {
 <input class="span4" name="Data[7]" type="text" placeholder="" value="<?php echo $Data[7]; ?>">
 </div>
   </fieldset>
-  <br/><br/>
+ <br/>
   
   
   
@@ -576,16 +584,13 @@ html>body tbody.scrollContent td {
 	.section3-table tr{
 		height: 30px !important;
 	}
-	
 	.table-lv1, .table-lv2{
 		height: 60px !important;
 	}
-	
 	input.primary{
 		height: 31px;
 		float: left;
 	}
-	
 	div.tableContainer {
 		overflow: scroll;
 		width: 900px !important;
@@ -606,20 +611,23 @@ html>body tbody.scrollContent td {
 		position: relative !important;
 		top: 0px !important;
 	}
-	
-	.table-lv1 .moo-col-1{
-		background: #A3A3A3 !important;
+	div.tableContainer table {
+		width: 880px !important;
 	}
-	
-	.table-lv2 .moo-col-1{
-		background: #C1C1C1 !important;
-	}
-
 </style>
 <![endif]-->
 <!--[if IE 7]>
 <style type="text/css">
-
+	.table-village-tb .scrollContent tr, .section3-table .scrollContent tr{
+		height: 30px !important;
+	}
+	div.tableContainer {
+		overflow: scroll !important;
+		width: 900px !important;
+	}
+	div.tableContainer table {
+		width: 880px !important;
+	}
 </style>
 <![endif]-->
 <!--[if IE 8]>
@@ -627,11 +635,9 @@ html>body tbody.scrollContent td {
 	div.tableContainer {
 		overflow: scroll !important;
 	}
-	
-	html > body div.tableContainer {
-		overflow: scroll !important;
+	div.tableContainer table {
+		width: 880px !important;
 	}
-	
 	form .clearfix {
 		margin-bottom: 18px;
 		zoom: 1;
@@ -643,8 +649,8 @@ html>body tbody.scrollContent td {
 	div.tableContainer {
 		overflow: scroll !important;
 	}
-	html > body div.tableContainer {
-		overflow: scroll !important;
+	div.tableContainer table {
+		width: 880px !important;
 	}
 	.table-village-tb .scrollContent tr, .section3-table .scrollContent tr{
 		height: 30px !important;
@@ -689,7 +695,7 @@ html>body tbody.scrollContent td {
 <input class="span3" name="Data[18]" type="text" placeholder="" value="<?php echo $Data[18]; ?>">
 </div>
   </fieldset>
-  <br/><br/>
+  <br/>
   
   
 <!-- ส่วนที่ 2 ข้อมูลผู้ประสานงานในพื้นที่ -->
@@ -859,7 +865,7 @@ html>body tbody.scrollContent td {
       
       
   </fieldset>
-  <br/><br/>
+  <br/>
 
   
   
