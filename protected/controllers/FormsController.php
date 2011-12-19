@@ -72,4 +72,28 @@ class FormsController extends Controller
   
   }
   
+  public function actionGetLocationFromLevels() {
+    $levels = $_GET['levels'];
+    $model = $_GET['model'];
+    $join = isset($_GET['join'])? $_GET['join']: '';
+    
+    
+    $where = '1';
+    foreach ($levels as $level => $value) {
+      $where .= " AND $level = '$value'";
+    }
+    $qtxt = "SELECT id FROM location WHERE $where";
+    $command = Yii::app()->db->createCommand($qtxt);
+    $locations = (object) $command->queryAll();
+        
+    $output = $this->render('locationselected', array('model' => $model, 'locations' => $locations, 'join' => $join), true);
+    if ($_GET['json']) {
+      echo CJSON::encode($output);
+    }
+    else {
+      echo $output;
+    }
+  	
+  }
+  
 }
