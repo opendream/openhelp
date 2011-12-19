@@ -270,7 +270,7 @@ class Webform extends CActiveRecord
    }
 
    public function makeManyMany($model, $rel, $foreignrel) {
-     $query = sprintf("insert into %s values (%s, %s)", $model, $rel, $foreignrel);
+     $query = sprintf("insert into %s values (%s, %s) on duplicate key update location_id = location_id", $model, $rel, $foreignrel);
      Yii::app()->db->createCommand($query)->execute();
    }
   

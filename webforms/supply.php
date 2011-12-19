@@ -16,9 +16,7 @@
 		}
 	</style>
     
-    
-  <?php $this->widget('ext.location.LocationMultipleWidget', array('model' => $model, 'attribute' => 'locations')); ?>
-    
+        
 <!--     1. ข้อมูลทั่วไปของกลุ่ม / องค์กร -->
   <fieldset>
 		<legend>1. ข้อมูลทั่วไปของกลุ่ม / องค์กร</legend>    
@@ -200,7 +198,7 @@
 					
 					<h3>2.1.2 พื้นที่เป้าหมาย</h3>
 					<div class="clearfix">
-            // location
+            <?php $this->widget('ext.location.LocationMultipleWidget', array('model' => $model, 'attribute' => 'locations')); ?>
             
 					</div>
 					
