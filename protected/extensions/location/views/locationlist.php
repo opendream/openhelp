@@ -32,7 +32,12 @@ $mattrId = $mattr;
 
 if ($multiple) {
   $mattr = isset($mattr[$index])? $mattr[$index]: 0;
-  $mattrId = $mattr? $mattr->id: $mattr;
+  if (is_numeric($mattr)) {
+    $mattrId = $mattr;
+  }
+  else {
+    $mattrId = $mattr? $mattr->id: $mattr;
+  }
   $attribute = $attribute."[$index]";
 }
 if ($mattrId || isset($_REQUEST['Location'])) {

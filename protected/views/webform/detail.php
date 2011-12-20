@@ -1,6 +1,7 @@
 <?php require 'protected/components/querypath/QueryPath.php'; ?>
 <?php require 'protected/controllers/UserController.php'; ?>
 
+<link rel="stylesheet" href="<?php echo bu('css/bootstrap.min.css'); ?>">
 
 <div class="general">
   <div class="meta-wrapper">

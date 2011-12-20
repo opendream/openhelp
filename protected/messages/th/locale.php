@@ -71,7 +71,7 @@ return array(
   'Verify your account.' => 'ยืนยันการสมัครสมาชิก',
   'Verify your account "{username}" on {server} link {activation_url}' => 'ยืนยันการสมัครสมาชิก {server} ของชื่อผู้ใช้ "{username}"  ได้ที่ {activation_url}',
   'You are already logged in, please log out to activate your account' => 'คุญเข้าระบบอยู่ กรุณาออกจากระบบ เพื่อทำการยืนยันการสมัครสมาชิก', 
-  'Invalid username "{username}"' => 'ชื่อผู้ใช้ "{username}" ไม่ถูกต้อง',
+  'Invalid username "{username}".' => 'ชื่อผู้ใช้ "{username}" ไม่ถูกต้อง',
   'Your account "{username}" has been completed. Please, login to join with {sitename}.' => 'ยืนยัน ชื่อผู้ใช้ "{username}" เสร็จสมบูรณ์ กรุณาเข้าสู่ระบบ เพื่อเข้าร่วมกับ {sitename}',
   'Recovery' => 'ลืมรหัสผ่าน',
   'Please check your email for confirm new password.' => 'กรุณาเช็คอีเมลของคุณ เพื่อทำการยืนยันรหัสผ่านใหม่',
@@ -79,9 +79,12 @@ return array(
   'Request new password' => 'ขอรหัสผ่านใหม่',
   'Change password has been completed. Please, login to join.' => 'เปลี่ยนรหัสใหม่เรียบร้อยแล้ว กรุณาเข้าสู่ระบบ',
   
-  
   'profile' => 'ข้อมูลผู้ใช้',
   'Profile' => 'ข้อมูลผู้ใช้',
+  
+  'Your information has been created.' => 'ข้อมูลของคุณได้รับการสร้างใหม่แล้ว',
+  'Your information has been updated.' => 'ข้อมูลของคุณได้รับการบันทึกแล้ว',
+  
   
    
   /*

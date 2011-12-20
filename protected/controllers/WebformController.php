@@ -149,13 +149,19 @@ class WebformController extends Controller
 	public function actionCreate($type)
 	{
     if (!Yii::app()->user->can('create', 'own', 'webform', $type)) {
+      Yii::app()->user->returnUrl = bu('webform/create?type='.$type);
       $this->redirect('/site/login?type='.$type);
     }
 	  
 	  $this->layout='//layouts/layout1';
 	  $this->pageTitle = t('Create').' '.Yii::app()->params['webforms'][$type]['label'];
-	  $this->menu=array(
-    	array('label'=>t('List'), 'url'=>array('list?type='.$type)),
+	  
+	  $this->menu = array();
+	  if (isset(Yii::app()->params['webforms'][$type]['profile'])) {
+	    $this->menu[] = array('label'=>t('Update').t('Profile'), 'url'=>array('user/update'));
+	  }
+	  $this->menu+=array(
+    	1 => array('label'=>t('List'), 'url'=>array('list?type='.$type)),
     );
 
 	  
@@ -170,11 +176,12 @@ class WebformController extends Controller
 		  $attributes['last_updated'] = date('Y-m-d H:i:s');
 		  $attributes['user_id'] = Yii::app()->user->getIntId();
 		  $attributes['data'] = serialize($_POST['Data']);
-			$model->attributes=array_filter($attributes);
+			$model->attributes=$attributes;
 		  $model->locations = array_filter($attributes['locations']);
 
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			  Yii::app()->user->setFlash('success', t('Your information has been created.'));
+				$this->redirect(array('update','id'=>$model->id));
 		}
     $this->render('create', array(
       'type' => $type, 
@@ -197,11 +204,15 @@ class WebformController extends Controller
 	  
 		
 	  $this->pageTitle = t('Update').' '.Yii::app()->params['webforms'][$model->type]['label'];
-	  $this->menu=array(
-    	array('label'=>t('List'), 'url'=>array('list?type='.$model->type)),
-    	array('label'=>t('Create'), 'url'=>array('create?type='.$model->type)),
-    	array('label'=>t('View'), 'url'=>array('view', 'id'=>$model->id)),
-    	array('label'=>t('Delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'type' => $model->type),'confirm'=>'Are you sure you want to delete this item?')),
+	  $this->menu = array();
+	  if (isset(Yii::app()->params['webforms'][$model->type]['profile'])) {
+	    $this->menu[] = array('label'=>t('Update').t('Profile'), 'url'=>array('user/update'));
+	  }
+	  $this->menu+=array(
+    	1 => array('label'=>t('List'), 'url'=>array('list?type='.$model->type)),
+    	2 => array('label'=>t('Create'), 'url'=>array('create?type='.$model->type)),
+    	3 => array('label'=>t('View'), 'url'=>array('view', 'id'=>$model->id)),
+    	4 => array('label'=>t('Delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'type' => $model->type),'confirm'=>'Are you sure you want to delete this item?')),
     	
     );
     
@@ -221,12 +232,13 @@ class WebformController extends Controller
 		  $attributes['user_id'] = Yii::app()->user->getIntId();
 		  $attributes['data'] = serialize($_POST['Data']);
 		  //print_r(array_filter($attributes));
-			$model->attributes=array_filter($attributes);
+			$model->attributes=$attributes;
 			$model->locations = array_filter($attributes['locations']);
 			//print_r($model->locations);
 			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			  Yii::app()->user->setFlash('success', t('Your information has been updated.'));
+				//$this->redirect(array('view','id'=>$model->id));
 		}
     $mdata = safe_unserialize($model->data);
     $mdata = $mdata? $mdata: array();

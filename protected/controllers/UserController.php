@@ -308,7 +308,7 @@ class UserController extends Controller
     if ($key == md5($username.Yii::app()->params['salt'])) {
       $model = User::model()->find('username=:username', array(':username' => $username));
       if (!$model) {
-        Yii::app()->user->setFlash('error', t('Invalid username "{username}"', 'locale', array('{username}' => $username)));
+        Yii::app()->user->setFlash('error', t('Invalid username "{username}".', 'locale', array('{username}' => $username)));
         $this->redirect(Yii::app()->user->returnUrl);
       }
       $model->status = 1;

@@ -1,6 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<style type="text/css">
 		h2{
 			font-size: 18px;
@@ -31,8 +30,18 @@
   </div>
 </div>
 
-<!-- เงินทุน -->
+<!-- Flag -->
 	<fieldset class="section1">
+	  <div class="clearfix">
+  		<legend>สถานะดำเนินการ</legend>
+  		<input type="radio" name="Webform[filter11]" value="1"<?php if ($Webform['filter11'] == 1): ?> checked="checked"<?php endif ?>> &nbsp;<span>ดำเนินการแล้ว</span>
+  		&nbsp;&nbsp;
+  		<input type="radio" name="Webform[filter11]" value="0"<?php if ($Webform['filter11'] == 0): ?> checked="checked"<?php endif ?>> &nbsp;<span>มีแผนที่จะดำเนินการ</span>
+		</div>
+	</fieldset>
+	
+<!-- เงินทุน -->
+	<fieldset class="section2">
 		<legend>บริษัทหรือองค์กรของท่านได้เข้าไปมีส่วนร่วมในช่วยเหลืออย่างไร</legend>
 		<div class="clearfix">
 		  <label>เงินทุนสนับสนุน (บาท)</label>
@@ -45,15 +54,6 @@
 		  <div class="input">
 		    <input class="xlarge" name="Data[1]" size="50" type="text" value="<?php echo $Data[1]; ?>">
 		  </div>
-		</div>
-	</fieldset>
-
-<!-- Flag -->
-	<fieldset class="section2">
-	  <div class="clearfix">
-  		<legend>สถานะดำเนินการ</legend>
-  		<input type="radio"> <span>ดำเนินการแล้ว</span>
-  		<input type="radio"> <span>มีแผนที่จะดำเนินการ</span>
 		</div>
 	</fieldset>
 
@@ -113,57 +113,68 @@
 		    <ul class="inputs-list check-list">
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter0" type="hidden" value="0" name="Webform[filter0]"><input name="Webform[filter0]" id="Webform_filter0" value="1" type="checkbox" class="check-fix-ie">					          <span>การเกษตร</span>
+		          <input id="ytWebform_filter0" type="hidden" value="0" name="Webform[filter0]">
+		          <input name="Webform[filter0]" id="Webform_filter0" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter0'] == 1): ?> checked="checked"<?php endif ?>>					          <span>การเกษตร</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter1" type="hidden" value="0" name="Webform[filter1]"><input name="Webform[filter1]" id="Webform_filter1" value="1" type="checkbox" class="check-fix-ie">					          <span>การจัดการภัยพิบัติ</span>
+		          <input id="ytWebform_filter1" type="hidden" value="0" name="Webform[filter1]">
+		          <input name="Webform[filter1]" id="Webform_filter1" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter1'] == 1): ?> checked="checked"<?php endif ?>>					          <span>การจัดการภัยพิบัติ</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter2" type="hidden" value="0" name="Webform[filter2]"><input name="Webform[filter2]" id="Webform_filter2" value="1" type="checkbox" class="check-fix-ie">					          <span>เศรษฐกิจและการฟื้นฟูอาชีพ</span>
+		          <input id="ytWebform_filter2" type="hidden" value="0" name="Webform[filter2]">
+		          <input name="Webform[filter2]" id="Webform_filter2" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter2'] == 1): ?> checked="checked"<?php endif ?>>					          <span>เศรษฐกิจและการฟื้นฟูอาชีพ</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter3" type="hidden" value="0" name="Webform[filter3]"><input name="Webform[filter3]" id="Webform_filter3" value="1" type="checkbox" class="check-fix-ie">					          <span>การศึกษา</span>
+		          <input id="ytWebform_filter3" type="hidden" value="0" name="Webform[filter3]">
+		          <input name="Webform[filter3]" id="Webform_filter3" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter3'] == 1): ?> checked="checked"<?php endif ?>>					          <span>การศึกษา</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter4" type="hidden" value="0" name="Webform[filter4]"><input name="Webform[filter4]" id="Webform_filter4" value="1" type="checkbox" class="check-fix-ie">					          <span>สิ่งแวดล้อม</span>
+		          <input id="ytWebform_filter4" type="hidden" value="0" name="Webform[filter4]">
+		          <input name="Webform[filter4]" id="Webform_filter4" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter4'] == 1): ?> checked="checked"<?php endif ?>>					          <span>สิ่งแวดล้อม</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter5" type="hidden" value="0" name="Webform[filter5]"><input name="Webform[filter5]" id="Webform_filter5" value="1" type="checkbox" class="check-fix-ie">					          <span>อาหาร</span>
+		          <input id="ytWebform_filter5" type="hidden" value="0" name="Webform[filter5]">
+		          <input name="Webform[filter5]" id="Webform_filter5" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter5'] == 1): ?> checked="checked"<?php endif ?>>					          <span>อาหาร</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter6" type="hidden" value="0" name="Webform[filter6]"><input name="Webform[filter6]" id="Webform_filter6" value="1" type="checkbox" class="check-fix-ie">					          <span>สุขภาพ</span>
+		          <input id="ytWebform_filter6" type="hidden" value="0" name="Webform[filter6]">
+		          <input name="Webform[filter6]" id="Webform_filter6" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter6'] == 1): ?> checked="checked"<?php endif ?>>					          <span>สุขภาพ</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter7" type="hidden" value="0" name="Webform[filter7]"><input name="Webform[filter7]" id="Webform_filter7" value="1" type="checkbox" class="check-fix-ie">					          <span>ที่อยู่อาศัย</span>
+		          <input id="ytWebform_filter7" type="hidden" value="0" name="Webform[filter7]">
+		          <input name="Webform[filter7]" id="Webform_filter7" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter7'] == 1): ?> checked="checked"<?php endif ?>>					          <span>ที่อยู่อาศัย</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter8" type="hidden" value="0" name="Webform[filter8]"><input name="Webform[filter8]" id="Webform_filter8" value="1" type="checkbox" class="check-fix-ie">					          <span>สาธารณสุขและน้ำสะอาด</span>
+		          <input id="ytWebform_filter8" type="hidden" value="0" name="Webform[filter8]">
+		          <input name="Webform[filter8]" id="Webform_filter8" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter8'] == 1): ?> checked="checked"<?php endif ?>>					          <span>สาธารณสุขและน้ำสะอาด</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter9" type="hidden" value="0" name="Webform[filter9]"><input name="Webform[filter9]" id="Webform_filter9" value="1" type="checkbox" class="check-fix-ie">					          <span>ความเท่าเทียม สิทธิมนุษยชน ความยุติธรรม และประชาธิปไตย</span>
+		          <input id="ytWebform_filter9" type="hidden" value="0" name="Webform[filter9]">
+		          <input name="Webform[filter9]" id="Webform_filter9" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter9'] == 1): ?> checked="checked"<?php endif ?>>					          <span>ความเท่าเทียม สิทธิมนุษยชน ความยุติธรรม และประชาธิปไตย</span>
 		        </label>
 		      </li>
 		      <li>
 		        <label>
-		          <input id="ytWebform_filter10" type="hidden" value="0" name="Webform[filter10]"><input name="Webform[filter10]" id="Webform_filter10" value="1" type="checkbox" class="check-fix-ie">					          <span>อื่นๆ (โปรดระบุ)</span>
+		          <input id="ytWebform_filter10" type="hidden" value="0" name="Webform[filter10]">
+		          <input name="Webform[filter10]" id="Webform_filter10" value="1" type="checkbox" class="check-fix-ie"<?php if ($Webform['filter10'] == 1): ?> checked="checked"<?php endif ?>>					          <span>อื่นๆ (โปรดระบุ)</span>
 						  <input class="xlarge" name="Data[23]" size="30" type="text" value="" >
 		        </label>
 		      </li>

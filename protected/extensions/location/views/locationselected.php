@@ -1,7 +1,13 @@
 <?php foreach ($locations as $location): ?>
 <?php 
-$location = (object) $location;
-$id = $location->id;
+if (is_numeric($location)) {
+  $id = $location;
+}
+else {
+  $location = (object) $location;
+  $id = $location->id;
+}
+
 $model = is_string($model)? $model: get_class($model);
 ?>
 <div class="location-selected-item" id="location-selected-item-<?php echo $id ?>">

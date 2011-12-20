@@ -3,6 +3,7 @@ $this->menu=array(
 	array('label'=>t('Update'), 'url'=>array('update')),
 );
 ?>
+<link rel="stylesheet" href="<?php echo bu('css/bootstrap.min.css'); ?>">
 
 <div class="webform-content drop-shadow curved curved-hz-1">
   <div class="webform-field">

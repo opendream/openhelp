@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?php echo bu('css/bootstrap.min.css'); ?>">
+
 <div class="webform-content drop-shadow curved curved-hz-1">
 
 <?php echo str_replace(

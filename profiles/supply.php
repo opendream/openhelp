@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/css/bootstrap.min.css">
 <style type="text/css">
 		h2{
 			font-size: 18px;

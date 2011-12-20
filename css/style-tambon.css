@@ -63,6 +63,10 @@ select {
 	color: whiteSmoke;
 }
 
+#content-form .actions {
+  margin-top: 0;
+  border-bottom: 1px solid #DDDDDD;
+}
 
 /**********************
 				 Font
@@ -386,9 +390,13 @@ select {
 		cursor: pointer;
 		color: #333;
 	}
-
+#site-login .flash-message, 
+#user-registration .flash-message,
+#user-recovery .flash-message{
+  width: 365px;
+}
 .flash-message{
-	width: 365px;
+	width: 940px;
 }
 .flash-success, .flash-error{
 	padding: 20px;
