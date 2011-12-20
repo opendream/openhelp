@@ -1,3 +1,5 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 		<style type="text/css">
 		h2{
@@ -34,11 +36,12 @@
 		}
 		</style>
 <!-- เลือกพื้นที่เป้าหมาย -->
-  <div class="target">
-	  <h2>พื้นที่เป้าหมาย</h2>
-			<div class="clearfix">
-			<?php $this->widget('ext.location.LocationMultipleWidget', array('model' => $model, 'attribute' => 'locations')); ?>
+<div class="target">
+  <h2>พื้นที่เป้าหมาย</h2>
+	<div class="clearfix">
+	<?php $this->widget('ext.location.LocationMultipleWidget', array('model' => $model, 'attribute' => 'locations')); ?>
   </div>
+</div>
 
 <!-- เงินทุน -->
 	<fieldset>
@@ -58,11 +61,11 @@
 	</fieldset>
 
 <!-- Flag -->
-	<div class="clearfix">
-		<h2>เลือก</h2>
-		<input type="checkbox"/> &nbsp; <span>แบบที่ 1</span>
-		<input type="checkbox"/> &nbsp; <span>แบบที่ 2</span>
-	</div>
+	<fieldset class="clearfix">
+		<legend>สถานะดำเนินการ</legend>
+		<input type="radio"/> &nbsp; <span>ดำเนินการแล้ว</span>
+		<input type="radio"/> &nbsp; <span>มีแผนที่จะดำเนินการ</span>
+	</fieldset>
 
 <!-- รายละเอียดโครงการ -->
 	<fieldset>

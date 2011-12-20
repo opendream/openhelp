@@ -49,7 +49,6 @@ class UserController extends Controller
 	  $Data = safe_unserialize($User->data);
 	  $Data = is_array($Data)? $Data: array();
 	  $Data = $Data + array_fill(0, 1000, '');
-	  
     ob_start();
     ob_implicit_flush(false);    
     require(substr(bu(Yii::app()->params['webforms'][$type]['profile']['file']), 1));

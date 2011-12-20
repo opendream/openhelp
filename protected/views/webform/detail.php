@@ -1,4 +1,6 @@
 <?php require 'protected/components/querypath/QueryPath.php'; ?>
+<?php require 'protected/controllers/UserController.php'; ?>
+
 
 <div class="general">
   <div class="meta-wrapper">
@@ -109,8 +111,24 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       <?php 
       
       if (Yii::app()->params['webforms'][$type]['profile']['show']) {
-        $user = $model->user;
-        //echo User::getProfile($user);
+        $user = User::model()->findByPk($model->user->id);
+        $profileHtml = UserController::getProfile($user);
+        $profileHtml = str_replace(array('<![CDATA[', ']]>'), array('', ''), $profileHtml);
+        
+        echo str_replace(
+          array(
+            '<input',
+            '<textarea',
+            '<select',
+          ), 
+          array(
+            '<input disabled="disabled"',
+            '<textarea disabled="disabled"',
+            '<select disabled="disabled"',
+          ), 
+          $profileHtml
+        );
+
       }
       
       $data = safe_unserialize($model->data);

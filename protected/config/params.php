@@ -93,6 +93,7 @@ return array(
           'title' => 'รายละเอียด',
         ),
       ),
+      'detail' => 'fieldset',
 	    'color' => '0,100,74',
 	    'popup' => '<h1 style ="text-align:center;margin:10px 0;font-size:20px;font-weight:bold;">กำลังอยู่ในขั้นตอนดำเนินการ</h1>',
 	    'filters' => array(
