@@ -78,6 +78,8 @@ return array(
   
   
   'profile' => 'ข้อมูลผู้ใช้',
+  'Profile' => 'ข้อมูลผู้ใช้',
+  
    
   /*
   * Location

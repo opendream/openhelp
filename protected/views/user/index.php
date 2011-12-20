@@ -1,17 +1,26 @@
 <?php
-$this->breadcrumbs=array(
-	'Users',
-);
-
 $this->menu=array(
-	array('label'=>'Create User', 'url'=>array('create')),
-	array('label'=>'Manage User', 'url'=>array('admin')),
+	array('label'=>t('Update'), 'url'=>array('update')),
 );
 ?>
 
-<h1>Users</h1>
+<div class="webform-content drop-shadow curved curved-hz-1">
+  <div class="webform-field">
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+  <h1><?php echo $this->pageTitle; ?></h1>
+  
+  <?php echo str_replace(
+    array(
+      '<input',
+      '<textarea',
+      '<select',
+    ), 
+    array(
+      '<input disabled="disabled"',
+      '<textarea disabled="disabled"',
+      '<select disabled="disabled"',
+    ), 
+    $this->getProfile($user)
+  ); ?>
+  </div>
+</div>

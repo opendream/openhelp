@@ -46,7 +46,9 @@ class UserController extends Controller
 	
 	public function getProfile($User) {
 	  $type = $User->type;
-	  $Data = $User->data;
+	  $Data = safe_unserialize($User->data);
+	  $Data = is_array($Data)? $Data: array();
+	  $Data = $Data + array_fill(0, 1000, '');
 	  
     ob_start();
     ob_implicit_flush(false);    
@@ -123,8 +125,27 @@ class UserController extends Controller
 	    $this->layout = '//layouts/layout1';
   	  $this->pageTitle = t('Update').' '.t('profile');
   	  
+  	  $id = Yii::app()->user->getIntId();
+  	  $model=$this->loadModel($id);
+  	  
+  	  if(isset($_POST['User']) || isset($_POST['Data'])) {
+  	    if (isset($_POST['User'])) {
+  	      foreach ($_POST['User'] as $profile => $value) {
+    	      $model->$profile = $value;
+    	    }
+  	    }
+  	    if (isset($_POST['Data'])) {
+  	      $model->data = serialize($_POST['Data']);
+  	    }
+  	    
+  	    if($model->save()) {
+  	      $this->redirect(array('/user'));
+  	    }
+
+	    }
+  	  
 	    $this->render('updateProfile',array(
-  			'user'=>Yii::app()->user->account,
+  			'user'=>$model,
   		));
 	  }
 	}
@@ -155,11 +176,16 @@ class UserController extends Controller
 	public function actionIndex()
 	{
 	  $this->layout = '//layouts/layout1';
-    
-		$dataProvider=new CActiveDataProvider('User');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+	  $this->pageTitle = t('Profile');
+	  
+	  $id = Yii::app()->user->getIntId();
+	  $model=$this->loadModel($id);
+	  
+	  $this->render('index',array(
+			'user'=>$model,
 		));
+    
+
 	}
 	
 	/**

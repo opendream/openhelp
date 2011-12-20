@@ -1,3 +1,9 @@
+<?php
+$this->menu=array(
+	array('label'=>t('View'), 'url'=>array('index')),
+);
+?>
+
 <div class="webform-content drop-shadow curved curved-hz-1">
 <h1><?php echo $this->pageTitle; ?></h1>
 
