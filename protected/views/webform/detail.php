@@ -110,7 +110,7 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       
       <?php 
       
-      if (Yii::app()->params['webforms'][$type]['profile']['show']) {
+      if (isset(Yii::app()->params['webforms'][$type]['profile']) && Yii::app()->params['webforms'][$type]['profile']['show']) {
         $user = User::model()->findByPk($model->user->id);
         $profileHtml = UserController::getProfile($user);
         $profileHtml = str_replace(array('<![CDATA[', ']]>'), array('', ''), $profileHtml);
@@ -133,6 +133,7 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       
       $data = safe_unserialize($model->data);
       $data = $data? ($data + array_fill(0, 4000, '')): array_fill(0, 4000, '');
+      //print_r($data);
       $form = $this->getWebForm($type, $model, $data);
       
       $qp = qp($form);
@@ -143,11 +144,13 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
           array(
             '<input',
             '<textarea',
+            '</textarea>',
             '<select',
           ), 
           array(
             '<input disabled="disabled"',
-            '<textarea disabled="disabled"',
+            '<div class="textarea"',
+            '</div>',
             '<select disabled="disabled"',
           ),
           $html
@@ -169,12 +172,21 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       <fieldset class="webform-field">
         <legend><?php echo Yii::app()->params['webforms'][$type]['filters']['title']['detail']; ?></legend>
         <?php foreach ($filters as $name => $filter): ?>
-        <div class="filter-item filter-item-<?php echo $name; ?>">
-          <div class="filter-item-label"><?php echo $filter['label']; ?></div>
-          <div class="filter-item-description"><?php //echo $filter['description']; ?></div>
-          <div class="filter-item-prefix"><?php echo $filter['prefix']; ?></div>
-          <div class="filter-item-value"><?php echo $model->$name; ?></div>
-        </div>
+          <?php if ($filter['widget'] == 'dropDown'): ?>
+          <div class="filter-item filter-item-<?php echo $name; ?>">
+            <div class="filter-item-label"><?php echo $filter['label']; ?></div>
+            <div class="filter-item-description"><?php //echo $filter['description']; ?></div>
+            <div class="filter-item-prefix"><?php echo $filter['prefix']; ?></div>
+            <div class="filter-item-value"><?php echo $model->$name; ?></div>
+          </div>
+          <?php elseif ($filter['widget'] == 'checkBox' && $model->$name): ?>
+          <div class="filter-item filter-item-<?php echo $name; ?>">
+            <div class="filter-item-label"><?php echo $filter['label']; ?></div>
+            <div class="filter-item-description"><?php //echo $filter['description']; ?></div>
+            <div class="filter-item-prefix"><?php echo $filter['prefix']; ?></div>
+          </div>
+          <?php endif ?>
+
         <?php endforeach ?>
       </fieldset>
       

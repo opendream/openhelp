@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<style type="text/css">
 		h2{
 			font-size: 18px;
@@ -44,7 +44,7 @@
 </div>
 
 <!-- เงินทุน -->
-	<fieldset>
+	<fieldset class="section1">
 		<legend>บริษัทหรือองค์กรของท่านได้เข้าไปมีส่วนร่วมในช่วยเหลืออย่างไร</legend>
 		<div class="clearfix">
 		  <label>เงินทุนสนับสนุน (บาท)</label>
@@ -61,14 +61,16 @@
 	</fieldset>
 
 <!-- Flag -->
-	<fieldset class="clearfix">
-		<legend>สถานะดำเนินการ</legend>
-		<input type="radio"/> &nbsp; <span>ดำเนินการแล้ว</span>
-		<input type="radio"/> &nbsp; <span>มีแผนที่จะดำเนินการ</span>
+	<fieldset class="section2">
+	  <div class="clearfix">
+  		<legend>สถานะดำเนินการ</legend>
+  		<input type="radio"> <span>ดำเนินการแล้ว</span>
+  		<input type="radio"> <span>มีแผนที่จะดำเนินการ</span>
+		</div>
 	</fieldset>
 
 <!-- รายละเอียดโครงการ -->
-	<fieldset>
+	<fieldset class="section3">
 		<legend>รายละเอียกโครงการ</legend>
 		<div class="clearfix">
 		  <label>ชื่อโครงการ</label>
@@ -115,7 +117,7 @@
 	</fieldset>
 
 <!-- ประเด็นของโครงการ -->
-	<fieldset>
+	<fieldset class="section4">
 		<legend>ประเด็นของโครงการ</legend>
 		<div class="clearfix">
 		  <label id="optionsCheckboxes">(สามารถเลือกได้มากกว่า 1 ข้อ)</label>
@@ -183,7 +185,7 @@
 	</fieldset>
 	
 <!-- แนท -->
-	<fieldset>
+	<fieldset class="section5">
 		<legend>ข้อมูลผู้ประสานงาน</legend>
 		<div class="clearfix">
 		  <label>ชื่อผู้ประสานงานโครงการ</label>
@@ -206,7 +208,7 @@
 	</fieldset>
 
 <!-- รายละเอียดเพิ่มเติม -->
-	<fieldset>
+	<fieldset class="section6">
 		<legend>รายละเอียดเพิ่มเติม</legend>
 		<div class="clearfix">
 		  <label></label>
@@ -218,11 +220,11 @@
 
 
 <!-- ข้อมูลอื่นๆ -->
-	<fieldset>
+	<fieldset class="section7">
 		<legend>ข้อมูลอื่นๆ</legend>
 		<div class="clearfix">
 		  <h3>ปัญหาที่กลุ่ม/องค์กรของท่านพบในการทำงานมีอะไรบ้าง</h3>
-		  <div class="input">
+		  <div class="input">		    
 		    <textarea name="Data[13]" row="8" cols="50" class="xxlarge"><?php echo $Data[13]; ?></textarea>
 		  </div>
 		</div>
