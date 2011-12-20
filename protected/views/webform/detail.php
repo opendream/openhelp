@@ -108,6 +108,11 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       
       <?php 
       
+      if (Yii::app()->params['webforms'][$type]['profile']['show']) {
+        $user = $model->user;
+        //echo User::getProfile($user);
+      }
+      
       $data = safe_unserialize($model->data);
       $data = $data? ($data + array_fill(0, 4000, '')): array_fill(0, 4000, '');
       $form = $this->getWebForm($type, $model, $data);

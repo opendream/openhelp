@@ -52,7 +52,7 @@ class UserController extends Controller
 	  
     ob_start();
     ob_implicit_flush(false);    
-    require(substr(bu(Yii::app()->params['webforms'][$type]['profile']), 1));
+    require(substr(bu(Yii::app()->params['webforms'][$type]['profile']['file']), 1));
     return ob_get_clean();
   }
 
