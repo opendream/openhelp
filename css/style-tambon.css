@@ -40,13 +40,30 @@ select {
   border-radius: 3px;
 }
 
-#Location_level0, #Location_level1, #Location_level2, #Location_level3{
+#location-multiple #Location_level0, 
+#location-multiple #Location_level1, 
+#location-multiple #Location_level2, 
+#location-multiple #Location_level3 {
 	width: 160px;
 	margin: 0 0 10px;
 	display: block;
 }
-form fieldset legend{
-	font-size: 18px;
+
+#location-multiple #Location_level0_wrapper, 
+#location-multiple #Location_level1_wrapper, 
+#location-multiple #Location_level2_wrapper, 
+#location-multiple #Location_level3_wrapper {
+	float: left;
+	width: 160px;
+	margin: 0 15px 0 0;
+	display: block;
+}
+
+#location-add, #location-clear {
+	padding: 4px 10px;
+	border: 1px solid #333;
+	background: #555;
+	color: whiteSmoke;
 }
 
 
@@ -695,8 +712,9 @@ nav {
       }
   #webform-detail .general .location-list {
     margin-top: 10px;
-    overflow: hidden;
     border: 1px solid #cfcfcf;
+    max-height: 127px;
+    overflow: auto;
   }
     #webform-detail .general .location-item {
       overflow: hidden;
@@ -807,6 +825,11 @@ nav {
 	-khtml-border-radius: 0px;
 }
 
+#webform-view .display-hide, 
+#webform-detail .display-hide {
+  display: none;
+}
+
 /* Webform list */
 #webform-list h1{
 	font-size: 18px;
@@ -840,8 +863,8 @@ nav {
 	margin: 0 0 20px;
 }
 #location-selected{
-	overflow: scroll;
-	height: 150px;
+	overflow: auto;
+	max-height: 150px;
 	overflow-x: hidden;
 	border: 1px solid #CCC;
 	padding: 10px;

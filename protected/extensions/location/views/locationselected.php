@@ -5,7 +5,7 @@ $id = $location->id;
 $model = is_string($model)? $model: get_class($model);
 ?>
 <div class="location-selected-item" id="location-selected-item-<?php echo $id ?>">
-  <a class="location-selected-delete" href="#location-selected-item-<?php echo $id ?>">
+  <a class="location-selected-delete display-hide" href="#location-selected-item-<?php echo $id ?>">
     <?php echo t('Delete'); ?>
   </a>
   <span class="location-selected-labal">

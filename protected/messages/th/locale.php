@@ -36,8 +36,11 @@ return array(
   'Update' => 'แก้ไข',
   'Delete' => 'ลบ',
   'Manage' => 'จัดการ',
+  'Teaser' => 'ดูแบบย่อ',
   
   'Add' => 'เพิ่ม',
+  'Clear' => 'ล้าง',
+
   
   'Item List' => 'รายการ',
   'Map' => 'แผนที่',

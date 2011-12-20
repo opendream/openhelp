@@ -14,7 +14,7 @@ $locations = $model->locations;
     ));
     ?>
   </div>
-  <div id="location-hr">
+  <div id="location-hr" class="display-hide">
     <?php
     $this->render('locationlist',array(
     	"model"=> $newModel,
@@ -27,7 +27,9 @@ $locations = $model->locations;
     ));
     ?>
   </div>
-  <button id="location-add"><?php echo t('Add'); ?></button>
+  <button id="location-add" class="display-hide"><?php echo t('Add'); ?></button>
+  <button id="location-clear" class="display-hide"><?php echo t('Clear'); ?></button>
+  
   <script type="text/javascript">
     var baseUrl = '<?php echo bu(''); ?>';
     var model = '<?php echo get_class($model); ?>';
@@ -53,6 +55,10 @@ $locations = $model->locations;
         $('#location-selected').append($(resp));
       });
       
+    });
+    $('#location-clear').click(function (e) {
+      e.preventDefault();
+      $('#location-selected').html('');
     });
   </script>
 </div>

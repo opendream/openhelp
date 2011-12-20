@@ -16,20 +16,8 @@
 		fieldset{
 			*margin: 0;
 		}
-		#Location_level0_wrapper, #Location_level1_wrapper, #Location_level2_wrapper, #Location_level3_wrapper {
-			float: left;
-			width: 160px;
-			margin: 0 15px 0 0;
-			display: block;
-		}
 		.xxlarge{
 			height: 70px;
-		}
-		#location-add{
-			padding: 4px 10px;
-			border: 1px solid #333;
-			background: #555;
-			color: whiteSmoke;
 		}
 		.check-fix-ie{
 			width: 30px;
@@ -71,7 +59,7 @@
 
 <!-- รายละเอียดโครงการ -->
 	<fieldset class="section3">
-		<legend>รายละเอียกโครงการ</legend>
+		<legend>รายละเอียดโครงการ</legend>
 		<div class="clearfix">
 		  <label>ชื่อโครงการ</label>
 		  <div class="input">

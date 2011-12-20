@@ -115,7 +115,7 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
         $profileHtml = UserController::getProfile($user);
         $profileHtml = str_replace(array('<![CDATA[', ']]>'), array('', ''), $profileHtml);
         
-        echo str_replace(
+        $profileHtml = str_replace(
           array(
             '<input',
             '<textarea',
@@ -128,6 +128,8 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
           ), 
           $profileHtml
         );
+        $profileHtml = '<div class="webform-field">'.$profileHtml.'</div>';
+        echo $profileHtml;
 
       }
       

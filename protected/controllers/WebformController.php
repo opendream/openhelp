@@ -120,12 +120,13 @@ class WebformController extends Controller
 	  $model=$this->loadModel($id);
 	  $type = $model->type;
 	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
+	  $this->menu=array(0 => array('label'=>t('Teaser'), 'url'=>array('detail', 'id'=>$model->id)));
 	  
 	  if (Yii::app()->user->can('update', 'own', 'webform', $type, $id)) {
-      $this->menu=array(
-      	array('label'=>t('List'), 'url'=>array('list?type='.$type)),
-      	array('label'=>t('Update'), 'url'=>array('update', 'id'=>$model->id)),
-      	array('label'=>t('Delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'type' => $type),'confirm'=>'Are you sure you want to delete this item?')),
+      $this->menu+=array(
+      	1 => array('label'=>t('List'), 'url'=>array('list?type='.$type)),
+      	2 => array('label'=>t('Update'), 'url'=>array('update', 'id'=>$model->id)),
+      	3 => array('label'=>t('Delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'type' => $type),'confirm'=>'Are you sure you want to delete this item?')),
       ); 
 	  }
 	  
