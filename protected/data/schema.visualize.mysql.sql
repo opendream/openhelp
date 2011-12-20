@@ -10562,16 +10562,31 @@ CREATE TABLE IF NOT EXISTS `transporter` (
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE `user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  
   `username` varchar(128) NOT NULL,
   `password` varchar(128) NOT NULL,
-  `email` varchar(128) DEFAULT NULL,
-  `group` varchar(128) DEFAULT NULL,
-  `type` varchar(128) DEFAULT NULL,
+  `email` varchar(128),
+  `group` varchar(128),
+  `type` varchar(128),
   `status` int(2) DEFAULT 0,
+  
+  `data` text,
+  
+  `profile0` varchar(128),
+  `profile1` varchar(128),
+  `profile2` varchar(128),
+  `profile3` varchar(128),
+  `profile4` varchar(128),
+  `profile5` varchar(128),
+  `profile6` varchar(128),
+  `profile7` varchar(128),
+  `profile8` varchar(128),
+  `profile9` varchar(128),
+  
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `user`

@@ -11,6 +11,17 @@
  * @property string $group
  * @property string $type
  * @property integer $status
+ * @property string $data
+ * @property string $profile0
+ * @property string $profile1
+ * @property string $profile2
+ * @property string $profile3
+ * @property string $profile4
+ * @property string $profile5
+ * @property string $profile6
+ * @property string $profile7
+ * @property string $profile8
+ * @property string $profile9
  *
  * The followings are the available model relations:
  * @property Webform[] $webforms
@@ -62,14 +73,14 @@ class User extends CActiveRecord
 		return array(
 			array('username, password, email', 'required'),
 			array('status', 'numerical', 'integerOnly'=>true),
-			array('username, password, email, group, type', 'length', 'max'=>128),
+			array('username, password, email, group, type, profile0, profile1, profile2, profile3, profile4, profile5, profile6, profile7, profile8, profile9', 'length', 'max'=>128),
 			array('username, email', 'sameAttribute'),
 			array('email', 'CEmailValidator'),
-			
+			array('data', 'safe'),
 			
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, password, email, group, type, status', 'safe', 'on'=>'search'),
+			array('id, username, password, email, group, type, status, data, profile0, profile1, profile2, profile3, profile4, profile5, profile6, profile7, profile8, profile9', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,6 +109,17 @@ class User extends CActiveRecord
 			'group' => 'Group',
 			'type' => 'Type',
 			'status' => 'Status',
+			'data' => 'Data',
+			'profile0' => 'Profile0',
+			'profile1' => 'Profile1',
+			'profile2' => 'Profile2',
+			'profile3' => 'Profile3',
+			'profile4' => 'Profile4',
+			'profile5' => 'Profile5',
+			'profile6' => 'Profile6',
+			'profile7' => 'Profile7',
+			'profile8' => 'Profile8',
+			'profile9' => 'Profile9',
 		);
 	}
 
@@ -119,6 +141,17 @@ class User extends CActiveRecord
 		$criteria->compare('group',$this->group,true);
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('status',$this->status);
+		$criteria->compare('data',$this->data,true);
+		$criteria->compare('profile0',$this->profile0,true);
+		$criteria->compare('profile1',$this->profile1,true);
+		$criteria->compare('profile2',$this->profile2,true);
+		$criteria->compare('profile3',$this->profile3,true);
+		$criteria->compare('profile4',$this->profile4,true);
+		$criteria->compare('profile5',$this->profile5,true);
+		$criteria->compare('profile6',$this->profile6,true);
+		$criteria->compare('profile7',$this->profile7,true);
+		$criteria->compare('profile8',$this->profile8,true);
+		$criteria->compare('profile9',$this->profile9,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

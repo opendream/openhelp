@@ -75,6 +75,9 @@ return array(
   'Change password account, "{username}" on {server}. Your new password is "{password}" ,confirm link {activation_url}' => 'คุณได้ร้องขอรหัสผ่านของชื่อผู้ใช้ "{username}" ที่ {server} รหัสผ่านใหม่ของคุณคือ {password} ยืนยันการเปลี่ยนรหัสผ่านได้ที่ {activation_url}',
   'Request new password' => 'ขอรหัสผ่านใหม่',
   'Change password has been completed. Please, login to join.' => 'เปลี่ยนรหัสใหม่เรียบร้อยแล้ว กรุณาเข้าสู่ระบบ',
+  
+  
+  'profile' => 'ข้อมูลผู้ใช้',
    
   /*
   * Location

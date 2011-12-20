@@ -35,7 +35,7 @@ class UserController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete', 'list'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -43,6 +43,16 @@ class UserController extends Controller
 			),
 		);
 	}
+	
+	public function getProfile($User) {
+	  $type = $User->type;
+	  $Data = $User->data;
+	  
+    ob_start();
+    ob_implicit_flush(false);    
+    require(substr(bu(Yii::app()->params['webforms'][$type]['profile']), 1));
+    return ob_get_clean();
+  }
 
 	/**
 	 * Displays a particular model.
@@ -85,25 +95,38 @@ class UserController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate($id=null)
 	{
-		$model=$this->loadModel($id);
+	  // Update user for admin ==============
+	  if ($id) {
+  		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+  		// Uncomment the following line if AJAX validation is needed
+  		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
-		{
-		  $attributes = $_POST['User'];
-  		$attributes['password'] = ($attributes['password'] != $model->password)? md5($attributes['password']): $model->password;
-			$model->attributes=$attributes;
+  		if(isset($_POST['User']))
+  		{
+  		  $attributes = $_POST['User'];
+    		$attributes['password'] = ($attributes['password'] != $model->password)? md5($attributes['password']): $model->password;
+  			$model->attributes=$attributes;
 			
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-		$this->render('update',array(
-			'model'=>$model,
-		));
+  			if($model->save())
+  				$this->redirect(array('view','id'=>$model->id));
+  		}
+  		$this->render('update',array(
+  			'model'=>$model,
+  		));
+	  }
+	  
+	  // Update user profile ==============
+	  else {
+	    $this->layout = '//layouts/layout1';
+  	  $this->pageTitle = t('Update').' '.t('profile');
+  	  
+	    $this->render('updateProfile',array(
+  			'user'=>Yii::app()->user->account,
+  		));
+	  }
 	}
 
 	/**
@@ -125,11 +148,24 @@ class UserController extends Controller
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
-
-	/**
+  
+  /**
 	 * Lists all models.
 	 */
 	public function actionIndex()
+	{
+	  $this->layout = '//layouts/layout1';
+    
+		$dataProvider=new CActiveDataProvider('User');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	/**
+	 * Lists all models.
+	 */
+	public function actionList()
 	{
 		$dataProvider=new CActiveDataProvider('User');
 		$this->render('index',array(

@@ -215,6 +215,19 @@ CREATE TABLE `user` (
   `type` varchar(128),
   `status` int(2) DEFAULT 0,
   
+  `data` text,
+  
+  `profile0` varchar(128),
+  `profile1` varchar(128),
+  `profile2` varchar(128),
+  `profile3` varchar(128),
+  `profile4` varchar(128),
+  `profile5` varchar(128),
+  `profile6` varchar(128),
+  `profile7` varchar(128),
+  `profile8` varchar(128),
+  `profile9` varchar(128),
+  
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

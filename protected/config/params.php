@@ -84,6 +84,7 @@ return array(
 	    'name' => 'โครงการฟื้นฟู',
 	    'label' => 'แบบสำรวจโครงการเพื่อช่วยเหลือ / ฟื้นฟูพื้นที่ประสบภัยน้ำท่วม', 
 	    'file' => 'webforms/supply.php',
+	    'profile' => 'profiles/supply.php',
 	    'sections' => array(),
 	    'color' => '0,100,74',
 	    'popup' => '<h1 style ="text-align:center;margin:10px 0;font-size:20px;font-weight:bold;">กำลังอยู่ในขั้นตอนดำเนินการ</h1>',
