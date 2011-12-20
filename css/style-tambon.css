@@ -39,6 +39,11 @@ select {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+.location-filters-input select{
+	display: block;
+	width: 180px;
+	margin: 0 0 5px;
+}
 
 #location-multiple #Location_level0, 
 #location-multiple #Location_level1, 
@@ -47,16 +52,8 @@ select {
 	width: 160px;
 	margin: 0 0 10px;
 	display: block;
-}
-
-#location-multiple #Location_level0_wrapper, 
-#location-multiple #Location_level1_wrapper, 
-#location-multiple #Location_level2_wrapper, 
-#location-multiple #Location_level3_wrapper {
 	float: left;
-	width: 160px;
-	margin: 0 15px 0 0;
-	display: block;
+	margin-right: 10px;
 }
 
 #location-add, #location-clear {
@@ -888,6 +885,8 @@ nav {
 		width: 10px;
 		height: 15px;
 		padding-left: 20px;
+		margin-right: 5px;
+		text-indent: -999em;
 		background: url('../images/ic-delete.png') no-repeat ;
 	}
 	.location-selected-labal li{
