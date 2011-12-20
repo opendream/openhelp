@@ -45,9 +45,9 @@ select {
 	margin: 0 0 10px;
 	display: block;
 }
-
-
-
+form fieldset legend{
+	font-size: 18px;
+}
 
 
 /**********************
@@ -75,7 +75,6 @@ select {
 #content, #header header, footer {
 	width: 940px;
 	margin: 0 auto;
-
 }
 
 #header {
@@ -224,12 +223,12 @@ select {
 	background: url('../images/bg-white.png') ;
 }
 .display-manager h2{
+	margin: 0 0 15px;
+	padding: 5px;
 	font: 20px/28px 'DBMettaXMedium';
 	font-weight: lighter;
 	color: #fff;
 	text-align: center;
-	margin: 0 0 15px;
-	padding: 5px;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -343,15 +342,15 @@ select {
 		margin: 5px 0 0;
 		padding: 7px;
 		font-size: 12px;
-		background-color: #FDDFDE;
 		border: 1px solid #FBC7C6;
 		-webkit-border-radius: 3px;
 		-moz-border-radius: 3px;
 		border-radius: 3px;
+		background-color: #FDDFDE;
 	}
 	.webform-user .buttons input{
-		color: #333;
 		width: 317px;
+		color: #333;
 		font-size: 13px;
 		line-height: normal;
 		border: 1px solid #CCC;
@@ -372,11 +371,6 @@ select {
 	.webform-user .buttons input:hover{
 		cursor: pointer;
 		color: #333;
-	}
-	
-	.webform-user .registration {
-	  float: left;
-	  margin-right: 10px;
 	}
 
 .flash-message{
@@ -822,8 +816,6 @@ nav {
 	padding: 15px 0;
 	text-align: center;
 }
-
-
 .popup-box-wrapper{
 	float: right;
 	width: 590px;
@@ -838,3 +830,53 @@ nav {
 	-moz-border-radius: 10px;
 	-o-border-radius: 10px;
 }
+
+
+
+/**********************
+		List of location
+***********************/
+#location-multiple{
+	margin: 0 0 20px;
+}
+#location-selected{
+	overflow: scroll;
+	height: 150px;
+	overflow-x: hidden;
+	border: 1px solid #CCC;
+	padding: 10px;
+	margin: 0 0 20px;
+}
+.location-selected-item{
+	overflow: hidden;
+	width: 100%;
+	padding: 7px 0 0 7px;
+	border-bottom: 1px dashed #D0D0D0;
+}
+.location-selected-item:nth-child(2n+1){
+		background: #f2f2f2;
+	}
+	.location-selected-labal, .location-selected-delete{
+		float: left;
+	}
+	.location-selected-delete{
+		display: block;
+		float: left;
+		width: 10px;
+		height: 15px;
+		padding-left: 20px;
+		background: url('../images/ic-delete.png') no-repeat ;
+	}
+	.location-selected-labal li{
+		float: left;
+		margin: 0 10px 0 0;
+		list-style: none;
+	}
+	.location-selected-labal li label{
+		float: none;
+		width: auto;
+		margin: 0 10px 0 0;
+	}
+	.location-selected-labal .label{
+		background: none;
+	}
