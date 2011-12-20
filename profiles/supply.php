@@ -1,26 +1,62 @@
-<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
-
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<style type="text/css">
+		h2{
+			font-size: 18px;
+			font-weight: normal;
+		}
+		h3{
+			font-weight: normal;
+		}
+		fieldset legend{
+			padding: 0;
+		}
+		.no-float{
+			float: none;
+		}
+		.checkbox-box{
+			float: left;
+			margin-right: 30px;
+		}
+		.check-fix-ie{
+			width: 20px;
+		}
+</style>
 <fieldset>
 	<legend>ข้อมูลทั่วไปของกลุ่ม / องค์กร</legend>
 
   <h3>ประเภทของกลุ่ม / องค์กร :</h3>
   <div class="clearfix">
-  	<label class="no-float">บริษัท</label>
-  	<input type="radio"<?php if ($User['profile0'] == "บริษัท"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="บริษัท">
-  	<label class="no-float">มูลนิธิ</label>
-  	<input type="radio"<?php if ($User['profile0'] == "มูลนิธิ"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="มูลนิธิ">
-  	<label class="no-float">หน่วยงานสาธารณะประโยชน์ (NGO)</label>
-  	<input type="radio"<?php if ($User['profile0'] == "หน่วยงานสาธารณะประโยชน์ (NGO)"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="หน่วยงานสาธารณะประโยชน์ (NGO)">
-  	<label class="no-float">หน่วยงานรัฐ</label>
-  	<input type="radio"<?php if ($User['profile0'] == "หน่วยงานรัฐ"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="หน่วยงานรัฐ">
-  	<label class="no-float">กลุ่มอาสาสมัคร</label>
-  	<input type="radio"<?php if ($User['profile0'] == "กลุ่มอาสาสมัคร"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="กลุ่มอาสาสมัคร">
-  	<label class="no-float">อื่นๆ</label>
-  	<input type="radio"<?php if ($User['profile0'] == "อื่นๆ"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="อื่นๆ">
+	  <div class="input">
+		  <div class="checkbox-box">
+		  	<input type="radio"<?php if ($User['profile0'] == "บริษัท"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="บริษัท" class="check-fix-ie">
+		  	<label class="no-float">บริษัท</label>
+		  </div>
+		  <div class="checkbox-box">
+		  	<input type="radio"<?php if ($User['profile0'] == "มูลนิธิ"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="มูลนิธิ" class="check-fix-ie">
+		  	<label class="no-float">มูลนิธิ</label>
+		  </div>
+		  <div class="checkbox-box">
+		  	<input type="radio"<?php if ($User['profile0'] == "หน่วยงานสาธารณะประโยชน์ (NGO)"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="หน่วยงานสาธารณะประโยชน์ (NGO)" class="check-fix-ie">
+		  	<label class="no-float">หน่วยงานสาธารณะประโยชน์ (NGO)</label>
+		  </div>
+		  <div class="checkbox-box">
+		  	<input type="radio"<?php if ($User['profile0'] == "หน่วยงานรัฐ"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="หน่วยงานรัฐ" class="check-fix-ie">
+		  	<label class="no-float">หน่วยงานรัฐ</label>
+		  </div>
+		  <div class="checkbox-box">
+		  	<input type="radio"<?php if ($User['profile0'] == "กลุ่มอาสาสมัคร"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="กลุ่มอาสาสมัคร" class="check-fix-ie">
+		  	<label class="no-float">กลุ่มอาสาสมัคร</label>
+		  </div>
+		  <div class="checkbox-box">
+		  	<input type="radio"<?php if ($User['profile0'] == "อื่นๆ"): ?> checked="checked"<? endif; ?> name="User[profile0]" value="อื่นๆ" class="check-fix-ie">
+		  	<label class="no-float">อื่นๆ</label>
+		  </div>
+	  </div>
   </div>
 
   <h3>ชื่อกลุ่ม / องค์กร</h3>
   <div class="clearfix">
+	  <label >ชื่อกลุ่ม / องค์กร</label>
     <div class="input">
       <input class="xlarge"  name="Data[1]" size="30" type="text" value="<?php echo $Data[1]; ?>" >
     </div>
