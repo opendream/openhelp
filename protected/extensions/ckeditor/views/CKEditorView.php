@@ -41,6 +41,5 @@ if(isset($config) && is_array($config)){
 		$oCKeditor->config[$key] = $value;
 	}
 }
-
-$oCKeditor->editor(get_class($model).'['.$attribute.']',$defaultValue);
+$oCKeditor->editor((is_string($model)? $model: get_class($model)).'['.((string)$attribute).']',$defaultValue);
 ?>

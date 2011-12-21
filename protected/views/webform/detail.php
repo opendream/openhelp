@@ -51,11 +51,13 @@
 <script type="text/javascript" src="<?php echo bu('js/markerclusterer.js'); ?>"></script>
 
 <script type="text/javascript">
+var styleMarkerJs = "<?php echo bu('js/StyledMarker.js'); ?>";
+
 
 var mapLoadded = function () {
   var locations = <?php echo CJSON::encode($model->locations); ?>;
   var styles = <?php echo CJSON::encode($styles); ?>;
-  
+  var colorType = '<?php echo $colorType; ?>';
   var markers = [];
   
   var center = new google.maps.LatLng(13.768, 100.554);
@@ -70,22 +72,33 @@ var mapLoadded = function () {
   
   var bounds = new google.maps.LatLngBounds;
   
-  $.each(locations, function (i, location) {
-    var latLng = new google.maps.LatLng(location['lat'], location['lng']);
-    var marker = new google.maps.Marker({'position': latLng});
+  var color = colorToHex('rgb(' + colorType + ')');
     
-    markers.push(marker);
-    bounds.extend(latLng);
+  $.getScript(styleMarkerJs, function () {
+    var styleIcon = new StyledIcon(StyledIconTypes.MARKER,{'color': color, 'text': '•'});
+  
+    $.each(locations, function (i, location) {
+      var latLng = new google.maps.LatLng(location['lat'], location['lng']);
+      var marker = new StyledMarker({'styleIcon': styleIcon, 'position': latLng, 'data': location});
+      //var marker = new google.maps.Marker({'position': latLng});
+      
+    
+      markers.push(marker);
+      bounds.extend(latLng);
+    });
+    
+    var markerCluster = new MarkerClusterer(map, markers, {'styles': styles});
+    map.panTo(bounds.getCenter());
+    if (markers.length > 1) {
+      map.fitBounds(bounds);
+    }
+    else {
+      map.setZoom(13);
+    }
+    
   });
   
-  var markerCluster = new MarkerClusterer(map, markers, {'styles': styles});
-  map.panTo(bounds.getCenter());
-  if (markers.length > 1) {
-    map.fitBounds(bounds);
-  }
-  else {
-    map.setZoom(13);
-  }
+
 }
 
 google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
@@ -158,7 +171,7 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
           ),
           $html
         );
-        echo $html = '<div class="webform-field">'.$html.'</div>';
+        echo $html = '<div class="webform-field">'.html_entity_decode($html).'</div>';
         //echo mb_convert_encoding($html, 'iso-8859-1', 'auto');
       }
       
@@ -172,6 +185,7 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       }
       
       ?>
+      <?php if (!empty(Yii::app()->params['webforms'][$type]['filters']['data'])): ?>   
       <fieldset class="webform-field">
         <legend><?php echo Yii::app()->params['webforms'][$type]['filters']['title']['detail']; ?></legend>
         <?php foreach ($filters as $name => $filter): ?>
@@ -192,6 +206,8 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
 
         <?php endforeach ?>
       </fieldset>
+      <?php endif ?>
+      
       
       <div class="full-description"><a href="<?php echo bu('webform/'.$model->id); ?>"><?php echo t('View full descritpion'); ?></a></div>
     </div>

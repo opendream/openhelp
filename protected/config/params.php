@@ -12,7 +12,9 @@ return array(
 	  'all' => 0,
 	  'type' => 1,
 	),
+	
 	'webforms' => array(
+	  // Webform 1 ========================================================================
 	  'reliefsurvey' => array(
 	    'name' => 'พื้นที่ต้องการฟื้นฟู',
 	    'label' => 'แบบสํารวจเพื่อการฟื้นฟูชุมชนหลังสถานการณ์ภัยพิบัติระดับตําบล', 
@@ -80,6 +82,8 @@ return array(
 	      )
 	    )
 	  ),
+	  // Webform 2 ========================================================================
+	  
 	  'supply' => array(
 	    'name' => 'โครงการฟื้นฟู',
 	    'label' => 'แบบสำรวจโครงการเพื่อช่วยเหลือ / ฟื้นฟูพื้นที่ประสบภัยน้ำท่วม', 
@@ -94,7 +98,7 @@ return array(
         ),
       ),
       'detail' => '.section1, .section2, .section3, .section5',
-	    'color' => '0,100,74',
+	    'color' => '79,167,104',
 	    'popup' => '<h1 style ="text-align:center;margin:10px 0;font-size:20px;font-weight:bold;">กำลังอยู่ในขั้นตอนดำเนินการ</h1>',
 	    'filters' => array(
 	      'data' => array(
@@ -174,7 +178,35 @@ return array(
 	        'detail' => 'ประเด็น',
 	      )
 	    ),
-	  ),	  
+	  ),
+	  
+	  // Webform 3 ========================================================================
+	  'journalist' => array(
+	    'name' => 'นักข่าว',
+	    'label' => 'ข่าวพื้นที่', 
+	    'file' => 'webforms/journalist.php',
+	    'sections' => array(
+	      'filter' => array(
+          'title' => 'รายละเอียด',
+        ),
+      ),
+      'detail' => '.section1, .section2',
+	    'color' => '42,174,185',
+	    'popup' => '<h1 style ="text-align:center;margin:10px 0;font-size:20px;font-weight:bold;">กำลังอยู่ในขั้นตอนดำเนินการ</h1>',
+	    'filters' => array(
+	      'data' => array(
+          // No filter
+	      ),
+	      'status' => array(
+	        'all' => 0,
+	        'type' => 0,
+	      ),
+	      'title' => array(
+	        'filter' => ':', 
+	        'detail' => '',
+	      )
+	    ),
+	  ),
 	),
 	'about' => '
 <p style = "margin-bottom:10px;font-size:12px;line-height:18px;"><span style = "font-size:18px;font-weight:bold;">infoAid</span> เป็นการริเริ่มในการรวบรวมข้อมูลเพื่อ

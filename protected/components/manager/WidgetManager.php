@@ -527,17 +527,23 @@ class WidgetManager
   public static function getWebformLocation($type=null) {
     $filters = implode(', ', array_keys(Yii::app()->params['webforms'][$type]['filters']['data']));
     $locations = implode(', ', Yii::app()->params['location']);
+    $select = "
+    CONCAT(webform.id, '-', location.id) AS id,
+    webform.id AS webform_id, 
+    location.id AS location_id, 
+    webform.type,
+    location.lat+rand()/100 AS lat, 
+    location.lng+rand()/100 AS lng,
+    DATE_FORMAT(webform.date_created, '%d/%m/%Y') AS date_created,
+    user.username AS username,
+    $locations";
+    
+    if (!empty($filters)) {
+      $select .= ', '.$filters;
+    }
+    
     $qtxt = "SELECT 
-      CONCAT(webform.id, '-', location.id) AS id,
-      webform.id AS webform_id, 
-      location.id AS location_id, 
-      webform.type,
-      location.lat+rand()/100 AS lat, 
-      location.lng+rand()/100 AS lng,
-      DATE_FORMAT(webform.date_created, '%d/%m/%Y') AS date_created,
-      user.username AS username,
-      $filters,
-      $locations
+      $select
     FROM 
       webform_location
     LEFT JOIN

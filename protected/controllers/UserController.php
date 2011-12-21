@@ -193,7 +193,7 @@ class UserController extends Controller
 	public function actionList()
 	{
 		$dataProvider=new CActiveDataProvider('User');
-		$this->render('index',array(
+		$this->render('list',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}

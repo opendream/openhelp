@@ -229,7 +229,10 @@ select {
 	#webform-filters .checkBox label{
 	  width: 200px;
 	}
-	
+	.ckeditor-wrapper {
+	  clear: both;
+	  margin-right: 13px;
+	}
 
 .location-filters-input{
 	clear: both;
@@ -818,7 +821,7 @@ nav {
 .webform-field {
   border-bottom: 1px solid #dadada;
   margin: 20px 0;
-  padding: 0 0 40px;
+  padding: 0 0 20px;
 /*   padding: 10px; */
 }
 .webform-field input {

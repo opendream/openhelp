@@ -40,7 +40,7 @@ class SiteController extends Controller
 	  $locationFilterStatus = Yii::app()->params['locationFilterStatus'];
 	  
 	  //$type = 'reliefsurvey';
-    $types = array_keys(Yii::app()->params['webforms']);
+    $types = array_reverse(array_keys(Yii::app()->params['webforms']));
     
     $nameAll = $filtersAll = $stylesAll = array();
 	  foreach ($types as $type) {

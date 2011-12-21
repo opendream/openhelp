@@ -353,6 +353,7 @@ class WebformController extends Controller
 	  $filters = Yii::app()->params['webforms'][$type]['filters']['data'];
 	  $sections = !empty(Yii::app()->params['webforms'][$type]['sections'])? Yii::app()->params['webforms'][$type]['sections']: 0;
 	  $styles = self::rebuildStyles(Yii::app()->params['webforms'][$type]['color']);
+	  $colorType = Yii::app()->params['webforms'][$type]['color'];
 
 	  $datas = array();
 	  if ($sections) {
