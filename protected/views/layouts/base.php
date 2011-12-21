@@ -12,7 +12,7 @@
 	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	<script type="text/javascript" src="<?php echo bu('js/jquery.form.js'); ?>"></script>
 	<script type="text/javascript">
-	 isEquals = function(z, x)
+	 var isEquals = function(z, x)
    {
      var p;
      for(p in z) {

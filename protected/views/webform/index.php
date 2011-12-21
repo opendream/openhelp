@@ -274,7 +274,7 @@
       var latestLocations = {};
       var disabled = false;
     
-      self = this;
+      var self = this;
       
       self.getLocations = function () {
         return locations;
