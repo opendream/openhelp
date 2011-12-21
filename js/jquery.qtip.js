@@ -1136,8 +1136,8 @@
       };
 
       // Use the provided content string or DOM array
-      if((typeof self.options.content.text == 'string' && self.options.content.text.length > 0)
-      || (typeof(self.options.content.text.jquery)!='undefined' && self.options.content.text.jquery && self.options.content.text.length > 0))
+      if(typeof(self.options.content) != 'undefined' && typeof(self.options.content.text) != 'undefined' && ((typeof(self.options.content.text) == 'string' && self.options.content.text.length > 0)
+      || (typeof(self.options.content.text.jquery)!='undefined' && self.options.content.text.jquery && self.options.content.text.length > 0)))
          content = self.options.content.text;
 
       // Use title string for content if present
