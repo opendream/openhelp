@@ -41,16 +41,17 @@
         </span>
         <ul class="webform-filters-list" id="webform-filters-list-<?php echo $type; ?>" <?php if (isset($all) && $all): ?>style="display: none;"<?php endif ?>>
         <?php foreach ($filters['data'] as $name => $filter): ?>
-          <li>
+          <li class="<?php echo $filter['widget']; ?>">
             <input class="<?php echo $type; ?>" type="checkbox" name="<?php echo $name; ?>" value="1" id="<?php echo $name; ?>" />
             <label title="<?php echo $filter['description']; ?>" for="<?php echo $name; ?>" class="<?php echo $name; ?>"><?php echo $filter['label'] ?></label>
-    
+            
+            <?php if (isset($filter['options'])): ?>
+              <?php $options = $filter['options']; ?>
+            <?php else: ?>
+              <?php $options = WidgetManager::getFilterOptions($type, $name, $filter['prefix']); ?>
+            <?php endif ?>
+            
             <?php if ($filter['widget'] == 'dropDownList'): ?>
-              <?php if (isset($filter['options'])): ?>
-                <?php $options = $filter['options']; ?>
-              <?php else: ?>
-                <?php $options = WidgetManager::getFilterOptions($type, $name, $filter['prefix']); ?>
-              <?php endif ?>
               <?php echo CHtml::dropDownList(
                 $name, 
                 key($options), 
@@ -58,10 +59,12 @@
                 array('id' => $name.'-value', 'class' => $type)
               ) ?>
       
-            <?php elseif (false): ?>
-      
-              <?php //TODO: make other widget ?>
-    
+            <?php elseif ($filter['widget'] == 'checkBox'): ?>
+              <?php echo CHtml::hiddenField(
+                $name, 
+                key($options), 
+                array('id' => $name.'-value', 'class' => $type)
+              ) ?>
             <?php endif ?>
     
           </li>
@@ -139,6 +142,7 @@
   
   // Map List Filter
   var basePath = '<?php echo bu(); ?>';
+  var styleMarkerJs = "<?php echo bu('js/StyledMarker.js'); ?>";
   
   var templateItem = <?php echo CJSON::encode($this->renderPartial('//webform/_item', array(), true)); ?>;
   $.template('templateItem', templateItem);
@@ -150,7 +154,8 @@
   var types = <?php echo CJSON::encode($types); ?>;
   
   var stylesAll = <?php echo CJSON::encode($stylesAll); ?>;
-
+  var colorAll = <?php echo CJSON::encode($colorAll); ?>;
+  
   var locationsAll = <?php echo CJSON::encode(WidgetManager::getAllWebformLocation()); ?>;
   
   var markers = <?php echo WidgetManager::getAllTypeFilter(true); ?>;
@@ -171,8 +176,10 @@
     filter[type] = null;
   })
 
-  
-  
+  function colorToHex(c) {
+    var m = /rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/.exec(c);
+    return m ? '#' + (1 << 24 | m[1] << 16 | m[2] << 8 | m[3]).toString(16).substr(1) : c;
+  }
   
   // Map  =============================================
   
@@ -187,38 +194,46 @@
     };
   
     var bounds = new google.maps.LatLngBounds;
-
+    var info_window = new google.maps.InfoWindow;
+    
     var map = new google.maps.Map($('#map-canvas').get(0), options);
-    $.each(types, function (i, type) {
-      $.each(locationsAll[type], function (i, location) {
-        var latLng = new google.maps.LatLng(location['lat'], location['lng']);
-        var marker = new google.maps.Marker({'position': latLng, 'data': location});
-      
-        google.maps.event.addListener(marker, 'click', function() {
-          var info_window = new google.maps.InfoWindow;
-          var item_contents = $.tmpl('templateItem', marker['data']).html();
-          info_window.setContent(item_contents);
-          info_window.open(map, marker);
-        });
-      
-        currMarkers[type].push(marker);
-        bounds.extend(latLng);
-    
-        // Prepare for filters
-        $.each(location, function (field, value) {
-          if (field.substr(0, 6) == 'filter') {
-            if (!markers[location['type']][field][value]) {
-              markers[location['type']][field][value] = [];
+    $.getScript(styleMarkerJs, function () {
+      $.each(types, function (i, type) {
+        var color = colorToHex('rgb(' + colorAll[type] + ')');
+        var styleIcon = new StyledIcon(StyledIconTypes.MARKER,{'color': color, 'text': '•'});
+          
+        $.each(locationsAll[type], function (i, location) {
+          var latLng = new google.maps.LatLng(location['lat'], location['lng']);
+          var marker = new StyledMarker({'styleIcon': styleIcon, 'position': latLng, 'data': location});
+
+          google.maps.event.addListener(marker, 'click', function() {
+            info_window.close();
+            var item_contents = $.tmpl('templateItem', marker['data']).html();
+            info_window.setContent(item_contents);
+            info_window.open(map, marker);
+          });
+
+          currMarkers[type].push(marker);
+          bounds.extend(latLng);
+
+          // Prepare for filters
+          $.each(location, function (field, value) {
+            if (field.substr(0, 6) == 'filter') {
+              if (!markers[location['type']][field][value]) {
+                markers[location['type']][field][value] = [];
+              }
+              markers[location['type']][field][value].push(marker);
             }
-            markers[location['type']][field][value].push(marker);
-          }
-        })
+          });
+          
+        });
+
+        allMarkers[type] = currMarkers[type];
+
+        markerCluster[type] = new MarkerClusterer(map, currMarkers[type], {'styles': stylesAll[type]});
       });
-    
-      allMarkers[type] = currMarkers[type];
-  
-      markerCluster[type] = new MarkerClusterer(map, currMarkers[type], {'styles': stylesAll[type]});
     });
+
   
     map.panTo(bounds.getCenter());
     map.fitBounds(bounds);
@@ -369,8 +384,9 @@
     $('input[type=checkbox]', scope).change(function () {
       var type = $(this).attr('class');
       var name = $(this).attr('name');
+      var domId = $(this).attr('id');
   
-      var select = $(this).siblings('select');
+      var select = $(this).siblings('#' + domId + '-value');
       var value = select? select.val(): $(this).val();
       
       if($(this).attr('checked')) {

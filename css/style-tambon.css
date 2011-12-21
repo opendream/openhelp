@@ -226,6 +226,9 @@ select {
 		zoom: 1; /* IE7 display: inline-block hack */
 		*display:inline;
 	}
+	#webform-filters .checkBox label{
+	  width: 200px;
+	}
 	
 
 .location-filters-input{

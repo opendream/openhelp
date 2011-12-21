@@ -167,7 +167,7 @@ return array(
 	      ),
 	      'status' => array(
 	        'all' => 0,
-	        'type' => 0,
+	        'type' => 1,
 	      ),
 	      'title' => array(
 	        'filter' => 'เลือกประเด็น:', 
