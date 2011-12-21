@@ -11,6 +11,41 @@
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-tambon.css" />
 	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	<script type="text/javascript" src="<?php echo bu('js/jquery.form.js'); ?>"></script>
+	<script type="text/javascript">
+	 isEquals = function(z, x)
+   {
+     var p;
+     for(p in z) {
+         if(typeof(x[p])=='undefined') {return false;}
+     }
+
+     for(p in z) {
+         if (z[p]) {
+             switch(typeof(z[p])) {
+                 case 'object':
+                     if (!isEquals(z[p], x[p])) { return false; } break;
+                 case 'function':
+                     if (typeof(x[p])=='undefined' ||
+                         (p != 'equals' && z[p].toString() != x[p].toString()))
+                         return false;
+                     break;
+                 default:
+                     if (z[p] != x[p]) { return false; }
+             }
+         } else {
+             if (x[p])
+                 return false;
+         }
+     }
+
+     for(p in x) {
+         if(typeof(z[p])=='undefined') {return false;}
+     }
+
+     return true;
+   }
+   
+	</script>
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->

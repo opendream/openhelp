@@ -269,9 +269,9 @@
     var Filter = function (type) {
       
       var filters = {};
-      var latestFilters = JSON.stringify({});
+      var latestFilters = {};
       var locations = {};
-      var latestLocations = JSON.stringify({});
+      var latestLocations = {};
       var disabled = false;
     
       self = this;
@@ -309,8 +309,8 @@
             
           }
           else {
-            if (JSON.stringify(filters) != latestFilters || JSON.stringify(locations) != latestLocations) {
-              
+            if (!isEquals(filters, latestFilters) || !isEquals(locations, latestLocations)) {
+
               currMarkers[type] = [];
             
               if ($.isEmptyObject(filters)) {
@@ -351,8 +351,8 @@
           }
 
           
-          latestFilters = JSON.stringify(filters);
-          latestLocations = JSON.stringify(locations);      
+          latestFilters = $.extend({}, filters);
+          latestLocations = $.extend({}, locations);      
 
       }
     
