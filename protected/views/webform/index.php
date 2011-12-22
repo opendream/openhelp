@@ -228,11 +228,10 @@
 
         markerCluster[type] = new MarkerClusterer(map, currMarkers[type], {'styles': stylesAll[type]});
       });
-    });
-
   
-    map.panTo(bounds.getCenter());
-    map.fitBounds(bounds);
+      map.panTo(bounds.getCenter());
+      map.fitBounds(bounds);
+    });
   
     // List =============================================
     var List = function (type) {
