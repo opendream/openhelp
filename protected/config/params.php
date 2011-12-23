@@ -182,7 +182,7 @@ return array(
 	  
 	  // Webform 3 ========================================================================
 	  'journalist' => array(
-	    'name' => 'นักข่าว',
+	    'name' => 'นักข่าวพลเมือง',
 	    'label' => 'ข่าวพื้นที่', 
 	    'file' => 'webforms/journalist.php',
 	    'sections' => array(
@@ -202,7 +202,7 @@ return array(
 	        'type' => 0,
 	      ),
 	      'title' => array(
-	        'filter' => ':', 
+	        'filter' => '', 
 	        'detail' => '',
 	      )
 	    ),

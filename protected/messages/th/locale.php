@@ -65,6 +65,8 @@ return array(
   '{attribute} already exists' => 'มีผู้ใช้แล้ว',
   'Thank you for your registration. Please check your email for confirm your email.' => 'กรุณาเช็คอีเมลของคุณ เพื่อทำการยืนยัน ขอบคุณสำหรับการสมัครสมาชิก',
   'Login' => 'เข้าสู่ระบบ',
+  'Logout' => 'ออกจากระบบ',
+  'Hello' => 'สวัสดีคุณ',
   'Remember me next time' => 'จดจำในครั้งถัดไป',
   'Your username not activated.' => 'ชื่อผู้ใช้นี้ ยังไม่ได้ยืนยันผ่านทางอีเมล',
   'Incorrect username or password.' => 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง',

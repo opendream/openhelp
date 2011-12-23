@@ -509,6 +509,10 @@ nav {
 	overflow: hidden;
 }
 
+.user-manager {
+  display: none;
+}
+
 
 /**********************
 		Content Section

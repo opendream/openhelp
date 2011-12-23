@@ -113,9 +113,29 @@
       			  $menu[] = $_menu;
       			}
           }
-
+          
   			?>
 				<?php $this->widget('zii.widgets.CMenu',array('items'=>$menu, 'firstItemCssClass' => 'first', 'firstItemCssClass' => 'last')); ?>
+				<?php
+				if (Yii::app()->user->isGuest) {
+          echo '<span class="user-detail">'.t('Login').'</span>';
+          echo '<div class="user-manager">';
+          echo $this->renderPartial('//site/login');
+          echo '</div>';
+        }
+        else {
+          $username = Yii::app()->user->getId();
+          echo '<span class="user-detail">'.t('Hello').', <span class="user-name">'.$username.'</span></span>';
+          echo '<ul class="user-manager">';
+          foreach (Yii::app()->params['webforms'] as $name => $type) {
+            if (Yii::app()->user->can('create', 'own', 'webform', $name)) {
+              echo '<li>'.l(t('Create').' '.$type['name'], 'webform/create?type='.$name).'</li>';
+            }
+          }
+          echo   '<li>'.l(t('Logout'), 'site/logout').'</li>';
+          echo '</ul>';
+        }
+				?>
 			</nav>	
 		</header>
 	</div> <!-- end header -->
@@ -155,6 +175,11 @@
 	</div> <!-- end footer-->
 
 </div> <!-- end wrapper -->
+<script type="text/javascript">
+  $('.user-detail').click(function () {
+    $('.user-manager').toggle();
+  })
+</script>
 <?php if (Yii::app()->params['googleAnalytic']): ?>
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
