@@ -286,7 +286,7 @@ select {
 /**********************
 				Web form
 **********************/
-.webform-content{
+.webform-content, ul.user-manager{
 	float: left;
 	width: 900px;
 	padding: 20px;
@@ -331,6 +331,57 @@ select {
 /**********************
 		Webform Login
 **********************/
+.user-detail{
+	position: absolute;
+	top: 26px;
+	right: 0px;
+	height: 18px;
+	padding: 3px 30px 3px 5px;
+	color: #efefef;
+	border-top: 1px solid #313131;
+	border-left: 1px solid #313131;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	background: #8F8F8F url('/images/select.png') right center no-repeat;
+}
+	.user-detail:hover{
+		cursor: pointer;
+		background: #9C9C9C url('/images/select.png') right center no-repeat;
+	}
+
+.user-manager{
+	position: absolute;
+	top: 53px;
+	right: 0px;
+}
+ul.user-manager{
+	width: 150px;
+	padding: 10px;
+	margin: 0;
+}
+	ul.user-manager li{ display: block; margin: 0 }
+	ul.user-manager li a{
+		font-size: 13px;
+		font-family: Helvetica;
+		color: #CF614E;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #ccc;
+	}
+	ul.user-manager li a:hover{
+		background: none;
+		color: #CF614E;
+		text-decoration: underline;
+	}
+	
+	.user-manager .webform-user{
+		margin-top: 0;
+	}
+
+
+
 .webform-user, .flash-message{
 	float: none;
 	width: 320px;
@@ -341,7 +392,7 @@ select {
 		margin: 0 0 20px;
 		padding: 5px 10px;
 		color: white;
-		font-size: 22px;
+		font-size: 16px;
 		background: #E24D4D;
 		-webkit-border-radius: 3px;
 		-moz-border-radius: 3px;
@@ -349,12 +400,12 @@ select {
 	}
 	.webform-user .row{
 		margin: 0 0 10px;
-		font-size: 15px;
+/* 		font-size: 15px; */
 	}
 	.webform-user .text input{
-		width: 295px;
-		margin: 10px 0 0;
-		padding: 10px;
+		width: 305px;
+		margin: 5px 0 0;
+		padding: 5px;
 		color: gray;
 		border: 1px solid #CCC;
 		-webkit-border-radius: 3px;
@@ -396,6 +447,10 @@ select {
 		cursor: pointer;
 		color: #333;
 	}
+	.webform-user .registration a, .webform-user .recovery a{
+		font-size: 12px;
+	}
+	
 #site-login .flash-message, 
 #user-registration .flash-message,
 #user-recovery .flash-message{
@@ -488,14 +543,14 @@ nav {
   nav ul li:last-child{
 	  margin-right: 0;
   }
-  nav a{
+  nav li a{
 	  padding: 0 7px;
 	  font: 16px/24px 'DBMettaXMedium';
 		font-weight: lighter;
 	  color: #afafaf;
 	  text-decoration: none;
   }
-	  nav a:hover, nav ul li.active a{
+	  nav li a:hover, nav ul li.active a{
 		  background: #616161;
 		  color: #fff;
 		  text-decoration: none;

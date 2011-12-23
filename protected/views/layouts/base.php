@@ -74,15 +74,12 @@
 			<nav>
 			  <?php 
   			  $menu = array(
-    				array(
-    				  'label'=> Yii::t('locale','home'), 
-    				  'url'=>array('/'),
-    				),
+
     			);
-    			$menu[0]['active'] = WidgetManager::isActiveFromUrl($menu[0], $_SERVER['REQUEST_URI']);
+
     			
     			if (isset(Yii::app()->params['request']) && Yii::app()->params['request']) {    			
-            $menu[] = array(
+            $menu[1] = array(
               'label'=> Yii::t('locale','database'), 
               'url'=>array('/request/location'),
             );
@@ -125,7 +122,7 @@
         }
         else {
           $username = Yii::app()->user->getId();
-          echo '<span class="user-detail">'.t('Hello').', <span class="user-name">'.$username.'</span></span>';
+          echo '<span class="user-detail"><span class="user-name">'.$username.'</span></span>';
           echo '<ul class="user-manager">';
           foreach (Yii::app()->params['webforms'] as $name => $type) {
             if (Yii::app()->user->can('create', 'own', 'webform', $name)) {
