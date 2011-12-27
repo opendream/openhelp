@@ -87,6 +87,12 @@ return array(
   'Your information has been created.' => 'ข้อมูลของคุณได้รับการสร้างใหม่แล้ว',
   'Your information has been updated.' => 'ข้อมูลของคุณได้รับการบันทึกแล้ว',
   
+  'Did you know that your Internet Browser is out of date?' => 'บราวเซอร์ของคุณควรได้รับการอัพเกรด',
+  'Your browser is out of date, and may not be compatible with our website. A list of the most popular web browsers can be found below.' => 'เว็บบราวเซอร์ของท่านตกรุ่น อาจทำงานได้ไม่ดีกับเว็บไซต์ของเรา ท่านสามารถดาวน์โหลดโปรแกรมรุ่นล่าสุดของเว็บบราวเซอร์ยี่ห้อต่างๆ ตามรายการที่แสดงด้านล่างนี้',
+  'Just click on the icons to get to the download page' => 'คลิกที่รูปไอคอนอันใดอันหนึ่งเพื่อไปยังหน้าดาวน์โหลด',
+  'Close This Window' => 'คลิกที่นี่เพื่อปิดกรอบหน้าต่างนี้',
+  'By closing this window you acknowledge that your experience on this website may be degraded' => 'ท่านสามารถเลือกปิดกรอบหน้าต่างโดยไม่อัพเกรดได้ โดยยอมรับปัญหาที่อาจเกิดขึ้นขณะใช้งานเว็บไซต์',
+  
   
    
   /*

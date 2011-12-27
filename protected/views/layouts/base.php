@@ -11,7 +11,27 @@
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-tambon.css" />
 	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	<script type="text/javascript" src="<?php echo bu('js/jquery.form.js'); ?>"></script>
+	<script type="text/javascript" src="<?php echo bu('js/jReject.jquery.js'); ?>"></script>
 	<script type="text/javascript">
+	$(document).ready( function() {
+    $.reject({
+      header: "<?php echo t('Did you know that your Internet Browser is out of date?'); ?>",
+      paragraph1: "<?php echo t('Your browser is out of date, and may not be compatible with our website. A list of the most popular web browsers can be found below.'); ?>",
+      paragraph2: "<?php echo t('Just click on the icons to get to the download page'); ?>",
+      closeLink: "<?php echo t('Close This Window'); ?>",
+      closeMessage: "<?php echo t('By closing this window you acknowledge that your experience on this website may be degraded'); ?>",
+      closeCookie: true,
+      reject: {  
+          safari: true, // Apple Safari  
+          chrome: true, // Google Chrome  
+          firefox: true, // Mozilla Firefox  
+          msie: true, // Microsoft Internet Explorer  
+          opera: true, // Opera  
+          konqueror: true, // Konqueror (Linux)  
+          unknown: true // Everything else  
+      }
+    });
+  });
 	 var isEquals = function(z, x)
    {
      var p;
