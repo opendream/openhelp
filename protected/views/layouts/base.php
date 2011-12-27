@@ -20,16 +20,7 @@
       paragraph2: "<?php echo t('Just click on the icons to get to the download page'); ?>",
       closeLink: "<?php echo t('Close This Window'); ?>",
       closeMessage: "<?php echo t('By closing this window you acknowledge that your experience on this website may be degraded'); ?>",
-      closeCookie: true,
-      reject: {  
-          safari: true, // Apple Safari  
-          chrome: true, // Google Chrome  
-          firefox: true, // Mozilla Firefox  
-          msie: true, // Microsoft Internet Explorer  
-          opera: true, // Opera  
-          konqueror: true, // Konqueror (Linux)  
-          unknown: true // Everything else  
-      }
+      closeCookie: true
     });
   });
 	 var isEquals = function(z, x)
