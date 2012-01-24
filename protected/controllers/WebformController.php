@@ -268,7 +268,6 @@ class WebformController extends Controller
   	    $this->redirect(array('list?type='.$type));
   	    exit();
   	  }
-  	  
   	  $model->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

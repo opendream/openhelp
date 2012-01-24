@@ -916,7 +916,7 @@ nav {
 	padding: 10px;
 	background: #fff;
 	position: relative;
-	z-index: 99;
+	z-index: 10;
 	border: 1px solid #B2B2B2;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;

@@ -137,10 +137,14 @@
           echo '<ul class="user-manager">';
           foreach (Yii::app()->params['webforms'] as $name => $type) {
             if (Yii::app()->user->can('create', 'own', 'webform', $name)) {
-              echo '<li>'.l(t('Create').' '.$type['name'], 'webform/create?type='.$name).'</li>';
+              echo '<li>'.l(t('Create').' '.$type['name'], '/webform/create?type='.$name).'</li>';
+              if (isset(Yii::app()->params['webforms'][$name]['profile'])) {
+                echo '<li>'.l(t('Update your information'), '/user/update').'</li>';
+              }
             }
           }
-          echo   '<li>'.l(t('Logout'), 'site/logout').'</li>';
+
+          echo   '<li>'.l(t('Logout'), '/site/logout').'</li>';
           echo '</ul>';
         }
 				?>

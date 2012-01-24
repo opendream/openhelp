@@ -126,25 +126,26 @@ google.load("maps","3",{'callback':'mapLoadded','other_params':'sensor=false'});
       
       if (isset(Yii::app()->params['webforms'][$type]['profile']) && Yii::app()->params['webforms'][$type]['profile']['show']) {
         $user = User::model()->findByPk($model->user->id);
-        $profileHtml = UserController::getProfile($user);
-        $profileHtml = str_replace(array('<![CDATA[', ']]>'), array('', ''), $profileHtml);
-        
-        $profileHtml = str_replace(
-          array(
-            '<input',
-            '<textarea',
-            '<select',
-          ), 
-          array(
-            '<input disabled="disabled"',
-            '<textarea disabled="disabled"',
-            '<select disabled="disabled"',
-          ), 
-          $profileHtml
-        );
-        $profileHtml = '<div class="webform-field">'.$profileHtml.'</div>';
-        echo $profileHtml;
+        if ($user->type == $type) {
+          $profileHtml = UserController::getProfile($user);
+          $profileHtml = str_replace(array('<![CDATA[', ']]>'), array('', ''), $profileHtml);
 
+          $profileHtml = str_replace(
+            array(
+              '<input',
+              '<textarea',
+              '<select',
+            ), 
+            array(
+              '<input disabled="disabled"',
+              '<textarea disabled="disabled"',
+              '<select disabled="disabled"',
+            ), 
+            $profileHtml
+          );
+          $profileHtml = '<div class="webform-field">'.$profileHtml.'</div>';
+          echo $profileHtml;
+        }
       }
       
       $data = safe_unserialize($model->data);
