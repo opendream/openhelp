@@ -273,5 +273,21 @@ class Webform extends CActiveRecord
      $query = sprintf("insert into %s values (%s, %s) on duplicate key update location_id = location_id", $model, $rel, $foreignrel);
      Yii::app()->db->createCommand($query)->execute();
    }
+   
+   public function beforeDelete() {
+     
+     foreach($this->relations() as $key => $relation) {
+       if($relation['0'] == self::MANY_MANY) {
+         if(isset($this->$key)) {
+           $query = sprintf("delete from webform_location where webform_id = %s", $this->{$this->tableSchema->primaryKey});
+           Yii::app()->db->createCommand($query)->execute();
+           $query = sprintf("delete from webform where id = %s", $this->{$this->tableSchema->primaryKey});
+           Yii::app()->db->createCommand($query)->execute();
+         }
+       }
+     }
+     parent::beforeDelete();
+     
+   }
   
 }

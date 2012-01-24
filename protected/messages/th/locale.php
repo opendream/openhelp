@@ -93,6 +93,8 @@ return array(
   'Close This Window' => 'คลิกที่นี่เพื่อปิดกรอบหน้าต่างนี้',
   'By closing this window you acknowledge that your experience on this website may be degraded' => 'ท่านสามารถเลือกปิดกรอบหน้าต่างโดยไม่อัพเกรดได้ โดยยอมรับปัญหาที่อาจเกิดขึ้นขณะใช้งานเว็บไซต์',
   
+  'Update your information' => 'แก้ไข ข้อมูลผู้ใช้',
+  
   
    
   /*
