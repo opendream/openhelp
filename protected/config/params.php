@@ -207,7 +207,34 @@ return array(
 	      )
 	    ),
 	  ),
+	  'pp' => array(
+      'name' => 'ข้อูลจาก ปภ.',
+      'label' => 'ข้อูลจาก ปภ.', 
+      'file' => 'webforms/pp.php',
+      'sections' => array(
+        'filter' => array(
+          'title' => 'รายละเอียด',
+        ),
+      ),
+      'detail' => '.section1, .section2',
+      'color' => '42,174,10',
+      'popup' => '',
+      'filters' => array(
+        'data' => array(
+          // No filter
+        ),
+        'status' => array(
+          'all' => 0,
+          'type' => 0,
+        ),
+        'title' => array(
+          'filter' => '', 
+          'detail' => '',
+        )
+      ),
+    ),
 	),
+	
 	'about' => '
 <p style = "margin-bottom:10px;font-size:12px;line-height:18px;"><span style = "font-size:18px;font-weight:bold;">infoAid</span> เป็นการริเริ่มในการรวบรวมข้อมูลเพื่อ
 การฟื้นฟูพื้นที่ภัยพิบัติจากมหาอุทกภัยปี 2554  เพื่อให้
