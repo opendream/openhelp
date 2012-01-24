@@ -102,7 +102,7 @@
       			  $_menu = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/content?type='.$type));
   				    $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
   				    $_menu['active'] = $isActive;
-      			  $menu[] = $_menu;
+      			  $menu['content-'.$type] = $_menu;
       			}
     			}
     			if (isset(Yii::app()->params['webforms']) && Yii::app()->params['webforms']) {
@@ -110,7 +110,24 @@
       			  $_menu = array('label'=> Yii::t('locale',$conf['name']), 'url'=>array('/webform?type='.$type));
   				    $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
   				    $_menu['active'] = $isActive;
-      			  $menu[] = $_menu;
+  				    if (isset($conf['childName'])) {
+  				      $_menu['childName'] = $conf['childName'];
+  				    }
+  				    
+  				    if (isset($conf['parent']) && isset($menu['weform-'.$conf['parent']])) {
+  				      $parent = $conf['parent'];
+  				      if (!isset($menu['weform-'.$parent]['items'])) {
+  				        $firstMenu = $menu['weform-'.$parent];
+  				        $firstMenu['label'] = $firstMenu['childName']? $firstMenu['childName']: $firstMenu['label'];
+  				        $menu['weform-'.$parent]['items']['weform-'.$parent] = $firstMenu;
+  				        $menu['weform-'.$parent]['url'] = '#';
+  				        //unset($menu['weform-'.$parent]['url']);
+  				      }
+  				      $menu['weform-'.$parent]['items']['weform-'.$type] = $_menu;
+  				    }
+  				    else {
+  				      $menu['weform-'.$type] = $_menu;
+  				    }
       			}
     			}
           if (isset(Yii::app()->params['pages']) && Yii::app()->params['pages']) {
@@ -118,7 +135,7 @@
       			  $_menu = array('label'=> Yii::t('locale',$page['label']), 'url'=>array('/page/'.$url));
   				    $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
   				    $_menu['active'] = $isActive;
-      			  $menu[] = $_menu;
+      			  $menu['page-'.$url] = $_menu;
       			}
           }
           

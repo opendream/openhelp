@@ -17,6 +17,7 @@ return array(
 	  // Webform 1 ========================================================================
 	  'reliefsurvey' => array(
 	    'name' => 'พื้นที่ต้องการฟื้นฟู',
+	    'childName' => 'ข้อมูลจาก Floodtambon',
 	    'label' => 'แบบสํารวจเพื่อการฟื้นฟูชุมชนหลังสถานการณ์ภัยพิบัติระดับตําบล', 
 	    'file' => 'webforms/reliefsurvey.php',
 	    'popup' => '',
@@ -210,6 +211,7 @@ return array(
 	  
 	  // Webform 4 ========================================================================
 	  'pp' => array(
+	    'parent' => 'reliefsurvey',
       'name' => 'ข้อมูลจาก ปภ.',
       'label' => 'ข้อมูลจาก ปภ.', 
       'file' => 'webforms/pp.php',
