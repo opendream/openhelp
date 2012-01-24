@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
 .no-float {
 	float: none;
@@ -16,28 +17,30 @@ legend.group{
 }
 </style>
 
-<form>
+  <div class="target">
+    <h2>พื้นที่ประสบภัย</h2>
+  	<div class="clearfix">
+  	<?php $this->widget('ext.location.LocationMultipleWidget', array('model' => $model, 'attribute' => 'locations')); ?>
+    </div>
+  </div>
+
 	<fieldset> <!-- fieldset -->
-		<legend>พื้นที่ประสบภัย</legend>
-		<div class="target">
-			<div class="clearfix">
-				<?php $this->widget('ext.location.LocationMultipleWidget', array('model' => $model, 'attribute' => 'locations')); ?>
-			  </div>
-		</div>
-	<div>
-		<div class="clearfix label-s">
-			<label class="no-float">วันที่เกิดเหตุการณ์</label>
-			<input class="span2" name="Data[34]" type="text" placeholder="วันที่" value="<?php echo $Data[34]; ?>">
-			<label class="no-float">ยุติเหตุการณ์</label>
-			<input class="span2" name="Data[35]" type="text" placeholder="วันที่" value="<?php echo $Data[35]; ?>">
-		</div>
-		<div class="clearfix label-s">
-			<label class="no-float">มูลค่าความเสียหาย</label>
-			<input class="span2" name="Data[36]" type="text" placeholder="บาท" value="<?php echo $Data[36]; ?>">
-		</div>
-	</div>
+
+  	<fieldset class="section1"> <!-- fieldset -->
+  		<legend>พื้นที่ประสบภัย</legend>
+  		<div class="clearfix label-s">
+  			<label class="no-float">วันที่เกิดเหตุการณ์</label>
+  			<input class="span2" name="Data[34]" type="text" placeholder="วันที่" value="<?php echo $Data[34]; ?>">
+  			<label class="no-float">ยุติเหตุการณ์</label>
+  			<input class="span2" name="Data[35]" type="text" placeholder="วันที่" value="<?php echo $Data[35]; ?>">
+  		</div>
+  		<div class="clearfix label-s">
+  			<label class="no-float">มูลค่าความเสียหาย</label>
+  			<input class="span2" name="Data[36]" type="text" placeholder="บาท" value="<?php echo $Data[36]; ?>">
+  		</div>
+  	</fieldset>
 	
-		<fieldset> <!-- fieldset -->
+		<fieldset class="section2"> <!-- fieldset -->
 			<legend>ความเสียหายที่สำรวจ</legend>
 				<fieldset> <!-- fieldset -->
 					<legend class="group">ด้านชีวิต</legend>
@@ -161,4 +164,3 @@ legend.group{
     
 		</fieldset> <!-- end fieldset -->
 	</fieldset> <!-- end fieldset -->
-</form>

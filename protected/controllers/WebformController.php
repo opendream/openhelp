@@ -177,8 +177,12 @@ class WebformController extends Controller
 		  $attributes['user_id'] = Yii::app()->user->getIntId();
 		  $attributes['data'] = serialize($_POST['Data']);
 			$model->attributes=$attributes;
-		  $model->locations = array_filter($attributes['locations']);
-
+			if (isset($attributes['locations'])) {
+			  $model->locations = array_filter($attributes['locations']);
+			}
+			else {
+			  $model->locations = array();
+			}
 			if($model->save())
 			  Yii::app()->user->setFlash('success', t('Your information has been created.'));
 				$this->redirect(array('update','id'=>$model->id));

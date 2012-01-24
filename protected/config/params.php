@@ -207,9 +207,11 @@ return array(
 	      )
 	    ),
 	  ),
+	  
+	  // Webform 4 ========================================================================
 	  'pp' => array(
-      'name' => 'ข้อูลจาก ปภ.',
-      'label' => 'ข้อูลจาก ปภ.', 
+      'name' => 'ข้อมูลจาก ปภ.',
+      'label' => 'ข้อมูลจาก ปภ.', 
       'file' => 'webforms/pp.php',
       'sections' => array(
         'filter' => array(
@@ -217,7 +219,7 @@ return array(
         ),
       ),
       'detail' => '.section1, .section2',
-      'color' => '42,174,10',
+      'color' => '200,180,50',
       'popup' => '',
       'filters' => array(
         'data' => array(
