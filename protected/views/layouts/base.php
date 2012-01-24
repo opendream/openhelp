@@ -208,6 +208,15 @@
   $('.user-detail').click(function () {
     $('.user-manager').toggle();
   })
+  
+  $('nav > ul > li').mouseover(function () {
+    $(this).children('ul').show();
+  }).mouseout(function () {
+    $(this).children('ul').hide();
+  }).children('a').click(function (e) {
+    e.preventDefault();
+  })
+  
 </script>
 <?php if (Yii::app()->params['googleAnalytic']): ?>
 <script type="text/javascript">

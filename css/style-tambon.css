@@ -568,6 +568,10 @@ nav {
   display: none;
 }
 
+nav > ul > li > ul {
+    display: none;
+}
+
 
 /**********************
 		Content Section
