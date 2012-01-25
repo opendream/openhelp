@@ -286,7 +286,7 @@ select {
 /**********************
 				Web form
 **********************/
-.webform-content, ul.user-manager{
+.webform-content, ul.user-manager, nav ul li ul{
 	float: left;
 	width: 900px;
 	padding: 20px;
@@ -297,6 +297,13 @@ select {
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 	background: url('../images/bg-white.png') ;
+}
+nav ul li ul{
+	padding: 10px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
 }
 #webform-index .webform-content{
 	width: 578px;
@@ -540,6 +547,29 @@ nav {
 	  display: inline;
 	  margin: 0 35px 0 0;
   }
+  nav > ul > li{
+	  position: relative;
+	  float: left;
+  }
+  nav ul li ul{
+	  position: absolute;
+	  top: 9px;
+	  left: 0;
+	  width: 180px !important;
+  }
+  nav ul li ul li{
+	  width: 180px;
+	  float: left;
+	  margin-bottom: 5px;
+  }
+  nav ul li ul li:first-child{
+	  padding-bottom: 5px;
+	  border-bottom: 1px dotted #999;
+  }
+  nav ul li ul li a{
+	  font: 14px Helvetica, Thonburi,Tahoma,sans-serif;
+	  color: #666;
+  }
   nav ul li:last-child{
 	  margin-right: 0;
   }
@@ -558,6 +588,10 @@ nav {
 			-webkit-border-radius: 5px;
 			-moz-border-radius: 5px;
 			-o-border-radius: 5px;
+	  }
+	  nav li li a:hover{
+		  background: transparent;
+		  color: #999;
 	  }
 	  
 *+html nav{ /* IE7 */
