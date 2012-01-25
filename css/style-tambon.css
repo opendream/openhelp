@@ -580,7 +580,7 @@ nav {
 	  color: #afafaf;
 	  text-decoration: none;
   }
-	  nav li a:hover, nav ul li.active a{
+	  nav li a:hover, nav > ul > li.active > a{
 		  background: #616161;
 		  color: #fff;
 		  text-decoration: none;

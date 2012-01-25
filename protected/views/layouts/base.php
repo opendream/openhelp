@@ -108,7 +108,7 @@
     			if (isset(Yii::app()->params['webforms']) && Yii::app()->params['webforms']) {
     			  foreach (Yii::app()->params['webforms'] as $type => $conf) {
       			  $_menu = array('label'=> Yii::t('locale',$conf['name']), 'url'=>'/webform?type='.$type);
-  				    $isActive = WidgetManager::isActiveFromUrl($_menu, $_SERVER['REQUEST_URI']);
+  				    $isActive = $_menu['url'] == $_SERVER['REQUEST_URI'];
   				    $_menu['active'] = $isActive;
   				    if (isset($conf['childName'])) {
   				      $_menu['childName'] = $conf['childName'];
@@ -120,8 +120,7 @@
   				        $firstMenu = $menu['weform-'.$parent];
   				        $firstMenu['label'] = $firstMenu['childName']? $firstMenu['childName']: $firstMenu['label'];
   				        $menu['weform-'.$parent]['items']['weform-'.$parent] = $firstMenu;
-  				        //$menu['weform-'.$parent]['url'] = '#';
-  				        //unset($menu['weform-'.$parent]['url']);
+  				        $menu['weform-'.$parent]['active'] = true;
   				      }
   				      $menu['weform-'.$parent]['items']['weform-'.$type] = $_menu;
   				      $menu['weform-'.$parent]['url'] .= ','.$type;
