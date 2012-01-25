@@ -22,7 +22,7 @@
   <div id="control-box">
     <div id="webform-filters">
       <?php foreach ($filtersAll as $type => $filters): ?>
-      <?php if (!(isset($all) && $all && $filters['status']['all']) && !((!isset($all) || !$all) && $filters['status']['type'])){
+      <?php if (!(isset($all) && $all && $filters['status']['all'] || isset($multiple)) && !((!isset($all) || !$all) && $filters['status']['type'])){
         continue;
       } ?>
       <form id="webform-filters-<?php echo $type; ?>" action="<?php echo bu("api/webform?action=location&type=$type"); ?>" method="post">

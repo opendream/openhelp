@@ -318,26 +318,56 @@ class WebformController extends Controller
 	public function actionIndex($type)
 	{
 	  $this->layout='//layouts/layout1';
-	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
-	  
 	  $levels = Yii::app()->params['location'];
 	  $levels = array_combine($levels, array_fill(0, count($levels), ''));
-	  $popup = Yii::app()->params['webforms'][$type]['popup'];
 	  
-	  $types = array($type);
+	  // Case single type
+	  $type = explode(',', $type);
+	  if (count($type) == 1) {
+	    $type = $type[0];
+  	  $this->pageTitle = Yii::app()->params['webforms'][$type]['label'];
+  	  $popup = Yii::app()->params['webforms'][$type]['popup'];
 	  
-	  $nameAll = array($type => Yii::app()->params['webforms'][$type]['name']);
-	  $filtersAll = array($type => Yii::app()->params['webforms'][$type]['filters']);
-	  $colorAll = array($type => Yii::app()->params['webforms'][$type]['color']);
-	  $stylesAll = array($type => self::rebuildStyles(Yii::app()->params['webforms'][$type]['color']));
-	  $locationFilterStatus = Yii::app()->params['locationFilterStatus'];
+  	  $types = array($type);
 	  
-	  $showFilter = $locationFilterStatus['type'];
-	  foreach ($filtersAll as $_type => $_filters) {
-	    $showFilter += $_filters['status']['type'];
-	  }
+  	  $nameAll = array($type => Yii::app()->params['webforms'][$type]['name']);
+  	  $filtersAll = array($type => Yii::app()->params['webforms'][$type]['filters']);
+  	  $colorAll = array($type => Yii::app()->params['webforms'][$type]['color']);
+  	  $stylesAll = array($type => self::rebuildStyles(Yii::app()->params['webforms'][$type]['color']));
+  	  $locationFilterStatus = Yii::app()->params['locationFilterStatus'];
 	  
-	  $this->render('//webform/index', get_defined_vars());
+  	  $showFilter = $locationFilterStatus['type'];
+  	  foreach ($filtersAll as $_type => $_filters) {
+  	    $showFilter += $_filters['status']['type'];
+  	  }
+	  
+  	  $this->render('//webform/index', get_defined_vars());
+    }
+    else {
+      $this->pageTitle = '';
+  	  $locationFilterStatus = array('all' => 1, 'type' => 1);
+      $types = $type;
+
+      $nameAll = $filtersAll = $stylesAll = array();
+  	  foreach ($types as $type) {
+  	    $nameAll[$type] = Yii::app()->params['webforms'][$type]['name'];
+    	  $filtersAll[$type] = Yii::app()->params['webforms'][$type]['filters'];
+    	  $colorAll[$type] = Yii::app()->params['webforms'][$type]['color'];
+        $stylesAll[$type] = WebformController::rebuildStyles(Yii::app()->params['webforms'][$type]['color']);
+  	  }
+
+  	  $all = 1;
+  	  $multiple = 1;
+  	  $showFilter = $locationFilterStatus['type'];
+  	  
+  	  foreach ($filtersAll as $_type => $_filters) {
+  	    $showFilter += $_filters['status']['type'];
+  	  }
+
+  	  $about = '';
+
+  	  $this->render('//webform/index', get_defined_vars());
+    }
 	}
 	
 	/**
