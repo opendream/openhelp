@@ -32,8 +32,8 @@
             <input class="filter-all" type="checkbox" name="<?php echo $type; ?>" value="1" id="filter-all-<?php echo $type; ?>" checked="checked" />
             <?php endif ?>
           </span>
-          <span class="color-text"><?php echo $filters['title']['filter'] ?></span>
-          <?php if (isset($all) && $all): ?>
+          <span class="color-text"><?php echo isset($all) && $all? $filters['title']['filterAll']: $filters['title']['filter'] ?></span>
+          <?php if (isset($all) && $all && !empty($filters['data'])): ?>
           <span class="toggle-label">
             <a href="#webform-filters-list-<?php echo $type; ?>" class="toggle-label-link <?php if (isset($all) && $all): ?>hide<?php else: ?>show<?php endif ?>">toggle</a>
           </span>
@@ -283,6 +283,7 @@
       var locations = {};
       var latestLocations = {};
       var disabled = false;
+      var latestDisabled = false;
     
       var self = this;
       
@@ -319,7 +320,10 @@
             
           }
           else {
-            if (!isEquals(filters, latestFilters) || !isEquals(locations, latestLocations)) {
+            if (disabled != latestDisabled || 
+                !isEquals(filters, latestFilters) || 
+                !isEquals(locations, latestLocations)
+                ) {
 
               currMarkers[type] = [];
             
@@ -362,7 +366,8 @@
 
           
           latestFilters = $.extend({}, filters);
-          latestLocations = $.extend({}, locations);      
+          latestLocations = $.extend({}, locations);
+          latestDisabled = disabled;
 
       }
     

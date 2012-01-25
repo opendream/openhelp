@@ -80,6 +80,7 @@ return array(
 	      'title' => array(
 	        'filter' => 'เลือกประเด็น:',
 	        'detail' => 'ส่วนที่ 3 ประเด็นความเสียหาย', 
+	        'filterAll' => 'ข้อมูลจาก Floodtambon'
 	      )
 	    )
 	  ),
@@ -177,6 +178,7 @@ return array(
 	      'title' => array(
 	        'filter' => 'เลือกประเด็น:', 
 	        'detail' => 'ประเด็น',
+	        'filterAll' => 'โครงการฟื้นฟู',
 	      )
 	    ),
 	  ),
@@ -205,6 +207,7 @@ return array(
 	      'title' => array(
 	        'filter' => '', 
 	        'detail' => '',
+	        'filterAll' => 'นักข่าวพลเมือง',
 	      )
 	    ),
 	  ),
@@ -232,8 +235,9 @@ return array(
           'type' => 0,
         ),
         'title' => array(
-          'filter' => '', 
+          'filter' => 'ข้อมูลจาก ปภ.', 
           'detail' => '',
+          'filterAll' => 'ข้อมูลจาก ปภ.',
         )
       ),
     ),
