@@ -13,7 +13,11 @@ legend.group{
 	font-size: 18px;
 }
 .label-s label {
-	width: 120px;
+	width: 100px;
+}
+.unit{
+	text-align: left;
+	width: 50px !important;
 }
 </style>
 
@@ -37,6 +41,7 @@ legend.group{
   		<div class="clearfix label-s">
   			<label class="no-float">มูลค่าความเสียหาย</label>
   			<input class="span2" name="Data[36]" type="text" placeholder="บาท" value="<?php echo $Data[36]; ?>">
+  			<label class="no-float unit">บาท</label>
   		</div>
   	</fieldset>
 	
@@ -46,20 +51,26 @@ legend.group{
 					<legend class="group">ด้านชีวิต</legend>
 					<div class="clearfix label-s">
 						<label class="no-float">จำนวนคน</label>
-						<input class="span2" name="Data[0]" type="text" placeholder="คน" value="<?php echo $Data[0]; ?>">
+						<input class="span2" name="Data[0]" type="text" placeholder="-" value="<?php echo $Data[0]; ?>">
+						<label class="no-float unit">คน</label>
 						<label class="no-float">จำนวนครัวเรือน</label>
-						<input class="span2" name="Data[1]" type="text" placeholder="คน" value="<?php echo $Data[1]; ?>">
-						<label class="no-float">จำนวนผู้อบยพ</label>
-						<input class="span2" name="Data[2]" type="text" placeholder="แห่ง" value="<?php echo $Data[2]; ?>">
+						<input class="span2" name="Data[1]" type="text" placeholder="-" value="<?php echo $Data[1]; ?>">
+						<label class="no-float unit">หลัง</label>
+						<label class="no-float">จำนวนผู้อพยพ</label>
+						<input class="span2" name="Data[2]" type="text" placeholder="-" value="<?php echo $Data[2]; ?>">
+						<label class="no-float unit">คน</label>
 					</div>
 					
 					<div class="clearfix label-s">
 						<label class="no-float">เสียชีวิต</label>
-						<input class="span2" name="Data[3]" type="text" placeholder="คน" value="<?php echo $Data[3]; ?>">
+						<input class="span2" name="Data[3]" type="text" placeholder="-" value="<?php echo $Data[3]; ?>">
+						<label class="no-float unit">คน</label>
 						<label class="no-float">สูญหาย</label>
-						<input class="span2" name="Data[4]" type="text" placeholder="คน" value="<?php echo $Data[4]; ?>">
+						<input class="span2" name="Data[4]" type="text" placeholder="-" value="<?php echo $Data[4]; ?>">
+						<label class="no-float unit">คน</label>
 						<label class="no-float">บาดเจ็บ</label>
-						<input class="span2" name="Data[5]" type="text" placeholder="คน" value="<?php echo $Data[5]; ?>">
+						<input class="span2" name="Data[5]" type="text" placeholder="-" value="<?php echo $Data[5]; ?>">
+						<label class="no-float unit">คน</label>
 					</div>
 	    </fieldset> <!-- end fieldset -->
     
@@ -68,36 +79,47 @@ legend.group{
 				<legend  class="group">ด้านทรัพย์สิน</legend>
 				<div class="clearfix label-s">
 					<label class="no-float">บ้านเรือนทั้งหลัง</label>
-					<input class="span2" name="Data[6]" type="text" placeholder="หลัง" value="<?php echo $Data[6]; ?>">
+					<input class="span2" name="Data[6]" type="text" placeholder="-" value="<?php echo $Data[6]; ?>">
+					<label class="no-float unit">หลัง</label>
 					<label class="no-float">บ้านเรือนบางส่วน</label>
-					<input class="span2" name="Data[7]" type="text" placeholder="หลัง" value="<?php echo $Data[7]; ?>">
+					<input class="span2" name="Data[7]" type="text" placeholder="-" value="<?php echo $Data[7]; ?>">
+					<label class="no-float unit">หลัง</label>
 					<label class="no-float">อาคารพิชย์</label>
-					<input class="span2" name="Data[8]" type="text" placeholder="คน" value="<?php echo $Data[8]; ?>">
+					<input class="span2" name="Data[8]" type="text" placeholder="-" value="<?php echo $Data[8]; ?>">
+					<label class="no-float unit">หลัง</label>
 				</div>
 				
 				<div class="clearfix label-s">
 					<label class="no-float">โรงงาน</label>
-					<input class="span2" name="Data[9]" type="text" placeholder="แห่ง" value="<?php echo $Data[9]; ?>">
+					<input class="span2" name="Data[9]" type="text" placeholder="-" value="<?php echo $Data[9]; ?>">
+					<label class="no-float unit">แห่ง</label>
 					<label class="no-float">โรงแรม</label>
-					<input class="span2" name="Data[10]" type="text" placeholder="แห่ง" value="<?php echo $Data[10]; ?>">
+					<input class="span2" name="Data[10]" type="text" placeholder="-" value="<?php echo $Data[10]; ?>">
+					<label class="no-float unit">แห่ง</label>
 					<label class="no-float">ยานยนต์</label>
-					<input class="span2" name="Data[11]" type="text" placeholder="คัน" value="<?php echo $Data[11]; ?>">
+					<input class="span2" name="Data[11]" type="text" placeholder="-" value="<?php echo $Data[11]; ?>">
+					<label class="no-float unit">คัน</label>
 				</div>
 				
 				<div class="clearfix label-s">
 					<label class="no-float">เรือประมง</label>
-					<input class="span2" name="Data[12]" type="text" placeholder="ลำ" value="<?php echo $Data[12]; ?>">
+					<input class="span2" name="Data[12]" type="text" placeholder="-" value="<?php echo $Data[12]; ?>">
+					<label class="no-float unit">ลำ</label>
 					<label class="no-float">ปศุสัตว์</label>
-					<input class="span2" name="Data[13]" type="text" placeholder="ตัว" value="<?php echo $Data[13]; ?>">
+					<input class="span2" name="Data[13]" type="text" placeholder="-" value="<?php echo $Data[13]; ?>">
+					<label class="no-float unit">ตัว</label>
 					<label class="no-float">สัตว์ปีก</label>
-					<input class="span2" name="Data[14]" type="text" placeholder="ตัว" value="<?php echo $Data[14]; ?>">
+					<input class="span2" name="Data[14]" type="text" placeholder="-" value="<?php echo $Data[14]; ?>">
+					<label class="no-float unit">ตัว</label>
 				</div>
 				
 				<div class="clearfix label-s">
 					<label class="no-float">พื้นที่การเกษตร</label>
-					<input class="span2" name="Data[15]" type="text" placeholder="ไร่" value="<?php echo $Data[15]; ?>">
+					<input class="span2" name="Data[15]" type="text" placeholder="-" value="<?php echo $Data[15]; ?>">
+					<label class="no-float unit">ไร่</label>
 					<label class="no-float">บ่อปลา/กุ้ง/ตะพาบ</label>
-					<input class="span2" name="Data[16]" type="text" placeholder="ตัว" value="<?php echo $Data[16]; ?>">
+					<input class="span2" name="Data[16]" type="text" placeholder="-" value="<?php echo $Data[16]; ?>">
+					<label class="no-float unit">ตัว</label>
 				</div>
 			</fieldset>
     
@@ -106,31 +128,48 @@ legend.group{
 		    <legend  class="group">ด้านสิ่งสาธารณประโยชน์</legend>
 		    <div class="clearfix label-s">
 					<label class="no-float">ถนน</label>
-					<input class="span1" name="Data[17]" type="text" placeholder="สาย" value="<?php echo $Data[17]; ?>">
+					<input class="span1" name="Data[17]" type="text" placeholder="-" value="<?php echo $Data[17]; ?>">
+					<label class="no-float unit">สาย</label>
 					<label class="no-float">สะพาน/คอ</label>
-					<input class="span1" name="Data[18]" type="text" placeholder="แห่ง" value="<?php echo $Data[18]; ?>">
+					<input class="span1" name="Data[18]" type="text" placeholder="-" value="<?php echo $Data[18]; ?>">
+					<label class="no-float unit">แห่ง</label>
 					<label class="no-float">เหมือง</label>
-					<input class="span1" name="Data[19]" type="text" placeholder="แห่ง" value="<?php echo $Data[19]; ?>">
-					<label class="no-float">วัด</label>
-					<input class="span1" name="Data[20]" type="text" placeholder="แห่ง" value="<?php echo $Data[20]; ?>">
+					<input class="span1" name="Data[19]" type="text" placeholder="-" value="<?php echo $Data[19]; ?>">
+					<label class="no-float unit">แห่ง</label>
 				</div>
 				
 				<div class="clearfix label-s">
+					<label class="no-float">วัด</label>
+					<input class="span1" name="Data[20]" type="text" placeholder="-" value="<?php echo $Data[20]; ?>">
+					<label class="no-float unit">แห่ง</label>
 					<label class="no-float">โรงเรียน</label>
-					<input class="span1" name="Data[21]" type="text" placeholder="แห่ง" value="<?php echo $Data[21]; ?>">
+					<input class="span1" name="Data[21]" type="text" placeholder="-" value="<?php echo $Data[21]; ?>">
+					<label class="no-float unit">แห่ง</label>
 					<label class="no-float">สถานที่ราชการ</label>
-					<input class="span1" name="Data[22]" type="text" placeholder="แห่ง" value="<?php echo $Data[22]; ?>">
+					<input class="span1" name="Data[22]" type="text" placeholder="-" value="<?php echo $Data[22]; ?>">
+					<label class="no-float unit">แห่ง</label>
+					
+				</div>
+				
+				<div class="clearfix label-s">
 					<label class="no-float">บ่อน้ำ</label>
-					<input class="span1" name="Data[23]" type="text" placeholder="แห่ง" value="<?php echo $Data[23]; ?>">
+					<input class="span1" name="Data[23]" type="text" placeholder="-" value="<?php echo $Data[23]; ?>">
+					<label class="no-float unit">แห่ง</label>
 					<label class="no-float">อ่างเก็บน้ำ</label>
-					<input class="span1" name="Data[24]" type="text" placeholder="แห่ง" value="<?php echo $Data[24]; ?>">
+					<input class="span1" name="Data[24]" type="text" placeholder="-" value="<?php echo $Data[24]; ?>">
+					<label class="no-float unit">แห่ง</label>
 				</div>
 				
 				<div class="clearfix label-s">
 					<label class="no-float">ท่อระบายน้ำ</label>
-					<input class="span1" name="Data[25]" type="text" placeholder="แห่ง" value="<?php echo $Data[25]; ?>">
+					<input class="span1" name="Data[25]" type="text" placeholder="-" value="<?php echo $Data[25]; ?>">
+					<label class="no-float unit">แห่ง</label>
+				</div>
+				
+				<div class="clearfix label-s">
 					<label class="no-float">ฝาย/ทำนบ/พนังกั้นน้ำ</label>
-					<input class="span1" name="Data[26]" type="text" placeholder="แห่ง" value="<?php echo $Data[26]; ?>">
+					<input class="span1" name="Data[26]" type="text" placeholder="-" value="<?php echo $Data[26]; ?>">
+					<label class="no-float unit">แห่ง</label>
 				</div>
 	    </fieldset> <!-- end fieldset -->
     
@@ -139,25 +178,32 @@ legend.group{
 		    <legend  class="group">การให้ความช่วยเหลือ</legend>
 		    <div class="clearfix label-s">
 					<label class="no-float">เรือท้องแบน</label>
-					<input class="span2" name="Data[27]" type="text" placeholder="ลำ" value="<?php echo $Data[27]; ?>">
+					<input class="span2" name="Data[27]" type="text" placeholder="-" value="<?php echo $Data[27]; ?>">
+					<label class="no-float unit">ลำ</label>
 					<label class="no-float">รถยนต์/รถบรรถุก</label>
-					<input class="span2" name="Data[28]" type="text" placeholder="คัน" value="<?php echo $Data[28]; ?>">
+					<input class="span2" name="Data[28]" type="text" placeholder="-" value="<?php echo $Data[28]; ?>">
+					<label class="no-float unit">คัน</label>
 					<label class="no-float">เครื่องสูบน้ำ</label>
-					<input class="span2" name="Data[29]" type="text" placeholder="เครื่อง" value="<?php echo $Data[29]; ?>">
+					<input class="span2" name="Data[29]" type="text" placeholder="-" value="<?php echo $Data[29]; ?>">
+					<label class="no-float unit">เครื่อง</label>
 				</div>
 				
 				<div class="clearfix label-s">
 					<label class="no-float">เครื่องอุปโภค-บริโภค</label>
-					<input class="span2" name="Data[30]" type="text" placeholder="ชุด" value="<?php echo $Data[30]; ?>">
+					<input class="span2" name="Data[30]" type="text" placeholder="-" value="<?php echo $Data[30]; ?>">
+					<label class="no-float unit">ชุด</label>
 					<label class="no-float">ข้าวกล่อง</label>
-					<input class="span2" name="Data[31]" type="text" placeholder="กล่อง" value="<?php echo $Data[31]; ?>">
+					<input class="span2" name="Data[31]" type="text" placeholder="-" value="<?php echo $Data[31]; ?>">
+					<label class="no-float unit">กล่อง</label>
 					<label class="no-float">น้ำดื่ม</label>
-					<input class="span2" name="Data[32]" type="text" placeholder="ลิตร/ขวด" value="<?php echo $Data[32]; ?>">
+					<input class="span2" name="Data[32]" type="text" placeholder="-" value="<?php echo $Data[32]; ?>">
+					<label class="no-float unit">ลิตร/ขวด</label>
 				</div>
 				
 				<div class="clearfix label-s">
 					<label class="no-float">ยารักษาโรค</label>
-					<input class="span2" name="Data[33]" type="text" placeholder="ชุด" value="<?php echo $Data[33]; ?>">
+					<input class="span2" name="Data[33]" type="text" placeholder="-" value="<?php echo $Data[33]; ?>">
+					<label class="no-float unit">ชุด</label>
 				</div>
 	    </fieldset> <!-- end fieldset -->
 	    
