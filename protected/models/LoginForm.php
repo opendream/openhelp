@@ -89,7 +89,9 @@ class LoginForm extends CFormModel
 			
 
 			Yii::app()->user->login($this->_identity,$duration);
-			return true;
+			
+			$account = User::model()->find('username=:username', array(':username' => $this->username));
+			return $account? $account: true;
 		}
 		else
 			return false;

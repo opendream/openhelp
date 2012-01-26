@@ -13,8 +13,12 @@ if(isset($_POST['LoginForm']))
 {
 	$model->attributes=$_POST['LoginForm'];
 	// validate user input and redirect to the previous page if valid
-	if($model->validate() && $model->login())
+	if($model->validate() && $account = $model->login()) {
+	  if (!is_bool($account) && $account->type) {
+	    $this->redirect('/webform/create/?type='.$account->type);
+	  }
 		$this->redirect(Yii::app()->user->returnUrl);
+  }
 }
 
 $type = isset($_GET['type'])? $_GET['type']: '';
