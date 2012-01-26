@@ -239,11 +239,24 @@ class UserController extends Controller
 		}
 	}
 	public function sendMail($to) {
-	  $header  = 'MIME-Version: 1.0' . "\r\n";
-		$header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-		$header .= 'From: ' . $to['from'] . "\r\n";
-		$header .= 'To: ' . $to['to'] . "\r\n";
+	  /*
+	  $header  = 'Reply-To: No-Reply' . "\r\n";
+	  $header .= 'Return-Path: Confirm Infoaid <'.$to['from'].'>' . "\r\n";
+		$header .= 'From: Confirm Infoaid <'.$to['from'].'>' . "\r\n";
+		$header .= 'Mailed-By: infoaid.org' ."\r\n";
+		$header .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
 	  return mail($to['to'], $to['subject'], $to['body'], $header);
+	  */
+	  
+	  $message = new YiiMailMessage;
+    $message->view = 'blank';
+
+    $message->setSubject($to['subject']);
+    $message->setBody(array('body' => $to['body']), 'text/plain', 'utf-8');
+
+    $message->addTo($to['to']);
+    $message->from = $to['from'];
+    return Yii::app()->mail->send($message);
 	}
 	
 	public function actionRegistration() {

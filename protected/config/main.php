@@ -20,6 +20,7 @@ return array(
 		'application.components.manager.*',
 		'application.components.odhtml.*',
 		'application.components.querypath.*',
+		'application.extensions.yii-mail.*',
 	),
 
 	'modules'=>array(
@@ -40,6 +41,21 @@ return array(
 			'allowAutoLogin'=>true,
 			'autoUpdateFlash' => false,
 		),
+		'mail'=> array(
+		  'class' => 'application.extensions.yii-mail.YiiMail',
+		  'transportType'=>'smtp', /// case sensitive!
+        'transportOptions'=>array(
+          'host'=>'smtp.gmail.com',
+          'username'=>'confirm.infoaid.org@gmail.com',
+          // or email@googleappsdomain.com
+          'password'=>'infoaidshowpassword',
+          'port'=>'465',
+          'encryption'=>'ssl',
+          ),
+        'viewPath' => 'application.views.mail',
+        'logging' => true,
+        'dryRun' => false
+		),
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
@@ -59,6 +75,7 @@ return array(
 				'api/<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 
 			),
+
 		),
 		
 		/*

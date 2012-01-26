@@ -394,6 +394,8 @@ ul.user-manager{
 	width: 320px;
 	margin: 0 auto;
 	margin-top: 30px;
+	position: relative;
+	z-index: 10;
 }
 	.webform-user h1{
 		margin: 0 0 20px;
