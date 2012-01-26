@@ -241,6 +241,36 @@ return array(
         )
       ),
     ),
+    
+    // Webform 5 ========================================================================
+	  'school' => array(
+	    'parent' => 'reliefsurvey',
+      'name' => 'ข้อมูลจาก โรงเรียน',
+      'label' => 'ข้อมูลจาก โรงเรียน', 
+      'file' => 'webforms/school.php',
+      'sections' => array(
+        'filter' => array(
+          'title' => 'รายละเอียด',
+        ),
+      ),
+      'detail' => '.section1, .section2',
+      'color' => '153,76,197',
+      'popup' => '',
+      'filters' => array(
+        'data' => array(
+          // No filter
+        ),
+        'status' => array(
+          'all' => 0,
+          'type' => 0,
+        ),
+        'title' => array(
+          'filter' => 'ข้อมูลจาก โรงเรียน', 
+          'detail' => '',
+          'filterAll' => 'ข้อมูลจาก โรงเรียน',
+        )
+      ),
+    ),
 	),
 	
 	'about' => '
