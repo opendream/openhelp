@@ -271,7 +271,7 @@ class UserController extends Controller
 			  $body = t('Verify your account "{username}" on {server} link {activation_url}', 'locale', array(
 			    '{username}' => $model->username,
 			    '{server}' => $_SERVER['SERVER_NAME'],
-			    '{activation_url}' => au('user/activation?username='.$model->username.'&key='.md5($model->username.Yii::app()->params['salt']))
+			    '{activation_url}' => au('user/activation?username='.urlencode($model->username).'&key='.md5($model->username.Yii::app()->params['salt']))
 			  ));			  
   			$mail = array(
 					'from' => Yii::app()->params['siteEmail'],
