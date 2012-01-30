@@ -101,7 +101,7 @@ return array(
       ),
       'detail' => '.section1, .section2, .section3, .section5',
 	    'color' => '79,167,104',
-	    'popup' => '<h1 style ="text-align:center;margin:10px 0;font-size:20px;font-weight:bold;">กำลังอยู่ในขั้นตอนดำเนินการ</h1>',
+	    'popup' => '',
 	    'filters' => array(
 	      'data' => array(
           'filter0' => array(
@@ -255,7 +255,7 @@ return array(
       ),
       'detail' => '.section1, .section2',
       'color' => '153,76,197',
-      'popup' => '',
+      'popup' => '<h1 style ="text-align:center;margin:10px 0;font-size:20px;font-weight:bold;">กำลังอยู่ในขั้นตอนดำเนินการ</h1>',
       'filters' => array(
         'data' => array(
           // No filter

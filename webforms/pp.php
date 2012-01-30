@@ -34,13 +34,13 @@ legend.group{
   		<legend>พื้นที่ประสบภัย</legend>
   		<div class="clearfix label-s">
   			<label class="no-float">วันที่เกิดเหตุการณ์</label>
-  			<input class="span2" name="Data[34]" type="text" placeholder="วันที่" value="<?php echo $Data[34]; ?>">
+  			<input class="span2" name="Data[34]" type="text" placeholder="-" value="<?php echo $Data[34]; ?>">
   			<label class="no-float">ยุติเหตุการณ์</label>
-  			<input class="span2" name="Data[35]" type="text" placeholder="วันที่" value="<?php echo $Data[35]; ?>">
+  			<input class="span2" name="Data[35]" type="text" placeholder="-" value="<?php echo $Data[35]; ?>">
   		</div>
   		<div class="clearfix label-s">
   			<label class="no-float">มูลค่าความเสียหาย</label>
-  			<input class="span2" name="Data[36]" type="text" placeholder="บาท" value="<?php echo $Data[36]; ?>">
+  			<input class="span2" name="Data[36]" type="text" placeholder="-" value="<?php echo $Data[36]; ?>">
   			<label class="no-float unit">บาท</label>
   		</div>
   	</fieldset>
@@ -84,7 +84,7 @@ legend.group{
 					<label class="no-float">บ้านเรือนบางส่วน</label>
 					<input class="span2" name="Data[7]" type="text" placeholder="-" value="<?php echo $Data[7]; ?>">
 					<label class="no-float unit">หลัง</label>
-					<label class="no-float">อาคารพิชย์</label>
+					<label class="no-float">อาคารพานิชย์</label>
 					<input class="span2" name="Data[8]" type="text" placeholder="-" value="<?php echo $Data[8]; ?>">
 					<label class="no-float unit">หลัง</label>
 				</div>
