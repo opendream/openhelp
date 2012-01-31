@@ -253,7 +253,7 @@ return array(
           'title' => 'รายละเอียด',
         ),
       ),
-      'detail' => '.section1, .section2',
+      'detail' => '.section1',
       'color' => '153,76,197',
       'popup' => '<h1 style ="text-align:center;margin:10px 0;font-size:20px;font-weight:bold;">กำลังอยู่ในขั้นตอนดำเนินการ</h1>',
       'filters' => array(

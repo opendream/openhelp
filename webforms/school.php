@@ -36,38 +36,35 @@ legend.group{
   		
   		<h3>ลักษณะความเสียหายที่ส่งผลต่อประสิทธิภาพการใช้ประโยน์</h3>
   		<div class="clearfix label-s">
-	  		<label class="no-float"></label>
-        <textarea class="xxlarge" id="textareaภ" name="textarea2" rows="3"></textarea>
+	  		<label class="no-float"> </label>
+        <textarea class="xxlarge" name="Data[1]" rows="3"><?php echo $Data[1]; ?></textarea>
   		</div>
   		
   		<div class="clearfix label-s">
-	  		<label class="no-float">จำนวน(หน่วย</label>
-  			<input class="span1" name="Data[0]" type="text" placeholder="-" value="<?php echo $Data[0]; ?>">
+	  		<label class="no-float">จำนวน(หน่วย)</label>
+  			<input class="span1" name="Data[2]" type="text" placeholder="-" value="<?php echo $Data[2]; ?>">
   			<label class="no-float unit">หลัง</label>
   		</div>
   		
-  		<h3>ระบุพื้นที่ตั้ง</h3>
-  		<div class="clearfix label-s">
-	  		<label class="no-float">อำเภอ</label>
-  			<input class="span2" name="Data[0]" type="text" placeholder="-" value="<?php echo $Data[0]; ?>">
-  			<label class="no-float">จังหวัด</label>
-  			<input class="span2" name="Data[0]" type="text" placeholder="-" value="<?php echo $Data[0]; ?>">
-  			<label class="no-float">เขต</label>
-  			<input class="span2" name="Data[0]" type="text" placeholder="-" value="<?php echo $Data[0]; ?>">
-  		</div>
-  		
+  		<h3>งบประมาณ</h3>
   		<div class="clearfix label-s">
 	  		<label class="no-float">มูลค่าความเสียหายเบื้องต้น</label>
-  			<input class="span2" name="Data[0]" type="text" placeholder="-" value="<?php echo $Data[0]; ?>">
+  			<input class="span3" name="Webform[filter0]" type="text" placeholder="-" value="<?php echo $Webform['filter0']; ?>">
   			<label class="no-float unit">บาท</label>
+
+  			<label class="no-float">ประมาณการวงเงินงบประมาณ (บาท) เพื่อช่วยเหลือฟื้นฟู</label>
+  			<input class="span3" name="Webform[filter1]" type="text" placeholder="-" value="<?php echo $Webform['filter1']; ?>">
+  			<label class="no-float unit">บาท</label>
+  			
   		</div>
   		
   		<h3>รูปแบบแนวทางการฟื้นฟู(บูรณะซ่อมแซม/ก่อสร้างใหม่/อื่นๆ)</h3>
   		<div class="clearfix label-s">
-	  		<label class="no-float"></label>
-        <textarea class="xxlarge" id="textareaภ" name="textarea2" rows="3"></textarea>
+	  		<label class="no-float"> </label>
+        <textarea class="xxlarge" name="Data[3]" rows="3"><?php echo $Data[3]; ?></textarea>
   		</div>
   		
   	</fieldset>
 </fieldset> <!-- end fieldset -->
+
 

@@ -35,7 +35,7 @@ class WebformController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin'),
+				'actions'=>array('admin', 'import'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -408,7 +408,72 @@ class WebformController extends Controller
     $this->render('detail', get_defined_vars());
     
 	}
+	
+	public function actionImport($type) {
+    //$this->layout='//layouts/layout1';
+    $existImport = glob('webforms/imports/'.$type.'/*.csv');
+    if(isset($_POST['path'])) {
+      if (($handle = fopen($_POST['path'], 'r')) !== FALSE) {
+        $is_header = true;
+        $header = array();
+        
+        while (($row = fgetcsv($handle, 0, ';', "'")) !== FALSE) {
+          if ($is_header) {
+            $header = $row;
+            $is_header = false;
+          }
+          else {
+            $Webform = array();
+            $Data = array();
+            $locations = array();
+            $levels = array();
+            foreach ($row as $i => $val) {
+              $var = $header[$i];
+              if (strpos($var, 'level') !== false) {
+                $levels[$var] = $val;
+              }
+              elseif (strpos($var, 'filter') !== false) {
+                $Webform[$var] = $val;
+              }
+              elseif (strpos($var, 'Data') !== false) {
+                $j = str_replace(array('Data[', ']'), array('', ''), $var);
+                $Data[$j] = $val;
+              }
+            }
+            
+            $condition = array();
+            $vals = array();
+            foreach($levels as $level => $val) {
+              $condition[] = "$level=:$level";
+              $vals[":$level"] = $val;
+              
+            }
+            $condition = implode(' AND ', $condition);
+            $location = Location::model()->find($condition, $vals);
+            //print $location->id;
+            
+            // Create new webform
+            $attributes = $Webform;
+      		  $attributes['type'] = $type;
+      		  $attributes['date_created'] = date('Y-m-d H:i:s');
+      		  $attributes['last_updated'] = date('Y-m-d H:i:s');
+      		  //$attributes['user_id'] = Yii::app()->user->getIntId();
+      		  $attributes['data'] = serialize($Data);
+      		  
+      		  $model = new Webform;
+      			$model->attributes = $attributes;
+      			$model->locations = $location? array($location): array();
+      			if($model->save()) {
+      			  
+      			}
 
+          }
+
+        }
+      }
+    }
+    $this->render('import', get_defined_vars());
+  }
 	/**
 	 * Manages all models.
 	 */
