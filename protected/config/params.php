@@ -74,7 +74,7 @@ return array(
   	      ),
 	      ),
 	      'status' => array(
-	        'all' => 0,
+	        'all' => 1,
 	        'type' => 1,
 	      ),
 	      'title' => array(
@@ -172,7 +172,7 @@ return array(
   	      ),
 	      ),
 	      'status' => array(
-	        'all' => 0,
+	        'all' => 1,
 	        'type' => 1,
 	      ),
 	      'title' => array(
@@ -231,7 +231,7 @@ return array(
           // No filter
         ),
         'status' => array(
-          'all' => 0,
+          'all' => 1,
           'type' => 0,
         ),
         'title' => array(
@@ -253,15 +253,17 @@ return array(
           'title' => 'รายละเอียด',
         ),
       ),
+      'maptitle' => 'filter3',
+      'maplabel' => 'โรงเรียน',
       'detail' => '.section1',
       'color' => '153,76,197',
-      'popup' => '<h1 style ="text-align:center;margin:10px 0;font-size:20px;font-weight:bold;">กำลังอยู่ในขั้นตอนดำเนินการ</h1>',
+      'popup' => '',
       'filters' => array(
         'data' => array(
           // No filter
         ),
         'status' => array(
-          'all' => 0,
+          'all' => 1,
           'type' => 0,
         ),
         'title' => array(
@@ -281,22 +283,6 @@ return array(
 พื้นที่ทำโครงการฟื้นฟูของหน่วยงานต่างๆ โดยแสดงผล
 ในรูปแบบแผนที่และประเภทความต้องการ และ
 โครงการฟื้นฟู</p>
-
-<h2 style = "margin-bottom:5px;font-size:16px;font-weight:bold;">การใช้งาน</h2>
-<h3 style = "margin-bottom:10px;font-size:14px;font-weight:bold;">พื้นที่ต้องการฟื้นฟู</h3>
-<ul style = "margin-bottom:10px;font-size:12px;line-height:18px;list-style:disc inside;">
-<li>เลือกการแสดงผลแบบแผนที่ หรือ แบบรายการ</li>
-<li>เลือกกรองข้อมูลบนกล่องซ้ายมือ โดยเลือกประเด็นที่
-  สนใจและระดับความรุนแรง (1 น้อย - 5 มาก)
-  และพื้นที่</li>
-</ul>
-
-<h3 style = "margin-bottom:10px;font-size:14px;font-weight:bold;">โครงการฟื้นฟู</h3>
-<ul style = "margin-bottom:10px;font-size:12px;line-height:18px;list-style:disc inside;">
-<li>เลือกการแสดงผลแบบแผนที่ หรือ แบบรายการ</li>
-<li>เลือกกรองข้อมูลบนกล่องซ้ายมือ โดยเลือกประเด็น
-  โครงการและพื้นที่</li>
-</ul>
 
 <p style = "margin-bottom:10px;font-size:11px;color:#787878;line-height:18px;">ระบบนี้ร่วมกันพัฒนาโดย <a href = "http://www.changefusion.org/" target = "blank">ChangeFusion<a> และ
 <a href = "http://www.opendream.co.th/" target = "blank">Opendream</a> เพื่อเป็นต้นแบบของการใช้งานระบบ

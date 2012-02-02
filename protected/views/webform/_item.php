@@ -4,10 +4,10 @@
       <tbody>
       <tr>
         <td class="extra-double-label">
-          <?php echo t('ID'); ?>
+          ${label}
         </td>
         <td class="extra-double-input">
-            <a href="<?php echo bu(); ?>/webform/detail/${webform_id}">${webform_id}</a>
+            <a href="<?php echo bu(); ?>/webform/detail/${webform_id}">${title}</a>
         </td>
       </tr>
       <tr>

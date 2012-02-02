@@ -31,7 +31,7 @@ legend.group{
   		<h3>รายการโครงสร้างพื้นฐาน /หน่วยงานรับผิดชอบ</h3>
   		<div class="clearfix label-s">
 	  		<label class="no-float">ชื่อ</label>
-  			<input class="span5" name="Data[0]" type="text" placeholder="-" value="<?php echo $Data[0]; ?>">
+  			<input class="span5" name="Webform[filter3]" type="text" placeholder="-" value="<?php echo $Webform['filter3']; ?>">
   		</div>
   		
   		<h3>ลักษณะความเสียหายที่ส่งผลต่อประสิทธิภาพการใช้ประโยน์</h3>
@@ -65,6 +65,35 @@ legend.group{
   		</div>
   		
   	</fieldset>
+  	
+  	<fieldset class="section1"> <!-- fieldset -->
+    		<h3>ข้อมูลติดต่อ</h3>
+        <div class="clearfix label-s">
+  	  		<label class="no-float">ชื่อคนติดต่อ</label>
+    			<input class="span3" name="Data[4]" type="text" placeholder="-" value="<?php echo $Data[4]; ?>">
+        </div>
+        <div class="clearfix label-s">
+          <label class="no-float">อีเมล</label>
+    			<input class="span3" name="Data[5]" type="text" placeholder="-" value="<?php echo $Data[5]; ?>">
+    		</div>
+    		<div class="clearfix label-s">
+    			<label class="no-float">เบอร์โทรติดต่อ 1</label>
+    			<input class="span3" name="Data[6]" type="text" placeholder="-" value="<?php echo $Data[6]; ?>">
+    		</div>
+    		<div class="clearfix label-s">
+    			<label class="no-float">เบอร์โทรติดต่อ 2</label>
+    			<input class="span3" name="Data[7]" type="text" placeholder="-" value="<?php echo $Data[7]; ?>">
+    		</div>
+    		<div class="clearfix label-s">
+    			<label class="no-float">เบอร์โทรติดต่อ 3</label>
+    			<input class="span3" name="Data[8]" type="text" placeholder="-" value="<?php echo $Data[8]; ?>">
+    		</div>
+    		<div class="clearfix label-s">
+    			<label class="no-float">รหัสโรงเรียน</label>
+    			<input class="span3" name="Data[9]" type="text" placeholder="-" value="<?php echo $Data[9]; ?>">
+    		</div>
+
+    	</fieldset>
 </fieldset> <!-- end fieldset -->
 
 

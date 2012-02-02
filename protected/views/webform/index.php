@@ -118,11 +118,11 @@
         <?php foreach ($types as $type): ?>
         <div id="webform-list-<?php echo $type; ?>">
         </div>
+        <p class="readmore">
         <a class="webform-location-readmore-<?php echo $type; ?>" href="#"><?php echo t('read more'); ?></a>
+        </p>
         <?php endforeach ?>
       </div>
-      <p class="readmore">
-      </p>
     </div>  
   </div>
   <div id="map">
@@ -262,7 +262,10 @@
     $.each(types, function (i, type) {
       
       list[type] = new List(type);
-      list[type].reload();
+      setTimeout(function () {
+        list[type].reload();
+      }, 1000);
+      
       
       $('.webform-location-readmore-' + type).click(function (e) {
         e.preventDefault();

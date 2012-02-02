@@ -149,6 +149,7 @@ select {
 #about-box {
 	width: 268px;
 	padding: 15px;
+	margin-bottom: 10px;
 	border: 1px solid #b2b2b2;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -564,9 +565,12 @@ nav {
 	  float: left;
 	  margin-bottom: 5px;
   }
-  nav ul li ul li:first-child{
+  nav ul li ul li{
 	  padding-bottom: 5px;
 	  border-bottom: 1px dotted #999;
+  }
+  nav ul li ul li:last-child {
+      border-bottom: 0px none;
   }
   nav ul li ul li a{
 	  font: 14px Helvetica, Thonburi,Tahoma,sans-serif;
@@ -624,7 +628,7 @@ nav > ul > li > ul {
 	/* 	3 Cols in db-list */
 	.db-item1{
 		float: left;
-		width: 200px;
+		width: 198px;
 		margin-right: 20px;
 		padding-left: 40px;
 		background: url('../images/pin-tambon.png') 10px 7px no-repeat ;
@@ -670,7 +674,7 @@ nav > ul > li > ul {
 		  height: 20px;
 		}
 		.db-item1 table td, .db-item2 table td {
-		  padding: 0;
+		  padding: 0 2px 0 0 ;
 		}
   
   /* 	item2 - Info */
@@ -923,9 +927,12 @@ nav > ul > li > ul {
   padding: 0 0 20px;
 /*   padding: 10px; */
 }
+.webform-content input,
+.webform-content textarea,
 .webform-field input {
   border: 0px none;
   background: none;
+  color: #444444;
   border-bottom: 1px solid #AAAAAA;
 	border-radius: 0px;
 	-webkit-border-radius: 0px;
@@ -933,6 +940,9 @@ nav > ul > li > ul {
 	-o-border-radius: 0px;
 	-ms-border-radius: 0px;
 	-khtml-border-radius: 0px;
+}
+.webform-content textarea {
+    resize: none;
 }
 
 #webform-view .display-hide, 

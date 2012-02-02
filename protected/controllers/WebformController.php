@@ -35,7 +35,7 @@ class WebformController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin', 'import'),
+				'actions'=>array('admin', 'import', 'deleteall'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -408,7 +408,13 @@ class WebformController extends Controller
     $this->render('detail', get_defined_vars());
     
 	}
-	
+	public function actionDeleteall($type) {
+	  $webforms = Webform::model()->findAll('type=:type', array(':type' => $type));
+	  foreach($webforms as $webform) {
+	    $webform->delete();
+	  }
+  }
+  
 	public function actionImport($type) {
     //$this->layout='//layouts/layout1';
     $existImport = glob('webforms/imports/'.$type.'/*.csv');

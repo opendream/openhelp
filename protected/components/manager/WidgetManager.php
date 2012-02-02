@@ -527,6 +527,8 @@ class WidgetManager
   public static function getWebformLocation($type=null) {
     $filters = implode(', ', array_keys(Yii::app()->params['webforms'][$type]['filters']['data']));
     $locations = implode(', ', Yii::app()->params['location']);
+    $title = isset(Yii::app()->params['webforms'][$type]['maptitle'])? Yii::app()->params['webforms'][$type]['maptitle']: '';
+    $label = isset(Yii::app()->params['webforms'][$type]['maplabel'])? Yii::app()->params['webforms'][$type]['maplabel']: '';
     $select = "
     CONCAT(webform.id, '-', location.id) AS id,
     webform.id AS webform_id, 
@@ -540,6 +542,20 @@ class WidgetManager
     
     if (!empty($filters)) {
       $select .= ', '.$filters;
+    }
+    
+    if ($title) {
+      $select .= ", $title AS title";
+    }
+    else {
+      $select .= ", webform.id AS title";
+    }
+    
+    if ($label) {
+      $select .= ", '$label' AS label";
+    }
+    else {
+      $select .= ", '".t('ID')."' AS label";
     }
     
     $qtxt = "SELECT 
