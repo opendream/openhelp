@@ -35,7 +35,7 @@ class WebformController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin', 'import', 'deleteall'),
+				'actions'=>array('admin', 'import', 'deleteall', 'buildtitle'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -233,7 +233,9 @@ class WebformController extends Controller
 		  $attributes['type'] = $model->type;
 		  $attributes['date_created'] = (isset($attributes['date_created']) && $attributes['date_created'])? $attributes['date_created']: date('Y-m-d H:i:s');
 		  $attributes['last_updated'] = date('Y-m-d H:i:s');
-		  $attributes['user_id'] = Yii::app()->user->getIntId();
+		  if (Yii::app()->user->getIntId()) {
+		    $attributes['user_id'] = Yii::app()->user->getIntId();
+		  }
 		  $attributes['data'] = serialize($_POST['Data']);
 		  //print_r(array_filter($attributes));
 			$model->attributes=$attributes;
@@ -479,6 +481,24 @@ class WebformController extends Controller
       }
     }
     $this->render('import', get_defined_vars());
+  }
+  
+  public function actionBuildtitle($type) {
+    $id = $_GET['id'];
+    $if = $_GET['if'];
+
+    $webforms = Webform::model()->findAll('type=:type', array(':type' => $type));
+    
+    foreach ($webforms as $webform) {
+      $data = safe_unserialize($webform->data);
+      if($data && isset($data[$id])) {
+        $title = $data[$id];
+        $webform->{'filter'.$if} = $title;
+        $webform->save();
+        
+        print 'Update webform id = '.$webform->id. '<br />';
+      }
+    }
   }
 	/**
 	 * Manages all models.

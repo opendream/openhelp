@@ -63,7 +63,7 @@
 		<div class="clearfix">
 		  <label>ชื่อโครงการ</label>
 		  <div class="input">
-		    <input class="xlarge" name="Data[2]" size="30" type="text" value="<?php echo $Data[2]; ?>">
+		    <input class="xlarge" name="Webform[filter15]" size="30" type="text" value="<?php echo $Webform['filter15']; ?>">
 		  </div>
 		</div>
 		<div class="clearfix">

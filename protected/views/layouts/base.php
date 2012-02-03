@@ -120,10 +120,23 @@
   				        $firstMenu = $menu['weform-'.$parent];
   				        $firstMenu['label'] = $firstMenu['childName']? $firstMenu['childName']: $firstMenu['label'];
   				        $menu['weform-'.$parent]['items']['weform-'.$parent] = $firstMenu;
-  				        $menu['weform-'.$parent]['active'] = true;
   				      }
   				      $menu['weform-'.$parent]['items']['weform-'.$type] = $_menu;
   				      $menu['weform-'.$parent]['url'] .= ','.$type;
+  				      
+  				      $args = explode('/', $_SERVER['REQUEST_URI']);
+  				      $activeType = 'null';
+  				      $activeParent = false;
+  				      if (isset($_GET['type'])) {
+  				        $activeType = $_GET['type'];
+  				        $activeParent = strpos($menu['weform-'.$parent]['url'], $activeType) !== false;
+  				      }
+  				      elseif ($args[1] == 'webform' && $args[2] == 'detail') {
+  				        $webform_id = $args[3];
+  				        $webform = Webform::model()->findByPk($webform_id);
+  				        $menu['weform-'.$webform->type]['active'] = true;
+  				      }
+  				      $menu['weform-'.$parent]['active'] = $activeParent;
   				    }
   				    else {
   				      $menu['weform-'.$type] = $_menu;
