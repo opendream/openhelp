@@ -90,6 +90,8 @@ return array(
 	    'name' => 'โครงการฟื้นฟู',
 	    'label' => 'แบบสำรวจโครงการเพื่อช่วยเหลือ / ฟื้นฟูพื้นที่ประสบภัยน้ำท่วม', 
 	    'file' => 'webforms/supply.php',
+	    'maptitle' => 'filter15',
+      'maplabel' => 'โครงการ',
 	    'profile' => array(
 	      'file' => 'profiles/supply.php',
 	      'show' => true,
@@ -284,9 +286,18 @@ return array(
 ในรูปแบบแผนที่และประเภทความต้องการ และ
 โครงการฟื้นฟู</p>
 
-<p style = "margin-bottom:10px;font-size:11px;color:#787878;line-height:18px;">ระบบนี้ร่วมกันพัฒนาโดย <a href = "http://www.changefusion.org/" target = "blank">ChangeFusion<a> และ
-<a href = "http://www.opendream.co.th/" target = "blank">Opendream</a> เพื่อเป็นต้นแบบของการใช้งานระบบ
+<p style = "margin-bottom:10px;font-size:11px;color:#787878;line-height:18px;">ระบบนี้สร้างขึ้นเพื่อเป็นต้นแบบของการใช้งานระบบ
 ภูมิสารสนเทศแบบเปิด (OpenGIS) เพื่อการจัดการ
-ข้อมูลเพื่อสาธารณประโยชน์</p>',
+ข้อมูลเพื่อสาธารณประโยชน์ <span style="color: #444;">พัฒนาโดย</span></p>
+
+
+<p style="margin:5px 0px;">
+<a href="http://www.changefusion.org/" target = "blank" style="margin-left:10px;"><img src="media/images/cf.png" alt="ChangeFusion" /></a>
+<a href="http://www.opendream.co.th/" target = "blank" style="margin-left:10px;"><img src="media/images/od.png" alt="Opendream" /></a>
+</p>
+<p>
+<a href="http://thairecovery.org/" target = "blank" style="margin-left:20px;"><img src="media/images/th-recovery-grey.png" alt="Thairecovery" /></a>
+</p>
+',
 
 );
