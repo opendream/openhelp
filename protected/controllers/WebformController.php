@@ -48,7 +48,8 @@ class WebformController extends Controller
 	  $Webform = $model;
     ob_start();
     ob_implicit_flush(false);
-    require(substr(bu(Yii::app()->params['webforms'][$type]['file']), 1));
+    $path = Yii::app()->params['webforms'][$type]['file'];
+    require($path);
     return ob_get_clean();
   }
   
@@ -174,7 +175,9 @@ class WebformController extends Controller
 		  $attributes['type'] = $type;
 		  $attributes['date_created'] = (isset($attributes['date_created']) && $attributes['date_created'])? $attributes['date_created']: date('Y-m-d H:i:s');
 		  $attributes['last_updated'] = date('Y-m-d H:i:s');
-		  $attributes['user_id'] = Yii::app()->user->getIntId();
+		  if (Yii::app()->user->getIntId()) {
+		    $attributes['user_id'] = Yii::app()->user->getIntId();
+		  }
 		  $attributes['data'] = serialize($_POST['Data']);
 			$model->attributes=$attributes;
 			if (isset($attributes['locations'])) {
