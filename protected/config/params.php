@@ -292,11 +292,11 @@ return array(
 
 
 <p style="margin:5px 0px;">
-<a href="http://www.changefusion.org/" target = "blank" style="margin-left:10px;"><img src="media/images/cf.png" alt="ChangeFusion" /></a>
-<a href="http://www.opendream.co.th/" target = "blank" style="margin-left:10px;"><img src="media/images/od.png" alt="Opendream" /></a>
+<a href="http://www.changefusion.org/" target = "blank" style="margin-left:10px;"><img src="/media/images/cf.png" alt="ChangeFusion" /></a>
+<a href="http://www.opendream.co.th/" target = "blank" style="margin-left:10px;"><img src="/media/images/od.png" alt="Opendream" /></a>
 </p>
 <p>
-<a href="http://thairecovery.org/" target = "blank" style="margin-left:20px;"><img src="media/images/th-recovery-grey.png" alt="Thairecovery" /></a>
+<a href="http://thairecovery.org/" target = "blank" style="margin-left:20px;"><img src="/media/images/th-recovery-grey.png" alt="Thairecovery" /></a>
 </p>
 ',
 
