@@ -1,0 +1,42 @@
+	.no-float{
+		float: none;
+		width: 125px;
+		display: inline-block;
+	}
+	.float-none {float: none;}
+	
+	table input.span3, textarea.span3, table input.span2, textarea.span2{
+		margin: 0;
+	}
+	
+	input.span3, textarea.span3, input.span2, textarea.span2, input.span7, input.span1,  input.span4{
+    margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	fieldset.section3 tbody tr td {padding: 0;}
+	fieldset.section3 .table-inner{
+    height: 500px;
+    overflow: auto;
+	}
+
+	fieldset.section3 .tabletwo {
+	  width: 80%;
+	  border-collapse: collapse;
+	}
+	
+	
+  .label-s label {
+    width: 100px;
+  }
+  label.label-ss {width: 60px}
+  
+  .section1 label {width: 150px; }
+  .section2 table tbody tr td input {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  h3 {
+    margin: 0 0  10px;
+  }
+  .section3 {}

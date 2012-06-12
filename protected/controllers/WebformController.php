@@ -242,7 +242,12 @@ class WebformController extends Controller
 		  $attributes['data'] = serialize($_POST['Data']);
 		  //print_r(array_filter($attributes));
 			$model->attributes=$attributes;
-			$model->locations = array_filter($attributes['locations']);
+			if (is_array($attributes['locations'])) {
+			  $model->locations = array_filter($attributes['locations']);
+			}
+			else {
+			  $model->locations = array();
+			}
 			//print_r($model->locations);
 			
 			if($model->save())
@@ -307,7 +312,7 @@ class WebformController extends Controller
 		$dataProvider=new CActiveDataProvider('Webform', array(
 		  'criteria'=>array(
         'condition'=>$condition,
-        'order'=>'date_created DESC',
+        'order'=>'last_updated DESC',
       ),
 		));
 		$this->render('list',array(

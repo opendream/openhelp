@@ -388,6 +388,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 .input-indent {
   margin-left: 40px;
 }
+ul.inputs-list {
+  float: left;
+}
 
 
 /*****************************************
@@ -833,7 +836,7 @@ fieldset.sub legend {
 	
 	
 	<fieldset class="sub">
-		<legend>3.2 พื้นที่ของท่านกำลังทำโครงการฟื้นฟูด้านใดบ้าง</legend>
+		<legend>3.3 พื้นที่ของท่านกำลังทำโครงการฟื้นฟูด้านใดบ้าง</legend>
 		<div class="clearfix">
 		  
 	  <table class="bordered-table center">
@@ -899,7 +902,7 @@ fieldset.sub legend {
 	
 	
 	<fieldset class="sub">
-		<legend>4.4 พื้นที่ท่านเป็นพื้นที่เสี่ยงภัยหรือไม่</legend>
+		<legend>3.4 พื้นที่ท่านเป็นพื้นที่เสี่ยงภัยหรือไม่</legend>
 		<div class="clearfix">
 		  
 		  <div class="input-indent">

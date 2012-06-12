@@ -40,10 +40,11 @@ return array(
 	        'title' => 'รายละเอียด',
 	      ),
 	    ),
-	    'detail' => '.section1, .section2',
+	    'detail' => '.section1, .section2, .section3',
 	    'color' => '210,100,74',
 	    'filters' => array(
 	      'data' => array(
+	        /*
   	      'filter0' => array(
   	        'label' => 'ความเสียหายต่อชีวิตและความปลอดภัย',
   	        'description' => 'ความเสียหายต่อชีวิตและความปลอดภัย',
@@ -72,14 +73,15 @@ return array(
   	        'prefix' => 'ระดับ ',
   	        'options' => array(1 => 'ระดับ 1', 2 => 'ระดับ 2', 3 => 'ระดับ 3', 4 => 'ระดับ 4', 5 => 'ระดับ 5'),
   	      ),
+  	      * */
 	      ),
 	      'status' => array(
 	        'all' => 1,
-	        'type' => 1,
+	        'type' => 0,
 	      ),
 	      'title' => array(
 	        'filter' => 'เลือกประเด็น:',
-	        'detail' => 'ส่วนที่ 3 ประเด็นความเสียหาย', 
+	        'detail' => '', 
 	        'filterAll' => 'ข้อมูลจาก Floodtambon'
 	      )
 	    )
@@ -277,8 +279,9 @@ return array(
     ),
     
     // Webform 6 ========================================================================
+    /*
 	  'reliefsurvey2' => array(
-	    'name' => 'พื้นที่ต้องการฟื้นฟู',
+	    'name' => 'ข้อมูลจาก ตำบล',
 	    'parent' => 'reliefsurvey',
 	    'label' => 'แบบสํารวจเพื่อการฟื้นฟูชุมชนหลังสถานการณ์ภัยพิบัติระดับตําบล', 
 	    'file' => 'webforms/reliefsurvey2.php',
@@ -332,6 +335,7 @@ return array(
 	      )
 	    )
 	  ),
+	  */
 	),
 	
 	'about' => '
@@ -353,7 +357,7 @@ return array(
 <a href="http://www.opendream.co.th/" target = "blank" style="margin-left:10px;"><img src="/media/images/od.png" alt="Opendream" /></a>
 </p>
 <p>
-<a href="http://thairecovery.org/" target = "blank" style="margin-left:20px;"><img src="/media/images/th-recovery-grey.png" alt="Thairecovery" /></a>
+<a href="http://thairecovery.org/" target = "blank"><img src="/media/images/th-recovery-grey.png" alt="Thairecovery" /></a>
 </p>
 ',
 
