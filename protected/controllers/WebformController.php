@@ -478,6 +478,12 @@ class WebformController extends Controller
       		  
       		  $model = new Webform;
       			$model->attributes = $attributes;
+      			
+      			if(empty($location)) {
+      			  print_r($vals);
+        			print '<br />';
+      			}
+
       			$model->locations = $location? array($location): array();
       			if($model->save()) {
       			  
